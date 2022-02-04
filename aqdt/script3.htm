@@ -1,0 +1,198 @@
+<HTML>
+
+<HEAD>
+<TITLE>Action Quake Developers Team</TITLE>
+<LINK rel="stylesheet" type="text/css" href="aqdt.css" title="aqdt">
+</HEAD>
+
+<BODY BGCOLOR="#333333" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0">
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
+ <TR HEIGHT="40" VALIGN="bottom">
+  <TD WIDTH="726" ALIGN="right">
+   <A HREF="http://aqdt.fear.net/main2.html">
+   <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
+   </A>
+  </TD>
+  <TD WIDTH="41" ALIGN="bottom" BACKGROUND="side2.gif">
+<TABLE WIDTH="41" CELLSPACING="0" CELLPADDING="0" BORDER="0" BACKGROUND="top1.gif" ALIGN="bottom">
+ <TR HEIGHT="28">
+  <TD WIDTH="41"><SPACER TYPE="block" HEIGHT="28" WIDTH="41">
+  </TD>
+ </TR>
+</TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+ <TR VALIGN="top">
+  <TD WIDTH="120" BACKGROUND="corner5.gif" ALIGN="left">.</TD>
+  <TD WIDTH="30" BGCOLOR="#660000">.</TD>
+  <TD WIDTH="570" BGCOLOR="#660000">
+   <H2><i>Espionage Scenario Scripting</i>
+  </TD>
+  <TD WIDTH="41" BACKGROUND="top2.gif"><SPACER TYPE="block" HEIGHT="100%" WIDTH="41">
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD BACKGROUND="side.gif">
+   <P ALIGN="right">
+    <A HREF="team.htm">The Team</A><BR>
+   </P>
+   <H3><U>Scripting<BR>Contents</U></H3>
+   <P ALIGN="right">
+    <A HREF="script.htm">Examples</A><BR>
+    <A HREF="script2.htm">Scripting Tips</A><BR>
+    <A HREF="script3.htm"><I>Language</I></A><BR>
+    <A HREF="script4.htm">Models Used</A><BR>
+    <A HREF="script5.htm">Why CTB Rocks</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="esp.htm">Espionage</A><BR>
+    <A HREF="te.htm">Tournament</A><BR>
+    <A HREF="arena.htm">Action Arena</A><BR>
+    <A HREF="lowlag.htm">Lowlag</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm">Server Info</A><BR>
+   </P>
+    <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
+  </TD>
+  <TD>
+   <IMG SRC="corner2.gif" width="12" height="18">
+  </TD>
+  <TD>
+   <P><H5>Action Quake:Espionage Scripting Language</H5></P>
+
+<PRE>
+======================================================================
+
+ BASIC FORMAT
+
+ This document gives a semi-formal specification of the scripting
+language used in AQ:Espionage. Please look at the example scenario
+files to see how the language is used.
+======================================================================
+(* means optional field)
+
+<U>action.scp:</U>
+
+MAPS
+{
+  &lt;map name> &lt;scenario name>
+  ...
+}
+#include "scenes/scenario1.scn"
+#include "scenes/scenario2.scn"
+....
+
+
+<U>x.scn:</U>
+
+SCENARIO &lt;scenario name>
+{
+  * CONTINUOUS
+  TARGETS
+  {
+    ....
+  }
+
+  TEAM &lt;team name>
+  {
+    SKIN &lt;skin name>
+    weapons (see below)
+    * INITIAL_SPAWN &lt;target name>
+    GOALS
+    {
+    }
+  }
+}
+
+<U>Weapons:</U>
+
+WEAPONS + MP5 + M3 + SSG - M4 + AKIMBO + KNIVES - HC
+ '+' means the weapon is automatically added to the inventory
+ '-' means the weapon cannot be chosen
+
+  weapon usage restriction:
+   - RESTRICT - MK23 - MP5 -LASER
+
+<U>Respawn:</U>
+
+    RESPAWN 
+    * INSTANT | TIME &lt;time> | FRACTION &lt;percent>
+    * INITIAL_SPAWN | AWAY_FROM &lt;target name> &lt;spawn spots> 
+                    | NEAR &lt;target name> &lt;spawn spots>
+
+<U>Targets:</U>
+
+TARGET_PLAYER_RANDOM &lt;target handle> 
+   TEAM &lt;team name> SKIN &lt;special skin> 
+   * weapons (as above)
+
+TARGET_AREA &lt;area handle> 
+   &lt;lower corner point> &lt;high corner point> 
+   * MODEL &lt;model name>
+
+   OFFSET directive added to TARGET_AREA so you can place the area's model 
+    somewhere other than the center of the box
+     - Specified as a vector relative to the center
+     - Only valid when TARGET_AREA has a MODEL
+     - e.g., to lower the key model 10 units:
+         TARGET_AREA "A" ( 0 0 0 ) ( 10 15 10 ) 
+         MODEL "models/items/keys/red_key/tris.md2" OFFSET ( 0 0 -10 )
+
+TARGET_OBJECT &lt;object handle>  
+   MODEL &lt;model name> PIC &lt;inventory pic>
+   * FOLLOW | GLOW | VWEP &lt;vwep name>
+
+TARGET_LOCATION &lt;location handle> 
+   &lt;point>
+
+TARGET_RANDOM_SPAWN &lt;location handle>
+
+TARGET_FLAG1_SPAWN &lt;area handle>
+   * MODEL &lt;model name>
+
+TARGET_FLAG2_SPAWN &lt;area handle>
+   * MODEL &lt;model name>
+
+<U>Goals:</U>
+
+ASSASSINATE &lt;target handle>
+
+ELIMINATE &lt;team name>
+
+ESCORT &lt;target handle> 
+   TO &lt;area handle>
+
+RETRIEVE &lt;object handle> 
+   FROM &lt;location handle> TO &lt;area handle>
+   * BY &lt;player handle>
+   * WITH &lt;object handle>
+   * TOUCH_RETURN | AUTO_RETURN &lt;time>
+
+ACQUIRE &lt;object handle> 
+   FROM &lt;location handle>
+
+HOLD &lt;area handle> 
+   &lt;time>
+
+HOLDALL &lt;overall handle>
+   &lt;time> &lt;area handle 1> &lt;area handle 2> ....
+</PRE>
+
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD><IMG SRC="corner3.gif" width="120" height="18"></TD>
+ </TR>
+</TABLE>
+
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
+
+</BODY>
+
+</HTML>

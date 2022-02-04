@@ -1,0 +1,252 @@
+<HTML>
+
+<HEAD>
+<TITLE>Action Quake Developers Team</TITLE>
+<LINK rel="stylesheet" type="text/css" href="aqdt.css" title="aqdt">
+</HEAD>
+
+<BODY BGCOLOR="#333333" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0">
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
+ <TR HEIGHT="40" VALIGN="bottom">
+  <TD WIDTH="726" ALIGN="right">
+   <A HREF="http://aqdt.fear.net/main2.html">
+   <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
+   </A>
+  </TD>
+  <TD WIDTH="41" ALIGN="bottom" BACKGROUND="side2.gif">
+<TABLE WIDTH="41" CELLSPACING="0" CELLPADDING="0" BORDER="0" BACKGROUND="top1.gif" ALIGN="bottom">
+ <TR HEIGHT="28">
+  <TD WIDTH="41"><SPACER TYPE="block" HEIGHT="28" WIDTH="41">
+  </TD>
+ </TR>
+</TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+ <TR VALIGN="top">
+  <TD WIDTH="120" BACKGROUND="corner5.gif" ALIGN="left">.</TD>
+  <TD WIDTH="30" BGCOLOR="#660000">.</TD>
+  <TD WIDTH="570" BGCOLOR="#660000">
+   <H2><i>Espionage - Tournament Edition</i>
+  </TD>
+  <TD WIDTH="41" BACKGROUND="top2.gif"><SPACER TYPE="block" HEIGHT="100%" WIDTH="41">
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD BACKGROUND="side.gif">
+   <P ALIGN="right">
+    <A HREF="team.htm">The Team</A><BR>
+   </P>
+   <H3><U>Espionage<BR>Contents</U></H3>
+   <P ALIGN="right">
+    <A HREF="esp.htm">Scenarios</A><BR>
+    <A HREF="esp2.htm">Scenario Rules</A><BR>
+    <A HREF="esp3.htm">Differences</A><BR>
+    <A HREF="esp4.htm">Radio Sounds</A><BR>
+    <A HREF="esp5.htm"><I>Client Info</I></A><BR>
+    <A HREF="esp6.htm">Server Info</A><BR>
+    <A HREF="esp7.htm">Version History</A><BR>
+    <A HREF="esp8.htm">Credits</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="script.htm">Esp. Scripting</A><BR>
+    <A HREF="te.htm">Tournament</A><BR>
+    <A HREF="arena.htm">Action Arena</A><BR>
+    <A HREF="lowlag.htm">Lowlag</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm">Server Info</A><BR>
+   </P>
+    <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
+  </TD>
+  <TD>
+   <IMG SRC="corner2.gif" width="12" height="18">
+  </TD>
+  <TD>
+   <P><H5>What do players need to know?</H5></P>
+
+<P>Rename pakN.pak to an unused name in the range pak0-pak9. We've gone to a pak file for some of the models and sounds to make it easier for people to use their own replacements.</P>
+
+<P>As of v3.3, AQ:ETE uses LowLag Sounds, a different naming scheme for weapon sounds.  As of v4.4a, AQ:ETE makes the use of these sounds optional.  The server operator can enable or disable use of these sounds.  If you enter an Action Quake server and hear Quake II sounds, you should either rename your sounds as shown below or download the LowLag Sound pack which is about 160 KB in size.  This information is still valid for v4.6b, the latest release.</P>
+
+<P>The sounds map as follows:</P>
+
+   <TABLE WIDTH="80%" CELLPADDING="4" CELLSPACING="0" BORDER="2" BORDERCOLOR="#666666" BORDERSHADING="0">
+    <TR>
+     <TD>
+      <H5>Weapon</H5>
+     </TD>
+     <TD>
+      <H5>Sound File(s)</H5>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>Mk23</P>
+     </TD>
+     <TD>
+      <P>sound/weapons/blastf1a.wav</P>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>Shotgun</P>
+     </TD>
+     <TD>
+      <P>No change</P>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>Handcannon</P>
+     </TD>
+     <TD>
+      <P>sound/weapons/sshotf1b.wav</P>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>MP5</P>
+     </TD>
+     <TD>
+      <P>sound/weapons/machgf1b.wav<BR>
+         sound/weapons/machgf2b.wav<BR>
+         sound/weapons/machgf3b.wav<BR>
+         sound/weapons/machgf4b.wav<BR>
+         sound/weapons/machgf5b.wav<BR>
+         (Yes, all of them)</P>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>SSG-3000</P>
+     </TD>
+     <TD>
+      <P>sound/weapons/hyprbf1a.wav</P>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>M4</P>
+     </TD>
+     <TD>
+      <P>sound/weapons/rocklf1a.wav</P>
+     </TD>
+    </TR>
+    <TR>
+     <TD>
+      <P>Silencer</P>
+     </TD>
+     <TD>
+      <P>sound/weapons/rocklr1b.wav<BR>
+        (The RL actually plays two sounds, so we have to make this sound quiet)</P>
+     </TD>
+    </TR>
+   </TABLE>
+
+<P>AQ:Espionage introduces some new client commands:</P>
+
+<UL>
+<LI><B>goals</B> - Redisplays the current objectives for both teams
+<LI><B>rules</B> - Displays spawn and equipment rules as well as goals
+<LI><B>showradiosource</B> - Must enable each map, handy to see who is radio spamming
+<LI><B>ignore</B> &lt;player name> - Lets you ignore messages from a particular player, can keep 
+                                     ignoring additional players as desired, persists until player
+                                     leaves, also handy for ignoring radio spammers
+<LI><B>ignoreid</B> &lt;player id> - Lets you ignore messages from a particular player, find the 
+                                     player id by typeng "skins" in the console
+<LI><B>ignorenum</B> &lt;player id> - Lets you ignore messages from a particular player
+<LI><B>unignore</B> - Clears your ignore for a particular player
+<LI><B>unignoreid</B> - Clears your ignore for a particular player
+<LI><B>unignorenum</B> - Clears your ignore for a particular player
+<LI><B>volunteer</B> - Makes you eligible for special duty
+<LI><B>scenarios</B> &lt;number> - Lists the maps and associated scenarios in rotation on the server, 20 at a time.
+                       You can type "scenarios #" to start at a different point on the scenario list.  
+                       "scenarios" lists 0 through 19, "scenarios 12" starts at 12 through 31, helps
+                       prevent overflowing clients from hugely-long scenario rotations in action.scp.
+<LI><B>maplist</B> - Lists the current map rotation on the server, the current map, and time left
+<LI><B>lowlag</B> - Type "lowlag" for instructions, semiautodownload of LowLag sounds from server
+<LI><B>tkok</B> - Voluntary console command to forgive a TK
+<UL>
+  <LI>Only forgives last TK'er
+  <LI>Doesn't restore frag loss
+</UL><BR>
+<LI><B>votemap</B> &lt;map> - Casts your vote to change to a desired map in normal teamplay
+<LI><B>impersonationok</B> - Allows other people to have the same name as you, toggles on and off
+<UL>
+  <LI><B>Note</B>:  If you try to use someone's name before they allow you to, you will have 
+  to switch to a temporary name after they allow you to impersonate them before you can switch 
+  to their name.  This has to do with the way Q2 updates player information--it doesn't know 
+  you are allowed to have the name until you update your player information by choosing a 
+  different, temporary name.
+</UL><BR>
+<LI><B>team balance</B> - Takes you to whatever team (1 or 2) would make the teams balanced
+<LI><B>%S</B> - Line of sight location reporting; e.g. "Enemy spotted at %S!"
+<LI><B>%L</B> - Current location reporting; e.g. "I am at %L with %H health!"
+<LI><B>%K</B> - Last person you hit (but not necessarily killed); e.g. "I am engaging %K!"
+<LI><B>%D</B> - Ordinal direction (North, East, etc.); e.g. "Enemy spotted %D of %L!"
+<LI><B>%%</B> - For those times when you actually do want a %; e.g. "I am 100%% positive!"
+</UL>
+
+<P>Support for ML-style location files</P>
+<UL>
+<LI>Works with <B>scripts 0</B> or <B>1</B>
+<LI>looks for file called action/ml/&lt;mapname>.aqg
+<LI>TARGET_AREA and TARGET_FLAGSPAWN locations take precedence
+<LI>location files can be found at:<BR>
+<A HREF="http://www.algonet.se/~ml2/action/ml/downloads.html">
+http://www.algonet.se/~ml2/action/ml/downloads.html</A>
+<LI>Be careful of filename case on Linux (e.g. BLOCKWAR.aqg)
+</UL>
+
+
+<P>If the server has it enabled, players may vote on various items. Currently,
+AQ:ETE supports voting to move to the next map/scenario in rotation and voting 
+to move to a specific map/scenario in the rotation.</P>
+
+<P>The gameplay will vary with each scenario. The goals of each scenario will be displayed on the screen at the beginning of each round. Some players may be designated in special roles, in which case it is vital that you read the goals specified to determine what needs to be done. Some scenarios are continuous, which means the players won't "reset" when the goals have been met.</P>
+
+<P>Ettiquette for client operators</P>
+
+<P>Since some Espionage scenarios allow people to respawn, "Enemy Down," "Im Hit," "Enemy Spotted" and other related radio/text messages are neither necessary nor useful.  Please unbind them, or dont use them in respawning scenarios.  If you do use them during a scenario with respawning, you may aggravate the server op and the other players.</P>
+
+<P>For scenarios authors, additional commands are available when sv_author
+is set to 1 (see below):</P>
+
+<UL>
+<LI>"moveto &lt;target name>" - moves the player to the location of the specified target<BR>
+<LI>"movespawn &lt;target name> &lt;away>" - Moves the players to &lt;away>--the nearest spawn spot to the specified target
+</UL>
+
+<P>New radio sounds are included with Espionage.  See the Radio Commands section.</P>
+
+<P>The %L location variable for messages is now supported. AQ:E currently
+supports three forms of location specification:</P>
+
+<OL>
+<LI>All TARGET_AREA, TARGET_LOCATION, and TARGET_FLAG#_SPAWN targets in an AQ:E script
+<LI>A map-specific auxiliary file, action/location/&lt;mapname>.loc. This file is read for all forms of gameplay, including regular TP and DM.<BR>
+<BR>
+&lt;mapname>.loc consists of a series of entries of the form:<BR>
+<BR>
+TARGET_LOCATION "Location Name" ( x y z )<BR>
+<BR>
+<LI>AQ:ML action/ml/&lt;mapname>.aqg map-specific file as described above.
+</OL>
+
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD><IMG SRC="corner3.gif" width="120" height="18"></TD>
+ </TR>
+</TABLE>
+
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
+
+</BODY>
+
+</HTML>

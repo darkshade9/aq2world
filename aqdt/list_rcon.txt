@@ -1,0 +1,76 @@
+// This should be handy for in-game reminders of commands.  To see these in your
+// console, simply do the following:
+//
+// ] exec list_rcon.cfg
+//
+echo
+echo rcon (password) (command)
+echo rcon (command)
+echo rcon_address (server address)
+echo rcon_password (rcon password)
+echo password (server password)
+echo status
+echo kick (userid)
+echo kick (username)
+echo map (filename)
+echo say (message)
+echo set (variable) (value) (flag), s = server flag
+echo EXAMPLE: set admin MasterFoo s
+echo EXAMPLE: set email masterfoo@foo.org s
+echo serverinfo
+echo cvarlist
+echo cmdlist
+echo hostname (default: noname)
+echo sv (command)
+echo sv addip (ip address) - Add an IP address to the banlist.
+echo sv listip - List the banlist to the console.
+echo sv remove (ip address) - Remove an IP address to the banlist.
+echo sv writeip - Write the banlist to the listip.cfg file.
+echo filterban <0|1> (default: 1)
+echo public <0|1> (default: 0)
+echo deathmatch <0|1> (default: 0)
+echo fraglimit <0|1> (default: 0)
+echo cheats <0|1> (default: 0)
+echo allow_download <0|1> (default: 0)
+echo allow_download_maps <0|1> (default: 1) [maps in PAK files won't be downloaded from the server]
+echo allow_download_models <0|1> (default: 1)
+echo allow_download_players <0|1> (default: 1)
+echo allow_download_sounds <0|1> (default: 1)
+echo flood_msgs (default: 4)
+echo flood_persecond (default: 4)
+echo flood_waitdelay (default: 10)
+echo logfile <0|1|2|3> (default: 0)
+echo link (from path) (to path)
+echo path
+echo dir
+echo dir (relative path)/(filename mask)
+echo sv_gravity (default: 800)
+echo sv_maplist "[map 1] [map 2] ... [map n]"
+echo exec (filename)
+echo spectator_password (server password) [default: (none)]
+echo serverrecord (demoname)
+echo serverstop
+echo killserver
+echo
+echo dmflags (default: 16)
+echo
+echo Add together components
+echo #     1 - No Health (there is no health in AQ2)
+echo #     2 - No Powerups (there are no powerups in AQ2)
+echo #     4 - Weapons Stay
+echo #     8 - No Falling Damage ***
+echo #    16 - Instant Powerups
+echo #    32 - Same Map
+echo #    64 - Teams by Skin ***
+echo #   128 - Teams by Model ***
+echo #   256 - No Friendly Fire ***
+echo #   512 - Spawn Farthest ***
+echo #  1024 - Force Respawn
+echo #  2048 - No Armor
+echo #  4096 - Allow Exit
+echo #  8192 - Infinite Ammo (no effect in AQ2)
+echo # 16384 - Quad Drop
+echo # 32768 - Fixed FOV (AQ2 forces a Fixed FOV all the time)
+echo
+echo Items with *** are most applicable to AQ2
+echo

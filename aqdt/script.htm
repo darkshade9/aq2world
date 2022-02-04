@@ -1,0 +1,133 @@
+<HTML>
+
+<HEAD>
+<TITLE>Action Quake Developers Team</TITLE>
+<LINK rel="stylesheet" type="text/css" href="aqdt.css" title="aqdt">
+</HEAD>
+
+<BODY BGCOLOR="#333333" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0">
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
+ <TR HEIGHT="40" VALIGN="bottom">
+  <TD WIDTH="726" ALIGN="right">
+   <A HREF="http://aqdt.fear.net/main2.html">
+   <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
+   </A>
+  </TD>
+  <TD WIDTH="41" ALIGN="bottom" BACKGROUND="side2.gif">
+<TABLE WIDTH="41" CELLSPACING="0" CELLPADDING="0" BORDER="0" BACKGROUND="top1.gif" ALIGN="bottom">
+ <TR HEIGHT="28">
+  <TD WIDTH="41"><SPACER TYPE="block" HEIGHT="28" WIDTH="41">
+  </TD>
+ </TR>
+</TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+ <TR VALIGN="top">
+  <TD WIDTH="120" BACKGROUND="corner5.gif" ALIGN="left">.</TD>
+  <TD WIDTH="30" BGCOLOR="#660000">.</TD>
+  <TD WIDTH="570" BGCOLOR="#660000">
+   <H2><i>Espionage Scenario Scripting</i>
+  </TD>
+  <TD WIDTH="41" BACKGROUND="top2.gif"><SPACER TYPE="block" HEIGHT="100%" WIDTH="41">
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD BACKGROUND="side.gif">
+   <P ALIGN="right">
+    <A HREF="team.htm">The Team</A><BR>
+   </P>
+   <H3><U>Scripting<BR>Contents</U></H3>
+   <P ALIGN="right">
+    <A HREF="script.htm"><I>Examples</I></A><BR>
+    <A HREF="script2.htm">Scripting Tips</A><BR>
+    <A HREF="script3.htm">Language</A><BR>
+    <A HREF="script4.htm">Models Used</A><BR>
+    <A HREF="script5.htm">Why CTB Rocks</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="esp.htm">Espionage</A><BR>
+    <A HREF="te.htm">Tournament</A><BR>
+    <A HREF="arena.htm">Action Arena</A><BR>
+    <A HREF="lowlag.htm">Lowlag</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm">Server Info</A><BR>
+   </P>
+    <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
+  </TD>
+  <TD>
+   <IMG SRC="corner2.gif" width="12" height="18">
+  </TD>
+  <TD>
+   <P><H5>Action Quake:Espionage Scenario Development</H5></P>
+
+<P>The <B>Scenario Depot</B>, a good place to get started with Espionage scripting.  It hasn't been updated in a while, but it has many scenarios and tips for scenario creation.</P>
+
+<P><CENTER><A HREF="http://aqdt.fear.net/scenarios/" TARGET=_blank>http://aqdt.fear.net/scenarios/</A></CENTER></P>
+
+<HR WIDTH="75%">
+
+<P>How-To's are not available in this version of AQ:E.  How-To scenarios may be available in the future releases of AQ:E--if someone wants to write 'em up who knows the scripting language, eh.  However, there are scenario templates.  If you know a little bit about coding, it should be incredibly easy to figure it out.</P>
+
+<P>You should check out the automated Espionage Scenario Maker made by Blaze included with the AQ:ETE 4.6b support package.  You can find this program along with some example scenario files and information in your <B>/quake2/action/devel/</B> directory.</P>
+
+<P>The templates go as follows:</P>
+
+<P><B><A HREF="ctb_with_flag_team_func_template.htm" TARGET=_blank>ctb_with_flag_team_func_template.scn</A></B><P>
+<UL>
+<LI>This is the template you would use to make scenarios that contain the info_flag_team1 and info_flag_team2 spawn functions (AQ:E uses those spawn points to spawn the flags<BR>
+<BR>
+example maps:	blockwar, ctbcity
+</UL>
+
+<P><B><A HREF="ctb_with_noflag_team_func_template.htm" TARGET=_blank>ctb_with_noflag_team_func_template.scn</A></B></P>
+<UL>
+<LI>This is the template you would use to make scenarios that do NOT contain info_flag_team1 and info_flag_team2 spawn functions.  This requires a little bit more work; any map that is out there can be scripted for AQ:E
+</UL>
+
+<P><B><A HREF="etv_template.htm" TARGET=_blank>etv_template.scn</A></B></P>
+<UL>
+<LI>This is the template you would use to make scenarios for Escort the VIP
+</UL>
+
+<P><B><A HREF="ofc_template.htm" TARGET=_blank>ofc_template.scn</A></B></P>
+<UL>
+<LI>This is the template you would use to make scenarios for One Flag Capture
+</UL>
+
+<P><B><A HREF="atl_template.htm" TARGET=_blank>atl_template.scn</A></B></P>
+<UL>
+<LI>This is the template you would use to make scenarios for Assassinate the Leader
+</UL>
+
+<P><B><A HREF="frd_template.htm" TARGET=_blank>frd_template.scn</A></B></P>
+<UL>
+<LI>This is the template you would use to make scenarios for Find, Retrieve/Defend
+</UL>
+
+<P>**NOTE**</P>
+<UL>
+<LI>To find the exact location (this is needed for force-spawning stuff) on a map. simple go into console and type 'viewpos' it will give you your X, Y, and Z position. Copy those down. It should look like: <BR>
+<BR>
+( 31 -494 20 ) : 349<BR>
+<BR>
+The numbers in the parentheses are important!  Also, if you want to comment stuff out, simply put a <B>//</B> on the line you want AQ:E to skip over (good for debugging).
+</UL>
+
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD><IMG SRC="corner3.gif" width="120" height="18"></TD>
+ </TR>
+</TABLE>
+
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,71 @@
+// This should be handy for in-game reminders of commands.  To see these in your
+// console, simply do the following:
+//
+// ] exec list_flags.cfg
+//
+echo
+echo dmflags (default: 16)
+echo
+echo Add together components
+echo #     1 - No Health (there is no health in AQ2)
+echo #     2 - No Powerups (there are no powerups in AQ2)
+echo #     4 - Weapons Stay
+echo #     8 - No Falling Damage ***
+echo #    16 - Instant Powerups
+echo #    32 - Same Map
+echo #    64 - Teams by Skin ***
+echo #   128 - Teams by Model ***
+echo #   256 - No Friendly Fire ***
+echo #   512 - Spawn Farthest ***
+echo #  1024 - Force Respawn
+echo #  2048 - No Armor
+echo #  4096 - Allow Exit
+echo #  8192 - Infinite Ammo (no effect in AQ2)
+echo # 16384 - Quad Drop
+echo # 32768 - Fixed FOV (AQ2 forces a Fixed FOV all the time)
+echo
+echo Items with *** are most applicable to AQ2
+echo
+echo weaponBan (default: 0)
+echo 
+echo Add together components like dmflags 
+echo #     1 M4
+echo #     2 MP5
+echo #     4 Handcannon
+echo #     8 M3 Shotgun
+echo #    16 Sniper Rifle
+echo #    32 Akimbo
+echo #    64 Knives
+echo #   128 Mk23 Pistol
+echo #   256 Kevlar Vest
+echo #   512 Stealth Slippers
+echo #  1024 Silencer
+echo #  2048 Bandolier
+echo #  4096 Laser
+echo 
+echo e.g., to ban M4, HC, Akimbo, and Vest:
+echo weaponBan = 1 + 4 + 32 + 256 = 293, weaponBan 293
+echo
+echo Pre-computed DMFLAGS:
+echo
+echo 1056964608 = Best protection against proxies, secure p_modified mode
+echo 520093696 = Best protection against proxies, no secure p_modified mode
+echo 117440512 = Best protection against proxies, able to use other dmflags
+echo 117440512 = 16777216 + 33554432 + 67108864 = (no blood filter, explosion filter, or commands)
+echo 117440520 = 117440512 + 8 = (no falling damage)
+echo 117440768 = 117440512 + 256 = (no friendly fire)
+echo 117441024 = 117440512 + 512 = (spawn furthest)
+echo 117440776 = 117440512 + 8 + 256 = (no falling damage and no friendly fire)
+echo 117441032 = 117440512 + 8 + 512 = (no falling damage and spawn furthest)
+echo 117441280 = 117440512 + 256 + 512 = (no friendly fire and spawn furthest)
+echo 117441288 = 117440512 + 8 + 256 + 512 = (no falling damage, no friendly fire, spawn furthest)
+echo
+echo Pre-computed weaponBan:
+echo
+echo 187 = 1 + 2 + 8 + 16 + 32 + 128 = (ban all weapons except HC and Knives)
+echo 191 = 1 + 2 + 4 + 8 + 16 + 32 + 128 = (ban all weapons except Knives)
+echo 255 = 1 + 2 + 4 + 8 + 16 + 32 + 64 + 128 = (ban all weapons except kicking and 1 knife)
+echo 7936 = 256 + 512 + 1024 + 2048 + 4096 = (ban all items)
+echo 8191 = 255 + 7936 = (ban all weapons and ban all items)
+echo 5819 = 187 + 512 + 1024 + 4096 = (allows only HC and Knives, Vest and Bandolier)
+echo

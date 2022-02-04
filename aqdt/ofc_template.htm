@@ -1,0 +1,47 @@
+<HTML>
+
+<HEAD>
+<TITLE>Action Quake Developers Team</TITLE>
+<LINK rel="stylesheet" type="text/css" href="aqdt.css" title="aqdt">
+</HEAD>
+
+<BODY BGCOLOR="#333333" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0">
+
+<PRE>
+SCENARIO "avenue1ofc"
+{
+CONTINUOUS
+TARGETS
+{
+  TARGET_AREA "Base1 ( 151 701 28 ) ( 191 741 68 )
+  TARGET_AREA "Base2" ( 1319 -2582 258 ) ( 1359 -2542 298 )
+  TARGET_OBJECT "Package" MODEL "models/items/bcase/g_bc1.md2" PIC "i_bc1" VWEP "w_bc1.md2"
+  TARGET_LOCATION "Location" ( 686 -1635 402 )
+}
+TEAM "Hitmen"
+{
+  SKIN "actionmale/invince"
+  WEAPONS "all"
+  RESPAWN FRACTION 33 AWAY_FROM "Base2" 2 TOGETHER
+  GOALS
+  {
+  RETRIEVE "Package" FROM "Location" TO "Base1"
+  }
+}
+TEAM "Reservoir Dogs" 
+{
+  SKIN "male/resdog"
+  WEAPONS "all"
+  RESPAWN FRACTION 33 AWAY_FROM "Base1" 2 TOGETHER
+  GOALS
+  {
+  RETRIEVE "Package" FROM "Location" TO "Base2"
+  }
+}
+}
+<B><I>//nothing to really say. just refer to all of the other templates.</I></B>
+</PRE>
+
+</BODY>
+
+</HTML>

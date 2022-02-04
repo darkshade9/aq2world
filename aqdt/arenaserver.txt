@@ -1,0 +1,56 @@
+game action
+gamedir action
+
+//
+hostname "AQ: Arena 4.6b ETE"
+rcon_password *CHANGE-ME*
+
+//
+set fraglimit 0
+set timelimit 0
+set roundlimit 10
+
+//
+// Recommended maxclients of 8 for Arena 1v1 mode, any higher and it gets
+// too boring for the players in the queue.  Just like DeathMatch, too many
+// players on the server at the same time gets boring.
+//
+set maxclients 8
+set public 1
+setmaster master0.gamespy.com 206.96.221.2
+// gamespy and telefragged
+
+//
+set deathmatch 1
+set teamplay 1
+
+// 1056964608 = Best protection against proxies, secure p_modified mode
+// 520093696 = Best protection against proxies, no secure p_modified mode
+// 117440512 = Best protection against proxies, able to use other dmflags
+// 117440512 = 16777216 + 33554432 + 67108864 = (no blood filter, explosion filter, or commands)
+// 117440520 = 117440512 + 8 = (no falling damage)
+// 117440768 = 117440512 + 256 = (no friendly fire)
+// 117441024 = 117440512 + 512 = (spawn furthest)
+// 117440776 = 117440512 + 8 + 256 = (no falling damage and no friendly fire)
+// 117441032 = 117440512 + 8 + 512 = (no falling damage and spawn furthest)
+// 117441280 = 117440512 + 256 + 512 = (no friendly fire and spawn furthest) *** used below ***
+// 117441288 = 117440512 + 8 + 256 + 512 = (no falling damage, no friendly fire, spawn furthest)
+
+set dmflags 117441280
+set actionmaps 1
+
+// This enables the Arena 1v1 mode
+// If you want standard TP, set arena 0 and restart
+set arena 1
+
+// Lan 'Graphical goodies' section
+// These are good settings for internet-friendly servers
+set bholelimit 0
+set splatlimit 0
+set shelloff 1
+
+// gives everyone who uses a bandolier 1 grenade
+set tgren 1
+
+// A fine map for 1v1 combat
+map urban2

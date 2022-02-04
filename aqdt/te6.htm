@@ -1,0 +1,265 @@
+<HTML>
+
+<HEAD>
+<TITLE>Action Quake Developers Team</TITLE>
+<LINK rel="stylesheet" type="text/css" href="aqdt.css" title="aqdt">
+</HEAD>
+
+<BODY BGCOLOR="#333333" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0">
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
+ <TR HEIGHT="40" VALIGN="bottom">
+  <TD WIDTH="726" ALIGN="right">
+   <A HREF="http://aqdt.fear.net/main2.html">
+   <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
+   </A>
+  </TD>
+  <TD WIDTH="41" ALIGN="bottom" BACKGROUND="side2.gif">
+<TABLE WIDTH="41" CELLSPACING="0" CELLPADDING="0" BORDER="0" BACKGROUND="top1.gif" ALIGN="bottom">
+ <TR HEIGHT="28">
+  <TD WIDTH="41"><SPACER TYPE="block" HEIGHT="28" WIDTH="41">
+  </TD>
+ </TR>
+</TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+ <TR VALIGN="top">
+  <TD WIDTH="120" BACKGROUND="corner5.gif" ALIGN="left">.</TD>
+  <TD WIDTH="30" BGCOLOR="#660000">.</TD>
+  <TD WIDTH="570" BGCOLOR="#660000">
+   <H2><i>Espionage - Tournament Edition</i>
+  </TD>
+  <TD WIDTH="41" BACKGROUND="top2.gif"><SPACER TYPE="block" HEIGHT="100%" WIDTH="41">
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD BACKGROUND="side.gif">
+   <P ALIGN="right">
+    <A HREF="team.htm">The Team</A><BR>
+   </P>
+   <H3><U>Tournament<BR>Contents</U></H3>
+   <P ALIGN="right">
+    <A HREF="te.htm">Features</A><BR>
+    <A HREF="te2.htm">Differences</A><BR>
+    <A HREF="te3.htm">Matches</A><BR>
+    <A HREF="te4.htm">OGL Involved?</A><BR>
+    <A HREF="te5.htm">Client Info</A><BR>
+    <A HREF="te6.htm"><I>Server Info</I></A><BR>
+    <A HREF="te7.htm">Version History</A><BR>
+    <A HREF="te8.htm">Credits</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="esp.htm">Espionage</A><BR>
+    <A HREF="script.htm">Esp. Scripting</A><BR>
+    <A HREF="arena.htm">Action Arena</A><BR>
+    <A HREF="lowlag.htm">Lowlag</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm">Server Info</A><BR>
+   </P>
+    <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
+  </TD>
+  <TD>
+   <IMG SRC="corner2.gif" width="12" height="18">
+  </TD>
+  <TD>
+   <P><H5>What do server ops need to know?</H5></P>
+
+<P>
+To get imediately started with Tournament Edition out of the box, extract the server files into your action directory.  Enable the TE code by either including the line "set matchplay 1" in your server.cfg file or adding "+set matchplay 1" to your startup command line. Alternatively, you may also use "set ogl 1" to enter TE mode.  After that, everything will take care of itself, assuming you extracted the files to the proper directories :).  
+</P>
+
+<P>For quick reference in-game, simply "exec list_te.cfg" in your console.  This will give you a quick list of all the AQ:ETE commands that relate to the Tournament Edition mode.  Also note that the commands and CVARs explained in detail below are the commands and CVARs that are directly related to the TE mode of AQ:ETE.  For the Espionage-related commands, please check the Espionage section of the documentation.</P>
+
+<P>Sample command line:</P>
+
+<PRE>
+  quake2 +set dedicated 1 +set game action +exec server.cfg
+</PRE>
+
+<P>Cvars:</P>
+
+<OL>
+<LI><B>matchplay</B><BR>
+Type: server cvar<BR>
+Possible values: <B>0</B> (matchplay OFF), <B>1</B> (matchplay ON)<BR>
+FUNCTION:<BR>
+<UL>
+  <LI>matchplay ON enables tournament features.<BR>
+  <LI>matchplay OFF disables features and reverts to vanilla 1.52.<BR>
+</UL>
+Example command: N/A<BR>
+Notes:<BR>
+<UL>
+  <LI>Requires rcon to set.<BR>
+  <LI>Requires a map change for the setting to take effect.<BR>
+</UL>
+<BR>
+
+<LI><B>ogl</B><BR>
+Type: server cvar<BR>
+Possible values: <B>0</B> (OGL mode OFF), <B>1</B> (OGL mode ON)<BR>
+FUNCTION:<BR>
+<UL>
+  <LI>ogl ON locks the server settings to OGL rule specifications,
+namely timelimit 20, fraglimit 0, roundtimelimit 0.  Also
+automatically turns on TE tournament features.<BR>
+  <LI>ogl OFF allows modification of rules outside OGL specs.<BR>
+</UL>
+Example command: N/A<BR>
+Notes:<BR>
+<UL>
+  <LI>Requires rcon to set.<BR>
+  <LI>Requires a map change for the setting to take effect.<BR>
+</UL>
+<BR>
+
+<LI><B>useLowlagSounds</B> &lt;0|1> (default: 1)
+<UL>
+  <LI>0: use original AQ 1.52 sound scheme
+  <LI>1: use LowLag Sounds to reduce bandwidth used
+</UL>
+<BR>
+
+<LI><B>escore</B> &lt;0|1> (default: 1)
+<UL>
+  <LI>0: original AQ scoreboard
+  <LI>1: enhanced Espionage scoreboard
+</UL>
+<BR>
+
+<LI><B>allowMPELPSuicide</B> &lt;0|1> (default: 1)
+<UL>
+  <LI>0: suiciding immediately after being wounded by another player is disabled
+  <LI>1: suiciding is allowed. It might even work
+</UL>
+<BR>
+
+<LI><B>allow_vote</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: voting is disabled
+  <LI>1: voting is enabled
+</UL>
+<BR>
+
+<LI><B>e_voteWait</B> &lt;secs> (default: 120)
+<UL>
+  <LI>Number of seconds between successive vote requests by a player
+</UL>
+<BR>
+
+<LI><B>allowVotemap</B> &lt;0|1> (default: 1)
+<UL>
+  <LI>0: console voting via the "votemap" command is disabled
+  <LI>1: console voting via the "votemap" command is enabled
+</UL>
+<BR>
+
+<LI><B>votemapPercentage</B> &lt;percentage> (default: 51)
+<UL>
+  <LI>specifies what percentage of players must vote on on the same map in order for it to pass. 
+      The first map that makes the cut will win.
+</UL>
+<BR>
+
+<LI><B>e_enhancedSlippers</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: Espionage slippers are disabled
+  <LI>1: Espionage slippers are enabled
+</UL>
+<BR>
+
+<LI><B>e_allRadio</B> &lt;0|1> (default: 1)
+<UL>
+  <LI>0: Espionage-specific radio sounds are not allowed for non-scripted maps
+  <LI>1: all radio sounds are allowed
+</UL>
+<BR>
+
+<LI><B>weaponBan</B> cvar restricts weapon/item usage independent of and 
+in addition to scenario specifications (default: 0)<BR>
+<UL>
+  <LI>Works with <B>scripts 0</B> or <B>1</B>
+  <LI>Add together components like <B>dmflags</B>
+<PRE>
+     #     1 M4
+     #     2 MP5
+     #     4 Handcannon
+     #     8 M3 Shotgun
+     #    16 Sniper Rifle
+     #    32 Akimbo
+     #    64 Knives
+     #   128 Mk23 Pistol
+     #   256 Kevlar Vest
+     #   512 Stealth Slippers
+     #  1024 Silencer
+     #  2048 Bandolier
+     #  4096 Laser
+</PRE>
+  <LI>e.g., to ban M4, HC, Akimbo, and Vest:<BR>
+      weaponBan = 1 + 4 + 32 + 256 = 293, <B>weaponBan 293</B>
+</UL>
+<BR>
+
+<LI><B>e_AllowNoclip</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: the noclip cheat is disabled
+  <LI>1: the noclip cheat is enabled--useful for demos, towers, etc.
+</UL>
+<BR>
+
+<LI><B>spawnProtect</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: no deathmatch spawn protection for players respawning
+  <LI>1: deathmatch spawn protection for players respawning
+  <LI>protected player is semi-transparent
+  <LI>firing a weapon negates invulnerability
+  <LI>2 seconds of invulnerability upon spawn
+</UL>
+<BR>
+
+</OL>
+
+<P>Server commands:</P>
+
+<UL>
+<LI><B>sv matchtime</B> - display elapsed time (works for any mode with a timelimit set)
+<LI><B>sv teamscore</B> - displays team scores in the console to remotely follow a teamplay match
+<LI><B>sv orphan</B> &lt;player num> - to immediately remove a player from his team
+<LI><B>sv silence</B> &lt;player num> &lt;seconds> - prevents a player from speaking for a time
+  <UL>
+  <LI>If no time argument is supplied, default is 60 seconds
+  <LI>If a flood lock or previous silence is in effect, the specified time is appended
+  <LI>Use negative values to undo or lessen a current lock
+  <LI>Silenced/floodcontrolled players may not use the radio, either
+  <LI>Different from the captain/referee "silence" command explained previously
+  </UL>
+</UL>
+
+<P>Other stuff that's good to know:</P>
+
+<UL>
+<LI><B>match.ini</B><BR>
+Details: Upon moving to a new map with matchplay 1, match.ini will be parsed, resetting a new maplist (defined in match.ini) and the team names and team models/skins will be reset to a default (hard-coded, not defined in match.ini).  See the included sample match.ini for details.<BR>
+<BR>
+
+<LI><B>Full backwards compatibility with AQ 1.52</B><BR>
+Details: Matchplay 0 resets the server to AQ 1.52 + some bugfixes (out of ammo bug, other 1.52 bugs).
+</UL>
+
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD><IMG SRC="corner3.gif" width="120" height="18"></TD>
+ </TR>
+</TABLE>
+
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
+
+</BODY>
+
+</HTML>
