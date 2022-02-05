@@ -4,7 +4,9 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
 <style>
         table, th, td {
@@ -27,36 +29,6 @@
 		}
 
 </style>
-
-<script>
-	$(function() {
-		$('table.servers tbody tr').not('.loading').not('.template').remove();
-		$('table.servers tbody tr.loading').show();
-
-		$.getJSON('http://scraper.aq2world.com/servers', function(data) {
-			$('table.servers tbody tr.loading').hide();
-			var table = $('table.servers tbody');
-			var template = $('table.servers tr.template');
-
-			for (var k in data) {
-				var row = data[k];
-				var self = template.clone().css({ display: 'table-row'}).removeClass('template');
-
-				if (row.clients > 0) {
-					self.addClass('active');
-				}
-
-				self.find('.hostname img').attr('src', 'img/flags/' + row.country.toLowerCase() + '.png').attr('alt', row.country).attr('title', row.country);
-				self.find('.hostname span').text(row.hostname);
-				self.find('.address').text(row.ip + ':' + row.port);
-				self.find('.players').text(row.clients + ' / ' + row.maxclients);
-				self.find('.map').text(row.mapname);
-				self.find('.connect a').attr('href', row.uri);
-				self.appendTo(table);
-			}
-		});
-	});
-</script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -107,34 +79,7 @@
 		
 		
 			<div class="col-lg-8 col-md-8 col-sm-4 col-xs-2">
-				<table class="servers table table-hover table-condensed">
-					<thead>
-						<tr>
-							<th class="hostname">Hostname</th>
-							<th class="address">Address</th>
-							<th class="players">Players</th>
-							<th class="map">Map</th>
-							<th class="connect"></th>
-						</tr>
-					</thead>
-				
-					<tbody>
-						<tr class="loading">
-							<td colspan="5"><img src="img/loading.gif"></td>
-						</tr>
-				
-						<tr class="template">
-							<td class="hostname"><img> <span></span></td>
-							<td class="address"></td>
-							<td class="players"></td>
-							<td class="map"></td>
-							<td class="connect"><a class="btn btn-mini btn-danger">Connect</a></td>
-						</tr>
-				
-					</tbody>
-				
-				</table>
-				
+				<iframe src="http://q2servers.com/?mod=action&g=*&m=*&c=*&ac=*&s=&player=" title="aq2_serverlist" width="100%" height="90%"></iframe>
 			</div>
 			<div class="col-xs-2">
 				<h2>Upcoming Events</h2>
