@@ -54,9 +54,9 @@
 						self.addClass('active');
 					}
 
-					//self.find('.hostname img').attr('src', 'img/flags/' + row.country.toLowerCase() + '.gif').attr('alt', row.country).attr('title', row.country);
+					self.find('.hostname img').attr('src', 'img/flags/' + row.country.toLowerCase() + '.gif').attr('alt', row.country).attr('title', row.country);
 					self.find('.hostname span').text(row.name);
-					self.find('.address').text(row.address + ' : ' + row.port);
+					self.find('.address').text(row.address + ':' + row.port);
 					self.find('.players').text(row.numplayers + ' / ' + row.maxplayers);
 					self.find('.map').text(row.map);
 					self.appendTo(table);
@@ -145,7 +145,7 @@
 				
 					<tbody>
 						<tr class="template">
-							<td class="hostname"></td>
+							<td class="hostname"><img> <span></span></td>
 							<td class="address"></td>
 							<td class="players" style="font-weight: bold;"></td>
 							<td class="map"></td>
