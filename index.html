@@ -54,7 +54,7 @@
 						self.addClass('active');
 					}
 
-					self.find('.hostname img').attr('src', 'doc/assets/img/flags/' + row.country.toLowerCase() + '.gif').attr('alt', row.country).attr('title', row.country);
+					self.find('.hostname img').attr('src', 'doc/assets/img/flags/' + row.country + '.gif').attr('alt', row.country).attr('title', row.country);
 					self.find('.hostname span').text(row.name);
 					self.find('.address').text(row.address + ':' + row.port);
 					self.find('.players').text(row.numplayers + ' / ' + row.maxplayers);
