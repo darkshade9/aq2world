@@ -1,0 +1,166 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0 Win">
+  <BASE TARGET="_blank">
+  <TITLE>Pro Shop's Mailbag</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#911730" ALINK="#911730" VLINK="#911730">
+
+<BASEFONT SIZE=2>
+<P><IMG SRC="images/pagegraphics/mrcproshop.gif" WIDTH="622" 
+HEIGHT="129" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></P>
+
+<P><CENTER><B><FONT COLOR="#004080" SIZE="+4" FACE="Arial">TOP
+SECRET TRANSMISSION</FONT></B></CENTER></P>
+
+<P><CENTER><TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="4">
+  <TR>
+    <TD COLSPAN="3" BGCOLOR="#025883"><BASEFONT SIZE=2>
+    <B><FONT COLOR="#ffffff" FACE="Arial">A public place for those
+    numerous emails I get.</FONT></B></TD>
+     
+  </TR>
+  <TR>
+    <TD COLSPAN="3" BGCOLOR="#004080"><BASEFONT SIZE=2>
+    <P><CENTER><BR>
+    <TABLE WIDTH="80%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+      <TR>
+        <TD WIDTH="503" BGCOLOR="#0271a6"><BASEFONT SIZE=2>
+        <P><FONT COLOR="#ffffff" FACE="Verdana">From: Odd Reidar Boye</FONT></P>
+
+        <P><FONT COLOR="#ffffff" FACE="Verdana">When I play on teamplay
+        servers, I use the lasersight, and don't need to use any additional
+        crosshairs. But when I play DM, I would like to use one of the
+        crosshairs in Your Crosshair1.zip. The problem is that I can't
+        load the .pak file containing the crosshairs when running Q2.
+        ( I have renamed the file as told in the crosshair.txt (I call
+        it pak7.pak).)<BR>
+<BR>
+        If I type &quot;exec pak7.pak&quot; in the console, the reply
+        goes: &quot;execing pak7.pak.... - unknown command PACK&quot;<BR>
+<BR>
+        Of course, I can just restart the game, with the pak7.pak file
+        in the action directory, but since I also have two different
+        config-files for teamplay and DM, I would like to be able to
+        switch between the two just using the console. Is this possible,
+        and if so, how?<BR>
+<BR>
+        Could you also tell me what program that is used for making crosshairs.</FONT></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="503" BGCOLOR="#ffe8ce"><BASEFONT SIZE=2>
+        <P><FONT FACE="Verdana">Pak files are not executed... they are
+        extenstions of the Q2 directory structure in packed (compressed)
+        form. As such, any file named PAK0.PAK through PAK9.PAK will
+        be automatically loaded at boot time. Having the pak file in
+        the \baseq2 directory will affect Q2 and all mods, while having
+        it just in the \action directory will only affect the AQ2 mod.</FONT></P>
+
+        <P><FONT FACE="Verdana">I have re-released the crosshairs I did,
+        but I have cut them down to the most usable ones. You will find
+        this in the files section for download. However, creating your
+        own crosshairs is quite easy, and can make your screenshots pretty
+        interesting. (Mr Clark left some "Mr Clark Cam" crosshairs that I created
+        to do screenshots for the Pro Shop.)</FONT></P>
+
+        <P><FONT FACE="Verdana">You can find scads of crosshairs for
+        Q2 at <A HREF="http://members.aol.com/rjdriver/bullseye.htm">Bullseye</A>,
+        as well as some additional info on editing crosshairs. Basically,
+        all you need is Pak Explorer and a decent image editor. Pak files
+        work just like Zip files, and have embedded directory structure.
+        Make sure you examine how the three crosshairs are stored and
+        then begin editing the PCX files to your heart's content. Be
+        sure you do not change the palette, as Q2 has very specific colors
+        it uses. Also, color index 255 (the last color in the palette)
+        is used as the transparency color.</FONT></P>
+
+        <P><FONT FACE="Verdana">Note that only CH1.PCX, CH2.PCX and CH3.PCX
+        are used as crosshairs, any other numbers will be ignored. Also,
+        Pak files are included ascending numerically, so if you have
+        two crosshair paks loading, the one with the higher number will
+        be the one you get in the game.</FONT></P>
+
+        <P><FONT FACE="Verdana">I use <A HREF="files/pakexplr.zip" TARGET="_top">Pak
+        Explorer</A> and Corel Photo-Paint 8.0, but almost any other
+        image editor will work.</FONT></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="503" BGCOLOR="#0271a6" ALIGN="CENTER"><BASEFONT SIZE=2>
+        <IMG SRC="images/othergraphics/crosshairpak.gif" WIDTH="561"
+        HEIGHT="186" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3">
+</TD>
+      </TR>
+    </TABLE><BR>
+<BR>
+    <TABLE WIDTH="80%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+      <TR>
+        <TD WIDTH="516" BGCOLOR="#0271a6"><BASEFONT SIZE=2>
+        <P><FONT COLOR="#ffffff" FACE="Verdana">From: Anonymous</FONT></P>
+
+        <P><FONT COLOR="#ffffff" FACE="Verdana">How do I set up my computer
+        on the network as a dedicated AQ2 server?</FONT></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="516" BGCOLOR="#ffe8ce"><BASEFONT SIZE=2>
+        <P><FONT FACE="Verdana">Here is the command you have been looking
+        for... it is the command line option to run the server in dedcated
+        console-only mode.</FONT></P>
+
+        <P><FONT COLOR="#000057" FACE="Verdana">quake2 +set dedicated
+        1 +set game action +set deathmatch 1</FONT></P>
+
+        <P><FONT FACE="Verdana">The important part is the &quot;+set
+        dedicated 1&quot; which forces Q2 to load in text-based console
+        mode. Running a server any other way is simply not a terribly
+        good idea. You can also add a +exec parameter to force it to
+        load a certain config file on startup.</FONT></P>
+
+        <P><FONT FACE="Verdana">You will find a complete list of the
+        console commands on the Q2 pages I have linked in the newbie
+        section. There are already an awful lot of AQ2 servers out there,
+        so don't expect a sudden rush of players to a newly staked out
+        server from the get go.</FONT></TD> 
+      </TR>
+    </TABLE><BR>
+<BR>
+    <TABLE WIDTH="80%" BORDER="0" CELLSPACING="0" CELLPADDING="3">
+      <TR>
+        <TD WIDTH="516" BGCOLOR="#0271a6"><BASEFONT SIZE=2>
+        <P><FONT COLOR="#ffffff" FACE="Verdana">From: Nisse H.<BR>
+        Subject: action quake, CAPP</FONT></P>
+
+                <P><FONT COLOR="#ffffff" FACE="Verdana">How do you become listed 
+                  in the CAPP section?</FONT>
+              </TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="516" BGCOLOR="#ffe8ce"><BASEFONT SIZE=2>
+                <P><FONT FACE="Verdana">This is pretty easy... you just send me 
+                  a message (mrska@telefragged.com) and give me the six pieces 
+                  of data from the CAPP page that reflect your AQ2 persona. Or, 
+                  there is a link on the CAPP page to a &quot;JOIN CAPP&quot; 
+                  form. Fill it out, and click submit. I will post your information 
+                  as soon as I recieve it.</FONT></P>
+
+        <P><FONT FACE="Verdana">There is no test, no qualifications.
+        Your name will be listed as part of the directory of AQ2 players
+        in the CAPP section.</FONT></TD> 
+      </TR>
+    </TABLE><BR>
+    </CENTER></TD>
+  </TR>
+  <TR>
+      <TD HEIGHT="31" COLSPAN="3" BGCOLOR="#ffe8ce"><BASEFONT SIZE=2> <B><FONT COLOR="#004080" FACE="Arial">Mr. 
+        Ska can be reached at </FONT><FONT FACE="Arial"><A HREF="mailto:mrska@fear.net">mrska@fear.net</A></FONT></B></TD>
+     
+  </TR>
+  <TR>
+    <TD HEIGHT="31" COLSPAN="3" BGCOLOR="#025883"><BASEFONT SIZE=2>
+    <P ALIGN=RIGHT><FONT COLOR="#f5edad" SIZE="-1" FACE="Comic Sans MS">copyright
+    1998 - mr clark</FONT></TD>
+     
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>
