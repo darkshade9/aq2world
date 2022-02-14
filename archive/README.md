@@ -13,5 +13,5 @@ Run this inside of this directory (so it downloads site contents to the `website
 3. Open the main index.html page locally to access the site in your browser
 4. Assess if the site is navigable via clicking links, or if paths to assets or other sites are broken.
 5. Determine if links to images and files are missing entirely (no image exists, linked to another site that no longer exists, etc.) or if the path to the image is wrong
-    1. Tip: If an image is reference but does not exist in the archive.org scrape download, copy the full url of the image as it was linked and do a Wayback Machine search for that image.  I've had a good success rate of finding that image manually and then adding the image manually to the archived website directory.
+    1. Tip: If an image is referenced but does not exist in the archive.org scrape download, copy the full url of the image as it was linked and do a Wayback Machine search for that image.  I've had a good success rate of finding that image manually and then adding the image manually to the archived website directory.
 6. Update links to other hosted archives sites are updated (for example, changing a link from http://aqmd.telefragged.com to https://assets.aq2world.com/archive/websites/aqmd.telefragged.com) makes the link usable again
