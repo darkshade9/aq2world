@@ -23,3 +23,10 @@ Useful for finding files that the scraper did not get (it's possible they existe
     1. For example, changing a link from http://aqmd.telefragged.com to https://assets.aq2world.com/archive/websites/aqmd.telefragged.com makes the link usable again
 7. Resolve PHP/cgi-bin links
     1. Determine if the link is simply trying to reach another part of the website.  Some sites had PHP or cgi-bin logic to determine what to do when clicked, but if it's just referencing another part of the site, update the link to the html document instead
+
+## Things that may never work again
+
+* Any cgi-bin/PHP links
+    * Commonly used for message boards
+* Images or files that archive.org doesn't have
+* Any links to telefragged downloads or GameSpy
