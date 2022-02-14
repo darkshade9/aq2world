@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="description" content= "Gaming News and Resource sites.....">
+<meta name="keywords" content="newbie,fps,first person shooter,first person shootemup,quake,unrealhalflife,Counter Strike,actionquake,action,online,gaming,online gaming,teamgame,action help,information,tnn,forum,hosting,gbloke,rincewind,discussion zone">
+<meta name="copyright" content="Copyright © 2000 Actiongames">
+<title>TNN - News</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-language" content="en-GB">
+<link rel="stylesheet" type="text/css" href="http://actiongames.co.uk/default.css">
+<!-- Modified:  -->
+</head>
+<body>
+<div align="center">
+<table cellpadding="3" cellspacing="0" summary="None" class="mastertable">
+<tr>
+<td class="leftcolumn" align="center" valign="top"><br>
+<br>
+
+<table cellpadding="0" cellspacing="0" summary="None" class="paneltable">
+<tr>
+<td class="paneltitleleft">&nbsp;</td>
+<td class="paneltitle">Action Quake</td>
+<td class="paneltitleright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelleft">&nbsp;</td>
+<td class="panel">
+<a href="index.php">News</a><br>
+<a href="http://forums.actiongames.co.uk/">Forums</a><br><br>
+<a href="index.php?page_id=26">About TNN</a><br>
+<a href="index.php?page_id=76">Downloads</a><br>
+<a href="index.php?page_id=25">Guides</a><br>
+<a href="index.php?page_id=28">Links</a><br>
+<a href="index.php?page_id=44">LTK Depot</a><br>
+</td>
+<td class="panelright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelbottomleft" valign="bottom">&nbsp;</td>
+<td class="panelbottom">&nbsp;</td>
+<td class="panelbottomright" valign="bottom">&nbsp;</td>
+</tr>
+</table>
+
+<br>
+
+<table cellpadding="0" cellspacing="0" summary="None" class="paneltable">
+<tr>
+<td class="paneltitleleft">&nbsp;</td>
+<td class="paneltitle">Sites</td>
+<td class="paneltitleright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelleft">&nbsp;</td>
+<td class="panel">
+<a href="/">Actiongames</a><br>
+<a href="/tnn/">Action Quake</a><br>
+<a href="/cstrike/">Counter Strike</a><br>
+<a href="/rpg/">RPGs</a><br>
+</td>
+<td class="panelright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelbottomleft" valign="bottom">&nbsp;</td>
+<td class="panelbottom">&nbsp;</td>
+<td class="panelbottomright" valign="bottom">&nbsp;</td>
+</tr>
+</table>
+
+</td>
+<td class="centercolumn" align="center" valign="top">
+<table cellpadding="0" cellspacing="0" class="maintable">
+<tr>
+<td class="tnnmainlogo" colspan="3">&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" align="center" class="redbar">
+Dedicated to all things Action Quake. The Ultimate Quake 2 Mod</td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" class="maintitle">&nbsp;&nbsp;&nbsp;News</td>
+</tr>
+
+<tr>
+<td class="mainleft">&nbsp;</td>
+<td class="main"><br>
+
+<table width="100%" cellpadding="2" cellspacing="2">
+<tr>
+<td class="newsday">&nbsp;Recent Forum Posts&nbsp;</td>
+</tr>
+</table>
+<br>
+<div align="center">
+<table width="450" cellpadding="2" cellspacing="1" bgcolor="#003366">
+
+
+<tr>
+<td width="20" style="background-color: #EFEDED;"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/folder.gif" alt="icon"></td>
+<td align="left" width="410" style="background-color: #D6D6D6;"><a href="http://forums.actiongames.co.uk/viewtopic.php?t=6559" class="standard">aq2: spaq</a></td>
+<td align="right" width="20" style="background-color: #EFEDED;"><a href="http://forums.actiongames.co.uk/viewtopic.php?p=44285#44285"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/icon_latest_reply.gif" border="0" alt="Icon"></a></td>
+</tr>
+<tr>
+<td width="20" style="background-color: #EFEDED;"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/folder.gif" alt="icon"></td>
+<td align="left" width="410" style="background-color: #D6D6D6;"><a href="http://forums.actiongames.co.uk/viewtopic.php?t=6464" class="standard">brothers in arms</a></td>
+<td align="right" width="20" style="background-color: #EFEDED;"><a href="http://forums.actiongames.co.uk/viewtopic.php?p=43945#43945"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/icon_latest_reply.gif" border="0" alt="Icon"></a></td>
+</tr>
+<tr>
+<td width="20" style="background-color: #EFEDED;"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/folder.gif" alt="icon"></td>
+<td align="left" width="410" style="background-color: #D6D6D6;"><a href="http://forums.actiongames.co.uk/viewtopic.php?t=6442" class="standard">&lt;Evil&gt; Call of Duty: United Offensive Server</a></td>
+<td align="right" width="20" style="background-color: #EFEDED;"><a href="http://forums.actiongames.co.uk/viewtopic.php?p=43880#43880"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/icon_latest_reply.gif" border="0" alt="Icon"></a></td>
+</tr>
+<tr>
+<td width="20" style="background-color: #EFEDED;"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/folder.gif" alt="icon"></td>
+<td align="left" width="410" style="background-color: #D6D6D6;"><a href="http://forums.actiongames.co.uk/viewtopic.php?t=6438" class="standard">*Cleaners* Server Expansion</a></td>
+<td align="right" width="20" style="background-color: #EFEDED;"><a href="http://forums.actiongames.co.uk/viewtopic.php?p=43879#43879"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/icon_latest_reply.gif" border="0" alt="Icon"></a></td>
+</tr>
+<tr>
+<td width="20" style="background-color: #EFEDED;"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/folder.gif" alt="icon"></td>
+<td align="left" width="410" style="background-color: #D6D6D6;"><a href="http://forums.actiongames.co.uk/viewtopic.php?t=6441" class="standard">=UKE= Goes Dedicated</a></td>
+<td align="right" width="20" style="background-color: #EFEDED;"><a href="http://forums.actiongames.co.uk/viewtopic.php?p=43878#43878"><img src="http://forums.actiongames.co.uk/templates/ActionGames/images/icon_latest_reply.gif" border="0" alt="Icon"></a></td>
+</tr>
+
+</table>
+</div>
+<br>
+
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 1 October 2003&nbsp;</td></tr></table>
+
+<p><a name='91'></a><span class="title">The little train that could: TBM</span><span class="small">&nbsp;&nbsp;by smurphster at 19:39:18</span></p>
+<p>mSparks is still working hard on his bots for AQ2. A new version is out (1.7b), you can grab that from <a href="http://www.cam-direct.co.uk/ltk/" target="_BLANK" class="pagelink">the TBM site</a>. mSparks mentioned a new release coming soon as well. I&#39;ll have some eye candy for you soon!
+<br>
+<br>On a side note, I&#39;d like to have some RQ3 news on TNN as well. If you keep up with that scene, drop me an email and keep me (us) posted!</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Friday 21 February 2003&nbsp;</td></tr></table>
+
+<p><a name='75'></a><span class="title">AQ2 LTKTBM Edition</span><span class="small">&nbsp;&nbsp;by GBee at 14:04:25</span></p>
+<p>The following news comes from mSparks, developer of the ltktdbm bot.
+<br>
+<br><span class="small">Quote:</span><br><span class="quote">&quot;ltktbm is shortly becoming AQ2 LTKTBM Edition. This means you dont need any installation of aq2 or quake 2 to play, you get a powerfull new gfx and sound engine and of course the single player aspect of the ltktbm bots, along with the proven playability of AQ2.
+<br>We currently have an internal test release floating around and I have just released a patch to fix a few issues, We&#39;re getting very close to being complete, so, if anyone is interested in helping test before we release head on over to <a href="http://ltktbm.moddb.com" target="_BLANK" class="pagelink">The website</a> and keep an eye out for new news, I&#39;m hoping to get a mirror up for the 55MB alpha install ASAP.&quot;</span></p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 15 January 2003&nbsp;</td></tr></table>
+
+<p><a name='74'></a><span class="title">LTK/TBM Released</span><span class="small">&nbsp;&nbsp;by smurphster at 18:42:45</span></p>
+<p>mSparks has been working hard on his new project he calls The Borg Matrix (TBM). His long-term goal is to improve LTK bots. The current alpha version actually makes the bots less intelligent but don&#39;t brush this off. The new dll is far more stable than LTK 1.22 and has some added features that make running an LTK server sensible. You can now set how many clients are on the server (similar to Unreal Tournament) OR you can set how many bots to stay on each team. I am currently running a test server for the bots. The address is: smurph.dnsalias.com.
+<br>
+<br>Along with the first release, mSparks has also released improved route files and an application that compiles the files for you (the game will also compile these). Currently all of popuPak is supported but more maps are on their way. If you have old .ltk files, this program will compile them too (or the game will compile them but this takes several minutes). Head on over to the <a href="http://www.cam-direct.co.uk/ltk/ltknews.shtml" target="_BLANK" class="pagelink">LTK/TBM site</a> and have a look for yourself.</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Thursday 5 December 2002&nbsp;</td></tr></table>
+
+<p><a name='70'></a><span class="title">Murder 2 Released</span><span class="small">&nbsp;&nbsp;by smurphster at 15:58:05</span></p>
+<p>The boys at <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> released Murder 2 by FiReWaLKeR on Tuesday. I ran through the map and, although I think FiReWaLKeR could do better, the map is definitely the quality I like to see. So head on over to <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> and have a look.</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Tuesday 22 October 2002&nbsp;</td></tr></table>
+
+<p><a name='69'></a><span class="title">Murder 2?</span><span class="small">&nbsp;&nbsp;by smurphster at 21:54:35</span></p>
+<p>Idle from <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> received word that FiReWaLKeR[TDm] (creator of Murder) is currently working on Murder 2. Most AQ2 players are fans of the original Murder so after years of waiting, Murder 2 is a short way down the road. It will be another city map but don&#39;t frown, everyone is expecting it will live up to the original Murder which was far from the ordinary city map. For more information, visit <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a>.</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Monday 15 July 2002&nbsp;</td></tr></table>
+
+<p><a name='52'></a><span class="title">LTK Source Code</span><span class="small">&nbsp;&nbsp;by smurphster at 22:05:51</span></p>
+<p>After weeks of searching, we finally got a hold of the source code for LTK v1.22. A big thanks goes out to Idle of <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> for sending me the source.
+<br>
+<br>Head on over to the <a href="http://www.actiongames.co.uk/tnn/ltk/ltkdload.shtml" target="_BLANK" class="pagelink">LTK files</a> page to download the source.</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Tuesday 4 June 2002&nbsp;</td></tr></table>
+
+<p><a name='38'></a><span class="title">Map Contest Results</span><span class="small">&nbsp;&nbsp;by smurphster at 17:48:52</span></p>
+<p>Well it looks like <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> finally finished up their Work Force Mayhem Map Contest. They announced the winners this morning. They are:
+<br>
+<br><span style="font-weight:bold">6th Place</span>: <span style="font-style:italic">Doughnut of Death</span> by WaZZuP!
+<br><span style="font-weight:bold">5th Place</span>: <span style="font-style:italic">Sky Scraper</span> by GreyDeath, my friend and ex-partner in crime at AQMD
+<br><span style="font-weight:bold">4th Place</span>: <span style="font-style:italic">Building Site</span> by Sabotuer
+<br><span style="font-weight:bold">3rd Place</span>: <span style="font-style:italic">Nineteen Eighty-Four</span> by Suco
+<br><span style="font-weight:bold">2nd Place</span>: <span style="font-style:italic">Morwell</span> by Gallop
+<br><span style="font-weight:bold">1st Place</span>: <span style="font-style:italic">Silitex: Renovation</span> by my good friend Spear
+<br>
+<br>Congratulations to all the participants. Head on over to <a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> to read a bit about the maps. I highly recommend downloading them all. They&#39;re all very impressive.</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Saturday 4 May 2002&nbsp;</td></tr></table>
+
+<p><a name='15'></a><span class="title">AQ:ETE 4.6c is RELEASED!</span><span class="small">&nbsp;&nbsp;by Black Monk at 07:42:46</span></p>
+<p>This mainly fixes some minor Windows bugs for Windows-based servers.  Go ahead and snag it for your servers, eh!  No functionality changes whatsoever but there are both Linux and Windows binaries available.
+<br>
+<br><a href="http://aqdt.fear.net/" target="_BLANK" class="pagelink">http://aqdt.fear.net/</a></p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Friday 19 April 2002&nbsp;</td></tr></table>
+
+<p><a name='14'></a><span class="title">AQMD map contest extended</span><span class="small">&nbsp;&nbsp;by smurphster at 17:48:12</span></p>
+<p><a href="http://aqmd.action-web.net" target="_BLANK" class="pagelink">AQMD</a> has extended the deadline for their mapping contest. All maps must be in by April 30th, at 12:00PM EST. I&#39;ve seen a few maps and they&#39;re looking good. Keep up the hard work!</p>
+<table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Tuesday 16 April 2002&nbsp;</td></tr></table>
+
+<p><a name='13'></a><span class="title">LTK Route Files</span><span class="small">&nbsp;&nbsp;by GBee at 21:42:48</span></p>
+<p>I&#39;ve uploaded the old LTK route files previously available from the LTK Depot. The files can be reached through the LTK link on the left. The Bot files and the four LTK route bundles are not yet listed.
+<br>
+<br>The list will be updated and improved when I next find the time. Please do not link to these files directly from your own sites.</p>
+
+
+
+<p align="right" class="small"><a href="/cms/admin.php?function=post_news&amp;site=2">Post News</a></p>
+<br>
+ </td>
+<td class="mainright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="maincrleft">&nbsp;</td>
+<td class="maincopyright">&copy; Copyright Actiongames.co.uk
+2001</td>
+<td class="maincrright">&nbsp;</td>
+</tr>
+</table>
+</td>
+<td class="rightcolumn" align="center" valign="top"><img src=
+"http://images.actiongames.co.uk/actiongames/aglogo.gif" alt=
+"actiongames.co.uk" width="88" height="87"> <br>
+<br>
+<br>
+<!-- Ad Starts Here -->
+<div align="center">
+<SCRIPT LANGUAGE="javascript" src="http://www.qksrv.net/1e-5t3q"> </SCRIPT><br>
+<span class="small" style="color:#FFFFFF;">Advert</span>
+</div>
+<!-- Ad Ends Here -->
+<br>
+
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
