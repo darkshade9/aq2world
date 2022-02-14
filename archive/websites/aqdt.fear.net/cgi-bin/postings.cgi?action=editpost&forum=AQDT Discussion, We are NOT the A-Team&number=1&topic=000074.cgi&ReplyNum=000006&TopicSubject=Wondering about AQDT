@@ -1,0 +1,134 @@
+<HTML><HEAD>
+<TITLE>
+AQDT Message Board - Edit this post
+</TITLE>
+
+</HEAD>
+ <BODY bgcolor="#000000"  text="#ffffff" link="#ff0000" alink="#0000ff" vlink="#a8a8a8">
+<FONT SIZE="2" FACE="Verdana, Arial" color="#ffffff">
+
+<center>
+<table border=0>
+<TR><TD>
+<A HREF="Ultimate.cgi?action=intro&BypassCookie=true"><IMG SRC="http://aqdt.fear.net/ctbbb/aqdtsm.jpg"  BORDER=0></A></td>
+<td valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" color="#ffffff">
+<B>
+Forum: <FONT COLOR="#a8a8a8">AQDT Discussion, We are NOT the A-Team </FONT>
+<BR>
+Topic: <FONT COLOR="#a8a8a8">Wondering about AQDT</FONT>
+</B>
+</FONT>
+
+</td></tr></table>
+<P>
+<FORM ACTION="postings.cgi" NAME="REPLIER" METHOD="POST">
+
+<table border=0 cellpadding=4 border=0 cellspacing=1 width=95%>
+<tr bgcolor="#003333"><TD COLSPAN=2>
+<FONT SIZE="1" FACE="Verdana, Arial" color="#ffffff"><B>Only forum leaders (Superfly, Flavor Flav) or the person that posted this message may edit or delete this message.  Only registered users may edit/delete posts!</B></FONT></td></tr>
+<TR bgcolor="#303030"><TD colspan=2><FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff">
+<INPUT TYPE="CHECKBOX" NAME="DeletePost" VALUE="yes">Delete?  To delete this post, check this box.<BR></font>
+</td></tr>
+<tr bgcolor="#303030"><td>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff">Your UserName:</FONT></td>
+<td>
+<INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=25 MAXLENGTH=25>
+</td></tr>
+<tr bgcolor="#303030">
+<td>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff">Your Password:</FONT></td>
+<td><INPUT TYPE="PASSWORD" NAME="Password" VALUE=""  SIZE=13 MAXLENGTH=13>&nbsp;&nbsp;<FONT SIZE="1" FACE="Verdana, Arial"><A HREF="Ultimate.cgi?action=lostpw">Forget your password?</A></font>
+</td></tr>
+<TR bgcolor="#303030"><TD valign=top>
+<FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ffffff">Message to Edit:</FONT><p>
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#a8a8a8">
+*HTML is ON<BR>
+*UBB Code is ON<BR>
+</p></font></td>
+<td><FONT SIZE="1" FACE="Verdana, Arial" COLOR="#a8a8a8">Originally posted by PG BUND on 03-30-99 05:39 PM<BR></FONT>
+<TEXTAREA NAME="EditedMessage" ROWS=10 COLS=45 WRAP="VIRTUAL">Hal9000, it's one thing to add a hook in an existing function (there is no other way to add code though), another is the internal structure of your own code. Yet another example: The join command is defined within a_team.c as "Join_f". If I was Zuccini or Fireblade, I'd added the command to a_cmds.c and called it Cmd_Join_f. If some prototypes are needed within other modules, just export them within a_cmds.h or (marked as functions of a_cmds.c) within a_game.h. Another example is adding prototypes within g_local.h. No comment where the function is to find. The id developers had marked where to find the functions. Sometimes (not often  :)) a prototype is declared within a_game.h, but the function is within a_team.c. Some prototypes dont even have a function and are never used. It is said within the qdevels board (and I have to agree) that if a change within the original source took about 3 modifications, it took on AQ2 source about 15. Just to be clear: not only because of complexity of AQ2, because of the spreaded and sometimes misleading programing style. As you said, the original Quake2 code has also some structure problems, but IMO it is clear where to find what function and what task the function is doing. Also you wont find variables not within a structure so you may easily add some more fields. Just consider adding more team variables: you'll have to add team1_xxx and team2_xxx. Or you want to add a third team: team3_score, team3_total... not to mention changing all functions with team checking. I could add more examples if you want to, but...  :)
+
+As I said above: It is a great piece of work Fireblade and Zuccini had done, and I would thank'em personally if I ever get the chance. 
+But to add major parts of new code without restructuring the old one, you'll be in danger to use the same coding style and add bugs without knowing it.
+
+I allready "restructured" some parts of the original source, like adding a team_t structure and changing the functions (where it was possible) to be prepared for more than two teams. Not that I want to create a mod with 3 or more teams, just to have the option to do it and adding some more team variables without the probs mentioned above.
+
+My former teacher said: "never try to invent something, when it is allready invented". If a "restructured" code is allready "invented", I'd like to use it. If not, I have to "invent" it...(but alone?  :))
+
+Thanx,
+
+PG BUND
+</TEXTAREA>
+</td></tr>
+</table>
+
+<p>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="submitedit">
+<INPUT TYPE="HIDDEN" NAME="TopicSubject" VALUE="Wondering about AQDT">
+<INPUT TYPE="HIDDEN" NAME="forum" VALUE="AQDT Discussion, We are NOT the A-Team">
+<INPUT TYPE="HIDDEN" NAME="ReplyNum" VALUE="000006">
+<INPUT TYPE="HIDDEN" NAME="number" VALUE="1">
+<INPUT TYPE="HIDDEN" NAME="topic" VALUE="000074.cgi">
+
+ <FONT SIZE="2" FACE="Verdana, Arial" COLOR="#ff0000">
+
+</font>
+<p>
+<INPUT TYPE="Submit" NAME="SUBMIT" VALUE="Submit Now">
+<INPUT TYPE="RESET" NAME="RESET" VALUE="Clear Fields">
+</form>
+<P>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+var dc = document.cookie;
+var testUserName = getCookie("UserName");
+var testPassword = getCookie("Password");
+
+if (document.cookie) {
+
+	if (testUserName == null) {  
+document.REPLIER.UserName.focus();
+	} else {
+	document.REPLIER.UserName.value = getCookie("UserName");
+document.REPLIER.Password.value = getCookie("Password");
+document.REPLIER.EditedMessage.focus();
+	}
+}  else {
+document.REPLIER.UserName.focus();
+}
+
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));        }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+
+<FONT SIZE="1" FACE="Verdana, Arial" COLOR="#FF0000">*If HTML and/or <A HREF="http://aqdt.fear.net/ctbbb/ubbcode.html" target=_new>UBB Code</A> are enabled, this means you can use use HTML and/or UBB Code in your message.</FONT>
+
+<P>
+<B><FONT SIZE="2" FACE="Verdana, Arial">
+<A HREF="mailto:bill@fear.net">Contact Us</A> | <A HREF="http://aqdt.fear.net/main2.html" target=_top>AQDT: The Webpage</A>
+</B></FONT>
+<P>
+<FONT COLOR="#dedfdf" size="1" FACE="Verdana, Arial">
+<P>
+Powered by: 
+Ultimate Bulletin Board, Version 5.38b<BR>&copy; Madrona Park, Inc., 1998-1999.
+<br><br>
+</FONT>
+</CENTER></font>
+
+</body></html>
+

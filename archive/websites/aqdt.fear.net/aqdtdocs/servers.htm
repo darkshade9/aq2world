@@ -1,0 +1,263 @@
+<HTML>
+
+<HEAD>
+<TITLE>Action Quake Developers Team</TITLE>
+<LINK rel="stylesheet" type="text/css" href="aqdt.css" title="aqdt">
+</HEAD>
+
+<BODY BGCOLOR="#333333" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" RIGHTMARGIN="0">
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
+ <TR HEIGHT="40" VALIGN="bottom">
+  <TD WIDTH="726" ALIGN="right">
+   <A HREF="http://aqdt.fear.net/main2.html">
+   <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
+   </A>
+  </TD>
+  <TD WIDTH="41" ALIGN="bottom" BACKGROUND="side2.gif">
+<TABLE WIDTH="41" CELLSPACING="0" CELLPADDING="0" BORDER="0" BACKGROUND="top1.gif" ALIGN="bottom">
+ <TR HEIGHT="28">
+  <TD WIDTH="41"><SPACER TYPE="block" HEIGHT="28" WIDTH="41">
+  </TD>
+ </TR>
+</TABLE>
+  </TD>
+ </TR>
+</TABLE>
+
+<TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+ <TR VALIGN="top">
+  <TD WIDTH="120" BACKGROUND="corner5.gif" ALIGN="left">.</TD>
+  <TD WIDTH="30" BGCOLOR="#660000">.</TD>
+  <TD WIDTH="570" BGCOLOR="#660000">
+   <H2><i>Got Package?</i>
+  </TD>
+  <TD WIDTH="41" BACKGROUND="top2.gif"><SPACER TYPE="block" HEIGHT="100%" WIDTH="41">
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD BACKGROUND="side.gif">
+   <P ALIGN="right">
+    <A HREF="team.htm">The Team</A><BR>
+   </P>
+   <H3><U>Projects</U></H3>
+   <P ALIGN="right">
+    <A HREF="esp.htm">Espionage</A><BR>
+    <A HREF="script.htm">Esp. Scripting</A><BR>
+    <A HREF="te.htm">Tournament</A><BR>
+    <A HREF="arena.htm">Action Arena</A><BR>
+    <A HREF="lowlag.htm">Lowlag</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm"><I>Server Info</I></A><BR>
+   </P>
+    <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
+  </TD>
+  <TD>
+   <IMG SRC="corner2.gif" width="12" height="18">
+  </TD>
+  <TD>
+   <P><H5>How to set up an AQ:ETE server</H5></P>
+
+<P>This is the question most often asked.  First, may I draw your attention these sites:</P>
+
+<P><a href="http://linuxquake.com/howto/" target=_blank>
+http://linuxquake.com/howto/</a> (setting up Q2 in Linux)<BR>
+<a href="http://www.planetquake.com/q2s-faq/" target=_blank>
+http://www.planetquake.com/q2s-faq/</a> (Q2 server FAQ)<BR>
+<a href="http://www.planetquake.com/console/commands/quake_2.html" target=_blank>
+http://www.planetquake.com/console/commands/quake_2.html</a> (Q2 commands)<BR>
+<a href="http://www.planetquake.com/q2admin/" target=_blank>
+http://www.planetquake.com/q2admin/</a> (Q2 server management/anti-cheating)<BR>
+<a href="http://www.dfsoftware.com/ServerWatch/" target=_blank>
+http://www.dfsoftware.com/ServerWatch/</a> (Q2 server management/auto-starting)<BR>
+<a href="http://www.xoanan.com/gamehost/default.htm" target=_blank>
+http://www.xoanan.com/gamehost/default.htm</a> (Q2 server management/starting)<BR>
+<a href="http://www.ra.is/AQ/servers/" target=_blank>
+http://www.ra.is/AQ/servers/</a> (Tricks'n'Tips section, Q2 server auto-restarting)</P>
+
+<HR>
+
+<P>This next part is <B>VERY IMPORTANT</B> for <B>ALL QUAKE 2 SERVER ADMINS</B>!  It was taken from a news post made on the <a href="http://www.aq2tng.barrysworld.net/" target=_blank>AQ:TNG</A> website.  This is not the work of the AQDT but this is such an important issue I am reposting this information here and linking to these files in our <B>Downloads</B> section as well:</P>
+
+<P>Over the past few days, many (A)Q2 servers have fallen victim to a bug in the Quake2 server code. This bug can be exploited by using a modified Quake2 client and can be used to get the value of any cvar on the server, including the rcon_password.</P>
+
+<P>This problem is simple to fix.  Get the 3.21 source and change line 481 in sv_users.c from<BR>
+<I>Cmd_TokenizeString (s, true);</I> to <I>Cmd_TokenizeString (s, false);</I> and then compile it.<BR>
+(thanks to Redix for posting this on the 
+<a href="http://www.quakesrc.org/" target=_blank>Quake Standards Group forums</A>)</P>
+
+<P>To make things easier for server admins, we [the AQ:TNG team] have made the server binaries and source available for download from the <a href="http://www.barrysworld.com/" target=_blank>BarrysWorld</A> FTP.</P>
+
+<P>Here are the files:<BR>
+<a href="ftp://ftp.barrysworld.com/pub/games/quake2/unofficial_patches/linux/quake2-3.21-unofficial_server-linux.tar.gz" target=_blank>Linux Binary</A><BR>
+<a href="ftp://ftp.barrysworld.com/pub/games/quake2/unofficial_patches/win32/quake2-3.21-unofficial_server-win32.zip" target=_blank>Win32 Binary</A><BR>
+<a href="ftp://ftp.barrysworld.com/pub/games/quake2/unofficial_patches/quake2-3.21-unofficial_server-source.zip" target=_blank>Quake 2 3.21 Source + fix</A><BR>
+(the binary packages only include the executables)</P>
+
+<HR>
+
+<P>For Linux-based servers, you can have one main install and each port you want to set up can use symbolic links to the files in that one install.  This way you can manage each port independently and each port can log to a separate qconsole.log file.</P>
+
+<P>For Windows-based servers, you need to have a separate install for each port you want to run.  This is the only way to get each port to log to a separate qconsole.log file.  It takes up more space than a Linux-based server.</P>
+
+<P>For both Linux and Windows, I highly recommend installing Q2Admin.</P>
+
+<P>AQ:ETE comes with some pre-made .cfg files for you to use.  Simply edit the files, change the server name and the rcon password, and BOOM you have a pre-made Arena or Espionage server.  There's no premade .cfg files for Deathmatch, Teamplay, Tournament Edition, or Espionage Tournament Edition modes.  Generally, those are easier to figure out... and to get into TE mode or ETE mode all you need to do is set the "matchplay" cvar and for OGL matches, the "ogl" cvar as well.  Use rcon to change the map and voila, you are now in TE or ETE mode.</P>
+
+<P>Sample startup lines for an ETE server are given below, first for a Linux server and then for a Windows server:</P>
+
+<P>./quake2 +set game action +set port 27910 +set dedicated 1 +exec espserver.cfg</P>
+
+<P>"quake2.exe +set game action +set port 27910 +set dedicated 1 +exec espserver.cfg"</P>
+
+<P>Of course, for different ports you can change the "+set port 27910" part and change the .cfg to any .cfg you wish to use by altering the "+exec espserver.cfg" part.</P>
+
+<P>This just about wraps up setting up a generic AQ:ETE server.  The section below deals with specific AQ:ETE cvars.  It is broken down by gameplay mode so that you can have a quick reference.  More detailed information on each cvar can be found in the <B>Server Info</B> sections in the <A HREF="index.html">ETE Docs</A> section.</P>
+
+<HR>
+
+<P>The AQ:ETE cvars listed below will have some overlap between sections.  The ones that apply for each gameplay mode are listed for that gameplay mode.  In many cases, one particular cvar will apply to many different gameplay modes and will thus be listed multiple times.  Though there is some duplication, at least this way you can just quickly look up whatever gameplay mode you're interested in and you have all the cvars you need right in front of you instead of having to hunt around in different sections.</P>
+
+
+<P>The following cvars are generally applicable to <B>all</B> gameplay modes:</P>
+
+<UL>
+<LI>useLowlagSounds &lt;0|1&gt; (default: 1) 
+<LI>escore &lt;0|1&gt; (default: 1) 
+<LI>allowMPELPSuicide &lt;0|1&gt; (default: 1) 
+<LI>allow_vote &lt;0|1&gt; (default: 0) 
+<LI>e_voteWait &lt;secs&gt; (default: 120) 
+<LI>allowVotemap &lt;0|1&gt; (default: 1) 
+<LI>votemapPercentage &lt;percentage&gt; (default: 51) 
+<LI>e_enhancedSlippers &lt;0|1&gt; (default: 0) 
+<LI>e_allRadio &lt;0|1&gt; (default: 1) 
+<LI>weaponBan &lt;bans&gt; (default: 0)
+<LI>e_AllowNoclip &lt;0|1&gt; (default: 0)
+<LI>sv orphan &lt;player num&gt; - to immediately remove a player from his team 
+<LI>sv silence &lt;player num&gt; &lt;seconds&gt; - prevents a player from speaking for a time 
+<LI>sv matchtime - display elapsed time (works for any mode with a timelimit set)
+<LI>sv teamscore - displays team scores in the console to remotely follow a teamplay match 
+</UL>
+
+<P>The following cvars are mainly applicable to <B>Deathmatch</B> mode:</P>
+
+<UL>
+<LI>spawnProtect &lt;0|1&gt; (default: 0) 
+<LI>useLowlagSounds &lt;0|1&gt; (default: 0) 
+<LI>allowMPELPSuicide &lt;0|1&gt; (default: 1) 
+<LI>allow_vote &lt;0|1&gt; (default: 0) 
+<LI>e_voteWait &lt;secs&gt; (default: 120) 
+<LI>allowVotemap &lt;0|1&gt; (default: 1) 
+<LI>votemapPercentage &lt;percentage&gt; (default: 51) 
+<LI>e_enhancedSlippers &lt;0|1&gt; (default: 0) 
+<LI>weaponBan &lt;bans&gt; (default: 0)
+<LI>e_AllowNoclip &lt;0|1&gt; (default: 0)
+<LI>sv silence &lt;player num&gt; &lt;seconds&gt; - prevents a player from speaking for a time 
+<LI>sv matchtime - display elapsed time (works for any mode with a timelimit set)
+</UL>
+
+<P>The following cvars are mainly applicable to <B>Teamplay</B> mode:</P>
+
+<UL>
+<LI>useLowlagSounds &lt;0|1&gt; (default: 1) 
+<LI>escore &lt;0|1&gt; (default: 1) 
+<LI>allowMPELPSuicide &lt;0|1&gt; (default: 1) 
+<LI>allow_vote &lt;0|1&gt; (default: 0) 
+<LI>e_voteWait &lt;secs&gt; (default: 120) 
+<LI>allowVotemap &lt;0|1&gt; (default: 1) 
+<LI>votemapPercentage &lt;percentage&gt; (default: 51) 
+<LI>e_enhancedSlippers &lt;0|1&gt; (default: 0) 
+<LI>e_allRadio &lt;0|1&gt; (default: 1) 
+<LI>weaponBan &lt;bans&gt; (default: 0)
+<LI>e_AllowNoclip &lt;0|1&gt; (default: 0)
+<LI>sv orphan &lt;player num&gt; - to immediately remove a player from his team 
+<LI>sv silence &lt;player num&gt; &lt;seconds&gt; - prevents a player from speaking for a time 
+<LI>sv matchtime - display elapsed time (works for any mode with a timelimit set)
+<LI>sv teamscore - displays team scores in the console to remotely follow a teamplay match 
+</UL>
+
+<P>The following cvars are mainly applicable to <B>Arena</B> mode:</P>
+
+<UL>
+<LI>arena &lt;0|1&gt; (default: 0) 
+<LI>useLowlagSounds &lt;0|1&gt; (default: 1) 
+<LI>escore &lt;0|1&gt; (default: 1) 
+<LI>allowMPELPSuicide &lt;0|1&gt; (default: 1) 
+<LI>allow_vote &lt;0|1&gt; (default: 0) 
+<LI>e_voteWait &lt;secs&gt; (default: 120) 
+<LI>allowVotemap &lt;0|1&gt; (default: 1) 
+<LI>votemapPercentage &lt;percentage&gt; (default: 51) 
+<LI>e_enhancedSlippers &lt;0|1&gt; (default: 0) 
+<LI>weaponBan &lt;bans&gt; (default: 0)
+<LI>e_AllowNoclip &lt;0|1&gt; (default: 0)
+<LI>sv orphan &lt;player num&gt; - to immediately remove a player from his team 
+<LI>sv silence &lt;player num&gt; &lt;seconds&gt; - prevents a player from speaking for a time 
+<LI>sv matchtime - display elapsed time (works for any mode with a timelimit set)
+<LI>sv teamscore - displays team scores in the console to remotely follow a teamplay match 
+</UL>
+
+<P>The following cvars are mainly applicable to <B>Tournament Edition</B> mode:</P>
+
+<UL>
+<LI>matchplay &lt;0|1&gt; (default: 0) 
+<LI>ogl &lt;0|1&gt; (default: 0) 
+<LI>useLowlagSounds &lt;0|1&gt; (default: 0) 
+<LI>escore &lt;0|1&gt; (default: 1) 
+<LI>allowMPELPSuicide &lt;0|1&gt; (default: 1) 
+<LI>allow_vote &lt;0|1&gt; (default: 0) 
+<LI>e_voteWait &lt;secs&gt; (default: 120) 
+<LI>allowVotemap &lt;0|1&gt; (default: 1) 
+<LI>votemapPercentage &lt;percentage&gt; (default: 51) 
+<LI>e_enhancedSlippers &lt;0|1&gt; (default: 0) 
+<LI>e_allRadio &lt;0|1&gt; (default: 1) 
+<LI>weaponBan &lt;bans&gt; (default: 0)
+<LI>sv orphan &lt;player num&gt; - to immediately remove a player from his team 
+<LI>sv silence &lt;player num&gt; &lt;seconds&gt; - prevents a player from speaking for a time 
+<LI>sv matchtime - display elapsed time (works for any mode with a timelimit set)
+<LI>sv teamscore - displays team scores in the console to remotely follow a teamplay match 
+</UL>
+
+<P>The following cvars are mainly applicable to <B>Espionage</B> mode:</P>
+
+<UL>
+<LI>matchplay &lt;0|1&gt; (default: 0)
+<LI>ogl &lt;0|1&gt; (default: 0)
+<LI>scripts &lt;0|1&gt; (default: 0) 
+<LI>useLowlagSounds &lt;0|1&gt; (default: 0) 
+<LI>escore &lt;0|1&gt; (default: 1) 
+<LI>allowMPELPSuicide &lt;0|1&gt; (default: 1) 
+<LI>allow_vote &lt;0|1&gt; (default: 0) 
+<LI>e_voteWait &lt;secs&gt; (default: 120) 
+<LI>allowVotemap &lt;0|1&gt; (default: 1) 
+<LI>votemapPercentage &lt;percentage&gt; (default: 51) 
+<LI>e_mustVolunteer &lt;0|1&gt; (default: 1) 
+<LI>e_maxVolunteers &lt;people&gt; (default: 0) 
+<LI>e_enhancedSlippers &lt;0|1&gt; (default: 0) 
+<LI>e_carrierReturn &lt;0|1&gt; (default: 0) 
+<LI>e_allRadio &lt;0|1&gt; (default: 1) 
+<LI>e_useDefaultScenario &lt;0|1|2|3&gt; (default: 0)
+<LI>e_defaultScenarioName &lt;"any valid scenario name"&gt; (default: "Assassinate The Leader")
+<LI>weaponBan &lt;bans&gt; (default: 0)
+<LI>sv_author &lt;0|1&gt; (default: 0) 
+<LI>sv scenarios - Lists the maps and associated scenarios in rotation on the server 
+<LI>sv goto &lt;scn num&gt; - changes to the referenced scenario number 
+<LI>sv orphan &lt;player num&gt; - to immediately remove a player from his team 
+<LI>sv silence &lt;player num&gt; &lt;seconds&gt; - prevents a player from speaking for a time 
+<LI>sv matchtime - display elapsed time (works for any mode with a timelimit set)
+<LI>sv teamscore - displays team scores in the console to remotely follow a teamplay match 
+</UL>
+
+  </TD>
+ </TR>
+ <TR VALIGN="top">
+  <TD><IMG SRC="corner3.gif" width="120" height="18"></TD>
+ </TR>
+</TABLE>
+
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,31 @@
+SCENARIO "Clanmatch Capture the Briefcase"
+{
+CONTINUOUS
+TARGETS
+{
+  TARGET_FLAG1_SPAWN "Red Base"
+  TARGET_FLAG2_SPAWN "Blue Base"
+  TARGET_OBJECT "Black Package" MODEL "models/items/bcase/g_bc1.md2" PIC "i_bc1" VWEP "w_bc1.md2"
+  TARGET_OBJECT "Silver Package" MODEL "models/items/bcase/g_bc2.md2" PIC "i_bc2" VWEP "w_bc2.md2"
+}
+TEAM "Team Red"
+{
+  SKIN "male/chow"
+  WEAPONS "all"
+  RESPAWN TIME 15 AWAY_FROM "Blue Base" 1
+  GOALS
+  {
+RETRIEVE "Black Package" FROM "Blue Base" TO "Red Base" WITH "Silver Package" TOUCH_RETURN
+  }
+}
+TEAM "Team Blue" 
+{
+  SKIN "male/bluebeard"
+  WEAPONS "all"
+  RESPAWN TIME 15 AWAY_FROM "Red Base" 1
+  GOALS
+  {
+RETRIEVE "Silver Package" FROM "Red Base" TO "Blue Base" WITH "Black Package" TOUCH_RETURN
+  }
+}
+}

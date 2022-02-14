@@ -1,0 +1,465 @@
+<html>
+<head>
+<title>Action Quake: Tournament Edition</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" background="back.jpg" text="#FFFFFF" link="#FF9900">
+<div align="left">
+  <table border="0" width="500" bgcolor="#000000" align="center">
+    <tr> 
+      <td nowrap> 
+        <p align="center"><font face="Verdana" color="#FFFF00"><strong>Action 
+          Quake2: Tournament Edition<br>
+          Version 1.2a</strong></font> 
+      </td>
+    </tr>
+  </table>
+  <div align="center"><font face="Verdana" size="-1" color="#FFFFFF"><font size="-3">Document 
+    Updated: 8-8-1999</font><b><font size="-3"><br>
+    </font><br>
+    </b></font> </div>
+</div>
+<p align="center"><font face="Verdana" size="-3" color="#FFFFFF"><b>Official Modification:</b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><br>
+  <img src="ogl.gif" width="88" height="31"> </b></font></p>
+<p align="left"><font face="Verdana" color="#FFFFFF"><b><u><strong>Table of Contents:</strong></u></b></font></p>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong><a href="#about">1. 
+  About AQ:TE </a></strong></b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><strong> 
+  <br>
+  <a href="#changes">2. Changes from 1.0 to 1.2a</a><a href="#features"><br>
+  </a></strong></b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><strong><a href="#features">3. 
+  Included Features</a><br>
+  <a href="#server">4. New Server Variables</a><br>
+  <a href="#client">5. New Client Commands</a><br>
+  <a href="#playing">6. Playing a match</a><br>
+  <a href="#bugs">7. Known Bugs</a><br>
+  <a href="#credits">8. Credits and Thanks</a></strong><br>
+  <a href="#download">9. Download and Distribution</a><br>
+  </b></font></p>
+<div align="left">
+  <table border="0">
+    <tr> 
+      <td bgcolor="#000000"><font face="Verdana"><a name="about"></a><strong><font
+    color="#FFFF00">1. About AQ:TE</font></strong></font></td>
+    </tr>
+  </table>
+  <font face="Verdana" size="-1" color="#FFFFFF"><b><br>
+  </b></font></div>
+<p align="left"><b><font face="Verdana" size="-1">Hi.</font></b></p>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>AQ:TE 
+  is a teamplay match based version of AQ2. The idea is to create a version which 
+  makes it difficult if not impossible to cheat successfully, as well as making 
+  the process of setting up a match on a 3rd party server much easier. The new 
+  features are designed to make the process of playing a match easier and less 
+  controversial than it has been in the past.<br>
+  <br>
+  Everything has been ported from 1.52. The port is a TRUE port, meaning that 
+  every single feature and functionality in 1.52 is now in TE as well. Consult 
+  1.52 documentation for those features (friendly fire, etc.).</strong></b></font></p>
+<p align="left"><b><strong><font face="Verdana" size="-1" color="#FFFFFF">Note 
+  that there is still a known issue awaiting resolution: the server still falls 
+  into a infinite loop when waiting for a vote sometimes. A fix is underway, but 
+  given the LONG delays that have been extremely annoying, I felt that the code 
+  was stable enough to release.</font></strong></b></p>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>-inghaw<br>
+  </strong></b></font></p>
+<div align="left"> 
+  <table border="0" align="left" width="315">
+    <tr> 
+      <td bgcolor="#000000"> 
+        <div align="left"><font face="Verdana"><a name="changes"></a><font color="#FFFF00"><strong>2. 
+          Changes from 1.0 to 1.2a</strong></font></font></div>
+      </td>
+    </tr>
+  </table>
+</div>
+<ul>
+  <div align="left"></div>
+  <blockquote> 
+    <div align="left"> 
+      <p>&nbsp;</p>
+    </div>
+  </blockquote>
+</ul>
+<div align="left"> 
+  <p><b><font face="Verdana" size="-1">All features from AQ 1.52 have been ported 
+    to TE.</font></b></p>
+  <p><b><font face="Verdana" size="-1">Various bugfixes:<br>
+    *** Fixed the bug where spectators are locked to team eyes only when matchplay 
+    0.<br>
+    *** Fixed various other bugs, improved flow of code<br>
+    *** A million other fixes<br>
+    *** Refined mapvoting code</font></b></p>
+  <p><b><font face="Verdana" size="-1">Improved, cleaner scoreboard:<br>
+    *** Fixed random garbled text messages.<br>
+    *** Less overflows and space usage<br>
+    *** Displays matchtime (time actually played, and not servertime, making timelimits 
+    truly accurate)<br>
+    *** Fixed bug where it displays &quot;ghosts&quot;<br>
+    *** Now highlights only players on your team who are alive, and not the other 
+    team </font></b> <br>
+  </p>
+  <p><b><font face="Verdana" size="-1">Added support for tgren, irvision, and 
+    noscore dynamic variables.</font></b></p>
+</div>
+<p><b><font face="Verdana" size="-1">Various refinements to the referee code, 
+  including forcing the referee to be not on a team. Referee now also able to 
+  kick players, as well as pause the match, as well as silence any player.</font></b></p>
+<p><b><font face="Verdana" size="-1">The first truly accurate timekeeping: matchtime 
+  counter now pauses itself when a matched is paused, so that it reflects only 
+  time played.</font></b></p>
+<p><b><font face="Verdana" size="-1">Added a &quot;silence&quot; command (see 
+  Section 4 for details).</font></b></p>
+<div align="left">
+  <table border="0">
+    <tr> 
+      <td bgcolor="#000000"><font face="Verdana"><a name="features"></a><font color="#FFFF00"><strong>3. 
+        Included features</strong></font></font></td>
+    </tr>
+  </table>
+  
+</div>
+<ul>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Team 
+      captains and optional match referee</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>New 
+      settings menu allows parties to change variables in the brand new dynamic 
+      variable structure (see settings command description in section 5 for which 
+      variables are supported.)</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Map 
+      voting by captains</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Limited 
+      chasecam options: Normal chase, team only, or team eyes only</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Ability 
+      to limit public chat or silence any player</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Spectators 
+      are dealt with using a cvar</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Team 
+      substitutes (team spectators)</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Dynamic 
+      team name and skin changing</strong></b></font></p>
+  </li>
+  <li> 
+    <div align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Full 
+      features from 1.52, complete with backwards compatability via &quot;matchplay 
+      0&quot; </strong></b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><br>
+      <br>
+      </b></font></div>
+  </li>
+  <li> 
+    <div align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Various 
+      scoreboard refinements:<br>
+      * Displays pings and a composite &quot;ping rating&quot; based on pings 
+      of active players (non-substitutes)<br>
+      * Displays amount of match time elapsed (actual play time, not servertime)<br>
+      * Displays names of captains, referee, and team readiness<br>
+      * Does not highlight other team's names, making it impossible to tell how 
+      many people are alive on the opposite team, to further prevent cheating<br>
+      * Separate section for substitutes and spectators</strong></b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><strong> 
+      </strong></b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><strong><br>
+      <br>
+      </strong></b></font></div>
+  </li>
+  <li> 
+    <div align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b>Easy OGL 
+      compliance or backwards compliance to 1.52 with a single cvar</b></font></div>
+  </li>
+</ul>
+<div align="left">
+  <table border="0">
+    <tr> 
+      <td bgcolor="#000000"><font face="Verdana"><a name="server"></a><strong><font
+    color="#FFFF00">4. Server Variables</font></strong></font></td>
+    </tr>
+  </table>
+  
+</div>
+<ul>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>matchplay 
+      (default: 0)<br>
+      - If set to 1, enables all the client commands and options.</strong></b></font></p>
+  </li>
+  <li> 
+    <div align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b>ogl (default: 
+      0)<br>
+      - If set to 1, locks in server settings according to OGL specifications. 
+      NOTE: Settings OGL 1 automatically makes teamplay and matchplay 1.<br>
+      </b></font></div>
+  </li>
+</ul>
+<div align="left">
+  <table border="0">
+    <tr> 
+      <td bgcolor="#000000"> 
+        <p align="left"><font face="Verdana"><a name="client"></a><strong><font
+    color="#FFFF00">5. Client Commands</font></strong></font><strong> </strong> 
+      </td>
+    </tr>
+  </table>
+  
+</div>
+<ul>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>vote 
+      &lt;mapname&gt;<br>
+      &nbsp;&nbsp;&nbsp; - Vote for &lt;mapname&gt;. Captains-only command.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>votelist<br>
+      &nbsp;&nbsp;&nbsp; - List the percentages of votes to each map, and how 
+      many who have voted. Also lists the maps that can be voted on.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>captain<br>
+      &nbsp;&nbsp;&nbsp; - Call captain of your team. If you already are captain, 
+      then you resign from the job.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>referee 
+      [&lt;name&gt;]<br>
+      &nbsp;&nbsp;&nbsp; - Choose match referee (can only be done by team captains). 
+      If no argument is given, then the name of the current referee is printed 
+      (if any). Captains-only command.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>ready<br>
+      &nbsp;&nbsp;&nbsp; - Can only be used by captains and the match referee, 
+      and tells the server that your team is ready to play. The game starts when 
+      both captains have typed this (and referee if there is one). Captains and 
+      referees only.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>settings 
+      [variable] [value]<br>
+      &nbsp;&nbsp;&nbsp; - Without an argument, brings up the settings menu. From 
+      the settings menu, you can change the various in-game dynamic variables. 
+      Currently supported variables:<br>
+      * roundlimit<br>
+      * timelimit<br>
+      * roundtimelimit<br>
+      * fraglimit<br>
+      * maxplayers<br>
+      * spectators allowed / not allowed<br>
+      * messagemode1 enable/disable<br>
+      * chasecam mode (Normal, Team Only, Team Eyes Only)<br>
+      * tgren (0, 1, 2, 3)<br>
+      * irvision on/off<br>
+      * display score enable/disable<br>
+      &nbsp;&nbsp;&nbsp; - With an argument, displays that variable. e.g., &quot;settings 
+      timelimit&quot; displays the timelimit.<br>
+      &nbsp;&nbsp;&nbsp; - With 2 arguments, sets the first argument to the second 
+      argument. e.g, &quot;settings timelimit 20&quot; sets the timelimit to 20.<br>
+      Captains and referees only.</strong></b></font><br>
+    </p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>sub<br>
+      &nbsp;&nbsp;&nbsp; - Toggle between substitute/playing modes. Type 'sub' 
+      to become a sub if you are an active player, or to become an active player 
+      if you are a substitute and your team is under the limit.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>teamname 
+      [&lt;team name&gt;]<br>
+      &nbsp;&nbsp;&nbsp; - Changes the team name. Captains-only command.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>teamskin 
+      [&lt;model/skin&gt;]<br>
+      &nbsp;&nbsp;&nbsp; - Changes the team model/skin. Captains-only command.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>matchtime<br>
+      &nbsp;&nbsp;&nbsp; - Shows the elapsed time in match.</strong></b></font></p>
+  </li>
+  <li> 
+    <p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Please 
+      note the ignore/uningore functions will be in an upcoming release.</strong></b></font></p>
+  </li>
+  <li><b><strong><font face="Verdana" size="-1" color="#FFFFFF">silence [playername]<br>
+    &nbsp;&nbsp;&nbsp; - Silences the particular player from messagemode1 (if 
+    messagemode1 is enabled from the settings menu). Captains may silence anyone 
+    on their team. Referees may silence anyone they like.</font></strong></b></li>
+</ul>
+<div align="left">
+  <table border="0" bgcolor="#000000">
+    <tr> 
+      <td><font face="Verdana"><a name="playing"></a><strong><font
+    color="#FFFF00">6. Playing a Match</font></strong></font></td>
+    </tr>
+  </table>
+  <font face="Verdana" size="-1" color="#FFFFFF"><b><br>
+  </b></font></div>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>The 
+  server operator must first set the &quot;matchplay&quot; variable to 1, and<br>
+  then manually restart the map (or move to another map) for the changes<br>
+  to take effect.<br>
+  <br>
+  Once the matchplay is on, each clan should join one team. One person<br>
+  needs to call captain by typing &quot;captain&quot; at the console. This person<br>
+  will then have a * by their name in the scoreboard, and a message will<br>
+  flash across the center of everyone's screen saying that someone is now<br>
+  captain of a particular team. Both teams need a captain before the<br>
+  match can start.<br>
+  <br>
+  The captain has various abilities. He can change his teamname and<br>
+  teamskin to whatever he pleases, as well as nominate a referee (this<br>
+  will be discussed in a bit). The captains can also, through agreement,<br>
+  change the server settings. Each captain is able to type &quot;settings&quot;<br>
+  at the console to bring up the settings menu, and the changes can be<br>
+  made from this menu by 1 captain alone. Of course, both captains should,<br>
+  at this point, have the settings menu open, so that they can see<br>
+  whatever changes the other captain makes. Once the server settings are<br>
+  correct, both captains should type &quot;ready&quot; at the console to indicate<br>
+  they are ready, and then the round countdown will start, and the settings<br>
+  cannot be changed after this point, unless one captain &quot;un-readys&quot; 
+  himself<br>
+  (by typing ready again at the console), at which point the countdown ends.<br>
+  <br>
+  This is not the perfect system. If captain A closes the menu with one<br>
+  set of settings, and types &quot;ready&quot; at the console, and captain B<br>
+  secretly goes back and changes the settings before he himself types ready, then<br>
+  the server settings will be those that captain B chose, even though<br>
+  Captain A was under a different impression at the time he typed &quot;ready.&quot;<br>
+  If you don't understand this, that's fine, because this isn't something you<br>
+  should be doing anyways.<br>
+  <br>
+  There are 2 safeguards against this. First, 10 seconds before the first<br>
+  round actually starts, the match settings will be printed across the screen<br>
+  of every player. This gives the captains an effective last-second review<br>
+  of the server settings. If they notice that something has been<br>
+  changed, they should IMMEDIATELY un-ready themselves to prevent the actual<br>
+  match from starting. Remember, most leagues and ladders require that<br>
+  the start of play signifies agreement of all server settings. So don't<br>
+  get duped, keep your eyes open.<br>
+  <br>
+  The second safeguard is much safer. There is an option to elect a 3rd party<br>
+  spectator to be a &quot;match referee.&quot; The way this is done is by each 
+  captain<br>
+  typing &quot;referee [name]&quot; at the console. Once this person is elected 
+  referee,<br>
+  they cannot become un-refereed unless they disconnect, so be careful.<br>
+  <br>
+  The match referee has overarching power. He can unilaterally change<br>
+  server settings (once a referee has been elected, the captains no longer<br>
+  have power to control settings). In order for the match to start when<br>
+  a referee is present, both captains AND the referee must type &quot;ready&quot; 
+  <br>
+  at the console for the match to begin. At any point in the match when<br>
+  a captain or referee unreadys himself, the next round will not begin. This<br>
+  effectively gives all powers in the game a veto vote. Use it sparingly.<br>
+  <br>
+  Clan leaders are encouraged to elect trusted referees in matches. This<br>
+  ensures that no underhanded funny business goes on with the server<br>
+  settings. Also note that the administrative functions of the match do<br>
+  not require rcon power.<br>
+  <br>
+  Once the match is in play, type &quot;matchtime&quot; at the console to see 
+  how<br>
+  much time has elapsed from the time that the first round started. Note<br>
+  that the mod automatically adjusts timelimits for time not played-- that<br>
+  is to say, if the captains agree to a 20-minute timelimit match, *20 minutes<br>
+  of play will actually occur*, since the mod starts measuring ttime from the<br>
+  time the first round was started.<br>
+  <br>
+  At the end of each map, when the timelimit/roundlimit is hit, and the server<br>
+  moves on to the next map, each captain should type &quot;vote [map]&quot; at 
+  their<br>
+  console to vote for whichever map they want to come up next in the<br>
+  rotation. If the 2 captains both vote for the same map, that map<br>
+  will come up in the rotation. Not too difficult.<br>
+  <br>
+  (note that the server settings agreed to on the previous map<br>
+  should carry over to the next map).<br>
+  <br>
+  Anyways, that was way too long, but sometimes you just have to spell<br>
+  things out for some people.<br>
+  <br>
+  Also, note the new improved scoreboard reflects pings, scores, as well<br>
+  as whether or not each team has typed &quot;ready,&quot; and whether or not<br>
+  there are spectators.<br>
+  <br>
+  -- inghaw<br>
+  </strong></b></font></p>
+<div align="left">
+  <table border="0">
+    <tr> 
+      <td bgcolor="#000000"> 
+        <p align="left"><a name="bugs"></a><font face="Verdana"
+    color="#FFFF00"><strong>7. Known Bugs</strong></font> 
+      </td>
+    </tr>
+  </table>
+  <font face="Verdana" size="-1" color="#FFFFFF"><b><br>
+  </b></font></div>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Known 
+  bugs:<br>
+  ===========<br>
+  Problem: We believe the voting mechanism still spams the server sometimes from 
+  an inaccurate vote counting.<br>
+  Resolution: Restart the server.<br>
+  <br>
+  Please email comments, bug reports, etc. to<br>
+  <a href="mailto:blackcross@planetquake.com">blackcross@planetquake.com</a>, 
+  <a
+href="mailto:homer@fear.net">homer@fear.net</a> and <a href="mailto:inghaw@fear.net">inghaw@fear.net</a></strong></b></font></p>
+<div align="left">
+  <table border="0">
+    <tr> 
+      <td bgcolor="#000000"> 
+        <p align="left"><font face="Verdana"><a name="credits"></a><font
+    color="#FFFF00"><strong>8. Credits and Thanks</strong></font></font> 
+      </td>
+    </tr>
+  </table>
+  <font face="Verdana" size="-1" color="#FFFFFF"><b><br>
+  Original coder: <i>Black Cross [NL]</i>, part of the AQ:Gangsters team<br>
+  Drunken Code Monkey: <i>Homer(AQDT)</i>, also does AQ:Espionage<br>
+  Guy who tries to look important, but really isn't: <i>inghaw(AQDT)</i>, also 
+  does...this document...doh!<br>
+  <br>
+  </b></font></div>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>Also 
+  Thanks to:<br>
+  ==========<br>
+  Original Action 1.52 source:<br>
+  Fireblade and Zucchini from GENO <br>
+  </strong></b></font><font face="Verdana" size="-1" color="#FFFFFF"><b><strong><br>
+  Bug Fixes:<br>
+  hal[9k] - AQDT<br>
+  Mike [NW] - AQ:G-Team</strong></b></font></p>
+<div align="left">
+  <table border="0" align="left">
+    <tr> 
+      <td bgcolor="#000000"> 
+        <div align="left"><font face="Verdana"><a name="download"></a><strong><font
+    color="#FFFF00">9. Download and Distribution</font></strong></font></div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+  </div>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b>AQ:TE is available 
+  for download from the AQDT <a href="files.html">Files</a> section.<strong> </strong></b></font></p>
+<p align="left"><font face="Verdana" size="-1" color="#FFFFFF"><b><strong>- AQDT 
+  Staff, <!--webbot bot="Timestamp" startspan
+S-Type="EDITED" S-Format="%m/%d/%y" -->06/15/99<!--webbot bot="Timestamp" i-checksum="14088"
+endspan --></strong> </b></font></p>
+</body>
+</html>

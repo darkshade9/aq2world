@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+	<LINK REL="stylesheet" HREF="main.css" TYPE="text/css">
+<SCRIPT LANGUAGE="Javascript">
+var speed = 50
+var pause = 2000
+var timerID = null
+var bannerRunning = false
+var ar = new Array()
+ar[0] = "Action Quake: Espionage"
+ar[1] = "Get it today at: http://aqdt.fear.net/ !!!!"
+var currentMessage = 0
+var offset = 0
+function stopBanner(){
+	if (bannerRunning)
+		clearTimeout(timerID)
+	bannerRunning = false
+}
+function startBanner(){
+	stopBanner()
+	showBanner()
+}
+function showBanner(){
+	var text=ar[currentMessage]
+	if (offset < text.length) {
+		if (text.charAt(offset) == " ")
+			offset++
+		var partialMessage = text.substring(0, offset +1)
+		window.status = partialMessage
+		offset++
+		timerID = setTimeout("showBanner()",speed)
+		bannerRunning = true
+	}else{
+		offset = 0
+		currentMessage++
+		if (currentMessage == ar.length)
+			currentMessage = 0
+		timerID = setTimeout("showBanner()",pause)
+		bannerRunning = true
+	}
+}
+</SCRIPT>
+
+
+</HEAD>
+<BODY onLoad="startBanner()" bgcolor="#000000">
+<table width="95%" border="0" align="center">
+  <tr>
+    <td><img src="banner1.jpg" width="300" height="80"></td>
+    <td>
+      <div align="center"><img src="banner2.jpg" width="225" height="32"></div>
+    </td>
+  </tr>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,31 @@
+SCENARIO "Clanmatch desertctb"
+{
+CONTINUOUS
+TARGETS
+{
+  TARGET_AREA "Blue Base" ( -1852 -658 -125 ) ( -1822 -628 -85 ) MODEL "models/objects/dmspot/tris.md2"
+  TARGET_AREA "Red Base" ( 1889 -640 -125 ) ( 1919 -610 -85 ) MODEL "models/objects/dmspot/tris.md2"
+  TARGET_OBJECT "Black Package" MODEL "models/items/bcase/g_bc1.md2" PIC "i_bc1" VWEP "w_bc1.md2"
+  TARGET_OBJECT "Silver Package" MODEL "models/items/bcase/g_bc2.md2" PIC "i_bc2" VWEP "w_bc2.md2"
+}
+TEAM "Team Red"
+{
+  SKIN "male/chow"
+  WEAPONS "all"
+  RESPAWN TIME 15 AWAY_FROM "Blue Base" 4
+  GOALS
+  {
+  RETRIEVE "Black Package" FROM "Blue Base" TO "Red Base" WITH "Silver Package" TOUCH_RETURN
+  }
+}
+TEAM "Team Blue" 
+{
+  SKIN "male/bluebeard"
+  WEAPONS "all"
+  RESPAWN TIME 15 AWAY_FROM "Red Base" 4
+  GOALS
+  {
+  RETRIEVE "Silver Package" FROM "Red Base" TO "Blue Base" WITH "Black Package" TOUCH_RETURN
+  }
+}
+}

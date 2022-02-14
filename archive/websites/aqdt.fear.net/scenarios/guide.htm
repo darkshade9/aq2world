@@ -1,0 +1,189 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="main.css"></head>
+
+<body bgcolor="#003333">
+<p><font face="Arial, Helvetica, sans-serif" size="4" color="#FFFF00">Action Quake: 
+  Espionage Capture the Briefcase Clanmatch Guide</font> </p>
+<p><b><font color="#FF0000" face="Arial, Helvetica, sans-serif" size="2">Contents</font></b></p>
+<ul>
+  <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">PREFACE 
+    </font></li>
+  <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">Server-Side 
+    Settings </font> 
+    <ul>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">Suggested 
+        Number of Players</font></li>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">Roundlimit</font></li>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">dmflags</font></li>
+    </ul>
+  </li>
+  <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">Script 
+    Settings </font> 
+    <ul>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">CONTINUOUS 
+        setting</font></li>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">TARGET_AREA 
+        settings</font></li>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">TARGET_OBJECT 
+        settings</font></li>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">RESPAWN 
+        settings</font></li>
+      <li><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2">RETRIEVE 
+        settings</font></li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<p><font color="#009900" face="Arial, Helvetica, sans-serif" size="2"><b>PREFACE</b></font></p>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">With the 
+  creation of AQ:E has come an unprecedented amount of flexibility. Thanks to 
+  Hal's amazing scripting language, one game of Capture the Briefcase could be 
+  as fresh, innovative, and different from another game. While this is great, 
+  it can create some confusion amongst clanleaders, when trying to negotiate certain 
+  settings. This has given rise to the need of &quot;standard scripts&quot; and 
+  settings that are pre-fabricated with the specific intention of creating the 
+  most dynamic, strategic, and fun clanmatch. Emphasized in these scripts and 
+  settings are fairness in spawnpoints (thus the need for standard flagspawns--please 
+  use the scripts we provide--this is talked about below), and a fairness in the 
+  different types of respawn rules. Keep in mind that this not any type of official 
+  document, it was written by a regular schmoe, me. Nothing listed below is an 
+  officially endorsed recommendation of AQDT, nor are we the Scenario Depot. I 
+  have, however, in the course of developing this, consulted various sources. 
+  Many thanks to Hal, fex, Imrik, Homosaurus, Homer, Deathmark, Satan (GF, not 
+  the real devil =] ), pot-shot, Mm2000, LtHawkins, and others who have offered 
+  productive advice.</font></p>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">This document 
+  is meant as an explanation of why things in the scripts we provide are the way 
+  they are.</font></p>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">inghaw</font></p>
+<p><font color="#009900" face="Arial, Helvetica, sans-serif" size="2"><b>Server-Side 
+  Settings</b></font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>Suggested 
+    Number of Players</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">Well, any 
+  clanmatch needs to be at least some decent size, and while the general acceptance 
+  of a 4v4 minimum for regular teamplay can easily be fitted to a CTB game, keep 
+  in mind that generally, CTB games should be larger than regular teamplay games. 
+  The reasoning is simply that there are more roles for people to play; it's hard 
+  to have a strategy if more people die (and thus more randomness is created), 
+  and it's all around more chaotic. More is generally better, even though we have 
+  to make concessions to server limitations.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  5v5, minimum</font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>Roundlimit</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">Use of the 
+  CONTINUOUS variable means that gameplay is non-stop. And although testers agree 
+  that the captures can rack up pretty quickly in public games, they don't do 
+  so in clanmatches. It's much harder to capture. In the first ever scrim on teamjungle, 
+  a game to 15 round lasted 90 minutes.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  8 rounds</font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>dmflags</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">The standard 
+  settings should suffice. SPAWNFARTHEST is recommended to be kept ON. This makes 
+  your group respawn farthest away from someone when they kill you. Avoids massive 
+  &quot;respawn wars&quot; that prevent teams from regrouping.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  528</font></p>
+<p><font color="#009900" face="Arial, Helvetica, sans-serif" size="2"><b>Script 
+  Settings</b></font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>CONTINUOUS</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">Having everybody 
+  die when someone captures the flag not only interrupts the flow of the gameplay, 
+  but cuts out a whole element of strategy (instead of consistently holding your 
+  base, you want to kill their guy who has the package while you remain alive...more 
+  akin to ATL). The general feeling is that the entire game should be kept continuous.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  CONTINUOUS</font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>TARGET_AREA</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">Concerning 
+  maps without CTF spawn points, there are will be a standard set of coordinates 
+  for the different flagspawns on maps. These can be found in each map's respective 
+  script file on this site, and should not be altered. For instance, the flagspawns 
+  on teamjungle should be the same across all clanmatches. This is to prevent 
+  completely biased, unfair, or otherwise out-of-whack real matches from going 
+  down. The bounding box for TARGET_AREA should be the standard 30x30x30, with 
+  the blaster markers marking them off with a dmspawnpoint model in their place, 
+  regardless of whether or not the map came with included CTF spawnpoints.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  Use the script files provided to keep 30x30x30 flagspawns in the standard positions.</font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>TARGET_OBJECT</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">The model 
+  used should be the two briefcase models provided by AQDT. VWEP should always 
+  be on; GLOW or FOLLOW should not be enabled.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  TARGET_OBJECT [packagename] MODEL &quot;models/items/bcase/g_bc[x].md2&quot; 
+  PIC &quot;i_bc[x]&quot; VWEP &quot;w_bc[x].md2&quot;</font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>RESPAWN 
+    settings</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">This is 
+  where the issue for clanmatches gets sticky. The option of INSTANT is ruled 
+  out, for clear reasons. FRACTION [TOGETHER] and TIME both have their advantages. 
+  With FRACTION TOGETHER, you spawn in groups, which would make things much easier 
+  to coordinate roles, and would lead to fun and interesting pushes into and out 
+  of enemy territories. However, this creates the propensity for players to control 
+  the respawn rate of their teammates; a simple &quot;kill&quot; command or a 
+  jump off a building could be a huge strategic boost to a team by reviving their 
+  members. This is more than just a frivolous objection; killing yourself to revive 
+  the team is not something that is part of the Action Quake theme (as some have 
+  pointed out, there is a difference between dying to save the team, and dying 
+  to revive them). With the dead able to talk to the alive, this becomes a tangible 
+  problem. Another problem is people killing themselves if out of ammo, since 
+  the &quot;dead time&quot; can be short. While some say this would not occur 
+  in clanmatches, others have said that clanmatches will only fuel the perfection 
+  of this strategy of methodical suicide. TIME, while avoiding this problem, is 
+  only marginally better, since it prevents people from respawning together, and 
+  eliminates a chunk of the respawning teamwork. However, until there is a plausible 
+  fix for this problem, the drawbacks of exploiting the FRACTION respawn seem 
+  to out-balance (be worse than) the drawbacks of not spawning together. After 
+  all, a well-coordinated team should be able to regroup their players relatively 
+  quickly. TIME also affords the strategic possibility of being able to entirely 
+  kill of the other team, something which should be rewarded, instead of having 
+  a static number of players on the field at the same time.</font></p>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">On another 
+  issue, the enemy should not be able to respawn inside your base. This creates 
+  too much of an element of luck, rather than strategic pushes into bases. AWAY_FROM 
+  should be kept on.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  TIME 15 AWAY_FROM [enemy base] 1</font></p>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">As a side-note, 
+  Hal and Imrik had some good suggestions for better remedies. PERIODIC is a possibility, 
+  with everybody respawning every 30 seconds, regardless of how long you have 
+  been dead. Everybody would spawn together, creating more teamwork, and there 
+  are no possibilities to exploit respawning. Imrik had probably the best suggestion, 
+  which I'll just call option IMRIK here. You would have to wait 10 seconds before 
+  the fraction respawn includes you, and if no one else dies, you respawn in 30 
+  seconds. (Times could vary. Whatever. The principle is really good.) Hopefully 
+  we will see this in an upcoming AQ:E update. Until then, TIME will have to suffice.</font></p>
+<blockquote> 
+  <p><font color="#00CCCC" face="Arial, Helvetica, sans-serif" size="2"><i>RETRIEVE 
+    settings</i></font></p>
+</blockquote>
+<p><font color="#CCCCCC" face="Arial, Helvetica, sans-serif" size="2">The agreement 
+  here seems to be that standard CTF rules should be adopted, rather than something 
+  like Team Fortress. Your flag should return on touch, and your flag should be 
+  at home, rather than TF capture rules, where your flag does not return on touch 
+  (it returns after a set amount of time), and where your flag does not need to 
+  be at home to capture.</font></p>
+<p><font color="#FFFF00" face="Arial, Helvetica, sans-serif" size="2">Recommendation: 
+  RETRIEVE [enemy package] FROM [enemy base] TO [friendly base] WITH [friendly 
+  package] TOUCH_RETURN</font></p>
+</body>
+</html>

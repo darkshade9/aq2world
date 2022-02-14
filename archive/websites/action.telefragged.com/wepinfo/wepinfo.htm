@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>AQ2 - Weapon Information</TITLE>
+<!-- This page is Copyright Mike "Snipe" Gazda, 1998. No part may be re-copied in any way without prior consent to the author. Thank you. -->
+</HEAD>
+<BODY BGCOLOR="black">
+<br>
+<center><img src="weptitle.jpg"></center>
+<br>
+<img src="choose.jpg" align="left">
+<br>
+<br>
+<script>
+img1on = new Image;                
+img1on.src = "mk23on.jpg";         
+img1off = new Image;        
+img1off.src = "mk23off.jpg";
+img2on = new Image;
+img2on.src = "shotgunon.jpg";
+img2off = new Image;
+img2off.src = "shotgunoff.jpg";
+img3on = new Image;
+img3on.src = "mp5on.jpg";
+img3off = new Image;
+img3off.src = "mp5off.jpg";
+img4on = new Image;
+img4on.src = "cannonon.jpg";
+img4off = new Image;
+img4off.src = "cannonoff.jpg";
+img5on = new Image;
+img5on.src = "sniperon.jpg";
+img5off = new Image;
+img5off.src = "sniperoff.jpg";
+img6on = new Image;
+img6on.src = "m4on.jpg";
+img6off = new Image;
+img6off.src = "m4off.jpg";
+img7on = new Image;
+img7on.src = "specialon.jpg";
+img7off = new Image;
+img7off.src = "specialoff.jpg";
+function img_act(imgName){imgOn = eval(imgName + "on.src");document [imgName].src = imgOn;} function img_inact(imgName) {imgOff = eval(imgName + "off.src");document [imgName].src = imgOff; } <!-- MG -->
+</script>
+
+<table align="center">
+<tr>
+<td><a href="pistol/pistol.htm" onmouseover="img_act('img1'); return true;" onmouseout="img_inact('img1')"><img src="mk23off.jpg" border="0" name="img1"></a></td><td><a href="shotgun/shotgun.htm" onmouseover="img_act('img2'); return true;" onmouseout="img_inact('img2')"><img src="shotgunoff.jpg" border="0" name="img2"></a></td><td><a href="mp5/mp5.htm" onmouseover="img_act('img3'); return true;" onmouseout="img_inact('img3')""><img src="mp5off.jpg" border="0" name="img3"></a></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<td><a href="cannon/cannon.htm" onmouseover="img_act('img4'); return true;" onmouseout="img_inact('img4')"><img src="cannonoff.jpg" border="0" name="img4"></a></td><td><a href="sniper/sniper.htm" onmouseover="img_act('img5'); return true;" onmouseout="img_inact('img5')"><img src="sniperoff.jpg" border="0" name="img5"></a></td><td><a href="m4/m4.htm" onmouseover="img_act('img6'); return true;" onmouseout="img_inact('img6')"><img src="m4off.jpg" border="0" name="img6"></a></td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<center><a href="special/special.htm" onmouseover="img_act('img7'); return true;" onmouseout="img_inact('img7')"><img src="specialoff.jpg" border="0" name="img7"></a></center>
+</BODY>
+</HTML>

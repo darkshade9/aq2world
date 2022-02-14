@@ -1,0 +1,94 @@
+game action
+gamedir action
+//
+hostname "AQ: Espionage 4.6b ETE"
+rcon_password *CHANGE-ME*
+//
+set timelimit 20
+set fraglimit 0
+set roundlimit 0
+set roundtimelimit 0
+set maxclients 16
+//
+set public 1
+setmaster master0.gamespy.com 206.96.221.2
+// gamespy and telefragged
+//
+set teamplay 1
+set deathmatch 1
+//
+// 1056964608 = Best protection against proxies, secure p_modified mode
+// 520093696 = Best protection against proxies, no secure p_modified mode
+// 117440512 = Best protection against proxies, able to use other dmflags
+// 117440512 = 16777216 + 33554432 + 67108864 = (no blood filter, explosion filter, or commands)
+// 117440520 = 117440512 + 8 = (no falling damage)
+// 117440768 = 117440512 + 256 = (no friendly fire)
+// 117441024 = 117440512 + 512 = (spawn furthest)
+// 117440776 = 117440512 + 8 + 256 = (no falling damage and no friendly fire)
+// 117441032 = 117440512 + 8 + 512 = (no falling damage and spawn furthest)
+// 117441280 = 117440512 + 256 + 512 = (no friendly fire and spawn furthest) *** used below ***
+// 117441288 = 117440512 + 8 + 256 + 512 = (no falling damage, no friendly fire, spawn furthest)
+//
+set dmflags 117441280
+set actionmaps 1
+// 
+// AQ:Arena, AQ:TE, and AQ:Espionage modes are set here
+//
+set arena 0
+set ogl 0
+set matchplay 0
+set scripts 1
+//
+set timeout 50
+set motd_time 8
+set skipmotd 0
+set noscore 0
+//
+set maxteamkills 4
+set tkbanrounds 10
+set twbanrounds 5
+//
+set tgren 1
+set weapons 1
+set items 1
+set allweapon 0
+set allitem 0
+//
+set allow_download 1
+set allow_download_players 1
+set allow_download_models 1
+set allow_download_sounds 1 
+set allow_download_maps 1
+//
+set bholelimit 0
+set splatlimit 0
+set shelloff 1
+set ir 1
+set radiolog 1
+//
+set e_maxVolunteers 2
+set escore 1
+set e_mustVolunteer 1
+set allowMPELPSuicide 1
+set useLowlagSounds 1
+set e_allRadio 1
+set e_useDefaultScenario 1
+set e_defaultScenarioName "Assassinate The Leader"
+set e_carrierReturn 1
+set e_enhancedSlippers 1
+set allowVotemap 1
+set votemapPercentage 51
+set allow_vote 1
+set e_voteWait 120
+set sv_author 0
+set e_AllowNoclip 0
+set e_DefaultModels 0
+set weaponBan 0
+//
+set admin YOU s
+set email billgates@microsoft.com s
+set website http://aqdt.fear.net/ s
+//
+set logfile 2
+// Set this to be the first map in action.scp
+map ctbcity
