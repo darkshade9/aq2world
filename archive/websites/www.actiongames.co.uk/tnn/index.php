@@ -3,11 +3,11 @@
 <head>
 <meta name="description" content= "Gaming News and Resource sites.....">
 <meta name="keywords" content="newbie,fps,first person shooter,first person shootemup,quake,unrealhalflife,Counter Strike,actionquake,action,online,gaming,online gaming,teamgame,action help,information,tnn,forum,hosting,gbloke,rincewind,discussion zone">
-<meta name="copyright" content="Copyright © 2000 Actiongames">
+<meta name="copyright" content="Copyright ï¿½ 2000 Actiongames">
 <title>TNN - News</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="content-language" content="en-GB">
-<link rel="stylesheet" type="text/css" href="http://actiongames.co.uk/default.css">
+<link rel="stylesheet" type="text/css" href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/tnn/default.css">
 <!-- Modified:  -->
 </head>
 <body>
@@ -212,7 +212,7 @@ Dedicated to all things Action Quake. The Ultimate Quake 2 Mod</td>
 </table>
 </td>
 <td class="rightcolumn" align="center" valign="top"><img src=
-"http://images.actiongames.co.uk/actiongames/aglogo.gif" alt=
+"aglogo.gif" alt=
 "actiongames.co.uk" width="88" height="87"> <br>
 <br>
 <br>
