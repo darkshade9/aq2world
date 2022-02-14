@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+	
+	<head>
+		<title>
+			Actor's Guild - Developer Area
+		</title>
+	</head>
+	
+<BODY TEXT="#454545" BGCOLOR="#808080" LINK="#0000ff" VLINK="#800080" ALINK="#ff0000">
+		<div align="center">
+			<center>
+				<table WIDTH="480">
+					<tr>
+						<td ALIGN="CENTER" COLSPAN="3">
+							<img SRC="../../images/headers/developer_area.gif" BORDER="0"
+							ALT="Developer Area" WIDTH="422" HEIGHT="66">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p ALIGN="center">
+							<a HREF="http://action.telefragged.com" TARGET="_top"><img SRC="../../images/advertisments/small_action_quake2_now.gif" BORDER="0" ALT="Get Action Quake Now!" WIDTH="88" HEIGHT="31"></a>
+							<br>
+							<font SIZE="-1" FACE="Arial">
+								Action Quake Main Homepage
+							</font>
+						</td>
+						<td>
+							<p ALIGN="center">
+							<a HREF="http://www.mapdepot.net" TARGET="_top"><img SRC="../../images/advertisments/small_action_q2_map_depot.gif" BORDER="0" ALT="Come get all the maps you'll need at Action Q2 Map Depot" WIDTH="91" HEIGHT="29"></a>
+							<br>
+							<font SIZE="-1" FACE="Arial">
+								Our Sister Site Lots of Maps
+							</font>
+						</td>
+						<td>
+							<p ALIGN="center">
+							<a HREF="http://www.telefragged.com" TARGET="_top"><img SRC="../../images/advertisments/small_telefragged_now.gif" BORDER="0" ALT="Telefragged Now!" WIDTH="90" HEIGHT="33"></a>
+							<br>
+							<font SIZE="-1" FACE="Arial">
+								Hosts of all things TeleFragged
+							</font>
+						</td>
+					</tr>
+				</table>
+			</center>
+		</div>
+		<!-- Let the news begin! Just add a new table cell to keep things neat -->
+		<div align="center">
+			<center>
+				<table WIDTH="500">
+					
+					<tr>
+						<td align="right">
+							<b>
+								<font size=+3>
+									Using Linked X-forms&nbsp&nbsp&nbsp&nbsp
+								</font>
+							</b>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<b>
+								<font size=+1>
+									by GWOT&nbsp&nbsp&nbsp&nbsp
+									
+								</font>
+							</b>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<img SRC="../images/news_bar.gif" ALT BORDER="0">
+								
+							</center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+							<H3>
+								<FONT COLOR=#454545>
+									Using Linked X-forms in Skeletal Animations
+								</FONT>
+							</H3>
+							
+							This tutorial assumes you followed the previous text on building a skeleton and
+							setting it up for animation.  You will need a humanoid mesh and a skeleton to
+							follow along in this one.  Assuming your skeleton is properly aligned within
+							your mesh we can begin to link it up.  All we need to use here are two
+							modifiers in max - Edit Mesh and Linked X-form.
+							<BR>
+							<P>
+							
+							<IMG SRC="http://guild.telefragged.com/developer/images/dumbones.gif" WIDTH="274" HEIGHT="326" ALIGN="right" ALT="Bones and Dummies">
+							Before we link up the mesh to the skeleton we have to create some dummy objects
+							to link to each bone.  I've found that trying to link a mesh to bones that have
+							had their pivots moved tends to screw up my linked x-forms, so as a solution I
+							create a dummy object for each bone, name it after the bone I link it to, and
+							link my verts to the dummies instead.  Also using dummies allows you to do neet
+							stuff like scale transforms to get those bulging biceps or
+							expanding/contracting thorax effect (for models that like to breathe) without
+							screwing with your skeleton.  Try not to make the dummies too big - they really
+							only need to be big enough to see.  Position the dummy so that its center
+							corresponds roughly with the center of the bone it will be linked to (not the
+							bone's pivot).  Once you have a dummy linked and named after each bone you can
+							link the mesh.
+							<BR>
+							<P>
+							<BR>
+							<BR>
+							<BR>
+							
+							<IMG SRC="http://guild.telefragged.com/developer/images/Lx-form.gif" WIDTH="316" HEIGHT="346" ALIGN="right" ALT="Vert Selection">
+							To begin you must have an Editable mesh or at least apply an Edit Mesh modifier
+							so that it is the last modifier in the stack.  Starting at the feet we go into
+							vertex edit mode and select all the verts surrounding the left foot bone -
+							basically whatever verts that define the foot.
+							With the foot verts selected you then apply a Linked X-form modifier, click the
+							Pick Control Object button then open the Object Selection List from the top
+							toolbar, select the left foot dummy and click the Pick button at bottom. Your
+							foot verts should now be linked to the left foot dummy, which is in turn linked
+							to your left foot bone.  If you do a test rotation on the bone you should see
+							the meshes' foot move accordingly.  This is where you determine if you've
+							linked too many verts or not enough to the bone, and if any of them need to be
+							adjusted.  If this is the case you don't need to delete the xform from the mesh
+							stack, just go back to the edit mesh modifier (in the stack) where the verts
+							were selected and make whatever modifications you need.  You can move them
+							around, add or remove some from the selection - whatever, as long as you have
+							the ones you want linked selected when you go back to the top of the stack.
+							You can try your test rotations on the bone again to see the effects of your
+							vert adjustments if you made any.
+							<BR>
+							<P>
+							
+							When you are satisfied with the results, apply an edit mesh modifier again and
+							repeat the procedure for the right foot (Linked X-forms must always be preceded
+							by an Edit Mesh modifier). It is always best to work with bone pairs when doing
+							linked xforms because any modifications you made with the first xform will be
+							fresh in your mind for the second.  Going fishing thru the stack after you've
+							done 23 linked xforms and edit mesh modifiers can be a major ass pain if you've
+							forgotten something, so try to resolve your xform issues in pairs and be done
+							with it.
+							<BR>
+							<P>
+							
+							When you finish with one bone pair move up the heirarchy and repeat the Edit
+							Mesh/Linked X-form procedure for the next bone pair or single bone in the case
+							of the spine and pelvis, always testing as you go.  When you are finished with
+							the vert links you should run your skeleton through a thorough series of tests
+							before animating. Check the mesh from different perspectives and pose it as
+							much and as varied as possible.  The more care you take in testing it the less
+							hassle you have to deal with later on.
+							<BR>
+							<P>
+							
+							One more trick you can do with dummies (if you have the patience for LX-forms)
+							is create a few extra to add at all your joint locations on the skeleton, and
+							link a few joint verts to them.  This helps distribute the vertex load between
+							joining bones and allows for finer manipulation of verts at the joints.  I've
+							found that without the extra joint dummies you can get really gross distortion
+							of verts at the joints (especially the shoulders).  Note that adding joint
+							dummies requires you to break some links by relinking children as children of
+							the joint and then linking the joint to a parent.  This should be done before
+							the mesh is linked to the skeleton.  Example:  The forearm would be relinked to
+							the new elbow joint and the elbow joint would then be linked to the arm.  All
+							you do is select and link to the new parent, since a child can only have one
+							immediate parent bone, the old parent will be forgotten, regardless of any
+							previous biological or emotional relationship.  You also shouldn't have to
+							worry about setting IK rotational limits to the joint dummies because you will
+							really only be adjusting them minutely using FK rotations.
+							<BR>
+							<P>
+							
+							The trick with Linked X-forms is to visualize your verts and their relationship
+							to the bones they will be linked to before you link them.  Try to picture the
+							effect that a bone will have on its surrounding verts as you move it.
+							<BR>
+							<BR>
+							<H4>
+								<FONT COLOR=#454545>
+									Check it out!
+								</FONT>
+							</H4>
+							<IMG SRC="http://guild.telefragged.com/developer/images/lpose.gif" WIDTH="280" HEIGHT="360" ALT="">
+							<IMG SRC="http://guild.telefragged.com/developer/images/fpose.gif" WIDTH="296" HEIGHT="360" ALT="">
+							
+							<BR>
+							<BR>
+							
+							
+							Later, Anim8or...
+							<BR>
+						</td>
+					</tr>
+				</table>
+			</center>
+			
+		</div>
+	</BODY>
+</HTML>

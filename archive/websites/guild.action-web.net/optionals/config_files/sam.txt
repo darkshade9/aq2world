@@ -1,0 +1,121 @@
+// sam-DoD binds for 1.5 teamplay. members.home.net/s-ross/
+
+
+
+
+//the hisen after the weapon is an alias to switch me back to normal 
+//mouse sensitivity in case i was in low sensitivity (sniper mode)
+bind 1 "use Blaster; hisen"
+bind 2 "use M3 Super 90 Assault Shotgun; hisen"
+bind 3 "use MP5/10 Submachinegun; hisen"
+bind 4 "use Handcannon; hisen"
+bind 5 "use Sniper Rifle; hisen"
+bind 6 "use M4 Assault Rifle; hisen"
+bind 9 "use A 2nd Pistol; hisen"
+bind 0 "use Combat Knife; hisen"
+bind g "use grenades; hisen"
+
+bind SHIFT "reload"
+bind \ "opendoor"
+bind END "weapon"
+bind CTRL "+moveup"
+bind PGDN "drop item"
+bind PGUP "drop weapon"
+bind v "irvision"
+
+//binds for radio command
+bind DEL "bandage; radio cover; say_team Bandageing, at %H health and dropping"
+bind HOME "radio enemys; Enemy in our area"
+bind INS "radio enemys; say_team Watch it %T"
+
+bind F2 "radio treport; say_team report in"
+bind F3 "radio reportin; say_team still here with %W %A %I"
+bind F4 "radio cover; say_team cover me"
+bind F5 "radio go; say_team lets go"
+bind F6 "radio teamdown; say_team we lost a guy"
+bind F7 "radio enemys; say_team enemy spotted"
+bind F8 "radio enemyd; gotcha"
+bind F9 "radio taking_f; say_team I'm being shot at"
+bind F10 "radio im_hit; say_team they hit me"
+bind F12 "radio im_hit; say_team I'm dying, health at %H and falling fast"
+
+//enemy down link to an alias to cycle through different kill message
+//each time the key is hit, it will diplay a different message along with the
+//enemy down sound
+bind kp_home "radio enemyd; gotcha"
+
+//my gotcha alias for changeing the enemy down messages.
+alias gotcha gotcha1
+alias gotcha1 "say_team Resisting death was futile; alias gotcha gotcha2"
+alias gotcha2 "say_team enemy engaged, and was sent straight to hell; alias gotcha gotcha3"
+alias gotcha3 "say_team got one, get his ammo and I'll get his wallet; alias gotcha gotcha4"
+alias gotcha4 "say_team enemy assimilated; alias gotcha gotcha5"
+alias gotcha5 "say_team Death is irrelevant; alias gotcha gotcha6"
+alias gotcha6 "say_team Resistance was futile; alias gotcha gotcha7"
+alias gotcha7 "say_team break out a body bag; alias gotcha gotcha8"
+alias gotcha8 "say_team notify his next of kin; alias gotcha gotcha9"
+alias gotcha9 "say_team HOT DAMN Jim, he's dead; alias gotcha gotcha10"
+alias gotcha10 "say_team Thats what u get for not trying my green eggs and ham!!; alias gotcha gotcha1"
+
+
+
+//enemy down for grenade kill link to an alias to cycle through different 
+//kill message. see below for kill messages
+bind KP_UPARROW "radio enemyd; boom"
+
+//boom alias for rotating enemy down messages (grenade kills)
+alias boom boom1
+alias boom1 "say_team Score one for my grenade; alias boom boom2"
+alias boom2 "say_team My grenade blew him to bits; alias boom boom3"
+alias boom3 "say_team got a grenade kill, nothing left of him to bury; alias boom boom1"
+
+//holding down the . will display netgraph, releasing . will turn it off
+//use to show network performance
+bind . +graph
+
+//alias for netgraph
+alias +graph "netgraph 1"
+alias -graph "netgraph 0"
+
+
+//used for talking to teammates only
+bind z "messagemode2; echo team message"
+
+//link to alias to take sniper rifle out of 2x zoom
+bind x "snipe2"
+
+//c is use to set snipe rifle at 2x and low mouse sensitivity
+bind c "lowsen; weapon"
+
+//use to set low mouse sensitivity
+bind m lowsen
+
+//space is to take be back to normal mouse sensitivity
+bind space hisen
+
+//alias for my mouse sensitivity, yours can be different
+alias hisen "sensitivity 2.3"  //normal sensitivity
+alias lowsen "sensitivity 1.0" //low sensitivity for sniping
+
+//hit the key once to crouch, hit again to stand back up.
+//AutoCrouch Quake 2 Alias 
+//Author: SikMonkey (sisk@intersurf.com)
+     bind KP_INS crouch
+     alias crouch +crouch
+     alias +crouch "alias crouch -crouch;+movedown;echo AutoCrouch On"
+     alias -crouch "alias crouch +crouch;-movedown;echo AutoCrouch Off"
+
+//alias to take my sniper 2x zoom mode to normal view
+alias snipe2 "weapon; weapon; weapon; hisen"
+
+//alias to switch from running to walk mode for sneaking up on players
+bind KP_END moveswitch
+     alias walk "set cl_run 0;alias moveswitch run;echo walking"
+     alias run "set cl_run 1;alias moveswitch walk;echo running"
+     run
+
+
+
+
+
+ 

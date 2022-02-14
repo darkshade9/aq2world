@@ -1,0 +1,417 @@
+// NetPlay.Cfg
+
+
+// This file contains settings to streamline internet play, 
+// making things a wee bit faster for you.
+// To use this, simply save this file to your Action directory, and
+// add the line "exec netplay.cfg" to the end of your autoexec.cfg file.
+// NOTE: Always leave a blank line between exec statements in a .cfg
+// file, otherwise one or more will NOT be executed.
+
+set cl_predict "1"  		// turns packet prediction on
+
+set sv_reconnect_limit "3"  	// sets the number of times Q2 will try
+			    	// to reconnect to a server
+
+set msg "1"	// sets message display to "most messages"
+
+set hand "2"	// makes player center-handed, so no gun model will
+		// be drawn at the bottom of the screen
+
+set rate 3000  	// sets the maximum # of bytes (per second I believe)
+		// that the server should send.  This is similar to CPS
+		// rate of your modem.
+		// if you have a 28.8 or 33.6, leave it at 3000
+		// if you have a 56.6, set it to 4600
+
+set cl_maxfps 30	// sets the maximum # of packets per second the
+			// server will send.  This limits the # of
+			// frames per second.
+			// (useful for preventing your FPS from jumping
+			// all over the place)
+
+bind u graph_toggle	// toggles display of the network performance
+			// graph.
+
+bind t "messagemode"	// sends a message to everyone
+bind y "messagemode2"	// sends a message to everyone on your team
+
+bind 1 "score"		// displays the current score
+
+// "Flashbend" toggle
+bind F11 "dynamic_toggle"	// toggles the use of dynamic lighting
+
+
+// the alias for toggling dynamic lighting
+alias "dynamic_on" "alias dynamic_toggle dynamic_off; gl_dynamic 1; echo Dynamic on"
+alias "dynamic_off" "alias dynamic_toggle dynamic_on; gl_dynamic 0; echo Dynamice off"
+alias dynamic_toggle dynamic_on
+
+// the alias for toggling the network performance graph
+alias graph_on "set netgraph 1; set cl_shownet 1; echo Graph ON...; wait; alias graph_toggle graph_off"
+alias graph_off "set netgraph 0; set cl_shownet 0; echo Graph OFF...; wait; alias graph_toggle graph_on"
+alias graph_toggle graph_on
+
+
+
+
+
+// MouseShift.cfg
+
+// "Simple Mouse Shift" script
+// by Trevor Atchison (Jesus)
+//
+// This handly little script allows you to bind more than one 
+// function to each mouse button, and use a key to "shift" between
+// them.
+// If you're new to CFG files, this can be a bit hard to follow, 
+// but it can be a very powerful & advantageous tool.
+// All the setting in here are my personal ones, but can be modified
+// to any command.
+//
+// How to use it:
+// Adjust the commands below to reflect your own preferences.
+// By holding down the key bound to "+shift", your mouse buttons
+// are switched to a set of alternate commands, and returned to
+// their originals when the "+shift" key is released.
+// 
+// To enable it, save this file in your Action directory and add
+// the line "exec mouse_shift.cfg" to the end of your autoexec.cfg file.
+// NOTE: Always leave a blank line between exec statements in a .cfg
+// file, otherwise one or more will NOT be executed.
+
+bind a "+shift"	// this is the key that will shift between functions
+
+// this sets up your mouse buttons for use
+
+set button1 "mouse1"
+set button2 "mouse2"
+set button3 "mouse3"
+
+// BUTTON #1
+
+set b1_func1 "+attack"		// set this to your first button's
+				// first (unshifted) function
+
+set b1_func2 "reload"		// set this to your first button's
+				// second (shifted) function
+
+
+// BUTTON #2
+
+set b2_func1 "+movedown"	// set this to your second button's
+				// first (unshifted) function
+
+set b2_func2 "bandage"		// set this to your second button's
+				// second (shifted) function
+
+
+// BUTTON #3
+
+set b3_func1 "weapon"		// set this to your third button's
+				// first (unshifted) function
+
+set b3_func2 "opendoor"		// set this to your third button's
+				// second (shifted) function
+
+// The shift itself:
+
+alias +shift "bind $button1 $b1_func2; bind $button2 $b2_func2; bind $button3 $b3_func2"
+alias -shift "bind $button1 $b1_func1; bind $button2 $b2_func1; bind $button3 $b3_func1"
+
+// This last part makes sure the buttons start in the unshifted position
+
+-shift
+
+// This idea is hardly original, so feel free to use/modify this CFG
+// without asking permission or giving me credit.
+//
+// More advanced mouse shift aliases and other good console/alias
+// info can be found at Farenheit 176,
+// http://www.planetquake.com/f176/
+
+// end of file
+
+
+
+
+
+
+//Action.cfg
+
+
+// Action Quake2 Config File
+// by Trevor Atchison (Jesus)
+//
+// This is a combination of the best features of the original
+// AQ2 config examples.  Some things have been slightly modified
+// to suit play better, and extraneous stuff has been left out.
+// All the aliases have been made recursive, so you only have to
+// bind a key ONCE, and they've been placed at the end of the file.
+// This CFG is designed to be quick and easy to modify, and is
+// well suited to beginning players.
+//
+// How to use it:
+// Change the key bindings and mouse sensitivities to your own
+// preferences, and save the file as "autoexec.cfg" in your action
+// directory.
+
+// **Section 1: Key bindings**
+// This is the section you'll want to modify to reflect your
+// controller configuration
+
+// Movement keys
+
+bind s 		"+moveleft"
+bind f 		"+moveright"
+bind e 		"+forward"
+bind d 		"+back"
+bind space	"+moveup"
+bind mouse2	"+movedown"
+bind ctrl 	"run_toggle"   //toggles between running & walking
+
+// Action Quake2 Keys
+
+bind mouse1 	"+attack"
+bind mouse2 	"reload"
+bind shift 	"w_mode"   //switches weapon mode (full auto, burst, semi, etc)
+bind w	 	"opendoor"
+bind b		"bandage"
+bind x		"drop item"
+bind z		"drop weapon"
+bind r		"snipemode"  //switches sniper rifle zoom mode
+bind g		"snipe_reset" //resets sniper zoom to normal (1x)
+
+// emergency sensitivity reset key (MUST be pressed if sniper rifle
+// suddenly switched to anything else for ANY reason while zoomed in.
+// this includes dying, bandaging, end of round, dropping it, etc.)
+bind v 		"sens_reset"   //emergency sniper sensitivty reset
+
+// Weapon keys
+
+bind 2 "use Combat Knife"	// uses knife
+bind 3 "use Blaster"		// uses single pistol
+bind 4 "use A 2nd Pistol"	// uses dual pistol
+bind 5 "use M26 Fragmentation Grenade"
+bind q "use special"		// uses special weapon
+
+// Hand and crosshair toggles
+// (don't you *hate* the way AQ2's intro demo resets these?)
+
+bind k "handtoggle"
+bind l "crosstoggle"
+
+// Screenshot
+
+bind F12 "screenshot" //takes a pic of the current screen's display
+
+// Inventory 
+
+bind [ 		"invprev"
+bind ] 		"invnext"
+bind BACKSPACE 	"invdrop"
+bind TAB 	"inven"
+bind ENTER	"invuse"
+
+// Mouse shiznit
+
+bind MOUSE2 	"reload"	//reloads your weapon
+bind MOUSE1 	"+attack"	//fires your gun
+set in_joystick	"0"
+set in_mouse 	"1"
+set m_filter 	"1"
+set m_pitch 	"0.022"
+set lookstrafe 	"0"
+set lookspring 	"0"
+set freelook 	"1"
+
+// Communication
+
+bind t 	"messagemode"		//send a message
+bind y 	"messagemode2"		//send a message only to teammates
+bind 6 	"wave 0"
+bind 7 	"wave 1"
+bind 8 	"wave 2"
+bind 9 	"wave 3"
+bind 0 	"wave 4"
+
+// Teamplay Radio Commands
+// for further info read "radio.txt"
+bind p "partner"
+bind o "deny"
+bind i "channel"
+
+//say numbers
+bind f1 	"radio 1"
+bind f2 	"radio 2"
+bind f3 	"radio 3"
+bind f4 	"radio 4"
+bind f5 	"radio 5"
+bind f6 	"radio 6"
+bind f7 	"radio 7"
+bind f8 	"radio 8"
+bind f9 	"radio 9"
+bind f10 	"radio 10"
+
+//say directions
+bind KP_UPARROW 	"radio forward"
+bind KP_DOWNARROW	"radio back"
+bind KP_LEFTARROW	"radio left"
+bind KP_RIGHTARROW	"radio right"
+bind KP_HOME		"radio up"
+bind KP_PGUP		"radio down"
+
+//say certain situational appropriate messages
+
+// Taking Fire
+bind KP_SLASH 		"radio taking_f"
+// Enemy Spotted
+bind KP_INS 	"radio enemys"
+// Enemy Down
+bind KP_DEL	"radio enemyd"
+// I'm Hit!
+bind KP_PLUS	"radio im_hit"
+// Teammate down
+bind KP_MINUS	"radio teamdown"
+// Cover me!
+bind KP_END	"radio cover"
+// GO!
+bind KP_5	"radio go"
+// Team, report in
+bind PGUP	"radio treport"
+// Reporting in
+bind PGDN	"radio reportin"
+
+
+// **Section 2: Sniper Rifle Sensitivities**
+// these numbers will set the mouse sensitivity at different
+// zoom modes for the sniper rifle.
+// change these values to suit your individual tastes
+
+set 1x_sens "12" // Mouse sensitivity at 1x zoom
+set 2x_sens "8"  // Mouse sensitivity at 2x zoom
+set 4x_sens "6"  // Mouse sensitivity at 4x zoom
+set 6x_sens "3"  // Mouse sensitivity at 6x zoom
+
+// sets original mouse sensitivity to the 1x zoom value
+set sensitivity $1x_sens
+
+
+// **Section 3: Other stuff**
+// these are things that are probably already set in config.cfg,
+// or just stuff you probably won't need to change.
+
+bind = 		"sizeup"
+bind -		"sizedown"
+bind ` 		"toggleconsole"
+bind ~ 		"toggleconsole"
+bind PAUSE 	"pause"
+set msg 	"1"
+set cl_run 	"1"
+set viewsize 	"100"
+bind ESCAPE 	"togglemenu"
+set cl_predict 	"1"
+
+//various things only really used when you load yourself as a server
+
+set bholelimit 40
+set splatlimit 40
+set shelloff 0
+dmflags 528
+floodprot 0	//flood pretection 1 is on 0 is off
+
+// **Section 4: Aliases**
+// you may ignore this section -- there are no keys to be bound here
+// these are some aliases using Action Quake 2 commands to perform
+// different tasks, such as switching weapon modes, zooming the sniper
+// rifle, etc.
+
+//Walk+run alias (this toggles your movement between walking and running)
+
+alias run 	"set cl_run 1; alias run_toggle walk; echo Running"
+alias walk 	"set cl_run 0; alias run_toggle run; echo Walking"
+alias run_toggle "walk"
+
+//sniper rifle
+alias sniper "weapon;sensitivity $2x_sens;echo 2x;alias snipemode 4x; alias snipe_reset reset2x"
+alias 4x "weapon;sensitivity $4x_sens;echo 4x;alias snipemode 6x; alias snipe_reset reset4x"
+alias 6x "weapon;sensitivity $6x_sens;echo 6x;alias snipemode 1x; alias snipe_reset reset6x"
+alias 1x "weapon;sensitivity $1x_sens;echo 1x;alias snipemode sniper; alias snipe_reset reset1x"
+alias snipemode sniper
+
+alias reset1x "sensitivity $1x_sens; echo Already at 1x zoom; alias snipemode sniper"
+alias reset2x "weapon;wait;wait;weapon;wait;wait;weapon; reset"
+alias reset4x "weapon;wait;wait;weapon; reset"
+alias reset6x "weapon; reset"
+alias reset "sensitivity $1x_sens; alias snipemode sniper; alias snipe_reset reset1x; echo Zoom reset to 1x"
+alias snipe_reset reset1x
+
+// emergency sensitivity reset key (MUST be pressed if sniper rifle
+// suddenly switched to anything else for ANY reason while zoomed in.
+// this includes dieing, bandaging, end of round, dropping it, etc.)
+alias sens_reset "sensitivity $1x_sens; alias snipemode sniper; echo Sniper reset"
+
+// weapon command for switching weapon modes
+// (with a sensetivity setting thrown in just in case)
+// do NOT use this to zoom in sniper rifle or you will get
+// all out of whack
+alias w_mode "weapon;sensitivity $1x_sens;alias snipemode sniper"
+
+// Hand toggle, for changing handedness with a keypress
+alias handtoggle righthand
+alias righthand "hand 0; alias handtoggle lefthand"
+alias lefthand "hand 1; alias handtoggle centerhand"
+alias centerhand "hand 2; alias handtoggle righthand"
+
+// Crosshair toggle, for changing crosshair modes
+alias crosstoggle cross1
+alias cross0 "crosshair 0; alias crosstoggle cross1"
+alias cross1 "crosshair 1; alias crosstoggle cross2"
+alias cross2 "crosshair 2; alias crosstoggle cross3"
+alias cross3 "crosshair 3; alias crosstoggle cross0"
+
+// end of file
+
+
+
+
+
+
+//Record_dem.cfg
+
+
+
+// David Shaw's awesome demo recording alias
+//
+// This allows you to easily record up to 10 demos in succession, with
+// only two keys.
+// Demos are recorded under the filenames demo_01, demo_02, etc.
+//
+// How to use it:
+// Save this file in your Action directory and add the line
+// "exec demo_rec.cfg" at the end of your autoexec.cfg file.
+// NOTE: Always leave a blank line between exec statements in a .cfg
+// file, otherwise one or more will NOT be executed.
+
+bind n next_demo	// this key starts recording a demo
+
+bind m "demstop1"	// this one stops the current recording
+			// session, and prepares for the next one
+
+alias demstop1 "stop; echo Current Demo Stopped;wait;wait;wait;demstop2"
+alias demstop2 "echo Press record key again to start next demo in sequence"
+alias dem1 "echo Starting Demo1; record demo_01; alias next_demo dem2"
+alias dem2 "echo Starting Demo2; record demo_02; alias next_demo dem3"
+alias dem3 "echo Starting Demo3; record demo_03; alias next_demo dem4"
+alias dem4 "echo Starting Demo4; record demo_04; alias next_demo dem5"
+alias dem5 "echo Starting Demo5; record demo_05; alias next_demo dem6"
+alias dem6 "echo Starting Demo6; record demo_06; alias next_demo dem7"
+alias dem7 "echo Starting Demo7; record demo_07; alias next_demo dem8"
+alias dem8 "echo Starting Demo8; record demo_08; alias next_demo dem9"
+alias dem9 "echo Starting Demo9; record demo_09; alias next_demo dem0"
+alias dem0 "echo Starting Demo10; record demo_10; alias next_demo demempty1"
+alias demempty1 "echo You have exhausted this session's queue!;wait;wait;wait;wait; demempty2"
+alias demempty2 "echo You must exit and archive existing demos before recording more"
+
+alias next_demo dem1
+

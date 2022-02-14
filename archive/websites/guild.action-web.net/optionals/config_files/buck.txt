@@ -1,0 +1,191 @@
+
+
+//Just change the skin and the sensitivity to whatever you want.. the sensitivitys are set good for sniping and knife throwing. It also has night vision and infer red vision for servers that have AQ2 v1.5.
+
+
+unbindall
+
+name "your name here(without the quotes)"
+skin "your skin here(without quotes).. if u have gamespy this has to match it" 
+//video parameters
+set gl_texturemode "GL_LINEAR_MIPMAP_LINEAR"
+
+//sound
+set s_wavonly "0"
+set cd_nocd "1"
+set cl_stereo_separation "0.4"
+set s_khz "22"
+set s_primary "0" 
+set s_mixahead ".14"
+set in_mouse "1"
+set in_joystick "0"
+
+
+// MOUSE
+set freelook "1"
+set lookspring "0"
+set lookstrafe "0"
+set m_filter "1"
+set m_forward "0"
+set m_pitch "-0.022"
+set m_side "0"
+set m_yaw "0.022"
+set sensitivity "8"
+
+
+//netplay
+set cl_predict "1"
+set sv_reconnect_limit "3"
+set msg "1"
+set rate 3000
+set cl_maxfps 28
+alias graph_on "set netgraph 1;set cl_shownet 1;echo Graph ON...;wait;bind F2 graph_off"
+alias graph_off "set netgraph 0;set cl_shownet 0;echo Graph OFF...;wait;bind F2 graph_on"
+bind F2 graph_on
+bind t "messagemode"
+bind y "messagemode2"
+bind k "score"
+
+
+// FLASHBLEND TOGGLE
+bind f11 "l0"
+alias "l0" "bind F11 l1;gl_dynamic 1;echo Dynamic on"
+alias "l1" "bind F11 l0;gl_dynamic 0;echo Dynamice off"
+
+
+
+//Standard use
+bind ~ "toggleconsole"
+bind ` "toggleconsole"
+bind TAB "inven"
+bind [ "invprev"
+bind ] "invnext"
+bind ESCAPE "togglemenu"
+bind F1 "cmd help"
+bind F12 "screenshot"
+bind ENTER "invuse"
+
+//movement
+bind leftarrow "+moveleft"
+bind rightarrow "+moveright"
+bind downarrow "+back"
+bind uparrow "+forward"
+Bind mouse2 "+moveup"
+Bind ctrl "+movedown"
+
+// toggle to switch between walking (quieter) and running
+alias run "set cl_run 1; bind space walk; echo Movement set to Running"
+alias walk "set cl_run 0; bind space run; echo Movement set to Walking"
+bind space walk
+
+// WAVES
+bind INS "wave 0"
+bind HOME "wave 1"
+bind PGUP "wave 2"
+bind DEL "wave 3"
+bind END "wave 4"
+
+//Action Quake commands
+
+//weapons
+bind q "use M3 Super 90 Assault Shotgun; use MP5/10 Submachinegun; use Handcannon; use Sniper Rifle; use M4 Assault Rifle"
+bind mouse1 "+attack"
+bind 1 "use Blaster"
+bind 2 "use A 2nd Pistol"
+bind 3 "sensitivity 12;use Combat Knife;echo Using Combat Knives, Sensitivity 12;set crosshair "2""
+Bind mwheelup "weapnext"
+bind mwheeldown "weaplast"
+bind i "irvision"
+bind alt "+use"
+bind 4 "use M4 Assault rifle;echo Using Assault Rifle;set crosshair"3""
+bind 5 "use MP5/10 Submachinegun;echo Using MP5/10 Submachinegun;set crosshair "3""
+bind 6 set crosshair "2;echo Dot Crosshair"
+bind 7 set crosshair "1;echo Regular Crosshair "
+bind 8 set crosshair "3;echo MP5 Crosshair"
+
+
+
+//weapon command with a sensetivity setting just in case
+bind \ "weapon;sensitivity 12;echo Using Weapon, Sensitivity 8"
+
+//sniper rifle
+alias sniper "weapon;sensitivity 6;echo 2x: sensetivity 6;bind s 4x;bind r quick1a"
+alias 4x "weapon;sensitivity 4;echo 4x sensetivity 4;bind s 6x;bind r quick1b"
+alias 6x "weapon;sensitivity 2;echo 6x: sensetivity 2;bind s 1x;bind r quick1c"
+alias 1x "weapon;sensitivity 8;echo 1x: sensetivity 8;bind s sniper;bind r quick1d"
+bind s sniper
+
+//Zoom out to 1x fast
+alias reset1x "bind s sniper;bind r quick1d;echo Quickly zooming to 1x"
+alias quick1a "weapon;wait;wait;weapon;wait;wait;weapon;reset1x"
+alias quick1b "weapon;wait;wait;weapon;reset1x"
+alias quick1c "weapon;reset1x"
+alias quick1d "echo already at 1xzoom"
+bind r quick1d
+
+
+//emergency sensetivity reset key  
+bind F6 "sensitivity 6;echo Sensitivity set to 6" 
+bind F7 "sensitivity 3;echo Sensitivity set to 3"
+
+//default sniper aliases reset key (in case I die, bandage, or match ends etc.)
+bind F5 "sensitivity 8;bind s sniper;bind r quick1d;echo Sensitivity and Sniper reset. Sensitivity 8"
+
+
+
+bind * "drop item"
+bind b "bandage" 
+bind mouse2 "+moveup"
+bind shift "opendoor"
+bind g "use M26 Fragmentation Grenade"
+bind / "drop weapon"
+bind mouse3 "reload"
+
+//demo recording
+alias demstop1 "stop; echo Current Demo Stopped;wait;wait;wait;demstop2"
+alias demstop2 "echo Press 'o' again to start next demo in sequence"
+alias dem1 "echo Starting Demo1; record demo_01; alias next_demo dem2"
+alias dem2 "echo Starting Demo2; record demo_02; alias next_demo dem3"
+alias dem3 "echo Starting Demo3; record demo_03; alias next_demo dem4"
+alias dem4 "echo Starting Demo4; record demo_04; alias next_demo dem5"
+alias dem5 "echo Starting Demo5; record demo_05; alias next_demo dem6"
+alias dem6 "echo Starting Demo6; record demo_06; alias next_demo dem7"
+alias dem7 "echo Starting Demo7; record demo_07; alias next_demo dem8"
+alias dem8 "echo Starting Demo8; record demo_08; alias next_demo dem9"
+alias dem9 "echo Starting Demo9; record demo_09; alias next_demo dem0"
+alias dem0 "echo Starting Demo10; record demo_10; alias next_demo demempty1"
+alias demempty1 "echo You have exhausted this session's queue!;wait;wait;wait;wait; demempty2"
+alias demempty2 "echo You must exit and archive existing demos before recording more"
+alias next_demo dem1
+
+bind p "demstop1"
+bind o next_demo
+
+//execute a configuration for my teamplay specific settings
+bind f8 exec teamaction.cfg
+bind F3 exec autoexec.cfg 
+
+
+//misc stuff
+set bholelimit 40
+set splatlimit 40
+set shelloff 0
+dmflags 528
+set floodprot 0
+
+
+
+//misc situational radio commands
+bind KP_DOWNARROW 	"radio enemys"	// Enemy Spotted
+bind KP_END		"Taking Fire, requesting backup;radio taking_f"	 // Taking Fire
+bind KP_LEFTARROW "say_team Cover me, I'm hit!!Bandaging!;radio im_hit; radio im_hit;radio cover"  // I'm Hit!
+bind KP_RIGHTARROW	"say_team Cover me I'm goin in!!;radio cover"              //Cover Me!
+bind KP_PGDN		"say_team Just took one out with my %W;radio enemyd"	// Enemy Down
+bind KP_5			"radio teamdown"	// Teammate down
+bind KP_PGUP		"radio treport"	// Team, report in
+bind KP_UPARROW	"say_team Reporting in with %H health and ready for action!!;radio reportin"	// Reporting in
+bind KP_HOME                         ";say_team GO! GO!;radio go;radio go"		// Go!
+bind KP_INS		"radio left"	// Left
+bind KP_DEL		"radio right"	// Right
+bind KP_PLUS		"say_team 10-4 Rodger That!!;radio 10;radio 4"
+bind KP_MINUS		"say_team I need a target!"

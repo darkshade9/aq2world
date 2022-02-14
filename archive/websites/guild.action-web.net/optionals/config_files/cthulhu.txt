@@ -1,0 +1,205 @@
+// Cthulhu's Action Quake 2 Configuration v1.1
+// By Justin R. Cutler
+// email: cthulhu@earthling.net
+
+// Description:
+// My personal AQ2 config.  Handles standard commands and movement, a run toggle (shift), a sniper
+// sensitivity key (alt), crosshair switch (q), handedness toggle (x), infrared vision (c), and various
+// radio messages.
+
+set adr0 "128.164.66.1"			// Cthulhu's GWU Action Quake2 Server
+
+// -----------------
+
+
+// Personal Player Settings
+name "Cthulhu"				// Player name
+skin "actionmale/killer"		// Player model and skin
+set hand 0				// Player initial hand-side, 0 is right
+set crosshair 2		   		// Player initial crosshair (2)
+
+
+// ----------------
+
+
+// Standard Playing Settings
+set freelook 1				// Enables constant mouselook
+set joystick 0				// Disables joystick and joystick allocation
+set lookstrafe 0			// Enables steady view when jumping
+set lookspring 0			// Enables steady view when jumping
+set cl_run 1				// Enables automatic run, can be turned off with shift
+set cd_nocd 1				// Makes sure you don't need the quake2 cd
+set s_mixahead .14			// Sound mixahead settings
+set fov 0				// Makes sure your view isn't zoomed in and player accurate
+set v_kickpitch 0.0			// This will make your view stay steady, even when hit
+set v_kickroll 0.0			// Same as above
+set v_kicktime 0.0			// Same as above
+
+
+// ----------------
+
+
+// Mouse controls for a three button mouse with a wheel
+bind mouse1 "+attack"			// Fire weapon
+bind mouse2 "weapnext"			// Next Weapon
+bind mouse3 "reload"			// Reload weapon
+bind MWHEELUP "bandage"			// Bandage wounds
+bind MWHEELUP "weapon"			// Change weapons modes
+
+set sensitivity "12"		   	// Starting mouse sensitivity, change to your own
+alias norm "sensitivity 12"	   	// Normal mouse sensitivity, change to your own one
+alias fine "sensitivity 4"	   	// Finer mouse sensitivity (for sniping), change to your own one
+set m_pitch 0.022		   	// Enables better mouse aiming
+set m_filter 0			   	// Makes sure mouse aiming isn't filtered, your aim may
+				   	// be lagged, but it will always be precise to the game
+
+
+// -----------------
+
+
+// Movement Keys
+bind e "+forward"			// Move forward
+bind d "+back"				// Move backward
+bind s "+moveleft"			// Strafe left
+bind f "+moveright"			// Strafe right
+bind SPACE "+moveup"			// Jump/Swim/CLimb up
+bind CTRL "+movedown"			// Crouch/Dive/Climb down (improves accuracy)
+
+// Running/Walking alias
+alias run "set cl_run 1; bind shift walk; echo Running"		
+alias walk "set cl_run 0; bind shift run; echo Walking"		
+bind shift "walk"			// Changes between run/walk
+
+
+// ----------------
+
+
+// Specific Action Quake Keys
+
+// crosshairs
+alias cross0 "crosshair 0; bind q cross1; echo Crosshair off"
+alias cross1 "crosshair 1; bind q cross2; echo Crosshair 1"
+alias cross2 "crosshair 2; bind q cross3; echo Crosshair 2"
+alias cross3 "crosshair 3; bind q cross0; echo Crosshair 3"
+bind q "cross1"				// Changes crosshair
+
+bind w "weapon"				// Change weapons modes
+bind r "reload"				// Reload weapon
+bind a "bandage" 			// Bandage wounds
+bind g "opendoor"			// Open doors
+
+bind z "drop weapon"			// Drop special weapon
+
+// handedness
+alias righthand "hand 0; bind x lefthand; echo Right hand"
+alias lefthand "hand 1; bind x righthand; echo Left hand"
+bind x "righthand"			// Change handedness (great for shooting around corners)
+
+bind c "irvision"			// Activates infra-red vision
+bind v "drop item"			// Drop special item
+
+
+// ----------------
+
+
+// Weapon keys
+bind 1 "use Combat Knife"		// Knife
+bind 2 "use MK23 Pistol"		// Single pistol
+bind 3 "use Dual MK23 Pistols"		// Akimbo pistols
+bind 4 "use special"			// Special weapon
+bind 5 "use M26 Fragmentation Grenade"	// Fragmentation grenades
+
+
+// ----------------
+
+
+// Sniper sensitivity mode
+alias +snipersense "echo Finer sensitivity; fine;"
+alias -snipersense "echo Normal sensitivity; norm;"
+bind ALT +snipersense			// Hold for finer sensitivity (ie when zooming)
+
+
+// ----------------
+
+
+// Teamplay Keys
+bind u "team 1"				// Choose team 1
+bind i "team 2"				// Choose team 2
+bind o "team none"			// Choose observer mode
+
+
+// ----------------
+
+
+// Radio keys
+
+// TeamMessages
+
+// Here are the radio commands plus the messages with them.
+//
+// Keypad Downarrow (2) is used to Report In, and is very cool:
+// If you press it, teammembers will know that you're alive plus what kind
+// of weapon you use, what kind of item you use and how many health you've got!!
+//
+// Keypad End (1) is used to request status about your team. It'll also tell
+// you teammembers how many health you'be got, and your weapon and item
+//
+// Keypad Home (7) is used when you're going to attack,
+// it will announce you're attacking and with which weapon.
+//
+// I didn't include the radio messages: I'm hit, and, Teammate down.
+// No one really cares about that (when I hear that in a game I think: so what..)
+// You can check who's still living with the Keypad End (1)
+
+bind t "messagemode"			// Type a global message
+bind y "messagemode2"			// Type a team message
+
+bind KP_HOME "radioteam taking_f;say_team I'm taking fire with a %W! Requesting Assistance!"
+bind KP_UPARROW "radioteam go;say_team Go! Go! Go!"
+bind KP_PGUP "radioteam up;say_team Up! Up!"		
+
+bind KP_LEFTARROW "radioteam cover;say_team Cover Me!"
+bind KP_5 "radioteam enemys;say_team Enemy Spotted!"
+bind KP_RIGHTARROW "radioteam enemyd;say_team Enemy Down!"
+
+bind KP_END "radioteam reportin;say_team Alive and kicking! Health at %H with a %W and %I"
+bind KP_DOWNARROW "radioteam treport;say_team Team Report In! Health at %H with a %W and %I"
+bind KP_PGDN "radioteam down;say_team Down! Down!"	
+
+bind UPARROW "radioteam forward;say_team Forward! Forward!"
+bind DOWNARROW "radioteam back;say_team Back! Back!"
+bind LEFTARROW "radioteam left;say_team Left! Left!"
+bind RIGHTARROW "radioteam right;say_team Right! Right!"
+
+
+// ----------------
+
+
+// Waves and taunts
+bind INS "wave 0"
+bind HOME "wave 1"
+bind PGUP "wave 2"
+bind DEL "wave 3"
+bind END "wave 4"
+
+
+// ----------------
+
+
+// Console and menus
+bind ~ "toggleconsole"
+bind ` "toggleconsole"
+bind TAB "inven"
+bind [ "invprev"
+bind ] "invnext"
+bind ENTER "invuse"
+bind ESCAPE "togglemenu"
+bind F1 "cmd help"
+bind F12 "screenshot"
+
+
+// ----------------
+
+
+echo Cthulhu's AQ2 Configuration now activated.
+echo Let's get it on with the killing!

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Actor's Guild - Developer Area</title>
+</head>
+<BODY TEXT="#454545" BGCOLOR="#808080" LINK="#0000ff" VLINK="#800080" ALINK="#ff0000">
+<div align="center"><center>
+<table WIDTH="460">
+  <tr>
+    <td ALIGN="CENTER" COLSPAN="3"><IMG SRC="../../images/headers/developer_area.gif" BORDER="0"
+    ALT="Developer Area" WIDTH="422" HEIGHT="66"></td>
+  </tr>
+  <tr>
+    <td><p ALIGN="center"><a HREF="http://action.telefragged.com" TARGET="_top"><img
+    SRC="../../images/advertisments/small_action_quake2_now.gif" BORDER="0"
+    ALT="Get Action Quake Now!" WIDTH="88" HEIGHT="31"></a><br>
+    <font SIZE="-1" FACE="Arial">Action Quake Main Homepage</font></td>
+    <td><p ALIGN="center"><a HREF="http://www.mapdepot.net" TARGET="_top"><img
+    SRC="../../images/advertisments/small_action_q2_map_depot.gif" BORDER="0"
+    ALT="Come get all the maps you'll need at Action Q2 Map Depot" WIDTH="91" HEIGHT="29"></a><br>
+    <font SIZE="-1" FACE="Arial">Our Sister Site Lots of Maps</font></td>
+    <td><p ALIGN="center"><a HREF="http://www.telefragged.com" TARGET="_top"><img
+    SRC="../../images/advertisments/small_telefragged_now.gif" BORDER="0" ALT="Telefragged Now!"
+    WIDTH="90" HEIGHT="33"></a><br>
+    <font SIZE="-1" FACE="Arial">Hosts of all things TeleFragged</font></td>
+  </tr>
+</table>
+</center></div><!-- let the article begin -->
+<center>
+<table WIDTH="500">
+  <tr>
+    <td align="right"><br>
+    <font SIZE="+2" FACE="Arial">
+
+<P>
+<B>SKINNING THE MODEL:</B></font>
+</td>
+</tr>
+  <tr>
+    <td><center><IMG SRC="images/../../images/news_bar.gif" ALT="" BORDER="0"> </center></td>
+ </tr>
+ <tr>
+    <td>
+<P>
+Depending on the complexity of the model this part is either done without hassle in a matter of minutes or proves to be brain knumbingly difficult! The process is in theory relatively simple, though this often proves the hardest part of creating a model.
+<P>
+There is no easy way to explain the process so i will try to keep this as simple as possible. As my version of MDL isnt currently working properly i cannot give any legible pictures at this time though i will put some up once i have it sorted.
+<P>
+A texture must be aplied to the model from the left, right, front, rear, top or bottom (or x,y,z axis). You must select which faces/polygons you want to texture from, for example, the front (make sure you have face selected at the bottom left of the screen). Click on select and drag the box over the faces that you want to texture from the front - remeber to deselect faces hold alt and drag the box over them.
+<P>
+If you have the faces you want (make sure you don't have any selected you dont want!) you now need to go to the skins section of MDL. Click on view and then skins, you should now be in a window with a black square in the top left corner - this is what the textures will be drawn on later.
+<P>
+The first thing you need to do is change the size of the 'texture'/skin, click on edit and then resize.  The size i use is 284 x 195 pixels, enter this and click ok. Now you are ready to begin. First though go to options, vertices and then click on dots.
+<P>
+Now - Click on edit, then click on get position from model. If the faces you have selected are from the front of the model select front and simply click ok. I recommend that you work in reverse order(i'll explain what i mean in a mo). What you should be able to see now is a wireframe of the faces you have selected (it may be distorted). This can then be moved, rotated, scaled etc. Now select the wireframe and move it out of the way, as each new piece you 'grab' will appear in the top left of the skin/texture you can end up with an undistinguishable mess of dots and lines. Once you have all sides of the model fitted on the skin so none overlap (remember its ok to overlay two opposite sides if you click on the mirror check box).
+<P>
+Finally click on file, then export and export the image to a pcx an example from the chicken is shown below........
+<P>
+<IMG SRC="images/Baseskin.jpg">
+<p>
+Now all that needs to be done is paint onto the skin. For this i recommend a program such as paintshop pro which is excellent for this sort of work, photoshop and corel photopaint are also good.
+<P>
+<IMG SRC="images/Psychoskin.jpg">
+<P>
+Once you have finished 'painting' the skin you must make sure you have the correct palette loaded. Either locate a .pal file called Quake2.pal or open a current skin from another model - then save the palette and load it again for your skin. Now all that needs doing is to save your skin as a .pcx. Now is also a good time start thinking about the little 32x32 picture icon that can be seen in the multiplayer character selection section of Quake 2. This needs to be saved with the name of skin with a _i after it ie. skinsname_i.pcx (be carefull not to write over the top of your skin!).
+<P>
+A program i recommend while producing skins is Npherno's Skin Tool - The model can be loaded with skin and easily rotated for close inspection (see tools section of this site).
+
+	</td>
+  </tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

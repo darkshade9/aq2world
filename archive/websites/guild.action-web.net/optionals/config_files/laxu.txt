@@ -1,0 +1,169 @@
+//----------------------------------------------------------------------------
+//Action Quake 2 configuration file (version 9.0)
+//By: -=[LaXu]=-
+//----------------------------------------------------------------------------
+
+//[ General ]
+
+//( Initial settings )
+
+skin "male/sabotage"                           //Set model and skin
+set cl_run "1"                                 //Set always run on
+sensitivity "13"                               //Set mouse sensitivity
+set cl_maxfps "35"                             //Limit max frames per second
+crosshair "1"                                  //Set your crosshair
+hand "0"                                       //Set your handedness
+
+//( Special AQ2 bindings )
+
+bind space "opendoor"                          //Open a door
+bind x "bandage"                               //Bandage your wounds
+bind k "reload"                                //Reload weapon
+bind . "drop weapon"                           //Drop the selected weapon
+bind , "drop item"                             //Drop your unique item
+bind e "use special"                           //Change to your unique weapon
+bind m "weapon"                                //Change weapon mode
+bind / "unstick"                               //Unstick
+bind w "partner"                               //Request/accept partner
+bind q "deny"                                  //Deny partner
+
+//( Movement )
+
+bind y "+forward"                              //Move forward
+bind h "+back"                                 //Move backward
+bind j "+moveright"                            //Strafe right
+bind g "+moveleft"                             //Strafe left
+bind f "+movedown"                             //Crouch
+bind c "+movedown"                             //Crouch 
+
+//( Mouse bindings )
+
+bind MOUSE1 "+attack"                          //Fire weapon
+bind MOUSE2 "+moveup"                          //Jump/climb/Swim up
+
+//( Miscellaneous )
+
+bind ~ "toggleconsole"                         //Console toggle
+bind \ "menu_joinserver"                       //Show join server menu
+bind PAUSE "pause"                             //Pause toggle
+bind TAB "cmd help"                            //Show scores
+bind F1 "inven"                                //Show inventory/teamplay menu
+bind [ "invprev"                               //Previous inventory item
+bind ] "invnext"                               //Next inventory item
+bind ENTER "invuse"                            //Use inventory item
+bind t "messagemode"                           //Message mode
+bind o "messagemode2"                          //Message mode 2
+bind u "weapnext"                              //Switch to next weapon
+
+
+//[ Weapon binds ]
+
+bind i "use Combat Knife"                      //}
+bind 0 "use Combat Knife"                      //}- Combat Knife
+bind 1 "use Combat Knife"                      //}
+bind 2 "use Blaster"                           //Mark 23 Pistol
+bind 3 "use Shotgun"                           //M3 Assault Shotgun
+bind 4 "use MP5/10 Submachinegun"              //MP5/10 Submachinegun
+bind 5 "use Sniper Rifle"                      //Sniper Rifle
+bind 6 "use M4 Assault Rifle"                  //M4 Assault Rifle
+bind 7 "use Handcannon"                        //Handcannon
+bind r "use A 2nd Pistol"                      //}
+bind 8 "use A 2nd Pistol"                      //}- A 2nd Pistol
+bind 9 "use M26 Fragmentation Grenade"         //M26 Fragmentation Grenade
+
+
+//[ Sniperrifle ]
+
+//( Sniper zoom (2x/4x/6x/no zoom toggle) )
+
+alias zoom1 "weapon; sensitivity 4.0; bind n zoom2"
+alias zoom2 "weapon; sensitivity 2.0; bind n zoom3"
+alias zoom3 "weapon; sensitivity 1.5; bind n zoom4"
+alias zoom4 "weapon; sensitivity 13; bind n zoom1"
+bind n "zoom1"
+
+//( Sniper zoom (2x/no zoom toggle) )
+
+alias sniper2xA "weapon; sensitivity 4.0; bind d sniper2xB; bind s sniper2xB; bind n zoom2"
+alias sniper2xB "weapon; weapon; weapon; sensitivity 13; reset"
+bind d "sniper2xA"
+
+//( Sniper zoom (4x/no zoom toggle) )
+
+alias sniper4xA "weapon; weapon; sensitivity 1.7; bind s sniper4xB;bind d sniper4xB; bind n zoom3"
+alias sniper4xB "weapon; weapon; sensitivity 13; reset"
+bind s "sniper4xA"
+
+//( Sniper zoom (6x/nozoom toggle) )
+
+alias sniper6xA "weapon; weapon; weapon; sensitivity 1.0; bind z sniper6xB;bind s sniper6xB;bind d sniper6xB;bind n zoom4"
+alias sniper6xB "weapon; sensitivity 13; reset"
+bind z "sniper6xA"
+
+// ( Emergency sensitivity/sniperzoom reset )
+
+alias reset "sensitivity 13; bind d sniper2xA; bind s sniper4xA; bind z sniper6xA; bind n zoom1;"
+bind a "reset;echo Sniper reset"
+
+
+//[ Radio ]
+
+//( Team messages )
+
+bind F2 "radio enemys; say_team Enemy spotted !"
+bind F3 "radio enemyd; say_team Enemy down !"
+bind F4 "radio go; say_team Go !!!"
+bind F5 "radio cover; say_team Cover me, I'm going in !"
+bind F6 "radio taking_f; say_team Taking fire! Request assistance!"
+bind F7 "radio im_hit;wait;wait;wait;radio cover; say_team I'm hit ! Cover me while i bandage !"
+bind F8 "radio teamdown; say_team Teammate down !"
+bind F9 "radio reportin; say_team Still alive !"
+bind F10 "radio treport;say_team Team, report in !"
+alias channel_team "channel 0; bind F11 channel_partner"
+alias channel_partner "channel 1; bind F11 channel_team"
+bind F11 "channel_partner"
+
+//( Location messages )
+
+bind UPARROW "radio up; say_team Up"
+bind DOWNARROW "radio down; say_team Down"
+bind RIGHTARROW "radio right; say_team Right"
+bind LEFTARROW "radio left; say_team Left"
+bind home "radio forward; say_team Forward"
+bind end "radio back; say_team Behind"
+
+//( Enemy number messages )
+
+alias 1enemy "radio 1;wait;radio enemys; say_team 1 enemy spotted !"
+alias 2enemy "radio 2;wait;radio enemys; say_team 2 enemies spotted !"
+alias 3enemy "radio 3;wait;radio enemys; say_team 3 enemies spotted !"
+alias 4enemy "radio 4;wait;radio enemys; say_team 4 enemies spotted !"
+alias 5enemy "radio 5;wait;radio enemys; say_team 5 enemies spotted !"
+alias 6enemy "radio 6;wait;radio enemys; say_team 6 or more enemies spotted !!!"
+
+alias +enemy "bind 1 1enemy;bind 2 2enemy;bind 3 3enemy;bind 4 4enemy;bind 5 5enemy; bind 6 6enemy"
+alias -enemy "bind 1 use BFG10K;bind 2 use Blaster;bind 3 use Shotgun;bind 4 use Super Shotgun;bind 5 use Chaingun;bind 6 use Grenade Launcher"
+bind ALT "+enemy"
+
+//( Misc. messages )
+
+bind v "say_team Roger that !"
+bind b "say_team Cancel that !"
+
+alias msg1 "say_team Where are the enemies ?"
+alias msg2 "wave 3;say_team Follow me !!!"
+alias msg3 "say_team Incoming enemies! Take cover !!!"
+alias msg4 "say_team The enemies are inside a building"
+alias msg5 "say_team Clear !"
+alias msg6 "say_team There's a enemy camping"
+
+alias +message "bind 1 msg1;bind 2 msg2;bind 3 msg3;bind 4 msg4;bind 5 msg5;bind 6 msg6"
+alias -message "bind 1 use BFG10K;bind 2 use Blaster;bind 3 use Shotgun;bind 4 use Super Shotgun;bind 5 use Chaingun;bind 6 use Grenade Launcher"
+bind CTRL "+message"
+
+
+//[ Hand waves ]
+
+alias +waves "bind 1 wave 1;bind 2 wave 2;bind 3 wave 3;bind 4 wave 4;bind 5 wave 0"
+alias -waves "bind 1 use Combat Knife;bind 2 use Blaster;bind 3 use Shotgun;bind 4 use MP5/10 Submachinegun;bind 5 use Sniper Rifle"
+bind SHIFT "+waves"

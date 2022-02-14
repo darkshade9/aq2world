@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Action Barracks-  Communication centre</title>
+</head>
+
+<body bgcolor="Black" link="White" vlink="White" alink="Silver"><style>          A:Visited  {
+          	text-decoration : none;
+          	color : White;
+          }
+          
+          A:Active  {
+          	color : Silver;
+          	text-decoration : none;
+          }
+          
+          A:Hover  {
+          	color : Silver;
+          	text-decoration : none;
+          }
+          
+          A:link  {
+          	color : White;
+          	text-decoration : none;
+          }
+          
+          </style>
+<div align="center"><img src="../setup.gif" width=500 height=81 border=0 alt="The set up"><br><br>
+<font face="Verdana,Arial" size="+3" color="White">The Communication centre</font></div><br><br><br>
+<p><font face="Arial,'Times New Roman'" size="2" color="Teal">Ok welcome to the comms centre. In this section of the barracks you will learn how to set up and use your radio.<br>
+Ok squaddie listen up!! The radio is a very important piece of equipment it could save your life! It is relativly easy to set up, there are just some simple binds to learn and put into your config file.</p>
+<p>All the radio calls are displayed below:
+<font face="Arial,'Times New Roman'" size="2" color="Silver"><ul type="circle">
+<li type="1"><b>Taking Fire</b><br>
+This will say "taking fire requesting assistance"<br>
+Command: "radio taking_f"</li>
+<li type="1"><b>Enemy Spotted</b><br>
+This will say "Enemy spotted"<br>
+Command: "radio enemys"</li>
+<li type="1"><b>Enemy Down</b><br>
+This will say "Enemy down"<br>
+Command: "radio enemyd"</li>
+<li type="1"><b>I'm Hit!</b><br>
+This will say: "I'm hit!"<br>
+Command: "radio im_hit"</li>
+<li type="1"><b>Teammate down</b><br>
+This will say: "Teammate down"<br>
+Command: "radio teamdown"</li>
+<li type="1"><b>Cover me!</b><br>
+This will say: "Cover me!"<br>
+Command: "radio cover"</li>
+<li type="1"><b>GO!</b><br>
+This will say: "GO!"<br>
+Command: "radio go"</li>
+<li type="1"><b>Team, report in</b><br>
+This will say: "Team, report in"<br>
+Command: "radio treport"</li>
+<li type="1"><b>Reporting in</b><br>
+This will say: "Reporting in"<br>
+Command: "radio reportin"</li></ul></font></p>
+There is also a set of number calls and directional calls, these are listed below:<br>
+<font face="Arial,'Times New Roman'" size="2" color="Silver"><ul type="circle">
+<li type="1"><b>1</b><br>
+This will say "1"<br>
+Command: "radio 1"</li>
+<li type="1"><b>2</b><br>
+This will say "2"<br>
+Command: "radio 2"</li>
+<li type="1"><b>3</b><br>
+This will say "3"<br>
+Command: "radio 3"</li>
+<li type="1"><b>4</b><br>
+This will say "4"<br>
+Command: "radio 4"</li>
+<li type="1"><b>5</b><br>
+This will say "5"<br>
+Command: "radio 5"</li>
+<li type="1"><b>6</b><br>
+This will say "6"<br>
+Command: "radio 6"</li>
+<li type="1"><b>7</b><br>
+This will say "7"<br>
+Command: "radio 7"</li>
+<li type="1"><b>8</b><br>
+This will say "8"<br>
+Command: "radio 8"</li>
+<li type="1"><b>9</b><br>
+This will say "9"<br>
+Command: "radio 9"</li>
+<li type="1"><b>10</b><br>
+This will say "10"<br>
+Command: "radio 10"</li>
+</font></ul>
+The directional calls are as follows:<br>
+<font face="Arial,'Times New Roman'" size="2" color="Silver"><ul type="circle">
+<li type="1"><b>Forward</b><br>
+This will say "Forward"<br>
+Command: "radio forward"</li>
+<li type="1"><b>Back</b><br>
+This will say "Back"<br>
+Command: "radio back"</li>
+<li type="1"><b>Left</b><br>
+This will say "Left"<br>
+Command: "radio left"</li>
+<li type="1"><b>Right</b><br>
+This will say "Right"<br>
+Command: "radio right"</li>
+<li type="1"><b>Up</b><br>
+This will say "Up"<br>
+Command: "radio up"</li>
+<li type="1"><b>Up</b><br>
+This will say "Up"<br>
+Command: "radio up"</li>
+</ul></font>
+All these calls can be added to make a proper sentance, like eg. you could be running with a partner and see 3 enemies to you right so you say:<br> <p>"hssk..3.click""enemey spotted..hsskclick""hssk...right...click"</p> and so you are cumunicating and working together and as a result winning!<p>
+Ok that covers all the radio calls, but there is still alot more you can do to get the most out of your radio. Like adding personalized messages into your radio calls, so instead of just saying "team mate down" you can say "Team mate down, man down! man down! Send backup!" or whatever you want. So how do you do this? Simple here's how the message above should look in your console:</font><br>
+<font face="Arial,'Times New Roman'" size="2" color="White"><p><i>Bind x "radio teamdown;say_team Man down! Man down! Send backup!"</p></font></i>
+<font face="Arial,'Times New Roman'" size="2" color="Teal">Just replace with any key you wish and bobs ya uncle!<p>You can do these to any radio command you wan't, just remember to include say_team because that means that it will only send it to the people in your team.<p>
+Ok so what good is saying "cover me" when no one knows who you are asking? Or saying im hit without saying how much health you have? Or even reporting in and not saying your weapon and ammo? Well squaddies there is a way to do the and it the commands are called<br>
+<div align="center"><b>Variables</b></div>
+These are nifty little commands that can show your status on multiple things for your team mates to know, like current health, ammo, weapon, who is near you etc.<br>
+Here is a list of all the variables in AQ2:<br>
+<font face="Arial,'Times New Roman'" size="2" color="Silver"><ul type="circle">
+<li type="1"><b>%H</b> - This tells your team mates/partner your current health. VERY handy.</li>
+<li type="1"><b>%A </b> - This tells your team mates/partner your current ammo, and remaining clips.</li>
+<li type="1"><b>%T </b> - This tells your team mates/partner the names of the teammates nearest to you.</li>
+<li type="1"><b>%W</b> - This will tell your team mates/patner your current weapon</li>
+<li type="1"><b>%I</b> - This will tell your team mates/partner your current item</li></ul></font>
+These variables allow you to make much more detialed messages, like for example if the main heat of the battle is over and you dont know who is left on your team and then suddenly a voice blurts out "team repot in" instead of you just replying "reporting in" you can tell him your health, weapon, ammo and item. And how do you do this you ask? Simple just combine what we have already learnt and chuck in the variable so it would look something like this:<br>
+<p><i><font face="Arial,'Times New Roman'" size="2" color="White">"radio reportin;say_team reporting in with %H health a %W with %A and a %I"</font></i></p>
+Which would say:<br>
+<p><i><font face="Arial,'Times New Roman'" size="2" color="White">"Reporting in with 68 health a M4 assult rifle with 16 bullets and 1 extra clip and a kevlar vest"</font></i></p>
+So you can see how we have transformed a normal boring radio call into a work of art! Well not really but close :)
+
+
+
+</font>
+</body>
+</html>

@@ -1,0 +1,181 @@
+//Advanced Action Quake2 Config File
+//change the keys binds to what want them to be
+//then save this file and rename it as autoexec.cfg
+//and place it in your action directory
+//if you use a sensetivity other than 12 you will have to
+//change ALL instances of the words sensitivity 12 to whatever
+//setting you do use.  You may also want to edit the sensitivity
+//steps of the sniper rifle to suit your personal tastes
+//play around with it until it feels right
+
+set s_mixahead ".14"
+set cl_predict "1"
+set cl_maxfps "90"
+set radio_power "0"
+
+bind i "atomic punch"
+bind o "fulguropoing"
+bind p "cornofulgur"
+
+
+
+
+//Paramètres de base
+
+cd_nocd 1
+name "Lisan al-Gaib"
+skin supermal/punisher
+set crosshair "3"
+set hand "0"
+
+
+// Movement keys
+
+bind w 			"+forward"
+bind s 			"+back"
+bind space		"+moveup"
+bind c 			"+movedown"
+bind a			"+moveleft"
+bind d			"+moveright"
+bind mouse1		"+attack"
+bind mouse2 		"weapnext"
+bind u 			"unstick"
+
+//Walk+run alias (this toggles your movement between walking and running)
+
+alias run 		"set cl_run 1; bind shift walk; echo Running"
+alias walk 		"set cl_run 0; bind shift run; echo Walking"
+bind shift 		"walk"
+
+
+//Action Quake2 Keys and mouse control
+
+bind mwheeldown	 	"reload"
+bind ctrl 		"weapon"
+bind mouse3 		"opendoor"
+bind mwheelup		"bandage"
+bind q			"drop item"
+bind e			"drop weapon"
+bind f 			"use special"
+
+
+
+//Weapon Keys
+
+bind g 			"use Combat Knife;echo Combat Knife"
+bind h 			"use M26 Fragmentation Grenade"
+bind ctrl 		"weapon;sensitivity 12;bind r sniper"
+
+
+//sniper rifle
+
+alias sniper		"use special; sensitivity 12; echo zoom 1x; bind r 2x;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x;"set crosshair "3"""
+alias 2x 		"weapon; sensitivity 8; echo zoom 2x; bind r 4x;bind 1 2x1x;bind 2 2x2x;bind 3 2x4x;bind 4 2x6x;"set crosshair "1"""
+alias 4x		"weapon; sensitivity 6; echo zoom 4x; bind r 6x;bind 1 4x1x;bind 2 4x2x;bind 3 4x4x;bind 4 4x6x;"set crosshair "1"""
+alias 6x 		"weapon; sensitivity 3; echo zoom 6x; bind r 1x;bind 1 6x1x;bind 2 6x2x;bind 3 6x4x;bind 4 6x6x;"set crosshair "1"""
+alias 1x 		"weapon; sensitivity 12; echo zoom 1x; bind r 2x;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x;"set crosshair "3"""
+bind r sniper
+
+
+bind 1 1x1x
+bind 2 1x2x
+bind 3 1x4x
+bind 4 1x6x
+bind 5 "sensitivity 1"
+bind 6 "sensitivity 2"
+bind 7 "sensitivity 3"
+bind 8 "sensitivity 4"
+bind 9 "sensitivity 4"
+bind 0 "sensitivity 5"
+
+
+//zoom direct du sniper à partir de 1x (1x,2x,4x,6x)
+
+alias 1x1x		"sensitivity 12;echo quickly zooming to 1x;bind r 2x;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x;"set crosshair "3"""
+alias 1x2x		"weapon;sensitivity 8;echo quickly zooming to 2x; bind r 4x;bind 1 2x1x;bind 2 2x2x;bind 3 2x4x;bind 4 2x6x;"set crosshair "1"""
+alias 1x4x		"weapon;wait;wait;weapon;sensitivity 6;echo quickly zooming to 4x;bind r 6x;bind 1 4x1x;bind 2 4x2x;bind 3 4x4x;bind 4 4x6x;"set crosshair "1"""
+alias 1x6x		"weapon;wait;wait;weapon;wait;wait;weapon;sensitivity 3;echo quickly zooming to 6x;bind r 1x;bind 4 6x6x;bind 3 6x4x;bind 1 6x1x;bind 2 6x2x;bind 3 6x4x;bind 4 6x6x;"set crosshair "1"""
+
+
+
+//zoom direct du sniper à partir de 2x (1x,2x,4x,6x)
+alias 2x1x		"weapon;wait;wait;weapon;wait;wait;weapon;sensitivity 12;echo zoom 1x;bind r 2x;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x;"set crosshair "3"""
+alias 2x2x		"sensitivity 8;echo zoom 2x;bind r 4x;bind 1 2x1x;bind 2 2x2x;bind 3 2x4x;bind 4 2x6x;"set crosshair "1"""
+alias 2x4x		"weapon;sensitivity 6;echo zoom 4x;bind r 6x;bind 1 4x1x;bind 2 4x2x;bind 3 4x4x;bind 4 4x6x;"set crosshair "1"""
+alias 2x6x		"weapon;wait;wait;weapon;sensitivity 3;echo zoom 6x;bind r 1x;bind 1 6x1x;bind 2 6x2x;bind 3 6x4x;bind 4 6x6x;"set crosshair "1"""
+
+
+
+//zoom direct du sniper à partir de 4x (1x,2x,4x,6x)
+alias 4x1x		"weapon;wait;wait;weapon;sensitivity 12;echo zoom 1x;bind r 2x;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x;"set crosshair "3"""
+alias 4x2x		"weapon;wait;wait;weapon;wait;wait;weapon;sensitivity 8;echo zoom 2x;bind r 4x;bind 1 2x1x;bind 2 2x2x;bind 3 2x4x;bind 4 2x6x;"set crosshair "1"""
+alias 4x4x		"sensitivity 6;echo zoom 4x;bind r 6x;bind 1 4x1x;bind 2 4x2x;bind 3 4x4x;bind 4 4x6x;"set crosshair "1"""
+alias 4x6x		"weapon;sensitivity 3;echo zoom 6x;bind r 1x;bind 1 6x1x;bind 2 6x2x;bind 3 6x4x;bind 4 6x6x;"set crosshair "1"""
+
+
+
+//zoom direct du sniper à partir de 6x (1x,2x,4x,6x)
+alias 6x1x		"weapon;sensitivity 12;echo zoom 1x;bind r 2x;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x;"set crosshair "3"""
+alias 6x2x		"weapon;wait;wait;weapon;sensitivity 8;echo zoom 2x;bind r 4x;bind 1 2x1x;bind 2 2x2x;bind 3 2x4x;bind 4 2x6x;"set crosshair "1"""
+alias 6x4x		"weapon;wait;wait;weapon;wait;wait;weapon;sensitivity 6;echo zoom 4x;bind r 6x;bind 1 4x1x;bind 2 4x2x;bind 3 4x4x;bind 4 4x6x;"set crosshair "1"""
+alias 6x6x		"sensitivity 3;echo zoom 6x;bind r 1x;bind 3 6x4x;bind 1 6x1x;bind 2 6x2x;bind 3 6x4x;bind 4 6x6x;"set crosshair "1"""
+
+
+
+//Retour à la normale avec le pistolet
+
+bind v ""set crosshair "3"";sensitivity 12;bind r sniper;use blaster;bind 1 1x1x;bind 2 1x2x;bind 3 1x4x;bind 4 1x6x"
+
+// Inventory 
+
+bind [ 			"invprev"
+bind ] 			"invnext"
+bind BACKSPACE 		"invdrop"
+bind TAB 		"inven"
+bind ENTER		"invuse"
+
+
+// Mouse shiznit
+
+set in_joystick		"0"
+set in_mouse 		"1"
+set m_filter 		"1"
+set m_pitch 		"0.022"
+set sensitivity		"12"
+set lookstrafe 		"0"
+set lookspring 		"0"
+set freelook 		"1"
+
+
+// Communication
+
+bind t 			"messagemode"		/send a message
+bind y 			"messagemode2"		/send a message only to teammates
+bind F5 		"wave 0"
+bind F6 		"wave 1"
+bind F7 		"wave 2"
+bind F8 		"wave 3"
+bind F9 		"wave 4"
+
+
+// Other stuff
+
+bind = 			"sizeup"
+bind -			"sizedown"
+bind ` 			"toggleconsole"
+bind ~ 			"toggleconsole"
+bind PAUSE 		"pause"
+set msg 		"1"
+set cl_run 		"1"
+set viewsize 		"100"
+bind ESCAPE 		"togglemenu"
+set cl_predict 		"1"
+
+
+//various things only really used when you load yourself as a server
+
+set bholelimit "20"
+set splatlimit "40"
+set shelloff "0"
+dmflags 2112
+set floodprot "0"	//flood pretection 1 is on 0 is off

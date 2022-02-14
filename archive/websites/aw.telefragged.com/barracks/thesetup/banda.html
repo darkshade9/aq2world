@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Action Barracks- Bindas & Aliases</title>
+</head>
+
+<body bgcolor="Black" link="White" vlink="White" alink="Silver"><style>          A:Visited  {
+          	text-decoration : none;
+          	color : White;
+          }
+          
+          A:Active  {
+          	color : Silver;
+          	text-decoration : none;
+          }
+          
+          A:Hover  {
+          	color : Silver;
+          	text-decoration : none;
+          }
+          
+          A:link  {
+          	color : White;
+          	text-decoration : none;
+          }
+          
+          </style>
+<div align="center"><img src="../setup.gif" width=500 height=81 border=0 alt=""><br><br>
+<font face="Verdana,Arial" size="+3" color="White">Binds and Aliases</font></div><br><br><br>
+<p><font face="Arial,'Times New Roman'" size="2" color="Teal">In AQ2 there are some <i>very</i> important binds that you <i>must</i> have in your AQ2 config for you to play the game and enjoy it.<br>
+These are the <b>must have</b> binds:<br>
+<ul type="circle"><li type="1"><b>Bandage</b>- Probably one of the most important binds because it stops you from dying.<br> 
+Command- bind b	"bandage" (replace b with any key you want)</li>
+<li type="1"><b>Open door</b>- This will open doors for you, which you have to do in AQ2 because doors dont open themselves.<br>
+Command- bind shift "opendoor" (replace shift with any key you want)</li>
+<li type="1"><b>Reload</b>- This will load your gun, you will put a new clip in and all ammo in the old clip is discarded so becarfull! Ammo is precious in this mod.<br>
+Command- bind mouse2 "reload" (replace mouse2 with any key you want)</li>
+<li type="1"><b>Drop weapon</b>- This will throw your current special weapon away, which is very important as you can only carry one at a time, although with a bandolier you can carry two.<br>
+Command- bind z "drop weapon" (replace z with any key you want)</li>
+<li type="1"><b>Drop item</b>- This will throw your current item, which is also very important becasue you can only carry one item at a time<br>
+Command- bind x "drop item" (replace x with any key you want)</li>
+<li type="1"><b>Weapon</b>- This will change the mode of the weapon eg. press this when you have the sniper rifle and it will zoom in, or when you have the MP5/10 it will change it to 3 round burst mode. You will have to make an alias for zooming with the sniper rifle but that is explained further
+on.<br>
+Command- bind ctrl "weapon" (replace ctrl with any key you want)</li>
+<li type="1"><b>Use special</b>- Binding a button to this will automatically select your special weapon, which saves you scrolling through your weapons to find it, who knows it could save yout life.<br>
+Command- bind q "special" (replace q with any key you want) </li></ul></p>
+Ok that covers the bind that you <b>must have</b>, without these you won't have much luck playing AQ2. Now i will cover some other "less important binds" that still should be in your config.<br>
+<p>The oh so sweet sniper rifle, if it works it can be absolute heaven if it doesn't then it can be an absolute pain in the neck. Here is a full proof way to have it working, this is extracted from my config so fell free to experiment with different keys.<br>
+<font face="Arial,'Times New Roman'" size="2" color="White"><i>alias sniper "weapon;sensitivity 8;echo 2x;bind r 4x"<br>
+alias 4x "weapon;sensitivity 6;echo 4x;bind r 6x"<br>
+alias 6x "weapon;sensitivity 3;echo 6x;bind r 1x"<br>
+alias 1x "weapon;sensitivity 12;echo 1x;bind r sniper"<br>
+bind r sniper</i><br></font>
+emergency sensetivity reset key (MUST be pressed if sniper rifle
+suddenly switched to anything else for ANY reason while zoomed in.
+this includes dieing, bandaging, end of round, dropping it, etc.)<br>
+<font face="Arial,'Times New Roman'" size="2" color="White"><i>bind v "sensitivity 12; bind r sniper; echo sniper reset"</i></font><br>
+Now just cut and paste the commands into your config and you'll be sniping in no time!</p>
+<p>Another important bind is the inventory command, binding a key to this will display your inventory, in DM(deathmatch) this is the weapons and items you have with ammo counts, in TP(teamplay) this lets you choose what weapon you want and then what item, although when you join a TP server the first time you press this it will show the teams and the current number of players on each(if the teams are uneven the defult team will be the one with the least players, if they are even then the defult team will be the one loosing) choose the defult teams as an even game is a fair and fun game :o)<br>
+Here is an extract from my config for the binds:<br></font>
+<font face="Arial,'Times New Roman'" size="2" color="White"><i>
+bind [  "invprev"<br>
+bind ]  "invnext"<br>
+bind BACKSPACE  "invdrop"<br>
+bind TAB  "inven"<br>
+bind ENTER  "invuse"<br></i></font>
+<font face="Arial,'Times New Roman'" size="2" color="Teal">invenprev and invenuse are simply binds to scroll up and down the menu.</p>
+<p>One very cool aspect of AQ2 TP is the radio. This allows you to communicate with you team mates very easily as well as adding a atmosphere to the game. Head on over to the <a href="comms.html" target="main">Comms centre</a> for all the info on how to set up and use this nifty little device.<br></font>
+
+
+
+
+
+</body>
+</html>

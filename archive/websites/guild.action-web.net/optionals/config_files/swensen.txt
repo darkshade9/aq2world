@@ -1,0 +1,168 @@
+// Hey there,
+// These are my personal AQ2 settings. They work perfect and conclude
+// the latest bindings from AQ2 version 1.5. Before you start playing,
+// change a few things first! You'll have to change the sensitivity
+// bindings to which number you prefer, and you'll have to put in 
+// your name here and there. =) I've tried to make this as easy to use
+// and edit as possible, so HAVE FUN!
+//
+// 	        Still have troubles, question, complains or suggestions?
+// 	                      Feel free to email or ICQ me!
+//
+// 					Greetz from
+// 			     +(-Scope-)+ (Lesley Swensen/Leslo)
+//                ICQ# 412213 - email: Leslo@Goldmine.nl - Leslo.mypage.org
+//
+//              BTW! If you have any cool settings, bindings, aliases etc etc
+//                     Please tmail them to me! I love new stuff to use!
+
+// ----------------
+
+// Personal Player Settings
+name "YourNameHere"		   // Player name
+skin "male/nut"			   // Player model and skin
+hand "0"			   // Player hand-side, 0 is right
+set crosshair 2			   // Enables crosshair, 2 is red dot
+set sensitivity "14"		   // Player mouse sensitivity, change to your own one
+set m_pitch 0.022		   // Enables better mouse aiming
+set m_filter 0			   // Makes sure mouse aiming isn't filtered, your aim may
+				   // be lagged, but it will always be precise to the game
+
+// -----------------
+
+// Movement Keys
+bind w "+forward"		   // Move forward (very important =)
+bind s "+back"			   // Move backward
+bind a "+moveleft"		   // Strafe left
+bind d "+moveright"		   // Strafe right
+bind SPACE "+moveup"		   // Jump/Swim up
+bind c "+movedown"		   // Crouch (improves accuracy)
+bind mouse1 "+attack"		   // Fire weapon
+bind mouse2 "reload"		   // Reload weapon
+alias run "set cl_run 1; bind shift walk; echo Running"		
+alias walk "set cl_run 0; bind shift run; echo Walking"		
+bind shift "walk"		   // Changes between run/walk (for silent stealth =)
+bind MWHEELDOWN "invprev"	   // Previous Item (don't know if this works)
+bind MWHEELUP "invnext"		   // Next Item (don't know if this works)
+
+// ----------------
+
+// Specific Action Quake Keys
+bind v irvision			   // Activates infra-red vision
+bind z "drop item"		   // Drop special item
+bind x "drop weapon"		   // Drop special weapon
+bind q "bandage" 		   // Bandage wounds
+bind e "opendoor"		   // Open doors
+bind f "weapon"			   // Change weapons modes (Semi-Automatic and Short bursts)
+ 
+// ----------------
+
+// In-Game Keys
+bind t "messagemode"		   // Typ a global message for everyone
+bind r "messagemode2"		   // Typ a team message for uhm lemme think..teamplayers!
+bind y "team 1"			   // This will change you to the SWAT team
+bind u "team 2"			   // This will change you to the ResDog team
+bind i "team none"		   // This will put you in observer mode
+
+// ----------------
+
+// Weapon Keys
+bind 5 "use Combat Knife;sensitivity 14"  // Knife (change sensitivity for all)
+bind 2 "use MK23 Pistol;sensitivity 14"  // Gun
+bind 3 "use Dual MK23 Pistols;sensitivity 14"  // Guns Akimbo
+bind 1 "use special;sensitivity 14"  // Special weapon 
+bind 4 "use M26 Fragmentation Grenade;sensitivity 14" // Grenade
+bind / "weapnext;sensitivity 14"   // Changes your weapon to the next one
+				   // I've included sensitiviy settings in all weaponbinds,
+				   // this way, if you're into zoom mode, you can
+				   // change your weapon without having to zoom out.
+//sniper rifle 
+alias sniper "weapon;sensitivity 7;echo Zoom IN;bind ALT 1x" 
+alias 1x "weapon;weapon;weapon;sensitivity 14;echo Zoom OUT;bind ALT sniper" 
+bind ALT sniper			   // Changes to 2x zoom (lower sensitivity) and back
+				   // If you don't need lower in zoom mode, just use 'weapon'
+				   // You might want to change the Sensitivity here too
+
+//emergency sensetivity reset key 
+bind CTRL "sensitivity 14;bind ALT sniper" // Changes sensitivity back
+					   // (again, change Sens if ya like =)
+
+// ----------------
+
+// Standard Playing Settings
+set freelook 1			   // Enables constant mouselook
+set joystick 0			   // Disables joystick and joystick allocation
+set lookstrafe 0		   // Enables steady view when jumping
+set lookspring 0		   // Enables steady view when jumping
+set cl_run 1			   // Enables automatic run, can be turned off with shift
+set cd_nocd 1			   // Makes sure you don't need the quake2 cd
+set s_mixahead .14		   // I have no idea what this does =)
+set fov 0			   // Makes sure your view isn't zoomed in and player accurate
+set v_kickpitch 0.0		   // This will make your view stay steady, even when hit
+set v_kickroll 0.0		   // Same as above
+set v_kicktime 0.0		   // Same as above
+
+// ----------------
+
+// TeamMessages
+bind KP_5 "radioteam enemys;say_team Enemy Spotted!"
+
+bind KP_HOME "radioteam taking_f;say_team **** is taking fire with a %W! Requesting Assistance!"
+// Fill in your name at the **** above!
+
+bind KP_END "radioteam reportin;say_team Alive and kicking! Health at %H with a %W and %I"
+
+bind KP_PGUP "radioteam up;say_team Up! Up!"		
+bind KP_PGDN "radioteam down;say_team Down! Down!"	
+
+bind KP_UPARROW "radioteam go;say_team Go! Go! Go!"
+bind KP_DOWNARROW "radioteam treport;say_team Team Report In! Health at %H with a %W and %I"
+bind KP_LEFTARROW "radioteam cover;say_team Cover Me!"
+bind KP_RIGHTARROW "radioteam enemyd;say_team Enemy Down!"
+
+bind UPARROW "radioteam forward;say_team Forward! Forward!"
+bind DOWNARROW "radioteam back;say_team Back! Back!"
+bind LEFTARROW "radioteam left;say_team Left! Left!"
+bind RIGHTARROW "radioteam right;say_team Right! Right!"
+
+// Here are the radio commands plus the messages with them.
+// Keypad Downarrow (2) is used to Report In, and is very cool:
+// If you press it, teammembers will know that you're alive plus what kind
+// of weapon you use, what kind of item you use and how many health you've got!!
+//
+// Keypad End (1) is used to request status about your team. It'll also tell
+// you teammembers how many health you'be got, and your weapon and item
+//
+// Keypad Home (7) is used when you're going to attack,
+// it will announce you're attacking and with which weapon.
+//
+// I didn't include the radio messages: I'm hit, and, Teammate down.
+// No one really cares about that (when I hear that in a game I think: so what..)
+// You can check who's still living with the Keypad End (1)
+
+// ----------------
+
+// Fast Teamplay Settings
+bind INS "choose handcannon;choose stealth slippers"
+bind DEL "choose combat knife;choose stealth slippers"
+bind HOME "choose MP5/10 Submachinegun;choose lasersight"
+bind END "choose M4 Assault Rifle;choose kevlar vest"
+bind PGUP "choose sniper rifle;choose kevlar vest"
+bind PGDN "choose sniper rifle;choose silencer"
+
+// Here are some fast combo that you can use in teamplay games.
+// This way, you won't have to visit that darn menu all the time =)
+// (Change them if you like, the weapon names are in the new Readme file)
+//
+// Insert combo- handcannon and slippers, perfect for those sneaky blasts
+// Delete combo- combat knife and slippers, for those ScreaM addicts!
+// Home combo  - MP5 and lasersight, for if you don't feel like aiming that time
+// End combo   - M4 and kevlar, spray and pray (I actually hate this combo....)
+// PGUP combo  - Sniper & kevlar, for those well litt levels, where armor is life
+// PGDN combo  - Sniper & silencer, for dark levels, where stealth is life
+
+// ----------------
+echo *****************************
+echo * Alternate Config Executed *
+echo * Happy Fraggin! - Scope =) *
+echo *****************************

@@ -1,0 +1,58 @@
+<HTML><HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+function SetCursor() {
+var testUserName = getCookie("UserName");
+
+if (testUserName != null) {  
+	document.THEFORM.UserName.value = getCookie("UserName");
+document.THEFORM.Password.value = getCookie("Password");
+	}  else {
+	document.THEFORM.UserName.focus();
+}
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length; 
+            return unescape(dc.substring(begin, end));  }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+</HEAD>
+ <BODY bgcolor="#000000"  text="#C0C0C0" link="#666666" alink="#666666" vlink="#666666" onLoad="SetCursor()">
+<br><br><center><FONT SIZE="2" FACE="Arial, Verdana">
+P R I V A T E &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F O R U M</font>
+<FORM ACTION="forumdisplay.cgi" NAME="THEFORM" METHOD="POST">
+
+<table cellpadding=4 cellspacing=1 border=0 width="85%">
+<tr bgcolor="#444444"><td colspan=2>
+<FONT SIZE="2" FACE="Arial, Verdana" color="#9B9D8C">
+<B>You are attempting to access a private forum.  Please identify yourself below.  Note that this identification screen will only be required once per browser session (per private forum, if you are accessing via forum passwords), assuming you allow cookies to be stored.  We will store your private forum access privileges as a cookie (thus, we highly recommend that you do not disable your cookies in your browser!).</b></td></tr>
+<TR bgcolor="#444444"><TD><FONT SIZE="2" FACE="Arial, Verdana">
+UserName:</font></td><td><INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=20 MAXLENGTH=35></td></tr>
+
+<TR bgcolor="#444444"><TD><FONT SIZE="2" FACE="Arial, Verdana">
+Password:</font></td><td><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=20 MAXLENGTH=35></td></tr>
+
+</table>
+
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="idcheck">
+<INPUT TYPE="HIDDEN" NAME="forumnumber" VALUE="3">
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Confirm Identity Now">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Clear Fields Above"></CENTER>
+</form>
+
+<br><br></font>
+</body></html>
+

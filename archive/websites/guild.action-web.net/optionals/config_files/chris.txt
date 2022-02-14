@@ -1,0 +1,24 @@
+// This Config was written by KillingBox[LH] and can be found exclusivly at:
+//      http://guild.telefragged.com/optionals/config_files.html
+set 	1xsens	4
+set 	2xsens	2
+set 	4xsens	1
+set 	6xsens	.5
+bind 	"mouse1"        "+fire"
+bind 	"mouse2"        "+movedown"
+bind 	"mouse3"        "sensitivity $1xsens;echo Sensitivity Reset;alias zoomin 2x;alias zoomout 1xdn"
+bind 	"mwheelup"	"zoomin"
+bind 	"mwheeldown"	"zoomout"
+bind 	"n"		"+netcheck"
+alias "+fire" "hand 2;+attack"
+alias "-fire" "hand 0;-attack"
+alias "+netcheck" "netgraph 1"
+alias "-netcheck" "netgraph 0"
+alias "1x" "weapon;sensitivity $1xsens;echo 1x;alias zoomin 2x;alias zoomout 1xdn"
+alias "2x" "weapon;sensitivity $2xsens;echo Zoomed at 2x;alias zoomin 4x;alias zoomout 2xdn"
+alias "4x" "weapon;sensitivity $4xsens;echo Zoomed at 4x;alias zoomin 6x;alias zoomout 4xdn"
+alias "6x" "weapon;sensitivity $6xsens;echo Zoomed at 6x;alias zoomin 1x;alias zoomout 6xdn"
+alias "1xdn" "weapon;weapon;weapon;sensitivity $6xsens;echo Zoomed at 6x;alias zoomin 1x;alias zoomout 6xdn"
+alias "2xdn" "weapon;weapon;weapon;sensitivity $1xsens;echo 1x;alias zoomin 2x;alias zoomout 1xdn"
+alias "4xdn" "weapon;weapon;weapon;sensitivity $2xsens;echo Zoomed at 2x;alias zoomin 4x;alias zoomout 2xdn"
+alias "6xdn" "weapon;weapon;weapon;sensitivity $4xsens;echo Zoomed at 4x;alias zoomin 6x;alias zoomout 4xdn"

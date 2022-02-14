@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+	
+	<head>
+		<title>
+			Actor's Guild - Developer Area
+		</title>
+	</head>
+	
+	<body TEXT="#454545" BGCOLOR="#808080">
+		<div align="center">
+			<center>
+				
+				<table WIDTH="460">
+					<tr>
+						<td ALIGN="CENTER" COLSPAN="3">
+							<img SRC="../../images/headers/developer_area.gif" BORDER="0"
+							ALT="Developer Area" WIDTH="422" HEIGHT="66">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p ALIGN="center">
+							<a HREF="http://action.telefragged.com" TARGET="_top">
+								<img
+								SRC="../../images/advertisments/small_action_quake2_now.gif" BORDER="0"
+								ALT="Get Action Quake Now!" WIDTH="88" HEIGHT="31">
+							</a>
+							<br>
+							<font SIZE="-1" FACE="Arial">
+								Action Quake Main Homepage
+							</font>
+						</td>
+						<td>
+							<p ALIGN="center">
+							<a HREF="http://www.mapdepot.net" TARGET="_top">
+								<img
+								SRC="../../images/advertisments/small_action_q2_map_depot.gif" BORDER="0"
+								ALT="Come get all the maps you'll need at Action Q2 Map Depot" WIDTH="91" HEIGHT="29">
+							</a>
+							<br>
+							<font SIZE="-1" FACE="Arial">
+								Our Sister Site Lots of Maps
+							</font>
+						</td>
+						<td>
+							<p ALIGN="center">
+							<a HREF="http://www.telefragged.com" TARGET="_top">
+								<img
+								SRC="../../images/advertisments/small_telefragged_now.gif" BORDER="0"
+								ALT="Telefragged Now!"
+								WIDTH="90" HEIGHT="33">
+							</a>
+							<br>
+							<font SIZE="-1" FACE="Arial">
+								Hosts of all things TeleFragged
+							</font>
+						</td>
+					</tr>
+				</table>
+			</center>
+		</div>
+		<!-- Let the news begin! Just add a new table cell to keep things neat -->
+		<div align="center">
+			<center>
+				<table WIDTH="480">
+					<tr>
+						<td align="right">
+							<font size=+3>
+								<b>
+									Using Bones Pro&nbsp&nbsp&nbsp
+								</font>
+							</b>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<font size=+1>
+								<b>
+									by GWOT&nbsp&nbsp&nbsp&nbsp
+								</center>
+							</font>
+						</b>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<center>
+							<img SRC="../images/news_bar.gif" ALT BORDER="0">
+							
+						</center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<H3>
+							<FONT COLOR=#454545>
+								Setting Up a Skeleton in Bones Pro
+							</FONT>
+						</H3>
+						
+						If you thought doing linked xforms was fun then you will love BonesPRo for Max.
+						It makes skeletal animation nearly effortless.  The best part is that we can
+						take our skeleton from the first tutorial and plop it right into bonespro.  All
+						we need for this tutorial is the original skeleton we made (with no dummies
+						attatched and no mesh verts linked to it) and a mesh to attach to it.
+						<BR>
+						<P>
+						
+						
+					</TABLE>
+					<TABLE WIDTH="40%" BGCOLOR="#000000" BORDER=0>
+						<TR>
+							<!-- Row 1 Column 1 -->
+							<TD>
+								<H3>
+									<FONT COLOR=#454545>
+										The Space Warp
+									</FONT>
+								</H3>
+								
+							</TD>
+							<!-- Row 1 Column 2 -->
+							<TD>
+								<IMG SRC="images/bpicon.gif" WIDTH="91" HEIGHT="81" ALIGN="right" ALT="">
+								
+								
+							</TD>
+						</TR>
+					</TABLE>
+					
+					First load up your skeleton and your mesh and make sure that the skeleton has
+					been properly fitted within the mesh.  Go to the Create SpaceWarp tab and use
+					the scroll bar to select Digimation Warps and click on the Bones Pro button.
+					Pick a viewport and click somewhere nearby your mesh like above and to the
+					right or something.  You will see the object appear for the Bones Pro space
+					warp and the Bones Pro Space Warp rollout will appear on the right side of the
+					screen. Click on the Assign button in the Bones section of the rollout and
+					select every bone in your skeleton from the popup selection list.  At this
+					point you want to bind your mesh to the space warp as well.  Select the mesh,
+					click on the Bind To Space Warp button in the top toolbar and click/drag from
+					the mesh to the spacewarp and release.  Next select your space warp and go to
+					the modify panel to get back into the bonespro rollout.   From the Bound Node
+					section click on the "None" button and select your mesh from the list.  The
+					mesh name should show up in the button now, indicating it is the current bound
+					node for this space warp.  This basically sets up your mesh with the spacewarp
+					and skeleton.  It is now ready to animate - sort of.  Try going into animation
+					mode in max, enable IK and move your skeleton around abit.  You will see it
+					deforming the mesh but it may not seem very elegant at this point.  Most likely
+					you will want to edit the influence of particular bones over the mesh.  Note:
+					you can only deform your mesh in bones pro when animation is turned on.
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							The Influence Editor
+						</FONT>
+					</H3>
+					<IMG SRC="images/bpie.gif" WIDTH="358" HEIGHT="400" ALIGN="right" ALT="">
+					The Influence Editor is the key to controlling how your skeleton affects your
+					mesh when you animate it.  Each bone in Bones Pro affects all verts to some
+					degree when you first apply the space warp.  By regulating the amount of
+					influence each bone exerts you can localize this result to gain more accurate
+					control of your mesh.  If you move the mouse over a bone you will see its
+					strength and falloff settings appear on the status bar at the bottom of the IE
+					window.  Also if you enable the Draw Mesh tool and then click on the Visualize
+					Bone Influence tool you can see the effects of a bone's Strength and Falloff
+					settings on the mesh itself by selecting a bone.  The blue areas of the mesh
+					represent the parts that are not influenced by the selected bone.  The red
+					areas indicate that the bone has absolute control over the mesh at that point
+					(usually the area surrounding the middle of the bone.  The green areas
+					encompass the falloff influence of the bone, where its influence over the mesh
+					decreases (usually the ends of the bone).
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							View Port Controls
+						</FONT>
+					</H3>
+					
+					<IMG SRC="images/viewport.gif" WIDTH="118" HEIGHT="25" ALT="">
+					<BR>
+					
+					These tools function exactly the same as the ones for max, enabling you to
+					control your view within the Influence editor.
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							Bone Selection Controls
+						</FONT>
+					</H3>
+					
+					<IMG SRC="images/bones.gif" WIDTH="142" HEIGHT="27" ALT="">
+					<BR>
+					
+					These tools are for selection of bones within the editor.
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							Influence Controls
+						</FONT>
+					</H3>
+					
+					<IMG SRC="images/influenc.gif" WIDTH="73" HEIGHT="25" ALT="">
+					<BR>
+					
+					These tools allow you to adjust the Strength and Falloff settings of a bone
+					when you select it as well as visualize their effects on the mesh.
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							Vertex Selection Controls
+						</FONT>
+					</H3>
+					<IMG SRC="images/vertex.gif" WIDTH="141" HEIGHT="24" ALT="">
+					<BR>
+					
+					These allow you to select/deselect verts by area (drawing a window) or by their
+					current relationship to selected bones.
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							Include/Exclude Controls
+						</FONT>
+					</H3>
+					
+					<IMG SRC="images/inc-excl.gif" WIDTH="118" HEIGHT="25" ALT="">
+					<BR>
+					
+					These tools work in conjunction with the vertex and bone selection tools by
+					allowing you to include or exclude verts in a bone's influence range.  You must
+					have a bone and some verts selected in the viewport in order to use these
+					functions.
+					<BR>
+					<P>
+					
+					
+					
+					<H3>
+						<FONT COLOR=#454545>
+							Visualization Controls
+						</FONT>
+					</H3>
+					<IMG SRC="images/visualiz.gif" WIDTH="72" HEIGHT="26" ALT="">
+					<BR>
+					
+					
+					These three tools enable you to toggle the display of bones, mesh, and verts in
+					the editor window.
+					<BR>
+					<P>
+					
+					
+					
+					I wont go into detailed explanations of what each tool does in the Influence
+					editor because it is so very simple to figure out.  What you want to do in the
+					editor is make sure that each bone in your skeleton is only affecting the areas
+					of the mesh that surround it, and fine tune this control.  So if you are moving
+					the left foot of the skeleton in an animation and noticing that verts from the
+					right foot are moving too, then you obviously have to exclude these verts from
+					the left foot's influence.  If you find the shin bone is affecting verts in the
+					thigh too much then try reducing its falloff settings.  Using bones pro is an
+					exercise in trial and error, but don't worry, its pretty damn hard to Farg
+					things up with this plugin.  Have fun with it.
+					<BR>
+					<BR>
+				</td>
+			</tr>
+			</div>
+			
+			
+		</BODY>
+	</HTML>

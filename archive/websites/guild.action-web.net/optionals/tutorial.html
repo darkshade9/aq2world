@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+		<TITLE>
+			Actor's Guild - Optionals - Tutorial
+		</TITLE>
+	</HEAD>
+<BODY TEXT="#454545" BGCOLOR="#808080" LINK="#0000ff" VLINK="#800080" ALINK="#ff0000">
+		<CENTER>
+			<TABLE WIDTH="460">
+				<TR>
+					<TD ALIGN=CENTER COLSPAN="3">
+						<A HREF="optionals.html"><IMG SRC="images/optionals_header.jpg" BORDER=0 HEIGHT=86 WIDTH=259 ALT="Optionals"></A>
+					</TD>
+				</TR>
+				<TR>
+					<TD ALIGN=CENTER COLSPAN="3">
+						<CENTER>
+							<TABLE>
+								<TR>
+									<TD>
+										<CENTER>
+											<A HREF="crosshairs.html"><IMG SRC="images/crosshairs.gif" WIDTH=101 HEIGHT=28 BORDER=0 ALT="Crosshairs"></A>
+										</CENTER>
+									</TD>
+									<TD>
+										<CENTER>
+											<A HREF="sounds.html"><IMG SRC="images/sounds.gif" WIDTH=79 HEIGHT=28 BORDER=0 ALT="Sounds"></A>
+										</CENTER>
+									</TD>
+									<TD>
+										<CENTER>
+											<A HREF="config_files.html"><IMG SRC="images/config_files.gif" WIDTH=108 HEIGHT=28 BORDER=0 ALT="Configuration Files"></A>
+										</CENTER>
+									</TD>
+								</TR>
+								<TR>
+									<TD>
+										<CENTER>
+											<A HREF="icons_fonts.html"><IMG SRC="images/icons_fonts.gif" WIDTH=110 HEIGHT=28 BORDER=0 ALT="Icons and Fonts"></A>
+										</CENTER>
+									</TD>
+									<TD>
+										<CENTER>
+											<A HREF="other.html"><IMG SRC="images/other.gif" WIDTH=79 HEIGHT=28 BORDER=0 ALT="Other"></A>
+										</CENTER>
+									</TD>
+									<TD>
+										<CENTER>
+											<A HREF="mailto:unorthodox@intallect.com"><IMG SRC="images/submit_files.gif" WIDTH=108 HEIGHT=28 BORDER=0 ALT="Submit Files"></A>
+										</CENTER>
+									</TD>
+								</TR>
+							</TABLE>
+						</CENTER>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<CENTER>
+							<H1>
+								<FONT FACE="Arial">
+									Tutorial
+								</FONT>
+							</H1>
+						</CENTER>
+					</TD>
+				</TR>
+			</TABLE>
+			
+			<TABLE WIDTH="480">
+				<TR>
+					<TD>
+						<IMG SRC="../images/news_bar.gif" ALT="" BORDER=0 HEIGHT=13 WIDTH=466>
+						<BR>
+						&nbsp;&nbsp;&nbsp;
+						<FONT SIZE="-1" FACE="Arial">
+							<A HREF="mailto:suislide@telefragged.com"><I> Suislide</I></A>
+							-
+							<B>
+								&quot;SIMPLE, PICTURE FREE TUTORIAL ON USING OPTIONALS&quot;
+							</B>
+						</FONT>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						&nbsp;&nbsp;&nbsp;I know that a lot of people have never edited a pak file
+						before.  For that reason I have decided to do a few things to make it easier on
+						you all.
+						<br>
+						&nbsp;&nbsp;&nbsp;The first thing is that I have decided to implement a
+						standard for all of the files.  All optionals will be downloaded as a pak9.pak
+						file for ease of use for anyone who is unfamiliar with pak editing and doesn't
+						want to learn.  All you have to do is copy it to your quake2/action/ directory
+						and that is it.  I used pak9.pak because the way quake2 works is that it reads
+						them in order so pak9.pak will be loaded after any other pak file and that way
+						your optionals  will always work.
+						<br>
+						&nbsp;&nbsp;&nbsp;The second thing is pretty much this tutorial.  I know that a
+						lot of people are going to want to use more than one optional file so it may
+						get confusing when you try to install two pak9.pak file and realize you
+						overwrote the old one.  So here comes an explanation.  This may confuse a few
+						people and since it is only necessary if you want to use multiple optionals
+						then skip it if you only want to you one.
+						<br>
+						<br>
+						<center>
+							<I>
+								Just for an example you could use the Gold Akimbos, crosshairs, and console
+								backgrounds I made all in one pak9.pak and make a Suislide's pak or something. 
+								But that is of course just an example and I doubt many will use the crosshairs
+								since they were designed for software at low res and will look funky in GL
+								(which is why I no longer use them).
+							</I>
+						</center>
+						<br>
+						&nbsp;&nbsp;&nbsp;Ok, there is a simple way that isn't very efficient but is
+						very easy to do if you only want to use a couple files.  Move one pak9.pak into
+						your quake2/action directory like I described above and then take the second
+						one you want to use and put it in a temporary directory.  Look in you
+						quake2/action directory and find out which pak files you have there already.
+						Then rename the pak9.pak you have in the temporary directory 1 number higher
+						then the highest one you have already and then copy it into your quake2/action
+						directory.  For example (examples are always easier) if you have pak0.pak,
+						pak1.pak, and pak5.pak in you quake2/action directory then rename one of your
+						pak9.pak (optional files) to one number higher than pak5.pak.  Then you will
+						have pak0.pak, pak1.pak, pak5.pak, and pak6.pak.  Then just copy your other
+						optionals file (the other pak9.pak) into your quake2/action directory along
+						with those and you are done.  There are a few drawbacks to this method though.
+						Since the later files load take priority then you could very well run into
+						problems where you want 1 file from one optionals to load and one file from
+						another.  So you couldn't install 2 sound packs for example and then pick and
+						choose sounds from each one.  You would simply get the later number paks sounds
+						instead since they can only be loaded once and the later number takes priority.
+						It also means that if a map pack or something else comes out later that uses
+						the pak number you used then your pak will be overwritten.  This will never
+						happen with pak9.pak since I have already told the map depot guys to reserve
+						that number for the Actor's Guild's optionals.  It also means if you use more
+						than a couple optionals then you can run out of numbers real quick since quake2
+						only supports up to pak9 I believe.  Well, there is a way around these problems
+						but it isn't as simple.
+						<br>
+						&nbsp;&nbsp;&nbsp;First off you will need a pak editor to follow along nay
+						further.  You can get them from here at the actor's guild from the downloads
+						page under utilities OR you can go to these sites and get them from their
+						homepages (you will be assured to get the latest version if you do).  I
+						recommend pakexplorer since it is a much smaller download and it is VERY much
+						like windows explorer and so it is easy to understand.  But it doesn't support
+						long file names (shouldn't pose any problems but it might) and qped does.
+						<br>
+						&nbsp;&nbsp;&nbsp;
+						<A HREF="http://www.planetquake.com/qped/">qped</A>
+						<br>
+						&nbsp;&nbsp;&nbsp;
+						<A HREF="http://quakestuff.telefragged.com/">pakexplorer</A>
+						<br>
+						&nbsp;&nbsp;&nbsp;Now that you have one of these programs you can dive into
+						your pak files and change them.  Well, if you have ever made zip files then
+						this should be simple for you since this is even easier.  Like a zip file a
+						.pak file is simply a bunch of files and directories stored as one file.  The
+						biggest difference is that a pak file isn't compressed at all (or very little).
+						So open up pak explorer or qped and open one of your optionals pak files.  You
+						will notice it has a listing of directories and then files on the right very
+						similar to the way windows explorer looks.  Well, what you need to do is
+						combine all the files you want into one pak9.pak file.  If you are timid then
+						it may sound pretty confusing but it is actually pretty simple.  To do this,
+						open one pak9.pak and delete each file out of it that you do not want to use.
+						You will then have to extract the files left from one pak file out of the pak
+						and into a regular directory/file structure.  In pak explorer this is VERY
+						simple since it is a one button thing.  If you use qped then you can probably
+						figure it out simply in that as well.  I don't want to sound like I think you
+						are all a bunch of idiots any more than I may have already by keeping it simple
+						so I won't explain this part.  Just read the help files for the program if you
+						get confused.  Ok, once you have the files for one pak9.pak extracted then you
+						can delete the pak9.pak itself since you don't need it any more.  Then open up
+						the OTHER pak9.pak file that has files you want to use in the final pak9.pak
+						and once again delete each file out of it that you do not want (just select the
+						file and hit the delete key).  This time you aren't going to extract the
+						remaining files though because there is no reason to make a brand new pak9 when
+						you can just edit this one.  Just drag the directories and files left over from
+						the first pak9.pak file into this one and you are done (make sure you got the
+						directory structure in the pak right or it won't work).  pakexplorer saves in
+						real time so if you delete there is no undelete (I believe that is still the
+						way it is for all pak editors).  be careful with this and always back up your
+						file if you are editing something you don't want to lose (like pak0.pak).  If
+						you want to use file from more than 2 paks then just keep repeating step 1
+						until you get to the last pak file that has files you want to use and then use
+						step2.  Pretty simple.  If you want to use files you got from somewhere besides
+						the actor's guild (like one's you made yourself) then that is simple too.  Just
+						drag them in like the rest of the files.
+						<br>
+						&nbsp;&nbsp;&nbsp;Before you submit any files to us we would appreciate if you
+						could make a pak9.pak so we don't have to.  To do this just open pak explorer
+						and chose new pak from the file menu.  Then just drag the directories and files
+						into the pak and double check to make sure everything worked right.  Then make
+						a readme.txt file for it explaining what your optional is exactly and any other
+						info about it or yourself that you want to include.  Then zip it up and send it
+						to unorthadox.  His email can be found all over this site.  I will make a
+						readme template to make it simple to make a good readme later but for now just
+						make whatever type of readme you want.  You will probably want to put your name
+						and contact info and the date in there as well as what the pak includes since
+						that is the important stuff.  Please do not compile optionals we already have
+						together and then send them in.  Only new files please.
+					</TD>
+				</TR>
+			</table>
+			
+		</CENTER>
+	</BODY>
+</HTML>

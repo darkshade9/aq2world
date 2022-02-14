@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<title>Actor's Guild - Developer Area</title>
+<bgsound src="03goldfinger.wav" loop="1">
+</head>
+<BODY TEXT="#454545" BGCOLOR="#808080" LINK="#0000ff" VLINK="#800080" ALINK="#ff0000">
+<div align="center"><center>
+<table WIDTH="460">
+  <tr>
+    <td ALIGN="CENTER" COLSPAN="3"><img SRC="../../images/headers/developer_area.gif" BORDER="0"
+    ALT="Developer Area" WIDTH="422" HEIGHT="66"></td>
+  </tr>
+  <tr>
+    <td><p ALIGN="center"><a HREF="http://action.telefragged.com" TARGET="_top"><img
+    SRC="../../images/advertisments/small_action_quake2_now.gif" BORDER="0"
+    ALT="Get Action Quake Now!" WIDTH="88" HEIGHT="31"></a><br>
+    <font SIZE="-1" FACE="Arial">Action Quake Main Homepage</font></td>
+    <td><p ALIGN="center"><a HREF="http://www.mapdepot.net" TARGET="_top"><img
+    SRC="../../images/advertisments/small_action_q2_map_depot.gif" BORDER="0"
+    ALT="Come get all the maps you'll need at Action Q2 Map Depot" WIDTH="91" HEIGHT="29"></a><br>
+    <font SIZE="-1" FACE="Arial">Our Sister Site Lots of Maps</font></td>
+    <td><p ALIGN="center"><a HREF="http://www.telefragged.com" TARGET="_top"><img
+    SRC="../../images/advertisments/small_telefragged_now.gif" BORDER="0" ALT="Telefragged Now!"
+    WIDTH="90" HEIGHT="33"></a><br>
+    <font SIZE="-1" FACE="Arial">Hosts of all things TeleFragged</font></td>
+  </tr>
+</table>
+</center></div><!-- let the article begin -->
+<table>
+		<td><img src="images/oddhat.jpg" width=122 height=190 alt="" border="0"></td>
+		<td><p><font color="#000000" size="7" face="Franklin Gothic Condensed"><strong>ODDJOB's Amazing Flying VWEP Tutorial and Other Tivial Musings.</strong></font></p></td>
+	</tr>
+</table>
+    <center><img SRC="../images/news_bar.gif" ALT="" BORDER="0"> </center>
+<p>Well, here is
+the tutorial I have been talking about for a little while now.
+I'm doing this in order to pass the torch. I have done many of
+the vwep for the Action Quake models and want to pass this
+knowlege on so some one else so anybody can add vwep to their
+favorite model. But you still have to get the model ok'ed by the
+Guild. I mean, who wants to be playing AQ2 and have a gun toting
+PK Knight blow your ass away? </p>
+
+<p>Well first
+you'll need to know the tools you need to do this. You'll have to
+get your self over to the <a
+href="http://planetquake.com/q2pmp">http://planetquake.com/q2pmp</a> . From there check
+out everybody's work, then go to the Developers page then, on to
+the tools page to pick up the Q2 Modeler v.9b. It is a great
+freeware tool that unfortunatly is not being supported by the
+author anymore, so it can be buggy sometimes. Guess you could try
+bugging him.... After you have downloaded that you'll need to go
+over to <a
+href="http://www.xs4all.nl/~renep/quakeme/">http://www.xs4all.nl/~renep/quakeme/</a>And look around that
+site to find where to download your next invaluable tool, QME
+3.1. It's shareware and will set you back about $20. Not too bad.
+The registered version is the only one that can handle the full
+md2 player model file size. After you have d/l'ed and installed
+those two programs, you are ready to go. Oh, I almost forgot, you
+are gonna need a pak explored too. You can find one here: <a
+href="http://www.quake2.com/qworkshop/features/files.htm">http://www.quake2.com/qworkshop/features/files.htm</a> .</p>
+
+<p>It's up to
+you to learn the basics of the tools. I taugnt myself the basics
+and so can you. I will tell you all you need to know to do vwep
+though. Okay now. Well, open up Q2 modeler and then open up the
+weapon model you are going to link. I am going to use the M4,
+everybody's favorite weapon. It will work fine for this tutorial.
+And the male model of course. So you open the M4 model from the
+terror directory. Get it from there because that is the closest
+to the originals as you can get. That goes for all the models in
+the terror dir. Just trust me. Then you merge the M4.md2 model
+with the weapon.md2 model from the male directory. Then you need
+to go to the file menu and click on 'choose reference model' and
+open up the male model. He should only appear in the perspective
+window. You use the manipulator tools(scale move and rotate) to
+get the breifcase into the right position, realitive to the male
+model and the weapon model.Just like in fig#1. </p>
+
+<p><img src="images/fig1.jpg" width=404 height=290 alt="" border="0"></p>
+
+<p>Once you have
+it lined up and everything looks nice, it's time for step 2.</p>
+
+<p>Step Two. Now
+that it's lined up perfectly, you can get rid of the reference
+model by going to the file menu and selecting 'clear reference
+model'. Well, now you need to make sure that you new weapon model
+is selected in face mode. And only the faces of your new model.
+Usually you just have to scroll through a few frames and and find
+a frame where they are not right on top of each other and select
+there. If its not already selected. Remember you just got done
+moving the thing around. Now that you have it selected in face
+mode, go back to the frame you lined it up in and go into vertex
+mode. Now you need to select four vertex on the weapon model from
+the male directory that is already sync'ed up. You need to try to
+get the vertex that are the furthest away from each other. Dunno
+why, but it workes better that way. Now you have four vertex
+selected just like fig#2, right? </p>
+
+<p><img src="images/fig2.jpg" width=352 height=240 alt="" border="0"></p>
+
+<p>Good. Ok, on
+to step three.</p>
+
+<p>Step Three.
+Here comes the part that sync's up the animations of your new
+model to the old model. I know, you're thinking: <em><strong>Oh,
+great, here comes all the work! Ugh! </strong></em>Here's
+what ya do... First save your work up to this point. Because the
+aligning is not undoable. Go to the bones tool pallet and click
+on the align button. Take a look at fig#3 to see what I mean. <img src="images/fig3.jpg" width=272 height=326 alt="" border="0"></p>
+
+<p>Now cycle
+thru the animation and watch with wonder at just how easy that
+was. You'll notice that your new model is perfectly aligned with
+the old. You can even reload the reference model to check it.
+Yup, sure 'nuff. All aligned. If your model is totally distorted
+after the align, then you need to reload the saved file and pick
+different vertex. Then try the align again. Rinse and repeat
+until it's ok. Well now, that wasn't so hard was it? Now go back
+to face mode, invert you selection so the old weapon model is
+selected and delete it. Then go to the view menu and select
+skins. You need to delete the unused vertex that are cluttering
+up yu skin mesh. They are the left over vertex from your recently
+deleted weapon model. After that is completed, you just need to
+export you model to md2 format. </p>
+
+<p>Step Four.
+Before you export it you need the folder to export it to. Open up
+your pak explorer and open up the quake2\action\pak0.pak. From
+inside the pak, go to the models folder and highlight the weapons
+folder. Now just extract away. Now go back to Q2 modeler and
+export thenewly aligned model to
+quake2\action\models\weapons\g_m4 as w_m4. It will ask you for a
+skin, so point it to the one in the unpaked
+action\models\weapons\g_m4 called, funnily enough, 'skin'. You
+now have yourself a nicely aligned weapon model that is almost
+finished. You now just need to link the model to the skin. </p>
+
+<p>Step five.
+Open up your newly registered version of QME 3.1 with Q2 support.
+Then, guess what! That's right, open up the newly aligned M4
+model. The reason you need this progam is because it is the only
+one that I have found 100% effective at linking a model to a
+skin. Otherwise you get that funky red shadow skin. Ugh. Now that
+your model is open, open up the skin for it. then save it again
+into the same folder you got it from. Make sure it's in md2
+format. That will link it to the skin that is already in memory
+because its in the pak file and you video card doesn't have to
+work so hard. Well, all done. Now just move the w_m4.md2 file
+back into your \players\male folder and you have a new aligned
+vwep model that is linked to the skin in your pak0.pak file. </p>
+
+<p>Now that
+wasn't so hard was it? You haven't done the other akimbo yet.
+That is where the agravation comes in. Bleh.</p>
+
+<p>There are two
+methods I developed to handle this problem. One, link the akimbo
+model to the hand itself. And the other you link the weapon but
+with the 2nd pistol oriented to the correct hand. The first
+method is the preferred. But it also has the most problems. The
+2nd requires more work but it is effective. </p>
+
+<p>Method #1.
+You basically follow the same steps as the M4 tutorial. Import
+the single Mk23 model. But this time you merge the whole male
+tris.md2. You can select everything on the tris but the arm on
+you are linking to and delete it. It's not nessessary. Then align
+the model so it looks as close as you can get to looking as if it
+is holding it(can be hard depending on the model). Select the
+Mk23 model in face mode. Pick the vertex in the hand. Keep them
+as far apart as possible, but keep them in the hand/forearm area.
+Like so: Fig#4. <img src="images/fig4.jpg" width=404 height=290 alt="" border="0"></p>
+
+<p>Hit the align
+button and there you go. If its all aligned and isn't too
+distorted during the animation then just delete the arm, then
+merge the other single mk23 model and export both of them to the
+\action\models\weapons\g_dual as w_akimbo. Should be sitting
+there next to your w_mk23. All the rest is the same as above. The
+tris model is heavily deformed for the animation on most well
+made models, so sometimes this method is not going to work. you
+can live with a little distortion(look closly at the 2nd pistol
+on the SAS model, or any for that matter). Unfortunatly it is
+inheirent in the model making process. But To solve the akimbo
+problem I ran into on a few of the models, I came up with method
+#2. </p>
+
+<p>Method #2. I
+used this on the Messiah model. He gestured too much with his
+other hand so I had to use this method. All you need to do is
+open the mk23 model from the terror folder, then merge with the
+weapon model of the model you are working with and then load the
+model as a reference model. Align the Mk23 model to where it
+belongs and select the vertex from the weapon model. For the
+Messiah, I just used the wooden handle that usually rested in
+that hand. I didn't select the vertex from the model itself. You
+know the rest by now. Align it. Blah blah blah. Now you have a
+model that is aligned with the correct hand until he pulls it
+away from the original. Then it just floats. And you may have to,
+frame by frame align the model manually where it doesn't line up.
+Or you can do what I did and just scale it down until it's
+invisible. Use the type in window to scale it to 1 after you have
+the scale manipulator selected. Like Fig#5. <img src="images/fig5.jpg" width=325 height=161 alt="" border="0"></p>
+
+<p>Do that for
+every frame you need. If you look at the akimbo for the messiah,
+the 2nd pistol dissapears during the taunts and pains. But it's
+not noticeable in-game. And as I learned in my scenic design
+class.. If it looks good from 20' away, its ok. Heh. And you
+already know how to finish this. Heh.</p>
+
+<p>Well, that's
+all folks. Hope this helps you. </p>
+
+<p><font color="#000000" size="4" face="Courier New Baltic"><strong>Dwayne
+'ODDJOB' Douglass<img src="images/bondopen.gif" width=64 height=48 alt="" border="0"></p></strong></font>
+
+<p>P.S. I have
+added three WWII weapon models and a tommy gun model for use as
+replacement wvep. To use these, just rename them to the weapon
+you want it to replace and put the skin in the folder with it, so
+you don't have to fiddle with the pak. Oh, and I am about to
+release a tommy gun replace ment for the heads-up for the M4,
+complete with arms and such. So you have all the tools you need.
+Now that you know how, YOU can implement them. You can try to get
+a hold of me if you have a problem, but I can't promise an
+answer. I'll try though.</p>
+<p>&nbsp;</p>
+<center>
+<table border="1">
+	<tr>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/m1.md2">M1 model</a></td>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/waltherp38.md2">Walther p38 model</td>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/bar.md2">Bar model</td>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/tommygun.md2">Tommy Gun model</td>
+	</tr>
+	<tr>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/m1.pcx">M1 skin</td>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/waltherp38.pcx">Walther p38 skin</td>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/bar.pcx">Bar skin</td>
+		<td><a href="http://www.telefragged.com/mirrors/mirror.pl?guild/developer/tommygun.pcx">Tommy Gun skin</td>
+	</tr>
+</table>
+</center>
+<p>&nbsp;</p>
+</body>
+</html>

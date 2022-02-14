@@ -1,0 +1,173 @@
+//general
+name "[SoV]Khalif"
+skin male/sov
+bind end "bandage;radio im_hit;say_team Im Hit Trying To Bandage (%H% Health) (%T);wave 2;reset1x"
+bind del "opendoor"
+set shelloff 0
+bind q "quit"
+
+//downloads
+set allow_download_maps "1"
+set allow_download_sounds "1"
+set allow_download_models "1"
+set allow_download_players "1"
+set allow_download "1"
+
+//look around
+set freelook "1"
+set lookspring "1"
+set lookstrafe "1"
+set invert_mouse "1"
+set sensitivity "12"
+set crosshair "2"
+
+//move keys
+bind UPARROW "+forward"
+bind DOWNARROW "+back"
+bind LEFTARROW "+moveleft"
+bind RIGHTARROW "+moveright"
+bind SHIFT "+moveup"
+set cl_run "1"
+
+//walking and running
+alias run "set cl_run 1; bind m walk; echo Movement set to Running"
+alias walk "set cl_run 0; bind m run; echo Movement set to Walking"
+bind m walk
+
+//radiogender
+bind F2 radiogendertoggle
+alias radiogendertoggle "radiogender male;bind F2 radiogendertoggle1"
+alias radiogendertoggle1 "radiogender female;bind F2 radiogendertoggle"
+
+//sky
+bind F3 skytoggle
+alias skytoggle "sky drksky;bind F3 skytoggle1"
+alias skytoggle1 "sky bluesky;bind F3 skytoggle"
+
+//special weapons
+bind ALT "use grenades;reset1x"
+bind i "irvision;reset1x"
+
+//weapons
+bind mouse1 "+attack"
+bind mouse2 "reload"
+bind \ "weapnext"
+bind INS "sensitivity 12;use M3 Super 90 Assault Shotgun; use MP5/10 Submachinegun; use Handcannon; use Sniper Rifle; use M4 Assault Rifle;reset1x"
+bind HOME "sensitivity 12;use Blaster;reset1x"
+bind PGUP "sensitivity 12;use A 2nd Pistol;reset1x"
+bind PGDN "sensitivity 12;use Combat Knife;reset1x"
+bind / "drop M3 Super 90 Assault Shotgun;drop MP5/10 Submachinegun;drop Handcannon;drop Sniper Rifle;drop M4 Assault Rifle"
+bind ' "drop item"
+
+//weapon settings key
+bind mouse3 "weapon;sensitivity 12;reset1x"
+bind mwheelup sniper
+
+//sniper rifle
+alias sniper "weapon;sensitivity 8.5;echo 2x: sensetivity 8;bind mwheelup 4x;bind mwheeldown quick1a"
+alias 4x "weapon;sensitivity 6;echo 4x sensetivity 6;bind mwheelup 6x;bind mwheeldown quick1b"
+alias 6x "weapon;sensitivity 3;echo 6x: sensetivity 3;bind mwheelup 1x;bind mwheeldown quick1c"
+alias 1x "weapon;sensitivity 12;echo 1x: sensetivity 12;bind mwheelup sniper;bind mwheeldown quick1d"
+bind mwheelup sniper
+
+//Zoom out to 1x fast
+alias reset1x "sensitivity 12;bind mwheelup sniper;bind mwheeldown quick1d;echo Quickly zooming to 1x"
+alias quick1a "weapon;wait;wait;weapon;wait;wait;weapon;reset1x"
+alias quick1b "weapon;wait;wait;weapon;reset1x"
+alias quick1c "weapon;reset1x"
+alias quick1d "echo already at 1xzoom"
+bind mwheeldown quick1d
+
+//teamplay communication stuff
+bind t 	"messagemode"		/send message
+bind y 	"messagemode2"		/send a team only message
+bind F4 	"wave 0"	/flip off
+bind F5 	"wave 1"	/salute
+bind F6 	"wave 2"	/taunt
+bind F7 	"wave 3"	/wave
+bind F8 	"wave 4"	/point
+bind c		"channel"       /channel selector
+bind x		"deny"          /deny partnership
+bind z	        "partner"       /propose patnership
+
+//teamplay radio commands
+//numbers (each says the corresponding number to your teammates)
+bind 1 	"radioteam 1;wave 0;say_team ONE"
+bind 2 	"radioteam 2;wave 0;say_team TWO"
+bind 3 	"radioteam 3;wave 0;say_team TREE"
+bind 4 	"radioteam 4;wave 0;say_team FOUR"
+bind 5 	"radioteam 5;wave 0;say_team FIVE"
+bind 6 	"radioteam 6;wave 0;say_team SIX"
+bind 7 	"radioteam 7;wave 0;say_team SEVEN"
+bind 8 	"radioteam 8;wave 0;say_team EIGHT"
+bind 9 	"radioteam 9;wave 0;say_team NINE"
+bind 0 "radio 10;wait;radio 4" //10-4 (Roger/Confirmation)
+
+//directions (each says the correspnding direction to your teammates)
+bind KP_UPARROW 	"radioteam forward;say_team Forward;wave 4"
+bind KP_DOWNARROW 	"radioteam back;say_team Back;wave 4"
+bind KP_LEFTARROW	"radioteam left;say_team Left;wave 4"
+bind KP_RIGHTARROW	"radioteam right;say_team Right;wave 4"
+bind KP_HOME		"radioteam up;say_team Up;wave 4"
+bind KP_PGUP		"radioteam down;say_team Down;wave 4"
+
+//other radio commands (each says something to teammates for a specific
+//situation)
+// Taking Fire
+bind * 			"radio taking_f;wave 0;say_team Taking Fire Im In A Rain Of Bullets (%H% Health) (%T)"
+// Enemy Spotted
+bind KP_INS 		"radio enemys;wave 4;say_team Charlie Spotted (%T)"
+// Enemy Down
+bind KP_DEL		"radio enemyd;wave 2;say_team One Enemy Less (%T)"
+// I'm Hit!
+bind KP_PLUS		"radio im_hit;wave 0;say_team Im Hit Properly Going too Die (%H% Health) (%T)"
+// Teammate down
+bind KP_MINUS		"radio teamdown;wave 4;say_team Teammate Killed (%T)"
+// Cover me!
+bind KP_END		"radioteam cover;wave 0;say_team Cover My Ass (%H% Health) (%T)"
+// GO!
+bind KP_5		"radioteam go;wave 3;say_team Go Go !! (%T)"
+// Team, report in
+bind .			"radio treport;wave 1;say_team Team Report In Now (%H% Health) (%T)"
+// Reporting in
+bind ,			"radio reportin;wave 1;say_team Khalif Still In Action (%H% Health) (%T)"
+
+Bind F9 "say [SoV] SEALS of VENGEANCE RULEZ !!!;wave 1"
+Bind c "say Any clans who want to meet [SoV] ???"
+
+//provoking messages
+alias asaya1 "Eat this you low-life punk...;bind F12 asaya2;wave 2"
+alias asaya2 "I'm comming to take U away... ha-ha... hi-hi... ho-ho...;bind F12 asayb2;wave 4"
+alias asayb2 "Eat this Butt-face...;bind F12 asayc2;wave 2"
+alias asayc2 "Life ain't easy and death is swift...;bind F12 asayd2;wave 2"
+alias asayd2 "Feel the lead in your head...;bind F12 asaye2;wave 2"
+alias asaye2 "GUNS... I NEED BIGGER GUNS..!;bind F12 asayf2;wave 3"
+alias asayf2 "Holy $#!%..! So much BLOOD..! Nice splash though...;bind F12 asayg2;wave 4"
+alias asayg2 "[SoV]Khalif is trying hard to get a bullet in your HEAD !!...;bind F12 asayh2;wave 4"
+alias asayh2 "Come to pappa and feel the pain !!...;bind F12 asayi2;wave 3"
+alias asayi2 "Would you like mee to polish your weapon ??...;bind F12 asayj2;wave 4"
+alias asayj2 "You can't catch mee low-life !!...;bind F12 asayk2;wave 3"
+alias asayk2 "Il fuck your Dog, your Mother, your Father and your Sister but she is to FAT !!...;bind F12 asayl2;wave 4"
+alias asayl2 "Come to mee you fart !!...;bind F12 asaym2;wave 3"
+alias asaym2 "Go home and fuck your Mother in the behind !!...;bind F12 asayn2;wave 4"
+alias asayn2 "Listen all ENEMIES COME AND GET SOME LEAD from [SoV]Khalif...;bind F12 asayo2;wave 3"
+alias asayo2 "Im the biggest Asshole in the world so if you wanna be the DICK come to mee ??...;bind F12 asayp2;wave 3"
+alias asayp2 "Come here and kiss my dick boy !!...;bind F12 asaya1;wave 3"
+bind F12 asaya1
+
+//teamplay were are they messages
+alias asayq1 "say_team Were is the enemy (%T)??;bind F11 asayq2;wave 0"
+alias asayq2 "say_team Were is those motherfuckers ?? (%T);bind F11 asayr2;wave 0"
+alias asayr2 "say_team Ohhhhhh nooooooooo this is taking tooooooooo loooooooooong (%T);bind F11 asays2;wave 0"
+alias asays2 "say_team Wee have to find them now were are they ?? (%T);bind F11 asayt2;wave 0"
+alias asayt2 "say_team Any idea where they are ?? (%T);bind F11 asayq1;wave 0"
+bind F11 asayq1
+
+//teamplay morale messages
+alias asayu1 "say_team Go Go !! Frag emm !!;bind F10 asayu2;wave 4"
+alias asayu2 "say_team Keep the morale boys and girls !!;bind F10 asayw2;wave 1"
+alias asayw2 "say_team Just destroy frag masters !!;bind F10 asayy2;wave 4"
+alias asayy2 "say_team Learn the other team to loose !!;bind F10 asayz2;wave 4"
+alias asayz2 "say_team Come on boys and girls wee can do it !!;bind F10 asayu1;wave 3"
+bind F10 asayu1
+//

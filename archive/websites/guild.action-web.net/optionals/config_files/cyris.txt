@@ -1,0 +1,90 @@
+Sent in By: (WC)-CyRIS 
+
+
+
+bind q "use special"			/switch to special weapon
+bind crl or mouse1 "+attack"			/fire
+bind z "weapon"			
+
+
+Basic commands
+ 
+bind f "drop weapon"    
+bind mwheelup "bandage"      /this is to bandage when you are bleeding
+bind mouse2 "reload"  /this is to reload your weapon
+bind e "opendoor"     /this is to open doors (duh)
+bind w "+forward"
+bind d "+moveright"
+bind a "+moveleft"
+bind i "irvision"
+
+/ handedness
+alias righthand "hand 0; bind mwheeldown lefthand; echo Right hand"
+alias lefthand "hand 1; bind mwheeldown righthand; echo Left hand"
+bind mwheeldown "righthand"                    
+
+
+ Communication 
+
+bind t 	"messagemode"		/send message
+bind y 	"messagemode2"		/send a team only message
+bind F4 	"wave j"	/flip off
+bind F5 	"wave k"	/salute
+bindd F7 	"wave l"	/taunt
+
+
+// Radio Commands
+
+//numbers (each says the corresponding number to your teammates)
+bind KP_END	"radioteam 1"
+bind KP_PGDN 	"radioteam 7"
+bind KP_downarrow 	"radioteam 8"
+
+
+ 
+bind UPARROW 	"radioteam forward"
+bind DOWNARROW 	"radioteam back"
+bind LEFTARROW	"radioteam left"
+bind RIGHTARROW	"radioteam right"
+bind HOME		"radioteam up"
+bind PGUP		"radioteam down"
+
+
+OTHERS
+
+bind KP_HOME "taunts"
+alias taunts "taunt1"
+alias taunt1 "radioteam enemyd;say_team Enemy Down;alias taunts taunt2"
+alias taunt2 "radioteam enemyd;say_team There goes my HERO;alias taunts taunt3"
+alias taunt3 "radioteam enemyd;say_team eww..that's gonna leave a mark;alias taunts taunt4"
+alias taunt4 "radioteam enemyd;say_team Hail to the king BABY!!;alias taunts taunt5"
+alias taunt5 "radioteam enemyd;say_team I AM GOD!!!!;alias taunts taunt6"
+alias taunt6 "radioteam enemyd;say_team Tagem and Bagen, he aint getten up;alias taunts taunt7"
+alias taunt7 "radioteam enemyd;say_team Snoochie Boochie;alias taunts taunt8"
+alias taunt8 "radioteam enemyd;say_team You Got knocked the FUCK OUT!!;alias taunts taunt9"
+alias taunt9 "radioteam enemyd;say_team Are you talken to me;alias taunts taunt10"
+alias taunt10 "radioteam enemyd;say_team Im gonna be needing another victim over here;alias taunts taunt11"
+alias taunt11 "radioteam enemyd;say_team Did I do that;alias taunts taunt12"
+alias taunt12 "radioteam enemyd;say_team Wonder if he likes my %W??;alias taunts taunt13"
+alias taunt13 "radioteam enemyd;say_team You have just been WRECKED!!;alias taunts taunt14"
+alias taunt14 "radioteam enemyd;say_team That might stain;alias taunts taunt15"
+alias taunt15 "radioteam enemyd;say_team Anyone got some stain remover??;alias taunts taunt1"
+
+
+
+
+
+
+bind KP_uparrow		"say_team TEAMMATE DOWN..; radioteam teamdown"
+
+// Cover me!
+bind KP_leftarrow	"say_team I need some cover fire!!!;radioteam cover"
+
+// GO!
+bind KP_5		"say_team go %T;radioteam go"
+
+// Team, report in
+bind rightarrow		"say_team who's still with me; radioteam treport"
+
+// Reporting in
+bind kp_pgup		"say_team Im still kicken with %H and %W..; radioteam reportin"

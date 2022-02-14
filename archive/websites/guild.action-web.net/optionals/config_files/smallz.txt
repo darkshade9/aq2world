@@ -1,0 +1,217 @@
+// ***  Autoexec *** *** By: Smallz-=[GCB]=-
+// (I use the Keyboard + Microsoft Intellipoint Mouse)
+
+
+// ***Address Book***
+
+set adr0 "132.241.60.51:27910"   // Chico State Team Action Q2
+set adr1 "206.40.27.240:27930"   // PC Guys
+set adr2 "216.129.152.24:27910"  // Bloody Waters Tertiary Action Quake2 DM
+set adr3 "128.208.37.14:30000"   // Genocide (WA) Axshun DM
+set adr4 "209.125.111.9:27911"   // Eek's
+set adr5 "209.115.144.9:27910"   // Psilon's GCB server
+set adr6 "207.173.133.252:27920" // CalWeb's
+set adr7 "206.55.129.67:27918"   // EvilDead
+set adr8 ""  //
+
+// ***Aliases***
+
+alias channela "channel 1;bind c channelb"
+alias channelb "channel 0;bind c channela"
+
+alias +bandage "bandage"
+alias -bandage "radio im_hit;wave 3;say_team Im Hit! Cover me while I bandage!;wait;wave 2"
+
+// ***Video+Other Settings***
+
+
+set gl_texturemode "GL_LINEAR_MIPMAP_NEAREST"
+
+set freelook "1"
+set cd_nocd "1"
+set s_volume "0.7"
+set s_mixahead "0.20"
+set fov "90"
+set cl_vwep "1"
+set gender_auto "1"
+set gender "male"
+set sv_reconnect_limit "1"
+set allow_download_maps "1"
+set allow_download_sounds "1"
+set allow_download_models "0"
+set allow_download_players "0"
+set allow_download "1"
+set hostname "Smallzzz's Server!"
+set vid_ref "gl"
+set vid_xpos "268"
+set vid_ypos "280"
+set sw_stipplealpha "1"
+set s_khz "22"
+set s_loadas8bit "0"
+set s_primary "1"
+set cl_stereo_separation "0.4"
+set rate "7500"
+set msg "1"
+set in_mouse "2"
+set in_joystick "0"
+set g_select_empty "0"
+set skin "ActionMale/Invince"
+set name "Smallz-=[GCB]=-"
+set lookstrafe "0"
+set lookspring "0"
+set m_pitch "-0.025"
+set hand "0"
+set cl_run "1"
+set crosshair "3"
+set sensitivity "7.5"
+set win_noalttab "0"
+set vid_fullscreen "1"
+set viewsize "100"
+set vid_gamma .6 
+set gl_modulate 4
+
+// ***Key Bindings***
+
+bind TAB "inven"
+bind SHIFT "+movedown"
+bind CTRL "weapnext"
+bind ALT "weapprev"
+bind ` "toggleconsole"
+bind / "unstick"
+bind + "sizeup"
+bind - "sizedown"
+bind BACKSPACE "drop weapon"
+bind ESCAPE "togglemenu"
+bind F1 "radio enemyd;wave 4;say_team Enemy Down!"
+bind F2 "radio enemys;wave 4;say_team Enemy Spotted"
+bind F3 "radio teamdown;wave 1;say_team Teammate Down!"
+bind F4 "radio cover;wave 3;say_team Cover me, Im going in!!;wave 2"
+bind F5 "radio treport;say_team All teammates report in!"
+bind F6 "radio reportin;wave 1;say_team Im here!"
+bind F7 "say_team Roger that...;radio 10;wait;radio 4;wait;radio 4"
+bind F8 "say_team Go!!!;radio go"
+bind 1 "use Mark 23 Pistol"
+bind 2 "use Railgun"
+bind 3 "use shotgun"
+bind 4 "use M4 Assault Rifle"
+bind 5 "use MP5/10 Submachinegun"
+bind 6 "use Handcannon"
+bind [ "invprev"
+bind ] "invnext"
+bind a "+moveleft"
+bind b ""
+bind c "channela"
+bind d "+moveright"
+bind e "reload"
+bind f "use special"
+bind g "exec sniper.cfg"
+bind h "exec autoexec.cfg"
+bind i "invuse"
+bind j ""
+bind k ""
+bind l ""
+bind m "drop weapon"
+bind n "drop item"
+bind o "deny"
+bind p "partner"
+bind q "bandage"
+bind r "opendoor"
+bind s "+back"
+bind t "messagemode"
+bind u ""
+bind v "vid_reset"
+bind w "+forward"
+bind x "score"
+bind y "messagemode2"
+bind z "use Sniper Rifle"
+bind MOUSE1 "+attack"
+bind MOUSE2 "+moveup"
+bind MOUSE3 "weapon"
+bind MWHEELUP "weapnext"
+bind MWHEELDOWN "weapprev"
+bind UPARROW "radio up"
+bind DOWNARROW "radio down"
+bind LEFTARROW "radio left"
+bind RIGHTARROW "radio right"
+
+
+
+
+
+//RadioStuff.Cfg
+
+
+// ***  Radio Configurations *** *** By: Smallz-=[GCB]=-
+// (I use the Keyboard + Microsoft Intellipoint Mouse)
+
+//Numbers
+
+bind 1 "radio 1" // 1
+bind 2 "radio 2" // 2
+bind 3 "radio 3" // 3
+bind 4 "radio 4" // 4
+bind 5 "radio 5" // 5
+bind 6 "radio 6" // 6
+bind 7 "radio 7" // 7
+bind 8 "radio 8" // 8
+bind 9 "radio 9" // 9
+bind 0 "radio 0" // 10
+
+//Directions
+
+bind w "radio up"
+bind s "radio down"
+bind a "radio left
+bind d "radio right"
+
+//Commands
+
+bind F1 "radio enemyd;wave 4;say_team Enemy Down!" // Enemy Down
+bind F2 "radio enemys;wave 4;say_team Enemy Spotted" // Enemy Spotted
+bind F3 "radio teamdown;wave 1;say_team Teammate Down!" // Teammate Down
+bind F4 "radio im_hit;wave 3;say_team Im Hit! Cover me while I bandage!;wait;wave 2" // Cover While I bandage
+bind F5 "radio treport;say_team All teammates report in!" // Teammates Report In
+bind F6 "radio reportin;wave 1;say_team Im here!" // Reporting In
+bind F7 "radio cover;wave 1;wait;wave 3;say_team Cover me, Im going in!" // Cover me, Im going in
+bind F8 "say_team Go Go Go!!!;radio go;wait;wait;radio go;wait;wait;radio go" //Go Go Go!!!
+
+//Channel Changer :)
+
+alias channela "channel 1;bind c channelb" // Switch to Partner Channel
+alias channelb "channel 0;bind c channela" // Switch to Team Channel
+
+//Partnering
+
+bind p "partner" //Select Partner (Must have I.D. On screen)
+bind o "deny"    //Deny Partnerage
+
+//Misc.
+
+bind j "radio 10;wait;radio 4" //10-4 (Roger/Confirmation)
+
+
+
+
+
+//Sniper.cfg
+
+
+
+
+// ***  Sniper Config *** *** By: Smallz-=[GCB]=-
+// (I use the Keyboard + Microsoft Intellipoint Mouse)
+
+set sensitivity 7.5
+
+bind MOUSE3 2x
+bind B RESET
+
+alias 2x "weapon;sensitivity 3.75;echo 2x;bind MOUSE3 4x;bind SPACE 2xReset"
+alias 4x "weapon;sensitivity 1.875;echo 4x;bind MOUSE3 6x;bind SPACE 4xReset"
+alias 6x "weapon;sensitivity 1.25;echo 6x;bind MOUSE3 1x;bind SPACE 6xReset"
+alias 1x "weapon;sensitivity 7.5;echo Normal;bind MOUSE3 2x;bind SPACE RESET"
+
+alias 2xReset "4x;6x;1x;echo Reset"
+alias 4xReset "6x;1x;echo Reset"
+alias 6xReset "1x;echo Reset"
+alias RESET "sensitivity 7.5"

@@ -1,0 +1,24 @@
+//               Deltree's special sniper setup
+//
+// Copy this and paste it into your config file.
+// This setup will allow you to zoom both in and out with the sniper
+// rifle.  Also, the mouse sensitivity is adjusted to allow for better
+// aim.  Change the values as you see fit (especially the 10, which is
+// the sensitivity for the normal view).
+
+alias in1x "weapon; set sensitivity 10; alias in in2x; alias out out2x"
+alias out1x "weapon; weapon; weapon; set sensitivity 10; alias in in2x; alias out out2x"
+alias in2x "weapon; set sensitivity 7; alias in in4x; alias out out1x"
+alias out2x "weapon; weapon; weapon; set sensitivity 7; alias in in4x; alias out out1x"
+alias in4x "weapon; set sensitivity 4; alias in in6x; alias out out2x"
+alias out4x "weapon; weapon; weapon; set sensitivity 4; alias in in6x; alias out out2x"
+alias in6x "weapon; set sensitivity 2; alias in in1x; alias out out4x"
+alias out6x "weapon; weapon; weapon; set sensitivity 2; alias in in1x; alias out out4x"
+
+alias in "in2x"
+alias out "out6x"
+
+bind w "in"  // zoom in from 1x-2x-4x-6x-1x
+bind q "out" // zoom out from 1x-6x-4x-2x-1x
+
+// end special sniper setup
