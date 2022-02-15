@@ -10,6 +10,23 @@ http://web.archive.org
 
 Useful for finding files that the scraper did not get (it's possible they existed in a previous version of the scrape, but not the one we specify)
 
+## Goals and Scope
+
+The goals, in order of importance:
+1. Preserve the spirit and core contents of individual sites
+2. If something regarding the site is broken, we fix it to make it useful, if we can, following these guidelines
+    1. Broken Links
+        1. If a link is to a site that no longer exists (ex: telefragged.com) and we don't control the target, leave it be
+        2. If it links to another site we are archiving, update the HREF to the new archived site, but keep the text the same.  ex: `<a href="http://aq2-tng.sourceforge.net/">http://action.action-web.net</a>`
+    2. Broken images
+        1. Some images can be found by doing an exact search of the img src link, if this is the case, let's include this in the archive (img/ directory or re-use an existing directory for site contents) and change the src to the new image
+        2. If images cannot be recovered, I think the best course of action is to leave it as a broken image for now.
+        3. Re-use existing images in the docs/assets/img/common if applicable
+    3. PHP / cgi-bin / dynamic content
+        1. Without the original files (web scrapers cannot scrape PHP code unless it exposed it on accident), dynamic-driven content won't display or function properly
+3. Any AQ2 site that isn't already archived and should be can be suggested via a PR with the site scrape or discussed via Discord
+4. Keep deduplication to a minimum, ex: we don't want to host the maps from the AQMD, but we can update the links to point at existing map repositories like Lahtela's
+
 ## Process
 
 1. Create a new branch based off of `master`
