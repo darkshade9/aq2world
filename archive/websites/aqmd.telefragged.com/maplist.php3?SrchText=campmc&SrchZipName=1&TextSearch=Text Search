@@ -1,7 +1,7 @@
 <html>
 <head>
 <BASE HREF="">
-<link rel="stylesheet" href="AQMD.css">
+<link rel="stylesheet" img src="http://assets.aq2world.com/archive/websites/aqmd.telefragged.com/AQMD.css">
 </head>
 <body bgcolor="#000000" text="#c0c0c0" link="#ff0000" vlink="#ff0000" alink="#ff0000" topmargin="0" leftmargin="0">
 
