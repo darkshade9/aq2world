@@ -1,0 +1,438 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_storming_the_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot6.jpg" border=0 align=center alt="Charlie storm a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/vulture_pulling_back_on_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot10.jpg" border=0 align=center alt="Vulture team pulling back onto a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/mclanes_on_drainpipe.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot19.jpg" border=0 align=center alt="With covering fire from a teammate a bot scales a drainpipe"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00001
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/newsbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <!-- text: begin -->
+ <BLOCKQUOTE>
+ <br>
+ <h5>
+ June 28, 1999
+ </h5>
+ I finally have started tuning the AI (and fixing other loose
+ ends). Rapid but endless iterations of adjusting aiming accuracy, 
+ tactics selection, bandaging timing, reloading primary and secondary 
+ weapons or not, etc. Redoing a fight until I understand
+ why a team or bot makes that wrong decision, and finally fixing it:
+ headache being replaced by (receiving) head shots.
+ <p>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/bot_launch1.jpg">
+    <IMG SRC="./shots/bot_launch1_thumb.jpg" BORDER=0 width=133 height=100 ALT="launching the bots manually">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/bot_launch2.jpg">
+    <IMG SRC="./shots/bot_launch2_thumb.jpg" BORDER=0 width=133 height=100 ALT="too close to a frustrated tester?">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/bot_launch3.jpg">
+    <IMG SRC="./shots/bot_launch3_thumb.jpg" BORDER=0 width=133 height=100 ALT="is it a bird? is it a plane? ...">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <p>
+ Hopefully, all tuning and testing will be done this week.
+ After that, it's still not a perfect CGF 1.0 bot, but
+ a beta good enough to provide some limited fun. (See the
+ May 17 update below for info on the limitations - doors 
+ have now been postponed in the favor of breakable glass -, 
+ and the <A HREF="./design.shtml">list of features</A> for all the details).
+ <br><br>
+ Anyway, I'll take coming Monday, July 5, off from work to 
+ try to construct a release and write documentation. Expect
+ a release on Wednesday, July 7.
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br>
+ <h5>
+ June 24, 1999
+ </h5>
+ The bad news: I am not able to provide you a beta by June 28 (the
+ best guess from May for a release date). I am hunting down
+ a transient but major error occurring in software gfx mode when
+ using the shotgun. 
+ <br>
+ In addition, the bot weapon aiming under 
+ ActionQ2 proves to be quite different from 
+ weapon aiming for Q2: I now need to worry about the bot's view 
+ angles to have them operate the weapons just like you do, so all
+ whistles and bells work: laser sight, zooming, muzzle climbing, 
+ burst mode, less accurate while on the move.
+ <br>
+ Without reliable bots that know how to handle their weapon
+ the Action way, there's no such thing as a beta. 
+ <p>
+ I would feel bad about this delay if I wasn't spending just
+ about every minute of my spare time on it. After this
+ weekend, I'll give you better guess for a release date.
+ <p>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/dev_aim_skill1.jpg">
+    <IMG SRC="./shots/dev_aim_skill1_thumb.jpg" BORDER=0 width=133 height=100 ALT="William testing (and surviving) the aim of a (skill 1.0 = low) bot with full auto M4">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/dev_aim_skill5.jpg">
+    <IMG SRC="./shots/dev_aim_skill5_thumb.jpg" BORDER=0 width=133 height=100 ALT="William becoming victim of the aim of a (skill 5 = high) bot with full auto M4">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <p>
+ Above some development shots, illustrating the ongoing work on weapon handling. 
+ At these short distances, the bots prefer to aim for the head (and at larger distances,
+ they prefer to aim for the stomach to increase the chances of hitting their target).
+ <br>
+ In using the M4 on full auto, the bots anticipate muzzle climbing / kick back
+ by aiming the first shot(s) low. At low skill settings, the bot won't be capable 
+ to control muzzle climbing (see the picture on the left),
+ whereas the high skill bot demonstrates sufficient skill 
+ (and saves half his clip for other purposes). I need to get more serious
+ about wearing kevlar...
+ <p>
+ Some good news as well. Get accustomed to 'zooming' and 'unzooming'
+ your sniper rifle solely when really necessary. The familiar sound when
+ you zoom is familiar to the bots as well; it will help them find
+ you :)
+ <br>
+ Because sound is that important in Action, the bots now can
+ hear and classify about any movement, weapon or environment sounds.
+ They use it to locate targets they lost track of, or to select
+ a location to keep an eye on. Your slippers and silencer will be 
+ just as valuable as in normal Action Quake2.
+ <p>
+ With respect to breakable glass, I was told that one of the 
+ first maps for AQ2, office3 by A-Team's Cail, 
+ does include breakable glass.
+ <br>
+ I gave the level a quick shotgun treatment. Plenty of windows
+ to break, but it seems that not every window was built correctly
+ in that map: not all windows can be broken.
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br>
+ <FONT SIZE="1" > 
+ p.s. Cube and I are aware that a few IE5 users experience lock ups
+ when accessing this site. Though we cannot reproduce the problem
+ ourselves (we both use IE5 as our default browser), we're performing changes 'behind
+ the scenes' to identify the source of troubles.
+ <br>
+ If you experienced problems as well, but can now access this front
+ page, let <A HREF="mailto:william@botepidemic.com">us</A> know as soon as possible.
+ </FONT>
+ <br>
+ <br>
+ <h5>
+ June 13, 1999
+ </h5>
+ While I'm hunting down some "interesting" stack overflows in CGF/AQ2,
+ there's something to enjoy for you as well.
+ <p>
+ The last two weeks, the bots and I were a bit in need of a break from ordinary 
+ programming and debugging. It was time for something more exciting: 
+ <p>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/glass_jumpout.jpg">
+    <IMG SRC="./shots/thumb_glass_jumpout.jpg" BORDER=0 width=133 height=100 ALT="'Knock knock': the result of Sabotage's jump (a pity you can't hear the noise)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/glass_shotthru2.jpg">
+    <IMG SRC="./shots/glass_shotthru2_thumb.jpg" BORDER=0 width=133 height=100 ALT="Grunt (well camouflaged behind the window) taking out Adi with only a bullet hole in the window">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/glass_comein2.jpg">
+    <IMG SRC="./shots/glass_comein2_thumb.jpg" BORDER=0 width=133 height=100 ALT="Adi creates a way through - his shotgun causes both the window and grunt to shatter">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <p>
+ Yep, that's breakable glass. Due to the design of Quake2, you won't enjoy this
+ in internet multi-player games, but it definitely makes sense for games against
+ bots or on a fast LAN. And, alas, I'm not aware of any AQ2 maps featuring
+ breakable glass yet (all shots were recorded on a test map created by 
+ <A HREF="mailto:tekminus@swipnet.se">tekminus</A> -
+ see below).
+ <p>
+ The breaking of glass is integrated with our favourite AQ2 features such as
+ jump kicks, grenade blasts, knifes, and team play rounds. More information,
+ including details, source code, a Win32 server dll, a small demonstration map, 
+ and instructions how to add breakable glass to your new or existing maps is available 
+ <A HREF="./exp_glass.shtml">here</A>.
+ <p>
+ There's no need to inform the A-team, Fireblade or Zucchini about this; they
+ already know. It is being considered for AQ2 1.52 (and "off" by default, of
+ course).
+ <p>
+ I'll be off for most of the coming week (bizz trip). Have fun.
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br><br>
+ <br>
+ <h5>
+ June 8, 1999
+ </h5>
+ The CGF bots may be able to do complex things, but launching them
+ via mission files requires us to do even more complicated things. Or so it seemed...
+ <p>
+ <TABLE border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="center">
+	<a href="./shots/cgf_launcher1.jpg">
+    <IMG SRC="./shots/cgf_launcher1_thumb.jpg" BORDER=0 ALT="preview of the CGF mission launcher (one of the ca. five dialogs) [click, 40KB]">
+	</a>
+	</TD>
+ </TR>
+ </TABLE>
+ <p>
+ <A HREF="mailto:an000001@mweb.co.za">Ross "JoeSatch" Norton</A> 
+ set out to do his part of the teamwork behind
+ CGF: a beta of his no-nonsense CGF launcher now camps on our desktops, and helps
+ us browsing through the missions, adjusting some settings, and launching
+ us into the action.
+ <p>
+ His launcher will be part of the upcoming CGF release. Remember to
+ give him a break if you notice his on-line keyboard skills have suffered...
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br><br>
+ <br>
+ <h5>
+ June 1, 1999
+ </h5>
+ It has taken some effort to get the bots to understand how to 
+ patrol a map. But now, the effort is theirs: it's fun to put in three
+ patrolling teams, and to see which one comes out alive.
+ <br>
+ <br>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/3team_meeting.jpg">
+    <IMG SRC="./shots/3team_meeting_thumb.jpg" BORDER=0 width=133 height=100 ALT="three teams meeting each other at downtown">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/3team_hit.jpg">
+    <IMG SRC="./shots/3team_hit_thumb.jpg" BORDER=0 width=133 height=100 ALT="about to hit the tarmac...">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/3team_casualties.jpg">
+    <IMG SRC="./shots/3team_casualties_thumb.jpg" BORDER=0 width=133 height=100 ALT="somebody has been here already...">
+	</a>
+	</TD>
+ </TR>
+ </TABLE>
+ <br>
+ The bots string out pretty good while on the move, and carefully scan
+ their surroundings. You won't catch more than one of them defenselessly 
+ on a ladder at the same time, unless the point man thinks the roof and 
+ surroundings are safe. They try to regroup just before moving around the corner.
+ However, they don't use strafing. 
+ <br><br>
+ While the bot fire teams do have a systematic way of patrolling a map
+ (or a specific part of the map, such as the inside of a building, if the script says so), 
+ they are clever enough to vary their route. In addition, they update their
+ patrol route to include locations where they lost track of a target: if you
+ manage to get away from them, they won't forget to look for you :)
+ <br><br>
+ I've received some concerned mails about the 'demo' character (see below) of the first CGF
+ release; 'Demo' sounded too much like a free preview of a commercial product.
+ <br>
+ Don't worry: the first release has a 'demo' character for one single reason:
+ I'm not convinced I'll be able to put in all planned functionality in time.  
+ Just like ActionQ2 itself, CGF will be available for free.
+ <br><br>
+ Thanks very much for all the 'shooting range' offers. The shooting range I
+ couldn't find is 'targ', created by Dr.Bob and you can download that map (and
+ learn about AQ2 1.1 weapon accuracy) at his 
+ <A HREF="http://www.knot.demon.co.uk/aq/index.html">site.</A>
+ In addition, tekminus constructed a few custom maps to test some special
+ bot behavior. You'll read (and see) about it in the next update.
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br><br>
+ <br>
+ <h5>
+ May 18, 1999
+ </h5>
+ Here it is: my best guess for the first CGF release is <I>Monday, June 28</I>.
+ It will be a 'demo' version, limited to a select number of maps, and accompanied
+ by a select number of missions.
+ <br>
+ If I need to drop planned features (see <a href="./design.shtml">the list</a>) 
+ to make the planned date, I'll do so. 
+ <br>
+ The major things yet to be done are full integration
+ with the Action Quake2 code base, including weapons/ammo handling and the use of
+ doors.
+ <br>
+ Major system crashes, or negative advice from the A-Team and testers may force me
+ to change that date, of course :(
+ <br><br>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/patrol_sas_mounting_roof.jpg">
+    <IMG SRC="./shots/patrol_sas_mounting_roof_thumb.jpg" BORDER=0 width=133 height=100 ALT="SAS patrol mounting a roof (downtown)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/patrol_sas_occupying_roof.jpg">
+    <IMG SRC="./shots/patrol_sas_occupying_roof_thumb.jpg" BORDER=0 width=133 height=100 ALT="SAS patrol moving up on a roof (downtown)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/patrol_sas_roaming_streets.jpg">
+    <IMG SRC="./shots/patrol_sas_roaming_streets_thumb.jpg" BORDER=0 width=133 height=100 ALT="SAS patrol leaving the shadows (downtown)">
+	</a>
+	</TD>
+ </TR>
+ </TABLE>
+ <br>
+ The fire team patrolling is almost complete, and resulted in the screen shots above
+ (actual bot performance may look less convincing at times - I picked the best shots
+ of course). I 'just' need to add the 'patrol into engaging' transition, and make sure the
+ fire team will include spotted target positions into their patrol route.
+ <br>
+ <br>
+ I could use some help from the map makers amongst you in tuning the bot's weapon handling: 
+ I'd like to have a simple 'firing range' map, where I can have the bots fire
+ at a target wall with bullet holes enabled. That'll help in establishing the correct
+ muzzle climb compensation and aiming errors for the bots.<br>
+ A couple of months ago, screen shots from such maps did appear in one of the many weapon
+ accuracy discussions.<br>
+ If anyone knows where to get that map, or is able to create such a map at
+ short notice (preferably a short range and long range one), please let <a href="mailto:william@botepidemic.com">me</a> know (but don't mail the map itself).
+ <br>
+ <br>
+ Also, thanks for all the concerned mails. Yes, the bots are very much alive and improving.
+ The lack of updates was caused by me being away for almost 3 weeks (biztrip and some 
+ mountain biking as well). 
+ <br>
+ Finally, a small correction of the previous news: Timm 'timm' Stokke, map maker of 'jungle1'
+ and 'teamjungle' fame, and CGF (and Gladiator) tester as well is not one of Bot Epidemic's
+ web masters, but of late bot site Metropolis, and one of telefragged's bot board moderators.
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br><br>
+ <h5>
+ Old News
+ </h5>
+ <UL>
+ 	<LI><A HREF="./news_99marapr.shtml">News March - April 99</A>
+ </UL>
+ </BLOCKQUOTE>
+ <!-- text: end -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://action.telefragged.com target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://action.telefragged.com/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

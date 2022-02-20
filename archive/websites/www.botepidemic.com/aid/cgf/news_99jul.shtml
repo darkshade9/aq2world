@@ -1,0 +1,601 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=http://www.botepidemic.com/aid/cgf/graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/bravo_mourning_at_end.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot4.jpg" border=0 align=center alt="Bravo stand by one of their fallen."></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/marines_assembled_in_column_waiting.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot9.jpg" border=0 align=center alt="A marine team assembles at the start of a mission"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sabotages_in_alley.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot17.jpg" border=0 align=center alt="With his team mate providing suppresion fire a bot advances"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00955
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/latestinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+<br>
+<B>latest executables</B>:<br>
+<a href="http://tux.telefragged.com/file.pl?filename=cgf_0_78.zip&dir=telefragged/be/">
+CGF 0.78 beta<br> 
+[July 17, 2.3MB]</a><br><br>
+<a href="http://tux.telefragged.com/file.pl?filename=cgf_0_78u.zip&dir=telefragged/be/">
+CGF 0.77 -> 0.78<br> 
+[July 17, 1.5MB]</a><br>
+<br>
+<B>latest launcher files</B>:<br>
+<a href=http://tux.telefragged.com/file.pl?filename=Launch105.zip&dir=telefragged/be/>CGF Launcher 1.05</a><br>
+[August 2, 1.09Mb]
+<br><br>
+<a href=http://tux.telefragged.com/file.pl?filename=Runtime.zip&dir=telefragged/be/>Required Runtimes for Launcher</a><br>
+[August 2, 701kb]
+<br><br>
+<a href=http://tux.telefragged.com/file.pl?filename=Launch100-05.zip&dir=telefragged/be/>1.00-05 Launcher Patch</a><br>
+[August 2, 368kb]
+<br><br>
+<B>latest missions</B>:<br>
+included in beta 0.78
+<br>
+<B>latest route files</B>:<br>
+included in beta 0.78
+<br><br>
+<center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/newsbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <!-- text: begin -->
+ <BLOCKQUOTE>
+ <br>
+ <h5>
+ July 30, 1999
+ </h5> 
+ Those third-party CGF sites in full:
+ 
+ <ul>
+ <li><a href=http://www.fortunecity.com/underworld/wipeout/731>CGF Bot Central</a>
+ <li><a href=http://cgfmd.telefragged.com/>CGF Missions</a>
+ <li><a href=http://members.tripod.com/fubah/>CGF Missions</a> (by FuBaH)
+ <li><a href=http://www.geocities.com/TimesSquare/Metro/5466/index.htm>CGF Mission Page</a>
+ <li><a href=http://www.botepidemic.com/cgf_resource_site/>CGF: Resource Site</a>
+ <li><a href=http://welcome.to/mentalist.com>Mentalists Asylum</a>
+ <li><a href=http://welcome.to/aq2>The CGF Warehouse</a>
+ </ul>
+ 
+ Quite a number of CGF related sites so take your pick really. 
+ <BR><BR>
+ <A HREF="mailto:cube@botepidemic.com">Cube</A>
+ <h5>
+ July 29, 1999
+ </h5> 
+ I'll post the latest list of CGF mission sites later (got to search through the mailbox to find all the links...). Some people have started to create their own routes for CGF. At the moment this is totally
+ unsupported and so any problems or questions you have regarding routing or using unofficial route-files will go unanswered from now. CGF routing is rather more complicated than routing something like the Eraser bot (it is not just a case
+ of running around laying nodes and defining locations) and so should you get any problems you're on your own. I have had a quick look at some of the routes out there and I can safely say they are no way near the quality William produces...
+ <BR><BR>
+ <A HREF="mailto:cube@botepidemic.com">Cube</A>
+ <h5>
+ July 20, 1999
+ </h5> 
+ Not sure how William was going to go about this so I'll do what I think is best. Anyway several CGF related sites have begun to spring up, and while I'm not going to add them to the links page I'll do a little rundown below just so you know they're out there:
+ 
+ <ul>
+ <li><a href=http://www.fortunecity.com/underworld/wipeout/731>CGF Bot Central</a> by Merc248
+ <li><a href=http://welcome.to/cgf>CGF Mission Page</a> by Ned.
+ <li><a href=http://surf.to/cgf_resource_site>CGF: Resource Site</a> by Maniac
+ </ul>
+ 
+ I'll post an updated list once a week until William returns (then I'm sure he'll organise something proper regarding CGF sites).
+ 
+ <BR><BR>
+ <A HREF="mailto:cube@botepidemic.com">Cube</A>
+ <h5>
+ July 19, 1999
+ </h5>
+ Ok <a href=mailto:rossnorton@mweb.co.za>JoeSatch</a> has sent me a fix for the launcher for those who have been having trouble getting it to run. It should fix the error that causes <i>runtime error 429, activeX component cant create object</i> to be displayed when running the program. 
+ <p>
+ You'll need the runtime files from yesterday (linked below and on the downloads page) and you'll then need to download <a href=http://tux.telefragged.com/file.pl?filename=LaunchFix.zip&dir=telefragged/be/>LaunchFix.zip</a> (214Kb).
+ Make sure you read the 'README!.txt' file included before installing the fix.
+ <h5>
+ July 18, 1999
+ </h5>
+ <a href=mailto:cube@botepidemic.com>Cube</a> here, taking charge while William is off holidaying. Anyway <a href=mailto:rossnorton@mweb.co.za>Ross 'JoeSatch' Norton</a> has released the first version of the CGF launcher, enabling you to
+ set mission parameters and the like before launching the game.
+ <br><br>
+ There are two files available, both which are self-extracting. The first one is launcher itself which you will need to extract to your Quake II directory (it has set paths so the launcher files should go into the right directories from there).
+ Then there are a collection of runtime files required for the launcher, which are:
+ 
+ <ul>
+ <li>msvbvm50.dll
+ <li>msvcrt.dll
+ <li>msvcrt20.dll
+ <li>msvcrt40.dll
+ </ul>
+ 
+ If you don't have these then you also need this package, which can either be put into the launcher directory or into your windows/system directory. Placing them in the launcher directory is adviseable though.
+ 
+ <p>
+ The two file packages are available below:
+ 
+ <ul>
+ <li><a href=http://tux.telefragged.com/file.pl?filename=Launch100.exe&dir=telefragged/be/>CGF Launcher</a> (Launch100.exe) [772Kb]
+ <li><a href=http://tux.telefragged.com/file.pl?filename=runtimes.exe&dir=telefragged/be/>Assorted Runtime files</a> (Runtimes.exe) [1.13Mb]
+ </ul>
+ 
+ Finally make sure you read the 'readme.htm' that is included with the files for the Launcher before mailing <a href=mailto:rossnorton@mweb.co.za>Ross</a> with problems.
+ <BR><BR>
+ <A HREF="mailto:cube@botepidemic.com">Cube</A>
+ <h5>
+ July 17, 1999
+ </h5>
+ As mentioned in the previous update, I just don't have much time
+ for CGF this month. Because of that, the new beta 0.78 contains few 
+ modifications, but essential modifications for the new map supported: Ruskprick's city.
+ However, most reported bugs haven't been fixed<a href="#fn1"><SUP>1</SUP></a>.
+ <p>
+ Two small sets of missions are supplied as well: one, in which you 
+ (as a 'counter'sniper) assist a four men attack force to clear City's
+ rooftops. Another, in which you just need to survive on City's streets.
+ <p>
+ You can count on the various mission sites (see the <A HREF="./links.shtml">links</A> page) to
+ offer new missions for City in about two days.
+ <p>
+ In case you're in doubt whether or not to download 2.3MB (or the smaller
+ upgrade), here's Oswald's <A HREF="./review2.shtml">review.</A>
+ <p>
+ I wish you all a lot of fun with the upcoming Action Half Life (late
+ July).
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p>
+ <FONT SIZE=1>
+ <a name="fn1"><SUP>1</SUP></a>: normally I don't make more changes than I can test. Most
+ bug fixes just had to be postponed because I lack the time to test them:
+ whereas AQ2 source code is about 38,000 (38K) lines of code (LOC), CGF for
+ AQ2 adds 58KLOC, thus totalling 96KLOC. Every planned change should be made 
+ in such a way that it is consistent with all assumptions made in the existing 
+ (lines) of code. For example, 'just' reducing the vision qualities of the bot (something
+ that needs to be done) affects lots of other behavior (aiming, patrol behavior, etc.), 
+ and affects just too much to test right now.
+ </FONT>
+ <p>
+ <br>
+ <h5>
+ July 12, 1999
+ </h5>
+ I'm really happy to see CGF being received well. The beta has been
+ downloaded in larger numbers than I could have imagined. More than
+ anything else, that should be contributed to the big Action Quake2 
+ community, large, alive and kicking because of people like the A-Team, 
+ Fireblade & Zucchini, the talented mappers, modellers and skinners, and
+ all those server ops and action gamers.
+ <p>
+ I also have received tons of useful bug reports and good feedback on
+ the AI. Thanks. I know what to do (an I'll try to hand over as much as
+ possible the non 'bot' work to speed things up).
+ <p>
+ I was very surprised about the number of people that were already able
+ to craft missions themselves, without having good documentation available.
+ A couple of the first user made missions are now available from <A HREF="./downloads.shtml">this</A> site,
+ and more missions are available from other new CGF Mission sites as well
+ (you'll find them on the <A HREF="./links.shtml">links</A> page).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn_meeting.jpg">
+    <IMG SRC="./shots/msn_meeting_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban Meeting (by GreyCat): as a sniper, prevent patrolling forces to reach your agent">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn_gang.jpg">
+    <IMG SRC="./shots/msn_gang_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban Gang (by Adrian Hennings): three force gang war - take out the other gangs anyway you like">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <p>
+ </center>
+ Before the release, I wasn't sure how to distribute mission files.
+ Meanwhile that has been decided for me, by the rapid arrival of a
+ few mission sites. I am both glad to receive their help, but a
+ bit worried about not being able to check missions before they
+ are distributed: badly written missions cause CGF to crash, and/or
+ the bots to act unnecessarily stupid. That really spoils the fun.
+ (Of course, CGF also crashes for less valid reasons, since it's 
+ still a beta). 
+ <p>
+ Therefor, I'm asking the mission site webmasters to check all
+ missions before releasing them, for the following properties:
+ <UL>
+ <LI>.zip file directory structure (the AQ2 convention of 
+     'action' as the root dir)
+ <LI>stable execution (some script constructs are more likely
+     to crash CGF than others); stability can be tested easily.
+	 Even if the CGF engine is to blame, it's still not a valid
+	 reason to release a script that's very likely to crash.
+ <LI>sufficient information in the mission description; a
+     gamer should be able to understand his mission from that
+	 text
+ <LI>a sufficient number of variants (by having at least the
+     opposing forces start from different locations or with
+	 different instructions); this keeps the player on his
+	 toes
+ <LI>do not depend on skins and models that are not part of
+     the AQ2 model packs (from the 
+	 <A HREF="http://guild.action-web.net">Actor's Guild</A>)
+ </UL>
+ In addition, it would be nice if the (set of) scripts were
+ reviewed and described on the web site. It's probably not
+ required to discuss the missions with the style and accuracy
+ of <A HREF="http://6thfloor.actionquake.com">[NT]Oswald's map reviews</A>, but it wouldn't hurt either...
+ <p>
+ I'll maintain links to solely those CGF Mission sites that
+ perform the required 'quality assurance'.
+ <p>
+ This month, I won't have much time to work on CGF. (From August onwards,
+ I'll be working the 'normal hours' again). You can expect another
+ route file this week, with a sample mission. There's plenty of talent
+ in our community to craft that into hot action fights.
+ <p>
+ Be careful. Wear your kevlar :)
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p><p>
+ <br>
+ <h5>
+ July 10, 1999
+ </h5>
+ To explain how CGF and the bots are different from 'standard bots as we've known them',
+ I have recorded an illustrated description of a 'be a hitman: eliminate gangster boss Sabotage' single
+ player CGF mission (included in the download). 
+ <br>
+ Gamers that already played
+ these missions will have similar but different experiences; even if the chances are
+ against you, most fights remain unpredictable due to CGF's way of scripting.
+ <p>
+ It's your task to eliminate Sabotage, some criminal leader. Sabotage is hiding
+ in one of the map's rooms, and is protected by
+ some snipers and patrolling teams. You receive assistance from some fellow bots who
+ will engage Sabotage's patrols. You accomplish this mission only by eliminating
+ Sabotage; if you don't meet the time limit, or both your buddies and you die, the mission
+ is a failure.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_intro.jpg">
+    <IMG SRC="./shots/msn1_intro_thumb.jpg" BORDER=0 width=133 height=100 ALT="At the start of the mission, the mission goals are communicated to the player (and a buddy is visible as well)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_patrol_deploying.jpg">
+    <IMG SRC="./shots/msn1_patrol_deploying_thumb.jpg" BORDER=0 width=133 height=100 ALT="a four men Sabotage security team autonomously picking good positions during their patrol">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_bot_sniper.jpg">
+    <IMG SRC="./shots/msn1_bot_sniper_thumb.jpg" BORDER=0 width=133 height=100 ALT="Using the AQ2 player cam, looking thru the eyes of a bot sniper">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <p>
+ </center>
+ Mission information is provided to the player, (left). Both friendly and hostile force (bot)
+ teams apply varying team tactics and procedures (center). Individual bots apply specific
+ Action behavior as well, such as sniping (right). 
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_bot_and_player.jpg">
+    <IMG SRC="./shots/msn1_bot_and_player_thumb.jpg" BORDER=0 width=133 height=100 ALT="Player (black suit) bunching up too close to a bot (orange sweater) to fight the Sabotage security forces (while a downed body occupies the sidewalks)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_bot_against_bots.jpg">
+    <IMG SRC="./shots/msn1_bot_against_bots_thumb.jpg" BORDER=0 width=133 height=100 ALT="two members of the Sabotage security patrol taking out one of the player's buddies - from the sounds, the player may now have a hunch for the whereabouts of the security forces">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_buddy_getting_hit.jpg">
+    <IMG SRC="./shots/msn1_buddy_getting_hit_thumb.jpg" BORDER=0 width=133 height=100 ALT="one of your buddies successfully engaging the Sabotage security forces until he receives a headshot - notice the AQ2 ejected shotgun shell">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <p>
+ </center>
+ Fight alongside the bots - the player's presence will influence their tactics - solo, the bot might
+ hesitate to attack, but now the player is present, he may venture to attack (left). In single player
+ action, AQ2 features such as ejecting shell casings no longer create much lag  (center). Fights
+ with hard to predict outcomes occur between the opposing forces, ensuring replayability (right).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_two_bots_one_player.jpg">
+    <IMG SRC="./shots/msn1_two_bots_one_player_thumb.jpg" BORDER=0 width=133 height=100 ALT="Player (black suit) being engaged by well positioned patrolling Sabotage security forces">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_the_end.jpg">
+    <IMG SRC="./shots/msn1_the_end_thumb.jpg" BORDER=0 width=133 height=100 ALT="the Players gets downed by the one of the bots, thereby failing his mission">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/msn1_sabotage_becoming_curious.jpg">
+    <IMG SRC="./shots/msn1_sabotage_becoming_curious_thumb.jpg" BORDER=0 width=133 height=100 ALT="Sabotage, hiding in a hard to reach room, becoming alerted and curious because of the fighting">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The team AI explicitly tries to acquire good positions previous to and during combat, 
+ as the player is about to feel (center - note the third bot in the lower left corner). 
+ The bots meet their maker (player William), and down him without further ado (center).
+ Sabotage, the guy to be eliminated by the player already noticed the fighting
+ and has become alert and curious (right). Of course, this mission resulted in a failure
+ for the player and his buddy bots.
+ <p>
+ <FONT SIZE=1>
+ (These shots have been recorded during several missions. You're also 
+ seeing upgraded MP5 skins and AQ2 icons from the AQ2 Guild site).
+ </FONT>
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p><p>
+ <br>
+ <h5>
+ July 9, 1999
+ </h5>
+ A few (important) remarks with respect to installing the beta:
+ <ul>
+ <li> unzip the .zip to your <FONT face="Courier">quake2\<FONT COLOR="#FF1010">action</FONT></FONT> subdirectory
+      (just like the release notes tell you!), 
+      not your <FONT face="Courier">quake2</font> directory 
+	  <br>
+      (incorrectly unzipping to your quake2 directory overwrites your standard Quake2
+	   gamex86.dll; in that case, you need to reinstall the latest Q2 3.20 upgrade
+	   again)
+ <li> a few people experience problems in launching the bots via the batch files. A couple of work arounds:
+      <ul>
+	  <li>verify if you have an autoexec.cfg file in your action directory. if that file includes lines such as
+	      <br>
+          <FONT face="Courier">set teamplay 0</font>
+		  <br>
+		  or
+          <FONT face="Courier">set dmflags somevalue</font>
+		  <br>
+		  please remove these lines from your autoexec.cfg and try again
+	  <br>
+	  <li>launch them by hand (as follows)
+	  <br>
+	  1. start action quake2 (the normal way)
+	  <br>
+	  2. start network server (from the menu, choose multiplayer)
+	  <br>
+	  3. increase the number of players to 16 or more
+	  <br>
+	  4. change the deathmatch flags, and make sure that teamplay is enabled (by skin or by model)
+	  <br>
+	  5. launch the network server
+	  <br>
+	  6. now you're just on your own in a normal teamplay game, so...
+	  <br>
+	  7. on the console, type 'exec cgf_urban_hitman_1.cgf' or 'exec cgf_urban_streets_1.cgf'
+	  <br>
+	  8. enjoy!
+	  </ul>
+ </ul>
+ By now, most mirror sites will have the beta as well.
+ <p>
+ We are trying to sort out problems with Ross "JoeSatchs" Norton's bot launcher and 
+ redistributable .dll files; after that, we'll make the launcher available (probably
+ somewhere next week).
+ <br>
+ The launcher should assist you in starting the mission without batch files, 
+ with your favourite weapon, and with bots at the specified skill.
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p><p>
+ <h5>
+ July 8, 1999
+ </h5>
+ CGF 0.77 beta has arrived. It's still a long way to accomplish what I've set
+ out to do, but we're getting somewhere.
+ <p>
+ You can fetch the beta <A HREF="http://tux.telefragged.com/file.pl?filename=cgf_0_77.zip&dir=telefragged/be/">here, at 1.2MB (Windows only).</A> 
+ <p>
+ Please spend your time (while waiting for the beta to be downloaded) by
+ reading these <A HREF="./downloads/cgf_0_77.txt">release notes</A> carefully.
+ <p>
+ When you have questions, please consult the <A HREF="http://aqdt.fear.net/cgi-bin/Ultimate.cgi?action=intro">AQ2 message board </A>first (and
+ read the relevant postings before submitting the questions). I'll give
+ priority to answering questions there (over replying my email).
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <h5>
+ July 7, 1999
+ </h5>
+ The counting down has started (release on July 8 - see below). To keep you busy, the <A HREF="./missions.shtml">missions</A> page now
+ lists a sample (advanced) mission file. 
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <h5>
+ July 6, 1999
+ </h5>
+ Instead of providing a beta on July 7 (as I announced in the previous
+ updage), I'd like to take yet another day off from work (July 8) and 
+ put a little extra effort and testing into the beta (making it less a beta). 
+ Later that day (thus <I>July 8</I>), I'll load it up.
+ <p> 
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/snipersniper.jpg">
+    <IMG SRC="./shots/snipersniper_thumb.jpg" BORDER=0 width=240 height=100 ALT="my first artificial sniper duel">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ It will be a beta (0.77) nevertheless, and limited to a single map (Gerbil!'s 
+ Urban). (A route file and new missions for a second map will be 
+ provided next week). I hope to receive some useful feedback based on
+ that beta.
+ <br>
+ Being about 1MByte in size (zipped), the download will keep you busy
+ for a couple of hours. The missions will include "shoot everything
+ that moves" missios, weapon training missions, and some more
+ advanced ones (but all occurring at Urban).
+ <br>
+ You'll be able to adjust skill settings for the bots, and the armament
+ for the bots by editing the mission file. (It is my goal to allow you
+ to create missions from scratch and route files for any map you choose,
+ but not at this time when there's plenty to debug and change).
+ <p>
+ Aside from the map limitation, the release is definitely a beta because
+ the bots still lack:
+ <UL>
+ <LI>a smarter way of moving (including strafing)
+ <LI>close combat AI (moving during firing, as is the way to handle the
+     shotgun, cannon and knifes)
+ </UL>
+ In addition, CGF (it's more than bots, remember) could use mission 
+ intro's and outro's, informing the player in a better way about the 
+ mission and the mission results. And the bot launcher won't be included
+ immediately (we're having some troubles getting the mission parser
+ component to install on other machines).
+ <br>
+ A hard to catch bug will also be present: in some cases, Q2 crashes when
+ using the M3/Super90 shotgun in software rendering mode. The work-around
+ for this problem is using the "hand 2" setting (so you don't see your
+ own weapon in your hands), or using your hardware accellerated graphics
+ board :). My debugger won't catch this bug, and I currently don't have clue where,
+ when and why this bug occurs.
+ <p>
+ (If you make it to here, you more or less have read the full release notes
+  before launching the bots. That's the way to do it :)).
+ <p>
+ Aside from all these limitations, CGF will be Action! (There's that huge
+ list of <A HREF="./design.shtml">features</A> that is included in the beta).
+ <BR><BR>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p>
+<FONT SIZE="1" > p.s. Many thanks to Cube for locating the source for the mysterious 'Internet
+ Explorer 5' crashes caused by this site (it didn't crash my IE5 though). The
+ culprit seems to be the use of JScript/ECMAScript definitions within a table
+ (the CGI script for the Telefragged banner generates JScript).
+ <br> 
+ As you can see, the banner has been moved from the table to the top of the page.
+ Cube converted all pages to this new format, and put the .png picture format
+ back in place (smaller files, better pictures, but some Netscape users need to
+ fetch a plug-in from the link below).
+</FONT> <h5>
+ Old News
+ </h5>
+ <UL>
+ 	<LI><A HREF="./news_99mayjun.shtml">News May - June 99</A>
+ 	<LI><A HREF="./news_99marapr.shtml">News March - April 99</A>
+ </UL>
+ </BLOCKQUOTE>
+ <!-- text: end -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://action.telefragged.com target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://action.telefragged.com/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

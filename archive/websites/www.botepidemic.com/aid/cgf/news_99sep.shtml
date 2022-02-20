@@ -1,0 +1,515 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=http://www.botepidemic.com/aid/cgf/graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_moving_up.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot5.jpg" border=0 align=center alt="Charlie advances"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_sniper_in_window.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot14.jpg" border=0 align=center alt="A sniping bot looses off a shot from its window position"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/mclanes_on_drainpipe.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot19.jpg" border=0 align=center alt="With covering fire from a teammate a bot scales a drainpipe"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00863
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/latestinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+<br>
+<B>latest executables</B>:<br>
+<a href="http://tux.telefragged.com/file.pl?filename=cgf_0_78.zip&dir=telefragged/be/">
+CGF 0.78 beta</a><br> 
+[July 17, 2.3MB]<br><br>
+<a href="http://tux.telefragged.com/file.pl?filename=cgf_0_78u.zip&dir=telefragged/be/">
+CGF 0.77 -> 0.78</a><br> 
+[July 17, 1.5MB]<br>
+<br>
+<B>latest launcher files</B>:<br>
+<a href="./downloads.shtml#launcher">Launcher 1.50</a><br>
+[Sept. 13, 1.48Mb]
+<br><br>
+<B>latest missions/routes</B>:<br>
+<a href=http://tux.telefragged.com/file.pl?filename=cgfpack_urban2.zip&dir=telefragged/be/cgf/>'urban2' pack</a><br>
+[September 26, 31Kb]
+<br><br>
+<center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/newsbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <!-- text: begin -->
+ <BLOCKQUOTE>
+ <br>
+ <h5>
+ September 26, 1999
+ </h5>
+ After debuting at Urban, the CGF bots are now ready for a sequel: 
+ <A HREF="http://aqmd.action-web.net/cgi-bin/download.pl?File=urban2.zip">Urban2</A> 
+ (also by Gerbil!). A new opportunity to test your skills on a mission to eliminate Sabotage,
+ this time in an even darker environment (check out how the trusty ol' Super90 shotgun
+ feels more at home here).
+ <br>
+ Also included some more TP like survival missions (where you
+ play in terror outfit - the bots are too hard to spot when in terror).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban2_rooftop.jpg">
+    <IMG SRC="./shots/urban2_rooftop_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="Adi blasting me from the center rooftop - if they get there, you'd better be somewhere else">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban2_akimbo.jpg">
+    <IMG SRC="./shots/urban2_akimbo_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="Sabotage again is waiting for you - will you meet him and take him out?">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban2_ladder.jpg">
+    <IMG SRC="./shots/urban2_ladder_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="one bot issues 'Air Nikes' to Adi, with a stream of MP5 bullets - note the laser sight dot">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ Get the <a href=http://tux.telefragged.com/file.pl?filename=cgfpack_urban2.zip&dir=telefragged/be/cgf/>Urban2 CGF pack</A> 
+ and be the hero in this sequel...
+ <p>
+ Note that in this CGF beta, the bots see a bit better than you in the dark<A HREF="#visionreduction"><SUP>1</SUP></A>.
+ This is about to change.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban2_mass1.jpg">
+    <IMG SRC="./shots/urban2_mass1_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="crowded engagement down the dark Urban2 alleys (10 corpses missing here)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban2_mass2.jpg">
+    <IMG SRC="./shots/urban2_mass2_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="one platoon's fireteam (each had 8 fireteam with 4 or 5 members)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban2_mass3.jpg">
+    <IMG SRC="./shots/urban2_mass3_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="battle for office space">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ I also experimented a bit with 'platoon level' urban combat. Running an engagement of two platoons,
+ some 70+ bots in total, on a dedicated server worked out fine. However, the resulting demo proved
+ hard to handle for Q2 (too much network traffic?). Above, you'll see some shots from late in the
+ battle (after 20+ casualties, and without corpes - they disappeared).
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p>
+ <br>
+ <h5>
+ September 18, 1999
+ </h5>
+ The CGF bots have been sent back to school. To compensate for upcoming a reduction in vision<A HREF="#visionreduction"><SUP>1</SUP></A>,
+ they are attending an advanced course on tactical terrain understanding. And they are doing fine...
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector2.jpg">
+    <IMG SRC="./shots/projector2_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="'teaching the CGF bots about tactical terrain understanding: hard to access rooftops are good'">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector4.jpg">
+    <IMG SRC="./shots/projector4_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="'teaching the CGF bots about tactical terrain understanding: interpreting analysis results'">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector3.jpg">
+    <IMG SRC="./shots/projector3_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="'teaching the CGF bots about tactical terrain understanding: paths that provide cover'">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ In terms of game play (real documentation <A HREF="./design_terrain.shtml">here</A> for visitors interested in AI or CGF's design)
+ this means:
+ <UL>
+	<LI>given an AQ2 map and a route file for that map, the bots will know within 
+        five minutes of CGF number crunching where to find the tactically significant locations 
+        of that map (even for your home-made maps).
+        <p>
+        These locations will then be taken into account when bots snipe, position themselves,
+        select threats to engage, etc.
+ </UL>
+ For example, take Gerbil!'s Urban: TP combat typically is dominated from the roof ledges, the two sniper
+ rooms, the AQ2 sign location, the ladder camp spot, and the positions between the air vents. 
+ <br>
+ Now have a look at the graphs illustrating the CGF understanding of this map below (lighter colors 
+ represent tactically better locations, and blue areas represent unreachable areas)<B></B>: 
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_total_lo.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_total_lo_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated 'total' tactical value map of lower Urban areas, projected on top view - lighter colors represent better locations">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_total_hi.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_total_hi_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated 'total' tactical value map of higher Urban areas, projected on top view - lighter colors represent better locations">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The center graph shows the tactical value of locations at street level and in/at medium height buildings. Here, the brightest
+ spots coincide with the AQ2 sign (top left), lower sniper room (bottom left), and lower four-air-vent-roof sniper
+ position. An easy to recognize weak location is the single door in the center building.
+ <p>
+ The right side graph shows the tactical value of rooftop locations. CGF considers the following locations very
+ valuable: ladder camp spot (right), higher sniper room (right), the sniper position closest to the Coke sign (bottom right). 
+ Not too bad for a bot :).
+ <p> 
+ There's also (more) good news for the crack AQ2 players that know a few more key locations at Urban: by recording
+ and analyzing player and bot performance, CGF 0.80 will try to improve its terrain understanding even further. 
+ In other words, you'll be training your own killers... (More details on that in a future update).
+ <p>
+ While I'm working on these CGF 0.80 features, you'll have to do with CGF 0.78 for a few more weeks. The coming
+ week I'll make a route + mission pack available for Urban2. Meanwhile, a few guys (Floppier, Dave Prentis, Lennon,
+ and Ryan McAleese) are doing a great job at creating route files for CGF 0.80.
+ <p>
+ On the topic of route files: RiEveR (of the <a href="http://www.planetquake.com/maxtron/ltk/">LTK</a> AQ2 bot) 
+ and I are exchanging some info and code so LTK can 
+ benefit from the CGF route files (becoming) available (but CGF won't be able to use LTK files since CGF is a bit peculiar about
+ way points - mainly because it wants to do the analysis described above).
+ <p>
+ Oops - I screwed up the upload of the CGF Launcher 1.50 documentation. This has been fixed.
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p>
+ <FONT SIZE="1" COLOR=""> <A NAME="visionreduction"><SUP>1</SUP></a>
+ : Wrt vision reduction. CGF employs a very detailed vision model, taking into account fog, distance,
+ light level, whether the target moves, how much of the target is visible, whether the bot was already tracking
+ the target, etc. All of this results in single score. The sole problem is that none of the bots currently have a 
+ 'minimum visibility' threshold: no matter how low the visibility score of a threat, they will see him.
+ <br>
+ Of course, this needs to change, and will enable for more variety in tactics against the bots: for example, 
+ sneaking through dark areas will be beneficial.
+ <p>
+ And yes, in the screen shots above (recorded at p1_lightbeam) I've tricked the projected slides. Me and the bots
+ are for real though.
+ </FONT>
+ <p>
+ <br>
+ <h5>
+ September 13, 1999
+ </h5>
+ A <A HREF="./downloads.shtml#launcher">new version</A> of <A HREF="mailto:rossnorton@mweb.co.za">Ross 'JoeSatch' Norton</A>'s CGF Launcher has arrived, eliminating
+ the need to download patches for patches. CGF Launcher 1.50 has fixed almost every
+ launch problem reported, and even includes an experimental feature to export
+ your weapon preferences into multiple missions (do make sure these missions are
+ related, otherwise you'll screw things up).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/cgf_launcher1.jpg">
+    <IMG SRC="./shots/cgf_launcher2_thumb.jpg" BORDER=0 width=133 height=100 ALT="Ross Norton's friendly UI tool to launch CGF missions">
+	</a>
+	</TD>
+	<TD align="center" valign="center">
+	<a href="./shots/actcity_3.jpg">
+    <IMG SRC="./shots/actcity_3_thumb.jpg" BORDER=0 ALT="The less friendly world you're launched into">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/cgf_launcher3.jpg">
+    <IMG SRC="./shots/cgf_launcher3_thumb.jpg" BORDER=0 width=133 height=100 ALT="Select the hardware you need for the job">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ If you're a frequent user of the CGF Launcher, you can <A HREF="./downloads.shtml#launcher">download</A> version 1.50. In other
+ cases, you are stongly advised to <A HREF="./downloads.shtml#launcher">download</A> the documentation, and, if needed, the 
+ Visual Basic run-times as well.
+ <p>
+ On the topic of launching bots, <A HREF="http://www.planetquake.com/maxtron">Maxtron</A> (PlanetQuake's bot site)
+ announced the birth of a 'standard' AQ2 bot, based on Steve Yeager's ACE bot. (If I remember correctly, the ACE
+ bot is able to learn a map while it plays it). 
+ <p>
+ Created over the weekend by RiEvEr, the young bot is called 'Licensed To Kill' or LTK and understands DM and TP. 
+ It is still in 'alpha',
+ and should not be mirrored since RiEvEr is very busy with it. Get it from <A HREF="http://www.planetquake.com/maxtron">Maxtron</A>
+ (but back up your CGF gamex86.dll before you use LTK).
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br>
+ <br>
+ <br>
+ <h5>
+ September 9, 1999
+ </h5> 
+ The Monastery: a peculiar Action map, providing us with an adventurous deserted
+ temple. As of today, CGF bots will visit these ruins and they won't behave
+ that nice. Download the <a href=http://tux.telefragged.com/file.pl?filename=cgfpack_monastery.zip&dir=telefragged/be/cgf/>Monastery CGF pack</A> now, and see for yourself what happens!.
+ <p>
+ Monastery, by <A HREF="mailto:my_marsbar@hotmail.com">KongFoo</A> is one of the 
+ oldest AQ2 maps, and part of the first map pack released for action. If you don't
+ already have it on your hard disk, get it from <A HREF="http://aqmd.action-web.net">AQMD</A>.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/monastery1.jpg">
+    <IMG SRC="./shots/monastery1_thumb.jpg" BORDER=0 width=133 height=100 ALT="Rambo style spraying at incoming Arnolds">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/monastery2.jpg">
+    <IMG SRC="./shots/monastery2_thumb.jpg" BORDER=0 width=133 height=100 ALT="Up, close and personal visitors for Rambo">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/monastery3.jpg">
+    <IMG SRC="./shots/monastery3_thumb.jpg" BORDER=0 width=133 height=100 ALT="Showing off Monastery's temple setting">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ In the included missions, you are simply Rambo. With at most one buddy (wearing the
+ same cool 'designer jeans'), you need to try to survive amidst a cast of violent movie characters.
+ <p>
+ I apologize for teasing you with screen shots featuring a touch of fog, but the fog
+ also needs testing :). Though fog won't be available until the upcoming
+ CGF 0.80 version (later this month), I've completed most of the work on supporting fog
+ in the AI, and I've made available the documentation for using fog <A HREF="./exp_fog.shtml">here</A>.
+ <br>
+ If you happen to know which graphic chip set (drivers) support OpenGL1.1 and which don't,
+ please send me a mail, so I can add that to the documentation.
+ <p>
+ The coming week, I'll show you why the new CGF version is taking this long. You'll
+ get to know more about what goes on in a bot brain and how it affects you.
+ <p>
+ Keep the Action going!
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br>
+ <br>
+ <br>
+ <h5>
+ September 1, 1999
+ </h5> 
+ CGF bonus feature: fog! For those among you featuring a graphics accelerator supporting
+ OpenGL1.1 (most recent boards, but not the 3DFX Voodoo series), CGF 0.80 will provide
+ the option of fighting under foggy conditions. 
+ <p>
+ Just like breakable glass, fog is optional and defaults to 'off'. In addition, fog density 
+ and colors can be configured per map - presets for well known maps will be included as well.
+ <p>
+ Adding fog is not very original<SUP><A HREF="#fogcredits">1</A></SUP> but it will 
+ definitely enhance CGF replayability.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog4.jpg">
+    <IMG SRC="./shots/fog4_thumb.jpg" BORDER=0 width=133 height=100 ALT="fire team, advancing towards hard to spot threat">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog2.jpg">
+    <IMG SRC="./shots/fog2_thumb.jpg" BORDER=0 width=133 height=100 ALT="medium range sniping at city - forget about long range in these weather conditions">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog3.jpg">
+    <IMG SRC="./shots/fog3_thumb.jpg" BORDER=0 width=133 height=100 ALT="a chilly hostile dusk with 'friends' at downtown">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The screen shots 'clearly' illustrate how fog affects gameplay. Fog changes the
+ map's atmosphere, and forces you to adjust your tactics even for those 'well known' missions. 
+ <p>
+ Of course, the CGF AI will understand fog:
+ <UL>
+    <LI>bot vision will be affected by fog density (it is being overhauled anyway)
+    <LI>bots will understand the 'cover' effect of fog, and use it to hide or approach
+        you stealthily
+ </UL>
+ A few warnings apply: fog eats frame rate, all but the lowest fog densities
+ show artifacts, and fog just doesn't feel right for a number maps (most of them indoor maps :) ).
+ <p>
+ <A HREF="mailto:incubusone@hotmail.com">Incubus One</A> has released a few patches for the 
+ <A HREF="http://www.planetquake.com/borderfield">Borderfield</A> CGF Mission Editor,
+ that fix tiny but annoying bugs in the powerful mission creation tool.
+ <p>
+ The Navy SEALs (for Quake1) site seems to be 'missing in action'. Because I occasionally
+ receive questions about NS1 and the (very limited) sQuad bots, I've
+ uploaded a .zip archive containing the NS1 version 2.x, fixed for use with GLQuake
+ and including bots (for e1m1 only). 
+ <br>
+ If you want to inspect Gooseman's early work (before Action and CounterStrike) or like
+ to use the M60, the M4/M203, or real silencer equipped MP5's go get it 
+ <A HREF="http://tux.telefragged.com/file.pl?filename=q1_ns2.zip&dir=telefragged/be/cgf/">here</A> [8MB].
+ <p>
+ Last thing: the new 'coverme' map (Cover Me by Sir Francis) probably is the map featuring the
+ largest number of breakable windows today: close to 10 windows, fitting the map's theme. 
+ Test and review it at <A HREF="http://aqmd.action-web.net">AQMD</A>.
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br>
+ <FONT SIZE="1"> <A NAME="fogcredits"><SUP>1</SUP></a>: 
+ I had completely forgotten about fog until I visited the new AQ mod site '<A HREF="http://aw.telefragged.com/infiltration/index.shtml">AQ2: Infiltration</A>'. 
+ They deserve credit to be the first (AFAIK) to try to add fog to AQ2. 
+ <br>
+ One HotBot search and 20 minutes
+ later, CGF featured 'fog' as well.
+ <br>
+ The fog trick was developed by Rohan, coder of 'Revenge of the Stroggos' (ROS) and Navy SEALs 2, in June
+ 98. At that time, we had some discussions about the fog (and about CGF for NS2), but I had a 3dfx Voodoo
+ and wasn't able to try it.
+ <br>
+ I've used the <A HREF="http://www.inside3d.com/q2tut/q2tut-13.shtml">Inside3D tutorial</A> by 
+ <A HREF="mailto:legion@sincero.com">Roscoe 'legion' Sincero</A> as a base to add it to CGF.
+ </FONT> 
+ <p>
+ <br>
+ <h5>
+ <h5>
+ Old News
+ </h5>
+ <UL>
+ 	<LI><A HREF="./news_99aug.shtml">August 99 ['downtown', 'actcity2' packs]</A>
+ 	<LI><A HREF="./news_99jul.shtml">July 99 [0.77 - 0.78 beta]</A>
+ 	<LI><A HREF="./news_99mayjun.shtml">May - June 99</A>
+ 	<LI><A HREF="./news_99marapr.shtml">March - April 99</A>
+ </UL>
+ </BLOCKQUOTE>
+ <!-- text: end -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>
