@@ -10,6 +10,10 @@ http://web.archive.org
 
 Useful for finding files that the scraper did not get (it's possible they existed in a previous version of the scrape, but not the one we specify)
 
+Python - `linkchecker`
+
+Example usage: `linkchecker -o html http://assets.aq2world.com/archive/websites/aqmd.telefragged.com/ > ../tests/aqmd-broken-links.html`
+
 ## Goals and Scope
 
 The goals, in order of importance:
@@ -40,6 +44,7 @@ The goals, in order of importance:
     1. For example, changing a link from http://aqmd.telefragged.com to https://assets.aq2world.com/archive/websites/aqmd.telefragged.com makes the link usable again
 7. Resolve PHP/cgi-bin links
     1. Determine if the link is simply trying to reach another part of the website.  Some sites had PHP or cgi-bin logic to determine what to do when clicked, but if it's just referencing another part of the site, update the link to the html document instead
+8.  Utilize the `linkchecker` tool for determining broken links, with a focus on fixing inter-site references (example: AQMD referencing AQDT) and any sites that we may want to archive in the future.
 
 ## Things that may never work again
 
