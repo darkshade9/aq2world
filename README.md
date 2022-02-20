@@ -16,3 +16,4 @@ Contains img and national flags for aq2world.com
 * Mr. Ska's Pro Shop
 * The Newbie's Niche
 * Action World
+* Computer Generated Forces

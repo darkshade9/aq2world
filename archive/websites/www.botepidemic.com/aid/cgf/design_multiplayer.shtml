@@ -1,0 +1,294 @@
+<html>
+
+<head>
+<title>Multi-player CGF: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_storming_the_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot6.jpg" border=0 align=center alt="Charlie storm a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_sniper_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot13.jpg" border=0 align=center alt="An SAS bot sniping on a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_police_drainpipe.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot15.jpg" border=0 align=center alt="A bot sniper team moves into position"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00653
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <br>
+ <BLOCKQUOTE>
+ <h3>
+ <b>Multi-player CGF
+ </b>
+ </h3>
+ <p>
+ Originally designed as a single-player, mission oriented variation of Action Quake2,
+ CGF now (in CGF 0.81 and later versions) also supports multi-player games. 
+ <br>
+ The following kinds of multi-player games are supported:
+ <UL>
+	<LI><B>co-op multi-player</B>
+        <br>
+        (standard missions or missions designed for multi-player, with multiple players in a single team)
+	<LI><B>team-on-team multi-player</B>
+        <br>
+        (missions specifically designed for multi-player, with players distributed over multiple teams)
+ </UL>
+ Multi-player is both supported on so-called 'listen' servers and 'dedicated' servers.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/multiplayer_wait.jpg">
+    <IMG SRC="./shots/multiplayer_wait_thumb.jpg" BORDER=0 width=133 height=100 ALT="server message: 'mission will start in 04 seconds'">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/multiplayer_dev.jpg">
+    <IMG SRC="./shots/multiplayer_dev_thumb.jpg" BORDER=0 width=133 height=100 ALT="testing multi-player using 3x action on the CGF desktop">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/multiplayer_underway.jpg">
+    <IMG SRC="./shots/multiplayer_underway_thumb.jpg" BORDER=0 width=133 height=100 ALT="server message: 'mission is currently underway, you can participate in the next mission'">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ <H5>
+ Multi-player CGF on a 'listen' server
+ </H5>
+ <I>server: </I>Multi-player CGF on a 'listen' server is the easiest way to run a multi-player CGF mission. 
+ The player hosting the game launches CGF like he would for a single player
+ game (pick a mission using the CGF Launcher). He also informs fellow LAN clients of his IP address.
+ <br>
+ A first mission will start automatically, and he'll be the only player participating. In subsequent
+ missions, however, all other players who have connected in time to his machine will participate in the mission.
+ <p>
+ <I>client: </I>For a client to join a multi-player game, he only needs to connect to the server running
+ the CGF missions. Upon connecting, the client is temporarily an observer, but when the next mission is about
+ to start, he will be informed of this (see center image above).
+ <br>
+ Note that, to participate in missions that use the 'optional' weapons, the client needs to have installed
+ the CGF optional weapons.
+ <br>
+ <br>
+ <br>
+ <H5>
+ Multi-player CGF on a 'dedicated' server
+ </H5>
+ <I>server: </I>Setting up a dedicated server to run CGF missions requires a bit of manual configuration. The server is launched
+ using the following command line (as an example):<br>
+ <pre><FONT COLOR="#FFFF33">quake2.exe +set game action +set <U>dedicated</U> 1 +set maxclients 32 +exec _cgf.cfg
+ </FONT></pre>
+ The _cgf.cfg containing server start instructions can be generated by the CGF Launcher, but <I>requires</I> editing: the
+ mission command should be preceded by a 'sv' (to make it a server instruction):
+ <pre><FONT COLOR="#FFFF33">set cgf 1
+set deathmatch 1
+set teamplay 1
+set dmflags 2883
+gamemap coverme
+<U>sv</U> mission coverme_defense1.cgf
+
+//The following files were found in config.lst
+//They will be exectuted when CGF has loaded.
+exec extras.cfg</FONT> </pre>
+ Upon launching the dedicated server, the server will postpone launching the mission until the first
+ client connects. The server then waits for some 20 seconds (allowing other clients to connect as well), 
+ and starts the mission. All clients present in time for the first mission will participate in the 
+ first mission. If they connect to the server at a later
+ time, they will participate in the next mission.
+ <p>
+ <I>client: </I>For a client to join a multi-player game, he performs the same actions as for connecting
+ to a listen server.
+ <p>
+ <FONT SIZE="1">
+ Note: technically, you could run CGF as a player-only game over the internet; you'd get a
+ mission oriented variation of AQ2 1.51 (with additional guns). However, CGF isn't as reliable as
+ AQ2 1.52 and lacks the ease of configuration. I advice against using CGF this way.
+ </FONT>
+ <p>
+ <FONT SIZE="1">
+ Note: fog doesn't work in multi-player games (I cannot find a means to have the server enforce
+ fog on the clients). 
+ </FONT>
+ <p>
+ <H5>
+ Default: co-op multi-player using standard CGF missions
+ </H5>
+ When running standard CGF missions (not designed for mult-player, and thus containing
+ only a single 'player' character in the mission), CGF takes into account additional
+ players as follows:
+ <UL>
+	<LI>all players present are part of the same team when the mission starts
+    <LI>the model, skin and load-out (ammo, items and weapons) for the player character
+        defined are assigned to the additional players as well
+	<LI>all players are dropped into the level in column formation
+ </UL>
+ In other words, this turns CGF into a co-op multi-player game: instead of a single
+ player, multiple player can try to achieve the mission objective.
+ <p>
+ <FONT SIZE="1">
+ Note: most CGF missions have been written and balanced for a single player. You might
+ find the missions too easy to accomplish when playing with the help of some of your friends.
+ In that case, you might want to (using the CGF Launcher) increase the skill of the bots, 
+ issue them kevlar vests, issue them better weapons, or (by editing the mission by hand)
+ add more bots in the opposing forces' teams.
+ </FONT>
+ <p>
+ <H5>
+ Specific multi-player missions: team-on-team
+ </H5>
+ From CGF 0.81 onwards, you can accomodate additional players in your CGF missions (without
+ disturbing single-player mission) behavior. Instead of incorporating a single player in
+ the mission, you can incorporate multiple players in multiple teams, and provide each with
+ a unique combination of model, skin, and load-out. For example:
+<pre><FONT COLOR="#FFFF33">list 1: team definition, accomodating multiple (multi-) players
+        with their own outfit and load-out
+        ---------------------------
+force "Marines"
+  {
+    team "Bravo-team"
+    { 
+      player "Bravo-1" "male/commando"
+        { 
+          weapon "AK47 Assault Rifle";
+        };
+      player "Bravo-2" "male/seal"
+        { 
+          weapon "AK97 Submachinegun";
+        };
+    };
+  };</FONT></pre>
+ On each mission start, players are assigned random roles in the team (so you're not stuck
+ to a specific start position and gun all the time).
+ <p>
+ In case there aren't sufficient players to fill out the team, player definitions are removed
+ upon mission start. In other words, adding multiple player definitions to a team doesn't
+ affect the mission's fitness for single-player entertainment.
+ <p>
+ If the team doesn't include as many player definitions as is required to accomodate all
+ players, the last player character definition is duplicated to suit additional team members.
+ <p>
+ Instead of allocating multiple players to a single team, you can also spread them over
+ multiple teams (remember to include either players or bot into a team), or even over multiple
+ forces:
+<pre><FONT COLOR="#FFFF33">list 2: team definition, accomodating multiple (multi-) players
+        with their own outfit and load-out in opposing forces
+        ---------------------------
+force "Marines"
+  {
+    team "Bravo-team"
+    { 
+      player "Bravo-1" "male/commando"
+        { 
+          weapon "M4 Assault Rifle";
+        };
+    };
+  };
+
+force "Terrorists"
+  {
+    team "Red-team"
+    { 
+      player "Red-1" "messiah/slug"
+        { 
+          weapon "AK47 Assault Rifle";
+        };
+    };
+  };</FONT></pre>
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br><br>
+ </BLOCKQUOTE>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

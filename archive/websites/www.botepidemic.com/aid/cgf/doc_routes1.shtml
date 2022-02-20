@@ -1,0 +1,2078 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_storming_the_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot6.jpg" border=0 align=center alt="Charlie storm a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/dev_supprfire_predicted_targets.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot8.jpg" border=0 align=center alt="A development shot showing areas for suppression fire"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/spotter_and_sniper_in_action.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot20.jpg" border=0 align=center alt="A bot sniper working in tandem with a spotter bot"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 02065
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <!-- start body text -->
+ <br>
+ <br>
+ <h3>
+ <b>CGF Terrain / Route File Creation</b>
+ <br>
+ <FONT SIZE=1>
+ Last update: October 22, 2000, by <A HREF="mailto:william@botepidemic.com">William</A>. List of changes <A HREF="#changelog">here</A> .
+ </FONT>
+ </h3>
+ <p>
+ This manual is organized as one big html file to allow you to save it to your own hard
+ disk for future reference. Do check back the original 
+ <A HREF="http://www.botepidemic.com/aid/cgf/doc_routes1.shtml">page</A> for any updates.
+ <p>
+ <H5>1. <A NAME="introduction">Introduction</a></H5>
+ In CGF, terrain files describe the bots how they may navigate a Action Quake 2 map. In
+ order to play any missions on a particular map, you need to have the terrain files for that map.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_nopath.jpg">
+    <IMG SRC="./shots/terrain_route_nopath_thumb.jpg" BORDER=0 width=133 height=100 ALT="the city map, covered by nodes (note how also the vertical and horizontal drainpipes have been covered with nodes)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_window_path.jpg">
+    <IMG SRC="./shots/terrain_route_window_path_thumb.jpg" BORDER=0 width=133 height=100 ALT="a path along the links between the nodes">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_stealthpath.jpg">
+    <IMG SRC="./shots/terrain_route_stealthpath_thumb.jpg" BORDER=0 width=133 height=100 ALT="a tactical path, along walls, illustrating
+ the importance of nodes dropped close to the walls">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The basic information describing the terrain just consists of:
+ <UL>
+	<LI><B>waypoints, or nodes</B>
+	    <br>
+		A node describes a location that can be visited by the bot, and is annotated with
+		various 'flags' that inform the bot whether that location is, for example in water, 
+        requires crouching, etc. All these flags are generated automatically once the
+		node is created.
+	<LI><B>connections, or links</B>
+	    <br>
+		A link between two nodes describes a viable direct path from one node to the other
+		without major obstructions.
+		<br>
+		A link only describes a one-way path. To describe that you (and the bot) can move
+		directly from one node to the other and back, two links are required.
+		<br>
+		Typically, a link depicts a horizontal path between nodes that are about 200 game 
+		units apart. However, a link can depict a 800 unit jump from a cliff down into the 
+		water as well. 
+		<br>
+		Links are not annotated. Instead, the AI figures out what to do (jump, swim, crouch,
+		open door, shoot breakable glass) based on the flags of the nodes connected by the
+		link.
+ </UL>
+ The terrain description for an average Action Quake 2 map contains about 750 nodes and 3,600
+ links (about 800 uni-directional links and 1400 bi-directional links (thus representing two links)). 
+ On average, nodes are connected to 3 other nodes, but in extreme cases up to 20.
+ <p>
+ Terrain file creation or route file creation is the process of creating a good terrain
+ description for the bots. The bots really depend on these terrain files for navigation,
+ but in the case of CGF, also for finding cover, location sniper positions, approaching
+ a position stealthily, etc.
+ <p>
+ Note that the CGF bots cannot 'roam' or 'explore' an unknown map themselves. This is
+ explained in the <A HREF="./faq.shtml#qr2">FAQ</A>.
+ <p>
+ This manual is organized as follows:
+ <OL>
+	<LI><A HREF="#introduction">introduction</A> (this text)
+	<LI><A HREF="#terrainfiles">terrain files</A> (.srp, .dst, .tac, .exp)
+	<LI><A HREF="#nodeflags">node flags</A>
+	<LI><A HREF="#commands">terrain mapping commands</A>
+	<LI><A HREF="#initialsteps">steps to create an initial terrain file</A>
+	<LI><A HREF="#nextsteps">steps to test and improve the terrain file</A>
+	<LI><A HREF="#troublesome map features">deal with map features that are likely to cause problems</A>
+	<LI><A HREF="#script">easy creation of a .cgf script defining locations</A>
+	<LI><A HREF="#debugging">debugging terrain problems in missions</A>
+	<LI><A HREF="#requirements">requirements for CGF terrain file distribution</A>
+	<LI><A HREF="#credits">additional credits</A>
+	<LI><A HREF="#changelog">change log for this document</A>
+ </OL>
+ <p>
+ <br>
+ <H5>2. <A NAME="terrainfiles">Terrain Files</a></H5>
+ CGF uses four kinds of terrain files (in directory action\terrain) to
+ describe a specific AQ2 map:
+ <UL>
+	<LI><B>{mapname}.srp</B>, <FONT COLOR="#FF0000">[essential!]</FONT> 
+	    <br>
+	    defines the nodes and connections
+	<LI><B>{mapname}.dst</B>, [optional, can be reconstructed]
+        <br>
+		(large file) containing the path lookup table for each pair of nodes.
+        <br>
+        The presence of this file speeds up map load time by about 5 minutes
+	<LI><B>{mapname}.tac</B>, [optional, can be reconstructed]
+        <br>
+	    (small file) containing all kinds of tactical lookup tables
+		<br>
+		The presence of this file speeds up map load time by about 2 minutes
+	<LI><B>{mapname}.exp</B>, [optional, but cannot be fully reconstructed]
+        <br>
+	    (small file) contains and records experience gained from monitoring player/bot
+		movement and performance. 
+		<br>
+		The presence of this file improves the AI behavior, but does not affect
+		map load time at all. 
+ </UL>
+ In addition, there's a fifth map related file that you better add to your route file
+ archive:
+ <UL>
+	<LI><B>{mapname}.fog</B>, [optional, and in directory action\cgf\fog]
+        <br>
+	    (small text file) defines fog preferences for map at hand: fog density, fog type
+        and fog color (expressed in red, green and blue)
+        <br>
+        Density is typically low for indoor maps and higher for outdoor maps 
+        (0.0 disables fog, 0.05 is low, 0.20 is dense).
+		<br>
+		Since the terrain file will enable the gamer to start playing CGF at a specific
+        map, it makes sense to provide a fog file for that map as well.
+ </UL>
+ The path lookup table and tactical lookup tables are generated by CGF using as input the Quake map, 
+ and the .srp file contents: nodes and links. Therefor, they can only be computed while
+ running the Quake2 engine. This typically happens during map load time.
+ <p>
+ Because generating these tables takes about 7 minutes (depending on CPU power and map size), 
+ and because most gamers don't like to wait that long before playing a mission, 
+ CGF computes these tables once, and stores them in (large) files. CGF then reads these files 
+ (thus: tables) at the start of a mission, and launches the mission in about 10 seconds 
+ instead of 7 minutes. The sole disadvantage is that it takes a few MB's of your harddisk. 
+ <br>
+ If you are short on hard disk space, you can remove the .dst and .tac files for the maps
+ you don't play frequently - this saves up about 2MB per map.
+ <p>
+ <br>
+ <H5>3. <A NAME="nodeflags">Node Flags</a></H5>
+ CGF records a number of properties (or flags) for each node. These are determined
+ <I>automatically</I> either:
+ <UL>
+ 	<LI>when you start the mapping process
+ 	<LI>when you spawn a node, or 
+	<LI>when post-processing the map (before saving, when reconstructing the terrain files).
+ </UL> 
+ <br>
+ You'll will be informed of the node's properties when visiting a node. The node
+ properties will assist you in deciding whether to remove or reposition a node.
+ <p>
+ Please note that you'd better not remove any nodes that are created when you start
+ mapping (doors, breakable glass, etc.) because you cannot re-create these manually.
+ <p>
+ CGF 0.79 records the following properties per node:
+ <p>
+ <table border="1" cellpadding="4" cellspacing="0" width="510"
+        bordercolor="#C0C0C0">
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	<B>node property</B>
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1">
+	<B>computed</B><br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	<B>description</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	id
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	unique node number - may change as a result of node removal, values range from 0 onwards<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	lightlevel
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	lightlevel, as recorded during creation. ranges from 0 = dark to 128 = full bright<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'low' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	around node location, crouching is required<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'watershallow' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location features shallow water (no need to swim, reduced speed, no falling damage)<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'waterdeep' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location features deep water (need to swim, reduced speed, need to surface to breathe)<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'breathing' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is deep water but to surface for breathing<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'ladder' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location features ladder<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'narrow' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	spawn<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location features narrow ladder or ledge, thus requires
+	more precise jumping and movement<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'glass' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	start mapping<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location features breakable glass<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'elevator' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	start mapping<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is elevator stop position [not supported yet]<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'train' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	start mapping<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is train stop position [not supported yet]<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'door' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	start mapping<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is a normal or rotating door (that can be opened)<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'covered' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	post-processing<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location enables bot/player to put their back to the wall
+	and be attacked from 'one' direction (190 degrees) only<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'indoor' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	post-processing<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location (and its direct surroundings have an indoor location, 
+	and should be tackled appropriately by the forces) [not supported yet]<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'traffic' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	post-processing<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is used frequently for movement (and deserves
+	closer attention) - flag becomes more accurate when playing
+	more missions on a particular map
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'snipe' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	post-processing<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is used succesfully for sniping (and deserves
+	closer attention) - flag becomes more accurate when playing
+	more missions on a particular map
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="30%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	'camp' flag
+	</font></td>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	post-processing<br>
+	</font></td>
+	<td width="50%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	location is used succesfully for camping (and deserves
+	closer attention) - flag becomes more accurate when playing
+	more missions on a particular map
+	<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ <p>
+ <br>
+ <H5>4. <A NAME="commands">Terrain Mapping Commands</a></H5>
+ To create, inspect and modify terrain information, you can use the
+ following commands (to learn how and when to use them, see the next section).
+ <p>
+ All commands are issued from the console (or via a key binding). 
+ All commands are prefixed by 'terrain' and need to provided with the appropriate
+ argumeents. Thus the 'show infront' command should be entered as, for
+ example:
+ <br>
+ <BLOCKQUOTE>
+ <FONT face="Courier">terrain show infront 30</FONT>
+ </BLOCKQUOTE>
+ The commands are:
+ <p>
+ <table border="1" cellpadding="4" cellspacing="0" width="520"
+        bordercolor="#C0C0C0">
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	<B>command</B>
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	<B>description</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	help
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	displays summary of terrain commands<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	map
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Toggles node creation (if node creation is toggled on, and linking wasn't on, linking will be enabled as well).
+	<br>
+    Note: the first time node dropping is toggled on, a node (node 0) is dropped
+    at your position, and all doors and breakable glass are given nodes as well.
+    <br>
+    When display node is enabled, new nodes will show up as red balls.
+	<p>
+	Whenever node dropping is toggled off, map post processing is done
+    (to remove some incorrect nodes and links, and to compute label information
+    for each node). This takes some serious time.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	link
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Toggles link creation. Node creation need not be on. Link creation is automatically
+	enabled when enabling node creation using terrain map.
+	<br>
+    When display link is enabled, new links will show up as rail gun traces (un-directional links)
+	or green laser lines (bi-directional links).
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	log visit
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Toggles reporting of node information. When enabled, the node properties are listed. The
+	following abbrevations are used in the reported information: 'd' is defensive value, 'l' is
+	lightlevel, 'o' is occupation score 'm' is movement score, 's' is sniping score,
+	'c' is camping score.
+	<br>
+    Note: you need to have 'log visit' enabled to use the 'terrain show' commands.
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	log create
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Toggles reporting the creation of any link or node (tells if a node is created,
+    and if two nodes are linked. In the latter case, the distance, expressed
+    as travel time in seconds id displayed).
+	<br>
+	Since the 'display node' and 'display link' options suffer from the Quake2 entity limit,
+	I typically have 'log create' enabled to see whether links and nodes are being created.
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	display node
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Toggles displaying of nodes (by red balls). Nodes remain only
+    visible for about 60 seconds. Quake2 has troubles handling too many entities.
+	Since each nodes and link are displayed using one entity each, Quake2
+	soon will start complaining.
+	<br>
+	For that reason, if there are already too many waypoints present in the map to be
+    displayed at all, none of them are displayed initially, and solely new
+    nodes will be displayed.
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	display link
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Toggles displaying of links by rail gun traces (uni-directional or one-way links)
+	and green laser lines (bi-directional or two-way links). 
+	Links remain only visible for about 60 seconds. Quake2 has troubles handling too many entities.
+	Since each nodes and link are displayed using one entity each, Quake2
+	soon will start complaining.
+	<br>
+	For that reason, if there are already too many links present in the map to be
+    displayed at all, none of them are displayed initially, and solely new
+    links will be displayed.
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	save
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Performs post-processing of the map (removing incorrect links, updating description info) 
+	and saves the route info to action\terrain\&lt;map&gt;.srp.
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	manual drop node
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Drops a new node at the player position and automatically creates all safe links for 
+	neighboring nodes to / from this new node (whether terrain link is enabled or not).
+	<br>
+	Make last created node also the last visited node.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	manual delete node
+    <br>
+    <br>
+    <I>or</I>
+    <br>
+    <br>
+    manual delete node &lt;nodeid&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	Removes the specified node (or the last visited node if no node id was given - use terrain log visit 
+    to know which node was last visited), and 
+	assigns the last created node the id of the deleted node.
+    <br>
+	Therefor, don't count on node numbers to remain the same if you use manual delete node.
+	<p>
+    Solely node 0 cannot be removed using 'terrain manual delete node 0' - you need to
+    actually visit this node to remove it.
+	<p>
+	Note that, though you removed a node, the visual representation (red or green ball) that might have
+	been created won't disappear until the time out occurs.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	manual link &lt;nodeid&gt; &lt;nodeid&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Creates a one-way link from first node to second node (only - reverse the node numbers to create the link back).
+	<br>
+	If the link didn't exist before, it reports the calculated travel time from the first to second node. 
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain manual link 130 134</FONT>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	manual unlink &lt;nodeid&gt; &lt;nodeid&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Removes the one-way link from first node to second node (only - reverse the node numbers to remove the link back).
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain manual unlink 130 134</FONT>
+	<p>
+	Note that, though you removed a link, the visual representation that might have
+	been created won't disappear until it's time out.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	stats
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Dumps terrain statistics on the console. This is the same information you
+	see when a map is loaded.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	export
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Exports 'comma separated file' with node tactical values into action\cgf\log\&lt;mapname&gt;.csv.
+    <p>
+    These files can be read with a spread sheet application (MsExcel) for visualization and
+    further analysis of the map tactical positions.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show path &lt;nodeid&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays path from current position to specified node using green laser lines, and 
+	a sequence of node numbers on the console. The laser lines will be present for
+	about 30 seconds.
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain show path 134</FONT>
+	<p>
+	Note: if there isn't a path, no path is given. Make sure you have 'log visit'
+	enabled otherwise CGF won't know your current node.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show stealthpath &lt;nodeid&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays path from current position to specified node using green laser lines. The path is 
+    constructed with a preference for stealth and wall hugging. If the path doesn't show sufficient wall hugging,
+    either there are few walls nearby, or you have not created sufficient links with the nodes
+    close to the walls, or the walls need to be populated with nodes closer to the wall.
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain show stealthpath 134</FONT>
+	<p>
+	Note: if there isn't a path, no path is given. Make sure you have 'log visit'
+	enabled otherwise CGF won't know your current node.
+    <p>
+    <I>Important: only use this command when you haven't changed the nodes and links
+    since you loaded the terrain files. Otherwise, the command causes a crash.</I>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show lonely &lt;maxnodes&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays the &lt;maxnodes&gt; nodes having the lowest number of neighbors. Nodes appear
+    as red balls for 45 seconds. These nodes may require more linking (or, less likely, to have
+    more other nodes closeby), but this need not be the case.
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain show lonely 25</FONT>
+    <p>
+    Note that the maximum number of nodes made visible is 100.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show closest &lt;maxnodes&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays the &lt;maxnodes&gt; nodes being closest to another node. Nodes appear
+    as red balls for 45 seconds. Some of these nodes are better removed but be careful 
+    not to remove door, glass or ladder nodes (the ladder top sometimes need to be
+    removed though).
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain show close 25</FONT>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show infront &lt;maxnodes&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays the &lt;maxnodes&gt; nodes visible and infront of you. Nodes appear
+    as red balls for 45 seconds. It provides with you more info on the nodes created
+    thusfar.
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain show infront 25</FONT>
+    <p>
+    Note that there might be nearby nodes that you cannot see from your current position;
+    as a result, these nodes won't appear. You may want to change position, and reissue this
+    command to get a better overview.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show linkcandidates &lt;radius&gt;
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays the links within the radius for which only a one-way link is present.
+    Links appear as green laser lines. Some of these 'linkcandidates' indeed are valid
+    links and you can add them by travelling between the two nodes. In other cases,
+    the linkcandidate just denotes an 'unviable' link and you need not add it.
+	<br>
+	Example:
+	<br>
+	<FONT face="Courier"> &nbsp; terrain show linkcandidates 300</FONT>
+    <p>
+    Note that many of the links shown aren't good candidates. Just focus on short distance
+    links that are missing.
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show locations
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays the locations for the mission read (if any). Locations are displayed
+    as vertical stacks of three blue balls.
+    <br>
+    You can read a mission without executing it using the command 'mission read &lt;missionname&gt;.cgf'.
+	<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+	show insolid
+	</font></td>
+	<td width="80%" valign="top"><font color="#FFFFFF"
+	size="1" face="Verdana, Arial, Helvetica">
+    Displays (on the console) a list of nodes that (in some strange way) have been
+    created in a solid brush (and are not water, door or glass nodes).
+	<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ <p>
+ <br>
+ <H5>5. <A NAME="initialsteps">Steps to Create an Initial Route File</a>
+ </H5>
+ For performance reasons, route file creation is not done under the same 
+ circumstances as normal CGF play. So boot up AQ2 with cheats enabled ('+set cheats 1' 
+ on the Quake2 command line), once in game, issue the following commands:
+ <br>
+<pre><FONT SIZE="2">list 1: console commands to start map in the correct way 
+        for route file creation
+      ---------------------------
+      > set cgf 0
+      > set teamplay 0
+      > set deathmatch 1
+      > set fog 0
+      > set breakableglass 1
+      > map mapname
+</FONT></pre>
+Enabling breakable glass is essential because otherwise, CGF won't be able to annotate
+the glass windows with nodes. And without nodes in the windows, the bots will be less
+effective at breaking the window.
+<p>
+You may want to enable god mode to prevent dieing when falling off a ledge.
+You also may want to set the brightness to the max so you
+can actually see where you are walking anywhere on the map.
+<p>
+After loading the map, CGF will report whether a route file was found or not.
+<p>
+Now prepare to start routing with sufficient information:
+<pre><FONT SIZE="2">list 2: console commands to make sure you see the 
+        results of your mapping effort
+      ---------------------------
+      > terrain log create
+      > terrain log visit
+      > terrain display node
+</FONT></pre>
+I normally don't display links (slows down too much, and creates error messages when
+too many entities have been created), but you could give it a try: 
+<br>
+<FONT face="Courier"> &nbsp; terrain display link</FONT>
+<p>
+Before we start mapping, it's good to know that for the CGF bots, not all locations are
+equal. Instead, some locations are very important for these bots to fight well:
+<UL>
+	<LI>near wall locations (provide more stealth and cover)
+	<LI>near edge roof locations (make for good defensive positions - plenty to see,
+	    cover when stepping back from the edge)
+	<LI>potential sniper locations (in windows, dark corners, close to obstacles as
+	    rooftop air vents)
+</UL>
+Also remember: in CGF, the waypoints do not serve only for navigation
+but for terrain reasoning as well. As a consequence, waypoints should be created everywhere
+a human player can get. Though the bots don't use strafe jumping tricks, some humans
+might. Please also put nodes at these locations (but make sure the bots cannot get there by
+not creating links to those locations).
+<p>
+Because the automatic node creation won't create a new node very close to an existing 
+one, it is important to wander via the near wall, roof edges, and potential sniper locations 
+first.
+<br>
+(In case you forget to drop nodes somewhere, you can always drop them there manually).
+<p>
+<b>Start mapping</b>
+So move close to a wall start creating your first route file:
+
+<pre><FONT SIZE="2">list 3: console command to actually start mapping
+      ---------------------------
+      > terrain map
+</FONT></pre>
+(Note that the 'terrain link' command isn't required if you toggle mapping on - linking is
+set to on automatically in that case).
+<p>
+When you haven't created any nodes for the map at hand, the 'terrain map' command will generate 
+a number of nodes automatically:
+<UL>
+	<LI>the node at your position
+	<LI>nodes at door positions
+	<LI>nodes at breakable glass positions
+</UL>
+You can later recognize these nodes easily by their low node id's 
+(but also by the description stating DOOR or GLASS node flags).
+<p>
+Now, have a walk and look at the console (and behind you) what's happening.
+<p>
+<b>Saving the route file</b>
+After having create a number of nodes and links, it's good to know how to save 
+our new (but partial) route file. Just type:
+
+<pre><FONT SIZE="2">list 4: console command to store the (partial) route file
+      ---------------------------
+      > terrain save
+</FONT></pre>
+and a route file action\terrain\&lt;mapname&gt;.srp is automatically saved.
+<p>
+Because the map is "post-processed" (cleaned up) before saving, this may take a serious while - 
+all this time, your Q2 seems to hang (but it is very very busy). Time for coffee, Mountain Dew
+or whatever keeps you going.
+<p>
+Since 'terrain save' takes some minutes, you won't like to save very often. However, since 
+CGF is still beta (not really 24x7 software) you want to save often enough.
+<p>
+After saving, you can continue mapping, or leave the map (and maybe come back to the map later). 
+<br>
+It's good to do this to see that we really have created a partial route file:
+
+<pre><FONT SIZE="2">list 5: console command to leave and re-enter the current map
+      ---------------------------
+      > map mapname
+</FONT></pre>
+As a result, the current map (and all mapping state, such as log visit, log create, 
+display node etc.) is abandoned, and the current map is reloaded. You'll see the map stats and 
+all further information being displayed during map load time. You indeed created a (partial) 
+route file.
+<p>
+After loading a map, make sure you use the commands from list 2 and list 3 to continue mapping.
+<p>
+<b>Special Considerations</b>
+Some map features require a few special actions. Currently these features
+are ladders and 'unreachable areas'.
+<p>
+<b>Ladders</b>
+Since, in Quake2, ladders are not entities but just brush texture attributes, ladders cannot be
+detected automatically by CGF. Instead, ladders can only be detected when you use them.
+<br>
+Because most mappers apply the LADDER texture on both the front and sides of the ladder, 
+and because most players and bots climb the ladder front faster than the ladder sides, 
+it is important that you approach ladders towards front, and look straight at them. 
+Then, just jump into the ladder... The mapping code will detect the ladder and populate 
+the whole ladder with nodes and links automatically.
+<p>
+If you manage to screw up and see nodes and links appear at the side of a ladder, or at the
+wrong side of the ladder (leading to the ceiling instead of the hole in the ceiling), then
+do the following:
+<pre><FONT SIZE="2">list 6: console commands to remove (ladder) nodes
+      ---------------------------
+	  ' 1. disable node creation
+      > terrain map
+	  ' should say mapping disabled
+	  ' 2. disable node linking
+      > terrain link
+	  ' should say linking disabled
+	  ' 3. move to some ladder node
+      > ... (you move)
+	  ' 'log visit' should report you visit a ladder node
+	  ' 4. remove ladder node
+      > terrain manual delete node
+	  ' should say node removed
+	  ' 5. continue visiting all ladders nodes for this ladder
+	  '    and remove them all
+      > ... (you move and delete)
+	  ' 6. move back from ladder
+	  '    and enable mapping/linking again
+      > terrain map
+	  ' should say mapping enabled, linking enabled
+	  ' 7. move back from ladder
+	  '    and enable mapping/linking again
+      > ... (move into ladder ther right way)
+</FONT></pre>
+It is advised to map ladders early (and to save after mapping each ladder). This is even more 
+true for the hard to map drain pipe ladders.
+<p>
+<b>Unreachable areas</b>
+Unreachable areas are tricky to map. To get to unreachable locations (for example, the central 
+tower rooftop at Urban has a spawn point but cannot be reached otherwise; likewise, 
+Actcity2 has a similar spawn point), use the noclip cheat command and move to that location. 
+<br>
+However, <I>before</I> using the noclip command, make sure that you don't link your last visited node 
+to the new node at the unreachable location. And as soon as you arrive, use noclip again to 
+drop down to the floor, and enable linking again. 
+<p>
+Summarized in commands:
+
+<pre><FONT SIZE="2">list 7: console command to deal with 'unreachable location'
+      ---------------------------
+     > terrain link
+	  ' should say linking disabled - otherwise, issue again
+     > noclip
+	   should say 'noclip on'
+     > ... fly-move to 'unreachable location'
+     > noclip
+	   should say 'noclip off'
+	   drop down to floor
+	   a new node will be created automatically
+     > terrain link
+	  ' should say linking enabled
+     > ... continue mapping
+</FONT></pre>
+If you use god mode, you can just jump down from the unreachable location. Independent of
+the results of your jump, CGF is smart enough not to create links for suicide jumps. For
+CGF 0.79 and later versions, CGF doesn't link any jumps causing more than 30 falling damage
+(and discourages bots to do these jumps).
+<p>
+These commands enable you to get a reasonable 'draft' route file. In the remainder of this manual,
+you'll learn how to inspect, modify and improve your route file.
+ <p>
+ <br>
+ <H5>6. <A NAME="nextsteps">Steps to Inspect, Modify, and Improve the Terrain File</a>
+ </H5>
+Now you have covered most of the map, it's time to check out have you've done. I check my
+routing result the following way:
+<UL>
+	<LI>verify 'terrain stats', and especially the link counts
+	<LI>path verification
+    <LI>use the 'terrain show' query functions 
+</UL>
+<B>Terrain Stats</B> The node counts and link counts can be inspected using 'terrain stats'. 
+Similarly styled and sized maps should have similar results. Please use the following table 
+for reference.
+<p>
+<FONT SIZE="1">(The table reflects reported map statistics - note
+that you cannot simply divide the number of links by the number of nodes to get the
+average number of links per node: some of the links are bi-directional, whereas other
+are unidirectinal only):
+<p>
+</FONT>
+<table border="1" cellpadding="4" cellspacing="0" width="510"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>mapname</B>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2">
+	<B>nodes</B><br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2">
+	<B>links</B><br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2">
+	<B>avg. links / node</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	actcity2
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	475<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	1493<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3.14<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	urban
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	755<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2238<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2.96<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	urban2
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	638<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	1962<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3.08<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	city
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	951<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2799<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2.94<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	downtown
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	725<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2105<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2.90<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	p1_lightbeam
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	826<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3180<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3.85<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	monastery
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	759<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	2281<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3.01<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	coverme
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	483<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	1497<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3.10<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="40%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	riot
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	575<br>
+	</font></td>
+	<td width="15%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	1725<br>
+	</font></td>
+	<td width="30%" valign="top" align="center"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3.00<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ <p>
+ This table demonstrates that 'urban' style maps in general have about 3.0 links
+ per node. Map features that increase the link count are water, many 'low falling damage
+ jumps' and many traversable obstacles. p1_lightbeam has all of these, and therefor
+ scores more links per node.
+ <br>
+ If you notice that you have only 2.5 links per node (avg.), you know you need to run
+ around some more with linking enabled!
+ <p>
+ <B>Path Verification</B> An effective way to both check and improve a route file is to display
+ and traverse paths (adding and removing links where necessary):
+ <UL>
+	<LI>to key positions
+	<LI>along key obstacles
+    <LI>to random positions
+ </UL>
+ Key positions are essential for combat. You want to be sure that they are correctly
+ populated with nodes and that you can efficiently reach these positions from anywhere on the map. 
+ Because the automatic node dropping tries to achieve a uniform distribution of nodes all
+ over the map, it will not always drop a node at a key position if it already dropped a
+ node nearby. In that case, you might need to drop an additional node at exactly the right
+ position, and possibly remove the other nearby node if that one is really close.
+ <br>
+ The windows at the city map are good examples of where manually nodes were placed. You typically
+ do something like:
+
+<pre><FONT SIZE="2">list 8: checking and improving the nodes at a key positions
+      ---------------------------
+      ' move to position overlooking key position
+      ' make visible any nodes around that position
+     > terrain show infront 30
+      ' nodes appear - move and repeat to make all
+      ' relevant nodes visible
+      '
+      ' if node needs to be added, move to that position and
+     > terrain manual drop node
+      ' a node is added, and linked automatically to
+      ' all other nodes that are easy to reach
+      '
+      ' you can check easily for nodes being too close to each other:
+     > terrain manual show closest 30
+      ' (show the 30 nodes being closest to another node)
+      '
+      ' if the nearby node is close, you might want to remove it
+      ' move to the node (log visit says you when you reach it)
+     > terrain manual delete node
+      ' last visited node is deleted
+      '
+      ' make sure the new node is reached from all relevant
+      ' nodes by moving to and from the new node
+</FONT></pre>
+ <p>
+ Key positions need not only be populated with nodes, they should also be reachable. 
+ So visit some key positions, write down their node id's, and move to some other location. 
+ Make sure that you have 'terrain link' enabled.
+ <br>
+ Then issue (for example, from current position 279 to see the path to node 701):
+<pre><FONT SIZE="2">list 9: verify and improve a path
+      ---------------------------
+     > terrain show path 701
+      ' links appear, and path nodes are visible at console
+      ' for example,
+      ' path == 279, 278, 579, 580, 581, 680, 701
+</FONT></pre>
+ <p>
+ The path listed on the console includes all nodes along the path from your position to
+ the destination. If there's a shorter path possible (and if the bots are likely to make it
+ without strafe-jumping, double-jumping or whatever tricks you can but they cannot do),
+ just walk that path yourself, and the required links will be added.
+<p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_window_path.jpg">
+    <IMG SRC="./shots/terrain_route_window_path_thumb.jpg" BORDER=0 width=133 height=100 ALT="The window (at downtown) was given a manually created node and the links were added by traversing the preferred path">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<IMG SRC="./shots/terrain_route_door_error_thumb.jpg" BORDER=0 width=133 height=100 ALT="Erroneous link bypassing the door through the fence in Actcity2">
+	</TD>
+	<TD align="center" valign="middle">
+    <IMG SRC="./shots/terrain_route_door_ok_thumb.jpg" BORDER=0 width=133 height=100 ALT="Fence door fixed by removing 4 erroneous links through the fence in Actcity2">
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ However, if the path listed is an illegal one, visit the relevant nodes to see what number
+ (580, 581, or ...) identifies what node. Then, manually remove the erroneous link as follows:
+<pre><FONT SIZE="2">list 10: remove erroneous link
+      ---------------------------
+     > terrain manual unlink 580 581
+      ' message stating 'unlinked 580 -> 581' should appear
+</FONT></pre>
+ <p>
+ Note that if this path was incorrect, other paths around or thru the obstacle are likely
+ to be present. Move to other nodes and check all possible paths (from both directions)
+ until you are sure all remaining links are correct.
+ <br>
+ At actcity2, I had to remove incorrect links that were created because the fence was not
+ seen as blocking movement (which it does :) ). See the images above.
+ <p>
+ Next to key positions, key obstacles need to be verified (and improved or corrected). Typical 
+ candidates to cause trouble are: ladders / drainpipe / climbable lamp posts, doors, 
+ air ducts, crate stacks, and breakable glass.
+ <br>
+ Read more about these in the next section.
+ <p>
+ <p>
+ After having dealt with the key positions and key obstacles, I often try to display and
+ follow paths to 'random' nodes (node id's 50, 100, 150, ... etc.) and will follow that
+ path (or a shorter path while creating links).
+ <p>
+ <I>use of additional commands (linkcandidates, closest, lonely) still to be written</I>
+ <p>  
+ <br>
+ <H5>7. <A NAME="mapfeatures">Dealing with troublesome map features</a>
+ </H5>
+ The following map features are more likely to cause problems for the bots. They are
+ discussed one by one, with focus on the problems you're most likely to experience,
+ and some work arounds to deal with these problems.
+ <p>
+ <UL>
+ 	<LI><A HREF="#crateproblems">crate stacks</A>
+ 	<LI><A HREF="#doorproblems">doors / breakable glass</A>
+    <LI><A HREF="#fenceproblems">fences</A>
+    <LI><A HREF="#ladderproblems">ladders</A>
+ </UL>
+ <A NAME="crateproblems"><B>Crates stacks</B></a>, in the current versions, 
+ may cause jumping problems for the bots. The
+ bots have troubles in mounting a series of crates successfully.
+ <p>
+ Most of these problems can be worked around by repositioning nodes (manually create 
+ a new one, delete the old one), to enable the bots to successfully jump the stacks.
+ Take care to position the nodes in the center of the crate (small crates, and large
+ crates that are not mounted from the floor) and near but not over the edge for larger 
+ crates that are to be mounted from the floor. See the images below:
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_crates_path.jpg">
+    <IMG SRC="./shots/terrain_route_crates_path_thumb.jpg" BORDER=0 width=133 height=100 ALT="Path across crates - nodes have been moved
+    to the center for a better path">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_bypass.jpg">
+	<IMG SRC="./shots/terrain_route_door_bypass_thumb.jpg" BORDER=0 width=133 height=100 ALT="In some cases, links may be created that
+    bypass door nodes (requires manual intervention)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_path.jpg">
+	<IMG SRC="./shots/terrain_route_door_path_thumb.jpg" BORDER=0 width=133 height=100 ALT="An extra node close to the door was need to create an efficient path along the hallway">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ <A NAME="doorproblems"><B>Doors / breakable glass</B> typically cause the following problems</a>:
+ <UL>
+	<LI>there might be paths that bypass a door / glass node (needed by the bot to understand
+        how to operate the door / glass) [center image above]
+	<LI>paths in the vicinity of a door include the door/glass node (urging the bot to
+        try to open door or break glass while this isn't necessary) [right image above]
+	<LI>paths going through the doors in opened position [left image below]
+	<LI>too many nodes close to the doors, so (during patrol) bots restrict the movement
+        space near the door
+</UL>
+ The first problem is illustrated in the right side image above. Though during map post-
+ processing most illegal 'through-door' links are removed, that procedure is not fool proof.
+ Especially for 'teamed' doors, you need to verify that all paths between nodes on different
+ sides of the door really include a door node.
+ <p>
+ In a few cases, the surroundings of doors need to be populated with extra nodes. Since
+ door nodes are (automatically) among the first to be created, you won't (automatically)
+ drop another node closeby. However, without that new node, the path meant to by-pass the
+ door will go via the door and onwards - the bots will open the door for no good reason 
+ (or pick a path circumventing the door node since they consider using doors as slow).
+ <p>
+ Thus, to have the bots use the terrain close to the door the way you would do, you need
+ to add another node. See the image above for an example.
+ <p>
+ In the third case, after opening a rotating door, the bots need to be able to continue 
+ without having to pass thru the rotating door. See the image below for an example.
+ <p>
+ Finally, do also make sure there are not too many unneeded nodes just in front of door.
+ This especially hampers bots during patrols - they do not see the stops very close to the
+ door as a stop not to wait and assemble on.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_error2.jpg">
+    <IMG SRC="./shots/terrain_route_door_error2_thumb.jpg" BORDER=0 width=133 height=100 ALT="Path through door in opened position">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_error3.jpg">
+    <IMG SRC="./shots/terrain_route_door_error3_thumb.jpg" BORDER=0 width=133 height=100 ALT="Too many nodes close to the door for no good reason">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_offwall1.jpg">
+    <IMG SRC="./shots/terrain_route_offwall1_thumb.jpg" BORDER=0 width=133 height=100 
+         ALT="While the wall is of tactical importance, the nodes aren't close to the wall">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ <A NAME="fencesproblems"><B>Fences</B> are another source of problems. CGF tries to
+ create (in an automatic way) as many links as possible. In most cases, it will not
+ create links through walls or through corners. However, it is far more likely that
+ CGF will create links through open fences. You definitely want to verify paths close
+ to the fence to see whether they pass thru the fence.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_error.jpg">
+    <IMG SRC="./shots/terrain_route_door_error_thumb.jpg" BORDER=0 width=133 height=100 ALT="Erroneous path through fence">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_error.jpg">
+    <IMG SRC="./shots/terrain_route_door_error_thumb.jpg" BORDER=0 width=133 height=100 ALT="Erroneous path through fence">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_door_error.jpg">
+    <IMG SRC="./shots/terrain_route_door_error_thumb.jpg" BORDER=0 width=133 height=100 ALT="Erroneous path through fence">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ <br>
+ <I>ladders</I>
+ <br>
+ <br>
+ <br>
+
+ <p>
+ <br>
+ <H5>8. <A NAME="script">Easy construction of a first mission script defining locations</a>
+ </H5>
+ The ideal place to record locations for a mission is in the map itself. And that's what
+ CGF supports. You can move to a key location, issue the 'location' command and repeat these
+ steps until you've covered all relevant nodes. Then, issue a mission write command, and
+ a mission skeleton is written to the action\mission directory. The commands are as follows:
+<pre><FONT SIZE="2">list 11: record locations into a mission skeleton
+      ---------------------------
+      ' move to key location (to be labeled 'casino_entrance')
+     > location casino_entrance
+        says location added 
+      ' repeat step for other key locations
+      ' ...
+      ' and save mission skeleton to file 
+      ' (file labeled 'mapname_test.cgf')
+     > mission write mapname_test.cgf
+        says mission written
+      ' now quit and complete the skeleton into a test mission 
+</FONT></pre>
+ You'd better complete this mission so it becomes a valid mission (includes objectives
+ and at least one force, team and member). For valid missions, you are able to load the
+ mission, display the locations defined, and add locations yourself.
+<pre><FONT SIZE="2">list 12: load, display, add and save mission locations
+      ---------------------------
+      ' load appropriate mission (should compile without errors)
+      ' here, we load actcity2.cgf
+     > mission read actcity2.cgf
+        says reading mission done 
+      ' now display locations
+     > terrain show locations
+        says number of locations displayed
+      ' shows locations as blue 3 ball stacks
+      '
+      ' ... now move and add your own
+     > mission location my_own_locations
+      ' ...
+     > mission write actcity2.cgf
+        says mission written
+</FONT></pre>
+ <p>
+ <br>
+ <H5>9. <A NAME="debugging">Debugging terrain file problems in missions</a>
+ </H5>
+ When executing (test) missions, you have two important means at your disposal:
+ <UL>
+	<LI>log files (in developer mode only)
+	<LI>retrieve the "bot-in-troubles" plan of action
+ </UL>
+ <p>
+ Log files are used to report obvious problems during mission start and mission
+ execution. They can be found in the action\cgf\log directory. Log files are
+ plain text files, and are given the name of the map: &lt;mapname&gt;.log. 
+ <br>
+ Log entries are made for every mission, and appended at the bottom of the file.
+ If the log file grows too large, you can throw it away, or remove large parts
+ of its contents.
+ For performance reasons, log files are only written when you run CGF in developer
+ mode. Developer mode is enabled by a 'set developer 1' in the .cfg file used to
+ launch the bots. 
+ <p>
+ <i>
+ Commercial break: <A HREF="./downloads.shtml#missioneditor">Borderfield's CGF Mission Editor</A> 
+ has built-in support to enable developer mode (in the Options, AQ2 Settings menu) and to
+ view the log file for the current mission (in the Project menu, View Log option).
+ <p>
+ With the <A HREF="./downloads.shtml#launcher">CGF Launcher</A>, before launching the mission, select Edit Script, and add
+ 'set developer 1'.
+ </i>
+ <p>
+ The log file entries for a specific mission might look like this (I screwed up a
+ location position by writing down incorrect coordinates, and had the bots move
+ to an unreachable roof):
+<pre><FONT SIZE="1">mission# |    time | mission = "actcity2_sample.cgf"
+=========|=========|========================================================
+00000000 |     2.4 | mission started
+00000000 |     2.4 | location "motel_lobby" incorrect (no nearby node)!
+00000000 |     2.4 | location definitions verified: 1 errors!
+00000000 |    66.0 | no path from 448 to 290
+</FONT></pre>
+ Note that not all reported problems are due to terrain file errors. If the script
+ tries to move a CGF team to an unreachable location (as was the case in the log
+ entry above), the missing path is indeed absent for the right reasons: you cannot
+ get to the high sniper roof in actcity2 unless you start out there.
+ <p>
+ When a specific bot is in trouble (he's stuck), you might want to get into his
+ brain and at least see what's on his mind. That's possible with CGF - you can
+ dump a bot's current plan into the action\cgf\log directory as follows:
+<pre><FONT SIZE="2">list 13: dump a bot plan for later analysis
+      ---------------------------
+      ' while running a mission where bot Alpha-1 seems stuck
+     > plan Alpha-1
+      ' now dumps plan into file 
+      ' action\cgf\log\plan_Alpha-1.txt
+</FONT></pre>
+ You can inspect this plan file with a text editor. The plan may look very complex
+ or as simple as this:
+<pre><FONT SIZE="1">SubPlotAction "Move To Location" [
+  Sequence
+  [
+    NormalMoveToLocation(-88,1199,24) // at node = 259
+    NormalMoveToLocation(-159,1121,24) // at node = 281
+    NormalMoveToLocation(-129,973,24) // at node = 241
+    NormalMoveToLocation(-149,933,24) // at node = 288
+>>  NormalMoveToLocation(-16,1380,408) // at node = 289
+    NormalMoveToLocation(-115,1378,408) // at node = 290
+    NormalMoveToLocation(-72,1414,408) // near node = 290, d = 55.6987
+  ] // Sequence
+] // SubPlot
+
+</FONT></pre>
+ The bot's plan normally consists of a sequence of actions. There's no need to 
+ understand all of it, but for a few details:
+ <br>
+ The chevron &gt;&gt; symbol depicts the action the bot was executing at the 
+ time you asked for the plan. The bot thus came from node 288, and is stuck trying
+ to get to 289 (a much higher location). The link between 288 and 289 thus
+ deserves some closer attention.
+ <p>
+ Note that if you dump the bot plan when the bot is repeatedly failing to tackle
+ some obstacle, the chevron symbol is likely not to point to the problematic
+ movement. In that case, you can write down the problematic path (the 5 nodes
+ preceding the chevron, and the 5 nodes succeeding it) and inspect that path.
+ <p>
+ <H5>10. <A NAME="requirements">Requirements for Terrain/Route File Distribution</a>
+ </H5>
+ CGF gamers will search the internet to find and download the route file for their favorite map.
+ And then, when they are ready to fight some good missions against the bots, nothing
+ is more dissappointing than discovering that the bots get stuck way too often, and don't
+ access certain key parts of the map at all. The great missions they've downloaded 
+ just s@ck in their opinion.
+ <br>
+ Remember that a route file, created by one guy, will be downloaded and used by hundreds
+ of gamers. Remember that a bad route file breaks the CGF gameplay. And remember that 
+ most of these gamers exspect that you've done your job. More specifically, they expect:
+ <UL>
+	<LI>the .zip containing the route file to install like any other Action extension;
+	<LI>the .zip to contain solely the essential route files (the &lt;mapname&gt;.srp file
+	    and the &lt;mapname&gt;.exp file only when you've played a set of over 50
+		varying missions on the map using this exact .srp file);
+	<LI>the .zip to contain a .txt file that describes who you are, where to find you
+	    (email) for thanks, comments and suggestions, and any problems you couldn't
+		solve;
+	<LI>the .zip to contain a sample mission defining the key locations and areas,
+	    so they themselves can write missions based on your route file. This sample
+		mission can be the test mission you have used to verify the bots navigation
+		in the map;
+	<LI>the route file to be of good quality (see below). They exspect you not to
+	    release the route file until it's good enough;
+    <LI>the .zip to contain a fog preferences file fitting the map. The route file will
+        probably enable the gamer to play CGF on that map for the first time - he might
+        as well start with some decent fog settings.
+ </UL>
+ <p>
+ In more detail, a .zip route file archive has the following contents for a map
+ (for example, actcity2):
+ <br>
+ <UL>
+ <LI><B>.\terrain\actcity2.srp </B>
+     <br>the only essential route file<br>
+ <LI><B>.\terrain\actcity2.txt</B>
+     <br>text describing file, author and other relevant info
+ <LI><B>.\terrain\actcity2.exp</B>
+     <br>recorded combat experience (only when you've
+     ran over 50 varying missions using the exact .srp file distributed, otherwise,
+	 leave it out)
+ <LI><B>.\missions\actcity2_sample.cgf</B>
+     <br>sample / test mission<br>
+ <LI><B>.\cgf\fog\actcity2.fog</B>
+     <br>(text) fog preferences file
+ </UL>
+ The text file accompanying the route file should look like this:
+<pre><FONT SIZE="1">=======================================================================================
+Title                   : CGF Terrain file for Actcity2
+Filename                : actcity2_cgf_terrain.zip
+Version / Date          : 1.0 / August 25, 1999
+Game                    : CGF for Action Quake 2
+Author                  : William
+Email Address           : william@botepidemic.com
+
+=======================================================================================
+* Construction *
+
+Base                    : -
+Construction Time       : 3 hours
+Limitations / Bugs      : secrets doors not mapped (since bots cannot use secret doors)
+</FONT></pre>
+Unless you really want to copyright your route file (a related copyright fight would 
+make an interesting case in court), this is all you need.
+<p>
+The sample mission, serving both as a base for further mission development and
+as a demonstration of the route file's quality, should define:
+<UL>
+	<LI>all relevant locations, preferably by a recognizeable name (augmented by some
+	    ASCII art map that explains what you mean by the 'just_underneath_brown_tower')
+	<LI>all relevant areas
+	<LI>a single force, containing a single team, containing a single bot member.
+	    For example:
+<pre><FONT SIZE="1">
+force "Spec Ops"
+{
+  team "Breach Team Alpha"
+  {
+    npc "Alpha-1" "male/sabotage"
+    {
+	  weapon "Dual MK23 Pistols";
+	  item "Lasersight";
+	  ammo "M4 Clip" = 2;
+	  skill          = 2;
+    };
+  };
+};
+</FONT></pre>
+	<LI>a single objective (since at least one objective is required).
+	    For example:
+<pre><FONT SIZE="1">objectives
+{
+  failure
+    ("Spec Ops",
+     "\nyawn...\nthis is taking way too long"
+    )
+    = timeout(300)
+      -> {"actcity2_sample.cgf"};
+};
+</FONT></pre>
+	<LI>a single plan for the sole team, inserting the bot somewhere, and having the
+	    bot deal with all important obstacles. Typically, that means, the bot handles
+		rotating doors from the side the door opens to, and that the bot uses all
+		ladders present. For example (as used for p1_lightbeam):
+<pre><FONT SIZE="1">plan "Breach Team Alpha"
+  {
+    insert at indoor_meetingroom using "column";
+    wait until ready;
+    wait 5;
+
+    moveup to outdoors_wall_nearwaterladder using "column";
+    wait until ready;
+    wait 5;
+
+    moveup to indoor_meetingroom using "column";
+    wait until ready;
+    wait 5;
+
+    moveup to indoor_pcroom using "column";
+    wait until ready;
+    wait 5;
+
+    moveup to vacant_camper_parkingstop using "column";
+    wait until ready;
+    wait 5;
+
+    moveup to nearcamper_slopingroof using "column";
+    wait until ready;
+    wait 5;
+
+    moveup to indoor_meetingroom using "column";
+    wait until ready;
+    wait 5;
+  };
+
+</FONT></pre>
+You would observe the bot using the AQ2 built-in chase cam. The additional 'wait 5' delays make it
+easier to see what the bot is doing.
+</UL>
+<p>
+<p>
+A CGF terrain file is of good quality when all the above mentioned conditions have been met,
+and:
+<UL>
+	<LI>the bot successfully (and consistently) manages to execute the plan in the sample
+        mission
+	<LI>all relevant parts of the map are covered with nodes and links. On average you'll
+        have about 2.8 avg. links per node on flat maps, and &gt; 3 avg. links on maps
+        featuring many height levels or water.
+    <LI>when run in 'developer' mode ('set developer 1'), the most recent log messages for the map
+        (in cgf\log\&lt;mapname&gt;.log) do not include any errors.
+</UL>
+<p>
+A fog preferences file (action\cgf\fog\actcity2.fog) would look like this:
+<pre>// format: mapname density fog_type red green blue begin end
+//       - density: 0.00 -> no fog
+//         density normally in range 0.05 ... 0.20
+//       - fog_type: 0 = exp     (fog linear with distance)
+//                   1 = exp2    (fog increasing more than linear)
+//                   2 = linear  (fog linear within specific begin-end range)
+//       - red/green/blue in range [0.0 .. 1.0]
+//       - begin:    start distance for linear fog (no fog within begin dist)
+//       - end  :    end distance for linear fog (no vision beyond end dist)
+actcity2     0.10  2  0.50 0.50 0.45 200 1600
+</pre>
+For more info on CGF and fog, visit the <A HREF="./exp_fog.shtml">fog documentation</A>.
+<br>
+<br>
+
+ <h5>
+ 11. <A NAME="credits">Additional Credits</a>
+ </h5>
+ This manual was significantly improved because of the input of Dominic Rutter, Janne Heikkinnen,
+ and Ryan McAleese.
+ <p>
+ <br>
+ <br>
+
+ <h5>
+12. <A NAME="changelog">CGF Terrain / Route File Creation Change Log</a>
+ </h5>
+<table border="1" cellpadding="4" cellspacing="0" width="510"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>date</B>
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Symbol">
+	<B>D</B><br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>description (incl. link)</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Oct 22, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	fixed error in listing 11 ('mission' should not prefix location)</A> 
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 28, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	explained <A HREF="#initialsteps"> why to map enable breakable glass</A> 
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 22, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	explained <A HREF="#initialsteps"> why to map some inaccessible locations</A> 
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 15, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	added <A HREF="#commands">terrain show insolid command</A>, 
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 14, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<A HREF="#commands">manual delete node</A> now also accepts nodeid of node to delete  
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 11, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	added <A HREF="#commands">terrain export command</A>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 10, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	added more map <A HREF="#nextsteps">statistics</A>, 
+    <br>
+    added <A HREF="#doorproblems">'how NOT to' shots for doors</A> 
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 2, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	included fog support consequenes: <A HREF="#terrainfiles">files</A>, 
+    <A HREF="#initialsteps">initial settings</A> and <A HREF="#requirements">requirements</A><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 27, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	added door problems<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 25, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	added illustrations, added advanced routing + debugging<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 23, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	first hmtl version, new facilities described<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	July 15, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	initial version<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ <br>
+ <br>
+ <!-- end body text -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://action.telefragged.com target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://action.telefragged.com/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

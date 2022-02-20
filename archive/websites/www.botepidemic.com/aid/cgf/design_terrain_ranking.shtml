@@ -1,0 +1,831 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/dev_snipe_spot_spots.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot7.jpg" border=0 align=center alt="Sniping information [development shot]"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_sniper_in_window.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot14.jpg" border=0 align=center alt="A sniping bot looses off a shot from its window position"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/spotter_and_sniper_in_action.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot20.jpg" border=0 align=center alt="A bot sniper working in tandem with a spotter bot"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00657
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <!-- start body text -->
+ <br>
+ <h3>
+ CGF Terrain Specific AI - Terrain analysis
+ <br>
+ <HR color="#C0C0C0">
+ <FONT SIZE=1>
+ Last update: November 09, 1999, by <A HREF="mailto:william@botepidemic.com">William</A>. List of changes <A HREF="#changelog">here</A> .
+ </FONT>
+ </h4>
+ This page discusses terrain analysis (assessing the tactical value of a terrain location)
+ using static input (the Quake2 terrain) only.
+ <p>
+ Terrain analysis is one part of the terrain understanding designed
+ for and used by <A HREF="./cgfaq2.shtml">CGF</A> (the teams of bots autonomously
+ fighting in the Action Quake2 world employing realistic tactics, for those new to CGF). 
+ <p>
+ As far as I know, similar techniques haven't been used in any other
+ 3D first person tactical (real-time) game. The results obtained are promising and
+ the approach and techniques seem to apply to most 3D fps games.
+ <p>
+ This page is organized as follows:
+ <OL>
+	<LI><A HREF="#humanreasoning">ranking locations for tactical value and human terrain understanding</A>
+	<LI><A HREF="#offlineanalysis">static analysis: an off-line activity</A>
+	<LI><A HREF="#hilevelconcepts">analyzing terrain in terms of high level (terrain) concepts</A>
+	<LI><A HREF="#quake2waypoints">the input: Quake2 terrain (and waypoints)</A>
+	<LI><A HREF="#cgfconcepts">my CGF approach</A>
+	<LI><A HREF="#cgfexample">running example and interpreting the graphs</A>
+	<LI><A HREF="#intrinsicvalue">intrinsic tactical value of a location</A>
+	<LI><A HREF="#influencevalue">influence tactical value of a location</A>
+	<LI><A HREF="#relatedwork">related work: influence maps</A>
+	<LI><A HREF="#conclusions">conclusions</A>
+	<LI><A HREF="#changelog">change log</A>
+ </OL>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector2.jpg">
+    <IMG SRC="./shots/projector2_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="'teaching the CGF bots about tactical terrain understanding: hard to access rooftops are good' (using  p1_lightbeam's conference facilities)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector4.jpg">
+    <IMG SRC="./shots/projector4_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="'teaching the CGF bots about tactical terrain understanding: interpreting analysis results' (using  p1_lightbeam's conference facilities)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector3.jpg">
+    <IMG SRC="./shots/projector3_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="'teaching the CGF bots about tactical terrain understanding: paths that provide cover' (using  p1_lightbeam's conference facilities)">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+<FONT SIZE="1"> (Terrain analysis by CGF bots visualized by means of some staged shots with faked 'projected' slides. The AQ2 map, featuring conference facilities, is p1_lightbeam by Tristan 'P' Temple).
+</FONT> <p>
+ <h5>
+ <A NAME="humanreasoning">1. Ranking locations for tactical value and human terrain reasoning</a>
+ </h5>
+ Ranking locations for tactical value is similar to what a player does when he loads a new
+ AQ2 map for the first time. At ease and in single-player mode, he explores 
+ an AQ2 map both to get a impression of the map (is it pretty, do I like the 
+ theme, would it make a good fight) and to get a tactical feel for the map, 
+ for example: 
+ <p>
+ <UL>
+ <LI>"this rooftop controls a good part of the street, and is hard to access"
+ <LI>"this bright side of the map is almost without cover"
+ <LI>"this ladder is in full view"
+ <LI>"this room is hard to control because it can be accessed from four different
+     directions"
+ </UL>
+ <br>
+ <h5>
+ <A NAME="offlineanalysis">2. Ranking locations: an 'off-line' activity saving CPU cycles for other AI</a>
+ </h5>
+ The static terrain analysis considers the map 'as is', lacking real knowledge
+ about threats and threat position. Therefor, it can only speculate about the 
+ tactical value of each location by looking at the potential value of that location in relation to
+ its surroundings in combat situations.
+ <p>
+ Though less accurate than considering the terrain with knowledge about specific
+ threats and their positions, this (static) ranking of tactical locations is very important because:
+ <UL>
+	<LI>it enables the AI to take up good positions in advance of the engagement
+	<LI>the analysis can be done in advance (thus before the combat starts) and
+        leaves more CPU available for dynamic combat tactics
+        <br>
+        this is especially important in games where the CPU power is too limited
+        to do much terrain analysis during combat - the static terrain analysis results,
+        obtained off-line, then are a worthwhile substitute
+ </UL>
+ <br>
+ <br>
+ <h5>
+ <A NAME="hilevelconcepts">3. Terrain analysis using (higher level) concepts to reason about terrain</a>
+ </h5>
+ Of course, (static) terrain analysis is not limited to AQ2. To the contrary: 
+ for example, the US Army 
+ field manual for Military Operations on Urban Terrain (MOUT) 
+ (<A HREF="http://155.217.58.58/cgi-bin/atdl.dll/fm/90-10/toc.htm">FM90-10</A>, 1979),
+ explicitly deals with terrain analysis 
+ (<A HREF="http://155.217.58.58/cgi-bin/atdl.dll/fm/90-10/90-10apa.htm">Appx. A - Urban Terrain Analysis</A>)
+ and <A HREF="http://155.217.58.58/cgi-bin/atdl.dll/fm/90-10/90-10apc.htm">
+ the selection of (defensive) positions</A>.
+ <p>
+ It's not the actual content of this document that matters here. Instead, it is
+ important that the document is able to do 'generic'
+ reasoning about terrain because it uses a number of (higher level) concepts:
+ <UL>
+	<LI>'fields of fire'
+	<LI>'fields of observation'
+	<LI>'movement (restrictions)'
+	<LI>'cover/concealment'
+ </UL>
+ More closely related to the AQ2 gaming world are the rules of thumb and concepts listed in 'strategy guides' for 
+ various tactical games. A good example of these (for Rainbow Six) can be found <A HREF="http://www.wargamer.com/pie4foo/multi/strategic.html">here</A>, listing concepts such as:
+ <UL>
+   <LI>bottlenecks
+   <LI>camping spots
+   <LI>door handling
+ </UL>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_fm9010.gif">
+    <IMG SRC="./shots/terrain_fm9010_thumb.gif" BORDER=0 width=133 height=100 ALT="Fields of fire as illustrated in FM9010">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_waypoints.jpg">
+    <IMG SRC="./shots/terrain_urban_waypoints_thumb.jpg" BORDER=0 width=133 height=100 ALT="CGF waypoints at Urban">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_spread.jpg">
+    <IMG SRC="./shots/terrain_urban_spread_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="From tactically sound positions, CGF bots guard an Urban tower">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ (Images above show (left) fields of fire explained in the 
+ <A HREF="http://155.217.58.58/cgi-bin/atdl.dll/fm/90-10/toc.htm">FM90-10</A>, (center) the CGF waypoints in the Urban map, and
+  (right) a team spread out at urban using the tactical values computed).
+ <p>
+ <br>
+ <h5>
+ <A NAME="quake2waypoints">4. Terrain input: CGF, Quake2 terrain and waypoints</a> 
+ </h5>
+ CGF tries about terrain using concepts such as the ones mentioned above. The use of these concepts makes
+ it easier for a human being like me to understand and improve the CGF reasoning. And if done
+ correctly, the results are more likely to be close to human terrain assessments.
+ <p>
+ Because Quake2 does not provide terrain information in a useful data structure via its API, 
+ CGF bases its terrain view on waypoints. Since waypoints reflect the reachable parts of the terrain 
+ (thus solely those locations where threats are likely to appear), and (in CGF) more or less overlay
+ a uniform grid over the terrain, this abstraction of the real terrain works quite well. 
+ <p>
+ More importantly, thinking about terrain in terms of waypoints (instead of brushes)
+ also reduces the amount of data to be interpreted during terrain analysis.
+ <p>
+ The downside to this approach is the occurrence of sampling errors - not all relevant locations might
+ be covered by waypoints.
+ <p>
+ The alternate approach, attractive because of its fully automated character, would be to parse
+ the Q2 map itself (.bsp or .map files), and derive reachable areas from there. This area based 
+ approach was first implemented by the <A HREF="http://www.botepidemic.com/gladiator">Q2 Gladiator bot</A>, and 
+ Quake3Arena has been announced to utilize a similar mechanism. 
+ <p>
+ As I understand the area based approach, the areas derived from the map file reflect the brush complexity - additional work
+ would be required to obtain a uniform sized overlay structure.
+ <p>
+ <br>
+ <h5>
+ <A NAME="cgfconcepts">5. CGF concepts for terrain analysis</a> 
+ </h5>
+ CGF utilizes the tactical value location ranking to determine good sniper positions, to pre-position
+ team members for defense and ambush purposes, and to assess the importance of a threat.
+ <p>
+ The terrain ranking is constructed by assessing the tactical value of each location and ordering
+ the locations accordingly. In game, that information is typically used queries like:
+ <BLOCKQUOTE>
+     <FONT FACE="Courier"> 
+     select the 10 tactically most promising positions <br>
+     that overlook the tower window and <br>
+     that are within 3 seconds distance <br>
+       from the current position <br>
+     </FONT>
+ </BLOCKQUOTE>
+ To obtain a tactical value for each location (waypoint), CGF tries to determine the following:
+ <UL>
+	<LI>the location's intrinsic tactical value
+	<LI>the location's potential influence on surrounding locations and v.v.
+ </UL>
+ Below, I'll explain these two kinds of 'values' using sample analysis results.
+ <p>
+ <br>
+ <h5>
+ <A NAME="cgfexample">6. The example, and understanding the results</a> 
+ </h5>
+ As an example, I'll use analysis results obtained for the map 'Urban' (an
+ urban style map, composed of a number of streets and buildings of varying height with
+ accessible rooftops, all in a twilight setting).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_nw_view.jpg">
+    <IMG SRC="./shots/urban_nw_view_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban view, from northwest towards center">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog4.jpg">
+    <IMG SRC="./shots/fog4_thumb.jpg" BORDER=0 width=133 height=100 ALT="CGF AI team in action in south center area of Urban">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_se_view.jpg">
+    <IMG SRC="./shots/urban_se_view_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban view, from southeast towards center">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ Urban is map covered by some 750 waypoints, in a pretty uniform grid.
+ <p>
+ To be able to 'read' the results, I've projected values in a terrain graph
+ on the top view of the Urban map. Note that the terrain graph itself shows some
+ artifacts near the edges.
+ <p>
+ To assist you in understanding the graphs, here are graphs representing the:
+ <UL>
+     <LI>height at each location (lighter color is higher) [center image below]
+     <LI>darkness at lower locations (including streets and medium height buildings)
+         <br>
+         (lighter color is less dark) [right image below]
+ </UL>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_z.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_z_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated height map of Urban, projected on top view">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_dark_lo.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_dark_lo_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated light/dark map of low Urban areas, projected on top view">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ In all graphs, blue areas represent unaccessible terrain. Notice that you can recognize the higher
+ buildings and lower streets (in the center image), and (that in the right image) the open streets in
+ general are brightly lit whereas various other locations provide better locations to hide.
+ <p>
+ All results were obtained
+ from a (comma separated) spreadsheet file generated by CGF from within Quake2,
+ which then were visualized and converted to .gif images in MsExcel using VB for Applications.
+ <br>
+ Computing the tactical values for each location takes about 2 minutes (Celeron300A @ 300Mhz).
+ <p>
+ <br>
+ <h5>
+ <A NAME="intrinsicvalue">7. The intrinsic tactual value of a location</a> 
+ </h5>
+ The intrinsic value of a tactical location reflects the location's 'stand-alone' properties,
+ thus those properties that are not dependent on relations with other locations 
+ (unlike, for example, the
+ concept of cover which is an expression about both the viewer and threat position).
+ <p>
+ Examples of intrinsic properties for a location are:
+ <UL>
+	<LI>amount of light at location (darkness reduces chances of being observed)
+	<LI>movement speed at location (slow movement, such as in water, when required to
+        crouch, etc. makes combat from this position less effective)
+    <LI>movement restrictions (caused by the presence of ladders, doors, elevators, moving platforms)
+        make combat from this location less effective
+ </UL>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_dark_hi.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_dark_hi_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated light/dark map of high Urban areas, projected on top view">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_slow.gif"  width=640 height=480 target=_blank>
+    <IMG SRC="./shots/terrain_urban_slow_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated movement freedom map of Urban, projected on top view">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The center image above provides a light/dark map for the higher areas of the Urban map (lighter color
+ is less dark). Only a few locations at the rooftops seem to provide some 'shelter' from observation.
+ <p>
+ The right image above shows differences in movement freedom at locations: locations featuring
+ small ledges, ladders and doors hamper movement and therefor attack capabilities at those
+ locations (much freedom is green via yellow to red is little freedom). 
+ You probably can recognize the single door in Urban (center), the ladders (right
+ center side of the map, and left center) and the ledge (south center of the map). All other
+ red areas are artifacts of the terrain graph.
+ <p>
+ CGF takes these intrinsic properties into account when assessing the value of a location,
+ and combines them with the influence properties of that location. This is illustrated in the next section.
+ <p>
+ <br>
+ <h5>
+ <A NAME="influencevalue">8. The 'influence' tactual value of a location</a> 
+ </h5>
+ The influence value of a tactical location is the aggregation of all influences 'exchanged'
+ between the location and the locations surrounding it.
+ <p>
+ A single 'influence' is the 'interaction' of the location with one of its
+ surrounding locations (typically, only those with a line-of-sight, a line-of-fire,
+ or close-by locations). The 'influence' should be regarded as an abstraction of the key
+ (combat) interactions players can have: weapon firing, observation, taking cover, and
+ maneuvering.
+ <p>
+ Because the influence describes the relation between two locations, the influence
+ has a direction. Since a human (or artificial) player cannot cover all directions
+ at once (but typically focuses on one direction, occasionally checking another direction), 
+ I've chosen not to simply add up all influences originating from a location. 
+ <p>
+ Instead, all influences are considered per sector (a 'slice of pie' of the surroundings).
+ Then, the 90 degrees arc covering the highest influence is considered the primary
+ axis. A secondary axis (being at least 90 degrees away from the primary axis) is computed as well. 
+ Finally, the influences are combined using a weighted sum with those influences along the primary or secondary 
+ axis receiving more weight.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_sectors.jpg" target=_blank title="Sectors as used to emphasize the value of locations with strong axis">
+    <IMG SRC="./shots/terrain_sectors_thumb.jpg" BORDER=0 width=419 height=100 ALT="Use of sectors: the left location is not as good as the center one - by determining sectors (right) and weighting these heavily, the left location receives higher scores">
+	</a>
+	</TD>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ This use of sectors is introduced to have locations that oversee a number of nodes in primarily
+ one or two directions (center image) rank higher than other locations that oversee a similar number of nodes distributed
+ over all directions. The former locations typically make for a good camping or sniping location,
+ and the use of sectors (right image above) assist in assigning these locations their proper value.
+ <p>
+ Examples of influence characteristics for a location (with respect to surrounding
+ locations) are:
+ <UL>
+    <LI>access advantage
+        <br>
+        (the location is hard to reach from the locations it overlooks)
+    <LI>cover advantage
+        <br>
+        (the location has nearby cover available for threats from the locations it overlooks)
+    <LI>visibility advantage
+        <br>
+        (the location overlooks many other locations that would expose a threat because of
+         sufficient lighting there)
+    <LI>'no cover' advantage
+        <br>
+        (the location overlooks many locations where a threat cannot quickly move into cover
+         as seen from this location)
+    <LI>coverage of slow movement spots
+        <br>
+        (the location overlooks (within useful weapon range) locations that cause 
+         threats to move slower or in a predictable way, such as ladders, doors, etc.)
+	<LI>likeliness of being surprised 
+        <br>
+        (the number of access routes available to threats that bring
+        the threat nearby without being observed)
+	<LI>height advantage 
+        <br>
+        (it is easier to spot threats below you than to spot threats above you)
+ </UL>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_access.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_access_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated access advantage map of Urban areas, projected on top view">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_incover_hi.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_incover_hi_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated cover advantage map of high Urban areas, projected on top view">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The center image above provides a large (green) - medium (yellow) - little (red) map 
+ expressing the 'hard to access advantage'. In the green areas the attacker typically overlooks
+ (and can fire into) many locations from where a threat has to go a long way to to reach the attacker. 
+ In red areas, this advantage is absent - the attacker can be easily reached from most location he is able
+ to cover.
+ <br>
+ Especially the locations surrounding the AQ2 sign (northwest) are very promising in this aspect,
+ as is the rooftop of the lower north building (actually, it cannot be accessed from the lower
+ parts of the maps). The high (sniper) towers in the center and right side of the map provide
+ advantages as well.
+ <br>
+ Note that the input data for the graph contains more detail - there are many (subtle) differences within
+ the individual locations in the red areas.
+ <p>
+ The right image above shows the amount of cover an attacking locations has with respect to the
+ locations it is able to attack (for the high areas in the Urban map) (green is better than yellow
+ than red). Simultaneous sufficient cover and influence over many locations can be found near
+ the AQ2 sign (northwest), near the sniper room (northeast), near the top ladder position (northeast) 
+ and around the air vents and Coke sign (southeast resp. south).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_surprised_lo.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_surprised_lo_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated map of 'being surprised' chances at the low Urban areas, projected on top view">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_height.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_height_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated height advantage map of Urban, projected on top view">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The center image above illustrates the chances of being 'surprised' by an attacker (small (green) - 
+ medium (yellow) - large (red) chance). The chances of being surprised decrease when
+ a location is able to overlook many of its nearby locations - threats thus have fewer ways to
+ approach the location without being observed.
+ <p>
+ Many of the indoor locations (the stairs center north, the area around the door (center), the
+ narrow alleys in the center as well as the small sniper room (south east) aren't very strong
+ positions from this perspective.
+ <p> 
+ The image to the right illustrates the average height advantage a location has (advantage (green) - 
+ neutral (yellow) - disadvantage (red)). The height advantage is largest when a large
+ proportion of the locations observed is significantly lower than the location itself. Attractive
+ locations typically can be found near the edges of high roofs, whereas many of the central
+ street locations are at a disadvantage.
+ <p>
+ The center and right images below illustrate aggregated influence values for the lower resp. higher
+ areas at Urban.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_influence_lo.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_influence_lo_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated map of aggregated influence cause by location the lower Urban areas, projected on top view">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_influence_hi.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_influence_hi_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated map of aggregated influence cause by location the higher Urban areas, projected on top view">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ <br>
+ <h5>
+ <A NAME="relatedwork">9. Related Work: Influence Maps</a> 
+ </h5>
+ A real source of inspiration for this terrain understanding has been the so-called influence mapping.
+ Influence mapping, an A.I. technique originating from the world of 'GO' (by 
+ <A HREF="http://www2.psy.uq.edu.au/~jay/go/CS-TR-339.html#4.1.1">Zobrik</A>), performs
+ a location based evaluation of the potential influence originating from the various friendly and
+ opposing pieces in the game. Further reading: 
+ <A HREF="http://www.gameai.com/influ.thread.html">newsgroup discussion about influence mapping</A>
+ (thanks to Steven Woodcock).
+ <p>
+ Influence mapping is technique frequently employed in hex-based (turn-based) war games.
+ In general, those games feature large scale units (batallions, divisions), and the influence of terrain, 
+ when compared with influence of these units, is limited: some locations might be time-consuming
+ to enter, reduce visibility, or reduce the damage taken.
+ <br>
+ The influence of those combat units typically is large: the presence of a unit 
+ often prohibits movement in neighboring hexes, and initial unsuspected contact may 
+ stall the planned progress of a unit. 
+ <p>
+ Influence mapping, primarily dealing with 'projected' force by combat units, makes a
+ lot of sense in those games. However, in its form as described above, 
+ it does <I>not</I> work for 3D action games.
+ <p>
+ Current 3D action games typically display small unit combat. The influence exercised by the small
+ units or individuals typically is far smaller than the role of terrain. 
+ Populated with many obstacles, the terrain blocks and directs movement to large extent. 
+ Even a thin wall can block the threat originating from an enemy unit. 
+ <p>
+ The world simulated by the game is typically is smaller than the world of turn-based games. As
+ a consequence, in 3D action games, weapon ranges are as large as the terrain dimensions, 
+ and cover thus becomes very important.
+ Unlike the hex based games, the presence of a small unit at a location does not 
+ really interdict nearby movements of opposing units - rushing past a defender is easily
+ done.
+ <p>
+ Though traditional influence maps don't work well for 3D action games, because of the big role of
+ terrain in the 3D action 'tactics', it is well possible and useful to determine the
+ strong and weak positions influence map solely based on the terrain. 
+ <br>
+ A very important aspect is also that off-line (a priori) computation of the terrain position
+ rankings is possible - this saves a good deal all-important CPU cycles for the run-time AI.
+ <p>
+ Mark Eversons also has coined up <A HREF="http://people.mw.mediaone.net/markeverson/map_ai.htm">ideas</A> of AI players obtaining a 'functional grasp of geography',
+ including focus on the (more important) road and rail junctions and mountain passes.
+ <br>
+ <h5>
+ <A NAME="conclusions">10. Conclusions</a> 
+ </h5>
+ CGF is able to automatically obtain a good static understanding of the terrain at
+ hand. This surprised me: I had not expected the algorithms to be able to pick the
+ better locations this 'easy'.
+ <br>
+ It enables the bot teams to position themselves tactically 'smart', and they
+ sometimes succeed in 'out positioning' the player.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/urban_topview.jpg" target=_blank>
+    <IMG SRC="./shots/urban_topview_thumb.jpg" BORDER=0 width=133 height=100 ALT="Urban top view - graphs are projected on this view">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_total_lo.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_total_lo_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated 'total' tactical value map of lower Urban areas, projected on top view - lighter colors are better locations">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_total_hi.gif" target=_blank>
+    <IMG SRC="./shots/terrain_urban_total_hi_thumb.gif" BORDER=0 width=133 height=100 ALT="CGF generated 'total' tactical value map of higher Urban areas, projected on top view - lighter colors are better locations">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The images above show the 'total' (intrinsic and influence combined) tactical values for each location in the
+ lower (center image) and higher (right image) areas of Urban. As far as my actual
+ experience goes, most of the essential locations have been issued high values.
+ <p>
+ Without this understanding of the terrain, exact manual positioning (as is done for 
+ Quake2 and Half-Life) of teams would be required. CGF, instead, is able to have the 
+ teams autonomously position themselves.
+ <p>
+ More importantly, these waypoint based algorithms can easily be extended (read: improved
+ and corrected) by taking
+ into account (location) based recordings of 'combat' events: movements along locations, 
+ occupation of locations, (successful)
+ attacks from locations. Using that kind of information in the algorithm enables
+ some learning from and some 'adaptability' towards successful tactics employed by the player.
+ <p>
+ This use of dynamic combat information has been implemented (for CGF 0.80) and 
+ will be discussed in an upcoming document.
+ <p>
+ <br>
+ <h5>
+ <A NAME="changelog">11. CGF Terrain Static Ranking Change Log</a>
+ </h5>
+<table border="1" cellpadding="4" cellspacing="0" width="520"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>date</B>
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Symbol">
+	<B>D</B><br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>description (incl. link)</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Nov 9, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    textual changes (improved grammar)<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Oct 04, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    added link to <A HREF="#relatedwork">Mark Everson's 'geography understanding'</A><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 28, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    added link to Go and <A HREF="#relatedwork">Zobrik's original influence mapping</A><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 19, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    added more explanation on <A HREF="#influencevalue">influence properties</A><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 18, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    o<br>
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	improved readability
+    <br>
+    mentioned <A HREF="#quake2waypoints">area based terrain navigation</A><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 12, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	initial version<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ <br>
+ <br>
+ <!-- end body text -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

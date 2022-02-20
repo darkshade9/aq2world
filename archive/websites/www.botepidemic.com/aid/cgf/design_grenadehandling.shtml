@@ -1,0 +1,2327 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: AI for tactical use of hand grenades and rifle grenades!</title>
+<meta name="keywords"><content="AI, game, NPC, tactics, grenade, terrain reasoning, bot, CQB">
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+<center>
+<center>
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_moving_up.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot5.jpg" border=0 align=center alt="Charlie advances"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_sniper_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot13.jpg" border=0 align=center alt="An SAS bot sniping on a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/mclanes_zebra.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot18.jpg" border=0 align=center alt="Two bots advancing [but crossing the road the safe way]"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00711
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <br>
+ <!-- header -->
+ <BLOCKQUOTE>
+ <p>
+ <H3>
+ <B>CGF (AI): Tactical Use of Grenades</B>
+ <HR color="#C0C0C0">
+ <FONT SIZE=1>
+ Last update: December 12, 2000, by <A HREF="mailto:william@botepidemic.com">William</A>. List of changes <A HREF="#changelog">here</A>.<br>
+ For a printer-friendly .PDF version, click <a href="./docs/cgfai_grenadehandling.pdf">here</a> [1.3MB].
+ </FONT>
+ </h3>
+ <h5>
+ <A NAME="h5_1">1. Introduction</a>
+ </h5>
+ This article discusses how to construct AI able to use grenades tactically in 3D tactical shooter games. 
+ <p>
+ Today's AIs (in games such as Half-Life, Hidden and Dangerous, and Rainbow Six) do use grenades<sup>[<a href="#standard_ai">1</a>]</sup>, but these AI typically do not:
+ <ol>
+ <li>intentionally bounce grenades around the corner
+ <li>intentionally lob grenades through windows or doors to a spot near their target
+ <li>use grenades to flush out threats from a hard to reach position
+ <li>understand when it makes sense and when it doesn't make sense to use grenades
+ </ol>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_attacked_into_room.jpg">
+    <IMG SRC="./shots/thumb/arc_attacked_into_room.jpg" BORDER=0 width=133 height=100 ALT="hand grenade tossed into a room, towards the author [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_lobbing_handgrenade.jpg">
+    <IMG SRC="./shots/thumb/arc_lobbing_handgrenade.jpg" BORDER=0 width=133 height=100 ALT="hand grenade 'on the way'! [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_roomroom3.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_roomroom3.jpg" BORDER=0 width=133 height=100 ALT="AI analyzing the value of using a hand grenade to attack the room to the left [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 1(a,b,c):
+ [a] Hand grenade bounced into a room, close enough to take out the threat (green lines are used to display the grenade trajectory); 
+ [b] AI throwing a hand grenade; 
+ [c]&nbsp;AI analysis results for the value of attacking the room to the left using a hand grenade
+ </font>
+ <p>
+ These AI capabilities are essential to provide the player with smart AI team members of 'special forces' quality, to provide
+ additional capable (opposing) autonomous forces, and to create a human-like multi-player combat experience as in, for example, Counter-Strike sessions.
+ <p>
+ This article:
+ <ul>
+ <li>discusses problems and solutions for generating and storing grenade trajectories
+ <li>illustrates how AI can better understand the use of grenades
+ <li>provides data on CPU load and memory consumption
+ </ul>
+ <p>
+ The article is organized as follows (click to jump):
+ <ol>
+ <li><a href="#h5_1">
+ introduction
+ </a>
+ <li><a href="#h5_2">
+ new grenade handling capabilities illustrated
+ </a>
+ <li><a href="#h5_3">
+ aim and requirements
+ </a>
+ <li><a href="#h5_4">
+ pre-conditions and assumptions
+ </a>
+ <li><a href="#h5_5">
+ approach: obtaining trajectories
+ </a>
+    <ul>
+    <li><a href="#h5_5_1">
+	encoding grenade trajectories
+    </a>
+    <li><a href="#h5_5_2">
+	pre-computing grenade trajectories
+	</a>
+    <li><a href="#h5_5_3">
+	qualities of a grenade trajectory
+    </a>
+	</ul>
+ <li><a href="#h5_6">
+ approach: using grenades: why, when and where
+ </a>
+    <ul>
+    <li><a href="#h5_6_1">
+	grenade related AI reasoning
+    </a>
+    <li><a href="#h5_6_2">
+	tactical value of using a grenade
+    </a>
+    <li><a href="#h5_6_3">
+	picking good grenade attack positions
+	</a>
+	</ul>
+ <li><a href="#h5_7">
+ experiments
+ </a>
+ <li><a href="#h5_8">
+ further work
+ </a>
+ <li><a href="#h5_9">
+ conclusions
+ </a>
+ <li><a href="#h5_10">
+ about CGF-AI
+ </a>
+ </ol>
+ <p>
+ <br>
+ <h5>
+ <A NAME="h5_2">2. The New Grenade Handling Capabilities Illustrated</a>
+ </h5>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_advance_initially.jpg">
+    <IMG SRC="./shots/thumb/arc_advance_initially.jpg" BORDER=0 width=133 height=100 ALT="initial situation: AI actor cannot reach target directly [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_advance_topview.jpg">
+    <IMG SRC="./shots/thumb/arc_advance_topview.jpg" BORDER=0 width=133 height=100 ALT="AI computations suggest to move up a bit (green ball), and throw from there to attack target [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_advance_target.jpg">
+    <IMG SRC="./shots/thumb/arc_advance_target.jpg" BORDER=0 width=133 height=100 ALT="situation, as seen from the target: little chance to avoid the grenade [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 2(a,b,c):
+ [a] Initial situation: AI actor knows threat location, but isn't able to attack from this position. [b] The AI computations suggest: move up (to the green ball) to lob a grenade without getting into the threat's line of fire. [c] The AI suggested trajectory, from the target's point of view.
+ </font>
+ <p>
+ Imagine the following scenario: 
+ <br>
+ <blockquote>
+ The NPC actor saw the enemy sniper move back, around the corner, into cover. <i>'That position may provide cover, but looks like a dead-end alley as well'</i>, the NPC thought. <i>'There's no way to evade a grenade from there but to move into my line of fire'</i>.
+ <p>
+ Being the only one carrying hand grenades, it was his responsibility to check whether he could take out that sniper with a grenade.
+ <br>
+ He made a quick check. <i>'Darn, still too far from that corner to get a grenade near enough. However, moving up 5 meters allows me to do the job.'</i>
+ <p>
+ The NPC took a grenade, moved up, figured out how to bounce a grenade around the corner, lobbed the grenade, and switched to his rifle...
+ </blockquote>
+ The scenario illustrates the needs to:
+ <ul>
+ <li>judge whether or not to (attempt to) use a grenade
+ <li>check whether throwing a grenade is feasible
+ <li>locating a good attack position to launch grenades from
+ <li>determine a good trajectory for the grenade to go around the corner (or through a window, etc.)
+ </ul>
+ <p>
+ <br>
+ <h5>
+ <A NAME="h5_3">3. Aim and Requirements</a>
+ </h5>
+ The aim, of course, is to build an AI realizing the scenario and needs sketched above. However, there is more to developing AI than just the functionality. 
+ <br>
+ The resulting AI should fit within the game. There are requirements (and budgets) for the CPU utilization (average and peak) and memory consumption of this grenade handling AI. 
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_downstairs.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_downstairs.jpg" BORDER=0 width=133 height=100 ALT="an attacker tossing a grenade down stairs near the threat [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_handgrenade.jpg">
+    <IMG SRC="./shots/thumb/arc_handgrenade.jpg" BORDER=0 width=133 height=100 ALT="hand grenade [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_into_restroom.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_into_restroom.jpg" BORDER=0 width=133 height=100 ALT="a trajectory to flush (threats from) the toilet [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 3(a,b,c):
+ [a] An attacker tossing a hand grenade down stairs (via a wall) towards a threat; [b] The hand grenade; [c] A hand grenade trajectory into a restroom
+ </font>
+ <p>
+ CPU and memory budgets do not come out of thin air. Instead, they are derived from the (worst-case) targeted game situations and AI reasoning style. Of course, these budgets can be disputed, but they provide more guidance than no budgets.
+ <p>
+ <b>
+ CPU budget (on 'standard hardware'<sup>[<a href="#ref_hardware">2</a>]</sup>)
+ </b><br>
+ CGF aims to support combat between multiple fire teams (or "squads"), involving up to 32 AI actors. During the first seconds of the initial engagement, almost all of these 32 AI actors will try to engage each other (after which both the number of active AI actors and the grenade ammo available rapidly decrease).
+ <p>
+ The AI actor thinks at 10Hz. Every time, he considers his situation, and figures out the best weapon for the job. That means that he tests whether he potentially can use grenades to attack his target: does a trajectory from his position to the target exist?
+ <p>
+ Grenades are mainly used against known targets that move behind cover. Assume that every AI actor sees a target move behind cover twice per second. Every time, the AI will check whether using grenades is appropriate. If using a grenade is appropriate (the worst case), the AI actor will want to pick the best attack position to lob a grenade from.
+ <p>
+ Finally, handling a grenade (from pulling the pin, throwing, and readying a next grenades) takes about 3 seconds. During the first 0.5 second, the AI will adjust its aim for predicted movement of the threat.
+ <p>
+ Thus, the additional CPU load per second for AI grenade handling is:
+ <table>
+<tr>
+	<td align=left><font color=white size=2>32 x 10</font></td>
+	<td align=right><font color=white size=2>=</font></td>
+	<td align=right><font color=white size=2>320</font></td>
+	<td align=left><font color=white size=2>checks for the existence of a grenade trajectory</font></td>
+</tr>
+<tr>
+	<td align=left><font color=white size=2>32 x 2</font></td>
+	<td align=right><font color=white size=2>=</font></td>
+	<td align=right><font color=white size=2>64</font></td>
+	<td align=left><font color=white size=2>checks for grenades being appropriate</font></td>
+</tr>
+<tr>
+	<td align=left><font color=white size=2>32 x 2</font></td>
+	<td align=right><font color=white size=2>=</font></td>
+	<td align=right><font color=white size=2>64</font></td>
+	<td align=left><font color=white size=2>checks for the best grenade attack position</font></td>
+</tr>
+<tr>
+	<td align=left><font color=white size=2>32 x 0.5 / 3</font></td>
+	<td align=right><font color=white size=2>~</font></td>
+	<td align=right><font color=white size=2>6</font></td>
+	<td align=left><font color=white size=2>aiming attempts</font></td>
+</tr>
+</table>
+ <p>
+ A CPU budget for this additional feature might be 0.5 fps, for a game rendering at 25 fps, thus 0.02 s = 20 ms per second.
+ <p>
+ Note that one of the computations, aiming a grenade, is a given. To aim the grenade, a trajectory is emulated and tested for obstacles. This takes about 1/8000 s each, thus consuming 0.8 ms for 6 attempts. That leaves 19.2 ms.
+ <p>
+ <b>
+ Memory budget
+ </b><br>
+ The memory-consumption for grenade specific look-up tables should not exceed 0.5 MByte per (significantly different) grenade type.
+ <p>
+ Often, hand grenades, flash bangs, and smoke grenades have similar physical characteristics and thus can share a trajectory. This typically is not the case for hand grenades and rifle launched grenades.
+ <p>
+ <br>
+<h5>
+<A NAME="h5_4">4. Pre-Conditions and Assumptions</a>
+</h5>
+AI isn't designed in a vacuum. Instead, we have a lot of assumptions about the game physics, the terrain representation available, and the AI terrain reasoning capabilities:
+<ul>
+<li>the game physics for grenade bouncing are predictable to a large extent, optionally with some small randomized effects
+<li>the grenade's launch velocity and direction are predictable to a large extent, optionally with some small randomized effects
+<li>the AI is capable of predicting threat positions when they've lost sight of them (without this prediction capability, there wouldn't be much need to bounce grenades around the corner)
+<li>the terrain is thought of by the AI as a grid of (small) cells with more or less uniform surface dimensions (I happen to use waypoints to define cells, but mesh based approaches should work equally well <sup>[<a href="#Snook">Snook</a>]</sup>)
+<li>the AI understands about areas such as rooms, halls, tunnels, and can efficiently determine entrances and exits from these areas
+</ul>
+These AI pre-conditions may seem demanding. However, there actually is little use nor hope for the AI to tactically employ grenades if these physics and terrain representation aren't available.
+<p>
+In the case of the CGF AI and (Action) Quake2, these pre-conditions were satisfied.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_route_nodes_sample.jpg">
+    <IMG SRC="./shots/terrain_route_nodes_sample_thumb.jpg" BORDER=0 width=133 height=100 ALT="waypoints illustrated [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+    <IMG SRC="./shots/cgf_door_anim.gif" BORDER=0 width=133 height=100 ALT="AI (without grenades) in action [animation] ">
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/m203_reload.jpg">
+    <IMG SRC="./shots/m203_reload_thumb.jpg" BORDER=0 width=133 height=100 ALT="reloading the M203 attached grenade launcher [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 4(a,b,c):
+ [a] CGF-AI's waypoints (also on the drain pipe leading up to the roof); [b] CGF's AI (without grenades) in action; [c] M203 grenade launcher being reloaded
+ </font>
+ <p>
+ <br>
+<h5>
+<A NAME="h5_5">5. Approach: Obtaining Trajectories</a>
+</h5>
+Being able to bounce, to follow curves, and to fly for up to 3 seconds, a grenade may travel unexpected ways. This makes it hard (and likely CPU intensive) to judge whether and how a grenade can reach a location. 
+<p>
+Whereas a human can look at its environment and imagine instantly how to toss a grenade around a corner, through a hole or window, this is not completely the case for an AI actor. 
+<p>
+Experiments confirmed this: generating a (feasible) trajectory takes in the order of 0.05 to 0.1 seconds (see <a href="#h5_7">Experiments</a>). Such a CPU load exceeds our budgets. It effectively prohibits even a single AI actor to frequently think about using grenades for anything but a straight curve.
+<br>
+In other words, the AI cannot use the full spectrum of grenade trajectories without some help.
+<p>
+The approach presented here trades computing time for memory, and uses an off-line computed look-up table to support AI grenade reasoning.
+<p>
+The main questions in designing the look-up table are:
+<ul>
+<li>what to store?
+<li>which queries to support?
+</ul>
+Below, the contents of the look-up table are discussed. The tables themselves have been organized around grenade target positions, mirroring the interests of the attacking AI: from where to attack a given target position?
+<br>
+<p>
+<h5>
+<A NAME="h5_5_1">5.1 Encoding the Trajectories</a>
+</h5>
+Computing every possible trajectory in advance, for every possible pair of coordinates (Quake2 has ~1 inch resolution) would lead to an enormous (and redundant) amount
+of trajectories. If trajectories are to be stored in a limited amount of memory, solely a subset of the trajectories should be selected. But which subset?
+<p>
+Other (non-grenade) queries in the CGF AI almost all have been implemented in terms of cells / waypoints (see <a href="#Snook">[Snook]</a> or <a href="#Reece">[Reece]</a> for a discussion on terrain representations for AI). Those waypoints represent solely the terrain accessible to the human and AI actors. In the CGF AI, a dense grid of the waypoints is used as the backbone of the terrain representation for navigation, (travel) distance, areas/sectors, tactical fitness, and other purposes.
+<p>
+The new grenade-related queries again would refer to (attacker and target) locations in terms of waypoints. So, it seemed obvious to deal solely with trajectories between waypoints. But are these trajectories sufficiently representative for the trajectories from or to the close surroundings of these waypoints?
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_thru_roof_hole.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_thru_roof_hole.jpg" BORDER=0 width=133 height=100 ALT="bouncing a grenade through a hole in the roof [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_m203_to_balcony.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_m203_to_balcony.jpg" BORDER=0 width=133 height=100 ALT="grenade launcher trajectory hitting the ceiling above the threat's balcony position [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_into_airvent2.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_into_airvent2.jpg" BORDER=0 width=133 height=100 ALT="tossing a grenade into an an (air vent) tunnel [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 5(a,b,c):
+ [a] A hand grenade trajectory through a hole in the roof; [b] A rifle grenade trajectory hitting the ceiling above the threat's balcony position; [c] A hand grenade trajectory into an air vent tunnel
+ </font>
+ <p>
+The waypoint based trajectories are representative if these trajectories are to a large degree robust against deviations in the source (attacker) and destination (target) positions. If the attacker is is not positioned exactly in the center of the cell, or on the waypoint, the pre-computed trajectory information should still lead to a grenade delivered close enough to the target position in most cases. (Some error, of course, is allowed for realism).
+ <p>
+From studying a few grenade trajectories, and their relation to cells/waypoints, it is not that hard to decide what information to record.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_into_alley.jpg">
+    <IMG SRC="./shots/thumb/arc_into_alley.jpg" BORDER=0 width=133 height=100 ALT="a trajectory bouncing into an alley, to engage a nearby threat [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_into_room.jpg">
+    <IMG SRC="./shots/thumb/arc_into_room.jpg" BORDER=0 width=133 height=100 ALT="a trajectory bouncing into a room, to engage a nearby threat [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_key_props.jpg">
+    <IMG SRC="./shots/thumb/arc_key_props.jpg" BORDER=0 width=133 height=100 ALT="key aspects of a trajectory annotated [click to see larger image]">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 6(a,b,c):
+ [a] A trajectory bouncing into an alley, near the threat ('x'). [b] A trajectory bouncing into a room, engaging a nearby threat. [c] The key aspects of a trajectory annotated: aiming angles, bounce spot, damage radius.
+ </font>
+ <p>
+ The images above present top-views of two different (bouncing) trajectories arriving near a threat (the 'x'), originating from the source (the 'o'). The image to the left shows a trajectory entering an alley, whereas the other images show a trajectory entering a room.
+ <p>
+ Due to the area damage effect, the grenade need not be delivered exactly on the threat's position. That means, in most cases, the pre-computed trajectory is robust against threats being at a small distance from the cell's center or waypoint.
+ <p>
+ A bigger problem is a deviation between the cell's origin and the attacking actor's position. This is illustrated below:
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_deviation_same_angle.jpg">
+    <IMG SRC="./shots/thumb/arc_deviation_same_angle.jpg" BORDER=0 width=133 height=100 ALT="the effects of a (lateral) deviation when using the same launch direction [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_deviation_same_bounce.jpg">
+    <IMG SRC="./shots/thumb/arc_deviation_same_bounce.jpg" BORDER=0 width=133 height=100 ALT="the effects of a (lateral) deviation when using the same launch direction [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_thru_open_door.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_thru_open_door.jpg" BORDER=0 width=133 height=100 ALT="Tossing the grenade through the door. If the same bounce spot (on the floor) is reused, the actual position of the attacker may change a bit [click to see larger image]">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 7(a,b,c):
+ [a] The effects of a (lateral) deviation when using the same launch direction as a pre-computed trajectory. [b] The effects of a (lateral) deviation when using the same bounce/aim spot. [c] Tossing the grenade through a door, using a bounce spot on the floor. Deviations in the attacker's position are unlikely to prevent getting the grenade through the door, if the bounce spot is aimed for.
+ </font>
+ <p>
+ The image to the left shows the effects of a (lateral) deviation in position on a pre-computed launch direction (angles). The image in the center shows the effects of a (lateral) deviation in position when using a pre-computed (first) bounce spot.
+ <p>
+ In general, using the pre-computed bounce spot was found to be more robust than using pre-computed direction.
+ <p>
+ Note that robustness can be improved by selecting the more robust trajectories when exploring possible solutions. Note also that some error in using trajectories can be tolerated since it makes the AI less perfect.
+ <p>
+ Basically, CGF records trajectories by storing, for a &lt;attacker waypoint, target waypoint&gt; pair, the direction to the spot to aim for (typically, the first bounce spot for the grenade). The whole process of encoding and decoding a trajectory is illustrated in the figures below:
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_encoding1.jpg">
+    <IMG SRC="./shots/thumb/arc_encoding1.jpg" BORDER=0 width=133 height=100 ALT="encoding 1: trajectories are computed between waypoints only [click to see larger image]">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_encoding2.jpg">
+    <IMG SRC="./shots/thumb/arc_encoding2.jpg" BORDER=0 width=133 height=100 ALT="encoding 2: a trajectory (blue) is found, needing two bounces (black dots) [click to see larger image]">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_encoding3.jpg">
+    <IMG SRC="./shots/thumb/arc_encoding3.jpg" BORDER=0 width=133 height=100 ALT="encoding 3: aiming is done via the first bounce spot. The aim is recorded as the difference in angles from the straight-line direction to the target [click to see larger image]">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 8(a,b,c):
+ Trajectory encoding: [a] First, feasible trajectories are determined for pairs of waypoints from waypoint (gray dots). [b] A feasible trajectory is found, including several bounces. [c] Aiming for this trajectory is done via the left-side wall (yellow dot). This aiming is encoded as the difference in angles between the straight line to the target, and the aim direction. 
+ </font>
+ <p>
+The direction to the aim spot from a attacker waypoint to a target is expressed using yaw and pitch angles. More precisely, the direction is expressed in yaw and pitch angles relative to the line from attacker to target, making use of the property that most trajectories don't require throwing the grenade away from the target, thereby saving a few precious bits.
+<p>
+<p>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_decoding1.jpg">
+    <IMG SRC="./shots/thumb/arc_decoding1.jpg" BORDER=0 width=133 height=100 ALT="decoding 1: the waypoints nearest to attacker and target are determined [click to see larger image]">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_decoding2.jpg">
+    <IMG SRC="./shots/thumb/arc_decoding2.jpg" BORDER=0 width=133 height=100 ALT="decoding 2: the spot to aim for is reconstructed from the angles difference between the trajectory and the straight line between 'attacker' and 'target' waypoints [click to see larger image]">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_decoding3.jpg">
+    <IMG SRC="./shots/thumb/arc_decoding3.jpg" BORDER=0 width=133 height=100 ALT="decoding 3: the attacker's trajectory (by aiming at the aim spot) deviates from the one between the waypoints, since the attacker slightly away from the waypoint. The trajectory, however, still is useful [click to see larger image]">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 9(a,b,c):
+ Trajectory decoding: [a] First, the nearest waypoints (black dots) for attacker and target locations are determined. [b] Then, the (bounce) spot to aim for is reconstructed, using the angle difference between the straight line direction to the target waypoint and the trajectory. [c] The resulting trajectory goes from the attacker via the reconstructed aim/bounce spot to a location near the target. Note that (due to the attacker and target not being exactly on the waypoints), the resulting trajectory deviates from the pre-computed one (but still is useful).
+ </font>
+ <p>
+As the <a href="#h5_7">experiment results</a> illustrate, storing a single trajectory (attacker waypoint, target waypoint, aiming direction, launch velocity, and a few other flags) consumes about 5.5 to 6.0 bytes (including overhead), or 5 bytes without overhead. A size of 4 bytes is achievable when making a few additional assumptions about the number of waypoints.
+<p>
+<h5>
+<A NAME="h5_5_2">5.2 Approach: Generating Trajectories</a>
+</h5>
+Though it is clear how to record trajectories, they also need to be generated. This section first discusses the generation of rifle launched grenade trajectories before going into the more complex (bouncing) hand grenade trajectories.
+<p>
+<b>Computing Rifle Launched Grenade Trajectories</b><br>
+As an aside: first a less complex trajectory generation problem: rifle launched HE grenade trajectories. Because a HE rifle grenade explodes upon impact, it cannot be bounced. A rifle grenade is launched with a fixed velocity, and is solely be aimed by adjusting the aiming angles. For a source and target combination, far fewer trajectories are possible than with hand grenades.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_m203_ceiling_sniper.jpg">
+    <IMG SRC="./shots/thumb/arc_m203_ceiling_sniper.jpg" BORDER=0 width=133 height=100 ALT="Target: a sniper, positioned in a hard to reach room  [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_m203_ceiling_overview.jpg">
+    <IMG SRC="./shots/thumb/arc_m203_ceiling_overview.jpg" BORDER=0 width=133 height=100 ALT="Overview of grenade launcher equipped attacker and targeted room (where solely the ceiling and not the target itself can be seen and hit) [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_m203_ceiling_launcher.jpg">
+    <IMG SRC="./shots/thumb/arc_m203_ceiling_launcher.jpg" BORDER=0 width=133 height=100 ALT="M203 grenade launcher equipped attacker seeing the grenade explode on the ceiling above the target [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 10(a,b,c):
+ [a] The target: a sniper positioned in the upper room, overlooking distant parts of the city; 
+ [b] Overview of the attacker and the room being attacked; the attacker cannot hit the target (the sniper) but can hit the ceiling overhead; 
+ [c] The rifle grenade launcher equipped attacker, seeing the grenade impact on the ceiling above the target
+ </font>
+<p>
+For a rifle grenade, finding a trajectory just involved a two-pass approach:
+<ol>
+<li>for each attacker - target waypoint pair:
+<ol>
+<li>chose useful positions of impact: at the target's feet, on a close enough ceiling above the threat, or on a close enough wall behind the threat
+<li>test whether a trajectory to these positions is (mathematically) feasible; this simply involved some approximation and solving a number of 2nd order equations
+<li>test whether the trajectory was physically possible in the world geometry
+</ol>
+<li>for each attacker - target waypoint pair without a direct trajectory:
+<ol>
+<li>look up all waypoints near target waypoint
+<li>look for trajectories from attacker to waypoint close to target
+<li>pick the closest one (with line of fire), and test if within damage radius
+</ol>
+</ol>
+This process is more or less analytical: if there is a solution, there is a straight forward way of finding it.
+<p>
+In about 169 seconds, on the test hardware<sup>[<a href="#ref_hardware">2</a>]</sup>, 673 x 673 potential rifle grenade trajectories can be checked (that is: about 2700 trajectories per second on average, with a worst-case that is near 360 trajectories / second (if all trajectories are valid and require all checks). If trajectories can be generated this fast, pre-computing them may not be required.
+<p>
+<b>Computing Hand Grenade Trajectories</b><br>
+Whereas hand grenades (that bounce, and explode on time) have a lot in common with these rifle grenades, finding valid trajectories for hand grenades is very different from finding trajectories for rifle grenades.
+ <p>
+ The two main differences:
+ <ul>
+ <li>trajectories that bounce cannot be 'solved' analytically for a given start location and end location;
+ <li>evaluation of bouncing trajectories (by the game engine) is more expensive
+ </ul>
+ <p>
+ To generate useful hand grenade trajectories, a 'genetic algorithm' was developed (in a number of iterations):
+ <ol>
+ <li>create a number of 'initial attempt' trajectories by throwing in a 180 degrees yaw range / 180 degrees pitch range with respect to the target;
+ <li>repeat:
+     <ul>
+	 <li>
+	 evaluate each of the attempts, rank them, and keep the better ones
+	 <li>
+	 expand on the best attempts by creating a number of new attempts within a small yaw and pitch range
+	 </ul>
+ <li>pick the best attempt, and determine whether it is 'good' enough
+ </ol>
+ The real work of course is in defining the evaluation function, and in getting the algorithm to be sufficiently fast while generating the important trajectories. The evaluation function of a trajectory is explained below.
+ <p>
+ Getting the algorithm faster primarily proved to be an issue in caching the most expensive computations: ray tracing a trajectory. Once the algorithm was re-designed to find all targets for a single source waypoint, efficient caching of trajectories from that source, for all angles and velocities, became possible. This caching changed the computation time for a complex 1000+ waypoint level from a couple of days to the odd 8 hours.
+ <br>
+ The majority of these long hours is spent on ray tracing the BSP.
+<p>
+<h5>
+<A NAME="h5_5_3">5.2 Approach: Judging the Quality of a Trajectory</a>
+</h5>
+ Essential in getting good results from a genetic algorithm is the evaluation function. The evaluation function should distinguish the useful attempts and useless attempts, and select the most promising ones for further 'breeding'. 
+ <p> 
+ The evaluation function should favor those trajectories that:
+ <ul>
+ <li>damage the target
+ <li>do not damage the attacker
+ <li>are robust against deviations in aiming position and aiming angles
+ <li>'feel human-like and realistic'
+ </ul>
+ (The 'feel human-like' requirement was initially ignored. Upon seeing plenty of 'pinball' or 'billiards' style trajectories being generated, the evaluation function was extended).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_algorithm_improvement.jpg">
+    <IMG SRC="./shots/thumb/arc_algorithm_improvement.jpg" BORDER=0 width=133 height=100 ALT="multiple attempts, a good one (magenta) and the resulting improvement on that (red) [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_algorithm_robustness.jpg">
+    <IMG SRC="./shots/thumb/arc_algorithm_robustness.jpg" BORDER=0 width=133 height=100 ALT="testing robustness by taking into account the effects of slight angular deviations [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_sample_basketball.jpg">
+    <IMG SRC="./shots/thumb/arc_sample_basketball.jpg" BORDER=0 width=133 height=100 ALT="unrealistic 'basketball' style bouncing trajectory [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 11(a,b,c):
+ [a] Multiple attempts (blue, magenta) at a good trajectory, of which the magenta is chosen and improved to the red trajectory;
+ [b] Testing a trajectory's robustness by taking into account slight deviations of the launch angles;
+ [c] A basketball bounce pass style trajectory
+ </font>
+ <p>
+ The resulting evaluation function judged the following properties of a trajectory:
+ <ul>
+ <li><i>damage to the target</i>
+     <br>
+	 The grenade arriving within the damage radius of the target, and having a clear line of fire;
+ <li><i>distance to the target</i>
+     <br>
+	 The distance to the target (ignoring damage radius and line of fire); this property is required for the genetic algorithm to work towards valid solutions;
+ <li><i>damage to the attacker</i>
+     <br>
+	 The grenade arriving within the damage radius of the attacker and having a clear line of fire;
+ <li><i>distance to first bounce</i>
+     <br>
+	 The distance from the attacker to the grenade's first bounce. Since it is this bounce point that is stored and use for aiming, the more distant the bounce point, the smaller the effect of deviations in attacker position and aiming errors. 
+	 <br>
+	 Distant bounces also feel more realistic (the algorithm generated too many basketball bounce pass style trajectories otherwise).
+ <li><i>(almost) visible first bounce location</i>
+     <br>
+	 The location of the first bounce location should be visible by the attacker, or the bounce location should be slightly below a location visible by the attacker. This property was added for realism: humans are bad at aiming grenades for spots they cannot see. 
+	 <br>
+	 A special case is made for grenades lobbed through higher positioned apertures (typically, windows) or lower positioned apertures (holes). In that case, the attacker does not worry about the bounce spot, but about the grenade making it through the window or into the hole. the location above the bounce spot then typically is visible.
+ <li><i>number of bounces (on different planes)</i>
+     <br>
+	 The number of bounces in the trajectory, counting consecutive bounces on the same plane as one. Planes are compared for being similar using the dot product of the normal vectors (&gt 0.9x).
+	 <br>
+	 Again, a property to favor more realistic trajectories: humans have troubles with many bounces across different planes.
+ <li><i>launch angles</i>
+     <br>
+	 Preferably, the launch angles are within a not too wide cone towards the target, for two reasons:
+	 <ul>
+	 <li>launch angles outside that cone may not fit in the format used for storing trajectories. 
+	 <li>throwing a grenade in a direction 'away from the target' to get the grenade to the target does not feel realistic.
+	 </ul>
+ <li><i>launch velocity</i>
+     <br>  
+	 Higher launch velocities are favored because in the Action Quake2 game, the launch velocity deviations are constant, and these deviation thus are relatively for higher velocities.
+	 <br>
+	 This property favors robustness.
+ </ul>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_algorithm_bouncecount.jpg">
+    <IMG SRC="./shots/thumb/arc_algorithm_bouncecount.jpg" BORDER=0 width=133 height=100 ALT="The number of bounces on different planes illustrated: bounces 1, 2, and 3 are unique, but bounces 4, 5, 6 are consecutive bounces on the same plane that bounce 3 hit. The more planes involved, the less realistic the trajectory [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_algorithm_visiblebounce.jpg">
+    <IMG SRC="./shots/thumb/arc_algorithm_visiblebounce.jpg" BORDER=0 width=133 height=100 ALT="A trajectory (as seen from the side) with a first bounce spot visible by the attacker [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_algorithm_visiblebounce_above.jpg">
+    <IMG SRC="./shots/thumb/arc_algorithm_visiblebounce_above.jpg" BORDER=0 width=133 height=100 ALT="A better trajectory into the same hole, even though the bounce spot itself cannot be seen. However, a location above the bounce spot is visible [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 12(a,b,c):
+ [a] The bounce complexity illustrated: for a trajectory the bounces 1, 2, and 3 hit varying planes, but bounces 4, 5, 6 and are consecutive bounces on the same plane that bounce 3 hit. The more planes involved, the less realistic the trajectory. [b] Grenade trajectories with a first bounce spot visible to the attacker are more realistic in most cases. However, this is not one of them, since it would be better to aim for the pit. See: [c] Same situation, but with a better trajectory making its first bounce in the pit. Though this first bounce location cannot be seen by the attacker, it can be assumed since the attacker can see a position slightly overhead the bounce spot.
+ </font>
+ <p>
+All these properties are evaluated for the trajectory and for derived trajectories with slight deviations and in the launch angles and launch position. 
+<br>
+ The resulting score for a trajectory is the 'pessimistic average' of the all these trajectories, that is, the average of the weaker individual trajectories. 
+ <br>
+ The score then reflects the robustness of the trajectory, and also enforces some risk avoidance. 
+ <p>
+ <br>
+<h5>
+<A NAME="h5_6">6. Using grenades: why, when and where</a>
+</h5>
+Grenades are not employed 'any time, any place'. Typically, grenades are scarce: both player and AI actors are limited to only a few. So the AI need better understand why, where, and when it makes sense to lob or launch a grenade.
+<p>
+This section discusses AI grenade reasoning. First, an overview is given of the kind of reasoning required. Then, two algorithms are presented in more detail: one algorithm for the AI to estimate the value of throwing an grenade at a target, and a second one to pick the better positions to attack from.
+<p>
+<h5>
+<A NAME="h5_6_1">6.1 Grenade Related AI Reasoning</a>
+</h5>
+To the AI, grenades are complicated stuff, partially because there is a lot involved. For example:
+<ul>
+	<li>grenades can damage threats who are out-of-sight
+	<li>assessing if a threat can be reached by a grenade is hard in the presence of obstacles
+	<li>grenade explosions may also damage non-hostiles near the target
+	<li>badly thrown grenades may bounce back to the attacker or other non-hostiles
+	<li>once the pin has been pulled, the grenade should be disposed off safely, even if the threat moves out of reach
+	<li>grenade trajectories may be blocked by nearby friendlies, or dynamic structures (doors, vehicles) in the game world
+	<li>grenades can be cooked off, to prevent enemies from returning the grenade
+	<li>grenades are more effective against threats in confined areas 
+	<li>game actors typically receive less damage from a grenade when behind cover and when prone
+	<li>...
+</ul>
+Many of these aspects can be dealt with by the AI using a:
+<ul>
+	<li>trajectory look up table
+	<li>test for obstacles on the trajectory
+	<li>proximity and cover tests for non-hostiles
+	<li>grenade evading behavior
+	<li>detailed AI weapon model
+</ul>
+<p>
+A trajectory look up table provides quick answers to whether a threat can be reached. The look up table may also rule out the trajectories that come with a large risk of the grenade bouncing back
+<br>
+To some extent, environment dynamics (such as doors) may be accounted for in the look up table, but typically, the look up table does not contain alternative solutions when the default trajectory is blocked.
+<p>
+Testing the trajectory for obstacles is a must for the attacker AI. The attacker's team mates or other non-hostiles might block the trajectory. Doors, vehicles, or other dynamic parts of the game world also might get in the way. 
+<br>
+If the trajectory is feasible but blocked, the AI may search for alternative trajectories (expensive), alternate attack positions, or try to resolve the obstacle (open the door).
+<p>
+A trajectory that is feasible and clear of obstacles may still endanger friendlies and non-hostiles close to the target location. Tests for these actors being near the target location, and without direct cover from the grenades blast need to be performed. 
+<br>
+If friendly actors are in danger of getting hurt, the attacker may temporarily give up on using grenades, or inform the friendlies of an incoming grenade ("frag out!") and assume they will evade the blast.
+<p>
+The grenade blast typically is evaded by moving away from the expected grenade explosion, preferably into to cover. To reduce the risks, ducking or going prone is advised <a href="#MCWP 3-35.3">[MCWP 3-35.3]</a>.
+<p>
+A detailed weapon model, describing the details of the hand grenade or rifle grenade (cooking off time, arming time, damage radius, etc.) can support the AI in taking the subtle details of the grenade into account.
+<br>
+As an alternative, the AI may cheat and ignore the hand grenade's pin and cooking off time at all, and use a random 'remaining time' to explosion. 
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_attackpositions_thruwindow.jpg">
+    <IMG SRC="./shots/thumb/arc_attackpositions_thruwindow.jpg" BORDER=0 width=133 height=100 ALT="moving up to a position to toss a grenade through the window [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_m203_launcher_upclose.jpg">
+    <IMG SRC="./shots/thumb/arc_m203_launcher_upclose.jpg" BORDER=0 width=133 height=100 ALT="rifle attached grenade launcher [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_streetroom.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_streetroom.jpg" BORDER=0 width=133 height=100 ALT="the value of tossing the grenade through the window [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 13(a,b,c):
+ [a] Moving up to a good position to toss a grenade through the window (see also [c]); 
+ [b] A rifle attached grenade launcher; 
+ [c] The value of throwing a grenade into the room (see situation as in [a])
+ </font>
+ <p>
+More complex algorithms are necessary to enable the AI to perform advanced reasoning, such as:
+<ul>
+	<li>what's the value of throwing a grenade from here to that position?
+	<li>what is the best position to move to from here to attack that position?
+</ul>
+These algorithms are discussed below.
+<p>
+<br>
+<p>
+<h5>
+<A NAME="h5_6_2">6.2 The Tactical Value of Using a Grenade</a>
+</h5>
+<p>
+To tackle the question of 'when to use a grenade', input was gathered in on-line games such as Rainbow Six: Rogue Spear and Counter-Strike (for Half-Life), and from military manuals. This quickly resulted in a number of simple heuristics.
+<br>
+Additional heuristics surfaced when debugging the 'unrealistic' feel of the initial AI grenade handling.
+<p>
+Here are the results: Employing a grenade to attack a position <i>P<sub>target</sub></i> from position <i>P<sub>source</sub></i> is more useful if:
+<ol>
+	<li>a rifle cannot do the job (that is, there is no direct line-of-fire from <i>P<sub>source</sub></i> to <i>P<sub>target</sub></i>
+	<li>the threat will have troubles evading the blast, because the target area is small and/or restricts movement (for example, tunnels, small rooftops)
+	<li>exits from the target area can be covered with rifle fire from <i>P<sub>source</sub></i> 
+	<li>it is hard or takes a lot of time to reach <i>P<sub>target</sub></i> from <i>P<sub>source</sub></i>
+	<li>the target area is known for being frequently visited, being used for ambushes or sniping
+	<li>it takes a lot of time from <i>P<sub>source</sub></i> to establish a direct line-of-fire to <i>P<sub>target</sub></i> 
+	<li>the position <i>P<sub>target</sub></i> is a tactically stronger position than <i>P<sub>source</sub></i> (compare a dominating roof top position to a position in the middle of an empty square)
+	<li>multiple threats are supposed to be near <i>P<sub>target</sub></i>
+</ol>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_restroom.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_restroom.jpg" BORDER=0 width=133 height=100 ALT="the value of throwing a grenade into the restroom [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_roofalley.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_roofalley.jpg" BORDER=0 width=133 height=100 ALT="the value of a grenade thrown from a roof into an alley [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_hallstairs.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_hallstairs.jpg" BORDER=0 width=133 height=100 ALT="the value of a grenade thrown downstairs in a large hall [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 14(a,b,c):
+ [a] Value of a grenade thrown into a restroom; [b] Value of a grenade thrown from a roof into an alley (the roof being incorrectly classified as street); [c] Value of a grenade thrown downstairs in a large hall.
+ </font>
+ <p>
+Given these heuristics, the overall value of using a grenade against a position simply is the weighted sum of the value of the individual heuristics. The AI actor then tests this value against a threshold, typically derived from the amount of grenades available, the rules-of-engagement, etc.
+<p>
+Below, the implementation of the heuristics 2, 3, 4, 5, 6, and 7 is discussed.  
+<p>
+The threat's capability to evade the grenade's blast is largely determined by the target area. If that area is a large open street, evading is easy. If the area is a small room, evading is hard. If the area restricts movement (ladders that need to be climbed, doors that need to be operated, nearby cliff or rooftop edges), evading is harder.
+<p>
+The CGF AI regards the terrain as a number of areas (or regions) connected by portals. Each area is classified (as a room, hall, street, alley, rooftop), and has a size. The heuristic #2 is implemented as a function of area type and size.
+<br>
+<font size=1>
+Such an 'areas and portals' annotation of the game world is typically created by the level designer. However, the original and limited Quake2 AI never had a need to know about areas such as rooms, halls, streets, etc. and portal such as windows, doors, ladders. As a result, that info is missing from the Quake2 maps used by the CGF AI. 
+<br>
+To make up for that, an algorithm was developed that, using the waypoint grid and world geometry, automatically constructs and classifies areas and portals. It does a decent job.
+</font>
+<p>
+Grenades are often used to flush out a threat from a position. This flushing out is solely effective if the attacker can fire into the exits from the threat's position.
+<br>
+Heuristic #3 is implemented by retrieving the all exits for the target area, and checking whether the attacker has a line of fire to these exits. The score is 1 if all exits are covered, 0.5 if one out of two exits is covered, and 0 otherwise.
+<br>
+A special case occurs when the attacker and threat are in the same area (such as a large hall or street). In that case, a more detailed check on paths leading to the exit(s) should be performed.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_use_uselessonplane.jpg">
+    <IMG SRC="./shots/thumb/arc_use_uselessonplane.jpg" BORDER=0 width=133 height=100 ALT="no need to use grenades on an empty plain because a rifle can do the job better[click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_use_optimalflushout.jpg">
+    <IMG SRC="./shots/thumb/arc_use_optimalflushout.jpg" BORDER=0 width=133 height=100 ALT="optimal use of grenades to either damage the threat (black x) directly or force him into a line of fire [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_use_maybe.jpg">
+    <IMG SRC="./shots/thumb/arc_use_maybe.jpg" BORDER=0 width=133 height=100 ALT="maybe use grenades, since the threat (black x) has opportunities to evade the blast [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 15[a,b,c]:<br>
+ [a] No need to use grenades if there is no cover for both attacker and threat; [b] Optimal use of grenades if the threat ('x') cannot evade the blast without entering the attacker's line of fire;  [c] Maybe use grenades because the threat has limited opportunities to evade the blast.
+ </font>
+ <p>
+If it will take a long time for the attacker to get at the target position, in general, it will be tough to force direct fire contact with the target. Such a 'long travel time' situation typically occurs when the threat is on a rooftop, whereas the attacker is at street level. In such a case, the threat has plenty of options to avoid contact and disappear. A grenade then offers the sole option to attack immediately, and becomes more useful.
+<br>
+The threat's situation is even stronger if the threat is able to quickly reach the attacker, whereas the attacker cannot reach the threat easily.
+<p>
+This heuristic #4 is implemented by determining the time needed for the attacker to get at the target position, and the time needed for the threat to get to the attacker position.
+<p>
+Heuristic #5 is similar, and its value is determined by the number and quality of nearby lines of fire to the target position.
+<p>
+Grenades are probably the safest way to distract or attack threats that are sniping or in ambush. Thus, in these cases the value of using a grenade is larger.
+<p>
+In games such as Rainbow Six: Rogue Spear, grenades are also employed to pre-empt a rush-assaults by the opposing force. More generally, grenades have higher chance of taking out threats at locations that are frequently visited.
+<p>
+The CGF AI captures and interprets player and AI activity during the game, and relates that 'combat experience' to the terrain. That way, the AI learns where snipers might be located,
+where ambushes are more likely, where most traffic occurs, where most damage is done, etc. It is a reinforcement learning mechanism<sup><a href="#smartterrain">3</a></sup>, enabling a better tactical understanding of the terrain that is adaptive as well.
+<br>
+Exactly this 'location specific combat experience', stored per waypoint and updated after each mission, is inspected to implement heuristic #5.
+<p>
+Another case when the threat should not be ignored, even if there is no direct line of fire, occurs when the threat occupies a very strong tactical position. For example, the threat occupies a tower from which all terrain can be observed and attacked, whereas the attacker is on the street. 
+<p>
+The CGF AI performs an off-line analysis to determine the tactical value of each location <a href="#terrainanalysis">[terrain analysis]</a>, by taking into account the location's intrinsic properties (freedom of movement, amount of light available), the location's potential interactions with other locations (does it overlook many locations, does it provide nearby cover when engaged from other locations), and the location specific 'combat experience' (described above). This results in a tactical ranking for each location. Using these rankings, the locations can be compared for their tactical value.
+<p>
+A simple inspection of the tactical values for the attacker and target locations suffices to implement heuristic #7.
+<p>
+Some example output from the resulting algorithm is presented below:
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_advance_analysis.jpg">
+    <IMG SRC="./shots/thumb/arc_advance_analysis.jpg" BORDER=0 width=133 height=100 ALT="Value of throwing a grenade into an alley [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_hiroof.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_hiroof.jpg" BORDER=0 width=133 height=100 ALT="Value of throwing a grenade on a high, hard to access, roof [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_target_analysis_loroof.jpg">
+    <IMG SRC="./shots/thumb/arc_target_analysis_loroof.jpg" BORDER=0 width=133 height=100 ALT="Value of tossing a grenade from a low roof into a room [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 16(a,b,c):
+ [a] Value of throwing a grenade into an alley; [b] Value of throwing a grenade on a high, hard to access, roof; [c] Value of tossing a grenade from a low roof into a room
+ </font>
+ <p>
+ Note that this algorithm is a more-or-less straightforward translation of tactical concepts into simple evaluation functions, though might take some 'black art' and trial-and-error to come up with the right tactical concepts.
+ <p>
+ A disadvantage is that the original tactical concepts are not explicit in the resulting algorithm, unlike, for example, the rule-based approach taken by the SOAR-agent framework <a href="#laird">[Laird]</a>.
+ <br>
+ The main advantage, however, is the performance of the algorithm: it takes the AI less than 0.2 ms <a href="#ref_hardware"><sup>2</sup></a> to determining the value of using grenades against a target position. This enables multiple AI characters to frequently consider using grenades.
+ <p>
+ This kind of performance is mainly due to an underlying 'terrain reasoning database' optimized to support algorithms like these. The terrain reasoning database describes the terrain in terms of lines of sight/fire/concealment/cover, distances and travel times, areas and portals, key locations, location specific combat experience, etc. 
+<br>
+<p>
+<h5>
+<A NAME="h5_6_2">6.3 Finding Good Grenade Attack Positions</a>
+</h5>
+<p>
+When the AI actor spots a threat, and considers using grenades appropriate, it is important to find a good position to lob a grenade from.
+Such a position, if it exists, can be found by locating all positions from which a grenade can be lobbed to the target position, and ranking them for various characteristics. 
+<br>
+Finally, the highest ranking position that also meets a few other criteria (for example, not occupied by a team member, and not in the line of fire of other threats). 
+</blockquote>
+<FONT face="Courier" size=1>
+unsigned int  GetNearbyIndirectFireAttackPositionToTarget<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp (&nbspnodeid_t &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp aSourceSpot,<br> 
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp nodeid_t &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp aTargetSpot,<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp time_t &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp aMaxTravelTime,<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp weaponid_t  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp aWeaponId,<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp annotatednodeid_t* &nbsp &nbsp theResult /* out */ <br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ); <br>
+&nbsp &nbsp &nbsp &nbsp // returns the number of valid nodes, and (annotated <br>
+&nbsp &nbsp &nbsp &nbsp // and sorted by decreasing score) all valid nodes n in <br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp &nbsp GetNodesWithinXDistanceOfNodeAnnotated<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp &nbsp &nbsp (aSourceNode, aMaxTravelTime)<br> 
+&nbsp &nbsp &nbsp &nbsp // for which holds<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp &nbsp CanFireAtTargetUsingIndirectFireWeapon<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp &nbsp &nbsp         (n, aTargetSpot, aWeaponId)<br> 
+&nbsp &nbsp &nbsp &nbsp // and evaluates for these nodes n a score based on<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp + lack of line-of-sight/fire to n from aTargetSpot<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp + travel time to n from aSourceSpot<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp + tactical quality of position n<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp + cover in the general direction n - aTargetSpot<br>
+&nbsp &nbsp &nbsp &nbsp // &nbsp + a path, concealed from aTargetSpot, to n<br>
+</FONT> 
+<blockquote>
+ <font size=1>&nbsp;&nbsp;Figure 17: 
+ Example function definition for retrieving grenade attack positions
+ </font>
+ <p>
+Again, we need to find a number of tactical properties defining good grenade attack positions, given a source position <i>P<sub>source</sub></i> and a target position <i>P<sub>target</sub></i>. 
+<br>
+CGF uses the following heuristics: an attack position <i>P<sub>attack</sub></i> is more appropriate if 
+<ol>
+<li>it takes little time to get there (from <i>P<sub>source</sub></i>);
+<li>it offers concealment and cover from <i>P<sub>target</sub></i>;
+<li>it is a better tactical position;
+<li>it offers concealment and cover from the general direction to <i>P<sub>target</sub></i> (to offer protection from the blast, even if the grenade doesn't land precisely on target)
+<li>the attack position can be reached from <i>P<sub>source</sub></i> without being seen from <i>P<sub>target</sub></i> and its direct surroundings.
+</ol>
+<p>
+The implementation of the heuristics #1, #2 and #3 have counterparts in the 'estimate value of using grenade' algorithm, and need no further discussion.
+<p>
+Heuristic #4 has been introduced to correct the AI for not hugging walls when throwing grenades (as is implicitly suggested in the <a href="#MCWP 3-35.3">USMC MOUT</a> manual).
+<br>
+The heuristic is implemented as a function of amount of observation the position has from the general direction of the target. This tends to be zero or very small when obstacles are present shielding the attacker from the blast (as is illustrated below).
+<p>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_usmc_mcwp3353_a27.jpg">
+    <IMG SRC="./shots/thumb/arc_usmc_mcwp3353_a27.jpg" BORDER=0 width=133 height=100 ALT="Hugging the wall (as suggested by USMC MOUT field manual) [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_algorithm_wallhugging.jpg">
+    <IMG SRC="./shots/thumb/arc_algorithm_wallhugging.jpg" BORDER=0 width=133 height=100 ALT="The wall hugging and related observation angles  [click to see larger image] ">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/arc_positions_roomtoroom.jpg">
+    <IMG SRC="./shots/thumb/arc_positions_roomtoroom.jpg" BORDER=0 width=133 height=100 ALT="attack positions to toss a grenade into a room; the green position is the preferred one (because of the wall hugging possible) [click to see larger image] ">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 18(a,b,c):
+ [a] Hugging the wall (offering protection from the blast) when throwing a grenade (from <a href="#MCWP 3-35.3">USMC MCWP 3-35.3</a>, fig 27a); [b] The wall hugging and related observation angles; [c] The algorithm's result: positions to toss a grenade into a room - the green position is preferred because of the wall hugging possible
+ </font>
+ <p>
+ Heuristic #5 checks for the visibility of movement on the path from the source location to the grenade attack position, as observed from the target location and its immediate surroundings.
+ <br>
+ Basically, this heuristic is implemented by determining for each path (expressed in waypoints) to an attack position the number of waypoints in overseen by the target location and its surroundings.
+ <p>
+The heuristic is implemented as a function of amount of observation the position has from the general direction of the target. This tends to be zero or very small when obstacles are present shielding the attacker from the blast (as is illustrated below).
+ The implementation of this algorithm also needs than 0.3 ms on the test hardware. Such a performance enables the multiple AI actors determine attack positions frequently.
+ <p>
+ <br>
+<h5>
+<A NAME="h5_7">7. Experiments</a>
+</h5>
+The concepts, design and implementation mentioned above have been included in CGF. Below, you'll find some hard data on the implementation:
+<ul>
+<li>AQ2 hand grenades
+<li>rifle grenades (a CGF addition)
+</ul>
+<p>
+The hand grenades are thrown with one of three (player selectable) launch velocity of (about) 
+10 m/s, 18 m/s, or 23 m/s respectively, and about 0.5 m/s random deviation in the launching speed and direction. The hand grenades explode 2.0 seconds after being thrown (the throw animation itself takes almost 1 second). The hand grenades have a damage radius of 8.5m, provided a free line of sight is available to the target.
+<br>
+The hand grenades can be bounced.
+<p>
+The rifle grenades are modelled after the commonly known 40mm HE rifle grenade (as used in M203 grenade launchers): they explode on impact, but only after an 'arming delay' of 0.3 seconds to prevent the attacker to be hurt by the grenade impacting nearby. Again, the damage radius is about 8.5m, provide a free line of sight is available.
+<br>
+However, the muzzle velocity of the rifle grenade in CGF was chosen to be significantly lower (35 m/s) than the 'official' muzzle velocity (246 fps ~ 74 m/s). The muzzle velocity was reduced to maintain the balance between the game's weapons: at a lower muzzle velocity, the reach of the rifle grenade is shorter, and aiming the grenade is more difficult.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/map_actcity2.jpg">
+    <IMG SRC="./shots/map_actcity2_thumb.jpg" BORDER=0 width=133 height=100 ALT="actcity2 by CryptR">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/map_riotx.jpg">
+    <IMG SRC="./shots/map_riotx_thumb.jpg" BORDER=0 width=133 height=100 ALT="riotx by Ellusion">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/map_p1lightbeam.jpg">
+    <IMG SRC="./shots/map_p1lightbeam_thumb.jpg" BORDER=0 width=133 height=100 ALT="p1_lightbeam by Tristan 'P' Temple">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 19(a,b,c):
+ [a] The small, simple, urban outdoor Actcity2 map; [b] The medium size, city block outdoor/indoor Riotx map; [c] The large size, outdoor/indoor lighthouse map P1_Lightbeam
+ </font>
+ <p>
+Below you'll find the key figures for recorded grenade and rifle trajectories for a number of maps: 
+<ul>
+<li>
+'actcity2' is a small map, consisting of an urban setting with three squares connected by open roads, a few open buildings, and two closed buildings. It features mostly outdoor terrain. 
+<li>
+'riotx' is a medium size map, representing a small city block with street areas, indoor areas and accessible flat roof tops.
+<li>
+'p1_lightbeam' is a medium size map, featuring a light tower, large accessible roof tops, squares and indoor hallways, rooms and tunnels.
+ </ul>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/map_p1lightbeam2.jpg">
+    <IMG SRC="./shots/map_p1lightbeam2_thumb.jpg" BORDER=0 width=133 height=100 ALT="p1_lightbeam by Tristan 'P' Temple">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/map_city.jpg">
+    <IMG SRC="./shots/map_city_thumb.jpg" BORDER=0 width=133 height=100 ALT="city by Ruskprick">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/map_teacher.jpg">
+    <IMG SRC="./shots/map_teacher_thumb.jpg" BORDER=0 width=133 height=100 ALT="teacher by Ruskprick">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <font size=1>&nbsp;&nbsp;Figure 20(a,b,c):
+ [a] Another look at 'p1_lightbeam', this time indoors; [b] The large size, open city block City map; [c] The large size indoor school building map Teacher
+ </font>
+<ul>
+<li>
+'city' is a large size map, featuring wide open city blocks, balconies, rooftops, and a small number of rooms.
+<li>
+'teacher' is a large size map, featuring a large, 3 level school building with large hallways, a small theater, a sports hall, and a air vent tunnel network.
+</ul>
+<p>
+</blockquote>
+<p>
+<b>Table 1: map trajectory data</b>
+<p>
+<table border="1" cellpadding="4" cellspacing="0" width="530"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="25%" valign="top" bgcolor=black>
+	<font color="#FFFFFF" size=1 face="Verdana, Arial, Helvetica">
+	<B><br>property/map</B>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	<B>actcity2</B><br>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>riotx</B><br>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>p1_lightbeam</B><br>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>city</B><br>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>teacher</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>#waypoints (N)</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	473
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	673
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	811
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	951
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	1012
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B># doors</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	~ 6
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	~ 5
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	~ 10
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	~ 4
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	~ 33
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top" bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B><br>hand grenades</B>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>#trajectories</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	36781
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	58217
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	80068
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	84345
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	42870
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>avg #traj/target</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	78
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	87
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	99
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	87
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	42
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>max #traj/target</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	213
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	247
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	326
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	231
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	131
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>memory used</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	203 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	318 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	432 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	460 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	260 KB
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>avg trajectory size</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.7 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.6 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.5 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.6 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6.2 B
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>mem / #way pnt</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	441 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	485 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	546 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	495 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	264 B
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>pre-computing</B>
+	</font></td>
+	<td width=15%" align=center valign=top ><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>processing time</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	3h:27m
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6h:27m
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	7h:54m
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6h:52m
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	8h:40m
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>time / (N*(N-1))</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.056 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.051 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.043 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.027s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.030s
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>time / #traj</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.338 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.383 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.355 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.293s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	0.628s
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>benchmarks</B>
+	</font></td>
+	<td width=15%" align=center valign=top ><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>"can throw?"</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	2.22e6 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	2.12e6 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	2.04e6 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	2.08e6 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	2.32e6 s
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>"is appropriate?"</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	70300 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	63800 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	56300 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	67700 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	55800 / s
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>"attack position?"</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6600 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6200 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	4300 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5300 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	3900 / s
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top" bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B><br>rifle grenades</B>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>#trajectories</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	49133
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	60596
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	127875
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	124131
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	49691
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>avg #traj/target</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	104
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	90
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	158
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	131
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	49
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>max #traj/target</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	245
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	227
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	360
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	320
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	149
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>memory used</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	263 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	330 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	665 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	654 KB
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	294 KB
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>avg traj. size</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.5 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.6 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.3 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	5.4 B
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6.1 B
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>pre-computing</B>
+	</font></td>
+	<td width=15%" align=center valign=top ><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>processing time</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	93 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	169 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	353 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	269 s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	277 s
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top" bgcolor=black><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B><br>comparison</B>
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+	<td width=15%" align=center valign=top bgcolor=black><font color="#FFFFFF"
+	size=1>
+	&nbsp;
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size=1 face="Verdana, Arial, Helvetica">
+	<B>generating trajectories in-game</B>
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	8.8 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	8.5 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	8.9 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	6.7 / s
+	</font></td>
+	<td width=15%" align=right valign=top><font color="#FFFFFF"
+	size=1>
+	8.1 / s
+	</font></td>
+ </TR>
+ </table>
+<p>
+<blockquote>
+<font size=1>
+<b>Number of trajectories (#trajectories)</b><br>
+The trajectories have been computed with the map in its initial state. This means that most the doors present in the maps (few in any map but teacher) are closed (the default setting). This is the prime reason the number of trajectories recorded for teacher is this low. See <a href="h5_9">'Further Work'</a> for a discussion about doors and trajectories.
+<p>
+<b>Average trajectory size (avg trajectory size)</b><br>
+The average trajectory size consists of 5 bytes per trajectory plus the overhead of the lookup table data structures, amortized over all trajectories.
+<p>
+<b>Memory per waypoint (mem / #way pnt)</b><br>
+The results suggest a memory consumption linear in the number of waypoints, thus linear in the accessible game world surface. Open structures and differences in height increase the number of trajectories, whereas water areas decrease the number of trajectories (grenades cannot be thrown properly in water).
+<p>
+<b>Trajectory lookup benchmark ("can throw?")</b><br>
+The experiment consisted of 1 million 'does a feasible trajectory exist from waypoint N<sub>1</sub> to waypoint N<sub>2</sub>?' queries, for random N<sub>1</sub> and N<sub>2</sub>. The benchmark likely benefits from consistently hitting the L2 CPU cache, since the look up table fits in that cache<sup><a href="#ref_hardware">[2]</a></sup>.
+<br>
+Nevertheless, it illustrates that trajectory feasibility can be checked at virtually no cost, thus enabling the AI to test large numbers of waypoints for enabling an 'indirect fire' attack on a specific target.
+<p>
+<b>Grenade use value benchmark ("is appropriate?")</b><br>
+The experiment consisted of 1 million assessments of the value of a grenade thrown from waypoint N<sub>1</sub> to waypoint N<sub>2</sub>, for random pairs N<sub>1</sub>, N<sub>2</sub> that have a valid trajectory (this being the normal case when used by the AI).
+<br>
+In the query, the target (N<sub>2</sub>) area is inspected (also for being an area used for ambushes, sniping, or frequent traffic), exits from this area are tested for being in N<sub>1</sub>'s line of fire, and the alternative attacks from N<sub>1</sub>'s position are considered. Finally, the presence of multiple threats (16 random threat positions are assumed) are tested. All these aspects are combined into a single rating.
+<br>
+All of this typically is done within 0.1 ms, for the largest Action Quake2 maps, enabling frequent use of this (high-level) query.  
+<p>
+<b>Grenade attack positions benchmark ("attack position?")</b><br>
+The experiment consisted of 1 million queries for a best 'grenade attack position' within 2 seconds travel time from waypoint N<sub>1</sub> to attack a specific target at waypoint N<sub>2</sub>, for random pairs N<sub>1</sub>, N<sub>2</sub> that have a valid trajectory (this being the worst case for the algorithm).
+<br>
+The query returns positions which are ranked for their distance from  waypoint N<sub>1</sub>, for their concealment/cover from the attacked position N<sub>2</sub>, for having cover from the likely blast position, for their overall tactical rating, and for the amount of concealment along the path.
+<br>
+The performance measured is sufficient to enable the AI to check for grenade attack positions when appropriate.
+<p>
+<b>Generating trajectories in-game</b><br>
+This benchmark shows the performance of in-game generation of trajectories, as opposed to pre-computing them. The experiment involved the generation of 1000 trajectories from waypoint N<sub>1</sub> to waypoint N<sub>2</sub>, for random pairs N<sub>1</sub>, N<sub>2</sub> that have a valid trajectory (this being the normal case!).
+<br>
+With slight variations in performance most likely caused by the differences in geometry complexity of the maps, the performance seems independent of the map size, and is  about 0.1 s per trajectory.
+<p>
+The "time / (N*(N-1))" for pre-computing trajectories is less, mainly because during pre-computations, all targets N<sub>x</sub> for source N<sub>1</sub> are considered sequentially, thus enabling the caching of trajectory attempts. Such a situation does not likely occur in-game.
+<p>
+The "time / #traj" for pre-computing trajectories is higher, due to the extra efforts during pre-computing to obtain the most robust trajectory from a waypoint to another waypoint.
+</font>
+<p>
+<br>
+<h5>
+<A NAME="h5_8">8. Further Work</a>
+</h5>
+Some additional work is needed to integrate AI grenade handling fully into the game, though large changes to the current design and implementation are not expected.
+<br>
+Specifically, the following issues need work:
+<p>
+<b>Doors</b><br>
+Currently, trajectories are generated for the map as-is, thus without taking into account doors being able to open and close. 
+<br>
+Taking this into account requires a two-phase approach to generating trajectories: a first phase, with all doors closed, and a second phase in which all doors are open. In the trajectory record stored, a few flags already have been reserved to describe if a door is 'involved' in the trajectory, and whether the doors needs to be open or closed.
+<p>
+<b>Team level grenade handling</b>
+<br>
+For the team level AI to efficiently employ grenades, additional queries need to be developed to:
+	<ul>
+	<li>decide on the best candidate team member for a grenade attack; and
+	<li>decide at team-level whether using a grenade makes sense
+	</ul>
+In addition, proper team level response to incoming grenades need to be added.
+<p>
+<br>
+<h5>
+<A NAME="h5_9">9. Conclusions</a></h5>
+Bouncing grenades around the corner and tossing them through windows and holes clearly is within reach of game AI.
+<br>
+Moreover, AI that understands how to tactically use grenades can be implemented efficiently, even if it involves reasoning such as 'does it make sense to use them in this situation?', 'what is the best attack position to launch grenades from?'. 
+<p>
+This article first explores the feasibility of pre-computing grenade trajectories, and then illustrates the concepts behind tactical yet efficient reasoning about using grenades.
+<p>
+<h5>
+<A NAME="h5_9_1">9.1 Pre-computing Trajectories</a>
+</h5>
+Generating hand grenade trajectories at run-time is expensive. Consuming about 0.05 s to 0.1 s CPU time for a 'human like' bouncing trajectory, this is an order of magnitude too slow to enable the AI to frequently consider using a hand grenade.
+<p>
+Pre-computing a look up table of hand grenade trajectories leaves the AI more CPU time to actually think about the proper and tactical use of the grenade. 
+These pre-computed trajectories, constituting a small subset of all trajectories possible between game world locations, need to representative: if there exists a feasible, safe, and relevant trajectory in the game world, the AI should be able to reconstruct this (or a similar) trajectory from the look-up table. 
+<br>
+A dense grid of waypoints, covering all terrain accessible to the game actors, doubles as a backbone to compute and record representative trajectories. And this re-use of the waypoints facilitates tactical AI reasoning about attack positions and the grenade's effect on the threat.
+<br>
+The individual trajectory is best recorded as the direction to the first bounce spot. Using this bounce spot to aim the grenade is reasonably robust against deviations in the attackers exact position relative to the nearest waypoint. The direction towards the bounce spot can be recorded in polar coordinates, to reduce the amount of memory needed.
+<p>
+Given two locations in a game world, it is hard to analytically determine a feasible grenade trajectory. Therefor, a 'genetic algorithm' was developed to 'grow and select' trajectories. A fitness function determined the quality of the trajectory in terms of reaching the target, being robust, and looking 'human created'. The latter property proved to toughest to achieve.
+<br>
+Generating trajectories for a map is very time consuming, taking 4 to 9 hours (about as much time as it takes to perform radiosity lighting for that map). However, the problem lends itself well to parallel processing, and should not cause large problems for a game developer.
+<h5>
+<A NAME="h5_9_2">9.2 Memory Consumption</a>
+</h5>
+The look-up table of trajectories mainly consists of trajectories, and a few KB overhead. To store an individual trajectory some 4 or 5 bytes are need. 
+<br>
+For a single type of grenade (such as the hand grenade), the amount of memory required varies from 200KB for a small game world to almost 500KB for the larger Quake2 game worlds. The amount of memory required is a more or less linear function of the accessible game world surface.
+<p>
+The most effective way to reduce the memory consumption is to filter out more trajectories. For example, trajectories that never would make sense, either tactically, or within the game (rules). A level design tool can easily be extended to annotate certain areas of the game world as being inappropriate for using grenades.
+<p>
+The trajectory look-up tables are organized per target waypoint, thereby enabling the AI to quickly retrieve feasible attack positions. 
+<p>
+<h5>
+<A NAME="h5_9_3">9.3 CPU Utilization</a>
+</h5>
+The highest CPU utilization seems to occur at the Teacher and P1_Lightbeam maps. 
+<br>
+An estimate of the CPU utilization for a worst-case 16-on-16 engagement, with every AI actor involved, plenty of grenades, and always a means to attack using hand grenades, is:
+<p>
+<table border="0" cellpadding="4" cellspacing="0" bordercolor="#C0C0C0">
+<tr>
+	<td align=left><font color=white size=2><b>budget / s</b></font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=left><font color=white size=2><b>AI activity for 32 actors</b></font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2>20.0 ms<p></font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=left><font color=white size=2>total AI grenade handling activity<p></font></td>
+</tr>
+<tr>
+	<td align=left><font color=white size=2><b>measured</b></font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=left><font color=white size=2><b>based on benchmark results</b></font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2>0.1 ms</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>320</font></td>
+	<td align=left><font color=white size=2>checks for the existence of a grenade trajectory</font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2>1.2 ms</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>64</font></td>
+	<td align=left><font color=white size=2>checks for grenades being appropriate</font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2>16.4 ms</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>64</font></td>
+	<td align=left><font color=white size=2>checks for the best grenade attack position</font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2>0.8 ms</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>6</font></td>
+	<td align=left><font color=white size=2>aiming attempts</font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2><hr></font></td>
+	<td align=right><font color=white size=2>+</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=left><font color=white size=2><hr></font></td>
+</tr>
+<tr>
+	<td align=right><font color=white size=2>18.4 ms</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=right><font color=white size=2>&nbsp;</font></td>
+	<td align=left><font color=white size=2>estimated CPU load for 32 actors</font></td>
+</tr>
+</table>
+<p>
+This estimate (18.4 ms CPU time per second) is within the CPU utilization budget (20 ms per second) set for this part of the AI.
+<p>
+<h5>
+<A NAME="h5_9_4">9.4 Tactical grenade-related AI</a>
+</h5>
+High-level yet efficient tactical reasoning is possible once the look-up table for grenade trajectories is in place (together with a waypoint oriented 'database' describing the terrain). 
+<br>
+Considering whether a grenade thrown into an area would likely flush out threats into the line of fire, whether the threat would likely evade the blast, whether there are other ways to attack the threat with direct fire: this together takes the AI less than 0.1 millisecond of CPU time on 'standard' hardware<sup><a href="#ref_hardware">[2]</a></sup>. 
+<p>
+The AI has available the following basic grenade related queries to (pro-actively) employ grenades:
+<ul>
+<li>
+a simple check if from a specific waypoint, a target position can be engaged using a grenade;
+<li>
+an assessment of the value of attacking a target position with a grenade from a specific position;
+<li>
+the generation of tactically sound launch positions nearby a specific position, to attack a target position with a grenade
+</ul>
+These queries, combined with the existing CGF tactical queries dealing with tactical movement planning, threat lines of fire, etc., enable an AI to better emulate the behavior of a trained soldier, challenging opponent, or reliable and realistic team member.
+<p>
+<h5>
+<A NAME="h5_9_5">9.5 Limitations and complications</a>
+</h5>
+Whereas pre-computed 'terrain reasoning information' may enable more advanced game AI, it also introduces complications.
+<p>
+Pre-computed terrain information assumes a fairly static game world. Dynamic parts of the world, such as doors, vehicles, destructible terrain, or temporary smoke clouds are tough to "catch" in look-up tables.
+<br>
+If the number of these exceptions is not that large, they can be dealt with by means of special entries in the look up table, or with temporary patches of the look-up table. 
+<br>
+If the game requires a strongly dynamic world (typically also consuming more rendering CPU time), the AI design needs to be either less ambitious, or requires more CPU and memory.
+<p>
+The size terrain reasoning databases typically scales with the size of the terrain. For games aiming to provide a vast terrain in combination with slow moving individual combatants and long distance combat, such as NovaLogic's Delta-Force series and, to some extent, Zombie's SpecOps series, the claim on memory might be too heavy. More work is required in developing data representations that efficiently capture positions and associated (long-range) visibility, cover and concealment.
+<p>
+<br>
+<h5>
+<A NAME="h5_10">10. About CGF-AI</a>
+</h5>
+<p>
+CGF is a project developing AI and AI subsystems for autonomous fire-team and squad level tactics. The AI is prototyped using modifications of 3D 'open' games, thereby also benefiting from the 25,000+ gamers that played CGF. 
+<p>
+The CGF releases in 1999 are unique in providing autonomous yet scriptable teams, bounding overwatch team maneuvers, combat experience recording and adaptive tactics, terrain based reinforcement learning, smart environment scanning, terrain understanding, emergent combat patterns, and tactical movement planning.
+</blockquote>
+<center>
+<IMG SRC="./shots/cgfai_api.gif" width=540 height=192 BORDER=0 ALT="The AI focus on combat, terrain, tactics, soldiers, and teams illustrated">
+</center>
+<blockquote>
+ <font size=1>&nbsp;&nbsp;Figure 21:
+ The AI focus on combat, terrain, tactics, soldiers, and teams illustrated. Most of the terrain database content is computed off-line, enabling the AI in-game to perform higher level reasoning more efficiently
+ </font>
+ <p>
+In 2000, the terrain reasoning subsystem was overhauled for better performance and to handle larger terrain. In addition, terrain classification and ambush planning were added.
+<p>
+The CGF AI itself (without game logic) is some 140 KLOC of C++ and C, using plenty of heuristics, FSM's, fuzzy logic, and (off-line only) genetic algorithms.
+<p>
+<h5>
+<A NAME="h5_11">Footnotes</a>
+</h5>
+<p>
+ <a name="standard_ai"><u>&nbsp;&nbsp;1</u></a> 
+ <font size=1>
+ The simple solution to grenade handling is to have the AI randomly 'just' throw grenades (in a straight line) to the last visible location of a threat.
+ Optionally, have the AI cheat and use the correct velocity to deliver the grenade 'on target', even though the player is limited to a fixed launch velocity.
+ <br>
+ This solution has been implemented in many tactical shooters, since 1998.
+ <p>
+ </font>
+<p>
+ <a name="ref_hardware"><u>&nbsp;&nbsp;2</u></a> 
+ <font size=1>
+ PentiumIII@500/100Mhz (Katmai, 512KB slow L2 cache), 128MB SDRAM, NVidia TNT2 Ultra graphics, Windows2000. C++/C code compiled with MSVC6, release mode (optimized).
+ </font>
+<p>
+<p>
+ <a name="smartterrain"><u>&nbsp;&nbsp;3</u></a> 
+ <font size=1>
+ Key in getting the AI to adapt to human tactics (instead of homing in to the flaws of the AI behavior) is to value human behavior more than AI behavior. It is not that easy to get this right. You can download the CGF 0.81 (December '99) release to test it.
+ <br>
+ Recently, at the <a href="http://www.gamasutra.com/features/20001101/woodcock_01.htm">2000 Game Developer Conference Game AI round table</a>, AI mechanisms that recorded experience and knowledge "in" their environment were dubbed 'smart terrain'. 
+ <br>
+ </font>
+
+ <h5>
+ <A NAME="references">B. Annotated References</a>
+ </h5>
+ <ul>
+ <li><a name="Snook">[Snook]</a><br>
+ Snook, Greg, "<i>Simplified 3D Movement and Pathfinding Using Navigation Meshes</i>" in "<a href="http://www.amazon.com/exec/obidos/ASIN/1584500492/o/qid=975015149/sr=8-8/ref=aps_sr_b_4_1/106-6683842-7055660">Game Programming Gems</a>", M. Deloura (ed.), Charles River Media, 2000<br>
+ <font size=1>Good overview on terrain representations for AI in 3D game worlds, and their use for navigation purposes</font>
+ <p>
+ <li><a name="Reece">[Reece]</a><br>
+ Reece, D., Krauss, M., Dumanoir, P., "<i><a href="http://www.sisostds.org/cgf-br/9th/scripts/user_Paper_info.cfm?&client=9THCGF&Paper_Num=9TH-CGF-045&page=view_papers_by_papernum.cfm&process=Papers">Tactical Movement Planning for Individual Combatants</a></i>", in Proceedings of the 9th Conference on Computer Generated Forces and Behavioral Representation, 2000<br>
+ <font size=1>One of the few papers dealing with tactical path finding. Describes the relation between various terrain representations and tactical path finding. The CGF's approach discussed on this page is comparable, though more geared towards smaller 'worlds', and low CPU utilization.</font>
+ <p>
+ <li><a name="HalfLifeSDK">[Half-LifeSDK]</a><br>
+ <a href="http://www.fileplanet.com/index.asp?search=half-life+sdk&file=44991">Half-Life SDK 2.1</a>, Valve Software, 2000<br>
+ <font size=1>Half-Life (AI by Steve Bond) has the enemy NPC use grenades in a simple way: check if a trajectory straight to last observed position of the player is feasible. No intended bouncing. No explicit clue about the grenade's area damage effect. No reasoning about the value of using grenades. No notion of moving elsewhere to throw a grenade. Does check for nearby squad members that might get hurt. 
+ <br>
+ The NPC cheat by having available an unlimited amount of hand grenades.
+ </font>
+ <p>
+ <li><a name="Laird">[Laird]</a><br>
+ Laird, J.E., "<i><a href="http://ai.eecs.umich.edu/people/laird/papers/anticipation-print.pdf">It knows what you're going to do: Adding anticipation to a Quakebot</a></i>" in AAAI 2001 Spring Symposium Series: Artificial Intelligence and Interactive Entertainment, March 2000, AAAI Technical Report SS-00-02
+ <br>
+ <font size=1>Quake2 bot, external to the game, based on the SOAR-agent framework. Creates detailed model of opponents, predicts opponent behavior and uses that in it tactics, thereby outpacing commercial game AI. Implemented in 750 rules. A single AI character seems to consume 10% of a 400Mhz PentiumIII (about the total budget for a few dozen CGF bots). The AI primarily is designed for one-on-one combat. The anticipation illustrated likely loses value in a more noisy, frantic deathmatch among 20 agents. The QuakeBot's generic, domain-independent, approach to prediction is a nice contrast to the domain-specific performance oriented implementation of tactical concepts presented in this article.
+ </font>
+ <p>
+ <li><a name="MCWP 3-35.3">[MCWP 3-35.3]</a><br>
+ MCWP 3-35.3: <a href="http://www.doctrine.quantico.usmc.mil/mcwp/htm/mcwp3353.htm">Military Operations on Urbanized Terrain (MOUT)
+</a>, US Marine Corps Doctrine Division, 1998
+ <br>
+ <font size=1>Appendix A, addressing fundamental combat skills, emphasizes grenades being thrown via windows, or through holes, something most (combat simulator or tactical shooter) game AI's are incapable of.  
+ </font> 
+ <p>
+ <li><a name="terrainanalysis">[Terrain Analysis]</a><br>
+ <a href="./design_terrain_ranking.shtml">CGF Terrain Specific AI - Terrain analysis</a>, William van der Sterren, 1999/2000
+ <br>
+ <font size=1>Describes off-line computation of the tactical value of individual positions, solely using the terrain, and movement and weapon capabilities. 
+ </font> 
+ </ul>
+ <br>
+ <p>
+ <h5>
+ <A NAME="changelog">C. CGF Terrain Static Ranking Change Log</a>
+ </h5>
+<table border="1" cellpadding="4" cellspacing="0" width="465"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>date</B>
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Symbol">
+	<B>D</B><br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>description (incl. link if applicable)</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Dec 12, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    minor editing<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Dec 09, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    added heuristic #5 to grenade attack position selection, and updated benchmarks accordingly<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Dec 07, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    algorithm and computations updated<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Nov 19, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    updated algorithm, redid computations and benchmarks (teacher, p1_lightbeam, riotx)<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Nov 11, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    updated algorithm (40% less memory consumed), redid computations except for p1_lightbeam<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Oct 29, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    updated algorithm, added map, new statistics<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Oct 23, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    added more experimental data<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Oct 22, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	o<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    draft version<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ </BLOCKQUOTE>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 2000.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

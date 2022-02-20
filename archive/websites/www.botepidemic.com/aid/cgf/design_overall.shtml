@@ -1,0 +1,851 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/bravo_mourning_at_end.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot4.jpg" border=0 align=center alt="Bravo stand by one of their fallen."></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/vulture_pulling_back_on_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot10.jpg" border=0 align=center alt="Vulture team pulling back onto a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_police_drainpipe.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot15.jpg" border=0 align=center alt="A bot sniper team moves into position"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00762
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <br>
+ <!-- header -->
+ <BLOCKQUOTE>
+ <H3>
+ <B>CGF (AI) Overall Design</B>
+ <BR>
+ </H3>
+ <!-- intro -->
+
+ <p>
+ <B>CGF in areas and layers</B>
+ <br>
+ The CGF AI has been organized in three main areas and five layers. 
+ <br>
+ The three main areas are illustrated as columns in the diagram below 
+ and reflect the three different kinds of AI required:
+ <UL>
+	<LI>individual (bot) AI
+	<LI>team AI
+	<LI>terrain specific AI
+ </UL>
+ These three areas together cover about 90% of the CGF AI. Solely the CGF 
+ mission parsing and execution is not covered.
+ <p>
+ </blockquote>
+ <TABLE border=0 width=545>
+ <TR>
+ <td width=85>
+ <TABLE border=0>
+ <TR height=40>
+ <td>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+    &nbsp;
+	</font>
+ </td>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+ <td>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+    strategic
+	<br>
+	(mission)
+	</font>
+ </td>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+ <td>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+    tactic<br>
+	(2.5 - ... s)
+	</font>
+ </td>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+ <td>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+    planning
+	<br>
+    (0.5 - 60 s)
+	</font>
+ </td>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+ <td>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+    behavior
+	(0.1 - 1 s)
+	</font>
+ </td>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+ <td>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+    env i/o<br>
+	(frame)
+	</font>
+ </td>
+ </TR>
+ </TABLE>
+ </td>
+ <td>
+ <TABLE border=0 width=460>
+ <TR height=40>
+    <!-- header -->
+	<TD width=25% bgcolor="#337f7f" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+	<B>bot AI</B>
+    </font>
+	</TD>
+	<TD width=5% valign=middle>
+	
+	</TD>
+	<TD width=25% bgcolor="#337f7f" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+	<B>team AI</B>
+	</font>
+	</TD>
+	<TD width=5% valign=middle>
+	
+	</TD>
+	<TD width=40% bgcolor="#007f33" valign=middle  align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#ffffff">
+	<B>terrain AI</B>
+	</font>
+	</TD>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+    <!-- strategic -->
+    <A HREF="#strategy_bot">	
+	<TD width=25% bgcolor="#22AAAA" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" color="#305050" >
+	bot strategy
+    </font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#strategy_team">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	objectives & orders
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+	<TD width=40% valign=middle  align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	&nbsp;
+	</font>
+	</TD>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+    <A HREF="#tactics_bot">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	individual tactics
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#tactics_team">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	team tactics
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#tactics_terrain">	
+	<TD width=40% bgcolor="#00FF66" valign=middle  align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	tactical terrain analysis
+	<br>
+	(off-line)
+	</font>
+	</TD></A>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+    <A HREF="#planning_bot">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	activity planning
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#planning_team">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	procedure planning
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#planning_terrain">	
+	<TD width=40% bgcolor="#00FF66" valign=middle  align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	path planning
+	<br>
+	(off-line)
+	</font>
+	</TD></A>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+    <A HREF="#behavior_bot">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	basic behavior
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#behavior_team">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	team behavior
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#behavior_terrain">	
+	<TD width=40% bgcolor="#00FF66" valign=middle  align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	location based
+	<br>
+	action recording
+	</font>
+	</TD></A>
+ </TR>
+ <TR height=10>
+	<TD>
+	</TD>
+ </TR>
+ <TR height=40>
+    <A HREF="#framelevel_bot">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	sensing / impulses
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+    <A HREF="#framelevel_team">	
+	<TD width=25% bgcolor="#33FFFF" valign=middle align=center>
+	<font size="1" face="Verdana, Arial, Helvetica" >
+	team input collection
+	</font>
+	</TD></A>
+	<TD width=5% valign=middle>
+	
+	</TD>
+	<A HREF="framelevel_terrain">
+	<TD width=40% bgcolor="#00FF66" valign=middle  align=center >
+	<font size="1" face="Verdana, Arial, Helvetica">
+	terrain description
+	<br>
+	environment model
+	</font>
+	</TD></A>
+ </TR>
+ </TABLE>
+ </td>
+ </TR>
+ </TABLE>
+ <blockquote>
+ The five layers reflect a time-wise separation of AI functionality (from bottom to top):
+ <UL>
+	<LI><B>frame level environment input & output (&lt; 0.1 s)</B>
+	    <br>
+	    <A NAME="framelevel_bot">Bots</A> sample the environment for vision, hearing and radio/chat messages reception.
+		Bots also generate (emulated) player input for firing, turning, movement, special
+		animations.
+		<p>
+		<A NAME="framelevel_name">Teams</A> sample the positions, and lines of vision/fire, of all visible friendly and
+		enemy teams.
+		<p>
+		<A NAME="framelevel_terrain">Terrain</A> AI maintains an easy-to-query model of the environment, with information on
+		the more complex entities in the game (breakable glass, elevators, doors, etc.).
+		Off-line (during terrain file creation) the terrain AI already labelled way points
+		with the location's characteristics (to save on in-game environment sampling).
+		<p>
+	<LI><B>behavior level elementary tasks (0.1 .. 1.0 s)</B>
+	    <br>
+		<A NAME="behavior_bot">Bots</A> execute elementary tasks such as reloading, opening doors, aiming, 
+		moving from way point to way point to way point, jump calculations. These tasks depend
+		on information obtained during frame level sampling.
+		<p>
+		<A NAME="behavior_team">Teams</A> execute the SOP (standard operating procedure) steps, take into account request
+		from team members for cover, new positions, reload/bandage breaks, and issue new
+		commands as a result.
+		<p>
+		<A NAME="behavior_terrain">The terrain AI</A> tries to collect (location based) activity data for subsequent analysis.
+		In addition, the terrain AI is able to perform various path finding queries.
+		<p>
+	<LI><B>action planning/execution level (0.5 .. 60+ s)</B>
+	    <br>
+		<A NAME="planning_bot">To handle</A> complex situations that cannot be dealt with by elementary tasks, the
+		bots construct and execute (small) plans. Examples of these complex situations
+		include: opening doors that rotate towards the bot, using button operated
+		doors and elevators, entering team formations.
+		<br>
+		The plans are constructed when a bots needs to accomplish a (new) goal.
+		<p>
+		<A NAME="planning_team">Team planning</A> and plan execution mainly occurs during procedure execution. Then, planning is done based on procedure goal,
+		team size and team member positions. Depending on the procedure, these plans
+		are adjusted more or less frequently.
+		<p>
+		<A NAME="planning_terrain">The terrain AI</A> pre-computes all possible paths at fore hand (thus off-line), to
+		enable speedy on-line path finding and distance calculations.
+		<p>
+	<LI><B>tactics level (2.5 .. s)</B>
+	    <br>
+        <A NAME="tactics_bot">Bot tactics</A> include sniping, suppression fire, aimed fire, move while ready to engage, 
+		move for cover, and surroundings scanning. And the tactics include the decision to
+		switch to other tactics, either bot inspired or in response to team procedures.
+		<p>
+		<A NAME="tactics_team">Team tactics</A> include the continuous evaluation of the team's (and team's threat)
+		positions and lines of fire. Based on this evaluation, new procedures are selected,
+		and the set of acceptable procedures is adjusted.
+ 		<p>
+		<A NAME="tactics_terrain">Terrain AI</A> can get tactical as well. Most of the tactical terrain rating is done
+		off-line, but part of the info is obtained in-game after each mission.
+		<p>
+	<LI><B>strategic level (mission duration)</B>
+	    <br>
+		<A NAME="strategy_bot">CGF bots do not really have a strategy, since they consider team instructions
+		all important - or, in other words, their strategy is to comply with team
+		instructions disregarding their own survival. (Typically Q2 DM bots do have
+		more explicit strategies, including, for example guarding specific item respawn
+		spots).
+		<p>
+		<A NAME="strategy_team">The CGF team strategy is to comply to the mission's script and objectives.
+		<p>
+		There is no strategic terrain AI.
+		<p>
+	</UL>
+ <p>
+ <p>
+ <p>
+ <B>CGF: communicating subsystems</B>
+ <br>
+ In addition to distinguishing layers and areas, the communications between
+ the AI components was given a good deal of attention.
+ <p>
+ <IMG SRC="./shots/design_arch_comm.gif" width=352 height=319 BORDER=0 ALT="CGF communication structure">
+ <p>
+ Bot behavior basically deals with sensor input, and responds via emulated keyboard
+ and mouse activity. The bot behavior is directed by tactical actions and plans to
+ be performed.
+ <p>
+ The tactical behavior consists of a finite state machine taking care of the
+ continuity in the behavior, and of planning subsystem assisting the finite state
+ machine with longer term complex actions and navigation.
+ <br>
+ The tactical behavior, in turn, is directed by the team orders.
+ <p>
+ The team action, seen per team procedure, results in commands issued to the 
+ individual team members. The team procedure is a bit similar to a 'play'
+ in american football, but typically deals with more diverse situations, notably
+ in team size, surroundings and duration.
+ <p>
+ All bot behavior, bot action, and team activity is being observed and analyzed.
+ <p>
+ Based on the analysis of the situation (including visible and predicted friendly
+ and hostile teams), decisions are made about team procedures to be executed. 
+ Combined with information and instructions from the mission script, the team will
+ select the best tactical procedure.
+ <p>
+ Finally, the mission script captures initial positions and plans for the teams.
+ Plans either define a 'rule-of-engagement', such as patrol or snipe, or contain
+ more detailed movements and responses to enemy contact. As can seen from the diagram,
+ the mission script affects team behavior only.
+ <br>
+ <p>
+ <p>
+ <B>CGF: code organization and size</B>
+ <br>
+ Code-wise, CGF is composed of the original (Action) Quake2 code, extended with an
+ AI consisting of 6 modules. The (Action) Quake2 is about 42KLOC, and accounts
+ for solely 28% of CGF (in other words, the AI occupies 100KLOC and is almost three times as big the game code). Already the module handling tactics (threats, terrain, team procedures) is bigger than AQ2.
+ <p>
+ For the really nosey people among us, an overview of an older archive is listed as well. It is easy to see where most of the effort was spent (though a good amount of code was removed as well).
+ <p>
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>
+        CGF 0.85 archive, June 2000
+        </B>
+        </font></TD>
+    </TR>
+ </TABLE>
+    <hr color ="#C0C0C0">
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>module</B>
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>#LOC</B>
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>%</B>
+        </font></TD>
+    </TR>
+ </TABLE>
+    <hr color ="#C0C0C0">
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        bot AI
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        18,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        12
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        team AI (excluding team procedures)
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        12,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        8
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        tactics (threats / terrain / procedures)
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        45,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        31
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        navigation
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        7,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        5
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        mission / mission scripts
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        9,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        6
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        miscellaneous
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        13,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        9
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        &nbsp;
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        &nbsp;
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        &nbsp;
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        (Action) Quake2 (monster code stripped)
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        41,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        28
+        </font></TD>
+    </TR>
+ </TABLE>
+    <hr color ="#C0C0C0">
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        146,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        100
+        </font></TD>
+    </TR>
+ </TABLE>
+ <p>
+ <br>
+ <p>
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>
+        CGF 0.80 archive, November 1999
+        </B>
+        </font></TD>
+    </TR>
+ </TABLE>
+    <hr color ="#C0C0C0">
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>module
+        </B>
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>#LOC</B>
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        <B>%</B>
+        </font></TD>
+    </TR>
+ </TABLE>
+    <hr color ="#C0C0C0">
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        bot AI
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        16,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        13
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        team AI (excluding team procedures)
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        12,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        10
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        tactics (threats / terrain / procedures)
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        25,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        21
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        navigation
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        7,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        6
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        mission / mission scripts
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        8,500
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        7
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        miscellaneous
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        10,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        8
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        &nbsp;
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        &nbsp;
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        &nbsp;
+        </font></TD>
+    </TR>
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        (Action) Quake2 (monster code stripped)
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        40,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        34
+        </font></TD>
+    </TR>
+ </TABLE>
+    <hr color ="#C0C0C0">
+ <table border="0" cellpadding="2" cellspacing="0" width="460"
+        bordercolor="#C0C0C0">
+    <TR>
+        <td width="70%" valign="top"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        </font></TD>
+        <td width="17%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        118,000
+        </font></TD>
+        <td width="13%" valign="top" align="right"><font color="#FFFFFF"
+        face="Verdana, Arial, Helvetica" size=2>
+        100
+        </font></TD>
+    </TR>
+ </TABLE>
+ <p>
+ The six AI modules handle the AI for the individual bot (state machine and planning engine),
+ the team (state machine, and commands), tactics (a large set of (key) algorithms analyzing
+ threats, teams and terrain to support bot actions and team procedures), path finding, mission support
+ and some miscellaneous code.
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br>
+ <BR>
+ </BLOCKQUOTE>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

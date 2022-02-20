@@ -1,0 +1,329 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_storming_the_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot6.jpg" border=0 align=center alt="Charlie storm a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/mclanes_at_corner.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot11.jpg" border=0 align=center alt="While one bot is firing the other advances"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sabotages_thru_door.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot16.jpg" border=0 align=center alt="Two bots moving through a doorway"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00614
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <!-- header -->
+ <br>
+ <H3>
+ <B>CGF Features</B>
+ <BR>
+ </H3>
+ <!-- intro -->
+ Below, you'll find the list of AQ2CGF features, as they are to appear in the 
+ upcoming versions. I rather present you the features instead of stating that 
+ CGF  has "incredible AI". That's up to you to decide, isn't.
+ <br><br>
+ Features in white have already been developed, 
+ whereas the features listed in <font color=#B0B0B0>grey</font> 
+ are yet to be implemented in the corresponding version [last update: August 07, 99].
+ <BR>
+ The list of features is broken down into four categories (for clarity -
+ yeah right):
+ <I>Bots</I>, 
+ <I>Team Tactics and Tactical Terrain Understanding</I>, 
+ <I>Missions</I>, or
+ <I>Scripting, maps, documentation, misc.</I>.
+ <BR>
+ Version 0.8 will be the first public version, version 0.9 the next, etc. 
+ <BR>
+ And yes, the list is long because that's what it takes to play Action Quake2 :)
+ <BR><br>
+ <!-- features 0.8 -->
+ <IMG SRC="./graphics/pixel20.gif" BORDER=0 width=100% height=1 ALT="">
+ <H4>
+ CGF 0.8 ('1st release') features
+ </H4>
+ <H5>
+ <B>Bots</B>
+ </H5>
+ <UL>
+ <LI>Vision affected by target distance, light level + muzzle flashes at target, ir vision, target movement, visible target body parts, target near border of field of vision, and glass between observer and target.
+ <LI>Hearing distinguishes between threat sounds (weapon sounds, steps, pain, etc.) and indirect sounds (doors opening or closing).
+ <LI>Reasonable (and not perfect) handling of AQ2 map items such as drain pipes/rope ladders, ordinary ladders, <font color=#B0B0B0>doors</font>, as well as Coca Cola jumps (urban).
+ <LI>Rudimentary prevention of AQ2 falling damaging.
+ <LI>Bandaging.
+ <LI>Reloading.
+ <LI>Distance/ammo based weapon selection.
+ <LI>Use automatics (M4, MP5) in burst rate controlled mode and full automatic mode.
+ <LI>Use sniper rifle in standard and zoomed mode.
+ <LI>Use MK23 pistol and akimbo option.
+ <LI>Aiming accuracy governed by distance, target movement with regard to viewer, target tracking time, target visibility (see above) and skill.
+ <LI>Prioritize threats based on distance and weapon used.
+ <LI>Predict threat position based on last observed position, movement, combined with sound cues from threat.
+ <LI>Provide fire suppression on likely threat movement avenues, when applicable.
+ <LI>AQ2 combat radio usage.
+ </UL>
+ <H5>
+ <B>Team Tactics and Tactical Terrain Understanding</B>
+ </H5>
+ <UL>
+ <LI>Fire teams (size 1...8 members).
+ <LI>Dynamic combat situation assessment (using fuzzy set theory) determines most
+     appropriate team tactics.
+ <LI>Standard team combat tactics: mass fire, reinforce front, pursuit, showdown/take cover, regroup.
+ <LI>Six team combat modes: attack, defend, advance, pullback, snipe/snipe & spot, patrol.
+ <LI>Dedicated AI for bounding overwatch move up (aka "advance") and pullback.
+ <LI>Dedicated AI for sniper and combined sniper/spotter operations.
+ <LI>Dedicated AI for patrolling the key areas of a map (areas listed in the script, 
+     teams can either patrol all areas or a per team defined subset).
+ <LI>Intra-team threat info sharing (team members respond to threats spotted and signalled by team mates).
+ <LI>Scriptable inter-team communication via go-codes.
+ <LI><font color=#B0B0B0>Player to team-interaction via go-codes</font>.
+ <LI>Understands terrain (cover positions, sniper positions (+ spotter positions), strong defensive positions, wall hugging positions).
+ <LI>Construct 'safe' and 'stealth' paths under combat (balancing distance and cover/wall hugging resp. out of sight/dark spots).
+ <LI>Standard (assembly) formations (line, wedge, star).
+ <LI>Path algorithms (Floyd, A*) and terrain algorithms (custom) use a pre-computed terrain database (<6MByte per map) where possible, enabling CGF to perform on lower-end CPUs
+ </UL>
+ <H5>
+ <B>Missions</B>
+ </H5>
+ <UL>
+ <LI>Mission file format is text (any text editor can be used to edit missions)
+ <LI>Missions define mission objectives, map, respawn rules, forces, teams, members + load out (= weapons, ammo, items), and initial team battle orders.
+ <LI>Two or more opposing forces.
+ <LI>Multiple teams per force (CPU bound).
+ <LI>Team contains up to 8 members and has initial battle orders.
+ <LI>Each team member may be customized (model & skin, weapons, ammo, items and skill [for bots]).
+ <LI>Force based scoring (instead of skin/model based).
+ <LI>Objectives include elimination of force, team, or individual, time out, and <font color=#B0B0B0>occupation of location</font>.
+ <LI>Objective based mission branching (next mission is selected on objectives achieved/failed).
+ <LI>Per objective, multiple candidate next missions may be listed, from which a random mission is picked.
+ <LI>Team battle orders include commands such as insert, wait, moveup, attack, defend, radio, pullback, set on-contact behavior, spread out, and rudimentary (goto) control flow.
+ <LI>Stand-alone (command-line) mission verifier to support mission editing.
+ </UL>
+ <H5>
+ <B>Scripting, Maps, Documentation, Misc.</B>
+ </H5>
+ <UL>
+ <LI>Maps restricted to urban, city, <font color=#B0B0B0>downtown, (museum?)</font> (route file creation for arbitrary maps not documented).
+ <LI>Training missions against fixed positions (team occupying certain locations).
+ <LI>Training missions based on specific weapon (sniper against patrolling teams)
+ <LI><font color=#B0B0B0>Random team-on-team fight missions</font>.
+ <LI>Basic script modification manual ('from scratch' script authoring not documented).
+ <LI>Multi-map chained missions (single player) and <font color=#B0B0B0>co-op multi-player</font>.
+ <LI>Breakable glass
+ </UL>
+ <!-- features 0.9 -->
+ <IMG SRC="./graphics/pixel20.gif" BORDER=0 width=100% height=1 ALT="">
+ <H4>
+ CGF 0.9 ('2nd release') features
+ </H4>
+ <H5>
+ <B>Bots</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Shotgun type weapons (M9 & Handcannon) and close combat AI</font>.
+ <LI><font color=#B0B0B0>Hand grenade usage</font>.
+ <LI><font color=#B0B0B0>Use of dropped weapons</font>.
+ <LI><font color=#B0B0B0>Misc. AI tuning and tweaks</font>.
+ </UL>
+ <H5>
+ <B>Team Tactics and Tactical Terrain Understanding</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Terrain traffic analysis (learn the most visited and occupied terrain positions
+                         while playing and use that in the combat AI)</font>.
+ <LI><font color=#B0B0B0>Misc. AI tuning and tweaks</font>.
+ </UL>
+ <H5>
+ <B>Missions</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>More robust mission execution</font>.
+ <LI><font color=#B0B0B0>Scripting fully documented</font>.
+ </UL>
+ <H5>
+ <B>Scripting, Maps, Documentation, Misc.</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Support a couple of additional maps</font>.
+ </UL>
+ <!-- features 1.0 -->
+ <IMG SRC="./graphics/pixel20.gif" BORDER=0 width=100% height=1 ALT="">
+ <H4>
+ CGF 1.0 ('full version') features
+ </H4>
+ <H5>
+ <B>Bots</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Bot swimming</font>.
+ <LI><font color=#B0B0B0>Knives and jump-kicks</font>.
+ <LI><font color=#B0B0B0>Handles blocking (by force members)</font>.
+ <LI><font color=#B0B0B0>Misc. AI tuning and tweaks</font>.
+ </UL>
+ <H5>
+ <B>Team Tactics and Tactical Terrain Understanding</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Effective under friendly fire rules</font>.
+ <LI><font color=#B0B0B0>Misc. AI tuning and tweaks</font>.
+ </UL>
+ <H5>
+ <B>Missions</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Additional respawn rules</font></LI>
+ </UL>
+ <H5>
+ <B>Scripting, Maps, Documentation, Misc.</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Support for arbitrary maps</font>.
+ <LI><font color=#B0B0B0>Route file creation documented</font>.
+ </UL>
+ <!-- features 1.1++ -->
+ <IMG SRC="./graphics/pixel20.gif" BORDER=0 width=100% height=1 ALT="">
+ <H4>
+ CGF 1.1++ features ('things I may want to look into') 
+ </H4>
+ <H5>
+ <B>Bots</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Bot/player interaction?</font>.
+ <LI><font color=#B0B0B0>Bot morale?</font>.
+ </UL>
+ <H5>
+ <B>Team Tactics and Tactical Terrain Understanding</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>House/room clearing tactics?</font>.
+ <LI><font color=#B0B0B0>Handles multiple specialisation within a single team?</font>.
+ <LI><font color=#B0B0B0>Escorting AI?</font>.
+ </UL>
+ <H5>
+ <B>Missions</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>Advanced weapon usage statistics?</font>.
+ </UL>
+ <H5>
+ <B>Scripting, Maps, Documentation, Misc.</B>
+ </H5>
+ <UL>
+ <LI><font color=#B0B0B0>?</font>.
+ <LI><font color=#B0B0B0>?</font>.
+ </UL>
+ <!-- disclaimer 1.1++ -->
+ <IMG SRC="./graphics/pixel20.gif" BORDER=0 width=100% height=1 ALT="">
+ <H4>
+ Disclaimer<BR>
+ </H4>
+ Work on CGF is being done in my evening hours and holidays, real life permitting
+ (and in a steady pace, since December 1997 ('ninety-seven')), with some help
+ from a couple of terrific members of the Quake community.
+ <BR><BR>
+ I don't get paid for it. Nor do you need to pay for it.
+ <BR>
+ Therefor, you can expect changes to this feature list at any time and without prior notification.<BR>
+ I appreciate any good discussion about CGF features, but please remember:
+ <br>
+ (a) I already receive lots of mail and cannot design and write code while reading mail, and 
+ <br>
+ (b) I'm not your free programmer ready to work out things "you really need to have but 
+ are unable to accomplish yourself" (I've been unable to accomplish any bot programming 
+ for twenty-eight years but kept on trying :) ). 
+ <BR>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

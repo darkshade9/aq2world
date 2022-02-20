@@ -1,0 +1,1950 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_storming_the_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot6.jpg" border=0 align=center alt="Charlie storm a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/vulture_pulling_back_on_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot10.jpg" border=0 align=center alt="Vulture team pulling back onto a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/mclanes_on_drainpipe.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot19.jpg" border=0 align=center alt="With covering fire from a teammate a bot scales a drainpipe"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 01928
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <!-- start body text -->
+ <br>
+ <br>
+ <h3>
+ <B>CGF Mission Scripting</B>
+ <br>
+ <FONT SIZE=1>
+ Last update: March 12, 2000, by <A HREF="mailto:william@botepidemic.com">William</A>. List of changes <A HREF="#changelog">here</A> .
+ </FONT>
+ </h3>
+ <p>
+ In CGF, missions scripts are the way to define and start a customized battle. 
+ These mission scripts (.cgf files) define the forces and teams in the battle, 
+ their initial positions and plans, and the objectives.
+ <p>
+ Below, you'll find explained the idea, structure and commands of a CGF mission. Everything
+ is explained using the urban_hitman_1.cgf mission as an example.
+ <p>
+ (Note that you don't need to craft missions yourself to use CGF: there are already plenty of 
+ downloadable missions present on the internet (see the <A HREF="./links.shtml">links</A> page).
+ <br>
+ In addition, simple changes to a mission, such as the changing the skill levels, can be done 'automatically' using a CGF mission launcher (see the <A HREF="./downloads.shtml">downloads</A> page).
+ <h5>
+ Mission Structure
+ </h5>
+ A mission basically consists of five mandatory parts, in the following order:
+ <OL>
+	<LI><A HREF="#header">mission header</A>
+	<LI><A HREF="#map">map description</A>
+	<LI><A HREF="#force">force definition</A>
+	<LI><A HREF="#objectives">mission objectives and mission chaining</A>
+	<LI><A HREF="#plans">team plans</A>
+	<LI><A HREF="#editinglocations">editing locations</A>
+ </OL>
+ <h5>
+ <A NAME="header">Mission Header</A>
+ </h5>
+ The purpose of the mission header is to provide the player (both in the bot
+ launcher and in game) with summary information about the mission (in the following order):
+ <UL>
+	<LI><B>title</B> (the mission stated in a couple of words, for example "urban hitman")
+	    <br>
+		<FONT SIZE="1">
+		the title should start with a character from [a-zA-Z0-9_.,'() /\-\\!:?] and
+		continue with characters from [a-zA-Z0-9_.,'() /\-\\!:?+=#@\^|%&]
+		<br>
+		the title need not be unique (missions are identified by their file name)
+		</FONT>
+		<p>
+	<LI><B>author</B> (the author(s) name(s))
+	    <br> 
+		the authors will appear in game on the console in future versions
+		<FONT SIZE="1">
+		if you edit the mission, make sure you change or modify the author(s)
+		to include your name
+		</FONT>
+		<p>
+	<LI><B>description</B> (the mission in a couple of lines)
+	    <br>
+		this description appears in-game in the first 5 seconds, and 
+		when the player presses the help key
+	    <br>
+		<FONT SIZE="1">
+		make sure that the description fits on 512x384 screens - 
+		not every gamer has high end hardware
+		<br>
+		you can direct the text over multiple lines by using the '\n'
+		characters where you want a new line
+		<br>
+		the description should start with a character from [a-zA-Z0-9_.,'() /\-\\!:?] and
+		continue with characters from [a-zA-Z0-9_.,'() /\-\\!:?+=#@\^|%&]
+		</FONT>
+		<p>
+	<LI><B>rules</B> (defines specific restrictions for the mission)
+	    <br>
+		currently, the rules solely define the respawn behavior (to be: none)
+		<br>
+		in future versions, expect to be able to fight missions exactly according
+		AQ2 TP restrictions, or with slightly rules for weapon load out etc.
+		<br>
+		<FONT SIZE="1">
+		again, currently, the only (mandatory) rule (and value) are: respawn = none;
+		</FONT>
+ </UL>
+ For example, the urban_hitman_1.cgf mission header looks like:
+ <pre>
+ <FONT COLOR="#FFFF00">
+  // comments are preceded by '//' such as this line,
+  // or included between '/*' and '*/'
+
+mission "urban hitman"
+{
+
+  author
+    "William van der Sterren";
+
+  description
+    "\nyou're the hitman!\neliminate Sabotage\nhe might be protected :)";
+
+  rules
+  {
+    respawn = none;
+  };
+ </FONT> 
+ </pre>
+ <p>
+ If you edit a mission, you should definitely edit the header to include a new mission title, description and author name.
+ <h5>
+ <A NAME="map">Map Description</A>
+ </h5>
+ The purpose of the map description is to enable the mission objectives and team plans to
+ refer to locations and areas. The map description also provides some hints to the CGF AI
+ on the type of terrain.
+ <br>
+ In addition, it is a good habit to include some kind of
+ drawing for documentation purposes.
+ <p>
+ Consequently, the map description consists of the following parts (in the following order):
+ <UL>
+	<LI><B>map name</B> (the bsp file's name without '.bsp', for example: actcity2)
+	    <br> 
+		CGF needs this to load the required map (and the bot launcher uses this name to
+		check whether you can run the mission)
+		<p>
+	<LI><B>map style</B> (optional hints for the AI)
+	    <br> 
+		You can tell the CGF AI more about the map using a combination of the
+		styles 'open', 'indoor', 'dark' and 'urban'.
+		<br>
+		The actcity2 map would be described as "style = open, dark, urban;"
+		<br>
+		whereas museum would be best described as "style = indoor, dark;"
+		<br>
+		<FONT SIZE="1">
+		in the future versions of CGF, the AI will adapt its default weapon selection
+		and patrol characteristics using this info. (I probably could write the algorithm
+		to extract these characteristics from the route file but prefer to improve other
+		parts of CGF first).
+		</FONT>
+		<p>
+	<LI><B>map annotation</B> (optional ascii art drawing of the map)
+	    <br> 
+		In my experience, it's hard to provide meaningful names (or labels) to grid
+		locations in a map unless you can refer to directions (North, East, South, West)
+		and areas or buildings. Therefor, I just make up the directions and draw a
+		ascii art map of the bsp file.
+		<br>
+		This annotation helps other mission developers a lot when they want to
+		modify your mission script
+		<br>
+		<FONT SIZE="1">
+		The drawing should start with a character from [a-zA-Z0-9_.,'() /\-\\!:?] and
+		continue with characters from [a-zA-Z0-9_.,'() /\-\\!:?+=#@\^|%&]
+		</FONT>
+		<p>
+	<LI><B>map <A NAME="location">location</a>s</B> (list of location definitions, providing meaningful labels to locations in the map)
+	    <br> 
+		Because most team instructions (and the map areas) refer to locations, it is important to record
+		the locations here with recognizable names. Locations refer to absolute Quake2 coordinates, and are
+		independent of the route file in use (provided the route file contains a nearby
+		way point for the coordinate).
+		<br>
+		You define a location by defining it's label and the corresponding x, y and z coordinates as follows:
+		<br>
+		<FONT face="Courier">&nbsp  location locationname = < x, y , z>;</FONT>
+		<br>
+		where locationname is a string (starting with a letter, and containing solely letters, the underscore _, and digits).
+        <br>
+		You can obtain the coordinates for a specific location by loading up the respective map, moving to
+		the appropriate location, and typing 'coords' on the console.
+		<br>
+		<FONT SIZE="1">
+		Make sure you copy the correct coordinates from the console. CGF doesn't like locations that have
+		no way point nearby.
+		</FONT>
+		<p>
+	<LI><B><A NAME="#mapareas">map areas</A></B> (list of areas definitions, providing meaningful labels to patrol locations, additional
+	    information for future AI extensions, and for mission objectives)
+	    <br> 
+		Patrolling is done by visiting map areas (instead of locations). Patrolling areas instead of locations
+		makes the patrolling less predictable (the team only needs check out the area, instead of visiting the
+		same location again and again).
+		<p>
+		Areas were also introduced to make up for a lack of environmental description in Quake2. The AI has
+		troubles recognizing area structure (entrances, exits, windows) at run-time (too expensive). Areas
+		can provide the additional information.
+		<p>
+		Areas also are used to define 'occupation' mission objectives: to meet such an objective, a team member should
+		be within the area and have been in the area for a specific amount of time without threats engaging
+		the team in that area or threats visiting that area.
+		<p>
+		Areas are given a name (just like locations). This area name is used when you want to have teams patrol 
+		a specific list of areas. It's not required but a good habit to start area names with 'area_'.
+		<br>
+		You can tell the CGF AI more about the area using one of the area
+		styles 'open' (outdoor open area), 'closed' (indoor or enclosed area, having a few
+		narrow entrances, exits and/or windows, or 'roof'. Combinations of area styles
+		are not allowed.
+		<br>
+		An area needs to contain at least one location.
+		<br>
+		The size of an area (that is, the way point included in the area) is determined at run-time
+		using a nifty flood-fill like algorithm. You just need to tell CGF when to stop flood-filling. You do that either by specifying a:
+		<UL>
+			<LI>radius (a max distance to any of the defined locations)
+			<LI>using the height cut-off property for roofs (the flood-fill won't include way points that are located much higher or lower), or
+            <LI>(not for newbies) specifying <I>exactly</I> the entrances, exits and windows
+		</UL>
+		<p>
+		Though this may sound complex, you whip up simple area definitions as follows:
+		<br>
+		<FONT face="Courier">
+		&nbsp      area area_E_UnderBridge  // under 'bridge' area at urban<br>
+        &nbsp &nbsp  { style     = open; <br>
+        &nbsp &nbsp &nbsp locations = E_UnderBridge;<br>
+        &nbsp &nbsp &nbsp radius    = 100;  // max distance to listed locations<br>
+        &nbsp &nbsp};
+        </FONT>
+        <p>
+		or
+        <p>
+		<FONT face="Courier">
+		&nbsp      area area_NW_SniperRoom  // sniper room near parking lot<br>
+        &nbsp &nbsp  { style     = roof; <br>
+        &nbsp &nbsp &nbsp locations = NW_SniperRoom_Rooftop<br>
+        &nbsp &nbsp &nbsp // use automatic height cut off instead of radius<br>
+        &nbsp &nbsp};
+        </FONT>
+		<p>
+		More complex area definitions won't be documented until used by the AI.
+		<br>
+		<FONT SIZE="1">
+		To have a team patrol, you need to have at least two areas defined.<br>
+		To use 'occupy' mission objectives, you need to have an area defined.
+		</FONT>
+		<p>
+ </UL>
+ <p>
+ For example, the map description of the urban_hitman_1.cgf mission looks like:
+ <pre>
+ <FONT COLOR="#FFFF00">
+  // map description is preceded by the header
+
+  map "urban"
+  { 
+    style = open, dark, urban;
+
+    annotation = "
+
+    ^N
+  W     E            map by Gerbil!
+     S
+
+ +----------+-----+=============----+------+----+--------------------------+
+ |  low     |@@   |         |   .   +------+    |                          |
+ | buildings|@@   |         |   .   |##    |    +                          |
+
+<FONT COLOR="#FF9900">   [removed part of drawing for brevity]</FONT>
+
+ |  @@      @@    +------------HH---+------|                       |       |
+ |                                 #|     #| south east high roof  |       |  
+ +----------------------------------+--------------------------------------+
+ "; 
+
+    /*
+    locations
+    */ 
+
+    // sniper room locations (north west)
+    location NW_SniperRoom_Rooftop         = <-1346,   634,  280>;
+    location NW_SniperRoom                 = <-1273,   879,  316>;
+    location NW_SniperRoomCorner           = <-1391,   800,  316>;
+
+    // parking
+    location W_Parking_TopFloor            = <-1337,   268,  432>;
+    location W_Parking_SndFloor            = <-1406,   210,  296>;
+
+<FONT COLOR="#FF9900">    // removed a number of locations for brevity</FONT>
+
+    /*
+    areas (for patrol purposes)
+    */ 
+    area area_NW_SniperRoom
+    { style     = roof; // combine using open, closed, roof
+      locations = NW_SniperRoom_Rooftop;
+      // use height cut off instead of radius
+    };
+
+    area area_E_UnderBridge
+      { style     = open; // combine using open, closed, roof
+        locations = E_UnderBridge;
+        radius    = 100;  // max distance to listed locations
+      };
+
+<FONT COLOR="#FF9900">    // removed a number of areas for brevity</FONT>
+
+  };
+
+
+  // map description is followed by force definitions
+ </FONT> 
+ </pre>
+ <h5>
+ <A NAME="forces">Force Definition</A>
+ </h5>
+ The purpose of force definitions is to define the opposing forces (how many, their names,
+ and their composition (teams and members)). Human players (if participating in the mission) need to be
+ part of a force (and a team within that force).
+ <br>
+ Mission objectives typically refer to forces, teams and members. Therefor it's important to provide meaningful
+ names to those forces, teams and members.
+ <p>
+ To overcome the (default) ActionQuake2 limit of only two opposing teams, a CGF script defines
+ as many (opposing) forces as required. Each member of a force will regard members of
+ other forces as threats (and happily take them out). Thus, you can set up fights between, for example, two, three,
+ four, etc. opposing forces. 
+ <p>
+ CGF also removes the limitation on a single model or skin per AQ2 team. For each force
+ member, you're free to pick whatever model and skin combination you want (since the bots determine
+ between friend and foe on force membership, not on skin or mode). The AQ2 damage model
+ has been changed to solely look at force membership as well.
+ <br>
+ This should enable you to construct scripts depicting movie scenes, with various models and skins
+ for the different 'actors'.
+ <p>
+ A CGF force is composed of one or more teams. A CGF team is not similar to 'standard' AQ2 team 
+ (that would be the CGF force), but instead the smallest unit to act and fight cohesively according to
+ the script. (Apologies for the confusion - CGF itself started before AQ2 started, and I never fixed this).
+ <p>
+ A (CGF force) team is either composed of humans (labeled 'players') or bots (labeled 'npc' from 'non-player character).
+ Mixed teams are not supported.
+ <p>
+ The urban_hitman_1.cgf mission forces, for example, are composed as follows:
+ <p>
+<table border="1" cellpadding="4" cellspacing="0" width="520"
+bordercolor="#404040">
+    <tr>
+        <td width="20%" bgcolor="#ECB613"><font color="#004080"
+        size="2" face="Verdana, Arial, Helvetica"><b>force</b> </font></td>
+        <td width="35%" bgcolor="#ECB613"><font color="#004080"
+        size="2" face="Verdana, Arial, Helvetica"><b>team</b> </font></td>
+        <td width="10%" bgcolor="#ECB613"><font color="#004080"
+        size="2" face="Verdana, Arial, Helvetica"><b>type</b> </font></td>
+        <td width="35%" bgcolor="#ECB613"><font color="#004080"
+        size="2" face="Verdana, Arial, Helvetica"><b>member</b> </font><font
+        color="#004080" size="1" face="Verdana, Arial, Helvetica"><b>(model/skin)</b>
+        </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#640253"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Warez Dudes </font></td>
+        <td width="35%" bgcolor="#AE0057"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Clandestine
+        Management </font></td>
+        <td width="10%" bgcolor="#AE0057"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#AE0057"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Sabotage <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(male/sabotage) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#640253"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Warez Dudes </font></td>
+        <td width="35%" bgcolor="#800040"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">High Precision </font></td>
+        <td width="10%" bgcolor="#800040"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#800040"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Precision-1 <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(terror/swatsnipe) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#640253"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Warez Dudes </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection Copy
+        </font></td>
+        <td width="10%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection-1 <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(terror/terror) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#640253"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Warez Dudes </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">ProtectionCopy </font></td>
+        <td width="10%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection-2 <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(terror/terror) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#640253"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Warez Dudes </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection Copy
+        </font></td>
+        <td width="10%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection-3 <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(terror/terror) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#640253"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Warez Dudes </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection Copy
+        </font></td>
+        <td width="10%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#910091"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Protection-4 <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(terror/terror) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#2B5555"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Local Law </font></td>
+        <td width="35%" bgcolor="#3C7777"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Sidekick </font></td>
+        <td width="10%" bgcolor="#3C7777"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">npc </font></td>
+        <td width="35%" bgcolor="#3C7777"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Joe Automatic <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(male/adidas) </font></td>
+    </tr>
+    <tr>
+        <td width="20%" bgcolor="#2B5555"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Local Law </font></td>
+        <td width="35%" bgcolor="#008C8C"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">Hitman </font></td>
+        <td width="10%" bgcolor="#008C8C"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">player </font></td>
+        <td width="35%" bgcolor="#008C8C"><font color="#CCFFFF"
+        size="2" face="Verdana, Arial, Helvetica">dah player <br>
+        </font><font color="#CCFFFF" size="1"
+        face="Verdana, Arial, Helvetica">(male/reservoir) </font></td>
+    </tr>
+</table>
+ <p>
+ In this case, the mission consists of (solely) two opposing forces. Force 'Warez Dudes' contains 
+ three teams and uses two models and three skins. Force 'Local Law' contains two teams (one for the
+ npc, and another for the player because they need to be in separate teams). 'Local Law' uses a single model but two
+ different skins.
+ <br>
+ The mission hosts seven bots (or npc) and a single player. You would add multiple players (in 
+ the case of co-op multi-player against the bots) in the same Hitman team.
+ <p>
+ A team hosts up to eight npc-s or players.
+ <p>
+ To define a (new) force, you need to write the following (after the map definitions, 
+ and before mission objectives):
+ <p>
+   <FONT face="Courier">&nbsp  force "forcename" {<br>
+                        &nbsp &nbsp // team definitions<br>
+                        &nbsp  }; <br>
+   </FONT> 
+ <p>
+ To define a (new) team within a force, you need to write the following (between 
+ the '{' and '}' of the corresponding force definition):
+ <p>
+   <FONT face="Courier">&nbsp &nbsp  team "teamname" {<br>
+                        &nbsp &nbsp &nbsp // member definitions<br>
+                        &nbsp &nbsp  }; <br>
+   </FONT> 
+ <p>
+ A team defines each members as follows:
+ <UL>
+	<LI><B>member type</B> (either 'npc' or 'player')
+	    <br>
+	    'npc' members will be played by bots. 'player' members might be played
+		by humans (or left 'vacant' in the case of co-op multi-player with insufficient
+		players).
+		<br>
+		<FONT SIZE="1">
+		Note that you cannot mix npc and player members within a single team.<br>
+		Though you can define skill settings for a player (this makes changing player to npc and v.v.
+		easier), a skill setting for a player does not affect the player at all.<br>
+		Current beta's do not support co-op multi-player against bots.
+		</font>
+		<p>
+	<LI><B>name</B> (name valid during the mission only)
+	    <br>
+	    This name is used to specify mission objectives (elimination of a certain
+		player or npc might accomplish the mission).
+		<br>
+		<FONT SIZE="1">
+		The name defined in the mission doesn't change your AQ2 netname.
+		</font>
+		<p>
+	<LI><B>modelname/skinname</B> (model and skin only valid during mission)
+	    <br>
+	    This defines the looks of bots and players during the mission. It doesn't
+		affect damage (AQ2 settings for teamplay by skin/model are ignored, and
+		damage is based on force membership).
+		<br>
+		<FONT SIZE="1">
+		The model/skin defined in the mission doesn't change your AQ2 defaults.
+		</font>
+		<p>
+	<LI><B>'<A NAME="loadout">load out</a>'</B>, that is, the weapons, ammo and items to start with
+	    <br>
+	    Instead of the (handy) AQ2 weapon/item selection menu, the script defines
+		the load out for you. (You can use future versions of the bot launcher to
+		modify the load out without seeing the script itself).
+		<p>
+		Currently, CGF allows you to severely violate the AQ2 TP restrictions on load out: 
+		if you want to equip bots or players with lots of special weapons, huge amounts
+		of ammo, and almost all items, you can do so.
+		<br>
+		However, (in the current beta versions) during the mission, you won't be able to
+		pick up other special weapons or items if you already have one.
+		<p>
+		You issue a weapon to a team member as follows (between the '{' and '}' of the member definition):
+		<br>
+		   <FONT face="Courier">&nbsp  weapon "weaponname"; // weaponname should match AQ2 name<br>
+		   </FONT> 
+    	<p>
+		A weapon comes with the TP default amount of ammo (ignoring the presence of any bandolier)<br>
+		You can issue additional ammo as follows (between the '{' and '}' of the member definition):
+		<br>
+		   <FONT face="Courier">&nbsp  ammo "ammoname" = count; // ammoname should match AQ2 name<br>
+		   </FONT> 
+		Depending on the corresponding weapon type, you'll receive ammo as individual pieces (shotguns / knifes / sniper bullets), or as complete clips.
+		<p>
+		You can dress up the team member with items as follows (between the '{' and '}' of the member definition)
+		<br>
+		   <FONT face="Courier">&nbsp  item "itemname"; // itemname should match AQ2 name<br>
+		   </FONT> 
+    	<p>
+		An example of loadout, illustrating all available weapons, ammo and items, looks like:
+		   <pre><FONT face="Courier">
+      npc "Sabotage" "male/sabotage" 
+        { 
+          // basic AQ2 weapons + ammo
+          ammo   "Pistol Clip" = 1;
+          weapon "Dual MK23 Pistols";
+          ammo   "Machinegun Magazine" = 2;                    
+          weapon "MP5/10 Submachinegun";
+          ammo   "M4 Clip" = 2;
+          weapon "M4 Assault Rifle";
+          ammo   "12 Gauge Shells" = 7;
+          weapon "M3 Super 90 Assault Shotgun";
+          weapon "Handcannon";
+          ammo   "AP Sniper Ammo" = 20;
+          weapon "Sniper Rifle";
+
+          // items        
+          item   "Bandolier";
+          item   "Kevlar Vest";
+          item   "Lasersight";
+          item   "Silencer";
+          item   "Stealth Slippers";
+
+          // optional pistol
+          weapon ""Beretta 92F Pistol";
+          // optional submachineguns
+          weapon "AK97 Submachinegun";
+          weapon "MAC-10 Submachinegun";
+          weapon "UMP45 Submachinegun";
+          weapon "UZI Submachinegun";
+          // optional assault rifles
+          weapon "AK47 Assault Rifle";
+          weapon "Tommygun";
+          // optional assault shotgun
+          weapon "Ithaca Model37 Assault Shotgun";
+          // optional cannon
+          weapon "Old-style Cannon";          
+          // optional sniper rifles
+          weapon "Barrett M82 Sniper Rifle";          
+          weapon "Dragunov Sniper Rifle";
+
+          // skill (from 1..5, ignored for 'player')
+          skill  = 3;
+        };</FONT></pre>
+		<FONT SIZE="1">
+		Note that all load out definitions shall precede the skill definition. Grenades and knives
+		are not yet supported.
+		</font>
+		<p>
+	<LI><B>skill</B>, range [1.0 = weak ... 5.0 = strong] affects npc team members
+	    <br>
+		The skill setting doesn't affect the player member (skill settings for the player are
+		allowed but ignored), but for the npc, the skill affects:
+		<UL>
+			<LI>aiming accuracy
+			<LI>turning speed (higher skill bots turn faster)
+			<LI>M4 muzzle climb handling (higher skill bots compensate better)
+			<LI>vision threshold (amount of time needed to acquire a new threat (partially) in the bot's
+			    field of vision; higher skill bots acquire faster)
+		</UL>
+		<FONT SIZE="1">
+		Note that the skill setting should be last line in the member definition and is mandatory for
+		npc members.
+		</font>
+
+</UL>
+ For example, the map description of the urban_hitman_1.cgf mission looks like:
+ <pre>
+ <FONT COLOR="#FFFF00">
+  // force definition is preceded by map description
+
+  force "Warez Dudes"
+  {
+    team "Clandestine Management"
+    { 
+      npc "Sabotage" "male/sabotage" 
+        { 
+          ammo   "Pistol Clip" = 1;
+          weapon "Dual MK23 Pistols";
+          item   "Kevlar Vest";
+          skill  = 3;
+        };
+    };
+
+    team "High Precision"
+    { 
+      npc "Precision-1" "terror/swatsnipe" // sniper team
+        { 
+          ammo   "AP Sniper Ammo" = 10;
+          weapon "Sniper Rifle";
+          skill  = 2;
+        };
+    };
+
+    team "Protection Copy"
+    { 
+      npc "Protection-1" "terror/terror" 
+        { 
+          ammo   "Machinegun Magazine" = 2;                    
+          weapon "MP5/10 Submachinegun";
+          item   "Kevlar Vest";
+          item   "Lasersight";
+
+          skill  = 2;
+        };
+      npc "Protection-2" "terror/terror" 
+        { 
+          weapon "M3 Super 90 Assault Shotgun";
+          ammo   "12 Gauge Shells" = 7;
+          item   "Kevlar Vest";
+
+          skill  = 2;
+        };
+<FONT COLOR="#FF9900">      // two members removed part for brevity</FONT>
+    };
+
+  };
+
+  force "Local Law"
+  {
+    team "Hitman"
+    { 
+      player "dah player" "male/reservoir" 
+        { 
+          weapon "M3 Super 90 Assault Shotgun";
+          ammo   "12 Gauge Shells" = 7;
+
+          item   "Kevlar Vest";
+        };
+    };
+
+    team "Sidekick"
+    { 
+      npc "Joe Automatic" "male/adidas" 
+        { 
+          weapon "M4 Assault Rifle";
+          ammo   "M4 Clip" = 2;
+          skill  = 2.5;
+        };
+    };
+  };
+
+
+  // force composition is followed by objective definitions
+ </FONT> 
+ </pre>
+ <h5>
+ <A NAME="objectives">Mission Objectives & Mission Chaining</A>
+ </h5>
+ The mission objectives define when a mission will be completed (and the result of
+ the mission in terms of messages to the player).
+ <br>
+ Each objective also defines one or more candidate successor missions.
+ The next mission is automatically selected (at random) from the list of candidate
+ missions defined by the first objective achieved.
+ <p>
+ Using these objectives, one can define a ladder of missions: when the player
+ fails a mission, he is given an easier mission, when the player completes a mission,
+ he is given a harder mission.
+ <br>
+ Likewise, one can define a 'campaign' of chained missions.
+ <p>
+ The CGF mission objectives replace AQ2 TP timelimits and fraglimits.
+ <p>
+ An objective is achieved as its condition (or logical combination ('and' / 'or' / 'not') of
+ conditions are met. The first objective met signals the end of the mission,
+ displays post-mission feedback messages for the players, and selects the subsequent
+ mission.
+ <p>
+ Three different kinds of conditions are provided (in addition to the logical combinations):
+ <UL>
+	<LI><B>time-out</B>
+	    <br>A time-out condition is met when the mission duration (in seconds) exceeds the
+		    specified time. A time-out condition looks like:<br>
+		   <FONT face="Courier">&nbsp  timeout(duration) // duration in seconds <br>
+		   </FONT> 
+		 <p>
+		 <FONT SIZE="1">
+		 Because the bots might get stuck (and therefor might take forever to complete
+		 the mission), it's a good thing to always define a time-out objective.
+		 </font>
+		 <p>
+	<LI><B>eliminated</B>
+	    <br>An eliminated condition is met when the specified force, team or team member
+		    has been eliminated for longer than a time-out of 7.5 seconds. (Thus the mission
+			does not end immediately after eliminating that force, team, or team member).
+			<br>
+			A team member is eliminated when he is killed (either by opponents, suicide or
+			other wounds). A team is eliminated when all its members have been eliminated. 
+			A force is eliminated when all its teams have been eliminated.
+			<br>
+            An eliminated condition looks like:<br>
+		   <FONT face="Courier">&nbsp  eliminated("forceteammembername") // force/team/member name <br>
+		   </FONT> 
+		 <p>
+		 <FONT SIZE="1">
+		 To be able to specify elimination conditions unambiguously, make sure that force
+		 names, team names and members names are all distinct from each other.
+		 </font>
+		 <p>
+	<LI><B>occupied</B> (not yet supported)
+	    <br>An occupied condition is met when the specified force has been occupying the 
+		    specified area for more than the specified time, by:
+			<UL>
+				<LI>having at least one (living) force member being present in the area
+				    during that period
+				<LI>not having any (living) opposing force member being present in the
+				    area during that period
+				<LI>not being engaged in that area by opposing forces during that period
+			</UL>
+            An occupied condition looks like:<br>
+		   <FONT face="Courier">&nbsp  occupied("forcename", areaname, duration)<br>
+		   </FONT> 
+		 <p>
+		 <FONT SIZE="1">
+		 Again, the occupied condition is not yet available in the current beta.
+		 </font>
+		 <p>
+	<LI><B>'and' combination of two conditions: (condition1 && condition2)</B>
+	    <br>
+		An and condition is met when both its sub conditions are met. The C-style 'and' symbol '&&'
+		is used, and the syntax looks complicated (due the additional required parenthesis), 
+		but nevertheless it is not that hard to
+		specify a combination of two objectives:<br>
+		   <FONT face="Courier">&nbsp  (eliminated("force1") && eliminated("force2"))<br>
+		   </FONT> 
+        or a combination of three objectives:<br>
+		   <FONT face="Courier">&nbsp  (eliminated("tm1") && (eliminated("tm2") && timeout(200)))<br>
+		   </FONT> 
+		 <p>
+		 <FONT SIZE="1">
+		 Note that and-, or- and not- conditions can be mixed.
+		 </font>
+		 <p>
+	<LI><B>'or' combination of two conditions: (condition1 || condition2)</B>
+	    <br>
+		An or condition is met when one or more of its sub conditions are met. The C-style 'or' symbol '||'
+		is used, and the syntax looks complicated (due the additional required parenthesis), 
+		but nevertheless it is not that hard to
+		specify a combination of two objectives:<br>
+		   <FONT face="Courier">&nbsp  (eliminated("force1") || eliminated("force2"))<br>
+		   </FONT> 
+        or a combination of three objectives:<br>
+		   <FONT face="Courier">&nbsp  (eliminated("tm1") || (eliminated("tm2") || timeout(200)))<br>
+		   </FONT> 
+		 <p>
+		 <FONT SIZE="1">
+		 Note that and-, or- and not- conditions can be mixed.
+		 </font>
+		 <p>
+	<LI><B><A NAME="notcondition">'not'</a> inversion of another conditions: !(condition1)</B>
+	    <br>
+		An not condition is met as long as its sub conditions is not met. The C-style 'not' symbol '!'
+		is used, and the syntax requires a paier of parenthesis.
+		<br>
+		The not condition is mainly useful in combination with other conditions, for example, when you want
+		to inform the player about the fact that team1 was eliminated but not team2.
+		but nevertheless it is not that hard to
+		specify a combination of two objectives:<br>
+		   <FONT face="Courier">&nbsp  (eliminated("team1") && !(eliminated("team2")))<br>
+		   </FONT> 
+		 <p>
+		 <FONT SIZE="1">
+		 Note (as shown above) that and-, or- and not-conditions can be mixed.
+		 </font>
+		 <p>
+ </UL>
+ <p>
+ A CGF objective is composed as follows:
+ <UL>
+	<LI> <B>objective type</B>
+ 	     <br>
+		 There are two types of objectives ('success' and 'failure').  The main difference between 
+		 the types objectives is the sound file played upon achieving the objective 
+		 (completing respectively failing the mission), and the default message presented
+         to players among the other forces.
+		 <FONT SIZE="1">
+		 Note that it only makes sense to define objectives for forces that contain a player.
+		 </font>
+		 <p>
+	<LI> <B>force to which objective applies</B>
+	     <br>
+		 The objective applies to a specific force (and typically one containing a player). This
+		 force is specified by the force name.
+		 <p>
+	<LI> <B>message to be displayed when objective is met</B>
+	     <br>
+		 When objective is met (more precisely: is the first objective to be met), 
+		 it's message will appear in the post-mission texts for the players. Typically,
+		 this text expresses encouragement (for success objectives) or disappointment 
+		 (for failure objectives), and some explanation about the specific objective
+		 achieve: "you successfully took out Sabotage", or "too slow again!".
+		 <br>
+		 <FONT SIZE="1">
+			Make sure that the message fits on 512x384 screens - 
+			not every gamer has high end hardware.
+			<br>
+			You can direct the text over multiple lines by using the '\n'
+			characters where you want a new line.
+			<br>
+			The description should start with a character from [a-zA-Z0-9_.,'() /\-\\!:?] and
+			continue with characters from [a-zA-Z0-9_.,'() /\-\\!:?+=#@\^|%&]
+		 </font>
+		 <p>
+	<LI> <B>objective condition</B>(see above)
+	     <br>
+	     This condition defines when the objective is met. The conditions have been
+		 explained in detail above.
+		 <p>
+	<LI> <B>list of successor missions</B> (in case objective is met)
+	     <br>
+		 This list contains candidate successor missions (actually, the file names of the
+		 script, including the extension .cgf). When the objective is the first objective
+		 to be met, it will determine the next mission. This next mission is selected
+		 at random from the list of successor mission files.
+		 <br>
+		 The list may include the mission itself. The list may include missions for other
+		 maps (but changing maps typically causes a longer delay). A mission file might
+		 be included more than once to increase its chances to be selected.
+		 <br>
+		 The list looks like this:<br>
+		 <FONT face="Courier">&nbsp  -> {"urban_hitman_1.cgf", "urban_hitman_2.cgf"}; <br>
+		 </FONT> 
+         Note: it is possible to launch a .cfg <A NAME="successorscript">configuration script</a> instead of a (.cgf) mission.
+         This allows mission designers to play cut-scenes (demo's) or sound, or perform other
+         required actions.
+ </UL>
+ For example, the map description of the urban_hitman_1.cgf mission looks like:
+ <pre>
+ <FONT COLOR="#FFFF00">
+  // objective definition is preceded by force definition
+
+  objectives
+  {
+    failure
+      ( "Local Law",
+        "\nYOU are supposed to be THE hitman!"
+      )
+    = eliminated("Local Law")
+      -> {"urban_hitman_1.cgf", "urban_hitman_2.cgf", 
+          "urban_hitman_3.cgf", "urban_hitman_4.cgf"
+        };
+
+    success
+      ( "Local Law",
+        "\nwell done!\nyou sure are da HITMAN!"
+      )
+    = eliminated("Sabotage")
+      -> {"urban_hitman_1.cgf", "urban_hitman_2.cgf", 
+          "urban_hitman_3.cgf", "urban_hitman_4.cgf"
+        };
+
+    failure
+      ( "Local Law",
+        "\nyawn...\nthis is taking way too long"
+      )
+    = timeout(300)
+      -> {"urban_hitman_1.cgf", "urban_hitman_2.cgf", 
+          "urban_hitman_3.cgf", "urban_hitman_4.cgf"
+        };
+  };
+
+  // objective definitions are followed by team plans
+ </FONT> 
+ </pre>
+ <FONT SIZE="1">
+ Note the current beta's contain a bug that allows a later completed objective to redefine
+ the post-mission message.
+ </font>
+ <h5>
+ <A NAME="plans">Team Plans</A>
+ </h5>
+ The team plans provide instructions and behavior for the forces' teams. The team plans
+ heavily use locations and areas defined in the map section of the script.
+ <p>
+ Being probably hardest-to-learn part of CGF scripting, I'll provide some more background
+ info.
+ <p>
+ <B>High level scripting</B><br>
+ The team plans thus provide the 'real' scripted behavior of CGF. Note that the type
+ of scripting is totally different from Half-Life, Sin, Unreal or SpecOps scripting: here you
+ issue a number of instructions to teams - not to individual bots or entities. 
+ (Probably the planning stage of Rainbow Six comes close, but though the RB6 operatives
+ execute the plan with nifty close quarter formations, they seem unable to divert from
+ the plan in unexpected situations).
+ <p>
+ As a result, you'll gain the advantage of being able to change team sizes at will: 
+ the script doesn't deal with the individual members, instead the CGF AI does so.
+ <br>
+ Another advantage is that you now can instruct teams to do fancy procedures such
+ as bounding overwatch pull back (with suppression fire). Those maneuvers would be almost impossible 
+ to write in the above mentioned scripting systems (with the exception of RB6).
+ <br>
+ This level of scripting offers me the advantage of improving the AI and team tactics
+ independently from the scripts. Older scripts will benefit automatically from
+ AI improvements.
+ <br>
+ The last advantage is that because the CGF AI deals (dynamically) with combat situations
+ and selects appropriate team tactics, the combat and missions outcome become less
+ predictable. The combat is only "sketched", not scripted in detail. Mission scripts
+ gain replayability.
+ <p>
+ The main disadvantage is that you lose control over individual members. You won't be
+ able to do nifty Half-Life style 'tentacle grabs scientist' or 'grunt opens door,
+ throws detpack, closes door, and ignites detpack' animations (actually, in the last
+ case, the player is able to kill the grunt early but still the 'rigid script' has him
+ close the door and ignite the detpack :) ).
+ <p>
+ <B>Scripting 'Commands'</B><br>
+ A team's plan consists of a rather simple sequence of commands, optionally with some
+ commands how to prepare for exceptional cases (contact with enemy forces).
+ The plan's commands are issued to the team in sequence. Issuing an instruction
+ takes a Quake2 server frame, that is, 0.1 second. However, it might take the team
+ much longer to execute an instruction.
+ <p>
+ To deal with duration differences between issuing a command and having the team
+ execute it, a lot of wait command are used. That prevents the team from receiving
+ the new command before it completes the current command. 
+ For example (the commands themselves will be explained later in detail), in the
+ following plan (for Sabotage, the target in the hitman mission), almost half the
+ commands are a kind of 'wait' command:
+ <pre><FONT face="Courier">plan "Clandestine Management"
+  {
+     insert at SE_HighBuildingSniperRoom using "column";
+     wait until ready;
+
+     spread towards SE_HighBuildingRoofTopCenter within 1.5; 
+     wait until ready;
+
+   // phase
+   phase "wait for business";     
+     on (contact)
+       {
+         abort;
+         defend towards SE_HighBuildingRoofTopCenter 
+           from SE_HighBuildingSniperRoom;
+         wait until ready;
+         continue with phase "wait for business";
+       };
+     wait forever;
+  };</FONT></pre>
+ Even the insert command (putting the Clandestine Management team, consisting solely of Sabotage,
+ into the game) takes some time (especially for larger teams). It is essential to
+ wait until the team is ready (has completed insertion) before issuing the next command.
+ <p>
+ There are a few exceptions to the sequential issuing of commands to a team. You can
+ define specify 'what-to-do-when-something-happens' behavior early in the plan. When
+ (and only when) that something happens, the team will be issued those special commands
+ instead.
+ <br>
+ In the example above, as soon as Sabotage is in position, he is told to react specially
+ to any enemy contact. The 'special' commands (following 'on (contact)' and between 
+ accolades '{' and '}' are not issued immediately, but only when Sabotage gets in touch
+ with his attackers.
+ <br>
+ Instead, after Sabotage learns how to deal with contacts, he is not executing that
+ behavior but instead receives the next command: he's going to wait forever (until
+ something exceptional happens).
+ <p>
+ When something special happens, it is important not to wait for the team to complete
+ the current command. Instead, it often is an issue of life and death to abort the
+ current activity and instead act upon the threat. Therefor, the special 'on contact'
+ sub plan issues an 'abort' command immediately. Upon receiving an abort command,
+ Sabotage will stop executing his current command, and will be ready for new commands:
+ some real defensive action.
+ <p>
+ A final exception to sequential issuing (and execution) of commands is are phases
+ with a plan and the 'continue' command. When a team should repeatedly receive a
+ series of commands, or when you want the team to continue again with normal activity
+ (after dealing with exceptions), you can define a phase in the plan (and label it with a
+ useful name), and instruct the team to continue with that phase again.
+ <br>
+ In the example above, Sabotage is issued to continue with phase "wait for business"
+ when he has completed defending himself. When continuing with that phase, Sabotage
+ is instructed to deal with contact again, and then waits again 'forever' for 'business'.
+ <p>
+ <B><A NAME="teambehavior">Team Behavior</a></B><br>
+ Because a team plan contains commands for the team, it's important to fully understand
+ how the team in general behaves.
+ <p>
+ The team members act like very well trained pro's. That means, you need not expect
+ individual team members to become afraid and stop acting as a reliable team mate.
+ They've learned to follow orders, and are prepared to risk their life in combat
+ to have their team prevail. (The team, however, might judge it wiser to pull back
+ during a combat situation, but, again, individual members won't pullback on their
+ own).
+ <br>
+ Because of their training, they don't need a specific leader to guide them. Any
+ member is as capable of directing his fellow team members when called for. 
+ Depending on member positions, the most appropriate member takes the lead 
+ to execute a command.
+ <p>
+ You can think of the team members as either:
+ <UL>
+	<LI>being a group of LAN players within the same room, excitedly shouting info
+	    (threats, bandaging, etc.) towards their teammates, or
+	<LI>being a group of well trained operatives expensively equipped with earplugs and 
+	    throat microphones, thus in constant and rapid communication with each other.
+ </UL>
+ They will rapidly communicate the fact that a threat is spotted, and act upon that
+ while taking into account their positions, spread, tactical advantages, etc.
+ <p>
+ There's no problem when a team become eliminated: all plan commands for that
+ team are ignored.
+ <p>
+ <B>Basic Plan Types</B><br>
+ The 'Clandestine Management' / Sabotage plan listed above is actually a quite
+ detailed and complex plan. Two simpler categories of team plans exist. Thus,
+ there are three kinds of plans:
+ <OL>
+	<LI><B>player team plans</B>
+	    <br>
+		This simple plan does just one thing: it inserts the team (containing one
+		or more players) at a specific location. Such a plan looks like:
+		 <pre><FONT face="Courier">  plan "Hitman" // player
+  {
+     insert at NW_FarCornerOnsRoofTop using "column";
+     wait until ready;
+  };</FONT></pre>
+  That doesn't look to hard to write, does it?
+    <p>
+	<LI><b>patrol / snipe team plans</b>
+	    <br>
+		Another category of simple plan is for teams that 'just' patrol or snipe.
+		Because the patrol and snipe commands themselves contain permission to
+		engage at will, there is no need to define any exceptional behavior.
+		And because the team can spend the complete mission patrolling or sniping,
+		there's no need for additional commands. Thus, such a plan looks like:
+		 <pre><FONT face="Courier">  plan "Protection Copy" // team of patrolling bots
+  {
+     insert at S_SouthCenterUnderneathRamp using "column";
+     wait until ready;
+     
+     patrol (area_S_SouthCenterUnderneathRamp, 
+             area_W_Parking_SndFloor, area_E_AtBridge);
+  };</FONT></pre>
+    Only three commands for many minutes of action!
+    <p>
+	<LI><B>detailed plans</B>
+	<br>
+	Detailed plans typically insert the team, define how to deal with exceptions,
+	and then instruct the team to perform normal business (wait, move around).
+	<br>
+	In dealing with exceptions, the script writer has a bit more control over
+	the team's behavior: attack, defend, advance or pullback upon contact.
+	<p>
+	The above plan is a good example of a detailed plan. Of course, you might
+	be able to construct even more detailed and complex plan. However, there
+	is the proverb that "no plan survives first contact".
+ </OL>
+ <p>
+ <B>Different kinds of commands</B><br>
+ To construct scripts, you have different kinds of commands at your disposal. These
+ commands are discussed in more detail below this list:
+ <UL>
+	<LI><B>insert command</B> (<A HREF="#insert">insert</A>)
+	    <br>
+		put team into the map
+	<LI><B>auto-engage commands</B> (<A HREF="#patrol">patrol</A>, <A HREF="#snipe">snipe</A>)
+	    <br>
+		have team autonomously scan, (move) and engage
+	<LI><B>combat maneuver commands</B> (<A HREF="#attack">attack</A>, <A HREF="#defend">defend</A>, <A HREF="#advance">advance</A>, <A HREF="#pullback">pullback</A>)
+	    <br>
+		have team explicitly fight or maneuver
+	<LI><B>non-combat maneuver commands</B> (<A HREF="#moveup">moveup</A>, <A HREF="#spread">spread</A>, <A HREF="#assemble">assemble</A>)
+	    <br>
+		have team move to or move into position
+	<LI><B>communication commands</B> (<A HREF="#signalcode">signal code</A>, <A HREF="#radio">radio</A>)
+	    <br>
+		issue a go-code or an explicit radio (chat) message
+	<LI><B>exception behavior</B> (<A HREF="#oncontact">on contact</A>, <A HREF="#oncode">on code</A>, <A HREF="#abort">abort</A>)
+	    <br>
+	    define how to handle upon exceptional situations
+	<LI><B>flow control</B> (<A HREF="#phase">phase</A>, <A HREF="#continuewithphase">continue with phase</A>)
+	    <br>
+	    jump to different phase of plan
+	<LI><B>wait commands</B> (<A HREF="#waituntilready">wait until ready</A>, <A HREF="#wait">wait</a>, <A HREF="#waitforever">wait forever</a>, <A HREF="#waituntilcode">wait until code</A>)
+	    <br>
+		delay next command for some time
+ </UL>
+ <p>
+ <B><A NAME="insert">insert</a> command</B>
+ <br>
+ Purpose:<br>
+ Insert team into map. The format listed after 'using' denotes the formation - column
+ should be used.
+ <br>
+ <br>
+ Example:
+ <br>
+<FONT face="Courier">&nbsp insert at S_SouthCenterUnderneathRamp using "column";<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Team need not necessarily be inserted at the start of the mission.<br>
+ Without being inserted a team cannot receive any instructions (except for wait).<br>
+ Inserting a team too large to fit the selected location (a small room) crashes CGF.<br>
+ <p>
+ <B><A NAME="patrol">patrol</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team patrol all or a selected list of areas on the map. The team will patrol
+ continuously for the remainder of the mission (unless given an 'abort' command).
+ <br>
+ In their patrol, the team will select visit all (specified) areas in a efficient but
+ varying way. The team will take care to visit the areas in an order that allows them
+ to visit many areas in a limited time. However, the order is partially random.
+ <p>
+ To patrol, the team will spread out and move along walls/thru dark areas (where
+ possible) from area to area. Occasionally, the point man will wait for the team to assemble again, 
+ typically in a cover position. The tail man will check his 'six'.
+ <br>
+ The patrolling team is prepared to engage threats immediately (and suspend patrolling for
+ the time of the engagement). Various team tactics are at the team's disposal. After the engagement (because the team took out the
+ threats, or lost sight of the tracks), the patrol will tend to the visit the engagement
+ location during their subsequent patrolling activity.
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">&nbsp patrol (area_S_SouthCenterUnderneathRamp, area_E_AtBridge);<br>
+<br>
+&nbsp patrol;<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Script should define at least two areas.<br>
+ Explicit area list should contain at least two areas.<br>
+ Team should be able to reach each area to be patrolled (bad route files crash CGF here). If
+ the map has areas in unreachable sections, you need to specify explicitly which areas to
+ patrol.<br>
+ In current version, the patrolling team will tend to engage even in unfavorable 
+ cases (for example, being outgunned 5 to 1). This will change in future versions.
+ <p>
+ <B><A NAME="snipe">snipe</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team snipe from a specific location towards another location. AI will determine
+ the snipers and spotters in the team (the team will always have at least as many snipers
+ as spotters). Snipers engage at will and change tactics to normal combat when faced
+ with nearby threats. Snipers typically move among a couple of useful (AI determined)
+ sniper positions and cover positions. Spotters spot, briefly engage threats (and communicate threat
+ position to sniper), and hide.
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp snipe from SE_HighBuildingRoofTopEdge<br> 
+&nbsp &nbsp &nbsp &nbsp towards S_SouthCenterBuildingTop;<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Sniper 'from' location should provide line of sight to 'towards' location.<br>
+ Currently, snipe AI doesn't deal with nearby threats (by changing tactics).<br>
+ Spotter likely to move around to silly locations.<br>
+ <p>
+ <B><A NAME="attack">attack</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team fight offensively against any threats. Team will engage, advance and
+ pursuit threats when applicable (various team tactics are at the team's disposal). 
+ Team won't pullback. After losing contact, the team will regroup
+ (perform the required (p)reloading and bandaging) and then is ready for new commands.
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp attack towards SE_HighBuildingRoofTopCenter;<br> 
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ The 'towards' location is often ignored.<br>
+ Currently, attack does not execute bounding overwatch advance automatically.
+ <p>
+ <B><A NAME="defend">defend</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team fight defensively against any threats. Team will engage threats, and pullback
+ from threats when applicable (various team tactics are at the team's disposal). 
+ Team won't pursuit threats. After losing contact, the team will regroup
+ (perform the required (p)reloading and bandaging) and then is ready for new commands.
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp defend towards SE_HighBuildingRoofTopCenter<br> 
+&nbsp &nbsp &nbsp &nbsp &nbsp from SE_HighBuildingSniperRoom;<br> 
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ If the team pulls back, it will be towards the 'from' location.<br>
+ Currently, defend does not change into pullback automatically.
+ <p>
+ <B><A NAME="advance">advance</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team fight move up to a location employing bounding overwatch. In
+ the presence of threats, front most members will adjust their path to
+ benefit from cover from enemy fire, whereas tailing members will provide
+ suppression fire.
+ <br>
+ When the team meets threats too close to their position and path, 
+ the team will suspend their maneuver to fully engage the targets, and 
+ continue the maneuver afterwards.
+ <br> 
+ Upon arriving at the destination, the team will assemble in formation (the
+ one specified after 'using' - typically "column") and 
+ then is ready for new commands.
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp  advance towards parkingtopsniper using "column";<br> 
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ CGF crashes when the destination location does not provide sufficient space
+ to assemble in (in the specified formation).
+ <br>
+ The AI still has problems due to members blocking each other. The chances
+ of blocking increase for larger team sizes. Basically, advance works best
+ for teams of 3 to 5 members.
+ <br>
+ The current beta contains a silly bug that prevents members from discovering
+ decent stop positions near edges.
+ <p>
+ <B><A NAME="pullback">pullback</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team fight pullback to a location employing bounding overwatch. In
+ the presence of threats, tailing members will provide suppression / cover
+ fire.
+ <br>
+ Upon arriving at the destination, the team will assemble in formation (the
+ one specified after 'using' - typically "column") and 
+ then is ready for new commands.
+ <br>
+ <br>
+ Examples:
+ <br>
+ <FONT face="Courier">
+ &nbsp  pullback to parkingtopsniper using "column";<br> 
+ </FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Pullback is a command typically used in an 'on (contact)' situation,
+ when you are sure about the current location of the team (they are not
+ close to the destination).
+ <br>
+ CGF crashes when the destination location does not provide sufficient space
+ to assemble in (in the specified formation).
+ <br>
+ The current beta contains a silly bug that prevents members from discovering
+ decent stop positions near edges.
+ <p>
+ <B><A NAME="moveup">moveup</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team move up to a location in a fast, no frills way. Upon arrival,
+ the team assembles in the specified formation (typically "column"). The
+ team then is ready for new commands.
+ <br>
+ Note that the team doesn't respond to threats unless you specify so in
+ the script (using an 'on (contact)').
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp  moveup to parkingtopsniper using "column";<br> 
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ CGF crashes when the destination location does not provide sufficient space
+ to assemble in (in the specified formation).
+ <br>
+ <p>
+ <B><A NAME="spread">spread</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team members take up dispersed defensive positions towards a
+ specified location. Typically used immediately after a team has
+ been inserted or has assembled. As soon as all members have taken
+ up the defensive positions, the team is ready for new commands.
+ <br>
+ The 'within' duration provides an limit to the 'spread': it specifies
+ the distance (in travel time) from the original location in which
+ is searched for good defensive locations. Small durations of two
+ seconds or less work best.
+ <br>
+ Note that the team doesn't respond to threats unless you specify so in
+ the script (using an 'on (contact)').
+ <br>
+ <br>
+ Examples (Sabotage in urban_hitman_8.cgf):
+ <br>
+<FONT face="Courier">
+&nbsp insert at C_RoomCorner using "column";<br>
+&nbsp wait until ready;<br>
+&nbsp spread towards C_RoomDoorEntrance within 0.5;<br> 
+&nbsp // ... further on-contact behavior etc.<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Current beta doesn't provide completely predictable results.<br>
+ Doesn't work well for large durations.
+ <br>
+ <p>
+ <B><A NAME="assemble">assemble</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team members regroup in specified formation at specified
+ location. Team members move to the formation in a fast, no frills, way.
+ Assemble won't be used that often; it makes solely sense to reassemble
+ a team when you need to have the complete team take up defensive 
+ positions (using the 'spread' command).
+ <br>
+ Note that the team doesn't respond to threats unless you specify so in
+ the script (using an 'on (contact)').
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp assemble at parkingtopsniper using "column";<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ CGF crashes when the destination location does not provide sufficient space
+ to assemble in (in the specified formation).
+ <br>
+ <p>
+ <B><A NAME="radio">radio</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team send radio (actually: teamplay chat) message to all the members (actually: players) in
+ the team's force (thus the message will reach members in other teams
+ as well).
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp radio "a message to all force members";<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ The radio command is special in that it can be executed while the
+ team is execution another command. For example, you can have the
+ team send radio commands while it is executing a defend command.
+ <br>
+ <p>
+ <B><A NAME="signalcode">signal code </a>command</B>
+ <br>
+ Purpose:<br>
+ Have team issue some 'go' code to other teams in the force (whether
+ they are waiting for that code or not). This can be used to
+ synchronize actions (often: attacks) between multiple teams in
+ a force.
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp signal code "Red";<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ From CGF 0.90 onwards, the player will be able to issue go-codes
+ as well (a command bound to one of his keys). To reduce the amount
+ of key binding necessary, it makes sense to restrict the actual
+ codes used to the following: 'Red', 'Blue', 'Green' and 'Yellow'.
+ <br>
+ See the 'on (code)' and 'wait for code' commands on how to respond to
+ signalled codes.
+ <br>
+ <p>
+ <B><A NAME="oncontact">on (contact) { ... }</a> command</B>
+ <br>
+ Purpose:<br>
+ Instruct the team in advance on how to deal with the exceptional
+ 'enemy contact' situation. After being instructed, the team can
+ continue performing other activities. As soon as the 'contact'
+ is made, the team will start executing the 'on contact' specified
+ commands.
+ <p>
+ Note that as soon as the team has executed the 'on contact' instructions,
+ the team needs to be instructed again with the same or other instructions
+ to deal with contact. You'll typically define a phase before the
+ 'on contact' behavior, and instruct the team to continue with that
+ phase again (see the example below).
+ <br>
+ Note also that you typically want the team to respond immediately
+ to contact, no matter what the team was doing at the time of contact.
+ Therefor, you need to have the team abort it's current activity. You
+ use the 'abort' command for that (see the example).
+ <br>
+ Each time you define 'on contact' behavior, the previous definition
+ (if any) is forgotten.
+ <p>
+ Examples (from Sabotage in urban_hitman_1.cgf):
+ <br>
+ <pre><FONT face="Courier">     spread towards SE_HighBuildingRoofTopCenter within 1.5; 
+     wait until ready;
+
+   // phase
+   phase "wait for business";     
+     on (contact)
+       {
+         abort;
+         defend towards SE_HighBuildingRoofTopCenter 
+           from SE_HighBuildingSniperRoom;
+         wait until ready;
+
+         // make sure to reinstruct team before 
+         // finishing dealing with the exception
+         continue with phase "wait for business"; 
+       };
+
+     wait forever; // wait for contact</FONT></pre>
+ <br>
+ Problems and Hints:
+ <br>
+ There is no need to define on contact behavior for teams that
+ patrol or snipe (though you can do so).
+ <br>
+ <p>
+ <B><A NAME="oncode">on (code "Code") { ... }</a> command</B>
+ <br>
+ Purpose:<br>
+ Instruct the team in advance on how to act when upon receiving
+ the specified go-code.
+ After being instructed, the team can continue performing other activities. 
+ As soon as the go-code is received is made, the team will start executing the 
+ 'on code' specified commands.
+ <p>
+ Typically, a team is only issued a go-code once, and subsequently, there
+ is little need to re-instruct the team.
+ <p>
+ The code itself is issued by another team using the 'signal code' command.
+ <p>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp on (code "Red")<br>
+&nbsp &nbsp {<br>
+&nbsp &nbsp &nbsp abort;<br>
+&nbsp &nbsp &nbsp // ... activity ...<br>
+&nbsp &nbsp };<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ If the team won't execute any other commands but instead is solely waiting
+ for the go code, it's better to just use the 'wait for code' command.
+ <br>
+ <p>
+ <B><A NAME="abort">abort</a> command</B>
+ <br>
+ Purpose:<br>
+ Have team abort any current execution of a command (if any), and
+ be ready for new commands. Typically used to respond to exceptions
+ (enemy contact, reception of a go-code).
+ <br>
+ <br>
+ <br>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp on (contact)<br>
+&nbsp &nbsp {<br>
+&nbsp &nbsp &nbsp abort; // stop executing current command<br>
+&nbsp &nbsp &nbsp // ... new commands ...<br>
+&nbsp &nbsp };<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ There is no use in issueing the abort command unless dealing with
+ on contact / on code exceptions.
+ <br>
+ <p>
+ <B><A NAME="phase">phase</a> (definition) command</B>
+ <br>
+ Purpose:<br>
+ Define a specific phase in the team's plan, so they can (at some
+ time) continue with that phase (again).
+ <br>
+ A team aborts sequential execution of the commands upon receiving
+ a 'continue with phase' command. The team will then start executing
+ the commands listed immediately below the specified phase.
+ <br>
+ <br>
+ A phase command is not really executed. A team can continue with
+ a phase without having already 'executed' that phase definition.
+ <br>
+ <br>
+ Examples (from Sabotage in urban_hitman_1.cgf):
+ <br>
+ <pre><FONT face="Courier">     spread towards SE_HighBuildingRoofTopCenter within 1.5; 
+     wait until ready;
+
+   // phase
+   phase "wait for business";     
+     on (contact)
+       {
+         abort;
+         // combat actions ...
+
+         // make sure to reinstruct team before 
+         // finishing dealing with the exception
+         continue with phase "wait for business"; 
+       };
+
+     wait forever; // wait for contact</FONT></pre>
+ <br>
+ <br>
+ Problems and Hints:
+ <br>
+ It helps to provide useful names for the phase.
+ <br>
+ <p>
+ <B><A NAME="continuewithphase">continue with phase</a> command</B>
+ <br>
+ Purpose:<br>
+ Instruct the team to continue with the commands immediately following
+ the phase definition as the next commands to execute.
+ <br>
+ See the 'phase' command above for more info.
+ <p>
+ <B><A NAME="wait">wait</a> command</B>
+ <br>
+ Purpose:<br>
+ Force a specific delay before issueing the next command. You might
+ even use the delay command to postpone insertion of the team.
+ <br>
+ The delay is specified in seconds, with 0.1 second precision.
+ <p>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp wait 10;<br>
+<br>
+&nbsp wait 0.5;<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Use 'wait forever' if you want to wait for a long time.
+ <br>
+ <p>
+ <B><A NAME="waitforever">wait forever</a> command</B>
+ <br>
+ Purpose:<br>
+ Force a 'infinite' delay before issueing the next command (that
+ command won't be issued, actually). 
+ <br>
+ You typically use a wait forever when you want to have a team
+ 'camp' after having positioned and instructed that team to deal
+ with contact.
+ <p>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp wait forever;<br>
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Nope. (Actual waiting time is about 20,000 seconds :) ).
+ <br>
+ <p>
+ <B><A NAME="waituntilready">wait until ready</A> command</B>
+ <br>
+ Purpose:<br>
+ Delay issueing the next command to the team until the team
+ has completed its current command.
+ <br>
+ Because the issueing of a command takes 0.1 second and the
+ execution of a command takes much longer (in general), you
+ want to wait issueing another command. 
+ <p>
+ Examples (Sabotage in urban_hitman_8.cgf):
+ <br>
+<FONT face="Courier">
+&nbsp insert at C_RoomCorner using "column";<br>
+&nbsp wait until ready;  // wait until team has been fully inserted<br> 
+&nbsp spread towards C_RoomDoorEntrance within 0.5;<br> 
+</FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ Not issueing the appropriate wait until ready is likely to crash CGF.
+ <br>
+ <p>
+ <B><A NAME="waituntilcode">wait until code</A> command</B>
+ <br>
+ Purpose:<br>
+ Delay issueing the next command to the team until the team
+ has received a specified go-code.
+ <br>
+ The go-code will be issued by another team using the signal code
+ command.
+ <p>
+ If you need the team to execute other commands while 'waiting'
+ for the go-code, use the on (code) command.
+ <p>
+ Examples:
+ <br>
+<FONT face="Courier">
+&nbsp insert at C_RoomCorner using "column";<br>
+&nbsp wait until ready;  // wait until team has been fully inserted<br><br> 
+&nbsp // upon receiving code Red, start advance<br>
+&nbsp wait until code("Red");<br> 
+&nbsp advance towards parkingtopsniper using "column";<br> </FONT> 
+ <br>
+ Problems and Hints:
+ <br>
+ See <A HREF="#signalcode">signal code</A> command for more info.
+ <br>
+ <p>
+ <br>
+ <br>
+ <h5>
+ <A NAME="editinglocations">Editing Mission Locations</A>
+ </h5>
+ When writing or editing missions, a important part of the time is spent on
+ defining locations, and getting the appropriate coordinates for them (see <A HREF="#location">here</A>).
+ <p>
+ To speed up mission development, CGF 0.81 and later versions allow you to define,
+ view and add locations in-game for both new and existing missions. 
+ <br>
+ You can do so as follows:
+ <OL>
+    <LI>load up AQ2/CGF with a map for which a terrain file (&lt;mapname&gt;.srp, in action/terrain)
+        is available, but <I>don't</I> run/load a mission!
+        <p>
+	<LI>(only if you want to add locations to an existing mission)
+        <br>
+        load the mission (for example, actcity2_survival1.cgf) by typing on the console:
+        <p>
+        <FONT face="Courier">
+        &nbsp;&nbsp;mission read actcity2_survival1.cgf
+        </FONT>
+        <p>
+	<LI>just walk to the spot where you need a location, and type (on the console):
+        <p>
+        <FONT face="Courier">
+        &nbsp;&nbsp;location alocationname
+        </FONT>
+        <p>
+        And repeat! You can pick any locationname you want (as long as don't contain exotic symbols), 
+        but please make sure the name is unique.
+        <p>
+	<LI>you can display the locations already created in the map as follows:
+        <p>
+        <FONT face="Courier">
+        &nbsp;&nbsp;terrain show locations
+        </FONT>
+        <p>
+        Each location will be highlighted by a stack of three blue balls. These blue balls will be present for
+        some 120 seconds.
+        <p>
+	<LI>when you're done adding locations, you can write the modified mission (if you've read a mission),
+        or mission skeleton (if you started from scratch) to a file (for example, actcity2_newmission.cgf)
+        in the action/missions directory:
+        <p>
+        <FONT face="Courier">
+        &nbsp;&nbsp;mission write actcity2_newmission.cgf
+        </FONT>
+        <p>
+        After saving the mission, you can edit the mission file with your favorite mission editor.
+ </OL>
+ <p>
+ <br>
+ <br>
+ <h5>
+ <A NAME="changelog">CGF Scripting Documentation Change Log</a>
+ </h5>
+<table border="1" cellpadding="4" cellspacing="0" width="520"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>date</B>
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Symbol">
+	<B>D</B><br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>description (incl. link)</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Mar 12, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	o<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	documented how to <A HREF="#editinglocations">create/edit mission locations</A> in-game
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Nov 26, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	o<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	new list (CGF0.80)of maximal <A HREF="#loadout">load-out</A><br>
+    <A HREF="#successorscript">'successor script' option</A> when meeting objectives<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 19, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	o<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	fixed <A HREF="#mapareas">area style</A> documentation (combinations of styles not allowed)<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 16, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	o<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	minor grammar and html fixes<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 14, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br><br>
+	+<br>
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	added <A HREF="#notcondition">'not'(!) condition</A> in mission objectives<br>(forgotten to mention this one initially)<br>
+	added more information on <A HREF="#teambehavior">team AI behavior</A><br>
+	added change log<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Aug 7, 1999
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	initial version<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ <br>
+ <br>
+ <!-- end body text -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://action.telefragged.com target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://action.telefragged.com/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

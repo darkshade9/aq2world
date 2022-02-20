@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<body>
+<pre>
+<font face="Courier" size=1 color=#000000>
+<FONT COLOR="#00A000">/*
+   CGF mission, occurring at the Urban map.
+   The player is tasked to take out Sabotage, a manager of clandestine
+   software copying business. He is said to be hiding in the big tower.
+   Rumours are that the streets are aggressively being patrolled by
+   Sabotage's 'Protection' team and maybe a sniper.
+   For your assistance, team Decoy (a single buddy) will autonomously
+   patrol the streets as well, and try to keep Sabotage's protection
+   busy...
+
+   Can you be DA HITMAN who takes evil Sabotage out?
+
+*/
+
+</FONT><FONT COLOR="#0000C0">mission</FONT> <FONT COLOR="#C000C0">"urban hitman"</FONT>
+{
+  <FONT COLOR="#0000C0">author</FONT>
+    <FONT COLOR="#C000C0">"William"</FONT>;
+
+  <FONT COLOR="#0000C0">description</FONT>
+    <FONT COLOR="#C000C0">"you're the hitman!\neliminate Sabotage (in the highest building)\nhe is guarded though"</FONT>;
+
+  <FONT COLOR="#0000C0">rules</FONT>
+  {
+    <FONT COLOR="#0000C0">respawn</FONT> = <FONT COLOR="#0000C0">none;</FONT>
+  };
+
+  <FONT COLOR="#0000C0">map</FONT> <FONT COLOR="#C000C0">"urban"</FONT>
+  { 
+    <FONT COLOR="#0000C0">style</FONT> = <FONT COLOR="#0000C0">open,</FONT> <FONT COLOR="#0000C0">dark,</FONT> <FONT COLOR="#0000C0">urban;</FONT>
+
+    <FONT COLOR="#0000C0">annotation</FONT> = <FONT COLOR="#C000C0">"
+
+    ^N
+  W     E            map by Gerbil!
+     S               n.b. annotation is just for clarity, thus is optional
+
+ +----------+-----+=============----+------+----+--------------------------+
+ |  low     |@@   |         |   .   +------+    |                          |
+ | buildings|@@   |         |   .   |##    |    +                          |
+ |          |@@   |         |   .   |      |    +--------------------+-----|
+ |  @@  @@  |     |         |   .   |      |   #+--------+           |     |
+ |          +-----+---+     |   .   |      |             | -AQ-sign- |     |
+ |--------------------+.....+-------+      +-------------+-----------+     |
+ |  dead-end alley          a                                        | @@  |
+ |----------+--------------+l +----------------+                     |     |
+ |          |              |l |                |                     |     |
+ | sniper   |              |e |                |                     |     |
+ | room     |              |y |                |                     | @@  |
+ |--+---| |-+--------------+==+                |                     +-----|
+ |  |       |                 |                |                     |     |
+ |  |       |                 +----------------+                     | @@  |
+ |  +-------+                     alley                              |     |
+ |                        +----------------------+                 +-------|
+ | +--------+             |  @@           @@     |                 |       |
+ | |parking |             |                      |                 |       |
+ | | . .    |             | center building roof |                 |       |
+ | | . .    |             |  unreachable without |-----------------|       |
+ | | . .    |             |     trick jumps      |  @@@@@@@@@@     | @@    |
+ | +--------+             |  @@             +----|    bridge       | @@    |
+ |                        |                 |    |    OO           | @@@@  |
+ |   +-----+              |        +--------+    |-----------------|       |
+ |   |     |              |        |             |                 |       |
+ |   |    !|              +--------+-------------+                 +-------|
+ |   |    !|Coke                                                    alley  |
+ |   |    !|sign                                                   +-------|
+ |   +-----+                                                       |       |
+ |                                                                 |       |
+ |                     +-------------+     +--| |------------------|       |
+ |----------------+    | @@ south @@ |     _                       |       |
+ |                |    |   center    |     _              .....    |       |
+ |  @@      @@    |   #| building @@ |     |              .....    |       |
+ |  south corner  |    +-------HH----+     |                       |       |
+ |  building      |            HH          |   THE high roof       |       |
+ |  @@      @@    +------------HH---+------|                       |       |
+ |                                 #|     #| south east high roof  |       |  
+ +----------------------------------+--------------------------------------+
+ "</FONT>; 
+
+<FONT COLOR="#00A000">    /*
+    locations
+    */ 
+
+    // sniper room locations (north west)
+</FONT>    <FONT COLOR="#0000C0">location</FONT> NW_SniperRoom_Rooftop         = <FONT COLOR="#C000C0"><-1346,   634,  280></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> NW_SniperRoom                 = <FONT COLOR="#C000C0"><-1273,   879,  316></FONT>;
+
+<FONT COLOR="#00A000">    // parking
+</FONT>    <FONT COLOR="#0000C0">location</FONT> W_Parking_TopFloor            = <FONT COLOR="#C000C0"><-1337,   268,  432></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> W_Parking_SndFloor            = <FONT COLOR="#C000C0"><-1406,   210,  296></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> W_Parking_TopFloorSniperRoom  = <FONT COLOR="#C000C0"><-1450,   305,  425></FONT>;
+
+<FONT COLOR="#00A000">    // coke billboard building
+</FONT>    <FONT COLOR="#0000C0">location</FONT> W_Behind_CokeSign             = <FONT COLOR="#C000C0"><-1365,  -262,  472></FONT>;
+
+<FONT COLOR="#00A000">    // corner building with four air vents
+</FONT>    <FONT COLOR="#0000C0">location</FONT> SW_CenterAtCornerBuilding     = <FONT COLOR="#C000C0"><-1201, -1129,  472></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SW_SWAtCornerBuilding         = <FONT COLOR="#C000C0"><-1498, -1116,  472></FONT>;
+
+<FONT COLOR="#00A000">    // building with ladder and ramp close to largest building
+</FONT>    <FONT COLOR="#0000C0">location</FONT> S_SouthCenterBuildingTop      = <FONT COLOR="#C000C0">< -866,  -743,  408></FONT>;
+
+<FONT COLOR="#00A000">    // street level, underneath ramp
+</FONT>    <FONT COLOR="#0000C0">location</FONT> S_SouthCenterUnderneathRamp   = <FONT COLOR="#C000C0">< -672, -1151,   40></FONT>;
+
+<FONT COLOR="#00A000">    // largest building (south east high roof)
+</FONT>    <FONT COLOR="#0000C0">location</FONT> SE_HighBuildingSniperRoom     = <FONT COLOR="#C000C0">< -310,  -768,  680></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SE_HighBuildingRoofTopCorner  = <FONT COLOR="#C000C0"><  157, -1240,  792></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SE_HighBuildingRoofTopEdge    = <FONT COLOR="#C000C0">< -322,  -762,  792></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SE_HighBuildingRoofTopCenter  = <FONT COLOR="#C000C0">< -233, -1010,  792></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SE_HighBuildingSniperWindow1  = <FONT COLOR="#C000C0">< -351,  -766,  680></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SE_HighBuildingSniperWindow2  = <FONT COLOR="#C000C0">< -185,  -736,  680></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> SE_HighLadderToRoofTop        = <FONT COLOR="#C000C0">< -307, -1258,  792></FONT>;
+
+<FONT COLOR="#00A000">    // north side, low roofs
+</FONT>    <FONT COLOR="#0000C0">location</FONT> NW_LowBuildingsRoofTop        = <FONT COLOR="#C000C0"><-1065,  1432,  280></FONT>;
+
+<FONT COLOR="#00A000">    // bridge (across street), east side of the map
+</FONT>    <FONT COLOR="#0000C0">location</FONT> E_UnderBridge                 = <FONT COLOR="#C000C0">< -182,   173,   40></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> E_AtBridge                    = <FONT COLOR="#C000C0"><  -42,    35,  232></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> E_StairsToBridge              = <FONT COLOR="#C000C0"><  476,    66,  216></FONT>;
+
+<FONT COLOR="#00A000">    // near northeast AQ2 sign
+</FONT>    <FONT COLOR="#0000C0">location</FONT> NE_StreatUnderneathAQ2Sign    = <FONT COLOR="#C000C0"><  182,  1107,   40></FONT>;
+    <FONT COLOR="#0000C0">location</FONT> NE_BehindBuildingNearAQ2Sign  = <FONT COLOR="#C000C0">< -379,  1316,   40></FONT>;
+
+
+<FONT COLOR="#00A000">    /*
+    areas (for patrol purposes)
+    */ 
+</FONT>    <FONT COLOR="#0000C0">area</FONT> area_NW_SniperRoom
+    { <FONT COLOR="#0000C0">style</FONT>     = <FONT COLOR="#0000C0">roof;</FONT> // combine using open, closed, roof
+      <FONT COLOR="#0000C0">locations</FONT> = NW_SniperRoom_Rooftop;
+      // use height cut off instead of radius
+    };
+
+    <FONT COLOR="#0000C0">area</FONT> area_E_AtBridge
+      { <FONT COLOR="#0000C0">style</FONT>     = <FONT COLOR="#0000C0">open;</FONT> // combine using open, closed, roof
+        <FONT COLOR="#0000C0">locations</FONT> = E_AtBridge;
+        <FONT COLOR="#0000C0">radius</FONT>    = 250;  // max distance to listed locations
+      };
+
+    <FONT COLOR="#0000C0">area</FONT> area_SE_HighBuildingSniperRoom
+    { <FONT COLOR="#0000C0">style</FONT>     = <FONT COLOR="#0000C0">closed;</FONT> // combine using open, closed, roof
+      <FONT COLOR="#0000C0">locations</FONT> = SE_HighBuildingSniperRoom;
+      <FONT COLOR="#0000C0">radius</FONT>    = 100;  // max distance to listed locations
+    };
+
+    <FONT COLOR="#0000C0">area</FONT> area_NW_LowBuildingsRoofTop
+    { <FONT COLOR="#0000C0">style</FONT>     = <FONT COLOR="#0000C0">open;</FONT> // combine using open, closed, roof
+      <FONT COLOR="#0000C0">locations</FONT> = NW_LowBuildingsRoofTop;
+      <FONT COLOR="#0000C0">radius</FONT>    = 100;  // max distance to listed locations
+    };
+
+    <FONT COLOR="#0000C0">area</FONT> area_SW_CenterAtCornerBuilding
+    { <FONT COLOR="#0000C0">style</FONT>     = <FONT COLOR="#0000C0">open;</FONT> // combine using open, closed, roof
+      <FONT COLOR="#0000C0">locations</FONT> = SW_CenterAtCornerBuilding;
+      <FONT COLOR="#0000C0">radius</FONT>    = 100;  // max distance to listed locations
+    };
+
+  };
+
+  <FONT COLOR="#0000C0">force</FONT> <FONT COLOR="#C000C0">"Warez Dudes"</FONT>
+  {
+    <FONT COLOR="#0000C0">team</FONT> <FONT COLOR="#C000C0">"Clandestine Management"</FONT>
+    { <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Sabotage" "male/sabotage"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"Dual MK23 Pistols"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"M4 Clip"</FONT> = 2;
+          <FONT COLOR="#0000C0">skill</FONT>  = 3;
+        };
+    };
+
+    <FONT COLOR="#0000C0">team</FONT> <FONT COLOR="#C000C0">"High Precision"</FONT>
+    { 
+      <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Precision-1" "terror/swatsnipe"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"AP Sniper Ammo"</FONT> = 10;
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"Sniper Rifle"</FONT>;
+          <FONT COLOR="#0000C0">skill</FONT>  = 2;
+        };
+    };
+
+    <FONT COLOR="#0000C0">team</FONT> <FONT COLOR="#C000C0">"Protection Copy"</FONT>
+    { 
+      <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Protection-1" "terror/terror"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"M3 Super 90 Assault Shotgun"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"12 Gauge Shells"</FONT> = 7;
+          <FONT COLOR="#0000C0">skill</FONT>  = 2;
+        };
+      <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Protection-2" "terror/terror"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"M3 Super 90 Assault Shotgun"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"12 Gauge Shells"</FONT> = 7;
+          <FONT COLOR="#0000C0">skill</FONT>  = 2;
+        };
+      <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Protection-3" "terror/terror"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"M3 Super 90 Assault Shotgun"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"12 Gauge Shells"</FONT> = 7;
+          <FONT COLOR="#0000C0">skill</FONT>  = 2;
+        };
+      <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Protection-4" "terror/terror"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"M3 Super 90 Assault Shotgun"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"12 Gauge Shells"</FONT> = 7;
+          <FONT COLOR="#0000C0">skill</FONT>  = 2;
+        };
+    };
+
+  };
+
+  <FONT COLOR="#0000C0">force</FONT> <FONT COLOR="#C000C0">"A kind of Law"</FONT>
+  {
+    <FONT COLOR="#0000C0">team</FONT> <FONT COLOR="#C000C0">"Hitman"</FONT>
+    { 
+      <FONT COLOR="#0000C0">player</FONT> <FONT COLOR="#C000C0">"Hitman" "male/reservoir"</FONT> 
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"M3 Super 90 Assault Shotgun"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"12 Gauge Shells"</FONT> = 7;
+
+          <FONT COLOR="#0000C0">item</FONT>   <FONT COLOR="#C000C0">"Kevlar Vest"</FONT>;
+        };
+    };
+
+    <FONT COLOR="#0000C0">team</FONT> <FONT COLOR="#C000C0">"Decoy"</FONT>
+    { 
+      <FONT COLOR="#0000C0">npc</FONT> <FONT COLOR="#C000C0">"Buddy" "male/adidas" </FONT>
+        { 
+          <FONT COLOR="#0000C0">weapon</FONT> <FONT COLOR="#C000C0">"M4 Assault Rifle"</FONT>;
+          <FONT COLOR="#0000C0">ammo</FONT>   <FONT COLOR="#C000C0">"M4 Clip"</FONT> = 2;
+          <FONT COLOR="#0000C0">skill</FONT>  = 2.5;
+        };
+    };
+  };
+
+  <FONT COLOR="#0000C0">objectives</FONT>
+  {
+    <FONT COLOR="#0000C0">failure</FONT>
+      ( <FONT COLOR="#C000C0">"A kind of Law",
+        "you're supposed to be a hitman!"</FONT>
+      )
+    = <FONT COLOR="#0000C0">eliminated(</FONT><FONT COLOR="#C000C0">"A kind of Law"</FONT>)
+      -> {<FONT COLOR="#C000C0">"urban_map_2.cgf"</FONT>};
+
+    <FONT COLOR="#0000C0">success</FONT>
+      ( <FONT COLOR="#C000C0">"A kind of Law",
+        "you sure are da HITMAN!"</FONT>
+      )
+    = <FONT COLOR="#0000C0">eliminated(</FONT><FONT COLOR="#C000C0">"Sabotage"</FONT>)
+      -> {<FONT COLOR="#C000C0">"urban_map_2.cgf"</FONT>};
+
+    <FONT COLOR="#0000C0">failure</FONT>
+      ( <FONT COLOR="#C000C0">"A kind of Law",
+        "this is taking way too long"</FONT>
+      )
+    = <FONT COLOR="#0000C0">timeout(300)</FONT>
+      -> {<FONT COLOR="#C000C0">"urban_map_2.cgf"</FONT>};
+  };
+
+  <FONT COLOR="#0000C0">plan</FONT> <FONT COLOR="#C000C0">"Clandestine Management"</FONT>
+  {
+     <FONT COLOR="#0000C0">insert at</FONT> SE_HighBuildingSniperRoom <FONT COLOR="#0000C0">using</FONT> <FONT COLOR="#C000C0">"column"</FONT>;
+     <FONT COLOR="#0000C0">wait until ready;
+     
+     spread towards</FONT> SE_HighBuildingRoofTopCenter <FONT COLOR="#0000C0">within</FONT> 1; <FONT COLOR="#00A000">// time in seconds</FONT>
+<FONT COLOR="#0000C0">     wait until ready;
+</FONT>
+<FONT COLOR="#00A000">    <FONT COLOR="#00A000">// wait, defend and repeat</FONT> 
+</FONT>    <FONT COLOR="#0000C0">phase</FONT> <FONT COLOR="#C000C0">"wait for business"</FONT>;
+     <FONT COLOR="#0000C0">on (contact)</FONT>
+     {
+       <FONT COLOR="#0000C0">abort;</FONT> <FONT COLOR="#00A000">// stop doing whatever he is doing</FONT>
+       <FONT COLOR="#0000C0">defend towards </FONT>SE_HighBuildingRoofTopCenter from SE_HighBuildingSniperRoom;
+      <FONT COLOR="#0000C0"> wait until ready;
+       continue with phase </FONT><FONT COLOR="#C000C0">"wait for business"</FONT>;
+     }
+     <FONT COLOR="#0000C0">wait forever</FONT>; <FONT COLOR="#00A000"> // wait until contact</FONT>
+  };
+
+  <FONT COLOR="#0000C0">plan</FONT> "Protection Copy"
+  {
+     <FONT COLOR="#0000C0">insert</FONT> <FONT COLOR="#0000C0">at</FONT> SW_CenterAtCornerBuilding <FONT COLOR="#0000C0">using</FONT> <FONT COLOR="#C000C0">"column"</FONT>;
+<FONT COLOR="#0000C0">     wait until ready</FONT>;
+     
+     <FONT COLOR="#0000C0">patrol;</FONT>
+  };
+
+  <FONT COLOR="#0000C0">plan</FONT> "High Precision"
+  {
+     <FONT COLOR="#0000C0">insert</FONT> <FONT COLOR="#0000C0">at</FONT> SE_HighBuildingRoofTopCenter <FONT COLOR="#0000C0">using</FONT> <FONT COLOR="#C000C0">"column"</FONT>;
+     <FONT COLOR="#0000C0">wait until ready</FONT>;
+
+     <FONT COLOR="#0000C0">snipe from </FONT>SE_HighBuildingRoofTopEdge <FONT COLOR="#0000C0">towards</FONT> S_SouthCenterBuildingTop;
+  };
+
+  <FONT COLOR="#0000C0">plan</FONT> "Hitman"
+  {
+     <FONT COLOR="#0000C0">insert</FONT> <FONT COLOR="#0000C0">at</FONT> NE_BehindBuildingNearAQ2Sign <FONT COLOR="#0000C0">using</FONT> <FONT COLOR="#C000C0">"column"</FONT>;
+     <FONT COLOR="#0000C0">wait until ready</FONT>;
+
+     <FONT COLOR="#00A000">// player, so nothing to do here</FONT>
+  };
+
+  <FONT COLOR="#0000C0">plan</FONT> "Decoy"
+  {
+     <FONT COLOR="#0000C0">insert</FONT> <FONT COLOR="#0000C0">at</FONT> NW_LowBuildingsRoofTop <FONT COLOR="#0000C0">using</FONT> <FONT COLOR="#C000C0"><FONT COLOR="#C000C0">"column"</FONT></FONT>;
+     <FONT COLOR="#0000C0">wait until ready</FONT>;
+     
+     <FONT COLOR="#0000C0">patrol;</FONT>
+  };
+}
+</FONT>
+</pre>
+</body>

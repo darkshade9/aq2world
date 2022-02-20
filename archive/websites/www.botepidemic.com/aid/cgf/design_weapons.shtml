@@ -1,0 +1,459 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: the design of the AI weapon handling!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/vulture_pulling_back.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot3.jpg" border=0 align=center alt="Vulture pull back under fire."></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/vulture_pulling_back_on_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot10.jpg" border=0 align=center alt="Vulture team pulling back onto a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_police_drainpipe.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot15.jpg" border=0 align=center alt="A bot sniper team moves into position"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 01203
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <br>
+ <!-- header -->
+ <BLOCKQUOTE>
+ <p>
+ <H3>
+ <B>CGF (AI) Weapon Handling</B>
+ <HR color="#C0C0C0">
+ <FONT SIZE=1>
+ Last update: November 22, 2000, by <A HREF="mailto:william@botepidemic.com">William</A>. List of changes <A HREF="#changelog">here</A> .
+ </FONT>
+ </h3>
+ <h5>
+ <A NAME="h5_1">1. Tactical Shooters and Weapons</a>
+ </h5>
+ Tactical shooter games typically are designed to provide a large arsenal of realistic weapons, each with their subtle but important characteristics. Some weapons are great for close combat, but are ineffective at long range. Others have great accuracy when firing in 3 round burst. Another type of weapon offers a telescope, but reloads slowly. Some have large recoil. Others feature large clips, etc.
+ <p>
+ The differences in weapons are that large and important that FAQs for these tactical shooters typically need multiple pages of text to explain when (not) to use a specific weapon. 
+ <p>
+ Thus, it is probably non-trivial for the AI to handle these weapons realistically and smart...
+ <h5>
+ <A NAME="h5_2">2. 'Open' Tactical Shooters and Weapon Code</a>
+ </h5>
+ A number of 'open' 1st person shooters has been modified (mod-ed) by talented members of the gaming community to offer great and immersive realistic multi-player shooters. These mods have been programmed on top of (often) multi-player or (less often) single-player game logic provided by game developers.
+ <p>
+ Characteristic for these games and their game logic is:
+ <ul>
+ <li>the original AI isn't too smart, and doesn't bother to think about differences as subtle as in realistic mods (because the original game allows 'respawn')
+ <li>the weapon implementation solely keeps track of events important to the player (when to make sounds, what animation to display, etc.) 
+ </ul>
+ In other words, the information available in the game logic (either if-statements for Q2 based games, or weapon classes for HL based games), was never designed to assist the AI in figuring out how to handle a weapon realistically.
+ <br>
+ This page documents the weapon model that enables the CGF AI to handle the weapons 'tactically'.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/flex_mout.jpg">
+    <IMG SRC="./shots/flex_mout_thumb.jpg" BORDER=0 width=133 height=100 ALT="plenty of weapons, plenty of peculiarities">
+	</a>
+	</TD>
+	</TD>
+	<TD align="center" valign="middle">
+    <IMG SRC="./shots/cgf_door_anim.gif" BORDER=0 width=133 height=100 ALT="CGF bots showing off (and taking some hits)">
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/warvet_m4.jpg">
+    <IMG SRC="./shots/warvet_m4_thumb.jpg" BORDER=0 width=133 height=100 ALT="team mate down, one more weapon to pick up">
+	</a>
+  </TR>
+ </TABLE>
+ </center>
+ <h5>
+ <A NAME="h5_3">3. AI Weapon Handling Analyzed</a>
+ </h5>
+ In realistic shooters, the gamer (and preferably the AI):
+ <ul>
+ <li>aims at a threat, and optionally fires the weapon
+ <li>selects the best weapon for the job
+ <li>selects the best weapon mode for the job
+     <br>(semi-automatic / full auto / zoom ...)
+ <li>reloads a weapon that is empty, if possible
+ <li>preloads weapons that aren't full (or prematurely reloads weapons that might become empty soon)
+ <li>drops a weapon to pick up a better one
+ </ul>
+ The actor (gamer or AI) takes a lot into account when deciding to fire, switch weapons, switch mode, (p)reload, etc.:
+ <ul>
+ <li>ammo available in weapon
+ <li>ammo clips carried by the AI
+ <li>distance to threat
+ <li>obstacles (thin walls, water) between AI and threat
+ <li>threat visible or predicted
+ <li>weapon usage ('spray-n-pray', snipe, suppress, 'zoom-n-scan-n-snipe')
+ <li>weapon capabilities (silenced, recoil, zoom, clip size)
+ <li>other weapons in AI's arsenal
+ <li>aim (reticule size, errors due to being hit)
+ <li>threat's awareness of being aimed on
+ <li>...
+ </ul>
+ This list clearly is too long to be dealt with by a couple of 'if-statements'. (And if that were possible, it would be a nightmare to add a new weapon).
+ <br>
+ To record and be able to reason about these factors, we'd better make them explicit in our design.
+ <h5>
+ <A NAME="h5_4">4. CGF AI Weapon Handling model (simplified)</a>
+ </h5>
+ </blockquote>
+  <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=300 width=545 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/cgfai_weapon.gif" target=blank>
+    <IMG SRC="./shots/cgfai_weapon_thumb.gif" BORDER=0 width=530 height=253 ALT="click for a full size class diagram">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ <blockquote>
+ To reason about the use of weapons, the AI has explicit representations of all the important 'objects':
+ <ul>
+ <li>
+ The AI character is an <i>Actor</i>, who holds ammo clips, and carriers a number of weapons. The <i>Actor</i> carries multiple <i>Weapons</i>, but has only one of them in his hands (selected).
+ <li>
+ The <i>Weapon</i> solely represents the state of a weapon carried by the <i>Actor</i>: the weapon holds some ammo, is in a mode, may be engaged in a burst. The <i>Weapon</i> is of a specific <i>WeaponType</i>.
+ <li>
+ The <i>WeaponType</i> super-class defines the possible characteristics of <i>WeaponType.</i> All <i>Weapons</i> of a <i>WeaponType</i> have a certain fitness for some usage, feature the weapon modes, and have ideal burst lengths.
+ <br>
+ There sub-classes of <i>WeaponType</i> that define the exact properties and fitness for usage (as a virtual function), for example:
+	 <ul>
+	 <li>the <i>Hand Gun</i>, which features single shot and automatic mode, and does not provide any restrictions on the burst length, since it doesn't have a significant recoil.
+	 <li>the <i>Assault Rifle</i>, which features 3 round bursts, automatic mode and a 3xzoom, and has some recoil (so it suggests a restricted burst length). 
+	 <li>the <i>Squad Automatic Weapon</i>, which only has 'automatic' mode, and a significant recoil. It therefor is best fired in 5 round bursts.
+	 </ul>
+ <li>
+ The <i>Threat</i> is a potential target to aim for.
+ <li>
+ Aiming isn't done instantaneously and perfectly (that wouldn't be realistic). Instead, the <i>Actor</i>'s aim depends on how well he sees the <i>Threat</i>, how long he has been looking at the <i>Threat</i>, etc. And if the <i>Threat</i> is hidden for just a moment by an obstacle, the <i>Actor</i> typically aims for the position the <i>Threat</i> will going to move to next, or the position the <i>Threat</i> will re-appear.
+ </ul>
+ <h5>
+ <A NAME="h5_5">5. Weapon Selection using the Weapon Handling model</a>
+ </h5>
+ Instead of going through giant if-statements, weapon selection has become easier to write and understand:
+ <p><FONT face="Courier">
+&nbsp; Weapon Actor::SelectBestWeapon(distance, usage)<br>
+&nbsp;  {<br>
+&nbsp; &nbsp;    bestweapon = 0;<br>
+&nbsp; &nbsp;    bestscore  = 0;<br>
+&nbsp; &nbsp;    for each weapon carried<br>
+&nbsp; &nbsp;    {<br>
+&nbsp; &nbsp; &nbsp;      clips&nbsp; = inventory[weapon->GetAmmoType()];<br>
+&nbsp; &nbsp; &nbsp; 	 rounds = weapon->GetAmmo();<br>
+&nbsp; &nbsp; &nbsp; 	 score&nbsp; = weapon<br>
+&nbsp; &nbsp; &nbsp; &nbsp;	            ->GetWeaponType()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;           ->GetFitnessForUsage(usage, distance,<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  rounds, clips);<br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp;      if ( score > bestscore )<br>
+&nbsp; &nbsp; &nbsp; 	   {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; 	     bestscore  = score;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; 		 bestweapon = weapon;<br>
+&nbsp; &nbsp; &nbsp; 	   }<br>
+&nbsp; &nbsp;    }<br>
+&nbsp; &nbsp; return bestweapon;<br>
+&nbsp;  }<br>
+</FONT> 
+<br>
+The real gain is not so much in the simple weapon selection algorithm, but in the fact that we can take care of all the specific weapon's pecularities in its own <i>WeaponType</i> function (a member function overriding the virtual member function in WeaponType):
+ <p><FONT face="Courier">
+&nbsp; float SquadAutomaticWeapon::GetFitnessForUsage<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (usage,distance, rounds, clips)<br>
+&nbsp;  {<br>
+&nbsp; &nbsp; // not useful for anything<br>
+&nbsp; &nbsp; // but suppression and direct fire<br>
+&nbsp; &nbsp; if ( !(usage & (eDirectFire | eSuppression) )<br>
+&nbsp; &nbsp; &nbsp; return 0;<br>
+&nbsp; &nbsp;<br> 
+&nbsp; &nbsp; // fitness great for nearby<br>
+&nbsp; &nbsp; // less for long distance<br>
+&nbsp; &nbsp; float fitness;<br>
+&nbsp; &nbsp; if ( distance < 100 )<br>
+&nbsp; &nbsp; &nbsp; fitness = 1.0;<br>
+&nbsp; &nbsp; else<br>
+&nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; fitness = 100 / distance;<br>
+&nbsp; &nbsp;<br> 
+&nbsp; &nbsp; // correct for low on ammo<br>
+&nbsp; &nbsp; // since reloading is slow<br>
+&nbsp; &nbsp; if ( rounds < 10 )<br>
+&nbsp; &nbsp; &nbsp; fitness *= 0.75;<br>
+&nbsp; &nbsp;<br> 
+&nbsp; &nbsp; // if not much ammo in total<br>
+&nbsp; &nbsp; // reduce fitness some more<br>
+&nbsp; &nbsp; if ( (clips == 0) && (rounds < 50) )<br>
+&nbsp; &nbsp; &nbsp; fitness *= 0.75;<br>
+&nbsp; &nbsp; }<br>
+&nbsp; &nbsp;<br> 
+&nbsp; &nbsp; return fitness;<br>
+&nbsp;  }<br>
+</FONT> 
+<p>
+Note that the method deals in a simple and structured way with detailed properties of a 100 round belt-fed heavy machine gun. You don't run the risk of affecting other weapon's properties by changing it.
+<p>
+This same format, of having a dedicated method per weapon, allows you to take different matters into account when defining the fitness for a bolt-action sniper rifle.
+<p>
+The actual CGF for AQ2 code deals with more factors, including weapon add-ons (silencer, laser sight), weapon modes (3 round burst or full-auto, zoom levels), and game round duration (early in the game round, ammo conservation isn't that important).
+<p>
+The CGF <i>WeaponType</i> class also implements a lot more weapon properties, such as aiming preferences (hand guns cannot penetrate body armor, and should be aimed for the head or legs, sniper rifles aim for the largest portion of the body (torso), assault rifles on full auto aim for the feet since the muzzle will be kicked up, etc.).
+ <h5>
+ <A NAME="h5_6">6. Example Weapon Handling Behavior</a>
+ </h5>
+ This weapon model also enables simple and understandable weapon handling code:
+ <p><FONT face="Courier">
+&nbsp; Weapon Actor::HandleWeapon(threattracking)<br>
+&nbsp;  {<br>
+&nbsp; &nbsp; if ( !threattracking)<br>
+&nbsp; &nbsp; { // no threat, take care of the weapons<br>
+&nbsp; &nbsp; &nbsp;   Weapon otherweapon;<br>
+&nbsp; &nbsp; &nbsp;   if ( SelectedWeapon()->IsEmpty() )<br>
+&nbsp; &nbsp; &nbsp; &nbsp;   SelectedWeapon()->Reload();<br>
+&nbsp; &nbsp; &nbsp;   else<br>   
+&nbsp; &nbsp; &nbsp;   if ( otherweapon = GetWeaponNeedingReload() )<br>
+&nbsp; &nbsp; &nbsp; { // select now, reload when active<br>
+&nbsp; &nbsp; &nbsp; &nbsp;   SelectWeapon(otherweapon);<br>
+&nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; }<br>
+&nbsp; &nbsp; else<br>
+&nbsp; &nbsp; { // threat! so aim and fire unless empty<br>
+&nbsp; &nbsp; &nbsp; AimResult_t aim; // tells how the aim and weapon is<br>   
+&nbsp; &nbsp; &nbsp; // aiming also has bot turn towards target<br>
+&nbsp; &nbsp; &nbsp; aim = SelectedWeapon()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ->AimAndDecideToFire(threattracking);<br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; // test for good aim that isn't blocked<br>
+&nbsp; &nbsp; &nbsp; if ( eFire == (aim & (eBlocked | eFire)) )<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SelectedWeapon->Fire();<br>
+&nbsp; &nbsp; &nbsp; else<br>
+&nbsp; &nbsp; &nbsp; if ( aim & (eEmpty) )<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ReloadOrSwitchWeapon();<br>
+&nbsp; &nbsp; &nbsp; else<br>
+&nbsp; &nbsp; &nbsp; if ( aim & (eAim)) // thus eAim without eFire<br>
+&nbsp; &nbsp; &nbsp; { // aims needs to improve or trigger should<br>
+&nbsp; &nbsp; &nbsp; &nbsp; // be released to reduce recoil (burst length)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; /* do nothing but keep aiming */<br>
+&nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; }<br>
+&nbsp;  }<br>
+ </FONT>
+<p>
+By having the <i>Weapon</i> and (not shown) the <i>WeaponType</i> handle the fire, we again can handle the peculiarities of the weapon in a single method. The code above suggests how a <i>Squad Automatic Weapon </i>can be used without the recoil growing too large. Probably every burstlength shots, the <i>Weapon</i> just does not return the eFire bit, and the Actor will ease of the trigger.
+<p>
+The actual CGF for AQ2 implementation (as released in December 99) deals with a number of other factors, including prediction of threat movement, prediction of threat 're-appear locations', weapon mode switching during the attack, scanning during sniping operations. It also knows dirty tricks such as taking the time to steady its aim when attacking a threat in the back (since the threat won't attack immediately)...
+<h5>
+<A NAME="h5_7">7. Extensions and Complications</a>
+</h5>
+Depending on the weapon aspects being simulated, this design can be extended. Some extensions are straightforward, but other extensions really result in more complex designs.
+<p>
+<b>Clips</b><br>
+Some mods (including AQ2) have the Actor carry clips, not rounds. They reload clip by clip. Clips released from the weapons take 'home' the remaining rounds in that clip. Here, it makes sense to model the clips explicitly (since they probably can be picked up), and do the ammo computations with rounds in the weapon, and clip sizes.
+<p>
+Other mods (notably Counter-Strike) have 'virtual clips', and just shuffle additionals rounds (up to the clip size or ammo amount) into the weapon, when 'reloading' (CS seems to inherit the basic HL weapons code). Modeling the clips explicitly doesn't make that much sense.
+<p>
+<b>Reload Activities</b><br>
+Most weapons will require one single (short) activity to reload it. There are, however, exceptions: (semi)-automatic shotguns and bolt-action (sniper) rifles typically combine internal ammo (round) storage with the ability to reload individual rounds. In that case, two modes of reloading are available: loading a single round, or loading a series of rounds. At ease, the Actor typically prefers loading a series of rounds, whereas in engaging a threat, the Actor will want to fire as soon as possible (after loading one single round).
+<p>
+<b>Ammo Types</b><br>
+Some tactical shooters (notably R6: Rogue Spear) differentiate between different kinds of ammo. Examples including full metal jacket (FMJ) rounds that penetrate through targets and walls, jacketed hollow point (JHP) rounds that do not penetrate, subsonic rounds (less noise), slug / buckshot shotgun rounds, and tracer rounds.
+<p>
+Here it makes sense to model even the ammo types explicitly.
+<p>
+<b>'Power up' Weapons / Long reload times</b><br>
+In a few shooters, some (but not all) weapons need a significant amount of time from the moment they are selected to the time they can be fired. Examples included: the gatling gun (HL TFC), heavy sniper rifles (R6 Rogue Spear), and hand grenades for which the pin is to be released first.
+<p>
+Similarly, once a weapon is being fired (i.e. the pin is pulled), it is important to continue to aim and fire in the direction intended.
+<p>
+Again, for the AI to take these into account, it is best to model these properties explicitly as an attribute / function call of the <i>Weapon</i>. In addition, the preferences for rapid weapon switching and activation should be taken into account when trying to select the best weapon (as an additional parameter in 'GetFitnessForUsage').
+<p>
+<b>'Twin Weapons'</b><br>
+Some game feature 'weapons' composed of two guns. The AQ2 and CS akimbo pistols of course come to mind. These akimbos can be treated as a single weapon with two clips and twice the rate of fire. They do not cause the AI problems in considering these guns.
+<p>
+For combinations of an assault rifle and grenade launcher (such as the M4/M203 in CGF), or an assault rifle and shotgun (in Delta Force), things get more complicated.
+<br>
+A rifle/grenade launcher in theory is capable of direct (rifle / grenades) and arc trajectory (grenades, 'lobbed' over obstables) fire. Reload times differ for the clip and rifle grenade. A laser-sight and scope typically apply solely to the rifle, and is of little assistance in aiming the grenade launcher.
+<br>
+Thus actual fitness for a task depends very much on the availability of (two different kinds of) ammo, and whether rounds of these types are in the weapon.
+<br>
+I've tackled these twin weapons by taking into account two types of ammo in all <i>WeaponType</i> and <i>Weapon</i> instance interfaces (assuming weapons consuming yet another kind of ammo won't show up in a game).
+<p>
+<b>Arc Trajectory Weapons</b><br>
+Already briefly mentioned above, arc trajectory weapons shoot projectiles that do not travel in an almost straight line, but instead along an arc (due to their slower speed). Examples include: hand grenades, throwing knifes, and rifle grenades.
+<p>
+These weapons, compared to rifles and hand guns, complicated matters by:
+<ul>
+<li>having a range typically shorter than the map's dimensions
+<li>having the actual range (partially) depending on the height difference between the attacker and the target
+<li>having a minimum range (due to the damage radius) for rifle grenades and hand grenades
+<li>being able to seriously damage the target when positioned several meters away from the target's actual position (for grenades)
+<li>being able to cause friendly fire accidents (for grenades)
+</ul>
+In other words, arc trajectory weapons are complicated to aim. Whereas for 'normal' rifles holds "what you see is what you can hit", trajectory weapons require checks for the complete trajectory.
+<br>
+In addition, the <i>Actor</i> may be required to aim in a direction different from the target: notably the pitch (up / down) angle will be different, and to lob grenades through a window to a spot near enough to the target, the yaw (left / right) angle might be different as well.
+<p>
+Handling these trajectory weapons requires some special provisions in the aiming and aim evaluation code.
+</ul>
+<h5>
+<A NAME="h5_8">8. Further Reading</a>
+</h5>
+For more info on aiming and vision, please visit this <a href="./design_vision.shtml">page</a>.
+
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <p>
+ <h5>
+ <A NAME="changelog">9. CGF Terrain Static Ranking Change Log</a>
+ </h5>
+<table border="1" cellpadding="4" cellspacing="0" width="520"
+bordercolor="#C0C0C0">
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>date</B>
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Symbol">
+	<B>D</B><br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>description (incl. link if applicable)</B><br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Nov 22, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    extened <a href="#h5_7">complications</a> with reload activities<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 17, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	+<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    listed possible extensions and complications<br>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="20%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Sep 14, 2000
+	</font></td>
+	<td width="5%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	o<br>
+	</font></td>
+	<td width="70%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    initial version<br>
+	</font></td>
+ </TR>
+ </TABLE>
+ </BLOCKQUOTE>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 2000.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

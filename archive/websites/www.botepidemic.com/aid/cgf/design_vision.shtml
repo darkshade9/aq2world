@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/dev_snipe_spot_spots.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot7.jpg" border=0 align=center alt="Sniping information [development shot]"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/marines_assembled_in_column_waiting.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot9.jpg" border=0 align=center alt="A marine team assembles at the start of a mission"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/marines_fighting.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot21.jpg" border=0 align=center alt="Marines in close combat while assaulting a rooftop"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00825
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <!-- text: begin -->
+ <BLOCKQUOTE>
+ <br>
+ <h3><B>
+ CGF bot vision, tracking and aiming</b></h3>
+ <br>
+ Action Quake2 and the AQ2 maps provide us with moody, dangerous, and 'single-shot-kill' worlds. 
+ Being seen often is fatal. Darkness sometimes is your friend. You've based your tactics on this...
+ <p>
+ When fighting CGF bots, you thus expect these bots to see as much (or as little) as you. And
+ that's what's happening now. 
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/vision1.jpg">
+    <IMG SRC="./shots/vision1_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="vision test data at Downtown">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/vision2.jpg">
+    <IMG SRC="./shots/vision2_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="vision test data at Downtown, using 2x zoom">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/vision3.jpg">
+    <IMG SRC="./shots/vision3_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="vision test data at Downtown, moving and firing subjects">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <FONT SIZE="1" COLOR="">
+  <p>
+ (Legend: 'bod' is percentage of subject body being visible, 'dst' is distance to viewer, 
+ 'ang' is field of vision angle, 'lit' is percentage light, 'red' represents reduced vision 
+  because of transparent windows or water, 'spd' is subject movement, 'tot' is aggregated 
+  visibility score (higher is better). The recorded vision data was added by hand, using a
+  paint tool).
+ </FONT> 
+ <p>
+ <b>Being visible vs. being seen</b>
+ <br>
+ If a bot looks in your direction, he doesn't necessarily see you. The further away you are, the
+ darker your location, the fewer parts of your body being visible, when you sit instead of stand,
+ when there's thick fog, when you're behind glass or in water, the smaller your chances of being spotted. 
+ <p>
+ If however, you fire without a silencer (actually: suppressor), you move instead of being 
+ static, chances of being spotted increase. And if you're in the center of the bots view 
+ (as opposed to near the edge of his field of vision), you're more likely to be spotted as well.
+ <br>
+ The longer a bot looks in your direction, the better his chances of spotting you. Bots with irvision
+ see better in the dark, bots with zoomed sniper rifles have smaller fields of vision, but deal better
+ with distance. And higher skill bots see better in general.
+ <p>
+ <FONT SIZE="1" COLOR="">
+ (Actually, the only two things not modeled in the bot's vision are (1) skin visibility, thus
+  the effects of camouflage, and (2) contrast / silhouetting, thus when you stand out against a bright 
+  background / sky / muzzle flash. Both could not be modeled because Q2 doesn't provide 
+  sufficient in-game information on textures). 
+ </FONT> 
+ <p>
+ Basically, this means that in the (upcoming) CGF 0.80, you can realistically hide in the dark. And using
+ high values for gl_modulate is as much of a cheat as it is in real life.
+ <p>
+ <b>Tracking</b>
+ <br>
+ Once we humans have spotted something, seeing it and tracking it becomes easier - we know what to look for.
+ However, it takes a little while before we actually interpret what we've spotted and are able
+ to track it: was it a door being opened, or a threat moving?
+ <p>
+ When we've really started tracking our threat, we even know where to look if the threat is
+ temporarily hidden from our view by a pillar or tree. And that prediction, of course, is very important
+ when we try to aim...
+ <p>
+ In the CGF AI, vision and tracking are modeled as described here. In other words, once you're spotted and 
+ in their view, the bots get better at seeing you and predicting where you go...
+ <p>
+ <b>Aiming</b>
+ <br>
+ Aiming at a target is very much related to vision and tracking, but not the same. For example, a moving threat
+ is easier to spot than a static threat, but harder to aim at. And if you've start moving yourself,
+ your aim degrades, no matter how long you've been tracking a target.
+ <p>
+ The CGF AI aim is primarily determined by the gunner's movements (after halting, the aim
+ steadily stabilizes), the tracking time, target movement (relative to the gunner, that is -
+ targets moving straight towards you are just as easy to hit as static targets), and
+ a bit by poor visibility conditions (glass, water, darkness and fog).
+ <p>
+ Of course, the Action Quake2 determines the bot's gun accuracy the same way as it does
+ for human player.
+ <p>
+ <b>Vision summary and bot lethality</b>
+ <br>
+ The vision, tracking and aiming in the (upcoming) CGF 0.80 are about 'as good as it gets'. I couldn't
+ think of many more relevant factors to include. Most tactical shooters in available in the shops are less 
+ fair towards the player.
+ <p>
+ Note that the more realistic vision (compared to previous versions) doesn't make the 
+ bots less lethal. To the contrary. Tactics have been improved to ensure the bot scans
+ its environment smarter. And bots are less likely to give away a visibility advantage:
+ When, for example, they see a threat facing some other direction (thus not seeing them)
+ the bots take their time to steady their gun instead of spraying immediately.
+ This tactic saves some ammo and makes head shots more likely. (This feature arose from a discussion
+ with Jaxankey - thanks!).
+ <p>
+
+ </BLOCKQUOTE>
+ <!-- text: end -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

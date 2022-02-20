@@ -1,0 +1,366 @@
+<pre>
+================================================================
+
+ CGF (0.77 beta) for Action Quake 2 (1.51), July 8, 1999
+   (Computer Generated Forces)
+
+================================================================
+Title                   : CGF for Action Quake 2 v0.77 (beta)
+
+Filename                : cgf_0_77.zip
+Game			              : Action Quake 2 - CGF
+Author                  : William van der Sterren     	
+Email Address           : mailto:sterren@iae.nl
+Web Site                : http://www.botepidemic.com/aid/cgf
+
+Description             : missions, bots, tactics and scripting 
+                          for single player Action Quake2 
+
+Credits                 : Id Software, for all Quake's, 
+                          A-Team, for Action Quake2,
+                            feedback and testing
+                          William van der Sterren, for CGF
+                            concept, AI design, programming,
+                            missions and route files
+                          Fireblade & Zucchini, for the solid
+                            AQ2 1.51 implementation
+                          Alan Kivlin, for the client emulation 
+                            code
+                          Terry Hendrix II, for some file i/o
+                            and the SABIN project
+                          John Crickett, for AI discussions
+                          Dominic 'Cube' Rutter, for testing and
+                            the web site
+                          Ross Norton, for the CGF launcher
+                            (available soon)
+                          additional testing by  
+                            Jon Kristian Mjorud
+                            Timm 't1mm' Stokke
+                            Dennis Goedbloed
+                            Dan Dimitrescu
+                            Lennon
+                            Tekminus
+                            38Special
+
+================================================================
+
+* Play Information *
+
+Single Player           : enables 'team play goal oriented' like
+                          single player Action Quake2 using 
+                          mission scripts and bots
+Cooperative             : no (not yet, but planned)
+Deathmatch              : no (not planned)
+AQ2 Teamplay		: no (but emulated in single player mode
+                          and based on forces defined in the
+                          script)
+Difficulty Settings     : yes (skill settings in the script, range
+                          from 1.0 to 5.0 per bot/npc)
+New Sounds              : no
+New Graphics            : no (not yet)
+New Music               : no
+
+
+* Construction *
+
+Base                    : id gamex86.dll, sources, 
+                          AQ2 1.15 gamex86.dll sources
+Editor(s) used          : Visual Studio 6, Edit+ (for missions) 
+Known Bugs              : not fully stable, plenty of limitations
+Build Time              : over 1,000 hours
+Compile Time		: about 2 minutes
+
+
+================================================================
+
+* Description *
+
+Customized small unit battles in the Action environment, with
+the help of bots, missions and some amount of AI. It's probably a
+bit like playing Rainbow Six or Half-Life, with the following
+differences:
+- above mentioned products are stable and full products, with
+  a story line etc., this beta isn't and hasn't
+- Action Quake 2 is high speed action
+- Half-Life squads have more animations, and lovely sounds,
+  but cannot autonomously navigate the whole level, nor
+  patrol as a team
+- Rainbow Six terrorists don't seem to be a real attack force
+
+================================================================
+
+* Installation *
+
+- prerequisites
+  
+  You need to have:
+  - a Windows machine
+  - Quake2 3.20
+  - Action Quake2 1.51 (see http://action.telefragged.com)
+  - both model packs (see http://guild.telefragged.com)
+  - the urban map (see http://aqmd.telefragged.com)
+  - a Pentium200+ or better, and graphics accellerators 
+    are advised
+  - 7 MByte of HD space on your action drive
+
+- before installation
+  If you're a server op or host LAN games from your machine, 
+  you may want to back up your gamex86.dll before 
+  installing CGF. The CGF gamex86.dll isn't as stable as
+  standard Action Quake2 1.51.
+
+  If you just play Action by connecting to someone else's 
+  machine on the Internet, or on the LAN, there's no problem in
+  installing CGF. (It's the server that defines how to play
+  action, not your local gamex86.dll).
+
+  Prepare yourself to distinguish between .cfg files (normal
+  Quake2 ConFiG files) and .cgf files (CGF = Computer 
+  Generated Forces Files).
+
+- unzipping the cgf_0_77.zip
+  extract the whole zip file to your action subdir of quake2,
+  WITH THE OPTIONS 'Use folders' AND 'Overwrite existing files'
+  ENABLED (or something similar).
+  The only file overwritten is gamex86.dll
+
+- what's where
+  As a result, the following files have been added
+  .\action:
+    cgf_urban_hitman.bat
+    cgf_urban_hitman.cfg
+    cgf_urban_streets.bat
+    cgf_urban_streets.cfg
+    gamex86.dll
+  .\action\cgf
+    cgf_formations.txt     : files for cgf, please don't edit
+    readme.txt               this file 
+  .\action\terrain
+    urban.*                : (large) route/terrain files for urban
+  .\missions
+    urban_*.cgf            : CGF missions, minor editing allowed
+    cgfparser.exe            command line tool to check edited missions
+
+- launching a mission (using the batch file)
+  In your windows Explorer, go to your action subfolder,
+  and double click on either:
+    cgf_urban_hitman.bat
+  or
+    cgf_urban_streets.bat
+
+  The first batch file throws you into a series of streets fights,
+  with the sole goal to survice (so you get to do more difficult
+  missions).
+  The second batch file asks you to be a real action hitman, and
+  to eliminate mister Sabotage (head honcho of the warez business
+  in Urban).
+
+  AS A CONVENTION FOR THESE MISSIONS: 
+  bots that run around in the terror model will shoot you.
+  bots that look like the standard male model are your friends.
+
+- launching a mission while in (an action) game
+  You can launch a mission in game, if you really want to. In
+  that case, do the following (from a .cfg file or from the
+  console):
+    set deathmatch 1        // all three are essential
+    set teamplay 1
+    set cgf 1
+
+    set bholelimit 40       // all four are optional but fun 
+    set splatlimit 20
+    set shelloff 0
+    set breakableglass 1
+
+    gamemap urban                 // essential
+    mission urban_hitman_1.cgf    // pick any mission file
+
+
+
+================================================================
+
+* Known Problems *
+
+- it's a very limited beta (one map, two chains of missions
+  only)
+
+- not fully stable (it's a beta after all)
+- movement (unnatural turning, lots of incorrect jumps)
+- close combat (shotgun) fire-on-the-move AI absent
+- doors (this version contains a hack to deal with the single
+         door present, but in general, bots don't yet understand
+         how to handle rotating doors (the need to step back
+         if the door opens towards the bot)
+        )
+- intro/outro mission information is lacking
+- use of M3 in software mode may crash game (an AQ2 problem?)
+- AQ2 leg damage does not seem to affect the bots
+- bots jump to death (ignore their health while accepting falling 
+  damage jumps) - this is a performance issue (and could be 
+  solved at the expensive of either a serious slow down or some
+  MB of RAM)
+
+* Not Yet Supported *
+
+- hand grenades (bots won't recognize nor use them)
+- knifes
+- autonomous "advance" SOP disabled (cannot deal with advance
+  into area where there is insufficient space to enter formation)
+
+A really large list with features is available from:
+http://www.botepidemic.com/aid/cgf/design.shtml
+
+
+================================================================
+
+* Mission Editing *
+
+- use stand-alone parser for syntax checking
+
+If you really want to change the missions, the following tool
+will be of help: 
+  .\missions\cgfparser.exe
+It's a command line tool that accepts a .cgf file as input,
+and tells you if the syntax is OK. That's better than having
+Quake2 do so (or even crash because of a typo).
+For example
+  cgfparser.exe mission.cgf 
+will show you if missionfile contains syntax errors or not.
+
+Please remember that syntax correct files may still crash CGF
+and Quake2 if you made some rogue changes. 
+
+
+- any changes and mission distribution
+
+If you change a mission file, please start by changing the 
+author name. It's your hacked mission, not mine.
+
+
+- changing skill
+
+Changing bot skills might be necessary. Bot skills range
+from 1.0 to 5.0 and primarily affect aiming accuracy, and
+turning speed. Just replace every occurrence of (for
+example):
+  skill = 2;
+to 
+  skill = 5.0;
+and the sound of head shots will be prevalent...
+(Skill 5 is highest, skill 1 is lowest).
+
+Changing the skill of a player doesn't affect anything.
+(It's added to make the definitions for bots (aka 'npc's)
+and players as similar as possible).
+
+
+- changing weapons/items/skills
+
+Actually in violation with AQ2 TP rules, there's no limit
+on the amount of items, weapons and ammo you can start with.
+(You are, however, limited in picking up items and weapons).
+
+If you're the type of guy that needs 9 clips for your M4,
+just change the amount or add that line. 
+
+To find the definition for your 'load out', look for the
+line:
+    team "Survivor"
+    { 
+>>>>  player "dah player" "male/reservoir" <<<<<<<<
+        { 
+          ammo   "Machinegun Magazine" = 2;                    
+          weapon "MP5/10 Submachinegun";
+
+          item   "Silencer";
+          item   "Stealth Slippers";
+
+thus, the line that contains 'player'. Immediately below that line,
+you can add any of the following definitions (and change
+the ammounts):
+
+          ammo   "Pistol Clip" = 1;
+          weapon "Dual MK23 Pistols";
+          ammo   "Machinegun Magazine" = 2;                    
+          weapon "MP5/10 Submachinegun";
+          ammo   "M4 Clip" = 2;
+          weapon "M4 Assault Rifle";
+          ammo   "12 Gauge Shells" = 7;
+          weapon "M3 Super 90 Assault Shotgun";
+          weapon "Handcannon";
+          ammo   "AP Sniper Ammo" = 20;
+          weapon "Sniper Rifle";
+          item   "Bandolier";
+          item   "Kevlar Vest";
+          item   "Lasersight";
+          item   "Silencer";
+          item   "Stealth Slippers";
+
+REMEMBER, YOU NEED TO USE EXACTLY THESE NAMES, OTHERWISE
+IT WILL BE IGNORED.
+
+
+- changing team size
+
+To add or remove opponents or buddies to/from a team, do
+the following:
+1. make sure the team size will remain between 1 and 8
+   members
+2. remove or copy an existing 'npc' member definition (starting with
+   'npc' and ending with the first following '};'.
+3. if you're adding the bot, paste the text before
+   the word 'npc'.
+4. it's better to change the npc's name so it's unique
+   again.
+   
+Be careful in extending teams that act as sniper (the team
+receive a "snipe" instruction in the plan for that team).
+You're likely to crash CGF/Quake2, as the sniper/spotter AI
+is not that robust.
+
+
+- adding location
+
+To add a new location to the mission (to be used in the plans),
+do the following:
+
+1. to record a location, move to that location (you don't need
+   to run a mission), and type 'coords' at the console.
+   The game will tell you the x, y, z coords for that location.
+   Write it down.
+2. Add a line like
+
+    location somelocationname      = <  182,  1107,   40>;
+
+   to the list of locations. Don't use strange characters in
+   the location's name.
+3. Because you don't really know how CGF uses locations, you're
+   likely to crash the game. So you know what to expect.
+
+   I'll provide better documentation when the beta works out
+   fine, and I've improved the support for more maps.
+
+
+- "guarantees" and testing
+
+IF YOU TOUCH ANY OF THE MISSIONS, AND (AS A RESULT) CGF CRASHES,
+DON'T MAIL ME. THIS A BETA. IT'S NOT GUARANTEED TO WORK.
+Please use the message board at action.telefragged.com; there
+I can help you in a more efficient way.
+
+
+
+================================================================
+
+* Copyright / Permissions *
+
+Copyright (c) 1999 William van der Sterren. All rights reserved.
+
+This game modification may be electronically distributed only 
+with no charge to the recipient, and may not be modified in any way.
+This text file must be included with this modification.
+
+This game modification may not be distributed on any CD-ROM 
+without the prior, explicit written consent by 
+William van der Sterren.
+</pre>

@@ -1,0 +1,247 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/vulture_pulling_back.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot3.jpg" border=0 align=center alt="Vulture pull back under fire."></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sas_urban_balcony.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot12.jpg" border=0 align=center alt="An SAS bot takes a balcony position"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/spotter_and_sniper_in_action.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot20.jpg" border=0 align=center alt="A bot sniper working in tandem with a spotter bot"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00628
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/aidesignbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <p>
+ <!-- start body text -->
+ <br>
+ <h3>
+ <B>CGF Terrain Specific AI</B>
+ <br>
+ </h3>
+ <p>
+ Like many tactical 1<SUP>st</SUP> person shooters, Action Quake2 (notably AQ2 team play) 
+ heavily rewards tactical skills. Having a good aim and
+ quick responses alone don't make you a successful player. Instead, it is mandatory to
+ understand:
+ <UL>
+ 	<LI>what weapon to use where and when, 
+ 	<LI>when to rush, to hide, to reload, to provide suppression fire, or to bandage
+    <LI>communication and roles within the team
+    <LI>where to go, camp, snipe, move, or ambush
+ </UL>
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/terrain_urban_spread.jpg">
+    <IMG SRC="./shots/terrain_urban_spread_thumb.jpg" BORDER=0 width=133 height=100 ALT="occupying and observing from the right position is the first step to victory">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/roguespear_bad_tac_path.jpg">
+    <IMG SRC="./shots/roguespear_bad_tac_path_thumb.jpg" BORDER=0 width=133 height=100 ALT="Rogue Spear AI team, traversing a hall through the center, thus very visible and without cover...">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/museum_wallhugging.jpg">
+    <IMG SRC="./shots/museum_wallhugging_thumb.jpg" BORDER=0 width=133 height=100 ALT="(hard to see) but the better tactical path to traverse large halls with balconies is to spread out and hug the walls (in CGF)">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ Of these four groups of skills, the 'where' understanding is one of
+ the easier skills for humans to acquire (even our cats seem to be born with it). 
+ And there is plenty of literature available providing
+ additional rules and guidelines (army field manuals, strategy guides for games, etc.).
+ <p>
+ For AI, however, the 'where' understanding is hard to implement efficiently (AI stands for
+ artificial intelligence, or (in this case) programming of the bot 'brains'). For example:
+ <UL>
+	<LI>recent (top-selling) tactical games such as Rogue Spear display realism in their
+        modeling of hostage, environment and weapons, but have troubles fitting maneuvers to the
+        terrain. In the Rogue Spear demo, the default AI plan and behavior has the 'blue team'
+        traverse a big museum hall in close formation through the center of the hall, 
+        thus becoming a potential victim for attacks from all angles while being
+        unable to reach cover quickly. (See image above)
+        <A HREF="#roguespear"><SUP>1</SUP></A>.
+ </UL>
+ <p>
+ The tactical 'where' understanding is a very essential part of CGF: teams are expected
+ to traverse all of the terrain autonomously and intelligently using solely plain waypoints
+ (that are devoid of 'AI' hints such as 'regroup here', 'spread out', etc.).
+ <p>
+ Initial CGF betas included already some terrain understanding. However, CGF 0.80 will 
+ include revamped terrain understanding AI. Subsequent pages will illustrate
+ the 'what and how' behind CGF terrain understanding.
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/projector2.jpg">
+    <IMG SRC="./shots/projector2_thumb.jpg" BORDER=0 width=133 height=100 ALT="terrain analysis (faked slide projection)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/dev_stealthpath.jpg">
+    <IMG SRC="./shots/dev_stealthpath_thumb.jpg" BORDER=0 width=133 height=100 ALT="stealth patrol path (blue) vs shortest path (red)">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/vulture_pulling_back.jpg">
+    <IMG SRC="./shots/vulture_pulling_back_thumb.jpg" BORDER=0 width=133 height=100 ALT="bounding overwatch pullback">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ The following terrain understanding is present in CGF (items will be completed in
+ the coming weeks). Click on one of the items to continue:
+ <OL>
+	<LI><A HREF="./design_terrain_ranking.shtml">terrain analysis (ranking positions for tactical value</A>
+        <UL>
+        <LI>analyis of static terrain, thus assessing all relevant terrain positions for tactical (dis)advantages
+        <LI>analyis of terrain usage, thus assessing where and how combat activities occur, and improving
+        the 'static terrain' analysis results with this input
+        </UL>
+        <br>
+	<LI><x HREF="./design_terrain.shtml">tactical path planning</A> [implemented, to be written]
+        <UL>
+        <LI>find paths that offer a stealthy approach
+        <LI>find paths that offer cover from enemy fire
+        </UL>
+        <br>
+    <LI><x HREF="./design_terrain.shtml">stop planning</a> [implemented, to be written]
+        <br>
+        given a path, determine best path locations to
+        <UL>
+        <LI>assemble/regroup
+        <LI>provide suppression fire from
+        <LI>check 'six'
+        </UL>
+        <br>
+    <LI><x HREF="./design_terrain.shtml">threat movement prediction</A> [implemented, to be written]
+        <br>
+        upon losing contact with a threat,
+        <UL>
+        <LI>predict where threats will be/move to
+        </UL>
+        <br>
+    <LI><x HREF="./design_terrain.shtml">'next position' attack planning</A> [implemented, to be written]
+        <br>
+        within a team, determine for a member
+        <UL>
+        <LI>location to attack from
+        <LI>location to find cover (bandage, reload, ambush, disengage)
+        </UL>
+ </OL>
+ <br>
+ <FONT SIZE="1">
+ <A NAME="roguespear"><SUP>1</SUP></A>: The comparison is not totally fair since the Rogue Spear AI
+ (by Clark Gibson, working from Greg Stelmack's R6 AI) probably was designed with a big role for the human player,
+ and with focus on convincing behavior of hostages and terrorists. Nevertheless,
+ the specific behavior displayed by the Rainbow AI team is ignoring the terrain.
+ <p>
+ While on the topic of RB6 Rogue Spear: judging from the demo, it's a very interesting
+ game, making up for many of the problems RB6 had (no crouching, no interaction with the environment 
+ (breakable glass)). Multi-player RS games are a bit like AQ2 games, but your movement
+ is still limited (try jumping from the balcony 3 meters down - you cannot).
+ </FONT>
+ <p>
+ <!-- end body text -->
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

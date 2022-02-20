@@ -1,0 +1,636 @@
+<html>
+
+<head>
+<title>CGF for Action Quake2: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_moving_up.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot5.jpg" border=0 align=center alt="Charlie advances"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/dev_supprfire_predicted_targets.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot8.jpg" border=0 align=center alt="A development shot showing areas for suppression fire"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/marines_fighting.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot21.jpg" border=0 align=center alt="Marines in close combat while assaulting a rooftop"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 05018
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/faqbar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <h5>
+ <br>
+ General questions
+ </h5>
+ <UL>
+	<LI><a href="#qg5">CGF seems to hang when launching it for a new route file!</a>
+	<LI><a href="#qg1">why do I have to use a mission script, can't I just spawn bots?</a>
+	<LI><a href="#qg2">why don't you just release some DM bots?</a> 
+	<LI><a href="#qg3">will there be a Linux version?</a> 
+	<LI><a href="#qg4">will you port CGF to Action Half-Life?</a> <FONT COLOR="#00C0C0">[UPDATED]</FONT>
+	<LI><a href="#qg5">will you port CGF to Counter-Strike / FireArms ...?</a> <FONT COLOR="#00C0C0">[UPDATED]</FONT>
+ </UL>
+ <p>
+ <h5>
+ <br>
+ CGF Launcher related questions
+ </h5>
+ <UL>
+	<LI><a href="#ql1">I get a 'Subscript out of range. - Error 9' error</a> <FONT COLOR="#00C0C0">[NEW]</FONT>
+ </UL>
+ <p>
+ <h5>
+ <br>
+ Additional/optional weapons related questions
+ </h5>
+ <UL>
+	<LI><a href="#qw1">How can I use the additional weapons in CGF</a> <FONT COLOR="#00C0C0">[NEW]</FONT>
+ </UL>
+ <h5>
+ <br>
+ Route file related questions
+ </h5>
+ <UL>
+	<LI><a href="#qr1">can I create route files for all kinds of maps?</a>
+	<LI><a href="#qr2">why can't the bots learn maps themselves?</a>
+ </UL>
+ <p>
+ <h5>
+ Action game variants and enhancements questions
+ </h5>
+ <UL>
+	<LI><a href="#qv1">will you add civilians / hostage / bystander bots?</a>
+	<LI><a href="#qv2">will you add commands to call your team for assistance?</a>
+	<LI><a href="#qv3">will CGF support AQ2 variants such as CTB or gangsters?</a>
+ </UL>
+ <p>
+ <h5>
+ <a name="ql1">
+ 1. 'Subscript out of range. - Error 9' error?
+ </a>
+ </h5>
+ <blockquote>
+ Ross 'JoeSatch' Norton, author of the CGF Launcher says:
+ <br>
+ The real problem behind this cryptic message is that the Launcher is unable to find
+ missions. In other words, the launcher hasn't been set up with the correct path to
+ the CGF missions.
+ <br>
+ You correct this problem as follows:
+ <OL>
+    <LI>Run "Uninstall.exe" in the Launcher directory (this does not remove the
+        Launcher, only the setup information)
+    <LI>Run CGF Launcher again and re-enter the setup information, making sure
+        everything is 100% correct and then proceed to load CGF Launcher.
+ </OL>
+ Note that the CGF missions typically are located in the 'action\missions' subdir of
+ your Quake2 directory. You need to fill out the complete path.
+ <br>
+ We don't mind assisting you getting CGF to work provided you've made a decent
+ effort to download and read the accompanying documentation.
+ <br><br>
+ </blockquote>
+ <h5>
+ <a name="qg1">
+ 2. Why do I have to use a mission script, can't I just spawn bots?
+ </a>
+ </h5>
+ <BLOCKQUOTE>
+ The scripts define bot and team configurations, just like config
+ files for other Q2 bots.
+ <br><br>
+ In addition, the scripts give hints about the map (key areas and
+ locations) and define how bot teams are to behave (unlike other Q2
+ bots).
+ <br>
+ I've worked hard to get the teams and bots smart enough to understand
+ those terrain hints and team instructions without using too much
+ CPU. As a result, these bots can be instructed to defend a building,
+ patrol a map, or move and attack within a restricted area only.
+ <br>
+ The consequence of this implementation, though, is that the bots
+ are no longer capable of acting without knowing their team, and
+ instructions (as defined by the script).
+ <br><br>
+ However, most of the traditional team-based bot fights can be 
+ set up using only a very small script.
+ <br><br>
+ </BLOCKQUOTE>
+
+ 
+  <h5>
+ <a name="qg2">
+ 3. Why don't you just release some DM bots?
+ </a>
+ </h5>
+ <BLOCKQUOTE>
+ CGF was designed from the start with team-oriented bots in mind.
+ Concepts such as teams, formations, team procedures, point man, 
+ suppression fire, team cohesion and team tactics have been taken
+ into account from the first line of code.
+ <BR><BR>
+ These concepts don't come for free. Compared to 'ordinary' 
+ DM bots, the AI has more work to do. To be able to run CGF on 
+ 'slower' PC's, I have put a lot of effort into optimizing the
+ team AI. As a consequence, significant parts of the AI have
+ moved from the bot AI to the fire team AI.
+ <BR>
+ For example: when a fire team detects an enemy, it is not
+ the case that each member individually tries to determine the 
+ best tactics for the team to perform. 
+ <BR>
+ Instead, solely the fire team AI determines, using
+ information collected by all bots, what to do, and then issues
+ strict orders to all fire team members.
+ <BR>
+ This approach not only correctly models well trained fire teams
+ (that 'automatically' select the appropriate tactics), but also
+ saves some CPU.
+ <BR>
+ The disadvantage of the approach is that the individual bot 
+ without his/her team not that smart: instead, the bot just 
+ executes the team's orders, fights, and forwards observations 
+ to the team.
+ <BR><BR>
+ As you will understand by now, creating good solo DM bots 
+ out of CGF is not simple at all.
+ Neither is creating good TP bots out of a solo DM bot. 
+ Trying to create good solo DM bots would delay CGF considerably.
+ <BR><BR>
+ I've chosen to develop team based AI back in '96, as I've found
+ that lacking from most games. Developing team based AI still is a bigger
+ creative challenge to me than creating yet another DM bot (no
+ matter how much fun they might provide).
+ <p>
+ <I>
+ Commercial break: since early September 99, there's a AQ2 DM (and some TP)
+ bot available: LTK by RiEvEr. Get it via the <A HREF="./links.shtml">links</A> page.
+ </I>
+ <br><br>
+ </BLOCKQUOTE>
+ <h5>
+ <a name="qg3">
+ 4. Will CGF be made available for Linux?
+ </a>
+ </h5>
+ <blockquote>
+ At some time after releasing CGF for Wintel platforms, I will
+ make available Linux versions as well. It won't be soon after the
+ first release, as I have grown accustomed to developing and
+ debugging in the VisualC++ / VisualSourceSafe / VisualBasic
+ environment.
+ <p>
+ CGF has been written without resorting to platform specific hacks 
+ - porting to Linux basically will be dealing with differences between
+ the MSVC++ STL and g++ STL (the ISO standard C++ template library). 
+ "Normally", a few undiscovered bugs
+ will rise their ugly head during that port as well.
+ <p>
+ As soon as I'll be ready to look at the Linux port, I'll issue a call
+ for assistance; I probably need some advice in locating and 
+ installing all drivers and libraries required to run Q2 on
+ Linux. Until that call, please don't send me info over Linux.
+ <br><br>
+ </blockquote>
+ <h5>
+ <a name="qg4">
+ 5. Will you port CGF to Action Half-Life?
+ </a>
+ </h5>
+ <blockquote>
+ Nope.
+ <p>
+ AHL isn't <i>the</i> realistic mod for Half-Life as AQ2 was for Quake2.
+ It doesn't have the popularity (and thus the mapper's support) that
+ AQ2 has.
+ <br>
+ Besides, AHL already has some kind of bots.
+ <p>
+ Finally, (and <i>the</i> reason that HL never had many bots developed
+ for it), Valve's support for bot developers is not as good as they say 
+ it is ('community support' has top priority on in PR talks but it took them over 
+ seven months to release a few (minor) fixes that prevented any bot 
+ running in the HL engine).
+ <p>
+ </blockquote>
+ <h5>
+ <a name="qg5">
+ 6. Will you port CGF to Counter-Strike / FireArms ... ?
+ </a>
+ </h5>
+ <blockquote>
+ I plan to develop a complete implementation of CGF for Action Quake2. 
+ There's still a lot of work to do, and, typical for AI, AI is never
+ finished. 
+ <p>
+ After that, I'll have a look at which game is interesting to develop
+ team oriented bots for, and if I have sufficient time available to
+ do a decent job at developing these bots.
+ <p>
+ Besides these mods, there are some other games on the horizon. The most challenging
+ one (from a tactical bot perspective) definitely is (of course) Team Fortress 2. 
+ <p>
+ </blockquote>
+ <h5>
+ <a name="qg5">
+ 7. CGF seems to hang when launching it for a new route file!
+ </a>
+ </h5>
+ <blockquote>
+ To run CGF on a specific map, CGF requires three kinds of terrain files 
+ (in directory action\terrain):
+ <UL>
+	<LI>{mapname}.srp, [essential!] containing the waypoints and connections between
+	    the waypoints
+	<LI>{mapname}.dst, (large!) containing the path lookup table for each pair of waypoints
+	<LI>{mapname}.tac, containing all kinds of tactical lookup tables
+ </UL>
+ The path lookup table and tactical lookup tables are generated by CGF using as 
+ input the Quake map, and the .srp file contents: waypoints and 
+ connections.
+ <p>
+ Because generating these tables takes about 5 minutes, and because 
+ most gamers don't like to wait that long before playing a mission, CGF
+ computes these tables once, and stores them in (large) files. CGF
+ then reads these files (thus: tables) at the start of a mission, and 
+ launches the mission in about 10 seconds instead of 5 minutes. The
+ sole disadvantage is that it takes a few MB's of your harddisk.
+ <p>
+ When you (or I) want to distribute the route (terrain) files for a
+ specific map, the size of the .dst and .tac file becomes much more important.
+ Modem users don't jump for joy when they need to download some
+ MB's of data which they could compute themselves. 
+ <p>
+ For that reason, CGF route files are distributed using solely the essential
+ .srp file.
+ <p>
+ As a result, the first time CGF tries to open the map for which you
+ just installed the route file, CGF first has to compute the path lookup
+ tables and tactical lookup tables. This takes about 5 minutes, in which
+ CGF seems to hang (but instead works very hard). During that time, you'd
+ better leave your PC (or at least CGF) alone.
+ <p>
+ After computing the tables, CGF tries to start the mission. Quake2, however,
+ may have decided that you, as a gamer, have a bad connection, and show the
+ 'disconnect' phone jack symbol. If that is the case, just quit Quake2 and
+ launch the mission again. The mission will start instantly.
+ <p>
+ </blockquote>
+ <h5>
+ <a name="qr1">
+ 8. Can I create route files for all kinds of maps??
+ </a>
+ </h5>
+ <blockquote>
+ With CGF 0.80, you're able to create route files yourself (see <A HREF="./doc_routes1.shtml">here</A> for more
+ info on creating route files).
+ <p>
+ However, due to limitations of CGF and the complexity of a few AQ2 maps, it doesn't
+ yet make sense to create route files for maps that feature:
+ <UL>
+	<LI>large amounts of natural, sloping terrain (such as cliff, cliff2, jungle1, teamjungle,
+        but not armyterr); until the bot movement has been improved, the bots have troubles dealing
+        with this terrain.
+	<LI>button operated elevators/doors that are essential to gameplay, (as in blockwar,
+        office3, chriscity); bots cannot yet handle button operated doors.
+	<LI>serious swimming efforts (as in lighttower); bots cannot handle serious swimming yet.
+    <LI>special 'effects' such as land mines (beachassault), artillery (desert), laser lines (theist),
+        and trains (subway, riot2)
+ </UL>
+ It is my goal to have the bots handle natural terrain and button operated doors.
+ </blockquote>
+ <h5>
+ <a name="qr2">
+ 7. Why can't the bots learn maps themselves?
+ </a>
+ </h5>
+ <blockquote>
+ One of the features that set CGF bots apart from most other bots is their
+ tactical understanding of a map. The bots are able to pick reasonably good
+ sniper locations, move up under cover or patrol stealthily. They also are
+ able to predict threat positions if they lose contact with threats.
+ <p>
+ This tactical understanding is essential to the Action Q2 game (due the 
+ single shot kill potential, emphasis on cover and stealth, and dark areas).
+ <p>
+ The implementation of this tactical understanding requires:
+ <UL>
+ 	<LI>complete knowledge of the terrain;
+ 	<LI>so much CPU power that part of the computations need to be performed
+	    before starting the game (the results of these computations are
+		stored in the route files and take up to 6 minutes of CPU time on a
+		Celeron300A) - as a result, the CPU load in-game is acceptable.
+ </UL>
+ Basically, this means that without a complete route files, the bots are
+ not capable of Action quality combat. Due to the CPU demands, it is simply not 
+ feasible to construct the required information bit by bit while discovering
+ the map.
+ <p>
+ IMO, bots that can explore and learn to navigate a map themselves 
+ (such as Eraser) are 'smart', but so are the CGF bots that understand the tactical
+ significance of the terrain. At this time (of CPU power), we cannot have
+ them both (ignoring the added complexity of deterimining tactical value of
+ positions using incomplete information).
+ <p>
+ </blockquote>
+ <h5>
+ <a name="qv1">
+ 9. Will you add civilians / hostage / bystander bots??
+ </a>
+ </h5>
+ <BLOCKQUOTE>
+ The addition of civilians, hostages or bystanders bots has been suggested
+ frequently. I also have spent considerable time thinking about how
+ to add them. Technically, adding the AI for the civilians / hostages 
+ themselves isn't that difficult (it fits in the current design).
+ <p>
+ The real issue is how to incorporate civilians, or bystanders
+ in the game. Only when killing bystanders, and/or not killing any bystanders 
+ means something to the game, I'm willing to add them. 
+ Basically, that means I need to figure out a way to relate the health
+ of bystanders to the mission objectives.
+ <p>
+ Hostages are still more demanding: missions would include hostages to allow
+ players (or bots) to free them. In that case, new interactions would be
+ required to enable the player to guide the hostages out.
+ <p>
+ However, the problem often overlooked is the consequences for the
+ current bot AI: instead of just following orders, and engaging (with
+ appropriate tactics) any player/bot from opposing forces, the AI
+ would be required explicitly not damage bystanders.
+ <br>
+ This is more complex than it sounds: every line-of-fire is to be checked
+ for a possible nearby bystander, grenades (not supported now) cannot
+ be lobbed into any position anymore. Terrorist AI should understand
+ the 'value' of bystanders, and may explicitly use them for cover.
+ <br>
+ In the case of hostages, escorting and protecting the hostages requires
+ special AI as well...
+ <p>
+ Concluding this issue, I find the concept interesting (Rainbow Six and
+ the HL mod Counter-Strike implement it, and it makes for a good game). However,
+ it requires a good deal of work.<br>
+ If and when I find the time to add it, I'll let you know.
+ <p>
+ <FONT SIZE="1">(Unrelated question:
+ does the realistic RB6 allow you to bandage any wounded hostages, before 
+ escorting them out, if need be?).</FONT>
+ <br><br>
+ </BLOCKQUOTE>
+ <h5>
+ <a name="qv2">
+ 10. Will you add commands to call your team for assistance?
+ </a>
+ </h5>
+ <BLOCKQUOTE>
+ Some limited means to interact with friendly teams will be added, such
+ as go-codes and calls for assistance.
+ <p>
+ Go-codes enable the player (or bots) to signal a friendly team to
+ use a pre-defined (in the mission script) set of actions. Missions
+ that provide go-codes to players should inform the player about
+ the go-codes in the mission description. I prefer to standardize
+ on go-codes "Red", "Yellow", and "Green" so players can use
+ standard key binds.
+ <p>
+ A call for assistance will inform friendly teams about your problems;
+ however, the bots are not guaranteed to help you - they might be
+ facing hostiles themselves.
+ <p>
+ More detailed interaction won't be provided; the Quake2 environment
+ just does not offer means to quickly state requests such as "take out
+ the left pair of tango's on the sniper tower left of us". (Unreal
+ Tournament is providing mouse menu's for that purpose, according to
+ previews).
+ <br><br>
+ </BLOCKQUOTE>
+ <h5>
+ <a name="qv2">
+ 11. Will CGF support Action mods such as Capture-the-briefcase or Gangsters?
+ </a>
+ </h5>
+ <BLOCKQUOTE>
+ Probably not. To support these mod mods, CGF would have to be ported
+ to another code base. More importantly, the AI has not been designed to
+ understand concepts such as flags (briefcases), flag capturing,
+ flag carriers and flag defense. For AI, these concepts are non-trivial
+ to deal with well in combination with the already complex Action rules.
+ <p>
+ Concepts as protect / assassinate the leader (as in Gangsters) are
+ probably easier to support. In that case, I might add similar missions
+ and team instructions to CGF.
+ <br><br>
+ </BLOCKQUOTE>
+ <h5>
+ <a name="qw1">
+ 12. How do I use the additional weapons for CGF in my missions
+ </a>
+ </h5>
+ <BLOCKQUOTE>
+ CGF includes support for <A HREF="./downloads.shtml#weapons">additional weapons</A>
+ such as the Barrett sniper rifle, Ithaca shot gun and AK-47. The weapons themselves
+ require <A HREF="./downloads.shtml#weapons">additional downloads</A>.
+ <p>
+ These weapons are explicitly used in a few CGF missions included in the CGF 0.82 
+ download (notably for the RiotX map).
+ <p>
+ I would have preferred you using the CGF Launcher or CGF Mission Editor to
+ easily add the weapons to your or the bots' load out for other missions as well.
+ Alas, development of the CGF Launcher and CGF Mission Editor halted before
+ the additional weapons were made available, and neither of these tools supports
+ the new weapons.
+ <p>
+ This leaves you two more cumbersome ways to add the weapons to your missions:
+ <UL>
+	<LI>manually modify mission scripts and add weapons to the load-out of the
+        player (and bots)
+	<LI>run CGF with '+set cheats 1' and give yourself the weapons from the console
+        (using some alias)
+ </UL>
+ <p>
+ Modifying the mission scripts is done as follows (assuming you want to add the
+ "Barrett M82 Sniper Rifle" to your load out):
+ <OL>
+	<LI>open the appropriate mission file
+	<LI>locate the line defining the player load out, which looks something like:
+        <p>
+        <font size=1 face="Courier" color="#FFFFCC">
+        player "dah player" "male/reservoir"
+        </font>
+        <p>
+        you'll find the list of weapons and ammo issued to the player in the
+        lines immediately below this line; this might look like:
+        <p>
+        <font size=1 face="Courier" color="#FFFFCC">
+        {<br> 
+        &nbsp;  ammo   "Machinegun Magazine" = 2;                    <br>
+        &nbsp;  weapon "MP5/10 Submachinegun";<br>
+        &nbsp;  <br> 
+        &nbsp;  item   "Silencer";<br>
+        &nbsp;  item   "Stealth Slippers";<br>
+        };<br>
+        </font>
+        <p>
+	<LI>between the curly brackets ('{' and '}') add a line for the Barrett rifle:
+        <p>
+        <font size=1 face="Courier" color="#FFFFCC">
+        &nbsp;  weapon "Barrett M82 Sniper Rifle";<br>
+        </font>
+        <p>
+	<LI>if ammo for this type of gun (sniper ammo) isn't listed yet, also add a
+        line for this ammo between the curly brackets.
+        <p>
+        <font size=1 face="Courier" color="#FFFFCC">
+        &nbsp;  ammo   "AP Sniper Ammo" = 10;<br>
+        </font>
+        <p>
+        Together this results in the following player load out: 
+        <p>
+        <font size=1 face="Courier" color="#FFFFCC">
+        player "dah player" "male/reservoir"<br>
+        {<br> 
+        &nbsp;  ammo   "Machinegun Magazine" = 2;                    <br>
+        &nbsp;  weapon "MP5/10 Submachinegun";<br>
+        &nbsp;  ammo   "AP Sniper Ammo" = 10;<br>
+        &nbsp;  weapon "Barrett M82 Sniper Rifle";<br>
+        &nbsp;  <br> 
+        &nbsp;  item   "Silencer";<br>
+        &nbsp;  item   "Stealth Slippers";<br>
+        };<br>
+        </font>
+        <p>
+	<LI>repeat this for all mission files listed in the objectives
+        section of the mission script...
+ </OL>
+ Note that you can issue the optional weapons in a similar way to bots defined
+ in the mission script (except for step 2. listed above; you should look for 'npc'
+ instead of 'player').
+ <p>
+ <br>
+ An alternative approach is to launch Action Quake 2 with cheats enabled
+ (add the following to the command line):
+    <br>
+    <font size=1 face="Courier" color="#FFFFCC">
+    &nbsp;  +set cheats 1
+    </font>
+ <p>
+ Then, as soon as the mission starts, enter the following commands (using a
+ configuration script, if you want to):
+    <br>
+    <font size=1 face="Courier" color="#FFFFCC">
+    &nbsp;  give "Barrett M82 Sniper Rifle"
+    &nbsp;  give "AP Sniper Ammo"
+    </font>
+ <br>
+ et voila, you just received a sniper rifle and more ammo.
+ <p>
+ <p>
+ You can use the following weapon names for the optional weapons:
+    <br>
+    <font size=1 face="Courier" color="#FFFFCC">
+          &nbsp;  // optional pistol <br>
+          &nbsp;  weapon ""Beretta 92F Pistol";<br>
+          &nbsp;  // optional submachineguns<br>
+          &nbsp;  weapon "AK97 Submachinegun";<br>
+          &nbsp;  weapon "MAC-10 Submachinegun";<br>
+          &nbsp;  weapon "UMP45 Submachinegun";<br>
+          &nbsp;  weapon "UZI Submachinegun";<br>
+          &nbsp;  // optional assault rifles<br>
+          &nbsp;  weapon "AK47 Assault Rifle";<br>
+          &nbsp;  weapon "Tommygun";<br>
+          &nbsp;  // optional assault shotgun<br>
+          &nbsp;  weapon "Ithaca Model37 Assault Shotgun";<br>
+          &nbsp;  // optional cannon<br>
+          &nbsp;  weapon "Old-style Cannon";          <br>
+          &nbsp;  // optional sniper rifles<br>
+          &nbsp;  weapon "Barrett M82 Sniper Rifle";<br>          
+          &nbsp;  weapon "Dragunov Sniper Rifle";
+    </font>
+    <p>
+ <br><br>
+ </BLOCKQUOTE>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>

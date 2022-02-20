@@ -1,0 +1,340 @@
+<html>
+
+<head>
+<title>Fog for CGF: Bots, Missions, Tactics and Scripting in Action!</title>
+</head>
+
+<body bgcolor=#000000 link=#C0C0C0 vlink=#D0D0D0 alink=#D0D0D0>
+
+<center>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<br>
+<table width=737 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 bgcolor=#000000 valign=top>
+<br><br><br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actiontop.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<a href="http://www.botepidemic.com/aid/cgf/shots/charlie_storming_the_roof.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot6.jpg" border=0 align=center alt="Charlie storm a rooftop"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/mclanes_at_corner.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot11.jpg" border=0 align=center alt="While one bot is firing the other advances"></a>
+<br>
+<img src=./graphics/splitter.png width=122 height=8><br>
+<a href="http://www.botepidemic.com/aid/cgf/shots/sabotages_in_alley.jpg"><img src="http://www.botepidemic.com/aid/cgf/shots/shot17.jpg" border=0 align=center alt="With his team mate providing suppresion fire a bot advances"></a>
+<br> 
+<img src=./graphics/splitter.png width=122 height=8><br>
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+<br>
+<table width=146 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/siteinfo.png></td></tr>
+<tr><td width=146 background=./graphics/actionbg.png>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFF>
+Hosted by:<br>
+<a href=http://www.botepidemic.com>Bot Epidemic</a><br>
+and<br>
+<a href=http://www.telefragged.com>TeleFragged</a>
+<br><br>
+Visitor #: 00908
+</center>
+</td></tr>
+<tr><td width=146 background=./graphics/actionbg.png><img src=./graphics/actionbottom.png></td></tr>
+</table>
+
+</td>
+<td width=591 bgcolor=#000000 valign=top>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=591 bgcolor=#000000>
+<img src=./graphics/logo5.png><br>
+<a href=http://www.botepidemic.com/aid/cgf/index.shtml><img src=./graphics/news.png alt="Latest news on CGF" width=70 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/cgfaq2.shtml><img src=./graphics/cgfaq2.png alt="The CGF concept" width=87 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/design.shtml><img src=./graphics/aidesign.png alt="Technical CGF information [AI and design]" width=106 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/faq.shtml><img src=./graphics/faq.png alt="Got a CGF question? Read this first" width=45 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/missions.shtml><img src=./graphics/missions.png alt="How to script CGF missions yourself" width=91 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/downloads.shtml><img src=./graphics/downloads.png alt="Get your CGF files and missions here" width=120 height=26 border=0></a><a href=http://www.botepidemic.com/aid/cgf/links.shtml><img src=./graphics/links.png alt="Links to related sites [such as AQ2 or AI sites]" width=72 height=26 border=0></a></td></tr>
+
+<tr><td width=591 bgcolor=#000000>
+
+<table width=591 border=0 cellpadding=0 cellspacing=0>
+<tr><td width=21><img src=./graphics/tl.png></td>
+<td width=549><img src=./graphics/cgfaq2bar.png></td>
+<td width=21><img src=./graphics/tr.png></td></tr>
+
+<tr><td width=21 background=./graphics/lb.png><img src=./graphics/lb.png></td>
+<td width=549 bgcolor=#404040>
+<font face="Verdana, Arial, Helvetica" size=2 color=#FFFFFF>
+ <br>
+ <BLOCKQUOTE>
+ <h3>
+ <b>Fog for CGF
+ <br>(OpenGL1.1 graphics drivers only)
+ </b>
+ </h3>
+ <p>
+ If you have an up to date graphics boards that implements the full
+ OpenGL library (most new boards, and also the 3dfx Voodoo series via
+ a trick described <A HREF="#chipsets">here</A>), 
+ CGF brings you something special: <I>fog</I> (CGF versions 0.80 and later). 
+ <p>
+ Fog reduces visibility, and adds atmosphere. It transforms a standard
+ sniper map into a map that requires a new way of combat. You'll
+ change your tactics, weapon preferences, and experience a map anew, as
+ can be seen from the screen shots below.
+ <p>
+ Note that on some maps (and for some drivers), fog doesn't seem to work
+ right: player models light up in the distance. It's out of my control
+ (and there must be a reason why Id Software didn't enable fog in the first
+ place).
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog4.jpg">
+    <IMG SRC="./shots/fog4_thumb.jpg" BORDER=0 width=133 height=100 ALT="fire team, advancing towards hard to spot threat">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog2.jpg">
+    <IMG SRC="./shots/fog2_thumb.jpg" BORDER=0 width=133 height=100 ALT="medium range sniping at city - forget about long range in these weather conditions">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/monastery1.jpg">
+    <IMG SRC="./shots/monastery1_thumb.jpg" BORDER=0 width=133 height=100 ALT="friends or foes, those guys running towards me?">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ There are four important aspects to fog in CGF:
+ <UL>
+	<LI>it's optional (and defaults to 'off'); only when you set the console var 'fog' to 1, 
+        run the OpenGL video mode, and load a new map (or mission), you'll see fog
+	<LI>it's fully configurable - pick the type of fog, fog density, fog color
+        and define your default and per map preferences
+    <LI>the bot AI understands fog and operates with reduced visibility. The AI also
+        understands the ability to 'hide' in the fog. 
+        <br>
+        Your preferences regarding
+        fog type and fog density are taken into account - not a trivial thing to do
+        but it didn't take rocket science either.
+    <LI>you can toggle fog on a mission per mission basis - set fog to '0' and the next
+        mission is ran without fog (and AI understanding this). Set fog to '1' and during the
+        next mission, everything will be hazy (including the bots' vision).
+ </UL>
+ Fog preferences are stored in the directory '.\action\cgf\fog' as '*.fog' files. The directory
+ will contain the following files:
+ <UL>
+	<LI><B>default.fog</B>
+        <br>
+        contains the default fog settings that are applied when 'fog' is enabled and no
+        map specific settings have been found.
+	<LI><B>&lt;mapname&gt;.fog</B>
+        <br>
+        contains the map specific fog preferences for map &lt;mapname&gt;. By defining a fog density of '0',
+        fog is disabled for that map.
+ </UL>
+ A '*.fog' fog preferences is really a text file that you can view and edit. It looks like:
+ <pre><FONT COLOR="#FFFF33">
+// format: mapname density fog_type red green blue begin end
+//       - density: 0.00 -> no fog
+//         density normally in range 0.05 ... 0.20
+//       - fog_type: 0 = exp     (fog linear with distance)
+//                   1 = exp2    (fog increasing more than linear)
+//                   2 = linear  (fog linear within specific begin-end range)
+//       - red/green/blue in range [0.0 .. 1.0]
+//       - begin:    start distance for linear fog (no fog within begin dist)
+//       - end  :    end distance for linear fog (no vision beyond end dist)
+actcity2     0.10  2  0.50 0.50 0.45 200 1600</FONT>
+ </pre>
+ To craft a new preference file for map &lt;mapname&gt;, all you have to do is:
+ <OL>
+ 	<LI>copy the defaults.fog file to &lt;mapname&gt;.fog
+ 	<LI>change, at the last line, 'default' to &lt;mapname&gt
+    <LI>pick a fog density (0 = no fog, good values are between 0.05 and 0.20)
+    <LI>pick a fog type - linear fog (value: 2) tends to work best, followed by exp2 
+        (value 1)
+    <LI>define the fog color by specifying values for the red, green and blue components.
+        Values close to grey (red, green and blue values identical work best - change
+        one of these for a slight color effect - actcity2 above has a yellow shaded fog).
+        <br>
+        Note that the fog itself adds or removes ambient light from the map: picking
+        small values, such as 0.1 0.1 0.1, results in a very dark map, whereas large values,
+        such as 0.8 0.8 0.8 results in a bright map.
+    <LI>pick a begin distance (for linear fog only). Fog effects won't start at distances
+        smaller than this. (Distance in Q2 units (about an inch)).
+    <LI>pick an end distance (for linear fog only). You cannot see thru fog beyond this
+        distance (and neither can the bots). (Distance in Q2 units (about an inch)).
+    <LI>save the file and launch the game
+ </OL>
+ In most cases, the fog defaults suffice. In 'office style' indoor maps, you map want to
+ disable or reduce the fog considerably though.
+ <br>
+ The effects of fog color are shown below:
+ <p>
+ <center>
+ <TABLE background="./graphics/film.gif"  border=0 cellpadding=0 cellspacing=0 height=150 width=468 >
+ <TR>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog_darkcolor.jpg">
+    <IMG SRC="./shots/fog_darkcolor_thumb.jpg" BORDER=0 width=133 height=100 ALT="the City map with linear fog colored: rgb = 0.1 0.1 0.1">
+	</a>
+	</TD>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog_lighttower.jpg">
+    <IMG SRC="./shots/fog_lighttower_thumb.jpg" BORDER=0 width=133 height=100 
+    ALT="the map prepared for fog conditions: p1_lightbeam (and it's light tower - exp2 fog)">
+	</a>
+	<TD align="center" valign="middle">
+	<a href="./shots/fog_lightcolor.jpg">
+    <IMG SRC="./shots/fog_lightcolor_thumb.jpg" BORDER=0 width=133 height=100 ALT="the City map with linear fog colored: rgb = 0.9 0.9 0.9">
+	</a>
+	</TD>
+  </TR>
+ </TABLE>
+ </center>
+ <p>
+ <A NAME="chipsets">The table below</a> lists information on 3D chipsets and their support for fog. The
+ table reflects the information I've received from gamers. I do not guarantee its accuracy. If you get
+ fog working on one the of 'probably' boards work, please let me know.
+ <br>
+ To determine the chipset in your 3D accellerator, don't email me but look it up in the manual or on 
+ the box accompanying your 3D accellerator. 
+ <p>
+ <table border="1" cellpadding="4" cellspacing="0" width="468"
+        bordercolor="#C0C0C0" bgcolor="#C0C0C0">
+ <TR>
+	<td width="100%" valign="top"><font color="#414141"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>chipset support for fog (via OpenGL1.1 drivers)</B>
+	</font>
+    </td>
+ </TR>
+ </TABLE>
+ <table border="1" cellpadding="4" cellspacing="0" width="468"
+        bordercolor="#C0C0C0">
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>supported</B>
+	</font></td>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>probably</B>
+	</font></td>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>probably not</B>
+	</font></td>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	<B>no</B>
+	</font></td>
+ </TR>
+ <TR>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	Riva TNT
+    <br>
+    Riva TNT2
+    <br>
+    <br>
+    <br>
+    Matrox G400 <br>
+    using OpenGL ICD
+    <br>
+    <br>
+	3dfx Voodoo
+    <br>
+    with glquake opengl32.dll
+	</font></td>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    Savage4
+	</font></td>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+    ATI Rage 128
+    <br>
+    ATI Rage Pro
+    <br>
+	</font></td>
+	<td width="25%" valign="top"><font color="#FFFFFF"
+	size="2" face="Verdana, Arial, Helvetica">
+	3dfx Voodoo
+    <br>
+    with 3dfx Q2 drivers
+    <br>
+    <br>
+    Matrox G400 <br>
+    using Turbo DLL
+	</font></td>
+ </TR>
+ </TABLE>
+ <p>
+ Apparently, fog can be enabled on the 3dfx Voodoo board using the following trick:
+ <OL>
+	<LI>get the opengl32.dll intended for glquake (Quake1);
+        <br>it's 
+        <A HREF="http://www.fileplanet.com/index.asp?section=105&file=9836">here</A> at FilePlanet.
+    <LI>copy the opengl32.dll into your quake2 (root) dir
+    <LI>launch Quake2, in the video menu, set the mode to 'default opengl'
+    <LI>make sure you've set fog to 1 (see <A HREF="./exp_fog.shtml">here</A>)
+    <LI>quit and launch CGF
+ </OL>
+ <p>
+ I wouldn't have been able to add fog to CGF without the work and assistance of:
+ <UL>
+	<LI>Rohan, coder of 'Revenge of the Stroggos' (ROS) and Navy SEALs 2, who was
+        the first to add fog to Q2 (in June 1998)
+	<LI><A HREF="mailto:legion@sincero.com">Roscoe 'legion' Sincero</A> and his <A HREF="http://www.inside3d.com/q2tut/q2tut-13.shtml">Inside3D tutorial</A>
+    <LI><A HREF="mailto:devilman@columbus.rr.com">DevilMan</A> of '<A HREF="http://aw.telefragged.com/infiltration/index.shtml">AQ2: Infiltration</A>'
+        who assisted me in getting linear fog to work (not covered in the tutorial
+        above)
+ </UL>
+ <p>
+ <A HREF="mailto:william@botepidemic.com">William</A>
+ <br><br><br>
+ </BLOCKQUOTE>
+</font>
+</td>
+<td width=21 background=./graphics/rb.png><img src=./graphics/rb.png></td></tr>
+
+<tr><td width=21><img src=./graphics/bl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/bottombar.png></td>
+<td width=21><img src=./graphics/br.png></td></tr>
+
+<tr><td width=21><img src=./graphics/mainbl.png></td>
+<td width=549 bgcolor=#404040><img src=./graphics/mainbottombar.png></td>
+<td width=21><img src=./graphics/mainbr.png></td></tr>
+</table>
+
+</td></tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+<br>
+<center>
+<font face="Verdana, Arial, Helvetica" size=1 color=#FFFFFFF>
+Questions? Comments? Suggestions? Send them <a href=mailto:william@botepidemic.com;cube@botepidemic.com>here</a><br>
+CGF is written by <a href=mailto:william@botepidemic.com>William van der Sterren</a>.
+All content is &copy; William van der Sterren unless otherwise stated.<br>
+<a href=http://aq2.action-web.net target=_blank>Action Quake2</a> is written by, and &copy;, the <a href=http://aq2.action-web.net/ target=_blank>A-Team</a><br>
+CGF website designed by <a href=mailto:cube@botepidemic.com>Cube</a>, &copy; 1999.
+Best viewed @ 800x600 HiColor in a version 4 browser.<br>
+And yes, a large number of bots were hurt during the photo sessions (but they fell in the line of duty).
+
+<p>
+This site uses the PNG (Portable Network Graphics) image format.<br> If your browser cannot display this image format please go to <a href=http://www.cdrom.com/pub/png/pngapbr.html target=_blank>this</a> site to download a plug-in.
+</font>
+</center>
+
+</body>
+
+</html>
