@@ -58,7 +58,7 @@
 <td class="panelleft">&nbsp;</td>
 <td class="panel">
 <a href="/">Actiongames</a><br>
-<a href="/tnn/">Action Quake</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/tnn/">Action Quake</a><br>
 <a href="/cstrike/">Counter Strike</a><br>
 <a href="/rpg/">RPGs</a><br>
 </td>
