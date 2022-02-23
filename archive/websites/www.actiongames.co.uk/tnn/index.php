@@ -183,7 +183,7 @@ Dedicated to all things Action Quake. The Ultimate Quake 2 Mod</td>
 <p><a name='15'></a><span class="title">AQ:ETE 4.6c is RELEASED!</span><span class="small">&nbsp;&nbsp;by Black Monk at 07:42:46</span></p>
 <p>This mainly fixes some minor Windows bugs for Windows-based servers.  Go ahead and snag it for your servers, eh!  No functionality changes whatsoever but there are both Linux and Windows binaries available.
 <br>
-<br><a href="http://aqdt.fear.net/" target="_BLANK" class="pagelink">http://aqdt.fear.net/</a></p>
+<br><a href="https://assets.aq2world.com/archive/websites/aqdt.fear.net/" target="_BLANK" class="pagelink">http://aqdt.fear.net/</a></p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Friday 19 April 2002&nbsp;</td></tr></table>
 
 <p><a name='14'></a><span class="title">AQMD map contest extended</span><span class="small">&nbsp;&nbsp;by smurphster at 17:48:12</span></p>
