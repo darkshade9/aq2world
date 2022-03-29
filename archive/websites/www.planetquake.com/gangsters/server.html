@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>-= Action Quake: Gangsters! =-</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+   <!-- Test to see if button Hightlights shall occur, depending on browser version. --> 
+
+   var browserName       = navigator.appName;
+   var browserVer        = parseInt(navigator.appVersion);
+   var doButtonHighLight = "false";
+
+   if ((browserName == "Netscape" && browserVer >=3) || (browserName == "Microsoft Internet Explorer" && browserVer >= 4))
+      doButtonHighLight = "true";
+   <!-- ---------------- -->
+
+
+   <!-- ---------------------------------- -->
+   if (doButtonHighLight == "true")
+     {
+      var pic1_1 = new Image(150, 20);
+      pic1_1.src = "menu_news.gif";
+
+      var pic1_2 = new Image(150, 20);
+      pic1_2.src = "menu_news2.gif";
+
+      var pic2_1 = new Image(150, 20);
+      pic2_1.src = "menu_files.gif";
+
+      var pic2_2 = new Image(150, 20);
+      pic2_2.src = "menu_files2.gif";
+	  
+      var pic3_1 = new Image(150, 20);
+      pic3_1.src = "menu_docs.gif";
+	  
+      var pic3_2 = new Image(150, 20);
+      pic3_2.src = "menu_docs2.gif";
+	  
+      var pic4_1 = new Image(150, 20);
+      pic4_1.src = "menu_team.gif";
+	  
+      var pic4_2 = new Image(150, 20);
+      pic4_2.src = "menu_team2.gif";
+	  
+      var pic5_1 = new Image(150, 20);
+      pic5_1.src = "menu_contact.gif";
+	  
+      var pic5_2 = new Image(150, 20);
+      pic5_2.src = "menu_contact2.gif";
+
+      var pic6_1 = new Image(150, 20);
+      pic6_1.src = "menu_screens.gif";
+	  
+      var pic6_2 = new Image(150, 20);
+      pic6_2.src = "menu_screens2.gif";
+	  
+	  var pic7_1 = new Image(150, 20);
+	  pic7_1.src = "menu_server.gif";
+	  	  
+	  var pic7_2 = new Image(150, 20);
+      pic7_2.src = "menu_server2.gif";
+     }
+   <!-- ---------------------------------- -->
+   function img_act(imgName) <!-- Load the default picture of the button -->
+         {
+           if (doButtonHighLight == "true")
+              document.images[imgName].src = eval(imgName + "_2.src");
+         }
+   <!-- ---------------------------------- -->
+   function img_inact(imgName) <!-- Load the default picture of the button -->
+         {
+           if (doButtonHighLight == "true")
+              document.images[imgName].src = eval(imgName + "_1.src");
+         }
+   <!-- ---------------------------------- -->
+   function resetButtons()
+   {
+
+    if (doButtonHighLight == "true")
+       {      
+        img_inact('pic1');
+        img_inact('pic2');
+        img_inact('pic3');
+        img_inact('pic4');
+        img_inact('pic5');
+		img_inact('pic6');
+		img_inact('pic7');
+       }  
+   }
+
+  // --> 
+
+</SCRIPT>
+</HEAD>
+<BODY TEXT="#FFFFFF" BGCOLOR="#000000" LINK="#FFCC33" VLINK="#FFCC33" ALINK="#FFCC33">
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="640" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP WIDTH="640" HEIGHT="100%">
+<DIV ALIGN=right><A HREF="http://ads.gamespy.com/cgi-bin/adclick.exe/SITE=PQ/" target="_top"><IMG SRC="http://ads.gamespy.com/cgi-bin/adserver.exe/SITE=PQ/" ALT="Click for more information!" NOSAVE BORDER=0 HEIGHT=60 WIDTH=468></A>&nbsp;<img src=http://www.planetquake.com/counter/count.exe?ft=0&df=pqgangsters.dat&dd=D&prgb=CE8410&rotate=T></DIV>
+
+<DIV ALIGN=right>&nbsp;</DIV>
+</TD>
+</TR>
+
+<TR>
+<TD><IMG SRC="top.gif" BORDER=0 HEIGHT=95 WIDTH=640></TD>
+</TR>
+
+<TR>
+<TD>
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=2 WIDTH="640" >
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP WIDTH="150" BACKGROUND="leftborder.gif" NOSAVE><IMG SRC="menutop.gif" NOSAVE HEIGHT=25 WIDTH=150><A HREF="index.html" onMouseover="img_act('pic1')" onMouseout="img_inact('pic1')"><IMG SRC="menu_news.gif" NAME="pic1" BORDER=0  ALIGN=TOP></A><A HREF="files.html" onMouseover="img_act('pic2')" onMouseout="img_inact('pic2')"><IMG SRC="menu_files.gif" NAME="pic2" BORDER=0  ALIGN=TOP></A><A HREF="docs.html" onMouseover="img_act('pic3')" onMouseout="img_inact('pic3')"><IMG SRC="menu_docs.gif" NAME="pic3" BORDER=0  ALIGN=TOP></A><A HREF="server.html" onMouseover="img_act('pic7')" onMouseout="img_inact('pic7')"><IMG SRC="menu_server.gif" NAME="pic7" BORDER=0  ALIGN=TOP></A><A HREF="screens.html" onMouseover="img_act('pic6')" onMouseout="img_inact('pic6')"><IMG SRC="menu_screens.gif" NAME="pic6" BORDER=0  ALIGN=TOP></A><A HREF="team.html" onMouseover="img_act('pic4')" onMouseout="img_inact('pic4')"><IMG SRC="menu_team.gif" NAME="pic4" BORDER=0  ALIGN=TOP></A><A HREF="contact.html" onMouseover="img_act('pic5')" onMouseout="img_inact('pic5')"><IMG SRC="menu_contact.gif" NAME="pic5" BORDER=0  ALIGN=TOP></A><IMG SRC="menulow.gif" NOSAVE HEIGHT=25 WIDTH=150>&nbsp;
+
+<P><A HREF="http://www.planetquake.com"><IMG SRC="buttons/planetquake.gif" HSPACE=10 VSPACE=3 NOSAVE BORDER=0 HEIGHT=31 WIDTH=88></A><A HREF="http://action.telefragged.com"><IMG SRC="buttons/aq.gif" HSPACE=10 VSPACE=3 NOSAVE BORDER=0 HEIGHT=31 WIDTH=88></A><A HREF="http://www.noxtension.com/smd"><IMG SRC="buttons/smd.gif" HSPACE=10 VSPACE=3 NOSAVE BORDER=0 HEIGHT=29 WIDTH=86></A><A HREF="http://www.sigma-systems.no/cgi-bin//Ultimate.cgi?action=intro"><IMG SRC="buttons/msgboard.gif" HSPACE=10 VSPACE=3 NOSAVE BORDER=0 HEIGHT=29 WIDTH=86></A><A HREF="http://www.sigma-systems.no/norse"><IMG SRC="buttons/norse.gif" HSPACE=10 VSPACE=3 NOSAVE BORDER=0 HEIGHT=29 WIDTH=86></A>&nbsp;</TD>
+
+<TD ALIGN=LEFT VALIGN=TOP WIDTH="490">&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="480" HEIGHT="100%" NOSAVE >
+<TR>
+<TD ALIGN=CENTER VALIGN=CENTER WIDTH="480" HEIGHT="25" BACKGROUND="headline.gif" NOSAVE><B><FONT FACE="Arial,Helvetica"><FONT COLOR="#FFFFFF"><FONT SIZE=-1>
+Servers and info</FONT></FONT></FONT></B></TD>
+</TR>
+
+<TR>
+<TD ALIGN=LEFT VALIGN=TOP BACKGROUND="sgrfx/newsmain.gif" NOSAVE>
+<FONT FACE="Arial,Helvetica"><FONT COLOR="#CCCCCC"><FONT SIZE=-1>
+<CENTER>| <a href="server_list.html">Server List</a> | <a href="server_gstab.html">Gamespy Tab</a> | <a href="server_q2plug.html">Q2plug List</a> | <a href="server_submit.html">Submit a Server</a> |</CENTER>
+<UL>
+Gangsters have just been released and few servers exist yet. That's where you come in - Run a server and think Gangsters is the funkiest since shades with mirror glasses and hotpants?
+Give us a holler and we'll guide your every step of the way. Want to drop out of school to live out your Gangster fantasies instead? Tell your local server-admin about us.
+<p>In the meantime, try the resources listed above.
+</FONT></FONT></FONT></UL></UL>
+
+</TD>
+</TR>
+</TABLE></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD><IMG SRC="leftlow.gif" NOSAVE HEIGHT=50 WIDTH=150></TD>
+
+<TD ALIGN=CENTER VALIGN=BOTTOM>
+<CENTER><FONT FACE="Arial,Helvetica"><FONT COLOR="#999999"><FONT SIZE=-2>Any
+4.0+ Browser at 640x480, 16bit color</FONT></FONT></FONT></CENTER>
+
+<CENTER><FONT FACE="Arial,Helvetica"><FONT COLOR="#999999"><FONT SIZE=-2>Design
+Copyright 1999 - <A HREF="mailto:Ellusion@Planetquake.com">Per 'Ellusion'
+Nyhaug</A>, E-Design</FONT></FONT></FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+</BODY>
+</HTML>
