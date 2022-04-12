@@ -9,7 +9,7 @@
 <TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
  <TR HEIGHT="40" VALIGN="bottom">
   <TD WIDTH="726" ALIGN="right">
-   <a href="https://assets.aq2world.com/archive/websites/aqdt.fear.net">
+   <A HREF="http://aqdt.fear.net/main2.html">
    <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
    </A>
   </TD>
@@ -56,6 +56,11 @@
     <A HREF="arena.htm">Action Arena</A><BR>
     <A HREF="lowlag.htm">Lowlag</A><BR>
    </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm">Server Info</A><BR>
+   </P>
     <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
   </TD>
   <TD>
@@ -66,7 +71,7 @@
 
 <P>Rename pakN.pak to an unused name in the range pak0-pak9. We've gone to a pak file for some of the models and sounds to make it easier for people to use their own replacements.</P>
 
-<P>As of v3.3, AQ:ETE uses LowLag Sounds, a different naming scheme for weapon sounds.  As of v4.4a, AQ:ETE makes the use of these sounds optional.  The server operator can enable or disable use of these sounds.  If you enter an Action Quake server and hear Quake II sounds, you should either rename your sounds as shown below or download the LowLag Sound pack which is about 160 KB in size.</P>
+<P>As of v3.3, AQ:ETE uses LowLag Sounds, a different naming scheme for weapon sounds.  As of v4.4a, AQ:ETE makes the use of these sounds optional.  The server operator can enable or disable use of these sounds.  If you enter an Action Quake server and hear Quake II sounds, you should either rename your sounds as shown below or download the LowLag Sound pack which is about 160 KB in size.  This information is still valid for v4.6b, the latest release.</P>
 
 <P>The sounds map as follows:</P>
 
@@ -148,10 +153,22 @@
 <UL>
 <LI><B>goals</B> - Redisplays the current objectives for both teams
 <LI><B>rules</B> - Displays spawn and equipment rules as well as goals
-<LI><B>ignore</B> &lt;player name> - Lets you ignore messages from a particular player
-<LI><B>unignore</B> - Clears your ignore field
+<LI><B>showradiosource</B> - Must enable each map, handy to see who is radio spamming
+<LI><B>ignore</B> &lt;player name> - Lets you ignore messages from a particular player, can keep 
+                                     ignoring additional players as desired, persists until player
+                                     leaves, also handy for ignoring radio spammers
+<LI><B>ignoreid</B> &lt;player id> - Lets you ignore messages from a particular player, find the 
+                                     player id by typeng "skins" in the console
+<LI><B>ignorenum</B> &lt;player id> - Lets you ignore messages from a particular player
+<LI><B>unignore</B> - Clears your ignore for a particular player
+<LI><B>unignoreid</B> - Clears your ignore for a particular player
+<LI><B>unignorenum</B> - Clears your ignore for a particular player
 <LI><B>volunteer</B> - Makes you eligible for special duty
-<LI><B>scenarios</B> - Lists the maps and associated scenarios in rotation on the server
+<LI><B>scenarios</B> &lt;number> - Lists the maps and associated scenarios in rotation on the server, 20 at a time.
+                       You can type "scenarios #" to start at a different point on the scenario list.  
+                       "scenarios" lists 0 through 19, "scenarios 12" starts at 12 through 31, helps
+                       prevent overflowing clients from hugely-long scenario rotations in action.scp.
+<LI><B>maplist</B> - Lists the current map rotation on the server, the current map, and time left
 <LI><B>lowlag</B> - Type "lowlag" for instructions, semiautodownload of LowLag sounds from server
 <LI><B>tkok</B> - Voluntary console command to forgive a TK
 <UL>
@@ -228,7 +245,7 @@ TARGET_LOCATION "Location Name" ( x y z )<BR>
  </TR>
 </TABLE>
 
-<H4>Copyright 2000, Action Quake Developers Team</H4>
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
 
 </BODY>
 

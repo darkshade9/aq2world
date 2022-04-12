@@ -9,7 +9,7 @@
 <TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
  <TR HEIGHT="40" VALIGN="bottom">
   <TD WIDTH="726" ALIGN="right">
-   <a href="https://assets.aq2world.com/archive/websites/aqdt.fear.net">
+   <A HREF="http://aqdt.fear.net/main2.html">
    <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
    </A>
   </TD>
@@ -70,38 +70,6 @@
    <P><H5>AQDT Modified Action Quake - AQ: Espionage Tournament Edition</H5></P>
 
 <PRE>
-v4.6g
-
- * seeDeadPeople disabled for matchplay 1
-
-v4.6f
-
- * Eat trailing spaces in maplist
- * Fixed LCA vote bug that caused team-change suicide on the following map
- * Fixed crash when a huge number of maps is listed in motd
-
-v4.6e
-
- * Maplist no longer shows current map as not in rotation during intermission
- * 'sv goto' with scripts 0 selects a map from the standard maplist
-   - 0 is the first map, 1 the second, etc.
-   - the index is modulo the number of maps, so 'sv goto 7' with only
-     5 maps would go to map 2
- * Scenario parser handles both DOS and unix text formats
-
-v4.6d
-
- * Fixed random loadouts in arena
- * Fixed floodlock and silences not surviving respawns
- * Fixed impersonationok and current vote not surviving respawns
- * Moved some other stuff from client structure to resp structure so they
-     don't have to be manually maintained across respawns
- * Added cvar 'scpname' to specify from where Espionage scripts are loaded
-    (default: "action.scp")
- * Added server command 'seeDeadPeople' to enable admins to listen to, well,
-    dead people
-   - usage: sv seeDeadPeople {clientnum}  [toggles on and off]
-
 v4.6c
 
  * Fixed arena not unsetting matchplay and scripts

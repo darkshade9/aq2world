@@ -9,7 +9,7 @@
 <TABLE WIDTH="761" CELLSPACING="0" CELLPADDING="0" BORDER="0" BGCOLOR="#000000">
  <TR HEIGHT="40" VALIGN="bottom">
   <TD WIDTH="726" ALIGN="right">
-   <a href="https://assets.aq2world.com/archive/websites/aqdt.fear.net">
+   <A HREF="http://aqdt.fear.net/main2.html">
    <IMG SRC="aqdt2.gif" ALIGN="bottom" BORDER="0" width="532" height="99">
    </A>
   </TD>
@@ -55,6 +55,11 @@
     <A HREF="te.htm">Tournament</A><BR>
     <A HREF="arena.htm">Action Arena</A><BR>
     <A HREF="lowlag.htm">Lowlag</A><BR>
+   </P>
+   <P ALIGN="right">
+    <A HREF="faq.htm">FAQ</A><BR>
+    <A HREF="scenarios.htm">How to Play</A><BR>
+    <A HREF="servers.htm">Server Info</A><BR>
    </P>
     <H3><A HREF="http://www.worldogl.com"><IMG SRC="ogl.gif" border="0" width="73" height="30"></A></H3>
   </TD>
@@ -117,6 +122,13 @@ Notes:<BR>
 <UL>
   <LI>0: standard teamplay
   <LI>1: teamplay with scripted goals
+</UL>
+<BR>
+
+<LI><B>arena</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: arena 1v1 mode is disabled
+  <LI>1: arena 1v1 mode is enabled, supercedes teamplay, scripts, ogl, and matchplay
 </UL>
 <BR>
 
@@ -261,13 +273,47 @@ in addition to scenario specifications (default: 0)<BR>
 </UL>
 <BR>
 
+<LI><B>e_AllowNoclip</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: the noclip cheat is disabled
+  <LI>1: the noclip cheat is enabled--useful for demos, towers, etc.
+</UL>
+<BR>
+
+<LI><B>spawnProtect</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: no deathmatch spawn protection for players respawning
+  <LI>1: deathmatch spawn protection for players respawning
+  <LI>protected player is semi-transparent
+  <LI>firing a weapon negates invulnerability
+  <LI>2 seconds of invulnerability upon spawn
+</UL>
+<BR>
+
+<LI><B>e_DefaultModels</B> &lt;0|1> (default: 0)
+<UL>
+  <LI>0: no model is shown if one is not specified
+  <LI>1: each TARGET_AREA with no model set uses a red key as a default model
+</UL>
+<BR>
+
 </OL>
 
 <P>Server commands:</P>
 
 <UL>
-<LI><B>sv scenarios</B> - Lists the maps and associated scenarios in rotation on the server 
+<LI><B>sv scenarios</B> - lists the maps and associated scenarios in rotation on the server 
 <LI><B>sv goto</B> &lt;scn num> - changes to the referenced scenario number
+<LI><B>sv matchtime</B> - display elapsed time (works for any mode with a timelimit set)
+<LI><B>sv teamscore</B> - displays team scores in the console to remotely follow a teamplay match
+<LI><B>sv orphan</B> &lt;player num> - to immediately remove a player from his team
+<LI><B>sv silence</B> &lt;player num> &lt;seconds> - prevents a player from speaking for a time
+  <UL>
+  <LI>If no time argument is supplied, default is 60 seconds
+  <LI>If a flood lock or previous silence is in effect, the specified time is appended
+  <LI>Use negative values to undo or lessen a current lock
+  <LI>Silenced/floodcontrolled players may not use the radio, either
+  </UL>
 </UL>
 
 <P>Other stuff that's good to know:</P>
@@ -289,7 +335,7 @@ ammo bug, other 1.52 bugs).
  </TR>
 </TABLE>
 
-<H4>Copyright 2000, Action Quake Developers Team</H4>
+<H4>Copyright 2000, 2001, 2002, Action Quake Developers Team</H4>
 
 </BODY>
 
