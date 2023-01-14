@@ -1,0 +1,357 @@
+<html>
+
+<head>
+<title>LoJiK's Config Guide</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<style type="text/css">
+<!--
+BODY {
+font-family : Arial;
+font-size : 10pt;
+font-weight : bold;
+color : #000000;
+}
+
+A:LINK {
+font-family : Arial;
+font-size : 10pt;
+font-weight : bold;
+text-decoration : none;
+color : #ffffff
+}
+
+A:VISITED {
+font-family : Arial;
+font-size : 10pt;
+font-weight : bold;
+text-decoration : none;
+color : #ffffff
+}
+
+A:HOVER {
+font-family : Arial;
+font-size : 10pt;
+font-weight : bold;
+text-decoration : none;
+color : #FFFF80
+}
+
+
+-->
+</style>
+<script language="JavaScript1.2">
+
+/*
+Highlight Table Cells Script- 
+Last updated: 99/01/21
+© Dynamic Drive (www.dynamicdrive.com)
+For full source code, installation instructions,
+100's more DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+function changeto(highlightcolor){
+source=event.srcElement
+if (source.tagName=="TR"||source.tagName=="TABLE")
+return
+while(source.tagName!="TD")
+source=source.parentElement
+if (source.style.backgroundColor!=highlightcolor&&source.id!="ignore")
+source.style.backgroundColor=highlightcolor
+}
+
+function changeback(originalcolor){
+if (event.fromElement.contains(event.toElement)||source.contains(event.toElement)||source.id=="ignore")
+return
+if (event.toElement!=source)
+source.style.backgroundColor=originalcolor
+}
+</script>
+</head>
+
+<body background="actionback.gif">
+
+<p align="center"><img src="setup.gif" width="351" height="173" alt="LoJiK's Config Guide"></p>
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="0" width="90%">
+  <tr>
+    <td width="185" valign="top" align="left"><table border="1" cellpadding="0"
+    cellspacing="1" width="180" bordercolor="#003333">
+      <tr>
+        <td width="100%" bgcolor="#003333" valign="middle" align="center"><p
+        style="margin-left: 10px; margin-right: 10px">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="100%" bgcolor="#000000" valign="top" align="left"><p
+        style="margin-left: 10px; margin-right: 10px" align="center"><br>
+        </p>
+        <div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="95%"
+        onMouseover="changeto('#003333')" onMouseout="changeback('black')">
+          <tr>
+            <td width="100%" height="20" align="center" id="ignore"><img src="helpbut.jpg" width="140"
+            height="26" alt="Additional Config &amp; Setup Help"></td>
+          </tr>
+          <tr>
+            <td width="100%" height="8" align="center" id="ignore"></td>
+          </tr>
+          <tr>
+            <td width="100%" height="20" align="center"><a
+            href="http://www.party.demon.co.uk/advanced.htm">LoJiK's Advanced Cfg</a></td>
+          </tr>
+          <tr>
+            <td width="100%" height="20" align="center"><a
+            href="http://www.party.demon.co.uk/davtips.htm">Davross' Alias/Bind Guide</a></td>
+          </tr>
+          <tr>
+            <td width="100%" height="20" align="center"><a href="http://www.planetquake.com/bootcamp/">The
+            Newbie Bootcamp</a></td>
+          </tr>
+          <tr>
+            <td width="100%" height="20" align="center"><a
+            href="http://www.voodooextreme.com/3Fingers/stuff/3ftweaks.htm">3 Fingers' Tweak Guides</a></td>
+          </tr>
+        </table>
+        </center></div><p style="margin-left: 10px; margin-right: 10px" align="center"><img
+        src="soldier.jpg" width="140" height="253" alt="soldier.jpg (5319 bytes)"><br>
+        <br>
+        <a href="http://www.party.demon.co.uk/action.htm">LoJiK's Main AQ2 Page</a><br>
+        <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="100%" bgcolor="#003333" valign="middle" align="center"><font face="Arial"
+        size="4" color="#FFFF80">* * * *</font></td>
+      </tr>
+    </table>
+    </td>
+    <td width="10" valign="top" align="left"><table border="0" cellpadding="0" cellspacing="0"
+    width="10">
+      <tr>
+        <td width="100%"></td>
+      </tr>
+    </table>
+    </td>
+    <td width="85%" valign="top" align="left"><table border="1" cellpadding="0"
+    cellspacing="1" width="100%" bordercolor="#003333">
+      <tr>
+        <td width="100%" bordercolor="#003333" bgcolor="#003333"><marquee border="0"
+        style="font-family: Arial; font-size: 12pt; color: rgb(255,255,128); font-weight: bold; text-decoration: none">The Action Quake 2 Config Guide</marquee></td>
+      </tr>
+      <tr>
+        <td width="100%" bordercolor="#003333" bgcolor="#808080"><p
+        style="margin-left: 10px; margin-right: 10px"><br>
+        <strong><font face="Arial" size="3" color="#FFFF80">Overview<br>
+        </font><font face="Arial" size="2">Action Quake 2 is a great game. However, and speaking
+        from personal experience, if you are a complete newcomer to the world of mods and online
+        Quake, then it really can be a very daunting and awkward exercise to get it all correctly
+        installed and set up. I do not claim to know every bind, alias or console command, far
+        from it, but I do know enough now to be able to offer some practical advice on creating
+        simple and basic config files.</font></strong></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>So
+        what's a config file then. Simply put a config file is a small text file that contains set
+        up information that Quake II, or in our case Action Quake 2 reads and acts upon when the
+        game is launched. Through a config file you can set up such things as your keyboard layout
+        for the game, any special binds that may be required (a bind is a keyboard command for the
+        game that cannot be set up directly from the in game menu) and certain advanced video
+        options for 3d cards.</strong></font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>In
+        the following paragraphs I intend to show two config files. One will be the most basic
+        config needed to get Action Quake 2 up and running, the other will be my very own config
+        file. In both instances I will explain in what I hope is clear and simple English what
+        each command does.</strong></font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><strong><font face="Arial" size="3"
+        color="#FFFF80">Creating The Config File</font><font face="Arial" size="2"><br>
+        Ok then on with the show. The 1st thing you need to do is create your config file and
+        place it in the correct directory. The simplest way is to directly download one of the
+        example config files from this page ( you will need to rename the files to
+        &quot;autoexec.cfg&quot; without the quotes before placing them in your action directory)
+        You will then need to edit them to suit the keyboard set-up that you are most comfortable
+        with (using a programme such as notepad). If you read all the readme files that come with
+        AQ2, and read all the explanations on this guide page, you really shouldn't have too much
+        trouble.</font></strong></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"
+        color="#FFFF80"><strong>Basic Config - click </strong></font><a
+        href="http://www.party.demon.co.uk/basic.cfg">HERE</a><strong><font face="Arial" size="2"
+        color="#FFFF80"> to download the basic config file</font><font face="Arial" size="2"><font
+        color="#FFFF80">.</font><br>
+        The 1st thing you should do is to set up the keys you wish to use for movement and basic
+        gameplay from the actual menu system inside the game. This basic config only includes for
+        the additional keys that are required to play Action Quake, but which cannot be set up
+        from the game menu itself. Text written in <font color="#800080">this colour</font> refers
+        to the keystrokes used to carry out an action. Unfortunately being the awkward bugger that
+        I am I have a pretty unique set up so most of you will want to change at least some of
+        these keys. Text written in <font color="#000080">this colour</font> refers to the
+        essential Action Quake binds that you must have to be able to play the game. Finally text
+        written in <font color="#800000">this colour</font> refers to a text message that will be
+        displayed on screen when the relevant key is pressed. This can and should be edited by you
+        to say something amusing/arrogant/insulting, something to reflect your personality (or
+        lack thereof ;-P) The actual commands contained in this file are listed and explained
+        below.<br>
+        </font><font face="Arial"><br>
+        </font></strong><font face="Arial" size="2">// weapons<br>
+        bind <font color="#800080">KP_END</font> &quot;use Combat Knife&quot;<br>
+        bind <font color="#800080">KP_DOWNARROW</font> &quot;use Blaster&quot;<br>
+        bind <font color="#800080">KP_PGDN</font> &quot;use special&quot;<br>
+        bind<font color="#800080"> KP_LEFTARROW</font> &quot;use A 2nd Pistol&quot;<br>
+        bind <font color="#800080">KP_5</font> &quot;use M26 Fragmentation Grenade&quot;</font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>*
+        Explanation - (Weapons) ok the commands listed after //weapons relate to the selection of
+        weapons in Action Quake 2. It is very important that these keys be located in a most
+        convenient position for you as nothing is more annoying than dying while you desperately
+        attempt to switch weapons. These should all be fairly self explanatory but I will briefly
+        expand on some of the binds. The &quot;use blaster&quot; bind actually refers to the
+        Pistol so pressing this key will switch you from whatever weapon you are holding at the
+        time to the pistol. The <font color="#000080">&quot;use special&quot;</font> bind is a
+        very important bind. This is used to select whatever special weapon you may be carrying,
+        such as the M4 assault rifle, MP5/10 machine gun etc. The &quot;use A 2nd Pistol&quot;
+        bind puts you into akimbo pistol mode, where you have a pistol in each hand. Obviously you
+        will 1st need to acquire a 2nd pistol (by looting a corpse). The &quot;use M26
+        Fragmentation Grenade&quot; bind selects grenades (should you have one, and should the
+        server you are playing on support them) once selected, the grenades are configurable with
+        the use of the <font color="#000080">&quot;weapon&quot;</font> bind key to either short,
+        medium or long range throw.<br>
+        </strong><br>
+        // mouse stuff<br>
+        bind <font color="#800080">mouse1</font> &quot;+attack&quot;<br>
+        bind<font color="#800080"> mouse3</font> <font color="#000080">&quot;weapon&quot;</font><br>
+        bind <font color="#800080">mouse2</font> <font color="#000080">&quot;reload&quot;</font></font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><strong><font size="2">* Explanation -
+        (Mouse Stuff) Some very important binds here, as usual make sure and use keys that you are
+        comfortable finding in a hurry, as you can see I like to have final weapon control
+        (firing, reloading etc) on the mouse but I know many who don't. The 1st bind here is
+        simply the fire key and can be set up from the in game menu system. As the other two binds
+        are so important I will give a brief explanation of their in game use. The <font
+        color="#000080">&quot;weapon&quot;</font> bind is used to change the mode of operation of
+        certain weapons.<font face="Arial"> </font></font><font face="Arial" size="2">For the
+        sniper rifle pressing this key will change to zoom mode, repeated presses increase the
+        zoom from 2X to 4X to 6X with a further press taking you back out of zoom mode. For the
+        MP5/10 and M4 pressing this key puts the weapons into semi-auto 3 shot mode (slightly more
+        accurate) with an additional press putting the weapons back into fully automatic firing
+        mode. For the pistol, it switches between semi-automatic and automatic (again
+        semi-automatic being more accurate). For the knife, it switches between slashing and
+        throwing. </font><font size="2">The <font color="#000080">&quot;reload&quot;</font> bind
+        is simply used to reload your currently selected weapon.<br>
+        </font></strong><font face="Arial" size="2"><br>
+        // general stuff<br>
+        bind<font color="#800080"> KP_PLUS</font> <font color="#000080">&quot;drop item&quot;</font><br>
+        bind<font color="#800080"> / </font><font color="#000080">&quot;bandage&quot;</font><br>
+        bind <font color="#800080">SPACE</font> <font color="#000080">&quot;opendoor&quot;</font><br>
+        bind <font color="#800080">KP_MINUS</font> <font color="#000080">&quot;drop weapon&quot;</font><br>
+        bind <font color="#800080">c</font> <font color="#000080">&quot;irvision&quot;</font></font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>*
+        Explanation - (General stuff) These binds form the very heart of Action Quake 2 and as
+        such warrant full explanation.&nbsp; <font color="#000080">&quot;drop item&quot;</font> In
+        Action Quake 2 you get to carry one special item. These items are the kevlar vest, laser
+        sight, bunny slippers, the silencer, and the bandolier. During a game circumstances and
+        the weapon you are carrying can often change rendering your current special item useless
+        (laser site and shotgun anyone?). You will find new items laying next to the corpses of
+        fallen player. To be able to pick them up you 1st need to drop whatever special item you
+        are currently carrying. <font color="#000080">&quot;bandage&quot;</font> If you get hit
+        you will bleed, and you will continue to bleed until you die unless you do something about
+        it. bandaging will stop the bleeding, it will also fix up broken ankles and stop you from
+        limping after high falls. Note however that you will be unable to use your weapon for 6
+        seconds while you bandage. After 3 seconds you will stop bleeding, and be able to run
+        again. <font color="#000080">&quot;opendoor&quot;</font> real simple this one, used to
+        err..open doors and stuff :-) <font color="#000080">&quot;drop weapon&quot;</font> You
+        start all rounds in Action Quake 2 with a pistol and a knife. In team games you also get
+        to select one special weapon and one special item (see above for info on special items).
+        The special weapons are the M4 assault rifle, the MP5/10 automatic machine gun, the M3
+        super 90 shotgun, the SSG 300 sniper rifle and the 12 gauge sawn off shotgun (or hand
+        cannon). If during a round you run out of ammunition it is advisable to dump your current
+        weapon and go try finding a corpse to loot. Binding a key to <font color="#000080">&quot;drop
+        weapon&quot;</font> enables you to drop your current special weapon and go pick up another
+        (hopefully one with ammo in it). <font color="#000080">&quot;irvision&quot;</font> only
+        available if you are carrying a bandolier this is a vision enhancement that makes ALL
+        players glow red, making those sneaky darkness campers stick out like sore thumbs.<br>
+        </strong><br>
+        // communication<br>
+        bind<font color="#800080"> t</font> &quot;messagemode&quot; /send a message<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">y</font> &quot;messagemode2&quot;
+        /send a message only to team-mates<br>
+        bind<font color="#800080"> 1</font> &quot;radio 1&quot;<br>
+        bind <font color="#800080">2</font> &quot;radio 2&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">3</font> &quot;radio 3&quot;<br>
+        bind <font color="#800080">4</font> &quot;radio 4&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">5</font> &quot;radio 5&quot;<br>
+        bind <font color="#800080">6</font> &quot;radio 6&quot;<br>
+        bind <font color="#800080">7</font> &quot;radio 7&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">8</font> &quot;radio 8&quot;<br>
+        bind <font color="#800080">9</font> &quot;radio 9&quot;<br>
+        bind <font color="#800080">0</font> &quot;radio 10&quot;</font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>*
+        Explanation - (communication) There are times when the built in radio messages are not
+        what you want to say. In this case it is possible to type any message you like that will
+        appear in text format on the screen of just your team, or all players depending which
+        message mode you use. Using the binds messagemode (sends a message to all players) and
+        messagemode2 (sends a message only to team mates) you can relay any pearls of wisdom that
+        you care to share. So for instance using the binds as the appear above, pressing the
+        &quot;T&quot; key and then typing a message would result in that message being displayed
+        on the screen of all players in the game. Pressing the &quot;Y&quot; key however would
+        mean that your message only appears on the screen of your team mates.<br>
+        </strong><br>
+        // Radio Commands<br>
+        bind <font color="#800080">b</font> &quot;radio enemys; say_team <font color="#800000">I
+        have my eye on them</font>&quot;<br>
+        bind <font color="#800080">m</font> &quot;radio teamdown; say_team <font color="#800000">the
+        bastards got one</font>&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">v</font> &quot;radio cover;
+        say_team <font color="#800000">Spray some lead and cover me!!!</font>&quot;<br>
+        bind<font color="#800080"> u</font> &quot;radio im_hit; say_team <font color="#800000">Ouch
+        that stings :-(</font>&quot;<br>
+        bind<font color="#800080"> j</font> &quot;radio go; say_team <font color="#800000">Go!!!</font>&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">k</font> &quot;radio treport;
+        say_team</font><font color="#000080" face="Arial" size="2"> </font><font face="Arial"
+        size="2"><font color="#800000">I fear I am alone in the world</font>&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">l</font> &quot;radio reportin;
+        say_team <font color="#800000">I think therefore I am!</font>&quot;<br>
+        bind<font color="#800080"> n</font> &quot;radio enemyd; say_team <font color="#800000">awwwww
+        get mummy kiss it better</font>&quot;<br>
+        bind <font color="#800080">w</font> &quot;radio forward&quot;<br>
+        bind <font color="#800080">a</font> &quot;radio up&quot;<br>
+        bind <font color="#800080">q</font> &quot;radio left&quot;<br>
+        bind <font color="#800080">e</font> &quot;radio right&quot;<br>
+        bind<font color="#FFFF80"> </font><font color="#800080">s</font> &quot;radio back&quot;<br>
+        bind <font color="#800080">d</font> &quot;radio down&quot;</font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><strong><font face="Arial" size="2">*
+        Explanation - (Radio Commands) when the appropriate key is pressed, a stock phrase built
+        into the game will be spoken and the text message (indicated in blue) will be displayed on
+        screen. This phrase and message will only be heard and seen by your team mates and those
+        already dead. You should change the text message to suit yourself. Where there is no text
+        message, only the voice will be heard. Below is listed what the game actually says when
+        the key is pressed. You will note that in the case of radio messages that have attached
+        text messages, what is said by the voice can be different to the text message. Sheesh that
+        all sounds a lot more complicated than it actually is...just try it and you will see
+        instantly what I mean :-)</font></strong></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>radio
+        enmys - voice says &quot;enemy spotted&quot;<br>
+        radio teamdown - voice says &quot;team mate down&quot;<br>
+        radio cover - voice says &quot;cover me&quot;<br>
+        radio im_hit - voice syas I'm hit<br>
+        radio go - voice says &quot;Go&quot;<br>
+        radio treport - voice says &quot;team report In&quot;<br>
+        radio reportin - voice says &quot;reporting In&quot;<br>
+        radio enemyd - voice says &quot;enemy down&quot;</strong></font></p>
+        <p style="margin-left: 10px; margin-right: 10px"><strong><font face="Arial" size="2">NB/<br>
+        As a final note always ensure that you dont bind different actions to the same key by
+        mistake. Obvious I know, but easily done :-)</font></strong></p>
+        <p style="margin-left: 10px; margin-right: 10px"><font face="Arial" size="2"><strong>Click
+        <a href="http://www.party.demon.co.uk/advanced.htm">HERE</a> to check out the advanced
+        Config file.</strong></font></p>
+        <p style="margin-left: 10px; margin-right: 10px">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="100%" bordercolor="#003333" bgcolor="#003333" valign="middle" align="center"><font
+        face="Arial" size="1" color="#FFFF80">Copyright © 1998-1999 Dicky$oft Web Design&#153;</font></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
