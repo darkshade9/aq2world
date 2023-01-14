@@ -1,0 +1,2157 @@
+
+<html ><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+<script language="Javascript1.1" type="text/javascript">
+<!--
+
+var session_cookie = getCookie('session2454731.1446');
+if (session_cookie == null) {
+	var session_dt = "0";
+	var session_j = "0";
+}  else {
+	var session_array = session_cookie.split("&");
+	var session_dt = session_array[0];
+	var session_j = session_array[1];
+}
+
+function getCookie(name) {
+	var cname = name + "=";
+	var dc = document.cookie;
+
+	if (dc.length > 0) {
+		begin = dc.indexOf(cname);
+		if (begin != -1) {
+			begin += cname.length;
+			end = dc.indexOf(";", begin);
+			if (end == -1)  {
+				end = dc.length;
+			} // end if
+			return (dc.substring(begin, end));
+		} // end if
+	} // end if
+	return null;
+}
+
+//-->
+</script>
+<title>Action Message Boards</title>
+<meta http-equiv="Pragma" content="no-cache" />
+	
+<style type="text/css">
+body	{
+	margin:	0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	background-color: #696969;
+	}
+td	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	}
+</style>
+	<style type="text/css">
+
+<!--
+
+A:visited {text-decoration: none;}
+
+A:hover {text-decoration: underline;}
+
+A:link {text-decoration: none;}
+
+A:active {text-decoration: none;}
+
+/* body { */
+/* scrollbar-3dlight-color: #800000; */
+/* scrollbar-arrow-color: #FFFFFF; */
+/* scrollbar-base-color: #660000; */
+/* scrollbar-darkshadow-color: Gray; */
+/* scrollbar-face-color: #660000; */
+/* scrollbar-highlight-color: #800000; */
+/* scrollbar-shadow-color: 400000; */
+/* scrollbar-track-color: #ADD8E6; */
+/* } */
+
+IMG {
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+	border-right-width: 0px;
+}
+
+-->
+
+</style>
+</head>
+
+<body  bgcolor="#696969" text="#FFFFFF" link="#ff8c00" vlink="#C0C0C0" alink = "#ffd700" >
+
+
+
+
+
+<center>
+<script language="Javascript" type="text/javascript">
+<!--
+
+function figure_it (closed_topic,fiery,post_j,poll) {
+	var new_locked_folder;
+	var hot_new_topic_folder;
+	var new_topic_folder;
+	var old_locked_folder;
+	var hot_old_topic_folder;
+	var old_topic_folder;
+
+	if(poll) {
+		new_topic_folder = "poll_new.gif";
+		hot_new_topic_folder = "poll_new.gif";
+		new_locked_folder = "poll_new_locked.gif";
+		new_moved_folder = "moved_new.gif";
+
+		old_topic_folder = "poll_old.gif";
+		hot_old_topic_folder = "poll_old.gif";
+		old_locked_folder = "poll_old_locked.gif";
+		old_moved_folder = "moved_old.gif";
+	} else {
+		new_topic_folder = "closedb.gif";
+		hot_new_topic_folder = "hotclosedb.gif";
+		new_locked_folder = "redlockfolder.gif";
+		new_moved_folder = "moved_new.gif";
+
+		old_topic_folder = "closed.gif";
+		hot_old_topic_folder = "hotclosed.gif";
+		old_locked_folder = "yellockfolder.gif";
+		old_moved_folder = "moved_old.gif";
+	} // end if
+
+	// Workaround for browsers that think this is an IMG tag...
+	var before = '<' + 'im' + 'g src=' + '"http://aq2zone.actionmods.com/omb/ubb/';
+	var after = '" border="0" alt="';
+	var later = '" />';
+
+	if (post_j > session_j) {
+		if (closed_topic == "X") {
+			return(before + new_locked_folder + after + "[new closed]" + later);
+		} else if (closed_topic == "M") {
+			return(before + new_moved_folder + after + "[new closed]" + later);
+		} else if (fiery == "yes") {
+			return(before + hot_new_topic_folder + after + "[new hot]" + later);
+		} else {
+			return(before + new_topic_folder + after + "[new]" + later);
+		}
+	}  else {
+		if (closed_topic == "X") {
+			return(before + old_locked_folder + after + "[old closed]" + later);
+		} else if (closed_topic == "M") {
+			return(before + old_moved_folder + after + "[old closed]" + later);
+		} else if (fiery == "yes") {
+			return(before + hot_old_topic_folder + after + "[old hot]" + later);
+		} else {
+			return(before + old_topic_folder + after + "[old]" + later);
+		}
+	}
+
+return true;
+}
+//-->
+</script>
+<table border="0" width="95%">
+<tr>
+<td align="left" valign="top">
+<a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi"><img src="http://aq2zone.actionmods.com/omb/ubb/aq2mdlogo_bb.gif" border="0" alt="Action Message Boards" /></a>
+<br />
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif" color="#ff8c00"><b>
+Action Quake2 Map Depot
+</b>
+<br />
+<font size= "1" color="#C0C0C0">
+(Moderated by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_profile;u=00000156">No Fear</a>, <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_profile;u=00000951">{TGr}Idle</a>)
+<br /><br />
+</font></font>
+</td>
+<td valign="top" nowrap="nowrap">
+<form action="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi" method="get">
+<center>
+<br /><br />
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ 
+</font>
+<br />
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+<a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=my_profile" title="View your profile.">my profile</a> | <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=agree" title="Registration is free!">register</a> | <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=search;search_forum=11" title="Search">search</a> | <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=faq" title="Frequently Asked Questions">faq</a> | <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi" title="Forum Home">forum home</a><br />
+</font>
+<br />
+
+<input type="hidden" name="ubb" value="forum" />
+<input type="hidden" name="f" value="11" />
+<select name="DaysPrune">
+	<option value="1" >Show topics from last day</option>
+	<option value="2" >Show topics from last 2 days</option>
+	<option value="5" >Show topics from last 5 days</option>
+	<option value="10" >Show topics from last 10 days</option>
+	<option value="20" >Show topics from last 20 days</option>
+	<option value="30" >Show topics from last 30 days</option>
+	<option value="45" >Show topics from last 45 days</option>
+	<option value="60" >Show topics from last 60 days</option>
+	<option value="75" >Show topics from last 75 days</option>
+	<option value="100" >Show topics from last 100 days</option>
+	<option value="365" >Show topics from last year</option>
+	<option value="1000" selected="selected">Show all topics</option>
+</select>
+<input type="submit" name="submit" value="Go" class="buttons" />
+
+</center>
+</td>
+</form>
+</tr></table>
+
+<br />
+<table border="0" width="95%">
+<tr>
+<td valign="bottom" align="right">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+Page: 1 <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=forum;f=11;hardset=1000;start_point=40">2</a> 
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Navigation/Login Table -->
+
+
+<table border="0" cellpadding="1" cellspacing="1" width="95%" align="center">
+  <tr bgcolor="#000000">
+    <td>
+      <table border="0" width="100%" cellpadding="3" cellspacing="0">
+
+
+<tr bgcolor="#660000">
+<td nowrap="nowrap" align="left" valign="bottom">
+<font size="1"  face="Verdana, Arial, Helvetica, sans-serif">
+<b>&#187;&nbsp;
+
+<script language="Javascript" type="text/javascript">
+<!--
+var user_cookie = getCookie('ubber2454731.1446');
+if(''==user_cookie ||  null==user_cookie) {
+document.writeln('You are not logged in.' , ' <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=login">Login</a> or <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=agree">register</a>')
+} else {
+
+var user_array=user_cookie.split("&");
+user_array[2] = unescape(user_array[2]);
+document.writeln('Hello, ', user_array[2]);
+document.writeln('[ <a title="Click here to log out." href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=logoff">'
+,'log out</a> ]');
+
+}
+//-->
+</script>
+
+</b>
+ </font>
+</td>
+<td valign="bottom" align="right">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+<b>
+<a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi" title="Forum Home">
+Action Message Boards</a>
+
+
+&nbsp; &#187; <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?category=3">
+Mapping, Modeling and Skinning Support</a>
+
+
+&nbsp;
+
+&#187;
+Action Quake2 Map Depot
+</b>
+</font>
+</td>
+</tr>
+
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<!-- End Navigation/Login Table -->
+<table border="0" width="95%">
+<tr>
+<td valign="top" align="left">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+
+</font>
+</td>
+</tr>
+</table>
+<br />
+
+
+
+<table border="0" cellpadding="1" cellspacing="1" width="95%" align="center">
+  <tr bgcolor="#000000">
+    <td>
+      <table border="0" width="100%" cellpadding="3" cellspacing="0">
+
+
+
+<tr bgcolor="#000000">
+<!-- folder column -->
+<td>&nbsp;</td>
+
+<!-- icons column -->
+<td>&nbsp;</td>
+
+<td>
+<font size="1" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">
+<b>Topic</b></font>
+</td>
+<td>
+<font size="1" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">
+<b>Topic Starter</b></font>
+</td>
+<td align="center">
+<font size="1" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">
+<b>Replies</b></font>
+</td>
+<td>
+<font size="1" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">
+<b>Last Post</b></font>
+</td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452940.1616",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon3.gif" border="0" alt="Icon 3" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>Sticky:</strong> <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000355">Want to make your mark?</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Lacutis</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+14</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+October 27, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">04:16 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000355#000014">Framer</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453157.0109",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon3.gif" border="0" alt="Icon 3" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>Sticky:</strong> <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000397">Add SPAQ support to your maps!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Lacutis</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+13</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+May 31, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">01:09 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000397#000013">MP*Canus</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453528.2350",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>Sticky:</strong> <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000511">AQMD status and future</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+GreyDeath</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+5</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+June 06, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:50 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000511#000005">smurphster</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("X","no","2452940.1618",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon13.gif" border="0" alt="Icon 13" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<strong>Sticky:</strong> <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000401">AQMD is starting to suck</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Flunx</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+2</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+October 27, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">04:18 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000401#000002">Framer</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453511.1333",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000513">New map: Hidden</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+lundvall</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+3</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+May 20, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">01:33 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000513#000003">Black Monk</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453511.1333",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000512">New maps: Assassin, Assassin2, Assassin3</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+lundvall</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+4</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+May 20, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">01:33 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000512#000004">Black Monk</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453419.1407",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000503">New map - Crimson Dunes</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Vermin</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+6</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+February 17, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">02:07 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000503#000006">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453416.2341",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000508">New Map</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+cody</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+8</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+February 14, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:41 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000508#000008">Framer</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453392.0530",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000510">A Great New Map!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+SoD</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+1</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 21, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">05:30 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000510#000001">Framer</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453392.0257",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000506">Lets Get Some News Maps Out Mappers!!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+JAALI</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+7</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 21, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">02:57 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000506#000007">SoD</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453389.2319",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000509">woah</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+smurphster</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+8</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 18, 2005</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:19 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000509#000008">smurphster</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453277.2058",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000507">WIP - Cliff3 Release Canidate 1</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Ace12GA</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+2</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+September 28, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">08:58 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000507#000002">Aneurexorcyst</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453247.0334",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon20.gif" border="0" alt="Icon 20" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000505">2 New maps!!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Genie</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+3</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+August 29, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">03:34 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000505#000003">Genie</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453195.1915",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000504">Looking for a...</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+{TGr}Idle</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+10</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+July 08, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">07:15 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000504#000010">Dark Saint</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453088.1113",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon18.gif" border="0" alt="Icon 18" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000501">3 new maps</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Genie</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+4</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+March 23, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:13 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000501#000004">kannibal</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453086.1858",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon7.gif" border="0" alt="Icon 7" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000502">New Quake1 Convertion</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Madfox</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+0</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+March 21, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">06:58 PM</font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453065.2135",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000496">New map - Mountain Pass</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Vermin</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+5</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+February 29, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">09:35 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000496#000005">lundvall</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453058.1715",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000500">Roadtrip - here we go</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+lundvall</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+4</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+February 22, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">05:15 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000500#000004">Cowman</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453023.0521",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000495">Time - leaving the past.</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+lundvall</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+5</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 18, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">05:21 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000495#000005">Flunx</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453011.0707",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000499">:)</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+[AZM]Goofy_Russia</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+4</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 06, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">07:07 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000499#000004">Flunx</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453010.1503",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000490">Mappin</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Ripsaw</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+5</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 05, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">03:03 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000490#000005">BakEd</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453009.1453",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000485">New map: Country</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Genie</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+12</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 04, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">02:53 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000485#000012">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453009.0731",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000498">AQMD Update</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+GreyDeath</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+1</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 04, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">07:31 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000498#000001">Flunx</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453009.0106",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon2.gif" border="0" alt="Icon 2" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000494">[New Map]The Edge</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+rudL</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+23</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 04, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">01:06 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000494#000023">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2453008.1008",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon4.gif" border="0" alt="Icon 4" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000497">Map Paks</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+BIGJohnMP</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+5</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+January 03, 2004</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">10:08 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000497#000005">Bobert</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452977.1315",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon2.gif" border="0" alt="Icon 2" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000493">[New Map]Cliff 3: The Edge</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+rudL</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+3</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+December 03, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">01:15 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000493#000003">rudL</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452969.0731",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon9.gif" border="0" alt="Icon 9" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000492">Fullbright after FulVis compile</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+curby</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+1</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 25, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">07:31 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000492#000001">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452968.0054",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000491">Mappers</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+curby</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+0</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 24, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">12:54 AM</font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452967.1042",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000489">How download map on this website ?</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+gcadoret</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+3</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 23, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">10:42 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000489#000003">Flunx</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452967.0844",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000487">Bugsy!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Flunx</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+7</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 23, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">08:44 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000487#000007">Flunx</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452966.1158",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000488">How Do You Make Maps</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Shadow Saber</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+3</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 22, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:58 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000488#000003">Shadow Saber</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452965.1135",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon4.gif" border="0" alt="Icon 4" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000486">bsp converter???</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Jericho</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+8</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 21, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:35 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000486#000008">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452959.1616",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000484">a map from me! (posted in the aq2 forums already)</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+KaMiKrAe-Z</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+1</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 15, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">04:16 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000484#000001">Toad</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452953.0558",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000444">Nine2 - 1 year project ready to download</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Suc0</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+35</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 09, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">05:58 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000444#000035">Makro[PN]</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452950.1603",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon10.gif" border="0" alt="Icon 10" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000483">music!!!!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+[AZM]Goofy_Russia</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+0</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 06, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">04:03 PM</font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452945.0605",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000482">Summer</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+PieniMies</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+11</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+November 01, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">06:05 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000482#000011">[AZM]Goofy_Russia</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452944.1426",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon4.gif" border="0" alt="Icon 4" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000480">Attention:  To all Mappers</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+GreyDeath</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+4</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+October 31, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">02:26 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000480#000004">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452942.1145",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000481">News update!</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+GreyDeath</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+5</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+October 29, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:45 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000481#000005">[AZM]Goofy_Russia</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452937.1612",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000479">Map Ideas </a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+BakEd</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+32</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+October 24, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">04:12 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000479#000032">ec1ab</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452920.1838",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon2.gif" border="0" alt="Icon 2" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000467">Miner 69'er Beta 2</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Bobert</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+15</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+October 07, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">06:38 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000467#000015">Bobert</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452901.1544",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000476">mapping tips</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Meathook</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+10</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+September 18, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">03:44 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000476#000010">GreyDeath</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452892.1157",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000478">News Update?</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+GreyDeath</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+9</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+September 09, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">11:57 AM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000478#000009">WaZZuP</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452880.2131",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000477">False leaks with txqbsp39.exe</a> </font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+GreyDeath</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+1</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+August 28, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">09:31 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000477#000001">Bobert</a></font></td>
+</tr>
+<tr>
+<!-- folder column -->
+<td valign="top" align="center" bgcolor="#660000">
+
+<script language="Javascript" type="text/javascript">
+<!--
+document.writeln(figure_it("N","no","2452873.1200",""));
+//-->
+</script>
+<noscript> &nbsp; </noscript>
+
+</td>
+
+<!-- icons column -->
+<td valign="top" align="center" bgcolor="#600000">
+<img src="http://aq2zone.actionmods.com/omb/ubb/icons/icon1.gif" border="0" alt="Icon 1" />
+</td>
+
+<td valign="top" align="left" bgcolor="#660000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+ <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000464">UberPak Part 2</a>  <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> Pages: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000464;p=1">1</a> <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000464;p=2">2</a> </font></font>
+</td>
+
+<td valign="top" align="left" bgcolor="#600000">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+Bobert</font>
+</td>
+
+<td valign="top" bgcolor="#660000" align="center">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+41</font>
+</td>
+
+<td nowrap="nowrap" valign="top" bgcolor="#600000" align="left">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+August 21, 2003</font> <font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">12:00 PM<br />by: <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=get_topic;f=11;t=000464;p=2#000041">Black Monk</a></font></td>
+</tr>
+
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+<br />
+<table border="0" cellpadding="1" cellspacing="1" width="95%" align="center">
+  <tr bgcolor="#000000">
+    <td>
+      <table border="0" width="100%" cellpadding="3" cellspacing="0">
+<tr>
+<td bgcolor="#000000" colspan="1" align="left">
+<a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=pntf;f=11">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF"><b>
+Action Quake2 Map Depot Recent Visitors: 0
+</b></font></a>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="#660000" colspan="1" align="left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">
+There are no users in this forum.
+</font>
+</td>
+</tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+<br /><br />
+<table border="0" width="95%">
+<tr>
+<td align="left" valign="bottom">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+All times are EST
+</font>
+</td>
+<td align="right" valign="bottom">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+Page: 1 <a href="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi?ubb=forum;f=11;hardset=1000;start_point=40">2</a> 
+</font>
+</td>
+</tr></table>
+
+
+<table border="0" cellpadding="1" cellspacing="1" width="95%" align="center">
+  <tr bgcolor="#000000">
+    <td>
+      <table border="0" width="100%" cellpadding="3" cellspacing="0">
+
+
+<tr bgcolor="#000000">
+<td align="left" valign="top" width="50%">
+<font size="1" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">
+<b>Posting Rights</b>
+</font>
+</td>
+<td align="left" valign="top" width="50%">
+<font size="1" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">
+<b>Icon Legend</b>
+</font>
+</td>
+</tr>
+
+
+<!-- # END NEW LEGEND -->
+<tr bgcolor="#660000">
+<td align="left" valign="top">
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+<b>New Topics:</b> No new topics are permitted in this forum.
+<br />
+<b>Replies:</b> No replies are permitted in this forum.
+<br />
+<b>Polling: </b> Polling is disabled in this forum.
+</font>
+</td>
+<td width="45%">
+
+<table width="100%" cellspacing="3" cellpadding="0" border="0">
+<tr>
+<td align="center" valign="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>New Posts</b></font></td>
+<td align="center" valign="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><b>Old Posts</b></font></td>
+<td><font face="Verdana, Arial, Helvetica, sans-serif" size="1">&nbsp;</font></td></tr>
+<tr>
+<td align="center" valign="center"><img src="http://aq2zone.actionmods.com/omb/ubb/closedb.gif" alt="[new]" title="[new]" /></td>
+<td align="center" valign="center"><img src="http://aq2zone.actionmods.com/omb/ubb/closed.gif" alt="[old]" title="[old]" /></td>
+<td><font face="Verdana, Arial, Helvetica, sans-serif" size="1">An open topic</font></font></td>
+</tr>
+
+
+<tr>
+<td align="center" valign="center"><img src="http://aq2zone.actionmods.com/omb/ubb/redlockfolder.gif" alt="[new closed]" title="[new closed]" /></td>
+<td align="center" valign="center"><img src="http://aq2zone.actionmods.com/omb/ubb/yellockfolder.gif" alt="[old closed]" title="[old closed]" /></td>
+<td><font face="Verdana, Arial, Helvetica, sans-serif" size="1">A closed topic or poll</font></td>
+</tr>
+<tr>
+<td align="center" valign="center"><img src="http://aq2zone.actionmods.com/omb/ubb/moved_new.gif" alt="[new closed]" title="[new closed]" /></td>
+<td align="center" valign="center"><img src="http://aq2zone.actionmods.com/omb/ubb/moved_old.gif" alt="[old closed]" title="[old closed]" /></td>
+<td><font face="Verdana, Arial, Helvetica, sans-serif" size="1">A moved topic or poll</font></td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<table border="0" width="95%">
+<tr>
+<td align="left" valign="middle">
+ 
+</td>
+<td align="right" valign="middle">
+<form action="http://aq2zone.actionmods.com/omb/cgi-bin/ultimatebb.cgi" method="get" name="hoptobox" onsubmit="if(document.hoptobox.f.value == -1){return false;}">
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<input type="hidden" name="ubb" value="forum" />
+<b>Hop To:</b>&nbsp;
+<select name="f" onchange="if(document.hoptobox.f[document.hoptobox.f.selectedIndex].value != -1){ document.hoptobox.submit.click() }">
+<option value='-1'>Select a Forum:</option>
+<option value='-1'></option>
+
+<option value="-1"></option>
+<option value="CAT:2">Category: Action Mod Forums</option>
+<option value="-1">--------------------</option>
+<option value="18">Action Unreal Tournament</option>
+<option value="2">Action Half-Life</option>
+<option value="1">Action Quake 2</option>
+
+<option value="-1"></option>
+<option value="CAT:6">Category: General Forums</option>
+<option value="-1">--------------------</option>
+<option value="3">Silly Hats Only</option>
+<option value="22">Movie Reviews</option>
+<option value="23">Buy/Sell and Product Reviews</option>
+
+<option value="-1"></option>
+<option value="CAT:3">Category: Mapping, Modeling and Skinning Support</option>
+<option value="-1">--------------------</option>
+<option value="21">AUT Map Depot</option>
+<option value="5">Action Half-Life Map Depot</option>
+<option value="11" selected="selected">Action Quake2 Map Depot</option>
+<option value="6">Haven o' Frags</option>
+
+<option value="-1"></option>
+<option value="CAT:4">Category: Help</option>
+<option value="-1">--------------------</option>
+<option value="4">Question Forum</option>
+<option value="7">Server Admin Helpdesk</option>
+
+<option value="-1"></option>
+<option value="CAT:1">Category: Archives</option>
+<option value="-1">--------------------</option>
+<option value="15">Best of AUT</option>
+<option value="13">Best of AHL</option>
+<option value="14">Best of AQ2</option>
+<option value="17">Best of SHO</option>
+<option value="16">Hand of Fatima</option>
+
+<option value="-1"></option>
+<option value="CAT:5">Category: Back Room/Private</option>
+<option value="-1">--------------------</option>
+<option value="9">Employees Only</option>
+<option value="12">Evidence room</option>
+<option value="20">Testbed</option>
+</select>
+&nbsp;<input type="submit" name="submit" value="Go" /></font>
+</form>
+
+</td>
+</tr>
+</table>
+<br />
+</center>
+<center>
+<font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+<a href="mailto:framer@knowdirection.net">Contact Us</a> | <a href="http://action-web.net/">A-Team Productions</a> | <a href="http://www.aq2zone.com/policy.html">Forum Policies</a></font> <br /> <br /> 
+<font color="#FFFFFF" size="1" face="Verdana, Arial, Helvetica, sans-serif">
+
+<br /><br />
+Powered by <a href="http://www.qksrv.net/click-1145476-10581" target="_blank" >Infopop Corporation</a><img src="http://www.qksrv.net/image-1145476-10581" width="1" height="1" alt="" />
+
+
+<br />UBB.classic<font style='font-size: 8px' size='1'><sup><b>TM</b></sup></font> 
+6.3.1.1 <!-- 06030101.23.2.9 -->
+
+
+
+</font>
+</center>
+<br />
+
+
+</body>
+</html>
