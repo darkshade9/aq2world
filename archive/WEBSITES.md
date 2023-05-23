@@ -3,15 +3,16 @@ Since the mod was given life way back in 1998, there have been a plethora of web
 
 #### Forums
 
-##### Active
-* Modern AQ2World Forums
+* Modern (Active) AQ2World Forums
   * https://forums.aq2world.com
-
-##### Archived
-* Original AQ2World Forums (pre-AQtion)
+* Original (Archived) AQ2World Forums (pre-AQtion)
   * https://classicforums.aq2world.com/
+* AQ2Zone / Silly Hats Only
+  * No good copy of the database (yet)
+* fear.net
+  * No good copy of the database (yet)
 
-##### Development
+#### Development
 * Action Quake 2 (Original 1.52)
   * https://assets.aq2world.com/archive/websites/action.telefragged.com
 * Action Quake 2: Edition
