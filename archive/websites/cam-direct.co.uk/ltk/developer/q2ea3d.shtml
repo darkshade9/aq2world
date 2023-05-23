@@ -1,0 +1,547 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/developer.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<title>AQ2:License to Kill The Borg Matrix - Developer Section</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="License,Kill, Borg, Matrix,Games, Quake 2, ltktbm, action, free, mod, openAL, developer">
+<META name="description" content="AQ2 license to kill the borg matrix, standalone & mod, advanced engine, developer section"> 
+<style>
+
+BODY
+{
+    BACKGROUND-COLOR: #404040;
+}
+A:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: underline
+}
+A:link
+{
+    COLOR: #C0C0C0;
+    TEXT-DECORATION: underline
+}
+A:visited
+{
+    COLOR: #D0D0D0;
+    TEXT-DECORATION: underline
+}
+A:hover
+{
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+	background-color: #999999;
+}
+
+</style>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table cellpadding="0" cellspacing="0" width="100%" align="center"><tr>
+        <td align="center" bgcolor="#000000"><font color="#999999" size="+1">
+		This page is no-longer maintained, please click <a href="http://www.cam-direct.co.uk/ltk/index2.php?location=Main&expand=0">HERE</a> or one of the links on this page
+		to continue on the main site
+		</font></td>
+
+      </tr>
+</table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" align="center">
+      <tr>
+        
+        <td valign="top" bgcolor="#000000" height="608"> 
+          <table
+        border="0" cellpadding="0" cellspacing="0" width="10%" height="10%" align="center">
+            <tr> 
+              <td width="10%" bgcolor="#000000" height="22" nowrap>&nbsp; </td>
+              <td width="10%" bgcolor="#000000" height="22" nowrap>
+<table width="20%" border="0" cellspacing="2" cellpadding="0" align="center">
+  <tr bgcolor="#000000"> 
+    <td height="22"> 
+      <div align="center"><b><font color="#FFFFFF">Respect to:</font><BR><a href="http://www.moddb.com/" target="_blank"><img src="http://www.moddb.com/images/links/links.php" width="88" height="31" border="0" alt="modDB.com - every game, every mod, one site... go figure!"></a></font></b><BR><font color="#FFFFFF">&</font><BR>
+<a href=http://www.actiongames.co.uk/ target="_blank"><img src="http://www.cam-direct.co.uk/ltk/images/aglogo.gif" width="87" height="51" alt="Action Games"></a></div>
+    </td>
+  </tr>
+  
+
+</table>
+
+</td>
+              <td width="10%" bgcolor="#000000" height="22" nowrap><img
+                src="../images/ltkbanner.gif" width="591" height="156"></td>
+            </tr>
+            <tr> 
+              <td width="1" bgcolor="#000000" rowspan="9">&nbsp;</td>
+              <td width="246" bgcolor="#000000" height="9" align="left" valign="top">
+<table width="20%" border="2" cellspacing="2" cellpadding="2" align="center" bordercolorlight="#666666" bordercolordark="#666666" bordercolor="#000000">
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="../index2.php?location=Main">HOME</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=Main&expand=16">Developer Main</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=Secure%20Client%20Identification&expand=31">Secure Client Identification</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=openAL&expand=31">Q2a3d Tutorials</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=CGF%20Documentation&expand=37">CGF Documentation</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=26">All Developer Discussions</a></font></b></div><BR>
+	  <div align="center"><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=23">OpenAl Discussion</a></font></div><BR>
+	  <div align="center"><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=7">Routefinding discussion</a></font></div>
+    </td>
+  </tr>
+  <tr bgcolor="#000000"> 
+    <td> 
+  	<p align="center"><a href="http://www.informationclearinghouse.info/" target="_blank"><img border="0" src="http://www.cam-direct.co.uk/ltk/images/free.gif" ></a></p>
+  </td>
+  </tr>
+</table>
+
+ 
+                <div align="center"></div>
+              <td width="534" bgcolor="#000000" rowspan="9"> 
+                <table
+                border="0" cellpadding="0" cellspacing="0"
+                width="591">
+                  <tbody> 
+                  <tr> 
+                    <td width="10" height="2"><img src="../images/tl.gif"
+                        width="21" height="28"></td>
+                    <td width="560" height="2" bgcolor="#333333"> 
+                      <div align="center"><b><font color="#FFFFFF">Developer Resources 
+                          - <!-- InstanceBeginEditable name="name" --> q2a3d - 
+                          OpenAL Q2E (&amp; Q2MAX?) engine implimentation<!-- InstanceEndEditable --> 
+                          </font></b></div>
+                    </td>
+                    <td width="21" height="2"><img src="../images/tr.gif"
+                        width="21" height="28"></td>
+                  </tr>
+                  <tr> 
+                      <td width="10" background="../images/lb.gif" height="215"><img
+                        src="../images/lb.gif" width="21" height="16"></td>
+                      <td width="560" bgcolor="#404040" height="215"> <!-- InstanceBeginEditable name="content" --> 
+                        <p><font color="#FFFFFF" size="4">Introduction: </font></p>
+                        <p><font color="#CCCCCC">Q2A3D is an openAL (open Audio 
+                          Layer) sound implimentation for Quake2 based engines. 
+                          However it is also intended to be as portable as possible, 
+                          automating many comman audio tasks and providing seemless 
+                          integratiion into any game.</font></p>
+                        <p><font color="#CCCCCC">OpenAL is an LGPL audio platform 
+                          compatible with windows/linux/mac which provides access 
+                          advanced audio functions such as multi speaker systems, 
+                          EAX extensions and much more. It is hardware independant 
+                          and similar in implimetation to the OpenGL graphics 
+                          library. You can find out more on creatives developer 
+                          site @ <a href="http://developer.creative.com" target="_blank">developer.creative.com.</a></font></p>
+                        <p><font color="#CCCCCC">In contrast, Q2A3D is designed 
+                          to be similar in implimentation to Q2's ref_soft or 
+                          ref_gl graphics engines. providing a simple inteface 
+                          for the game engine to issue sounds which are then controled 
+                          by the q2a3d audio engine. Below you will find code 
+                          &amp; snippets to impliment this audio engine into the 
+                          Q2, and Q2E (Q2Max based?) game engines.</font></p>
+                        <p><font color="#FFFFFF" size="4">Q2E (Q2Max?) coding:</font></p>
+                        <p><font color="#CCCCCC">Requirements: </font></p>
+                        <blockquote> 
+                          <p><font color="#CCCCCC"><a href="http://www.cam-direct.co.uk/downloads/developer/q2ma3d.zip">Q2E 
+                            (and Q2Max?) engine specific source code</a>.<br>
+                            <a href="http://www.cam-direct.co.uk/downloads/updates/a3d95186.zip">The 
+                            latest Q2A3D</a> &amp; <a href="http://www.cam-direct.co.uk/downloads/updates/OpenALwEAX.exe">OpenAL 
+                            audio engines</a>.</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Implimentation:</font></p>
+                        <p><font color="#CCCCCC">First up, you need to add the 
+                          engine specific source files into the Q2 project, this 
+                          provides Q2A3D implimentations of the Q2 sound functions 
+                          (like S_registersound and S_startsound, along with pickchannel 
+                          for looping sounds). Extract the Q2E specific code into 
+                          a new 'a3d' directory in the main directory (e.g. <em>/q2e 
+                          0.23/a3d/q2a3d.c</em>, <em>/q2e 0.23/a3d/q2a3d.h</em>)</font> 
+                          <font color="#CCCCCC">along with the q2a3d library file 
+                          and header ( <em>/q2e 0.23/a3d/q2a3d.lib</em></font> 
+                          <font color="#CCCCCC">and <em>/q2e 0.23/a3d/a3d.h</em>)</font></p>
+                        <p><font color="#CCCCCC">Next, add the Q2A3D audio engine 
+                          functions into the build environment, in MS VC++ 6 this 
+                          is done by clicking Project-&gt;Settings, selecting 
+                          the quake2 project, clicking the 'LINK' tab on the right 
+                          and adding '<em>./a3d/q2a3d.lib</em>'</font> <font color="#CCCCCC">to 
+                          the &quot;Object/Library Modules &quot; (in this case 
+                          after winmm.lib ). Then add the q2a3d.c and q2a3d.h 
+                          to the project using the fileview window.</font></p>
+                        <p><font color="#CCCCCC">Adding the code:</font></p>
+                        <p><font color="#CCCCCC">Open<font color="#FFFFFF"> snd_local.h</font>,</font></p>
+                        <p><font color="#CCCCCC">First, add the Id variable to 
+                          the sound effects structure:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">typedef struct sfx_s 
+                            {<br>
+                            char name[MAX_QPATH];<br>
+                            char trueName[MAX_QPATH];<br>
+                            sfxCache_t *cache;<br>
+                            //A3D ADD<br>
+                            int Id;<br>
+                            } sfx_t;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">This is used to control and manipulate 
+                          continuous (looping/autosounds) as the audio environment 
+                          changes.</font></p>
+                        <p><font color="#CCCCCC">Next add a copy of the<font color="#FFFFFF"> 
+                          listener_t</font> structure and a global <font color="#FFFFFF">snd_listener</font>.</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">} dma_t;</font></p>
+                          <p><font color="#FFFFFF" size="-1">// =====================================================================<br>
+                            // snd_dma.c<br>
+                            //A3D ADD<br>
+                            typedef struct {<br>
+                            vec3_t origin;<br>
+                            vec3_t axis[3];<br>
+                            } listener_t;<br>
+                            extern listener_t snd_listener;<br>
+                            //A3D ADD END<br>
+                            extern playSound_t snd_pendingPlays;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Open <font color="#FFFFFF">sound.h</font>, 
+                          and at the very top add the q2a3d engine function definitions:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">//A3D ADD<br>
+                            #include &quot;../a3d/a3d.h&quot;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Open <font color="#FFFFFF">snd_dma.c</font>, 
+                          </font></p>
+                        <p><font color="#CCCCCC">At the top find the line<font color="#FFFFFF"> 
+                          #include &quot;snd_local.h&quot;</font></font> <font color="#CCCCCC">and 
+                          add the engine specific function header:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">#include &quot;snd_local.h&quot;<br>
+                            //A3D ADD<br>
+                            #include &quot;../a3d/q2a3d.h&quot;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">This declares all the functions 
+                          we will use, along with the s_a3d cvar to enable/disable 
+                          the q2a3d engine.</font></p>
+                        <p><font color="#CCCCCC">Next, lower down, comment out 
+                          the <font color="#FFFFFF">listener_t</font> structure 
+                          definition, as described above this is to be moved to 
+                          <font color="#FFFFFF">snd_local.h</font> to be used 
+                          in the engine specific q2a3d code.</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">#define SND_LOOPATTENUATE 
+                            0.003<br>
+                            //A3D CHANGE - moved to snd_local.h<br>
+                            /* typedef struct {<br>
+                            vec3_t origin;<br>
+                            vec3_t axis[3];<br>
+                            } listener_t; */<br>
+                            //A3D CHANGE END</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">now remove the static declaration 
+                          for </font><font color="#FFFFFF">snd_listener, <font color="#CCCCCC">since 
+                          its now a global variable it is no longer needed</font></font><font color="#CCCCCC">.</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">//A3D CHANGE<br>
+                            /*static*/ listener_t snd_listener;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Move down to the </font><font color="#FFFFFF">S_RegisterSound</font> 
+                          <font color="#CCCCCC">function, and add in the A3D replacement, 
+                          so it looks like this:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">sfx_t *S_RegisterSound 
+                            (const char *name){</font></p>
+                          <p><font color="#FFFFFF" size="-1"> sfx_t *sfx;</font></p>
+                          <p><font color="#FFFFFF" size="-1"> //A3D ADD<br>
+                            if(a3dsound_started)<br>
+                            return S_Q2A3DRegisterSound (name);<br>
+                            //A3D END</font></p>
+                          <p><font color="#FFFFFF" size="-1"> if (!snd_initialized)<br>
+                            return NULL;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Repeat for </font><font color="#FFFFFF">S_PickChannel</font><font color="#CCCCCC">:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">channel_t *S_PickChannel 
+                            (int entNum, int entChannel){</font></p>
+                          <p><font color="#FFFFFF" size="-1"> channel_t *ch;<br>
+                            int chIdx;<br>
+                            int firstToDie = -1;<br>
+                            int lifeLeft = 0x7fffffff;<br>
+                            //A3D ADD<br>
+                            if(a3dsound_started)<br>
+                            return S_Q2A3DPickChannel(entNum, entChannel);<br>
+                            //A3D END</font></p>
+                          <p><font color="#FFFFFF" size="-1"> if (entChannel &lt; 
+                            0)</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Now move down to <font color="#FFFFFF">S_Startsound</font>. 
+                          Here we need to add a check whether the a3d sound engine 
+                          has been started, and add the replacement function call.</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">void S_StartSound 
+                            (const vec3_t origin, int entNum, int entChannel, 
+                            sfx_t *sfx, float volume, float attenuation, float 
+                            timeOfs){</font></p>
+                          <p><font color="#FFFFFF" size="-1"> sfxCache_t *sc;<br>
+                            playSound_t *ps, *sort;<br>
+                            int start;<br>
+                            //A3D CHANGE<br>
+                            if (!snd_initialized &amp;&amp; !a3dsound_started)<br>
+                            return;<br>
+                            //A3D CHANGE END </font></p>
+                          <p><font color="#FFFFFF" size="-1"> if (!sfx)<br>
+                            return;</font></p>
+                          <p><font color="#FFFFFF" size="-1"> if (sfx-&gt;name[0] 
+                            == '*')<br>
+                            sfx = S_RegisterSexedSound(&amp;cl.entities[entNum].current, 
+                            sfx-&gt;name);</font></p>
+                          <p><font color="#FFFFFF" size="-1"> //A3D ADD<br>
+                            if (a3dsound_started)<br>
+                            {<br>
+                            S_Q2A3DStartSound(origin,entNum,entChannel,sfx,volume,attenuation,timeOfs);<br>
+                            return;<br>
+                            }<br>
+                            //A3D END<br>
+                            // Make sure the sound is loaded<br>
+                            sc = S_LoadSound(sfx);</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Now add the check for a3d to</font> 
+                          <font color="#FFFFFF">S_StartLocalSound</font> </p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">void S_StartLocalSound 
+                            (sfx_t *sfx){</font></p>
+                          <p><font color="#FFFFFF" size="-1"> //A3D CHANGE<br>
+                            if (!snd_initialized &amp;&amp; !a3dsound_started)<br>
+                            return;<br>
+                            //A3D CHANGE END</font></p>
+                          <p><font color="#FFFFFF" size="-1"> if (!sfx)<br>
+                            return;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Now move to </font><font color="#FFFFFF">S_StopAllSounds</font> 
+                          <font color="#CCCCCC">and change it as follows </font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">void S_StopAllSounds 
+                            (void){</font></p>
+                          <p><font color="#FFFFFF" size="-1"> int i;</font></p>
+                          <p><font color="#FFFFFF" size="-1"> //A3D CHANGE<br>
+                            if(a3dsound_started)<br>
+                            S_Q2A3DStopAllSounds();</font></p>
+                          <p><font color="#FFFFFF" size="-1"> if (!snd_initialized 
+                            &amp;&amp; !a3dsound_started )<br>
+                            return;</font></p>
+                          <p><font color="#FFFFFF" size="-1"> // Clear all the 
+                            playsounds<br>
+                            memset(snd_playSounds, 0, sizeof(snd_playSounds));<br>
+                            snd_freePlays.next = snd_freePlays.prev = &amp;snd_freePlays;<br>
+                            snd_pendingPlays.next = snd_pendingPlays.prev = &amp;snd_pendingPlays;</font></p>
+                          <p><font color="#FFFFFF" size="-1"> for (i = 0; i &lt; 
+                            MAX_PLAYSOUNDS; i++){<br>
+                            snd_playSounds[i].prev = &amp;snd_freePlays;<br>
+                            snd_playSounds[i].next = snd_freePlays.next;<br>
+                            snd_playSounds[i].prev-&gt;next = &amp;snd_playSounds[i];<br>
+                            snd_playSounds[i].next-&gt;prev = &amp;snd_playSounds[i];<br>
+                            }</font></p>
+                          <p><font color="#FFFFFF" size="-1"> // Clear all the 
+                            channels<br>
+                            memset(snd_channels, 0, sizeof(snd_channels));<br>
+                            <br>
+                            // Stop the background track<br>
+                            S_StopBackgroundTrack();</font></p>
+                          <p><font color="#FFFFFF" size="-1"> snd_rawEnd = 0;</font></p>
+                          <p><font color="#FFFFFF" size="-1"> snd_soundTime = 
+                            0;<br>
+                            snd_paintedTime = 0;<br>
+                            if(a3dsound_started)<br>
+                            return;<br>
+                            S_ClearBuffer();<br>
+                            }//A3D CHANGE END</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">This makes sure all the sounds 
+                          are stopped, and S_Clearbuffer isn't run when the a3d 
+                          engine is active.</font></p>
+                        <p><font color="#CCCCCC">Next move to <font color="#FFFFFF">S_FreeSounds</font> 
+                          and prevent it being run if the a3d engine is active.</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">int i;<br>
+                            //A3D ADD<br>
+                            if(a3dsound_started)<br>
+                            return;<br>
+                            // Free all sounds</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Currently, there is no implimentation 
+                          for 'freeing' sounds as such with Q2A3D, it just has 
+                          a set cache of datafiles, which it fills and replaces 
+                          and frees as nessecery.</font></p>
+                        <p><font color="#CCCCCC">Next move to<font color="#FFFFFF"> 
+                          S_update</font> and add the Q2A3D replacement.</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">int samps;<br>
+                            //A3D ADD<br>
+                            if (a3dsound_started)<br>
+                            {<br>
+                            S_Q2A3DUpdate(origin,axis[0],axis[1],axis[2]);<br>
+                            return;<br>
+                            }<br>
+                            //A3D END<br>
+                            if (!snd_initialized)<br>
+                            return;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">This Function is quite deceptive 
+                          with the scope it actually covers. Q2 initializes sounds 
+                          which continually loop (such as entity noises like the 
+                          blaster fizz) as 'autosounds' this function updates 
+                          the audio environement so these sounds are placed correctly 
+                          based on the listener position and orientation. Q2A3D 
+                          tags these sounds with 'id's' which automatically initiates 
+                          them as as looping sounds and allows them to be updated. 
+                          This id 'tagging' is handled jointly by <font color="#FFFFFF">S_startsound</font> 
+                          and<font color="#FFFFFF"> S_pickchannel</font>.</font></p>
+                        <p><font color="#CCCCCC">Now, onto the initialization 
+                          code. Move down futher still to <font color="#FFFFFF">S_Init 
+                          <font color="#CCCCCC">and add the s_a3d cvar initialization:</font></font></font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">s_testSound = Cvar_Get(&quot;s_testSound&quot;, 
+                            &quot;0&quot;, CVAR_CHEAT);</font></p>
+                          <p><font color="#FFFFFF" size="-1"> //A3D ADD<br>
+                            s_a3d = Cvar_Get (&quot;s_a3d&quot;, &quot;0&quot;, 
+                            CVAR_ARCHIVE); //sound engine</font></p>
+                          <p><font color="#FFFFFF" size="-1"> Cmd_AddCommand(&quot;play&quot;, 
+                            S_Play_f);</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Still in S_Init, add the call 
+                          to initialize q2a3d if required:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">Cmd_AddCommand(&quot;snd_restart&quot;, 
+                            S_Restart_f);<br>
+                            //A3D CHANGE<br>
+                            if(s_a3d-&gt;integer)<br>
+                            {<br>
+                            S_Q2A3DInit();<br>
+                            }<br>
+                            else<br>
+                            {<br>
+                            if (!S_InitDMA()){<br>
+                            Com_Printf(&quot;------------------------------------\n&quot;);<br>
+                            return;<br>
+                            }<br>
+                            <br>
+                            <br>
+                            snd_initialized = true;<br>
+                            S_SoundInfo_f();<br>
+                            }<br>
+                            S_InitScaleTable();<br>
+                            // num_sfx = 0;<br>
+                            <br>
+                            // soundtime = 0;<br>
+                            // paintedtime = 0;<br>
+                            <br>
+                            //A3D CHANGE END </font></p>
+                          <p><font color="#FFFFFF" size="-1"> S_StopAllSounds();</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Finally for <font color="#FFFFFF">snd_dma.c</font> 
+                          move down a few lines to <font color="#FFFFFF">S_Shutdown</font> 
+                          and add the call to shutdown Q2A3D if required:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">void S_Shutdown (void){<br>
+                            <br>
+                            //A3D CHANGE<br>
+                            if(a3dsound_started)<br>
+                            A3D_Shutdown();<br>
+                            a3dsound_started = 0;<br>
+                            //A3D CHANGE END</font></p>
+                          <p><font color="#FFFFFF" size="-1"> Cmd_RemoveCommand(&quot;play&quot;);</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Now, just a few minor changes 
+                          to <font color="#FFFFFF">snd_mem.c</font></font>:</p>
+                        <p><font color="#CCCCCC">Firstly, add the engine specific 
+                          header file:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">#include &quot;snd_local.h&quot;<br>
+                            //A3D ADD<br>
+                            #include &quot;../a3d/q2a3d.h&quot;</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">Last, but by no means least, 
+                          move to <font color="#FFFFFF">S_LoadSound</font> and 
+                          prevent Q2 from loading the sound:</font></p>
+                        <blockquote> 
+                          <p><font color="#FFFFFF" size="-1">int length;<br>
+                            //A3D CHANGE<br>
+                            if (sfx-&gt;name[0] == '*' || a3dsound_started)<br>
+                            return NULL;<br>
+                            //A3D CHANGE END<br>
+                            // See if still in memory<br>
+                            if (sfx-&gt;cache)</font></p>
+                        </blockquote>
+                        <p><font color="#CCCCCC">You can <a href="http://www.cam-direct.co.uk/downloads/developer/q2ma3d.zip">download 
+                          direct replacement source files</a> (<font color="#FFFFFF">snd_mem.c</font></font> 
+                          <font color="#CCCCCC"> and<font color="#FFFFFF"> snd_dma.c<font color="#CCCCCC">) 
+                          </font></font>for Q2E v0.23</font> <font color="#CCCCCC">from 
+                          here. I believe this tutorial + source should work equally 
+                          well with Q2Max based engines although I have not tried 
+                          it myself. You will have to make the changes to <font color="#FFFFFF">snd_local.h</font> 
+                          and <font color="#FFFFFF">sound.h</font> yourself.</font></p>
+                        <!-- InstanceEndEditable --> 
+                        <p>&nbsp;</p>
+                        <p><b></b></p>
+                        </td>
+                    <td width="21" background="../images/rb.gif" height="215">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td width="10"><img src="../images/mainbl.gif"
+                        width="21" height="10"></td>
+                    <td width="560" bgcolor="#404040"><img
+                        src="../images/mainbottombar.gif" width="549"
+                        height="8"></td>
+                    <td width="21"><img src="../images/mainbr.gif"
+                        width="21" height="10"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+<table width="20%" border="2" cellspacing="2" cellpadding="2" align="center" bordercolorlight="#666666" bordercolordark="#666666" bordercolor="#000000">
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=Main&expand=0">HOME</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=Main&expand=16">Developer Main</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=26">All Developer Discussions</a></font></b></div>
+    </td>
+	<td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=Secure Client Identification&expand=31">Secure Client Identification</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=7">Routefinding discussion</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=23">OpenAl Discussion</a></font></b></div>
+    </td> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/index2.php?location=CGF Documentation&expand=37">CGF Documentation</a></font></b></div>
+    </td>
+  </tr>
+</table>
+
+
+          <p align="center">&nbsp;</p>
+</table></center></div></body>
+<!-- InstanceEnd --></html>
