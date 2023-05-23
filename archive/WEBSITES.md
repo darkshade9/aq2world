@@ -30,7 +30,7 @@ Since the mod was given life way back in 1998, there have been a plethora of web
 * AQ: Heroes
   * https://assets.aq2world.com/archive/websites/heroes.mattworld.com/
 * License to Kill: The Borg Matrix (LTKTBM)
-  * https://assets.aq2world.com/archive/websites/www.cam-direct.co.uk/ltk/
+  * https://assets.aq2world.com/archive/websites/www.theborgmatrix.com
 * AQtion
   * https://github.com/actionquake/distrib
 
