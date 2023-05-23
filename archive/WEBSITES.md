@@ -45,6 +45,8 @@ Since the mod was given life way back in 1998, there have been a plethora of web
   * https://assets.aq2world.com/archive/websites/guild.action-web.net 
 * WizardExt's Map Site
   * https://wizardext.se/
+* AQ2 Pro
+  * https://actionquake.net/aq2/
 
 #### News / Articles
 * The Newbie's Niche (TNN)
