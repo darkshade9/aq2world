@@ -174,7 +174,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <p><a name='87'></a><span class="title">Steam - Cold and Wet?</span><span class="small">&nbsp;&nbsp;by GBee at 23:57:07</span></p>
 <p>Valve&#39;s Steam project is causing quite a heated debate in our forums (pun intended). Just a short time after it&#39;s official release and with their WON ID servers due to be shutdown soon there are some real concerns being expressed on a number of issues. For example only days after the release of Counter Strike 1.6 through the Steam network there are some obvious flaws and cheats. Non-broadband users are dismayed to discover that they cannot play their beloved game and some are just angry at the downtime suffered by the service. Is this the end of Half Life and it&#39;s various mods? What about Half Life 2, have Valve already damaged it&#39;s chances and will Doom 3 sneak back to the forefront to become the game of the year?
 <br>
-<br>Why don&#39;t you register and have your say? <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt=""></p>
+<br>Why don&#39;t you register and have your say? <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt=""></p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Thursday 18 September 2003&nbsp;</td></tr></table>
 
 <p><a name='86'></a><span class="title">Counter-Strike 1.6</span><span class="small">&nbsp;&nbsp;by Fean0r at 19:52:57</span></p>
@@ -182,9 +182,9 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <br>
 <br>The game itself seems but have lots of new and nifty features with many improvments focusing on gameplay (for example you get a point if you plant the bomb and a point if you defuse the bomb).
 <br>
-<br>As most of you will be aware 1.6 has been brought to us via Steam <a href="http://www.steampowered.com" target="_BLANK" class="pagelink">http://www.steampowered.com</a> (A great idea from Valve with more flaws than my grammer <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">)
+<br>As most of you will be aware 1.6 has been brought to us via Steam <a href="http://www.steampowered.com" target="_BLANK" class="pagelink">http://www.steampowered.com</a> (A great idea from Valve with more flaws than my grammer <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt="">)
 <br>
-<br>Hopefully over the next few weeks Valve will get Steam to work properly and we can all return to some great nights of CS <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">
+<br>Hopefully over the next few weeks Valve will get Steam to work properly and we can all return to some great nights of CS <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt="">
 <br>
 <br>Valve has also released patches for various HL MOD&#39;s, you find the link below along with a link for Steam itself.
 <br>
@@ -247,9 +247,9 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <br>Port:        27035
 <br>Date/Time:   Sun May 25 17:45:59 2003]</span>
 <br>
-<br>....and again it will notify you when your server has gone back up <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">
+<br>....and again it will notify you when your server has gone back up <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt="">
 <br>
-<br>The software also allows you to watch for clan mates joining the server alerting you via an email or sound.  All round I&#39;ve found this it be a handy program (especially since jolt are so prone to crashing <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">)
+<br>The software also allows you to watch for clan mates joining the server alerting you via an email or sound.  All round I&#39;ve found this it be a handy program (especially since jolt are so prone to crashing <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt="">)
 <br>
 <br>Check it out! <a href="http://www.dfsoftware.com" target="_BLANK" class="pagelink">http://www.dfsoftware.com</a></p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Saturday 26 April 2003&nbsp;</td></tr></table>
@@ -269,7 +269,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Monday 14 April 2003&nbsp;</td></tr></table>
 
 <p><a name='80'></a><span class="title">The lights are still on...</span><span class="small">&nbsp;&nbsp;by GBee at 20:28:18</span></p>
-<p>Hi, I&#39;d just like to apologise for the lack of regular updates currently. The staff at Actiongames are kept busy by real life more and more and we have little time to devote to the things we love, including this site. Now that certainly doesn&#39;t mean its been abandoned and if I could just finish the background work we have plans to add columns and articles ... keep your fingers crossed. <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">
+<p>Hi, I&#39;d just like to apologise for the lack of regular updates currently. The staff at Actiongames are kept busy by real life more and more and we have little time to devote to the things we love, including this site. Now that certainly doesn&#39;t mean its been abandoned and if I could just finish the background work we have plans to add columns and articles ... keep your fingers crossed. <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt="">
 <br>
 <br>In the mean time I&#39;ve been getting some info on the <a href="www.dragonempires.com" target="_BLANK" class="pagelink">Dragon Empires</a> MMORPG currently in production. It looks  and sounds extremely promising but we&#39;ve a long time to wait before it will hit the shelves.
 <br>
@@ -279,7 +279,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <p><a name='79'></a><span class="title">Action League Season 2</span><span class="small">&nbsp;&nbsp;by Fean0r at 12:47:46</span></p>
 <p>Sign Ups for season 2 are currently underway, with many more clans already showing interest everthing is looking great.
 <br>
-<br>A 5 v 5 league and 3 v 3 league are available for the new season.  This season may also see an Action League CS server dedicated for league game usage (for more information visit the forums <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">).
+<br>A 5 v 5 league and 3 v 3 league are available for the new season.  This season may also see an Action League CS server dedicated for league game usage (for more information visit the forums <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/smile.gif" height="16" width="16" alt="">).
 <br>
 <br>That all for now folks! (get signing up!)
 <br>
@@ -296,7 +296,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 15 January 2003&nbsp;</td></tr></table>
 
 <p><a name='73'></a><span class="title">CS 1.6 Beta</span><span class="small">&nbsp;&nbsp;by Reaper at 11:56:37</span></p>
-<p>CSNation have played the press preview of the new CS 1.6 beta, due for release Thursday 16th January. The Beta will only be available for those with broadband connections due to it&#39;s use of steam 2.0 <img src="http://images.actiongames.co.uk/smilies/sad.gif" height="15" width="15" alt=""> . But the final release will allow us narrow band users to get our hands on it. Go and check it out <a href="http://csnation.counter-strike.net/articles.php/117/" target="_BLANK" class="pagelink">http://csnation.counter-strike.net/articles.php/117/</a></p>
+<p>CSNation have played the press preview of the new CS 1.6 beta, due for release Thursday 16th January. The Beta will only be available for those with broadband connections due to it&#39;s use of steam 2.0 <img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/smilies/sad.gif" height="15" width="15" alt=""> . But the final release will allow us narrow band users to get our hands on it. Go and check it out <a href="http://csnation.counter-strike.net/articles.php/117/" target="_BLANK" class="pagelink">http://csnation.counter-strike.net/articles.php/117/</a></p>
 
 
 <p align="right" class="small"><a href="/cms/admin.php?function=post_news&amp;site=1">Post News</a></p>
@@ -314,7 +314,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 </table>
 </td>
 <td class="rightcolumn" align="center" valign="top">
-<img src="http://images.actiongames.co.uk/actiongames/aglogo.gif" alt="actiongames.co.uk" width="88" height="87"> <br>
+<img src="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/images/aglogo.gif" alt="actiongames.co.uk" width="88" height="87"> <br>
 <br>
 <br>
 <!-- Ad Starts Here -->

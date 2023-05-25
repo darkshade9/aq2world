@@ -194,7 +194,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 </table>
 </td>
 <td class="rightcolumn" align="center" valign="top"><img src=
-"http://images.actiongames.co.uk/actiongames/aglogo.gif" alt=
+"https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/images/aglogo.gif" alt=
 "actiongames.co.uk" width="88" height="87"> <br>
 <br>
 <br>
