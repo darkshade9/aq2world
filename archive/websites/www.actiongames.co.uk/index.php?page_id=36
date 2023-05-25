@@ -56,7 +56,7 @@
 <a href="/">Actiongames</a><br>
 <a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/tnn">Action Quake</a><br>
 <a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/cstrike">Counter Strike</a><br>
-<a href="/rpg/">RPGs</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/rpg">RPGs</a><br>
 </td>
 <td class="panelright">&nbsp;</td>
 </tr>
