@@ -1,0 +1,168 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+
+<title>Links</title>
+<style>
+<!--
+.intro{
+position:absolute;
+left:0;
+top:0;
+layer-background-color:black;
+background-color:black;
+border:0.1px solid black
+}
+-->
+</style>
+</head>
+
+<body background="len2.jpg" bgcolor="#FFFFFF">
+<div id="i1" class="intro"></div><div id="i2" class="intro"></div>
+<script language="JavaScript1.2">
+
+/*
+Top-Down Curtain Script- 
+By Dynamic Drive (www.dynamicdrive.com)
+For full source code, installation instructions,
+100's more free DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+var speed=15
+var temp=new Array()
+var temp2=new Array()
+if (document.layers){
+for (i=1;i<=2;i++){
+temp[i]=eval("document.i"+i+".clip")
+temp2[i]=eval("document.i"+i)
+temp[i].width=window.innerWidth
+temp[i].height=window.innerHeight/2
+temp2[i].top=(i-1)*temp[i].height
+}
+}
+else if (document.all){
+var clipbottom=document.body.offsetHeight/2,cliptop=0
+for (i=1;i<=2;i++){
+temp[i]=eval("document.all.i"+i+".style")
+temp[i].width=document.body.clientWidth
+temp[i].height=document.body.offsetHeight/2
+temp[i].top=(i-1)*parseInt(temp[i].height)
+}
+}
+
+function openit(){
+window.scrollTo(0,0)
+if (document.layers){
+temp[1].bottom-=speed
+temp[2].top+=speed
+if (temp[1].bottom<=0)
+clearInterval(stopit)
+}
+else if (document.all){
+clipbottom-=speed
+temp[1].clip="rect(0 auto+"+clipbottom+" 0)"
+cliptop+=speed
+temp[2].clip="rect("+cliptop+" auto auto)"
+if (clipbottom<=0)
+clearInterval(stopit)
+}
+}
+function gogo(){
+stopit=setInterval("openit()",100)
+}
+gogo()
+
+</script><p align="center"><img src="waveline.gif" width="514" height="16"></p>
+
+<p align="center">&nbsp;</p>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">
+      <p align="center"><img border="0" src="Links.gif" width="126" height="40"></td>
+  </tr>
+</table>
+<p align="center"><br>
+</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%"></td>
+    <td width="50%"></td>
+  </tr>
+  <tr>
+    <td width="25%"><font face="Tahoma" size="2"><a href="http://www.actiongames.co.uk/tnn"><b>TNN
+      home site</b></a></font></td>
+    <td width="50%"><font face="Tahoma" size="2">TNN action quake clan.&nbsp; Very good
+      site</font></td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%" valign="top"><font face="Tahoma" size="2"><a href="http://www.madasafish.com/~lucyride/" target="_top"><b>Lucyride</b></a></font></td>
+    <td width="50%"><font face="Tahoma" size="2">A very good new band. A mate of mine is
+      in this band.&nbsp; The site has demo mp3s of there new
+      tracks.&nbsp;&nbsp;</font></td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%"><b><font face="Tahoma" size="2"><a href="http://www.sblive.com/" target="_top">SoundBlaster
+      Live Home site</a></font></b></td>
+    <td width="50%"><font face="Tahoma" size="2">Get your latest drivers and info of the SoundBlaster
+      live soundcard</font></td>
+  </tr>
+</table>
+<table border="0" width="100%">
+  <tr>
+    <td width="25%"><font face="Tahoma" size="2"><a href="http://www.action-quake.de" target="_top"><b>Darklights
+      Action Quake Page</b></a></font></td>
+    <td width="50%"><font face="Tahoma" size="2">Download the latest maps and get info
+      about the Quake world</font></td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%" valign="top"><b><font face="Tahoma" size="2"><a href="http://2dj.virtualave.net/" target="_top">The
+      2DJ Net</a></font></b></td>
+    <td width="50%"><font size="2"><b><font face="Tahoma">E</font></b><font face="Tahoma">verything
+      about <b>Sound Blaster Live!</b> and <b>Live! Value</b> soundcards.</font><br>
+      </font>
+    </td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%"><b><font face="Tahoma" size="2"><a href="http://www.pvv.org/~thammer/HammerSound/" target="_top">Hammersound</a></font></b></td>
+    <td width="50%"><font face="Tahoma" size="2">A great place to get info and to get
+      soundfonts</font></td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%"><b><font face="Tahoma" size="2"><a href="http://web.iol.cz/mpc/sa/index.htm" target="_top">Sample
+      Arena</a></font></b></td>
+    <td width="50%"><font face="Tahoma" size="2">Some great music samples</font></td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%"><font face="Tahoma" size="2"><a href="http://murdocksutpage.homestead.com/Murdock.html"><b>Murdocks
+      Unreal Tournament</b></a></font></td>
+    <td width="50%"><font face="Tahoma" size="2">This is the place to go for you UR
+      tourny players</font></td>
+  </tr>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="25%"><font face="Tahoma" size="2"><b><a href="http://www.kickarse.net/">Pondscum
+      Page</a></b></font></td>
+    <td width="50%"><font face="Tahoma" size="2">A great site with loads of info abuot aq,
+      as well as bots for aq</font></td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="soundfonts, new music, soundblaster, mp3">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>menu</title>
+<style>
+<!--
+.intro{
+position:absolute;
+left:0;
+top:0;
+layer-background-color:black;
+background-color:black;
+border:0.1px solid black
+}
+-->
+</style>
+
+
+<base target="_self">
+
+
+
+</head>
+
+<body background="len2.jpg">
+<div id="i1" class="intro"></div><div id="i2" class="intro"></div>
+<script language="JavaScript1.2">
+
+/*
+Top-Down Curtain Script- 
+By Dynamic Drive (www.dynamicdrive.com)
+For full source code, installation instructions,
+100's more free DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+var speed=15
+var temp=new Array()
+var temp2=new Array()
+if (document.layers){
+for (i=1;i<=2;i++){
+temp[i]=eval("document.i"+i+".clip")
+temp2[i]=eval("document.i"+i)
+temp[i].width=window.innerWidth
+temp[i].height=window.innerHeight/2
+temp2[i].top=(i-1)*temp[i].height
+}
+}
+else if (document.all){
+var clipbottom=document.body.offsetHeight/2,cliptop=0
+for (i=1;i<=2;i++){
+temp[i]=eval("document.all.i"+i+".style")
+temp[i].width=document.body.clientWidth
+temp[i].height=document.body.offsetHeight/2
+temp[i].top=(i-1)*parseInt(temp[i].height)
+}
+}
+
+function openit(){
+window.scrollTo(0,0)
+if (document.layers){
+temp[1].bottom-=speed
+temp[2].top+=speed
+if (temp[1].bottom<=0)
+clearInterval(stopit)
+}
+else if (document.all){
+clipbottom-=speed
+temp[1].clip="rect(0 auto+"+clipbottom+" 0)"
+cliptop+=speed
+temp[2].clip="rect("+cliptop+" auto auto)"
+if (clipbottom<=0)
+clearInterval(stopit)
+}
+}
+function gogo(){
+stopit=setInterval("openit()",100)
+}
+gogo()
+
+</script>
+<p align="center"><font face="Tahoma">UPDATED<br>
+7/05/00<br>
+</font></p>
+
+<p align="center"><font face="Tahoma" size="1"><b>updated web site&nbsp;<br>
+Making a new song.&nbsp; It
+has been awhile as i have been busy making a site for my action quake clan.<br>
+Had to move my site as my host put banners all over my page :)<br>
+New song added</b></font><br>
+<b><font face="Tahoma" size="1">Feel free to browse while my
+music loads<br>
+New song added<br>
+2 New links added</font></b></p>
+
+<p align="center"><img border="0" src="waveline.gif" width="756" height="16"></p>
+<p align="center"><img border="0" src="WELCOME2.gif" width="260" height="43"><br>
+<br>
+<br>
+<font face="Tahoma" size="4">This website is dedicated to music making with the&nbsp;</font></p>
+<p align="center">
+<font face="Tahoma" size="4">SoundBlaster live soundcard. I use a&nbsp;</font></p>
+<p align="center"><font face="Tahoma" size="4">SoundBlaster live when composing
+music. I used to&nbsp;<br>
+<br>
+ have a SoundBlaster awe32 which&nbsp;served me well, but then&nbsp;</font></p>
+<p align="center"><font face="Tahoma" size="4"> I got my</font>
+<font face="Tahoma" size="4">hands on the SB live.</font></p>
+<p align="center">
+<font face="Tahoma" size="4">It has to be the best out
+there.&nbsp;<br>
+<br>
+Anyway this site has sound fonts for you to download,&nbsp;</font></p>
+<p align="center"><font face="Tahoma" size="4">Mp3's of my composed music.&nbsp;</font></p>
+<p align="center"><font face="Tahoma" size="4">Plus links to other cool web
+sites
+</font></p>
+<p align="center"><font face="Tahoma" size="4"><br>
+<br>
+<img border="0" src="waveline.gif" width="756" height="16"></font></p>
+
+<p align="center"><a href="http://www.lynnemusic.com/samples.html" target="_top"><img border="0" src="banner.gif" width="468" height="60"></a></p>
+
+</body>
+
+</html>
