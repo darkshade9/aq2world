@@ -30,7 +30,7 @@ A:hover { color: #ffffff; text-decoration: none}
 	    <tr bgcolor="#990000"> 
       <td>
 
-		<form action="http://www.actiongames.co.uk/cgi-bin/cstrike/newspro/newspro.cgi?login" method="post">
+		<form action="http://www.actiongames.co.uk/cgi-binhttps://assets.aq2world.com/archive/websites/www.actiongames.co.uk/cstrikenewspro/newspro.cgi?login" method="post">
 		<p> Username: <input type="text" name="uname"><br>
 		Password: <input type="password" name="pword"></p>
 		<input type="submit" name=submit value="Log In"></form>

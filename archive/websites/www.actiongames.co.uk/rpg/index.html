@@ -54,8 +54,8 @@
 <td class="panelleft">&nbsp;</td>
 <td class="panel">
 <a href="/">Actiongames</a><br>
-<a href="/tnn/">Action Quake</a><br>
-<a href="/cstrike/">Counter Strike</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/tnn">Action Quake</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/cstrike">Counter Strike</a><br>
 <a href="/rpg/">RPGs</a><br>
 </td>
 <td class="panelright">&nbsp;</td>
@@ -145,7 +145,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 21 August 2002&nbsp;</td></tr></table>
 
 <p><a name='64'></a><span class="title">Links page added</span><span class="small">&nbsp;&nbsp;by smurphster at 22:04:21</span></p>
-<p>We now have a links page set up. Right now, it only has community sites and official sites. I will be adding some mod and siegelet sites soon. Take a look <a href="http://www.actiongames.co.uk/dunsiege/about/links.shtml" target="_BLANK" class="pagelink">here</a>.</p>
+<p>We now have a links page set up. Right now, it only has community sites and official sites. I will be adding some mod and siegelet sites soon. Take a look <a href="http://www.actiongames.co.ukhttps://assets.aq2world.com/archive/websites/www.actiongames.co.uk/dunsiegeabout/links.shtml" target="_BLANK" class="pagelink">here</a>.</p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 7 August 2002&nbsp;</td></tr></table>
 
 <p><a name='61'></a><span class="title">Dungeon Siege v1.1</span><span class="small">&nbsp;&nbsp;by smurphster at 22:14:08</span></p>
