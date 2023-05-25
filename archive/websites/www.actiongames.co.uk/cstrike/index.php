@@ -3,11 +3,11 @@
 <head>
 <meta name="description" content= "Gaming News and Resource sites.....">
 <meta name="keywords" content="newbie,fps,first person shooter,first person shootemup, Counter Strike,actionquake,action,online,gaming,online gaming,teamgame,action help,information,tnn,forum,hosting,gbloke,rincewind,discussion zone">
-<meta name="copyright" content="Copyright © 2000 Actiongames">
+<meta name="copyright" content="Copyright ï¿½ 2000 Actiongames">
 <title>Counter Strike - News</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="content-language" content="en-GB">
-<link rel="stylesheet" type="text/css" href="http://actiongames.co.uk/default.css">
+<link rel="stylesheet" type="text/css" href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/default.css">
 <!-- Modified:  -->
 </head>
 <body>
@@ -147,7 +147,7 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <br>Fixed custom decals drawing incorrectly for the host of a listen server after another player joins. 
 <br>Fixed vgui textures being corrupted after going over a number of level changes. 
 <br>Fixed problem where player would be sometimes be forced to look straight up after task switching in and out of game in fullscreen d3d mode. 
-<br>Fixed problem in sound system where it wouldn’t properly be shutdown at the end of a .wav file. 
+<br>Fixed problem in sound system where it wouldnï¿½t properly be shutdown at the end of a .wav file. 
 <br>Fixed banner picture not working correctly in HLTV. 
 <br>VGUI: 
 <br>Changed the way that Asian fonts are displayed in game for compatibility on more platforms. 
@@ -222,13 +222,15 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <br>
 <br><img src="http://csnation.counter-strike.net/images/content/t_image_6541.jpg" alt="Actiongames News" border="0"> <img src="http://csnation.counter-strike.net/images/content/t_image_6542.jpg" alt="Actiongames News" border="0">
 <br>
-<br>Expect the update in roughly a weeks time.</p>
+<br>Expect the update in roughly a weeks time.
+</p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Tuesday 9 July 2002&nbsp;</td></tr></table>
 
 <p><a name='51'></a><span class="title">Blueyonder counter-Strike league.</span><span class="small">&nbsp;&nbsp;by Reaper at 12:22:07</span></p>
 <p>Blueyonder are just about to start season 2 of their Counter-Strike league. It&#39;s run over 7 weeks, with teams of 5 players.
 <br>If you interested in entering then oil up your P90&#39;s and get yourselves over to <a href="http://gaming.blueyonder.co.uk/compete/leagues/league.jsp?event_id=59&amp;league_id=19" target="_BLANK" class="pagelink">Blueyonder</a>.
-<br></p>
+<br>
+</p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 3 July 2002&nbsp;</td></tr></table>
 
 <p><a name='47'></a><span class="title">Counterstrike Trains British Troops?</span><span class="small">&nbsp;&nbsp;by Dogz at 14:34:14</span></p>
@@ -254,7 +256,8 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <br>
 <br>On a note about CS1.6, it looks like this update will be soley distributed via the Steam method, which has been beta tested by Broadband users only as it pushes the files to you when CS is launched. It has now been streamlined to just push the required files to you and not everything, making it possible to 56kr&#39;s to use this method. We shall see just how smooth this process is when 1.6 is release late summer.
 <br>
-<br>Enjoy <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt=""></p>
+<br>Enjoy <img src="http://images.actiongames.co.uk/smilies/smile.gif" height="16" width="16" alt="">
+</p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Wednesday 29 May 2002&nbsp;</td></tr></table>
 
 <p><a name='35'></a><span class="title">HL 1.1.1.0/CS 1.5 updates</span><span class="small">&nbsp;&nbsp;by Reaper at 12:37:23</span></p>

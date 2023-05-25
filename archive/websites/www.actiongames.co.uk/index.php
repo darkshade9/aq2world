@@ -6,8 +6,8 @@
 <meta http-equiv="content-language" content="en-GB">
 <meta name="description" content= "Gaming News and Resource sites.....">
 <meta name="keywords" content="newbie,fps,first person shooter,first person shootemup,quake,unrealhalflife,Counter Strike,actionquake,action,online,gaming,online gaming,teamgame,action help,information,tnn,forum,hosting,gbloke,rincewind,discussion zone">
-<meta name="copyright" content="Copyright © 2000 Actiongames">
-<link rel="stylesheet" type="text/css" href="http://actiongames.co.uk/default.css">
+<meta name="copyright" content="Copyright ï¿½ 2000 Actiongames">
+<link rel="stylesheet" type="text/css" href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/default.css">
 <!-- Modified:  -->
 </head>
 <body>
@@ -204,7 +204,8 @@ The Gamer's Network. Guides, Columns, Articles, Files & Community Forums</td>
 <br>
 <br>Ricochet Install -- <a href="http://www.fileplanet.com/files/130000/130419.shtml" target="_BLANK" class="pagelink">http://www.fileplanet.com/files/130000/130419.shtml</a>
 <br>
-<br>Enjoy!</p>
+<br>Enjoy!
+</p>
 <table width="100%" cellpadding="2" cellspacing="2"><tr><td class="newsday">Friday 1 August 2003&nbsp;</td></tr></table>
 
 <p><a name='84'></a><span class="title">Counter-Strike 3 v 3 Leagues</span><span class="small">&nbsp;&nbsp;by Fean0r at 19:43:00</span></p>
