@@ -1,0 +1,69 @@
+NEUE % VARIABLEN:
+=================
+
+%E: Name des Feindes, der sich im Fadenkreuz befindet
+%F: Waffe des Feindes, der sich im Fadenkreuz befindet
+%G: Ort des Feindes, der sich im Fadenkreuz befindet
+%L: Eigene momentane Position
+%K: Zuletzt getöteter Spieler
+
+Bemerkung:
+----------
+	%E, %F und %G geben nur einen sinnvollen Inhalt, wenn
+	ihr wirklich einen Feind seht. Abgesehen davon, ob für
+	die aktuelle Karte schon Orte benannt wurden, ergibt
+	%G entweder den Namen des Ortes (z.B. "near top roof" bei
+	Urban) oder (wenn keine Orte benannt wurden) die relative
+	Position des Feindes, also z.B. "in the south, up".
+	Das selbe gilt auch für %L, nur, daß wenn keine Orte benannt
+	wurden, "somewhere" rauskommt.
+	%K kann nur einmal verwendet werden, danach kommt "Noone" 
+	raus. Und zwar um "spamming" zu verhindern...
+
+
+NEUE BEFEHLE:
+=============
+
+votemap [Karte]: Eine Karte wählen
+maplist: Liste der wählbaren Karten mit Wahlergebnissen
+
+Bemerkung:
+----------
+	Mit diesem Befehl kann von den Spielern eine Karte
+	gewählt werden. Die Mindestanzahl an Spielern sowie
+	der Mindestprozentsatz der Stimmen den eine Karte 
+	braucht um ausgewählt zu werden wird vom Admin
+	eingestellt.
+
+ignore [Spieler]: Alle Nachrichten des Spielers ignorieren
+ignorenum [Spielernummer]: Wie ignore, aber statt Name eine Nummer
+ignorelist: Liste der zu ignorierbaren Spieler
+ignoreclear: Keinen Spieler ignoriern
+
+Bemerkung:
+----------
+	Mit ignorelist bekommt ihr eine Liste aller Spieler mit
+	einer Nummer vor jedem Spielernamen. Wenn vor dem Spielernamen
+	ein Stern ("*") steht, bedeutet dies, daß ihr diesen Spieler
+	momentan ignoriert. Wenn ihr zu faul seit, den kompletten
+	Namen des Spielers einzugeben oder dies einfach nicht geht
+	(z.B. ignore "PG BUND[Rock]"), dann benutzt den Befehl
+	ignorenum und gebt die Nummer des Spielers an, der in der
+	Liste angezeigt wird. Ihr könnt bis zu 10 Spieler so auf
+	eure persönliche "Ignoreliste" setzen.
+
+voice [sounddatei.wav]: Spielt einen lokalen Sound ab
+
+Bemerkung:
+----------
+	Damit könnt ihr im Spiel etwas "sagen". Alle, die sich
+	in der Nähe aufhalten, können das gesagte hören. Damit
+	ihr es hören könnt, müßt ihr die Sounddateien runterziehen.
+	Schaltet euere Downloadoptionen im Menüpunkt "Multiplayer"
+	also an! :)
+	Die Sounds werden im Verzeichnis "action\sound\user"
+	gespeichert. Beim abspielen solltet Ihr nicht die
+	Extension vergessen, also z.B. "voice sound.wav".
+
+
+08.04.1999 PG BUND[Rock]
