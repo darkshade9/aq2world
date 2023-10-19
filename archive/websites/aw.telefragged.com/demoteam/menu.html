@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<script language="javascript">
+<!--
+ok = false; pick = 0;
+if (navigator.userAgent.indexOf ("Mozilla") != -1) {
+  ok = parseInt(navigator.appVersion.substring(0,1)) >= 3
+} else {}
+
+   if (ok == 1) {
+      number0 = new Image(23,21)
+      number0.src = "images/number0.gif"
+      number1 = new Image(23,21)
+      number1.src = "images/number1.gif"
+      number2 = new Image(23,21)
+      number2.src = "images/number2.gif"
+      number3 = new Image(23,21)
+      number3.src = "images/number3.gif"
+      number4 = new Image(23,21)
+      number4.src = "images/number4.gif"
+      number5 = new Image(23,21)
+      number5.src = "images/number5.gif"
+      number6 = new Image(23,21)
+      number6.src = "images/number6.gif"
+   }
+
+   function un(nom) {
+       if (ok == 1) {
+          if (nom == "n1") {document.number.src = number1.src; }
+          if (nom == "n2") {document.number.src = number2.src; }
+          if (nom == "n3") {document.number.src = number3.src; }
+          if (nom == "n4") {document.number.src = number4.src; }
+          if (nom == "n5") {document.number.src = number5.src; }
+          if (nom == "n6") {document.number.src = number6.src; }
+          return true;
+       }
+   }
+
+   function deux() {
+       if (ok == 1) {
+          document.number.src = number0.src;
+          return true;
+       }
+   }
+
+// -->
+</script>
+
+<META NAME="Author" CONTENT="Visicom Media Inc.">
+<META NAME="Description" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+</HEAD>
+<BODY BACKGROUND="images/backmenu.gif" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#000080" VLINK="#800080" ALINK="#FF0000">
+<BASE TARGET=MAIN>
+<TABLE WIDTH=130 HEIGHT=120 CELLPADDING=0 BORDER=0 CELLSPACING=0>
+  <TR>
+     <TD colspan=2 width=130><IMG SRC="images/spacer.gif" BORDER=0 WIDTH=130 HEIGHT=65></TD>
+  </TR>
+  <TR>
+    <TD width=45 valign=top><IMG SRC="images/spacer.gif" BORDER=0 WIDTH=45  HEIGHT=120></TD>
+     <!--  *************************************************************************************************************
+                  FROM HERE PUT IN THE IMAGES CORRESPONDING WITH YOUR PERSONAL MENU 
+                  Only change the name of the image ex: b_welcome.gif
+                  You can also include your own images  86x20pixels with transparency
+             ************************************************************************************************************* -->
+    <TD width=85 valign=top
+         ><IMG SRC="images/spacer.gif" BORDER=0 WIDTH=85 HEIGHT=3
+         ><A HREF="main1.shtml" onmouseover="un('n1')" onmouseout="deux()"><IMG SRC="images/b_news.gif" BORDER=0   WIDTH=85 HEIGHT=20></A
+         ><A HREF="main2.html" onmouseover="un('n2')" onmouseout="deux()"><IMG SRC="images/b_theteam.gif" BORDER=0 WIDTH=85 HEIGHT=20></A
+         ><A HREF="main3.html" onmouseover="un('n3')" onmouseout="deux()"><IMG SRC="images/b_download.gif" BORDER=0 WIDTH=85 HEIGHT=20></A
+         ><A HREF="main4.html" onmouseover="un('n4')" onmouseout="deux()"><IMG SRC="images/b_aboutus.gif" BORDER=0 WIDTH=85 HEIGHT=20></A
+         ><A HREF="main5.html" onmouseover="un('n5')" onmouseout="deux()"><IMG SRC="images/b_help.gif" BORDER=0 WIDTH=85 HEIGHT=20></A
+         ><A HREF="main6.html" onmouseover="un('n6')" onmouseout="deux()"><IMG SRC="images/b_reachingus.gif" BORDER=0 WIDTH=85 HEIGHT=20></A
+><IMG SRC="images/number0.gif" BORDER=0 WIDTH=23 HEIGHT=21 name=number hspace=20></TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>
