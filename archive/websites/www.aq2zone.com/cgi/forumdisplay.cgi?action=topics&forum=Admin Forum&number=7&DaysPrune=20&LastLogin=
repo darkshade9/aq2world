@@ -1,0 +1,62 @@
+<HTML><HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE
+function SetCursor() {
+var testUserName = getCookie("UserName");
+
+if (testUserName != null) {  
+	document.THEFORM.UserName.value = getCookie("UserName");
+document.THEFORM.Password.value = getCookie("Password");
+	}  else {
+	document.THEFORM.UserName.focus();
+}
+}
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;
+if (dc.length > 0) {              
+    begin = dc.indexOf(cname);
+	 if (begin != -1) {           
+        begin += cname.length;
+		end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length; 
+            return unescape(dc.substring(begin, end));  }
+}
+return null;
+}
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+</HEAD>
+ <BODY bgcolor="#000000"  text="#ffffff" link="#ff0000" alink="#0000ff" vlink="#a8a8a8" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 rightmargin=0 onLoad="SetCursor()">
+<FONT FACE="Verdana, Arial" size="2"><br>We now have a special forum for new players and questions. Please direct all your questions regarding Action installs, setup or software/hardware questions to the <B><a href="http://www.aq2zone.com/cgi/forumdisplay.cgi?action=topics&forum=Newbie,+Question+Forum&number=11&DaysPrune=20&LastLogin=">Newbie/Question Forum</A></B><br>Regarding the <B>HL1.1</B> Patch: AHL Beta3.55 works with the new HL patch, but is <b>still in early stages</b>. Thanks. -Holy Goat<BR></FONT>
+<br><br><center><FONT SIZE="2" FACE="Verdana, Arial">
+P R I V A T E &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F O R U M
+<FORM ACTION="http://www.aq2zone.com/cgi/forumdisplay.cgi" NAME="THEFORM" METHOD="POST">
+
+<table cellpadding=4 cellspacing=1 border=0 width="95%">
+<tr bgcolor="#003333"><td colspan=2>
+<FONT SIZE="2" FACE="Verdana, Arial" color="#ffffff">
+<B>
+<P>You are attempting to access a private forum.  Please identify yourself below.  Note that this identification screen will only be required once per browser session (per private forum, if you are accessing via forum passwords), assuming you allow cookies to be stored.  We will store your private forum access privileges as a cookie (thus, we highly recommend that you do not disable your cookies in your browser!).</b></td></tr>
+<TR bgcolor="#303030"><TD><FONT SIZE="2" FACE="Verdana, Arial">
+UserName:</font></td><td><INPUT TYPE="TEXT" NAME="UserName" VALUE="" SIZE=20 MAXLENGTH=35></td></tr>
+
+<TR bgcolor="#303030"><TD><FONT SIZE="2" FACE="Verdana, Arial">
+Password:</font></td><td><INPUT TYPE="PASSWORD" NAME="Password" VALUE="" SIZE=20 MAXLENGTH=35></td></tr>
+
+</table>
+
+<P>
+<INPUT TYPE="HIDDEN" NAME="action" VALUE="idcheck">
+<INPUT TYPE="HIDDEN" NAME="forumnumber" VALUE="7">
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Confirm Identity Now">
+<INPUT TYPE="RESET" NAME="Reset" VALUE="Clear Fields Above"></CENTER>
+</form>
+<BR>
+<br><br>
+To return to Forum Summary, <a href="http://www.aq2zone.com/cgi/Ultimate.cgi?action=intro&BypassCookie=true">click here</a>.
+<P>
+</font>
+</body></html>

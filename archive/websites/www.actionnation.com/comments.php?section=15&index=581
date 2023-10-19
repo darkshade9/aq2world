@@ -1,0 +1,683 @@
+<script>
+var eTopM = "";	
+
+if (document.all)		
+document.onmouseover = mouseOver;
+
+function mouseOver() {
+	var eSource = window.event.srcElement;
+	
+	if (eSource.name == "topMenu") {
+		var eMenu = document.all[eSource.id.replace("div", "")]
+		var intWidth = eSource.offsetWidth
+	
+		if (eTopM && eTopM != eMenu) hideTopMenu(eTopM);
+			 
+		if (eMenu) showTopMenu(eMenu, intWidth)
+	} else if (eTopM && !eTopM.contains(eSource) && !menuRow.contains(eSource))
+		hideTopMenu(eTopM);
+}
+
+function showTopMenu(eSource, intMinWidth) {	
+	x  = window.event.srcElement.offsetLeft + window.event.srcElement.offsetParent.offsetLeft;
+	y  = menuRow.offsetHeight - 2;
+	
+	if (intMinWidth < 150) intMinWidth = 150		
+	if (eSource.style.width < intMinWidth) eSource.style.width = intMinWidth;
+	var intTemp = parseInt(eSource.style.width);		
+	intTemp = Number(x) + intTemp;
+	var intDocWidth = document.body.clientWidth;
+	
+	if(intTemp > intDocWidth) {
+		var intDiff = intTemp - intDocWidth
+		x = x - intDiff - 3; 
+	}
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='hidden';
+	eSource.style.left = x;
+	eSource.style.top = y;
+	eSource.style.visibility = "visible";
+	eSource.style.filter = "alpha(opacity=90)";
+	eTopM = eSource;
+}
+
+function hideTopMenu(eSource){
+	eSource.style.filter = "none";
+	eSource.style.visibility = "hidden";
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='visible';
+}
+</script>
+<style>
+BODY{margin:0;}
+.bTB{background-color:#006600;color:#FFFFFF;font-size:12px;font-family:Arial;border-bottom:2px solid #000000;}
+A.bT:Link,A.bT:Visited,A.bT:Active{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Hover{color:#FFFF99;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+.bSB{background-color:#006600;color:#FFFFFF;padding:2px;font-size:12px;font-family:Arial;border:2px solid #000000;border-top:2px solid #005500;visibility:hidden;position:absolute;z-index:10;left:0;}
+A.bS:Link,A.bS:Visited,A.bS:Active{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Hover{width:100%;padding:2px;background-color:#228822;color:#FFFF99;font-family:Arial;text-decoration:none;}
+B.sh{color:#FFFFFF;}
+</style>
+<div class=bTB>
+<table cellpadding=0 cellspacing=0 border=0 width="100%" background="http://images.barrysworld.com/hmenu/lback.gif" id=menuRow><tr>
+<td class=bwHeader width=19><a href="http://www.barrysworld.com/"><img src="http://images.barrysworld.com/hmenu/lsmile.gif" width="19" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+<td class=bwHeader>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divb name=topMenu>BarrysWorld</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/games/gameservers.asp" id=divg name=topMenu>Game Servers</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/membership/" id=divm name=topMenu>Membership</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divn name=topMenu>Nation</a>&nbsp;&nbsp;
+<a class=bT href="http://leagues.barrysworld.net/" id=divl name=topMenu>Leagues</a>&nbsp;&nbsp;	
+</td><td align=right><a class=bT href="http://www.barrysworld.com"><img src="http://images.barrysworld.com/hmenu/llogo.gif" width="121" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+</tr></table>
+</div><div class=bSB id=b>
+<a class=bS href="http://www.barrysworld.com/news/">News</a><br>
+<a class=bS href="http://www.barrysworld.com/Hosting/">Web Hosting</a><br>
+<a class=bS href="http://forums.barrysworld.com/">Forums</a><br>
+<a class=bS href="http://guides.barrysworld.com/">Guides</a><br>
+</div><div class=bSB id=g>
+<a class=bS href="http://www.barrysworld.com/games/gameservers.asp">Public Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/">Bookables</a><br>
+<a class=bS href="http://www.barrysworld.com/barryservers/">BarryServers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/gameservermasters.asp">Master Servers</a><br>
+</div><div class=bSB id=m>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/PlayerSearch.asp">Players</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/TeamList.asp">Teams</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/RecruitmentList.asp">Player Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/RecruitmentList.asp">Team Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/barrybank/">BarryBank</a><br>
+</div><div class=bSB id=n>
+<a class=bS href="http://www.quakenation.com/">QuakeNation</a><br>
+<a class=bS href="http://www.tribesnation.co.uk/">TribesNation</a><br>
+<a class=bS href="http://www.fortressnation.com/">FortressNation</a><br>
+<a class=bS href="http://www.actionnation.com/">ActionNation</a><br>
+<a class=bS href="http://www.tecnation.co.uk/">TechNation</a><br>
+<a class=bS href="http://www.lanpartynation.com/">LanPartyNation</a><br>
+<b>Other Network Sites</b><br>
+<a class=bS href="http://www.xsreality.com/">XSReality</a><br>
+<a class=bS href="http://www.cscentral.com/">CSCentral</a><br>
+<a class=bS href="http://www.unrealfortress.com/">UnrealFortress</a><br>
+<a class=bS href="http://www.avpnetwork.com/">AvP Network</a><br>
+</div><div class=bSB id=l>
+<b class=sh>Quake 3</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwq3dml/">BWQ3DML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ctfl/">BWQ3CTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwra3l/">BWRA3L</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3fl/">BWQ3FL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3utl/">BWQ3UTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpml">BWCPML </a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ftl">BWQ3FTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpmral">BWCPMRAL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/euroctf">EuroCTF </a><br>
+<b class=sh>Quake 2</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwra2l/">BWRA2L</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwaqsl/">BWAQSL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/euroaq/">EuroAQ</a><br>
+<b class=sh>Unreal Tournament</b><br>
+<a class=bS href="http://leagues.barrysworld.net/bwutdml/">BWUTDML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwutctfl/">BWUTCTFL</a><br>
+<b class=sh>Half-Life</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwcsl">BWCSL</a><br>
+<a class=bS href="http://www.bwtfcl.com/">BWTFCL</a><br>
+<a class=bS href="http://www.hlccl.com">HLCCL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwflfl">BWFLFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwfal/">BWFAL</a><br>
+<b class=sh>Other</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwjk2l">Jedi Knight II: Jedi Outcast</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwmohl">Medal of Honor</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwrtcwl">Return to Castle Wolfenstein</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwefl/">Star Trek Voyager: Elite Force</a><br>
+</div>
+
+
+<!-- Magic Quotes - 0-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>ActionNation.com  - For all your Action needs</title>
+	<link rel="STYLESHEET" type="text/css" href="style/default.css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<table bgcolor="#9B7A21" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="images/main_logo.jpg" width="454" height="54" alt="" border="0"><br></td>
+	<td>&nbsp;</td>
+	<td align=right><img src="images/main_right.jpg" width="312" height="54" alt="" border="0"></td>
+</tr>
+</table>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0>
+<tr>
+	<td>
+	<table bgcolor="#CECECE" width="100%" cellpadding=2 cellspacing=0 border=0>
+	<tr>
+		<td>&nbsp;&nbsp;<span class="btext"><a class="blink" href="http://www.quakenation.com/">QuakeNation</a> | <a class="blink" href="http://www.tribesnation.co.uk">TribesNation</a> | <a class="blink" href="http://www.actionnation.com/">ActionNation</a> | <a class="blink" href="http://www.tecnation.co.uk">TechNation</a> | <a class="blink" href="http://www.lanpartynation.com">LanPartyNation</a> | <a class="blink" href="http://www.rtcwnation.com">RTCWNation</a></span></td>
+		<td align=right></td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+	<td width=150 valign=top>
+	<!-- Left Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Main</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b><a class=wlink href=default.php>News</a></b><br>
+<a href="default.php?section=1" class="wlink">General News</a><br><a href="default.php?section=2" class="wlink">Counter-Strike</a><br><a href="default.php?section=3" class="wlink">Action Quake 2</a><br><a href="default.php?section=4" class="wlink">Halflife</a><br><a href="default.php?section=5" class="wlink">Urban Terror</a><br><a href="default.php?section=6" class="wlink">Unreal Tourney</a><br><a href="default.php?section=7" class="wlink">Quake</a><br><a href="default.php?section=27" class="wlink">Leagues</a><br>
+<a class=wlink href=mailto:deathwatch@barrysworld.com>Submit News</a>
+<p>
+<b>Leagues</b><br>
+<a href="league.php?section=14" class="wlink">BWAQSL</a><br><a href="league.php?section=15" class="wlink">BWCSL</a><br>
+<p>
+<b>Columns</b><br>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width=60%><a href="column.php?section=29&index=587" class="wlink">Noz</a></td><td width=40%><span class=wtext>(20/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=584" class="wlink">Excession</a></td><td width=40%><span class=wtext>(02/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=560" class="wlink">Excession</a></td><td width=40%><span class=wtext>(19/02/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=550" class="wlink">Noz</a></td><td width=40%><span class=wtext>(30/01/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=547" class="wlink">Excession</a></td><td width=40%><span class=wtext>(28/01/02)</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Content</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b>Features</b><br>
+<a href="feature.php?section=9" class="wlink">Features</a><br><a href="interview.php?section=10" class="wlink">Interviews</a><br><a href="review.php?section=11" class="wlink">Reviews</a><br>
+<p>
+<b><a class=wlink href=http://forums.barrysworld.com/forumdisplay.php?forumid=28>Forum</a></b><br>
+<b><a class=wlink href=files.php>Files</a></b><br>
+<b><a class=wlink href=links.php>Links</a></b><br>
+<b><a class=wlink href=contact.php>Contact</a></b><br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Lists</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<b><a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp' class='wlink'>Team Lists</a></b><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp' class='wlink'>Hosted Sites</a></b><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Nation Network</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.actionnation.com/' class='wlink'>ActionNation</a><br>
+	<a href='http://www.fortressnation.com/' class='wlink'>FortressNation</a><br>
+	<a href='http://www.quakenation.com/' class='wlink'>QuakeNation</a><br>
+	<a href='http://www.tribesnation.co.uk/' class='wlink'>TribesNation</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Powered by..</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/' class='wlink'>BarrysWorld</a><br>
+	<a href='http://hosted.barrysworld.net/neville' class='wlink'>Neville</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+	<td width="100%" valign=top>
+	<!-- Content -->
+	<img src="images/spacer.gif" width="2" height="5" alt="" border="0">
+	<table width="100%" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+		<td width="100%">
+		<div align="center"><div name=bwbanner id=bwbanner>
+<!-- BEGIN AD CODE -->
+<script language="JavaScript">
+<!--
+hasIframes = (navigator.appName.substring(0,9) == "Microsoft" && parseFloat(navigator.appVersion) >= 4)
+
+now = new Date();
+r = now.getTime();
+
+if (hasIframes) {
+  document.writeln('<iframe src="http://ad.uk.doubleclick.net/adi/barrysworld.com/home;sz=468x60;ord=' + r + '?" name="ad" width="468" height="60" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>');
+} else  {
+  document.writeln('<a href="http://ad.uk.doubleclick.net/jump/barrysworld.com/home;sz=468x60;ord=' + r + '?" target="_blank"><img src="http://ad.uk.doubleclick.net/ad/barrysworld.com/home;sz=468x60;ord=12345?" border=0 width=468 height=60></a>');
+}
+//-->
+</script>
+<noscript><a href="http://ad.uk.doubleclick.net/jump/barrysworld.com/home;sz=468x60;ord=12345?" target="_blank"><img src="http://ad.uk.doubleclick.net/ad/barrysworld.com/home;sz=468x60;ord=12345?" border=0 width=468 height=60></a></noscript>
+<!-- END AD CODE -->
+</div>
+</div>
+		<p>
+<span class=colourise></span><br>
+<p>
+<b>Original Post</b><p>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Interview with BWCSL winners D0es N0t C0mpute</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:rogue2@barrysworld.com'>Rogue1</a> on Sun 21 April 2002 11:30:52 | <a href="comments.php?section=15&index=581" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='' alt='BWCSL' border=0></td><td width="100%" valign=top><html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>1</title>
+</head>
+
+<body>
+
+<p>As I promised when I posted my usual roundup on Friday, I bring you the next
+in our series of interviews with clans who competed in the BWCSL last season.
+This time, it's the turn of league-winners .dNC to go under the spotlight.</p>
+<p><b><br>
+1) A highly successful season for .dNC and I must say, you made it look pretty
+effortless. But were there any worries this season? Any games you were concerned
+about in advance? Any that turned out tougher than you expected?</b></p>
+<p><b><i>BWCSL was our first on-line league since winning LANARENA in London.
+Our main focus has always been LAN. We dropped a lot of other leagues to
+concentrate on the 2 we saw as being the most benifical to us namely BWCSL and
+Clanbase EuroCup5. We had a long gap to our next LAN event which will be the CPL
+World Campionship in Dallas in mid-july so we took this time to look and learn
+before we did major work. We certainly did have a few scares during this season
+with SOE19 and AoR. Luckily we managed to win but I thought our biggest scare
+would come from VETS who we have practiced with before with their best team and
+are very impressive when they perform. SOE19 was without doubt the toughest game
+we didn't expect. Good team and will improve no doubt next season.<br>
+</i><br>
+2) With the league hopefully expanding next season, we'll be seeing a lot of new
+clans entering. Is there anybody you'd particularly want to see in your
+division?</b></p>
+<p><b><i>With the CPL World Champs coming up we will be using BWCSL season as
+our focus to get our maps and game on target with CS1.4. I would love to see
+Infinity-eSports and Nocturne playing this season and maybe the newly formed
+-n1-. Outside them mTw and DkH would add quality but would be unlikey to join.
+The more UK clans the better because there is a huge talent of UK Counter-Strike
+players out there if only there was a clan to guide them if there was
+dedication.<br>
+</i><br>
+3) Anybody you're particularly afraid of? :)</b></p>
+<p><b><i>I have a lot of respect for UKLA. Some of the best players I've seen in
+the UK have been in that clan at one stage. Certainly Infinity-eSports are not
+easy to beat or Nocturne but I think I-eS would be the only one if anyone when
+we start our preperation. I would be afraid of .dNC next season as they will be
+at thier very best. A lot of hard work will be put into it not like last season.<br>
+</i><br>
+4) In response to overwhelming pressure, BWCSL is taking several of its
+divisions, including division 1, over to the maxrounds 12 scoring system next
+season. What do you see as being the big advantages of MR12, other than that the
+CPL uses it?</b></p>
+<p><b><i>I never really commented on MR when it was first introduced, I
+generally sit down and think about the tactical play for MR. I founnd Max Rounds
+more interesting tactically wise compared to Charging Only. .dNC as CT and T
+have about 3-4 times more tactics with MR as every round is important even eco (economising)
+rounds we expect to win. With MR we have to decide on gun management(buying)
+tactics which we never had to before.<br>
+</i><br>
+5) With CS1.4 due for release any day now, it seems as though CS is about to
+change rather dramatically. Have you played the CS1.4 beta and if so, what do
+you think of the changes?</b></p>
+<p><b><i>I believe the release day is this tuesday. Luckily I have had the
+opportunity to play the latest beta test of it. The gameplay itself I like.
+Every version of CS seems cleaner than before with bugs removed and improved
+performance. The jumping is a lot different but after a period will go unnoticed.
+News maps look nice although haven't seriously looked at them for clan games.
+The hostage AI is a little better. I like that they've done things to the
+code(+use) and lock certain things in the config but they haven't gone far
+enough yet. The stream system I like and I don't like for several reasons. I
+like the way they "say" they will implement the new anti-cheat system
+through it however I am aware of certain hacks that will work but the new '=ESF=
+Shield' will catch some of the cheats that are beggining to float around on
+Steam. My biggest dislike is for the future of gaming and I think the day is
+close for the "pay per play" system. Heavy gamers will be forced to
+pay for the period they play the game. For example I paid about 40 quid 3 years
+ago for HL but if I do the same again with this system the region will 8-9 times
+that amount. I think 1.4 is better on LAN but On-Line the cheating will be just
+as bad unfortunately.<br>
+</i><br>
+6) One of the most significant changes in 1.4 will be the new hostage code. Many
+have speculated that this will make cs_ maps are more attractive prospect and
+the idea was raised that we should use some in BWCSL next season, although it
+was eventually rejected. What do you think of this? Do cs_ maps have a future in
+competative play?</b></p>
+<p><b><i>I don't think cs_maps have a future in 1.4. maybe in 1.5. There are too
+many problematic variables with it. Damage and movement of the hostages is one.
+Two is the location of the hostages. If hostages were spread out over two
+different sites and Terrorists were unable to move or damage(which is possible
+to control in 1.4) them I would like to entertain the idea that maybe it could
+be used but until them I don't see any future for cs_maps in CS. You really
+can't enforce these things unless it's outsite the control of the Terrorists.
+But maybe in CS 1.5 I think cs_maps will be played.<br>
+</i><br>
+7) Another decision we've taken concerning maps is that BWCSL will not use
+custom maps. Would you agree to this, or do you think there's a case to be made
+for them?</b></p>
+<p><b><i>I think there is always a case for maybe one custom map if designed
+correctly for clan games. Take for example Quake. There has always been
+exceptional quality maps made and played on in many leagues including the CPL.
+Everybody plays the official maps and most of the maps are good but not many are
+specifically designed for clan games. In my experience there has yet to a
+designer like ZTN for CS as there has been in Quake. I would like to see them as
+most of the technical maps in CS are very old at this stage and have been played
+through the teeth. However they still are the best maps out there.<br>
+</i><br>
+8) Finally, are there any other rule changes you'd like to see made? We've
+already decided to move to a 35 second bomb-timer, but rules are still open to
+suggestions in other areas.</b></p>
+<p><b><i>sv_clienttrace 1<br>
+mp_maxrounds 12<br>
+mp_timelimit 0<br>
+pausable 1<br>
+allow_spectators 1<br>
+mp_buytime 0.5<br>
+mp_roundtime 3<br>
+mp_friendly_grenade_damage 1<br>
+mp_friendlyfire 1<br>
+mp_c4timer 35<br>
+mp_freezetime 4<br>
+mp_forcechasecam 3<br>
+mp_footsteps 1<br>
+mp_flashlight 1<br>
+mp_autocrosshair 0<br>
+mp_limitteams 0<br>
+mp_logfile 1<br>
+mp_logmessages 1<br>
+mp_autoteambalance 0<br>
+mp_limitteams 0<br>
+mp_autokick 0<br>
+mp_tkpunish 0<br>
+mp_hostagepenalty 0<br>
+sv_aim 0<br>
+sv_cheats 0<br>
+sv_maxspeed 320<br>
+sv_gravity 800<br>
+sv_airmove 0<br>
+sv_airaccelerate 3<br>
+mp_startmoney 800<br>
+<br>
+Nope you pretty much have it covered.<br>
+</i></b></p>
+
+</body>
+
+</html>
+</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><p>
+<b>Comments</b><p>
+<p>
+<b>Post Comment<b><p>
+<div align="center"><script>
+	function playerPopup() {
+		open('neville/popup_shell.php?url=http://php.barrysworld.com/neville/player_select.php?user='+ document.all["txt_name"].value, 'player', 'height=140, width=135, resizable=yes')
+	}
+	</script>
+<form action=comments.php?section=15&index=581 method=post name=frm_comment><input name=hidden_player type=hidden value=''><table cellpadding=0 width=250>
+<tr>
+<td><span class=colourise>Name</span></td>
+<td><span class=colourise>Password</span></td>
+<td><span class=colourise>Player</span></td>
+</tr>
+<tr>
+<td valign=top><input class=nCmntInputBox name='txt_name' value=''></td>
+<td valign=top><input class=nCmntInputBox name=txt_password type=password value=''></td>
+<td valign=top align=right><input class=nCmntInputBox name='txt_player' value=''><a name=player></a><br><a href='#player' onClick="javascript:playerPopup()" style='font-size:10px'>Select Player</a></td>
+</tr>
+<tr>
+<td colspan=3><span class=colourise>Header</span><br><input class=nCmntInputBox name='txt_header' size=66 value=''></td>
+</tr>
+<tr>
+<td colspan=3><span class=colourise>Comment</span><br><textarea class=nCmntInputBox cols=65 rows=5 name=txt_entry></textarea></td>
+</tr>
+<tr>
+<td colspan=3 align=center><br><input class=nCmntButton type=submit name=but_action value='Post Comment'> </td>
+</tr>
+<tr>
+<td colspan=3 align=center><br><span style='font-size:10px'>If you wish to post anonymously just enter a username, to post using your
+	<a href=http://www.barrysworld.com/>BarrysWorld</a> account enter the relevant username/password. If you wish
+	to post under a player alias on your account then click 'Select Player'. You can sign up for a BarrysWorld
+	membership account <a href=http://www.barrysworld.com/Membership/Reg/UserRegTabForm.asp>here</a>
+	<p>
+	<b>DO NOT USE HTML</b>, use the following<p>
+	[b]<b>bold</b>[/b], 
+	[i]<i>italic</i>[/i], [quote]quote[/quote], [a]link[ae]title[/a]
+	</span></td>
+</tr>
+</table></form></div>
+
+		</td>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+	</tr>
+	</table>
+	
+	</td>
+	<td width=150 valign=top>
+	<!-- Right Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="default.php?section=1&index=586" class="wlink"> - Operation Red Falcon Update</a><br><a href="default.php?section=1&index=567" class="wlink"> - NS-CO Released</a><br><a href="default.php?section=6&index=566" class="wlink"> - UT - Strike Force 1.75 Released</a><br><a href="default.php?section=3&index=563" class="wlink"> - TNG 2.6 released</a><br><a href="default.php?section=5&index=561" class="wlink"> - Beta Release and League News.</a><br><a href="default.php?section=5&index=559" class="wlink"> - Urban Terror Bug Fix</a><br><a href="default.php?section=5&index=558" class="wlink"> - Urban Terror Beta 2.4 is here!!</a><br><a href="default.php?section=4&index=557" class="wlink"> - DoD Beta 2 Win32 Client</a><br><a href="default.php?section=4&index=556" class="wlink"> - Day of Defeat Beta 2 Server Files</a><br><a href="default.php?section=4&index=555" class="wlink"> - Day of Defeat Beta 2</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Features</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="interview.php?section=10&index=349" class="wlink"> - Action Half-Life Interview</a><br><a href="interview.php?section=10&index=336" class="wlink"> - Opera Interview</a><br><a href="interview.php?section=10&index=328" class="wlink"> - Annihilation Interview</a><br><a href="interview.php?section=10&index=324" class="wlink"> - Navy Seals Covert Operations Interview</a><br><a href="interview.php?section=10&index=312" class="wlink"> - The Specialists Interview</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="
+http://www.barrysworld.com/news/default.asp?Item=26656&Category=1" class="wlink"> - 
+
+UT 2003 Rolling Demos</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26655&Category=1" class="wlink"> - 
+
+Americas Army Server Setup</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26654&Category=1" class="wlink"> - 
+
+Today`s Reviews</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26652&Category=2" class="wlink"> - 
+
+Custom &amp; Advanced Map Rotations!</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26651&Category=2" class="wlink"> - 
+
+UT League Assault Available</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26650&Category=1" class="wlink"> - 
+
+Dragon Empires Interview</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26649&Category=1" class="wlink"> - 
+
+Sum of All Fears Interview</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26648&Category=1" class="wlink"> - 
+
+Cryo Closed</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26647&Category=1" class="wlink"> - 
+
+Patches</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=26646&Category=1" class="wlink"> - 
+
+Today`s Reviews</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Services</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/hosting/' class='wlink'>Get your site hosted</a><br>
+	<a href='http://www.barrysworld.com/games/liaisons.asp' class='wlink'>Server Liaisons/Admins</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/gameservers.asp' class='wlink'>Public Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/counterstrike/CounterStrikeServers.asp' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/games/halflife/HalfLifeServers.asp' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/quake2/quake2servers.asp' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/quake3/quake3servers.asp' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/unrealtournament/UnrealTournamentServers.asp' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/bookings/' class='wlink'>Bookable Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Half%2DLife' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+2' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+3+Arena' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Unreal+Tournament' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://leagues.barrysworld.com/' class='wlink'>Leagues</a></b><br>
+	<a href='http://leagues.barrysworld.net/bwcsl/' class='wlink' target=new>BWCSL</a><br>
+	<a href='http://leagues.barrysworld.net/bwaqsl/' class='wlink' target=new>BWAQSL</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<p>
+	<div align="center">Visitors since 03/05/01<br>
+	<img src="http://linweb02.barrysworld.com/cgi-bin/Count.cgi?trgb=ffffff&dd=E&reload=F" alt="Count">
+	</div>
+	<p>
+	<div align="center">
+	<a href="http://www.barrysworld.com" target="_blank"><img src="http://images.barrysworld.com/button_bw.gif" border=0 alt="Hosted by Barrysworld with Barry Power!"></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.actionnation.com/"><img src="http://images.barrysworld.com/nation/button_anation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.quakenation.com/"><img src="http://images.barrysworld.com/nation/button_qnation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.rtcwnation.com/"><img src="http://images.barrysworld.com/nation/button_rtcwn.gif" border=0></a><br>	</div>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0 border=0 background="images/main_footfill.gif">
+<tr>
+	<td><img src="images/spacer.gif" width="1" height="39" alt="" border="0"></td>
+	<td align=right><a href="http://www.actionnation.com/neville/"><img src="images/main_footer.gif" width="143" height="39" alt="" border="0"></a></td>
+</tr>
+</table>
+<table width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#CECECE">
+<tr>
+	<td colspan=2>
+	<div align="right" class=bsmall>
+	ActionNation is part of the <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a> Nation Network<br>
+	Copyright &copy; 2001 <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a></div><br>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

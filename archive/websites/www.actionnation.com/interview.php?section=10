@@ -1,0 +1,488 @@
+<script>
+var eTopM = "";	
+
+if (document.all)		
+document.onmouseover = mouseOver;
+
+function mouseOver() {
+	var eSource = window.event.srcElement;
+	
+	if (eSource.name == "topMenu") {
+		var eMenu = document.all[eSource.id.replace("div", "")]
+		var intWidth = eSource.offsetWidth
+	
+		if (eTopM && eTopM != eMenu) hideTopMenu(eTopM);
+			 
+		if (eMenu) showTopMenu(eMenu, intWidth)
+	} else if (eTopM && !eTopM.contains(eSource) && !menuRow.contains(eSource))
+		hideTopMenu(eTopM);
+}
+
+function showTopMenu(eSource, intMinWidth) {	
+	x  = window.event.srcElement.offsetLeft + window.event.srcElement.offsetParent.offsetLeft;
+	y  = menuRow.offsetHeight - 2;
+	
+	if (intMinWidth < 150) intMinWidth = 150		
+	if (eSource.style.width < intMinWidth) eSource.style.width = intMinWidth;
+	var intTemp = parseInt(eSource.style.width);		
+	intTemp = Number(x) + intTemp;
+	var intDocWidth = document.body.clientWidth;
+	
+	if(intTemp > intDocWidth) {
+		var intDiff = intTemp - intDocWidth
+		x = x - intDiff - 3; 
+	}
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='hidden';
+	eSource.style.left = x;
+	eSource.style.top = y;
+	eSource.style.visibility = "visible";
+	eSource.style.filter = "alpha(opacity=90)";
+	eTopM = eSource;
+}
+
+function hideTopMenu(eSource){
+	eSource.style.filter = "none";
+	eSource.style.visibility = "hidden";
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='visible';
+}
+</script>
+<style>
+BODY{margin:0;}
+.bTB{background-color:#006600;color:#FFFFFF;font-size:12px;font-family:Arial;border-bottom:2px solid #000000;}
+A.bT:Link,A.bT:Visited,A.bT:Active{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Hover{color:#FFFF99;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+.bSB{background-color:#006600;color:#FFFFFF;padding:2px;font-size:12px;font-family:Arial;border:2px solid #000000;border-top:2px solid #005500;visibility:hidden;position:absolute;z-index:10;left:0;}
+A.bS:Link,A.bS:Visited,A.bS:Active{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Hover{width:100%;padding:2px;background-color:#228822;color:#FFFF99;font-family:Arial;text-decoration:none;}
+B.sh{color:#FFFFFF;}
+</style>
+<div class=bTB>
+<table cellpadding=0 cellspacing=0 border=0 width="100%" background="http://images.barrysworld.com/hmenu/lback.gif" id=menuRow><tr>
+<td class=bwHeader width=19><a href="http://www.barrysworld.com/"><img src="http://images.barrysworld.com/hmenu/lsmile.gif" width="19" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+<td class=bwHeader>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divb name=topMenu>BarrysWorld</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/games/gameservers.asp" id=divg name=topMenu>Game Servers</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/membership/" id=divm name=topMenu>Membership</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divn name=topMenu>Nation</a>&nbsp;&nbsp;
+<a class=bT href="http://leagues.barrysworld.net/" id=divl name=topMenu>Leagues</a>&nbsp;&nbsp;	
+</td><td align=right><a class=bT href="http://www.barrysworld.com"><img src="http://images.barrysworld.com/hmenu/llogo.gif" width="121" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+</tr></table>
+</div><div class=bSB id=b>
+<a class=bS href="http://www.barrysworld.com/news/">News</a><br>
+<a class=bS href="http://www.barrysworld.com/Hosting/">Web Hosting</a><br>
+<a class=bS href="http://forums.barrysworld.com/">Forums</a><br>
+<a class=bS href="http://guides.barrysworld.com/">Guides</a><br>
+</div><div class=bSB id=g>
+<a class=bS href="http://www.barrysworld.com/games/gameservers.asp">Public Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/">Bookables</a><br>
+<a class=bS href="http://www.barrysworld.com/barryservers/">BarryServers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/gameservermasters.asp">Master Servers</a><br>
+</div><div class=bSB id=m>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/PlayerSearch.asp">Players</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/TeamList.asp">Teams</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/RecruitmentList.asp">Player Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/RecruitmentList.asp">Team Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/barrybank/">BarryBank</a><br>
+</div><div class=bSB id=n>
+<a class=bS href="http://www.quakenation.com/">QuakeNation</a><br>
+<a class=bS href="http://www.tribesnation.co.uk/">TribesNation</a><br>
+<a class=bS href="http://www.fortressnation.com/">FortressNation</a><br>
+<a class=bS href="http://www.actionnation.com/">ActionNation</a><br>
+<a class=bS href="http://www.tecnation.co.uk/">TechNation</a><br>
+<a class=bS href="http://www.lanpartynation.com/">LanPartyNation</a><br>
+<a class=bS href="http://www.rtcwnation.com/">RTCWNation</a><br>
+<b>Other Network Sites</b><br>
+<a class=bS href="http://www.xsreality.com/">XSReality</a><br>
+<a class=bS href="http://www.cscentral.com/">CSCentral</a><br>
+<a class=bS href="http://www.unrealfortress.com/">UnrealFortress</a><br>
+<a class=bS href="http://www.avpnetwork.com/">AvP Network</a><br>
+</div><div class=bSB id=l>
+<b class=sh>Quake 3</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwq3dml/">BWQ3DML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ctfl/">BWQ3CTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwra3l/">BWRA3L</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3utl/">BWQ3UTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpml/">BWCPML </a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ftl/">BWQ3FTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpmral/">BWCPMRAL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3pbl/">BWQ3PBL</a><br>
+<b class=sh>Half-Life</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwcsl">BWCSL</a><br>
+<a class=bS href="http://www.bwtfcl.com/">BWTFCL</a><br>
+<a class=bS href="http://www.hlccl.com">HLCCL</a><br>
+<b class=sh>Other</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwjk2l">Jedi Knight II: Jedi Outcast</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwmohl">Medal of Honor</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwrtcwl">Return to Castle Wolfenstein</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwefl/">Star Trek Voyager: Elite Force</a><br>
+</div>
+
+
+<!-- Magic Quotes - 0-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>ActionNation.com  - For all your Action needs</title>
+	<link rel="STYLESHEET" type="text/css" href="style/default.css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<table bgcolor="#9B7A21" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="images/main_logo.jpg" width="454" height="54" alt="" border="0"><br></td>
+	<td>&nbsp;</td>
+	<td align=right><img src="images/main_right.jpg" width="312" height="54" alt="" border="0"></td>
+</tr>
+</table>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0>
+<tr>
+	<td>
+	<table bgcolor="#CECECE" width="100%" cellpadding=2 cellspacing=0 border=0>
+	<tr>
+		<td>&nbsp;&nbsp;<span class="btext"><a class="blink" href="http://www.quakenation.com/">QuakeNation</a> | <a class="blink" href="http://www.tribesnation.co.uk">TribesNation</a> | <a class="blink" href="http://www.actionnation.com/">ActionNation</a> | <a class="blink" href="http://www.lanpartynation.com">LanPartyNation</a> | <a class="blink" href="http://www.rtcwnation.com">RTCWNation</a></span></td>
+		<td align=right></td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+	<td width=150 valign=top>
+	<!-- Left Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Main</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b><a class=wlink href=default.php>News</a></b><br>
+<a href="default.php?section=1" class="wlink">General News</a><br><a href="default.php?section=2" class="wlink">Counter-Strike</a><br><a href="default.php?section=3" class="wlink">Action Quake 2</a><br><a href="default.php?section=4" class="wlink">Halflife</a><br><a href="default.php?section=5" class="wlink">Urban Terror</a><br><a href="default.php?section=6" class="wlink">Unreal Tourney</a><br><a href="default.php?section=7" class="wlink">Quake</a><br><a href="default.php?section=27" class="wlink">Leagues</a><br>
+<a class=wlink href=mailto:deathwatch@barrysworld.com>Submit News</a>
+<p>
+<b>Leagues</b><br>
+<a href="league.php?section=14" class="wlink">BWAQSL</a><br><a href="league.php?section=15" class="wlink">BWCSL</a><br>
+<p>
+<b>Columns</b><br>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width=60%><a href="column.php?section=29&index=594" class="wlink">Noz</a></td><td width=40%><span class=wtext>(07/07/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=587" class="wlink">Noz</a></td><td width=40%><span class=wtext>(20/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=584" class="wlink">Excession</a></td><td width=40%><span class=wtext>(02/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=560" class="wlink">Excession</a></td><td width=40%><span class=wtext>(19/02/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=550" class="wlink">Noz</a></td><td width=40%><span class=wtext>(30/01/02)</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Content</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b>Features</b><br>
+<a href="feature.php?section=9" class="wlink">Features</a><br><a href="interview.php?section=10" class="wlink">Interviews</a><br><a href="review.php?section=11" class="wlink">Reviews</a><br>
+<p>
+<b><a class=wlink href=http://forums.barrysworld.com/forumdisplay.php?forumid=28>Forum</a></b><br>
+<b><a class=wlink href=files.php>Files</a></b><br>
+<b><a class=wlink href=links.php>Links</a></b><br>
+<b><a class=wlink href=contact.php>Contact</a></b><br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Lists</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<b><a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp' class='wlink'>Team Lists</a></b><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp' class='wlink'>Hosted Sites</a></b><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Nation Network</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.actionnation.com/' class='wlink'>ActionNation</a><br>
+	<a href='http://www.fortressnation.com/' class='wlink'>FortressNation</a><br>
+	<a href='http://www.quakenation.com/' class='wlink'>QuakeNation</a><br>
+	<a href='http://www.tribesnation.co.uk/' class='wlink'>TribesNation</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Powered by..</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/' class='wlink'>BarrysWorld</a><br>
+	<a href='http://hosted.barrysworld.net/neville' class='wlink'>Neville</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+	<td width="100%" valign=top>
+	<!-- Content -->
+	<img src="images/spacer.gif" width="2" height="5" alt="" border="0">
+	<table width="100%" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+		<td width="100%">
+		<div align="center"></div>
+		<p>
+<table width="100%">
+<tr>
+	<td valign=top>
+	<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%">Other Interviews</td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE"><a href="interview.php?section=10&index=349">Action Half-Life Interview</a> (27/08/01)</br><a href="interview.php?section=10&index=336">Opera Interview</a> (11/08/01)</br><a href="interview.php?section=10&index=328">Annihilation Interview</a> (10/08/01)</br><a href="interview.php?section=10&index=324">Navy Seals Covert Operations Interview</a> (02/08/01)</br><a href="interview.php?section=10&index=312">The Specialists Interview</a> (28/07/01)</br><a href="interview.php?section=10&index=36">Massive Software</a> (31/12/00)</br><a href="interview.php?section=10&index=35">Azm0 of Unreal Fortress Fame</a> (31/12/00)</br></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+</tr>
+<tr>
+	<td valign=top>
+	<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%">Action Half-Life Interview - <span class=bsmall>Mon 27 August 2001 16:59:21</span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2><a href=http://ahl.telefragged.com/ class=colourise target=_blank>Action Half-Life</a> is one of the best Half-Life mods around. It is a very established mod that has been around since Half-Life was released and is an evolution of the classic Quake 2 mod, Action Quake 2. The mod attempts to capture the feel of action movies and includes levels, characters, stunts and weapons that wouldn't look out of place in that genre. It features a number of different game types from Last Man Standing to Teamplay. I recommend you check if out if you haven't already. I interviewed Payback, who is the coder of Action Half-Life (from Beta 4).<br><br><span class=colourise>Question:</span> Can you introduce yourself and describe what part you played in developing the mod?<br><span class=colourise>Payback:</span> Hi, I'm Stuart "Payback" Crouch and I've been the coder for beta 4 of Action Half-life.<br><br><span class=colourise>Question:</span> Can you give a brief description of what Action Half-Life is about?<br><span class=colourise>Payback:</span> Action half-life is about trying to emulate the type of fights you see in the movies. It's all about movie realism. We have been totally influenced by action movies that are out there from the HKBO (Hong Kong blood opera) to sci-fi action such as the matrix, to movies such as Heat and Face Off. AHL is a mixture of the best elements of these, and it comes out as something quite unique.><br><br><span class=colourise>Question:</span> How does your mod differ from other realism mods like Counter-Strike, Urban Terror or Front Line Force?<br><span class=colourise>Payback:</span> FLF isn't realism based, nor is Urban Terror IIRC.  I think Gooseman would also argue with you about whether his mod is "realistic".  So that question is sort of moot. But I can tell you where AHL differs from the mods you mentioned in that it tries to capture the feel of the movies. The levels and characters try to emulate settings that could be in the movies, there are stunts so you can dive like you see your favorite movie stars do, and we've tried to make the game as fast paced as possible. The game is also designed to be balanced, so there isn't meant to be an all-powerful weapon but they are all meant to feel unique in some way.  All of the mods you've mentioned are very good, but we've followed a different route, and hence comparisons aren't really possible.<br><br><span class=colourise>Question:</span> What was the main factor that made you decide to make this mod?<br><span class=colourise>Payback:</span> Well I can only answer this personally, and that is that AHL was crippled by the 1.1.0.1 patch, and Mr.Grim the previous coder for AHL hadn't got time to work on it anymore. I offered my services and was accepted to take over the coding. I have to say it's a dream come true :D. I've played the mod for ages, because I like its fast pace and the way it ties in with movies. <br><br><span class=colourise>Question:</span> Who came up with the idea for this mod?<br><span class=colourise>Payback:</span> The original idea came from Cail, Pietro, Vain and Bartender, the developers of AQ2.  However with changing teams, and also the change of engine, AHL has taken a different course from its predecessor. <br><br><span class=colourise>Question:</span> What kind of research is required for developing a realistic mod?<br><span class=colourise>Payback:</span> Dunno. Haven't written one yet.  But for the development of AHL we watched movies, to try and emulate the style, and visited gun sights, looked at real guns, etc to see how they looked. We didn't compare values of the guns though because that would be attempting realism. Instead we tweaked the values so that one gun has more power, whilst another has more range, but another has more accuracy. If we went for realism I suspect everyone would just use the sniper rifles and the m4.<br><br><span class=colourise>Question:</span> During development, did you get any ideas from watching movies or playing other games?<br><span class=colourise>Payback:</span> All action movies have influenced this game in some small (or large) way. Games have also been an influence, but they more showed us what works and what doesn't work rather than the ideas behind the game.<br><br><span class=colourise>Question:</span> How long has this mod been in development?<br><span class=colourise>Payback:</span> Since Half Life was released. 2 1/2 years now? Or is it longer...<br><br><span class=colourise>Question:</span> While making the mod, what difficulties did you experience? How did you overcome these difficulties?<br><span class=colourise>Payback:</span> Hehe. We experienced the 1.1.0.1 patch.  To overcome it we took a lot of time, patience and determination.  We also asked valve for as much support as we could, and they were more than willing to oblige. The main problem was that the code we used to do dives had been changed at a level we couldn't access, as well as many other features. To solve the diving problem we had to change the way they worked, which meant the loss of some minor functionality. To solve the other problems, it was just one HUGE beta test :D<br><br><span class=colourise>Question:</span> If you were starting to develop the mod again, is there anything you would change (the development process, game features, etc)?<br><span class=colourise>Payback:</span> We haven't finished yet so the development process is still evolving.  But if we were starting again I think we would try to avoid being pressured into release until it is as close to complete as possible. This idea has worked well for some mods.<br><br><span class=colourise>Question:</span> Why did you decide to make your mod for Half-Life? Have you experienced any limitations by using the Half-Life engine? How much support (if any) have you received from Valve?<br><span class=colourise>Payback:</span> When the mod was started Half-life was the best engine out there.  Even by today's standards it still holds its own due to the continued support from Valve, and the size of the community. The HL engine does have its limitations, none of them have been too restrictive code-wise, other than the inability to remove decals (if you read this Valve, suggestion for 2.2 SDK :D), although I know that the mappers curse the fact its based on the quake 1 engine and hence only allows smaller maps with lower r_speeds.<br><br><span class=colourise>Question:</span> Will there be any major gameplay additions or improvements in future versions (Beta 4.1?)? For example, weapons changes or new teamplay modes?<br><span class=colourise>Payback:</span> There are many new features in beta 4.1.  As for v1, "difficult to see. Always in motion is the future".  But I'd say yes, although were not sure what.  Probably new weapons, a new game mode, and some single player episodes<br><br>Here's a very small list of 4.1 features<br><br>Weapon Balance:<br>- Shotty toned down<br>- Extra clip for your gun in DM mode<br><br>Game Physics:<br>- Added quake style screentilt<br>- Diving into walls bug fixed.  Players are now pushed out of the wall. (wall camping is no longer possible)<br>- Client side dead bodies. Player decides how long corpses stay visible, thus achieve better FPS on smaller systems:<br>- Bot support, curtousy of Rich 'The Fatal' Whitehouse<br><br>Server Side:<br>- Added sv_roundrestart command.  Type sv_roundrestart 12, and in 12 seconds the game resets all scores (both team and players) to 0<br><br>Gameplay:<br>- The AHL Bot, curtousy of Rich 'The Fatal' Whitehouse<br>- Reload animations for the shotgun and SAA are a lot smoother<br><br>About 40 other changes. Not bad for something that started as a fix the cheats and bugs patch.<br><br><span class=colourise>Question:</span> What new maps are likely to be included in future versions?  What sort of settings will these new maps be based on?<br><span class=colourise>Payback:</span> There are a whole range of new levels coming up.  Since b4 came out the mapping community has started up with a vengeance, and the mappers keep on outdoing themselves.  Expect to see new maps from AHL mappers such as Banana, Octave Doctor, Hondo and Bunny X, as well as many other mappers both new and old.  The themes range from levels based on movies, to completely ficticous locations that you wish they would make action movies in.<br><br><span class=colourise>Question:</span> Will there be any other changes in future versions (Beta 4.1?)?<br><span class=colourise>Payback:</span> Heaven of Frags have just finished a modelling contest in which the grand prize was a copy of 3DS Max v4.  This package drew a lot of attention, and we have had some very high quality submissions from mappers.  Also, higher quality models were being produced by the AHL team anyway as this was the only area where reviewers of b4 felt that it was lacking.  So beta 4.1 should feature an "AHL high definition models" package.<br><br><span class=colourise>Question:</span> How large can people expect the next version (Beta 4.1?) to be?<br><span class=colourise>Payback:</span> As, I said, since the release of beta 4 there has been a lot of work suddenly appeared from the AHL community (and we are grateful for every bit of it).  We would like to include as much of it as possible in the next release, so at this time we cant put an estimate on how big it will be. I can tell you it will be more than the 3 MB file I thought it would be when we started this patch.<br><br><span class=colourise>Question:</span> How much longer to do plan to keep developing Action Half-Life?<br><span class=colourise>Payback:</span> After 4.1 the next version should be version 1.  V1 is final, support will be continued but no big new version (apart from bug fixes) will be supplied<br><br><span class=colourise>Question:</span> What are you most proud of in Action Half-Life?<br><span class=colourise>Payback:</span> From a what I've developed point of view its the new spawn code and the ability to dive again(the original version was by Mr.Grim and still remains one of the best executed ideas that I've seen).  From an overall view I would  say it's the way we've captured the feel of action movies.  I'm quite happy with how it's turning out.  But the thing I'm most proud of is our community. The devotion and commitment of the AHL community is amazing and overall it's a really friendly environment.<br><br><span class=colourise>Question:</span> What advice would you give to anyone who is creating a mod?<br><span class=colourise>Payback:</span> Try to go into developing the mod with more than just an idea.  Have a skill that you can bring to your mod.  You will find that people are more interested if you have code, models or maps to help them visualise what you are trying to do. If you don't have one of these skills then learn. You'll find that the mod wont get very far if you don't have at least one skill, or you were planning on sitting back and getting everyone else to do the work.<br><br><span class=colourise>Question:</span> Are you interested in creating a brand-new mod in the future or perhaps working on Action Unreal Tournament?<br><span class=colourise>Payback:</span> Yes and yes.  I'm a big zombie fan, and I'm still in love with the idea of using Raven software's GHOUL engine to create a zombie mod where you can remove limbs. I would like to work on AUT, but I have a suspicion that code-wise its well in hand, and being a coder there is little I can do to help. Too many cooks spoil the broth.<br><br><span class=colourise>Question:</span> What is your opinion of the mod community in general?<br><span class=colourise>Payback:</span> The HL mod community at least is wonderful.  Personally I don't consider CS a mod anymore as it's an officially licensed product by Valve, but even then you can still see that it has masses of support from its community. From a developers point of view the HL community is great because of the amount of support the coders give each other. There are plenty of tutorials and places to ask for advice, and as long as you know at least something about what you are doing you are sure to get a helpful answer.</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>	</td>
+</tr>
+</table>
+
+		</td>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+	</tr>
+	</table>
+	
+	</td>
+	<td width=150 valign=top>
+	<!-- Right Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="default.php?section=5&index=600" class="wlink"> - Urban Terror Beta 2.6 Released</a><br><a href="default.php?section=1&index=586" class="wlink"> - Operation Red Falcon Update</a><br><a href="default.php?section=1&index=567" class="wlink"> - NS-CO Released</a><br><a href="default.php?section=6&index=566" class="wlink"> - UT - Strike Force 1.75 Released</a><br><a href="default.php?section=3&index=563" class="wlink"> - TNG 2.6 released</a><br><a href="default.php?section=5&index=561" class="wlink"> - Beta Release and League News.</a><br><a href="default.php?section=5&index=559" class="wlink"> - Urban Terror Bug Fix</a><br><a href="default.php?section=5&index=558" class="wlink"> - Urban Terror Beta 2.4 is here!!</a><br><a href="default.php?section=4&index=557" class="wlink"> - DoD Beta 2 Win32 Client</a><br><a href="default.php?section=4&index=556" class="wlink"> - Day of Defeat Beta 2 Server Files</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Features</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="interview.php?section=10&index=349" class="wlink"> - Action Half-Life Interview</a><br><a href="interview.php?section=10&index=336" class="wlink"> - Opera Interview</a><br><a href="interview.php?section=10&index=328" class="wlink"> - Annihilation Interview</a><br><a href="interview.php?section=10&index=324" class="wlink"> - Navy Seals Covert Operations Interview</a><br><a href="interview.php?section=10&index=312" class="wlink"> - The Specialists Interview</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="
+http://www.barrysworld.com/news/default.asp?Item=27596&Category=1" class="wlink"> - 
+
+DoD goes retail !</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27595&Category=2" class="wlink"> - 
+
+BattleField 1942 Bookable Servers Launched woohoo!</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27590&Category=2" class="wlink"> - 
+
+RTCW Changes</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27588&Category=2" class="wlink"> - 
+
+GAME.NET Launches</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27586&Category=1" class="wlink"> - 
+
+Splinter Cell Demo</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27585&Category=2" class="wlink"> - 
+
+A Trio of Bookables</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27584&Category=1" class="wlink"> - 
+
+Age of Mythology Patch</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27583&Category=1" class="wlink"> - 
+
+Impossible Creatures Multiplayer Test</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27582&Category=1" class="wlink"> - 
+
+Microsoft to Publish Steel Battalion</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27581&Category=1" class="wlink"> - 
+
+Art and Level Design</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Services</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/hosting/' class='wlink'>Get your site hosted</a><br>
+	<a href='http://www.barrysworld.com/games/liaisons.asp' class='wlink'>Server Liaisons/Admins</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/gameservers.asp' class='wlink'>Public Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/counterstrike/CounterStrikeServers.asp' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/games/halflife/HalfLifeServers.asp' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/quake2/quake2servers.asp' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/quake3/quake3servers.asp' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/unrealtournament/UnrealTournamentServers.asp' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/bookings/' class='wlink'>Bookable Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Half%2DLife' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+2' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+3+Arena' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Unreal+Tournament' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://leagues.barrysworld.com/' class='wlink'>Leagues</a></b><br>
+	<a href='http://leagues.barrysworld.net/bwcsl/' class='wlink' target=new>BWCSL</a><br>
+	<a href='http://leagues.barrysworld.net/bwaqsl/' class='wlink' target=new>BWAQSL</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<p>
+	<div align="center">Visitors since 03/05/01<br>
+	<img src="http://linweb02.barrysworld.com/cgi-bin/Count.cgi?trgb=ffffff&dd=E&reload=F" alt="Count">
+	</div>
+	<p>
+	<div align="center">
+	<a href="http://www.barrysworld.com" target="_blank"><img src="http://images.barrysworld.com/button_bw.gif" border=0 alt="Hosted by Barrysworld with Barry Power!"></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.actionnation.com/"><img src="http://images.barrysworld.com/nation/button_anation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.fortressnation.com/"><img src="http://images.barrysworld.com/nation/button_fnation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.lanpartynation.com/"><img src="http://images.barrysworld.com/nation/button_lp.gif" border=0></a><br>	</div>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0 border=0 background="images/main_footfill.gif">
+<tr>
+	<td><img src="images/spacer.gif" width="1" height="39" alt="" border="0"></td>
+	<td align=right><a href="http://www.actionnation.com/neville/"><img src="images/main_footer.gif" width="143" height="39" alt="" border="0"></a></td>
+</tr>
+</table>
+<table width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#CECECE">
+<tr>
+	<td colspan=2>
+	<div align="right" class=bsmall>
+	ActionNation is part of the <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a> Nation Network<br>
+	Copyright &copy; 2001 <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a></div><br>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

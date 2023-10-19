@@ -1,0 +1,488 @@
+<script>
+var eTopM = "";	
+
+if (document.all)		
+document.onmouseover = mouseOver;
+
+function mouseOver() {
+	var eSource = window.event.srcElement;
+	
+	if (eSource.name == "topMenu") {
+		var eMenu = document.all[eSource.id.replace("div", "")]
+		var intWidth = eSource.offsetWidth
+	
+		if (eTopM && eTopM != eMenu) hideTopMenu(eTopM);
+			 
+		if (eMenu) showTopMenu(eMenu, intWidth)
+	} else if (eTopM && !eTopM.contains(eSource) && !menuRow.contains(eSource))
+		hideTopMenu(eTopM);
+}
+
+function showTopMenu(eSource, intMinWidth) {	
+	x  = window.event.srcElement.offsetLeft + window.event.srcElement.offsetParent.offsetLeft;
+	y  = menuRow.offsetHeight - 2;
+	
+	if (intMinWidth < 150) intMinWidth = 150		
+	if (eSource.style.width < intMinWidth) eSource.style.width = intMinWidth;
+	var intTemp = parseInt(eSource.style.width);		
+	intTemp = Number(x) + intTemp;
+	var intDocWidth = document.body.clientWidth;
+	
+	if(intTemp > intDocWidth) {
+		var intDiff = intTemp - intDocWidth
+		x = x - intDiff - 3; 
+	}
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='hidden';
+	eSource.style.left = x;
+	eSource.style.top = y;
+	eSource.style.visibility = "visible";
+	eSource.style.filter = "alpha(opacity=90)";
+	eTopM = eSource;
+}
+
+function hideTopMenu(eSource){
+	eSource.style.filter = "none";
+	eSource.style.visibility = "hidden";
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='visible';
+}
+</script>
+<style>
+BODY{margin:0;}
+.bTB{background-color:#006600;color:#FFFFFF;font-size:12px;font-family:Arial;border-bottom:2px solid #000000;}
+A.bT:Link,A.bT:Visited,A.bT:Active{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Hover{color:#FFFF99;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+.bSB{background-color:#006600;color:#FFFFFF;padding:2px;font-size:12px;font-family:Arial;border:2px solid #000000;border-top:2px solid #005500;visibility:hidden;position:absolute;z-index:10;left:0;}
+A.bS:Link,A.bS:Visited,A.bS:Active{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Hover{width:100%;padding:2px;background-color:#228822;color:#FFFF99;font-family:Arial;text-decoration:none;}
+B.sh{color:#FFFFFF;}
+</style>
+<div class=bTB>
+<table cellpadding=0 cellspacing=0 border=0 width="100%" background="http://images.barrysworld.com/hmenu/lback.gif" id=menuRow><tr>
+<td class=bwHeader width=19><a href="http://www.barrysworld.com/"><img src="http://images.barrysworld.com/hmenu/lsmile.gif" width="19" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+<td class=bwHeader>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divb name=topMenu>BarrysWorld</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/games/gameservers.asp" id=divg name=topMenu>Game Servers</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/membership/" id=divm name=topMenu>Membership</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divn name=topMenu>Nation</a>&nbsp;&nbsp;
+<a class=bT href="http://leagues.barrysworld.net/" id=divl name=topMenu>Leagues</a>&nbsp;&nbsp;	
+</td><td align=right><a class=bT href="http://www.barrysworld.com"><img src="http://images.barrysworld.com/hmenu/llogo.gif" width="121" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+</tr></table>
+</div><div class=bSB id=b>
+<a class=bS href="http://www.barrysworld.com/news/">News</a><br>
+<a class=bS href="http://www.barrysworld.com/Hosting/">Web Hosting</a><br>
+<a class=bS href="http://forums.barrysworld.com/">Forums</a><br>
+<a class=bS href="http://guides.barrysworld.com/">Guides</a><br>
+</div><div class=bSB id=g>
+<a class=bS href="http://www.barrysworld.com/games/gameservers.asp">Public Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/">Bookables</a><br>
+<a class=bS href="http://www.barrysworld.com/barryservers/">BarryServers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/gameservermasters.asp">Master Servers</a><br>
+</div><div class=bSB id=m>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/PlayerSearch.asp">Players</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/TeamList.asp">Teams</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/RecruitmentList.asp">Player Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/RecruitmentList.asp">Team Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/barrybank/">BarryBank</a><br>
+</div><div class=bSB id=n>
+<a class=bS href="http://www.quakenation.com/">QuakeNation</a><br>
+<a class=bS href="http://www.tribesnation.co.uk/">TribesNation</a><br>
+<a class=bS href="http://www.fortressnation.com/">FortressNation</a><br>
+<a class=bS href="http://www.actionnation.com/">ActionNation</a><br>
+<a class=bS href="http://www.tecnation.co.uk/">TechNation</a><br>
+<a class=bS href="http://www.lanpartynation.com/">LanPartyNation</a><br>
+<a class=bS href="http://www.rtcwnation.com/">RTCWNation</a><br>
+<b>Other Network Sites</b><br>
+<a class=bS href="http://www.xsreality.com/">XSReality</a><br>
+<a class=bS href="http://www.cscentral.com/">CSCentral</a><br>
+<a class=bS href="http://www.unrealfortress.com/">UnrealFortress</a><br>
+<a class=bS href="http://www.avpnetwork.com/">AvP Network</a><br>
+</div><div class=bSB id=l>
+<b class=sh>Quake 3</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwq3dml/">BWQ3DML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ctfl/">BWQ3CTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwra3l/">BWRA3L</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3utl/">BWQ3UTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpml/">BWCPML </a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ftl/">BWQ3FTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpmral/">BWCPMRAL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3pbl/">BWQ3PBL</a><br>
+<b class=sh>Half-Life</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwcsl">BWCSL</a><br>
+<a class=bS href="http://www.bwtfcl.com/">BWTFCL</a><br>
+<a class=bS href="http://www.hlccl.com">HLCCL</a><br>
+<b class=sh>Other</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwjk2l">Jedi Knight II: Jedi Outcast</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwmohl">Medal of Honor</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwrtcwl">Return to Castle Wolfenstein</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwefl/">Star Trek Voyager: Elite Force</a><br>
+</div>
+
+
+<!-- Magic Quotes - 0-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>ActionNation.com  - For all your Action needs</title>
+	<link rel="STYLESHEET" type="text/css" href="style/default.css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<table bgcolor="#9B7A21" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="images/main_logo.jpg" width="454" height="54" alt="" border="0"><br></td>
+	<td>&nbsp;</td>
+	<td align=right><img src="images/main_right.jpg" width="312" height="54" alt="" border="0"></td>
+</tr>
+</table>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0>
+<tr>
+	<td>
+	<table bgcolor="#CECECE" width="100%" cellpadding=2 cellspacing=0 border=0>
+	<tr>
+		<td>&nbsp;&nbsp;<span class="btext"><a class="blink" href="http://www.quakenation.com/">QuakeNation</a> | <a class="blink" href="http://www.tribesnation.co.uk">TribesNation</a> | <a class="blink" href="http://www.actionnation.com/">ActionNation</a> | <a class="blink" href="http://www.lanpartynation.com">LanPartyNation</a> | <a class="blink" href="http://www.rtcwnation.com">RTCWNation</a></span></td>
+		<td align=right></td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+	<td width=150 valign=top>
+	<!-- Left Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Main</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b><a class=wlink href=default.php>News</a></b><br>
+<a href="default.php?section=1" class="wlink">General News</a><br><a href="default.php?section=2" class="wlink">Counter-Strike</a><br><a href="default.php?section=3" class="wlink">Action Quake 2</a><br><a href="default.php?section=4" class="wlink">Halflife</a><br><a href="default.php?section=5" class="wlink">Urban Terror</a><br><a href="default.php?section=6" class="wlink">Unreal Tourney</a><br><a href="default.php?section=7" class="wlink">Quake</a><br><a href="default.php?section=27" class="wlink">Leagues</a><br>
+<a class=wlink href=mailto:deathwatch@barrysworld.com>Submit News</a>
+<p>
+<b>Leagues</b><br>
+<a href="league.php?section=14" class="wlink">BWAQSL</a><br><a href="league.php?section=15" class="wlink">BWCSL</a><br>
+<p>
+<b>Columns</b><br>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width=60%><a href="column.php?section=29&index=594" class="wlink">Noz</a></td><td width=40%><span class=wtext>(07/07/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=587" class="wlink">Noz</a></td><td width=40%><span class=wtext>(20/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=584" class="wlink">Excession</a></td><td width=40%><span class=wtext>(02/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=560" class="wlink">Excession</a></td><td width=40%><span class=wtext>(19/02/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=550" class="wlink">Noz</a></td><td width=40%><span class=wtext>(30/01/02)</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Content</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b>Features</b><br>
+<a href="feature.php?section=9" class="wlink">Features</a><br><a href="interview.php?section=10" class="wlink">Interviews</a><br><a href="review.php?section=11" class="wlink">Reviews</a><br>
+<p>
+<b><a class=wlink href=http://forums.barrysworld.com/forumdisplay.php?forumid=28>Forum</a></b><br>
+<b><a class=wlink href=files.php>Files</a></b><br>
+<b><a class=wlink href=links.php>Links</a></b><br>
+<b><a class=wlink href=contact.php>Contact</a></b><br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Lists</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<b><a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp' class='wlink'>Team Lists</a></b><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp' class='wlink'>Hosted Sites</a></b><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Nation Network</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.actionnation.com/' class='wlink'>ActionNation</a><br>
+	<a href='http://www.fortressnation.com/' class='wlink'>FortressNation</a><br>
+	<a href='http://www.quakenation.com/' class='wlink'>QuakeNation</a><br>
+	<a href='http://www.tribesnation.co.uk/' class='wlink'>TribesNation</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Powered by..</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/' class='wlink'>BarrysWorld</a><br>
+	<a href='http://hosted.barrysworld.net/neville' class='wlink'>Neville</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+	<td width="100%" valign=top>
+	<!-- Content -->
+	<img src="images/spacer.gif" width="2" height="5" alt="" border="0">
+	<table width="100%" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+		<td width="100%">
+		<div align="center"></div>
+		<p>
+<table width="100%">
+<tr>
+	<td valign=top>
+	<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%">Other Interviews</td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE"><a href="interview.php?section=10&index=349">Action Half-Life Interview</a> (27/08/01)</br><a href="interview.php?section=10&index=336">Opera Interview</a> (11/08/01)</br><a href="interview.php?section=10&index=328">Annihilation Interview</a> (10/08/01)</br><a href="interview.php?section=10&index=324">Navy Seals Covert Operations Interview</a> (02/08/01)</br><a href="interview.php?section=10&index=312">The Specialists Interview</a> (28/07/01)</br><a href="interview.php?section=10&index=36">Massive Software</a> (31/12/00)</br><a href="interview.php?section=10&index=35">Azm0 of Unreal Fortress Fame</a> (31/12/00)</br></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+</tr>
+<tr>
+	<td valign=top>
+	<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%">Annihilation Interview - <span class=bsmall>Fri 10 August 2001 11:18:23</span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2><A href=http://www.planetquake.com/annihilation target=_blank class=colourise>Annihilation</a> is a new total conversion for Quake 3 Arena. The mod changes the game from its original gothic deathmatch style gameplay to a World War 2 setting. It features a unique class and rank system that makes players dependable of each other. Annihilation is set over a variety of realistic environments in which players have access to realistic weapons, drivable vehicles and a number of gameplay modes, including "Destroy Target" and "Rescue Albert". The interview covers the history of the mod, what will be included in future versions of the mod and what the mod is about. Beta 1.1 has been out for some time and is worth checking out. On the BW FTP, you can find Beta 1 <a href=ftp://ftp.barrysworld.com/pub/games/quake3/mods/annihilation/official_patches/an_beta1.exe class=colourise target=_blank>here</a> and the Beta 1.1 update <a href=ftp://ftp.barrysworld.com/pub/games/quake3/mods/annihilation/official_patches/an_update1.exe class=colourise target=_blank>here</a>. I interviewed a number of people from Headshot Entertainment, who are the developers of the mod. They were Cynic (project leader, lead modeler, lead animator, mapper), Kalifa (project leader, lead coder, content director), Psycho (coder), Mindg@mer (lead 2D artist, lead texture artist, skinner) and Rullbot (mapper). Thanks a lot to Warmonkey for organising things. You can contact him <a href=mailto:STW2Warmonkey@aol.com class=colourise>here</a> if you have any further questions. Finally, thanks to all of the team for taking time out from developing the mod to answer my questions:<br><br><span class=colourise>Question:</span> Can you introduce yourself and describe what part you played in developing the mod?<br><span class=colourise>Cynic:</span> My name is Florian "Cynic" Gerhardt, a 20 year old student from Germany, and together with Kalifa, I lead this project. I take care of the organizational stuff, on Planetquake for example, and I, along with Berg, who recently joined the group, do the modelling. I then animate everything we've made 3D. That should cover the highlights :)<br><span class=colourise>Psycho:</span> Hi, I'm Psycho. I'm one of the 3 coders of Annihilation. I mainly concentrate on the visuals of Annihilation, but I also do a lot of game coding!<br><span class=colourise>Kalifa:</span> I'm Kalifa, an 18-year-old Swedish guy who is Annihilation's 2nd leader and head coder. I code and organize (or tries) the team :)<br><span class=colourise>Rullbot:</span> My name is Stefan Hansson AKA Rullbot. I make maps for Annihilation.<br><span class=colourise>Mindgamer:</span> Peace out! My name is Petter Andersson and I am "Mindgamer" NOT "Mindg@mer". I hate that stupid @at@ sign. So teammates stop using the ;) @. Even the team didn't know this. Anyway. I'm 18 years old and I'm the 2D guy for Annihilation. I'm the one that is behind almost every single 2D graphic shown INGAME (skins, textures, huds, menues). You name it.<br><span class=colourise>Warmonkey:</span> Adam King. Press Relations for Headshot Entertainment <br><br><span class=colourise>Question:</span> Can you give a brief description of what Annihilation is about? <br><span class=colourise>Cynic:</span> I've heard and answered this question more than my ears (rather eyes) can handle, so I'll copy and paste from our abouts section :)<br>"Annihilation is a Quake3 Total Conversion that changes the game from its original gothic deathmatch style gameplay to a World War 2 setting that aims for a highly team oriented  strategy. Featuring a unique class and rank system makes players dependable of each other, not allowing any one man army kamikaze runners. You will find realistic weapons in Annihilation, as well as a whole set of realistic environments to battle it out in. Implementations like drivable vehicles (motorcycles in our first release), climbing, proning, gamemodes like "Destroy Target" and "Rescue Albert" all contribute to the modification's uniqueness. The feature we are most proud of is our commander and rank system, allowing each team to vote on a player to become head of the team (commander), who can then promote team-members for good deeds, granting them more experience, which results in the possibility to move faster and carry more equipment for example." <br>Future versions will concentrate on more heavy war features, specializing on the importance of vehicles for example, while these are just a fun factor in the current release.<br><span class=colourise>Psycho:</span> Annihilation is a Quake 3 modification which concentrates on World War 2. We have different scenarious, different classes and lots of great teamplay action.<br><span class=colourise>Kalifa:</span> Annihilation is about ww2 and teamplay. It's best played in clanwars, because you need to trust your team. Every 4 rounds, the team selects a commander who will promote his teammates if the team gets promopoints (if they win a round).<br><span class=colourise>Rullbot:</span> Annihilation is a WWII based mod. There are 2 different teams with totally different weapons. The allies and the Axis. And they are fighting against each other in a couple of different scenarios.<br><span class=colourise>Mindgamer:</span> War in all kind of ways.<br><br><span class=colourise>Question:</span> How does your mod differ from other realism mods like Counter-Strike or Front Line Force? <br><span class=colourise>Cynic:</span> It's World War 2 ;)<br>Hmmm... what else? The feeling I guess. Every realism mod somehow shares a few features, but we tried to be as unique as possible, specializing on team play with our rank and commander system. And whatever features we "copy", we intend to make a little different and better than the originals. <br><span class=colourise>Psycho:</span> Well, there are a couple of differences between our mod and Counterstrike (or Front Line Forces). We have different scenarious, commander system, different weapons and a totally different gameplay. We also have new aspects (such as climbing, etc.), which aren't included in the other 2 mods and which give the game a better feeling.<br><span class=colourise>Kalifa:</span> We're aiming for more teamplay, forcing the players to behave nice because of the commander :) And you need your team. If you run away alone, you WILL get killed, and yes, every mod says the same, even CS. But it's proven in annihilation ;)<br><span class=colourise>Rullbot:</span> Well Annihilation is totally different from those mods cause it's about WWII. The weapons and the scenarios are totally different. So I don't think you can really compare annihilation with those 2 mods.<br><span class=colourise>Mindgamer:</span> We all started out as newbies, which lead to a different kind of feeling for the mod. Beta1 was quite unstable in my opinion but it was not meant to be perfect either. I mean (what can newbies do. Perfect games?) hardly. I think our team will go for publicity and glory for Beta2. I think it is first then our mod can really differ from other mods since we're aiming for a great number of ways to play Annihilation. Right now we only have VS, bombing and rescue modes, which is the basic parts of a realism mod. We are going to have tons of new game modes for beta2, since our coder kalifa has implemented so many new cool features not shown in Beta1. This will make the difference from other mods even higher.<br><br><span class=colourise>Question:</span> What was the main factor that made you decide to make this mod? <br><span class=colourise>Cynic:</span> Experience. I wanted to learn, and maybe make myself known in the mod community. You know, everyone starts out somewhere, and this was my idea to have people become aware of another good modeller.<br><span class=colourise>Psycho:</span> Hmmm.....hard to say. Me and Cynic always played different mods, then we decided to make one by ourselfs and started making Annihilation. <br><span class=colourise>Kalifa:</span> I wanted to learn how to code a bit better. I wanted to have fun and create a game that I liked ;) That was when I decided to make a mod...I was a gamer back then, I'm just creating games now :)<br><span class=colourise>Rullbot:</span> Well actually it was my brother (lopus) and some of his friends that were involved in this mod at first. At that point I was making maps for counterstrike. But then I got tired of counterstrike and wanted to make maps for something else. So then I started working with the annihilation crew.<br><span class=colourise>Mindgamer:</span> You`ve got to start somewhere, right, and I didn't know where to start back then. So, I joined the HSE team. The whole team was the ideal team. None of us had ever made a mod before which meant that all of us knew that all of our questions were equal. No one could ever say, Hey, that opinion is not right. That made the team equal from the start. This is exactly what real game development is about, listening to one and another and taking every note seriously. And that is exactly what we did. With the slight difference that we started out as newbies. <br><br><span class=colourise>Question:</span> Who came up with the idea for this mod?<br><span class=colourise>Cynic:</span> The idea for this mod has changed a lot through its progress, and we've never had a design doc actually…we're just going along. The original idea of a ww2 themed mod, however,  has its origins in Kalifa's mind.<br><span class=colourise>Psycho:</span> Different people ;). Cynic and me started making the mod Annihilation, but we saw that it was very hard to get new members for our project. Then we found 2 other mods, which had the same idea and the same problems we had. So we combined all 3 mods together and started working together on Annihilation.<br><span class=colourise>Kalifa:</span> I would say that Cynic and myself did. We merged our two mods and created annihilation. The rest of the team has contributed with their ideas, so this game wouldn't be what it is today without them ;)<br><span class=colourise>Rullbot:</span> Hehe, I don't really know. I think it was Lopus and his friends.<br><span class=colourise>Mindgamer:</span> The main idea came from Kalifa and Cynic but the team has been involved as well under development.<br><br><span class=colourise>Question:</span> What kind of research is required for developing a realistic WW2 mod? <br><span class=colourise>Cynic:</span> A grandpa is required :)<br>BigJB gets us all info and pictures needed on WW2 aspects. Concerning the modelling and animating, I've got Berg who seems to know a lot about accuracy as well.<br><span class=colourise>Psycho:</span> Deppends. I had a lot of history in school, but of course we needed some research on the different weapons as well as the clothes to get the realism in this mod! We had many different people who helped out on this!<br><span class=colourise>Kalifa:</span> Oh, most maps and weapons research. We watched a lot of movies for the special effects, but its quite hard :/<br><span class=colourise>Rullbot:</span> Well the main research is probably the weapons. The weapons should look and work as they did in WWII. But it's not very hard to research. You can find almost everything on the web. You also have to research thing such as the clothes, inventory and stuff like that.<br><span class=colourise>Mindgamer:</span> Every realistic mod should have a high level of research. We made some research, but not as much as we should've done.  Beta1 didn't really have that much of research except for some parts (the most important parts) what weapons will look like and such. But we all were newbies at the beginning which resulted in less accurate things anyway. But as I said before Beta2 will be a brand new thing. Almost everything that Annihilation is right now will be redone, trashed or replaced with completely new stuff.<br><br><span class=colourise>Question:</span> During development, did you get any ideas from watching movies or playing other games? <br><span class=colourise>Cynic:</span> Saving Private Ryan is inspiring, but still, we didn't find any ideas from games or movies, we just use those for reference here and there.<br><span class=colourise>Psycho:</span> Just say "Saving Private Ryan" :)<br><span class=colourise>Kalifa:</span> We watched movies...and played games to see what not to do ;)<br><span class=colourise>Rullbot:</span> HELL yeah. Well I don't think we got any ideas from any other games. But from movies, hehe, Saving Private Ryan was a very good movie. =) I think everybody in the team has seen it about 1 million times.<br><span class=colourise>Mindgamer:</span> I got very many ideas under the development, both from games and movies. But many of them were too advanced to do with the skills I had then, but also the Q3 engine. So many of the best ideas I had never came longer than to the thinking process,  which means even the team didn't hear about them.<br><br><span class=colourise>Question:</span> How long has this mod been in development?<br><span class=colourise>Cynic:</span> Maybe 18 months now<br><span class=colourise>Psycho:</span> 1 1/2 years.<br><span class=colourise>Kalifa:</span> A bit longer than a year, developing went much faster after half a year, and goes on quite slow now again.<br><span class=colourise>Rullbot:</span> For a very long time, I don't really know. I think the ones who were with it from the beginning know better than me.<br><span class=colourise>Mindgamer:</span> Slightly over one year. <br><br><span class=colourise>Question:</span> While making the mod, what difficulties did you experience? How did you overcome these difficulties? <br><span class=colourise>Cynic:</span> We haven't had many difficulties concerning the implementations of ideas really, since for some reason, our genius coders seem to override every restriction in the engine easily. Cheers.<br>Even though we've got a whole bunch of "different" people on board our ship, we get along really well. We're a great team that doesn't convey a tense atmosphere, and anyone is welcome.<br><span class=colourise>Psycho:</span> Well the main difficulties was the Quake3 engine. The Half Life engine has already realism in it. Quake3 isn't a realistic game, so we had to code all the aspects of realism into Annihialtion. How to overcome those difficulties? LOTS OF CODING :)<br><span class=colourise>Kalifa:</span> Finding experienced people was probably the hardest task but kicking people off the team was also quite hard.<br><span class=colourise>Rullbot:</span> The biggest difficulties I think is laziness. But just give everybody a smack in the head and they'll work. =) No but seriously I don't think we've had any big difficulties. There might have been some small bugs and stuff like that but nothing we can't handle.<br><span class=colourise>Mindgamer:</span> The team is almost perfect. But when working with mates over the net it can pop up some communication problems that often resulted in stress and/or frustration. We also had some problems with the younger part of the team. I remember we had a mapper who was 13 years old, he claimed that no one was listening to him (which we did). It all ended when he sent a mail to our within team mail (e-groups). Anyway, he wrote a letter containing harsh lines from an EMINEM album, which we understood as a self -determined goodbye. You can't throw crap at people and expect that they warmly will welcome you back. But all in all, we do have a great team, which won't easily brake.<br><br><span class=colourise>Question:</span> If you were starting to develop the mod again, is there anything you would change (the development process, game features, etc)? <br><span class=colourise>Cynic:</span> Actually, I would not decide to create another realism mod, since it restricts your imagination. I'd love to work on a real "Arena" project, where I'm free to create anything I can think of. Realism is fun to play, but can get boring to create.<br><span class=colourise>Psycho:</span> Don't release a BETA without having it tested on dedicated servers ;)<br><span class=colourise>Kalifa:</span> Hmm, we would test it more and squish all bugs as they entered ;)<br><span class=colourise>Rullbot:</span> Hmm I don't think I can really answer that question since I wasn't in the mod from the beginning. But for the time I have been in the team, there was nothing that I would like to have changed in the development.<br><span class=colourise>Mindgamer:</span> I would make Beta1 as we are developing Beta2 now.<br><br><span class=colourise>Question:</span> Why did you decide to make your mod for Quake 3? Have you experienced any limitations by using the Quake 3 engine? How much support (if any) have you received from id? <br><span class=colourise>Cynic:</span> Quake3 just features state of the art graphics, and I fell in love with ID Software titles ever since Doom. Like I mentioned in the answer two questions above, we didn't come across any hurdles that were impossible to overcome.<br>Concerning ID Software. Due to them working hard on Doom 3 and Point Releases, they didn't find any time for their community. I respect them continuing work on Quake3, and they have a point when saying they're busy with future titles, but I still find it somewhat disappointing not to really become the slightest bit of feedback on Annihilation, just repeatedly a "We're looking forward to playing it, but haven't had a chance yet."<br><span class=colourise>Psycho:</span> Quake3 is the most advanced engine so far (for example curved surfaces, awesome graphic, etc.). Lots of limitations (for example, 16 weapons!), didn't get any support from ID (they have too much to do on Doom3).<br><span class=colourise>Kalifa:</span> Id haven't given us any support, they sent us a mail and said that they wanted to test an but then there was nothing. The q3 engine is really fun to work with, nearly no limitations except dynamic lights :)<br><span class=colourise>Rullbot:</span> Hehe, I don't think I can answer that question either since I wasn't in the team when they started the mod.<br><span class=colourise>Mindgamer:</span> I think this is up to the coders and leaders to answer, since I generally don't know so much about the Quake 3 engine. Except that I think it's a good engine to start mod making for. We did get noticed by ID, they sent a few mails, but what I've heard from Kalifa and Cynic, they never contacted us again. It may be because we suck so damn much or that they are working on a new project. Who knows? It's up to ID to answer.<br><br><span class=colourise>Question:</span> Will there be any major gameplay additions or improvements in future versions? For example, will there be any new weapons or teamplay modes?<br><span class=colourise>Cynic:</span> We'll be featuring new player classess, meaning new weapons, new features, effects and new game modes as well, yes. Actually, we're revamping every single aspect from version 1.0. It'll be so different, you won't re-recognize it.<br><span class=colourise>Psycho:</span> Of course there will be new weapons (such as flamethrower), there will also be 2 new classes in BETA2 and a couple more scenarious. BETA2 will be way better then BETA1, I can promise u that ;)<br><span class=colourise>Kalifa:</span> Well of course, there will be new weapons and gameplays...and tons of them :) Other things will be improved effects... We created all of the required stuff for b1 (rotating doors, breakables, location damage, ladders, etc) and beta2 is all about new gamemodes and new weapons and MORE VISUAL EFFECTS ;) and tweaking of course.<br><span class=colourise>Mindgamer:</span> Yes indeed! :D <br><br><span class=colourise>Question:</span> What new maps are likely to be included in future versions?  What sort of settings will these new maps be based on? <br><span class=colourise>Cynic:</span> A whole bunch of terrain maps hopefully. We want them to resemble huge battlefields, creating a suitable environment for our new game modes that will be laying emphasis on drivable and controllable objects. You'll be feeling a whole lot more WAR in future versions.<br><span class=colourise>Psycho:</span> Ohama and the last scene of "Saving Private Ryan".<br><span class=colourise>Kalifa:</span> Phew, maps...that's the sad part of annihilation, we are looking for experienced mappers. But beta2 WILL have new maps, better lighted and brand new textures :) Some maps will be based on Normandy (d-day) and some scenes from the movie Saving Private Ryan.<br><span class=colourise>Rullbot:</span> Hmm, the new maps for the newer versions will probable be more Terrain maps. That will probably be the biggest differences in the mapping section.<br><span class=colourise>Mindgamer:</span> ehmmm. I don't know. Ask the mappers but I am remaking every single texture to the maps as we talk, including 80% new textures (BRIGHTER) :)<br><br><span class=colourise>Question:</span> Will there be any other changes in future versions?<br><span class=colourise>Cynic:</span> Yes (sorry, it's late here in Germany at the moment, and I'm getting tired)<br><span class=colourise>Psycho:</span> Lots, u will see!<br><span class=colourise>Kalifa:</span> All new models/skins, more player models, new textures, more gamemodes, more vehicles and more and new everything ;)<br><span class=colourise>Rullbot:</span> HELL YEAH, well I don't know any big changes now but there will probably be some changes. Anything that will make this mod better.<br><span class=colourise>Mindgamer:</span> The whole concept over Annihilation will change as we get better.<br><br><span class=colourise>Question:</span> How large can people expect the next version  to be? <br><span class=colourise>Cynic:</span> We really can't say. Large.<br><span class=colourise>Psycho:</span> Hmm....hard to say, but it will grow a couple of MB!<br><span class=colourise>Kalifa:</span> Phew, it might be a bit big for modemers. I'd say about 150 mb..maybe more.<br><span class=colourise>Rullbot:</span> I don't have any idea =) At least as big as it is now.<br><span class=colourise>Mindgamer:</span> F-4-T (FAT)<br><br><span class=colourise>Question:</span> How much longer to do plan to keep developing Annihilation? <br><span class=colourise>Cynic:</span> As long as the team sticks together and work doesn't get too boring. It's fun and a great experience, and as long as that lasts on, I see no reason to stop.<br><span class=colourise>Psycho:</span> As long as I have fun!<br><span class=colourise>Kalifa:</span> Until we drop dead from caffeine loss.<br><span class=colourise>Rullbot:</span> I don't know. It depends on how far it will go. But I will at least work until beta 3.<br><span class=colourise>Mindgamer:</span> Till I know what else is better.<br><br><span class=colourise>Question:</span> What are you most proud of in Annihilation? <br><span class=colourise>Cynic:</span> The fact that we got it done and our community.<br><span class=colourise>Psycho:</span> Commander System, ingame graphics, 32 weapon code ==> cause I coded that ;)<br><span class=colourise>Kalifa:</span> I'm most proud of our code and special features, but I bet the other guys are most proud of their stuff ;) Overall, I'd say that I'm most proud of the team that created this :)<br><span class=colourise>Rullbot:</span> The thing I am most proud of is probably the commander system. Well it didn't work as it should in the beginning. But with the newest patch it works perfectly. <br><span class=colourise>Mindgamer:</span> I get proud every time I've managed to remake all the player skins all over again. I also get proud that I get so much variation from 1 player model in 5 skins.<br><br><span class=colourise>Question:</span> What advice would you give to anyone who is creating a mod? <br><span class=colourise>Cynic:</span> Don't let people or mistakes get you down. Don't pimp or brag…you won't do yourself a favor. In general: have faith in what you do.<br><span class=colourise>Psycho:</span> Keep on trying! In the beginning it is hard, but if u follow your idea, then u will succede!<br><span class=colourise>Kalifa:</span> Give 100%, don't let bugs ruin the mod, polish it, TEST it a lot! Both online and single vs bots (if its a multiplayer game).<br><span class=colourise>Rullbot:</span> Hmmm. Keep control of your team and make sure that they all are working as they should or else there wont be any progress at all.<br><span class=colourise>Mindgamer:</span> Find a good solid team that has a new idea and that accepts newbies. Also make sure not to skip school over a mod since your grades are going down very fast. Trust me I'm there! Do not get a girlfriend under Beta1 development. Do not go on longer vacations. And do not have a life.<br><br><span class=colourise>Question:</span> Are you interested in creating a brand-new mod in the future or perhaps porting Annihilation to another game? <br><span class=colourise>Cynic:</span> We'll be going a step farther, creating commercial games with our own or licensed engines. Annihilation was just the very start into the gaming industry.<br><span class=colourise>Psycho:</span> I'm interrested in creating an own game, but first I will go to a university! Then we will see, what comes next!<br><span class=colourise>Kalifa:</span> Mods are fun for a while, but some stuff can only be done when you've got control over your own engine. That's all I can say ;)<br><span class=colourise>Rullbot:</span> I'm very interested in making a brand new mod or even a brand new game. But I'm not so sure I would want to port annihilation to another game. If I made another mod for another game, I would start something brand new. <br><span class=colourise>Mindgamer:</span> I don't know. It's a hard question since I'm a RPG fan and not the realism kind of guy. Ask me this again after Beta2. <br><br><span class=colourise>Question:</span> What is your opinion of the mod community in general?<br><span class=colourise>Cynic:</span> Honestly, I find it sad to see that so many people do no longer appreciate or understand the point of a released BETA version. The mod community by now expects too much of first versions, always comparing a new mod version 1.0 to an existing version 4.0 or 5.0 of another mod. This kind of attitude gets down a lot of developers, since badmouthing makes them think about why they're doing what they're doing. If their work is not appreciated, they'll step back.<br><span class=colourise>Psycho:</span> Absoluty great. Of course there are a lot of fans which don't respect your work and start bitching at you. Those are the worst of all. They don't see that we are doing this for free and in our freetime. We aren't getting payed at all, but they want to see a modification, which is like a buyable game! But otherwise it is great and we got a lot of support and help >from others! Thanx to all out there for the help!<br><span class=colourise>Kalifa:</span> The q3 mod community has come so far in only one year! Half-Life mods still use boundingboxes for example, while Urban Terror (a great mod btw) has a polygon check. The guys that creates the q3 mods are all nice to each others, the coders (I mostly talk to coders if I talk to someone from another team) helps each other and overall there is a "big family" feeling ;) Its awesome :) <br><span class=colourise>Rullbot:</span> Well I don't know so much about the mod community. I just do my part for annihilation and things will work out.<br><span class=colourise>Mindgamer:</span> Spoiled little brats.... :D j/k</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>	</td>
+</tr>
+</table>
+
+		</td>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+	</tr>
+	</table>
+	
+	</td>
+	<td width=150 valign=top>
+	<!-- Right Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="default.php?section=5&index=600" class="wlink"> - Urban Terror Beta 2.6 Released</a><br><a href="default.php?section=1&index=586" class="wlink"> - Operation Red Falcon Update</a><br><a href="default.php?section=1&index=567" class="wlink"> - NS-CO Released</a><br><a href="default.php?section=6&index=566" class="wlink"> - UT - Strike Force 1.75 Released</a><br><a href="default.php?section=3&index=563" class="wlink"> - TNG 2.6 released</a><br><a href="default.php?section=5&index=561" class="wlink"> - Beta Release and League News.</a><br><a href="default.php?section=5&index=559" class="wlink"> - Urban Terror Bug Fix</a><br><a href="default.php?section=5&index=558" class="wlink"> - Urban Terror Beta 2.4 is here!!</a><br><a href="default.php?section=4&index=557" class="wlink"> - DoD Beta 2 Win32 Client</a><br><a href="default.php?section=4&index=556" class="wlink"> - Day of Defeat Beta 2 Server Files</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Features</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="interview.php?section=10&index=349" class="wlink"> - Action Half-Life Interview</a><br><a href="interview.php?section=10&index=336" class="wlink"> - Opera Interview</a><br><a href="interview.php?section=10&index=328" class="wlink"> - Annihilation Interview</a><br><a href="interview.php?section=10&index=324" class="wlink"> - Navy Seals Covert Operations Interview</a><br><a href="interview.php?section=10&index=312" class="wlink"> - The Specialists Interview</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="
+http://www.barrysworld.com/news/default.asp?Item=27596&Category=1" class="wlink"> - 
+
+DoD goes retail !</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27595&Category=2" class="wlink"> - 
+
+BattleField 1942 Bookable Servers Launched woohoo!</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27590&Category=2" class="wlink"> - 
+
+RTCW Changes</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27588&Category=2" class="wlink"> - 
+
+GAME.NET Launches</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27586&Category=1" class="wlink"> - 
+
+Splinter Cell Demo</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27585&Category=2" class="wlink"> - 
+
+A Trio of Bookables</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27584&Category=1" class="wlink"> - 
+
+Age of Mythology Patch</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27583&Category=1" class="wlink"> - 
+
+Impossible Creatures Multiplayer Test</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27582&Category=1" class="wlink"> - 
+
+Microsoft to Publish Steel Battalion</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27581&Category=1" class="wlink"> - 
+
+Art and Level Design</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Services</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/hosting/' class='wlink'>Get your site hosted</a><br>
+	<a href='http://www.barrysworld.com/games/liaisons.asp' class='wlink'>Server Liaisons/Admins</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/gameservers.asp' class='wlink'>Public Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/counterstrike/CounterStrikeServers.asp' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/games/halflife/HalfLifeServers.asp' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/quake2/quake2servers.asp' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/quake3/quake3servers.asp' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/unrealtournament/UnrealTournamentServers.asp' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/bookings/' class='wlink'>Bookable Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Half%2DLife' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+2' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+3+Arena' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Unreal+Tournament' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://leagues.barrysworld.com/' class='wlink'>Leagues</a></b><br>
+	<a href='http://leagues.barrysworld.net/bwcsl/' class='wlink' target=new>BWCSL</a><br>
+	<a href='http://leagues.barrysworld.net/bwaqsl/' class='wlink' target=new>BWAQSL</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<p>
+	<div align="center">Visitors since 03/05/01<br>
+	<img src="http://linweb02.barrysworld.com/cgi-bin/Count.cgi?trgb=ffffff&dd=E&reload=F" alt="Count">
+	</div>
+	<p>
+	<div align="center">
+	<a href="http://www.barrysworld.com" target="_blank"><img src="http://images.barrysworld.com/button_bw.gif" border=0 alt="Hosted by Barrysworld with Barry Power!"></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.actionnation.com/"><img src="http://images.barrysworld.com/nation/button_anation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.rtcwnation.com/"><img src="http://images.barrysworld.com/nation/button_rtcwn.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.lanpartynation.com/"><img src="http://images.barrysworld.com/nation/button_lp.gif" border=0></a><br>	</div>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0 border=0 background="images/main_footfill.gif">
+<tr>
+	<td><img src="images/spacer.gif" width="1" height="39" alt="" border="0"></td>
+	<td align=right><a href="http://www.actionnation.com/neville/"><img src="images/main_footer.gif" width="143" height="39" alt="" border="0"></a></td>
+</tr>
+</table>
+<table width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#CECECE">
+<tr>
+	<td colspan=2>
+	<div align="right" class=bsmall>
+	ActionNation is part of the <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a> Nation Network<br>
+	Copyright &copy; 2001 <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a></div><br>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>
