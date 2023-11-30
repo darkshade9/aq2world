@@ -1,0 +1,639 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/developer.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<title>LTKTBM - Developer Section</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Games, Quake 2, ltktbm, action, free, mod, openAL, developer">
+<META name="description" content="AQ2 ltktbm, standalone & mod, advanced engine, developer section"> 
+<style>
+
+BODY
+{
+    BACKGROUND-COLOR: #404040;
+}
+A:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: underline
+}
+A:link
+{
+    COLOR: #C0C0C0;
+    TEXT-DECORATION: underline
+}
+A:visited
+{
+    COLOR: #D0D0D0;
+    TEXT-DECORATION: underline
+}
+A:hover
+{
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+	background-color: #999999;
+}
+
+</style>
+</head>
+
+<body>
+<div align="center"><center>
+
+<table cellpadding="0" cellspacing="0" width="100%" align="center"><tr>
+        <td align="center" bgcolor="#000000"><font color="#999999">Latest Full 
+          Release: <a href="http://www.cam-direct.co.uk/ltk/downloads/downloads.php">AQ2 
+          LTKTBM Edition v1.7b</a></font></td>
+	<td align="center" bgcolor="#000000"><font color="#999999">Latest A3D engine: <a href="http://www.cam-direct.co.uk/ltk/downloads/downloads.php?type=updates">q2a3d v0.9.9.191</A></font></td>
+        <td bgcolor="#000000" align="center"><font color="#999999">Latest Update: 
+          <a href="http://www.cam-direct.co.uk/ltk/downloads/downloads.php?type=updates">1.7b->1.8aR3</a>
+          </font></td>
+      </tr>
+<tr>
+<td bgcolor="#000000" align="center" colspan=3><font color="#999999"></font>
+<a href="http://www.cam-direct.co.uk/cgi-bin/IRC/irc.cgi">IRC browser login</a></td>
+</TR></table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" align="center">
+      <tr>
+        
+        <td valign="top" bgcolor="#000000" height="608"> 
+          <table
+        border="0" cellpadding="0" cellspacing="0" width="10%" height="10%" align="center">
+            <tr> 
+              <td width="10%" bgcolor="#000000" height="22" nowrap>&nbsp; </td>
+              <td width="10%" bgcolor="#000000" height="22" nowrap>
+<table width="20%" border="0" cellspacing="2" cellpadding="0" align="center">
+  <tr bgcolor="#000000"> 
+    <td height="22"> 
+      <div align="center"><b><font color="#FFFFFF">Respect to:</font><BR><a href="http://www.moddb.com/" target="_blank"><img src="http://www.moddb.com/images/links/links.php" width="88" height="31" border="0" alt="modDB.com - every game, every mod, one site... go figure!"></a></font></b><BR><font color="#FFFFFF">&</font><BR>
+<a href=http://www.actiongames.co.uk/ target="_blank"><img src="http://www.cam-direct.co.uk/ltk/images/aglogo.gif" width="87" height="51" alt="Action Games"></a></div>
+    </td>
+  </tr>
+  
+
+</table>
+
+</td>
+              <td width="10%" bgcolor="#000000" height="22" nowrap><img
+                src="../images/ltkbanner.gif" width="591" height="156"></td>
+            </tr>
+            <tr> 
+              <td width="1" bgcolor="#000000" rowspan="9">&nbsp;</td>
+              <td width="246" bgcolor="#000000" height="9" align="left" valign="top">
+<table width="20%" border="2" cellspacing="2" cellpadding="2" align="center" bordercolorlight="#666666" bordercolordark="#666666" bordercolor="#000000">
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="../ltktbm.shtml">HOME</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/developer/index.shtml">Developer Main</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/developer/sci.shtml">Secure Client Identification</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="a3d.shtml">Q2a3d Tutorials</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/developer/cgfdoc.shtml">CGF Documentation</a></font></b></div>
+    </td>
+  </tr>
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=26">All Developer Discussions</a></font></b></div><BR>
+	  <div align="center"><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=23">OpenAl Discussion</a></font></div><BR>
+	  <div align="center"><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=7">Routefinding discussion</a></font></div>
+    </td>
+  </tr>
+  <tr bgcolor="#000000"> 
+    <td> 
+  	<p align="center"><a href="http://www.informationclearinghouse.info/" target="_blank"><img border="0" src="http://www.cam-direct.co.uk/ltk/images/free.gif" ></a></p>
+  </td>
+  </tr>
+</table>
+
+ 
+                <div align="center"></div>
+              <td width="534" bgcolor="#000000" rowspan="9"> 
+                <table
+                border="0" cellpadding="0" cellspacing="0"
+                width="591">
+                  <tbody> 
+                  <tr> 
+                    <td width="10" height="2"><img src="../images/tl.gif"
+                        width="21" height="28"></td>
+                    <td width="560" height="2" bgcolor="#333333"> 
+                      <div align="center"><b><font color="#FFFFFF">Developer Resources 
+                          - <!-- InstanceBeginEditable name="name" --> CGF documentation<!-- InstanceEndEditable --> 
+                          </font></b></div>
+                    </td>
+                    <td width="21" height="2"><img src="../images/tr.gif"
+                        width="21" height="28"></td>
+                  </tr>
+                  <tr> 
+                      <td width="10" background="../images/lb.gif" height="215"><img
+                        src="../images/lb.gif" width="21" height="16"></td>
+                      <td width="560" bgcolor="#404040" height="215"> <!-- InstanceBeginEditable name="content" -->
+                        <p><font color="#CCCCCC">Below you will find various pieces 
+                          of documentation rescued from the (now defunct) bot 
+                          epidemic site where the CGF mod called home. Whilst 
+                          these documents are of excellent quality, it should 
+                          be noted, that although LTKTBM shares many common factors 
+                          with this mod, it uses an entirely different structure 
+                          for handling much of the AI. </font></p>
+                        <p><font color="#CCCCCC">Weapon AI is a prime example, 
+                          LTKTBM not only has the capability to choose the best 
+                          current weapon, it can also select the best initial 
+                          weapon for individual maps, the data for which is obtained 
+                          by a learning algorithm not discussed here, the documentation 
+                          for which is not available in the public domain. These 
+                          documents are provided entirely for reference purposes, 
+                          and the views and theories belong entirely to their 
+                          author.</font></p>
+                        <p><font color="#CCCCCC">You can also view the <a href="cgf/cgfai_grenadehandling.pdf" target="_blank">cgf 
+                          grenade handling</a> and <a href="cgf/terrain.pdf" target="_blank">terrain</a> 
+                          pdf's by the same author.</font></p>
+                        <p><font color="#CCCCCC">This page is converted from <a href="cgf/cgf.zip" target="_blank">the 
+                          origonal page</a>.</font></p>
+                        <p><B><font color="#CCCCCC">CGF (AI) Weapon Handling</font></B> 
+                        </p>
+                        <HR color="#C0C0C0">
+                        <FONT color="#CCCCCC" SIZE=1> Last update: November 22, 
+                        2000, by <A HREF="mailto:william@botepidemic.com">William</A>. 
+                        </FONT> <font color="#CCCCCC"></h3> </font>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_1">1. Tactical 
+                          Shooters and Weapons</a> </font></h5>
+                        <font color="#CCCCCC">Tactical shooter games typically 
+                        are designed to provide a large arsenal of realistic weapons, 
+                        each with their subtle but important characteristics. 
+                        Some weapons are great for close combat, but are ineffective 
+                        at long range. Others have great accuracy when firing 
+                        in 3 round burst. Another type of weapon offers a telescope, 
+                        but reloads slowly. Some have large recoil. Others feature 
+                        large clips, etc. 
+                        <p> The differences in weapons are that large and important 
+                          that FAQ's for these tactical shooters typically need 
+                          multiple pages of text to explain when (not) to use 
+                          a specific weapon. 
+                        <p> Thus, it is probably non-trivial for the AI to handle 
+                          these weapons realistically and smart... </font>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_2">2. 'Open' Tactical 
+                          Shooters and Weapon Code</a> </font></h5>
+                        <font color="#CCCCCC">A number of 'open' 1st person shooters 
+                        has been modified (mod-ed) by talented members of the 
+                        gaming community to offer great and immersive realistic 
+                        multi-player shooters. These mods have been programmed 
+                        on top of (often) multi-player or (less often) single-player 
+                        game logic provided by game developers. 
+                        <p> Characteristic for these games and their game logic 
+                          is: </font>
+                        <ul>
+                          <li><font color="#CCCCCC">the original AI isn't too 
+                            smart, and doesn't bother to think about differences 
+                            as subtle as in realistic mods (because the original 
+                            game allows 'respawn') </font>
+                          <li><font color="#CCCCCC">the weapon implementation 
+                            solely keeps track of events important to the player 
+                            (when to make sounds, what animation to display, etc.) 
+                            </font>
+                        </ul>
+                        <p><font color="#CCCCCC">In other words, the information 
+                          available in the game logic (either if-statements for 
+                          Q2 based games, or weapon classes for HL based games), 
+                          was never designed to assist the AI in figuring out 
+                          how to handle a weapon realistically. <br>
+                          This page documents the weapon model that enables the 
+                          CGF AI to handle the weapons 'tactically'. </font></p>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_3">3. AI Weapon 
+                          Handling Analyzed</a> </font></h5>
+                        <font color="#CCCCCC">In realistic shooters, the gamer 
+                        (and preferably the AI): </font>
+                        <ul>
+                          <li><font color="#CCCCCC">aims at a threat, and optionally 
+                            fires the weapon </font>
+                          <li><font color="#CCCCCC">selects the best weapon for 
+                            the job </font>
+                          <li><font color="#CCCCCC">selects the best weapon mode 
+                            for the job <br>
+                            (semi-automatic / full auto / zoom ...) </font>
+                          <li><font color="#CCCCCC">reloads a weapon that is empty, 
+                            if possible </font>
+                          <li><font color="#CCCCCC">preloads weapons that aren't 
+                            full (or prematurely reloads weapons that might become 
+                            empty soon) </font>
+                          <li><font color="#CCCCCC">drops a weapon to pick up 
+                            a better one </font>
+                        </ul>
+                        <font color="#CCCCCC">The actor (gamer or AI) takes a 
+                        lot into account when deciding to fire, switch weapons, 
+                        switch mode, (p)reload, etc.: </font>
+                        <ul>
+                          <li><font color="#CCCCCC">ammo available in weapon </font>
+                          <li><font color="#CCCCCC">ammo clips carried by the 
+                            AI </font>
+                          <li><font color="#CCCCCC">distance to threat </font>
+                          <li><font color="#CCCCCC">obstacles (thin walls, water) 
+                            between AI and threat </font>
+                          <li><font color="#CCCCCC">threat visible or predicted 
+                            </font>
+                          <li><font color="#CCCCCC">weapon usage ('spray-n-pray', 
+                            snipe, suppress, 'zoom-n-scan-n-snipe') </font>
+                          <li><font color="#CCCCCC">weapon capabilities (silenced, 
+                            recoil, zoom, clip size) </font>
+                          <li><font color="#CCCCCC">other weapons in AI's arsenal 
+                            </font>
+                          <li><font color="#CCCCCC">aim (reticule size, errors 
+                            due to being hit) </font>
+                          <li><font color="#CCCCCC">threat's awareness of being 
+                            aimed on </font>
+                          <li><font color="#CCCCCC">... </font>
+                        </ul>
+                        <p><font color="#CCCCCC">This list clearly is too long 
+                          to be dealt with by a couple of 'if-statements'. (And 
+                          if that were possible, it would be a nightmare to add 
+                          a new weapon). <br>
+                          To record and be able to reason about these factors, 
+                          we'd better make them explicit in our design.</font></p>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_4">4. CGF AI Weapon 
+                          Handling model (simplified)</a> </font></h5>
+                        <font color="#CCCCCC">To reason about the use of weapons, 
+                        the AI has explicit representations of all the important 
+                        'objects': </font>
+                        <ul>
+                          <li><font color="#CCCCCC"> The AI character is an <i>Actor</i>, 
+                            who holds ammo clips, and carriers a number of weapons. 
+                            The <i>Actor</i> carries multiple <i>Weapons</i>, 
+                            but has only one of them in his hands (selected). 
+                            </font>
+                          <li><font color="#CCCCCC"> The <i>Weapon</i> solely 
+                            represents the state of a weapon carried by the <i>Actor</i>: 
+                            the weapon holds some ammo, is in a mode, may be engaged 
+                            in a burst. The <i>Weapon</i> is of a specific <i>WeaponType</i>. 
+                            </font>
+                          <li><font color="#CCCCCC"> The <i>WeaponType</i> super-class 
+                            defines the possible characteristics of <i>WeaponType.</i> 
+                            All <i>Weapons</i> of a <i>WeaponType</i> have a certain 
+                            fitness for some usage, feature the weapon modes, 
+                            and have ideal burst lengths. <br>
+                            There sub-classes of <i>WeaponType</i> that define 
+                            the exact properties and fitness for usage (as a virtual 
+                            function), for example: </font>
+                            <ul>
+                              <li><font color="#CCCCCC">the <i>Hand Gun</i>, which 
+                                features single shot and automatic mode, and does 
+                                not provide any restrictions on the burst length, 
+                                since it doesn't have a significant recoil. </font>
+                              <li><font color="#CCCCCC">the <i>Assault Rifle</i>, 
+                                which features 3 round bursts, automatic mode 
+                                and a 3xzoom, and has some recoil (so it suggests 
+                                a restricted burst length). </font>
+                              <li><font color="#CCCCCC">the <i>Squad Automatic 
+                                Weapon</i>, which only has 'automatic' mode, and 
+                                a significant recoil. It therefor is best fired 
+                                in 5 round bursts. </font>
+                            </ul>
+                          <li><font color="#CCCCCC"> The <i>Threat</i> is a potential 
+                            target to aim for. </font>
+                          <li><font color="#CCCCCC"> Aiming isn't done instantaneously 
+                            and perfectly (that wouldn't be realistic). Instead, 
+                            the <i>Actor</i>'s aim depends on how well he sees 
+                            the <i>Threat</i>, how long he has been looking at 
+                            the <i>Threat</i>, etc. And if the <i>Threat</i> is 
+                            hidden for just a moment by an obstacle, the <i>Actor</i> 
+                            typically aims for the position the <i>Threat</i> 
+                            will going to move to next, or the position the <i>Threat</i> 
+                            will re-appear. </font>
+                        </ul>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_5">5. Weapon Selection 
+                          using the Weapon Handling model</a> </font></h5>
+                        <font color="#CCCCCC">Instead of going through giant if-statements, 
+                        weapon selection has become easier to write and understand: 
+                        </font>
+                        <p><FONT color="#CCCCCC" face="Courier"> &nbsp; Weapon 
+                          Actor::SelectBestWeapon(distance, usage)<br>
+                          &nbsp; {<br>
+                          &nbsp; &nbsp; bestweapon = 0;<br>
+                          &nbsp; &nbsp; bestscore = 0;<br>
+                          &nbsp; &nbsp; for each weapon carried<br>
+                          &nbsp; &nbsp; {<br>
+                          &nbsp; &nbsp; &nbsp; clips&nbsp; = inventory[weapon->GetAmmoType()];<br>
+                          &nbsp; &nbsp; &nbsp; rounds = weapon->GetAmmo();<br>
+                          &nbsp; &nbsp; &nbsp; score&nbsp; = weapon<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; ->GetWeaponType()<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ->GetFitnessForUsage(usage, 
+                          distance,<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                          &nbsp; rounds, clips);<br>
+                          &nbsp; &nbsp; &nbsp; <br>
+                          &nbsp; &nbsp; &nbsp; if ( score > bestscore )<br>
+                          &nbsp; &nbsp; &nbsp; {<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; bestscore = score;<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; bestweapon = weapon;<br>
+                          &nbsp; &nbsp; &nbsp; }<br>
+                          &nbsp; &nbsp; }<br>
+                          &nbsp; &nbsp; return bestweapon;<br>
+                          &nbsp; }<br>
+                          </FONT> <font color="#CCCCCC"><br>
+                          The real gain is not so much in the simple weapon selection 
+                          algorithm, but in the fact that we can take care of 
+                          all the specific weapon's pecularities in its own <i>WeaponType</i> 
+                          function (a member function overriding the virtual member 
+                          function in WeaponType): </font>
+                        <p><FONT color="#CCCCCC" face="Courier"> &nbsp; float 
+                          SquadAutomaticWeapon::GetFitnessForUsage<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (usage,distance, 
+                          rounds, clips)<br>
+                          &nbsp; {<br>
+                          &nbsp; &nbsp; // not useful for anything<br>
+                          &nbsp; &nbsp; // but suppression and direct fire<br>
+                          &nbsp; &nbsp; if ( !(usage & (eDirectFire | eSuppression) 
+                          )<br>
+                          &nbsp; &nbsp; &nbsp; return 0;<br>
+                          &nbsp; &nbsp;<br>
+                          &nbsp; &nbsp; // fitness great for nearby<br>
+                          &nbsp; &nbsp; // less for long distance<br>
+                          &nbsp; &nbsp; float fitness;<br>
+                          &nbsp; &nbsp; if ( distance < 100 )<br>
+                          &nbsp; &nbsp; &nbsp; fitness = 1.0;<br>
+                          &nbsp; &nbsp; else<br>
+                          &nbsp; &nbsp; {<br>
+                          &nbsp; &nbsp; &nbsp; fitness = 100 / distance;<br>
+                          &nbsp; &nbsp;<br>
+                          &nbsp; &nbsp; // correct for low on ammo<br>
+                          &nbsp; &nbsp; // since reloading is slow<br>
+                          &nbsp; &nbsp; if ( rounds < 10 )<br>
+                          &nbsp; &nbsp; &nbsp; fitness *= 0.75;<br>
+                          &nbsp; &nbsp;<br>
+                          &nbsp; &nbsp; // if not much ammo in total<br>
+                          &nbsp; &nbsp; // reduce fitness some more<br>
+                          &nbsp; &nbsp; if ( (clips == 0) && (rounds < 50) )<br>
+                          &nbsp; &nbsp; &nbsp; fitness *= 0.75;<br>
+                          &nbsp; &nbsp; }<br>
+                          &nbsp; &nbsp;<br>
+                          &nbsp; &nbsp; return fitness;<br>
+                          &nbsp; }<br>
+                          </FONT> 
+                        <p><font color="#CCCCCC"> Note that the method deals in 
+                          a simple and structured way with detailed properties 
+                          of a 100 round belt-fed heavy machine gun. You don't 
+                          run the risk of affecting other weapon's properties 
+                          by changing it. </font>
+                        <p><font color="#CCCCCC"> This same format, of having 
+                          a dedicated method per weapon, allows you to take different 
+                          matters into account when defining the fitness for a 
+                          bolt-action sniper rifle. </font>
+                        <p><font color="#CCCCCC"> The actual CGF for AQ2 code 
+                          deals with more factors, including weapon add-ons (silencer, 
+                          laser sight), weapon modes (3 round burst or full-auto, 
+                          zoom levels), and game round duration (early in the 
+                          game round, ammo conservation isn't that important). 
+                          </font>
+                        <p><font color="#CCCCCC"> The CGF <i>WeaponType</i> class 
+                          also implements a lot more weapon properties, such as 
+                          aiming preferences (hand guns cannot penetrate body 
+                          armor, and should be aimed for the head or legs, sniper 
+                          rifles aim for the largest portion of the body (torso), 
+                          assault rifles on full auto aim for the feet since the 
+                          muzzle will be kicked up, etc.). </font>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_6">6. Example Weapon 
+                          Handling Behavior</a> </font></h5>
+                        <font color="#CCCCCC">This weapon model also enables simple 
+                        and understandable weapon handling code: </font>
+                        <p><FONT color="#CCCCCC" face="Courier"> &nbsp; Weapon 
+                          Actor::HandleWeapon(threattracking)<br>
+                          &nbsp; {<br>
+                          &nbsp; &nbsp; if ( !threattracking)<br>
+                          &nbsp; &nbsp; { // no threat, take care of the weapons<br>
+                          &nbsp; &nbsp; &nbsp; Weapon otherweapon;<br>
+                          &nbsp; &nbsp; &nbsp; if ( SelectedWeapon()->IsEmpty() 
+                          )<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; SelectedWeapon()->Reload();<br>
+                          &nbsp; &nbsp; &nbsp; else<br>
+                          &nbsp; &nbsp; &nbsp; if ( otherweapon = GetWeaponNeedingReload() 
+                          )<br>
+                          &nbsp; &nbsp; &nbsp; { // select now, reload when active<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; SelectWeapon(otherweapon);<br>
+                          &nbsp; &nbsp; &nbsp; }<br>
+                          &nbsp; &nbsp; }<br>
+                          &nbsp; &nbsp; else<br>
+                          &nbsp; &nbsp; { // threat! so aim and fire unless empty<br>
+                          &nbsp; &nbsp; &nbsp; AimResult_t aim; // tells how the 
+                          aim and weapon is<br>
+                          &nbsp; &nbsp; &nbsp; // aiming also has bot turn towards 
+                          target<br>
+                          &nbsp; &nbsp; &nbsp; aim = SelectedWeapon()<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ->AimAndDecideToFire(threattracking);<br>
+                          &nbsp; &nbsp; &nbsp; <br>
+                          &nbsp; &nbsp; &nbsp; // test for good aim that isn't 
+                          blocked<br>
+                          &nbsp; &nbsp; &nbsp; if ( eFire == (aim & (eBlocked 
+                          | eFire)) )<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SelectedWeapon->Fire();<br>
+                          &nbsp; &nbsp; &nbsp; else<br>
+                          &nbsp; &nbsp; &nbsp; if ( aim & (eEmpty) )<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ReloadOrSwitchWeapon();<br>
+                          &nbsp; &nbsp; &nbsp; else<br>
+                          &nbsp; &nbsp; &nbsp; if ( aim & (eAim)) // thus eAim 
+                          without eFire<br>
+                          &nbsp; &nbsp; &nbsp; { // aims needs to improve or trigger 
+                          should<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; // be released to reduce 
+                          recoil (burst length)<br>
+                          &nbsp; &nbsp; &nbsp; &nbsp; /* do nothing but keep aiming 
+                          */<br>
+                          &nbsp; &nbsp; &nbsp; }<br>
+                          &nbsp; &nbsp; }<br>
+                          &nbsp; }<br>
+                          </FONT> 
+                        <p><font color="#CCCCCC"> By having the <i>Weapon</i> 
+                          and (not shown) the <i>WeaponType</i> handle the fire, 
+                          we again can handle the peculiarities of the weapon 
+                          in a single method. The code above suggests how a <i>Squad 
+                          Automatic Weapon </i>can be used without the recoil 
+                          growing too large. Probably every burstlength shots, 
+                          the <i>Weapon</i> just does not return the eFire bit, 
+                          and the Actor will ease of the trigger. </font>
+                        <p><font color="#CCCCCC"> The actual CGF for AQ2 implementation 
+                          (as released in December 99) deals with a number of 
+                          other factors, including prediction of threat movement, 
+                          prediction of threat 're-appear locations', weapon mode 
+                          switching during the attack, scanning during sniping 
+                          operations. It also knows dirty tricks such as taking 
+                          the time to steady its aim when attacking a threat in 
+                          the back (since the threat won't attack immediately)... 
+                          </font>
+                        <h5> <font color="#CCCCCC"><A NAME="h5_7">7. Extensions 
+                          and Complications</a> </font></h5>
+                        <font color="#CCCCCC">Depending on the weapon aspects 
+                        being simulated, this design can be extended. Some extensions 
+                        are straightforward, but other extensions really result 
+                        in more complex designs. </font>
+                        <p> <font color="#CCCCCC"><b>Clips</b><br>
+                          Some mods (including AQ2) have the Actor carry clips, 
+                          not rounds. They reload clip by clip. Clips released 
+                          from the weapons take 'home' the remaining rounds in 
+                          that clip. Here, it makes sense to model the clips explicitly 
+                          (since they probably can be picked up), and do the ammo 
+                          computations with rounds in the weapon, and clip sizes. 
+                          </font>
+                        <p><font color="#CCCCCC"> Other mods (notably Counter-Strike) 
+                          have 'virtual clips', and just shuffle additionals rounds 
+                          (up to the clip size or ammo amount) into the weapon, 
+                          when 'reloading' (CS seems to inherit the basic HL weapons 
+                          code). Modeling the clips explicitly doesn't make that 
+                          much sense. </font>
+                        <p> <font color="#CCCCCC"><b>Reload Activities</b><br>
+                          Most weapons will require one single (short) activity 
+                          to reload it. There are, however, exceptions: (semi)-automatic 
+                          shotguns and bolt-action (sniper) rifles typically combine 
+                          internal ammo (round) storage with the ability to reload 
+                          individual rounds. In that case, two modes of reloading 
+                          are available: loading a single round, or loading a 
+                          series of rounds. At ease, the Actor typically prefers 
+                          loading a series of rounds, whereas in engaging a threat, 
+                          the Actor will want to fire as soon as possible (after 
+                          loading one single round). </font>
+                        <p> <font color="#CCCCCC"><b>Ammo Types</b><br>
+                          Some tactical shooters (notably R6: Rogue Spear) differentiate 
+                          between different kinds of ammo. Examples including 
+                          full metal jacket (FMJ) rounds that penetrate through 
+                          targets and walls, jacketed hollow point (JHP) rounds 
+                          that do not penetrate, subsonic rounds (less noise), 
+                          slug / buckshot shotgun rounds, and tracer rounds. </font>
+                        <p><font color="#CCCCCC"> Here it makes sense to model 
+                          even the ammo types explicitly. </font>
+                        <p> <font color="#CCCCCC"><b>'Power up' Weapons / Long 
+                          reload times</b><br>
+                          In a few shooters, some (but not all) weapons need a 
+                          significant amount of time from the moment they are 
+                          selected to the time they can be fired. Examples included: 
+                          the gatling gun (HL TFC), heavy sniper rifles (R6 Rogue 
+                          Spear), and hand grenades for which the pin is to be 
+                          released first. </font>
+                        <p><font color="#CCCCCC"> Similarly, once a weapon is 
+                          being fired (i.e. the pin is pulled), it is important 
+                          to continue to aim and fire in the direction intended. 
+                          </font>
+                        <p><font color="#CCCCCC"> Again, for the AI to take these 
+                          into account, it is best to model these properties explicitly 
+                          as an attribute / function call of the <i>Weapon</i>. 
+                          In addition, the preferences for rapid weapon switching 
+                          and activation should be taken into account when trying 
+                          to select the best weapon (as an additional parameter 
+                          in 'GetFitnessForUsage'). </font>
+                        <p> <font color="#CCCCCC"><b>'Twin Weapons'</b><br>
+                          Some game feature 'weapons' composed of two guns. The 
+                          AQ2 and CS akimbo pistols of course come to mind. These 
+                          akimbos can be treated as a single weapon with two clips 
+                          and twice the rate of fire. They do not cause the AI 
+                          problems in considering these guns. </font>
+                        <p><font color="#CCCCCC"> For combinations of an assault 
+                          rifle and grenade launcher (such as the M4/M203 in CGF), 
+                          or an assault rifle and shotgun (in Delta Force), things 
+                          get more complicated. <br>
+                          A rifle/grenade launcher in theory is capable of direct 
+                          (rifle / grenades) and arc trajectory (grenades, 'lobbed' 
+                          over obstables) fire. Reload times differ for the clip 
+                          and rifle grenade. A laser-sight and scope typically 
+                          apply solely to the rifle, and is of little assistance 
+                          in aiming the grenade launcher. <br>
+                          Thus actual fitness for a task depends very much on 
+                          the availability of (two different kinds of) ammo, and 
+                          whether rounds of these types are in the weapon. <br>
+                          I've tackled these twin weapons by taking into account 
+                          two types of ammo in all <i>WeaponType</i> and <i>Weapon</i> 
+                          instance interfaces (assuming weapons consuming yet 
+                          another kind of ammo won't show up in a game). </font>
+                        <p> <font color="#CCCCCC"><b>Arc Trajectory Weapons</b><br>
+                          Already briefly mentioned above, arc trajectory weapons 
+                          shoot projectiles that do not travel in an almost straight 
+                          line, but instead along an arc (due to their slower 
+                          speed). Examples include: hand grenades, throwing knifes, 
+                          and rifle grenades. </font>
+                        <p><font color="#CCCCCC"> These weapons, compared to rifles 
+                          and hand guns, complicated matters by: </font>
+                        <ul>
+                          <li><font color="#CCCCCC">having a range typically shorter 
+                            than the map's dimensions </font>
+                          <li><font color="#CCCCCC">having the actual range (partially) 
+                            depending on the height difference between the attacker 
+                            and the target </font>
+                          <li><font color="#CCCCCC">having a minimum range (due 
+                            to the damage radius) for rifle grenades and hand 
+                            grenades </font>
+                          <li><font color="#CCCCCC">being able to seriously damage 
+                            the target when positioned several meters away from 
+                            the target's actual position (for grenades) </font>
+                          <li><font color="#CCCCCC">being able to cause friendly 
+                            fire accidents (for grenades) </font>
+                        </ul>
+                        <font color="#CCCCCC">In other words, arc trajectory weapons 
+                        are complicated to aim. Whereas for 'normal' rifles holds 
+                        "what you see is what you can hit", trajectory weapons 
+                        require checks for the complete trajectory. <br>
+                        In addition, the <i>Actor</i> may be required to aim in 
+                        a direction different from the target: notably the pitch 
+                        (up / down) angle will be different, and to lob grenades 
+                        through a window to a spot near enough to the target, 
+                        the yaw (left / right) angle might be different as well. 
+                        <p> Handling these trajectory weapons requires some special 
+                          provisions in the aiming and aim evaluation code. </font><!-- InstanceEndEditable -->
+<p>&nbsp;</p>
+                        <p><b></b></p>
+                        </td>
+                    <td width="21" background="../images/rb.gif" height="215">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td width="10"><img src="../images/mainbl.gif"
+                        width="21" height="10"></td>
+                    <td width="560" bgcolor="#404040"><img
+                        src="../images/mainbottombar.gif" width="549"
+                        height="8"></td>
+                    <td width="21"><img src="../images/mainbr.gif"
+                        width="21" height="10"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+<table width="20%" border="2" cellspacing="2" cellpadding="2" align="center" bordercolorlight="#666666" bordercolordark="#666666" bordercolor="#000000">
+  <tr bgcolor="#333333"> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="../ltktbm.shtml">HOME</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/developer/index.shtml">Developer Main</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=26">All Developer Discussions</a></font></b></div>
+    </td>
+	<td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/developer/sci.shtml">Secure Client Identification</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=7">Routefinding discussion</a></font></b></div>
+    </td>
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=23">OpenAl Discussion</a></font></b></div>
+    </td> 
+    <td> 
+      <div align="center"><b><font color="#FFFFFF"><a href="http://www.cam-direct.co.uk/ltk/developer/cgfdoc.shtml">CGF Documentation</a></font></b></div>
+    </td>
+  </tr>
+</table>
+
+
+          <p align="center">&nbsp;</p>
+</table></center></div></body>
+<!-- InstanceEnd --></html>

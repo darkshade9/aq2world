@@ -1,0 +1,168 @@
+<html>
+
+<head>
+<title>A guide to aliasing</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body orangetext="#d8a727" text="#0080C0" bgColor="#000000">
+<div align="center"><center>
+
+<table width="91%" height="213">
+<tbody>
+  <tr>
+    <td height="53"><div align="left"><font face="Verdana, Arial, Helvetica, sans-serif"
+    size="2" color="#008040"><u><p>What is aliasing?</u></font></p>
+    <p>&nbsp;</p>
+    </div></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Basically,
+    aliasing is combining a series of commands to make one single command. Let's look at an
+    example:</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">alias
+    reportin &quot;say_team I'm still standing!; radio reportin; wave 3&quot;</font></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">bind
+    j reportin</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">This makes it
+    so whenever you press <font face="Verdana, Arial, Helvetica, sans-serif" size="2"
+    color="d8a727">j</font>, you will say to your team <font
+    face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">I'm still standing!</font>,
+    you'll play the <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">Team,
+    report in!</font> radio sound and players will see you wave. The big thing you need to
+    learn is that to separate commands you put <font color="d8a727">;</font> in.</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">At it's most
+    basic, all you need to know to alias is:</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font
+    color="d8a727">alias thing &quot;</font>command1<font color="d8a727">;</font> command2<font
+    color="d8a727">;</font> command3<font color="d8a727">&quot;</font></font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The crucial
+    parts which you cannot change are highlighted in <font color="d8a727">orange</font>. You <em>must</em>
+    have all the commands you want contained within the speech marks, or it won't work.
+    Remember, you need to have <font color="d8a727">;</font> separating commands. You do not
+    have too have three commands, it can be less or more but if the line becomes too long it
+    will not work, so I stick to three or four and try to keep them short</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"
+    color="#008040"><u>More advanced aliasing</u></font><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Take a look at
+    the alias I use for when a teammate is killed in:</font></td>
+  </tr>
+  <tr>
+    <td height="20"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font
+    color="d8a727">alias teamdown1 &quot;</font>say_team Don't look at me, I didn't kill
+    him/her (delete as applicable)<font color="d8a727">;</font> radio teamdown<font
+    color="d8a727">;</font> bind rightarrow teamdown2<font color="d8a727">&quot;</font></font></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font
+    color="d8a727">alias teamdown2 &quot;</font>say_team I didn't kill him/her (delete as
+    applicable), honestly!<font color="d8a727">;</font> radio teamdown<font color="d8a727">;</font>
+    bind rightarrow teamdown3<font color="d8a727">&quot;</font></font></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font
+    color="d8a727">alias teamdown3 &quot;</font>say_team It's worse than that he's dead, Jim!<font
+    color="d8a727">;</font> radio teamdown<font color="d8a727">;</font> bind rightarrow
+    teamdown1<font color="d8a727">&quot;</font></font></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">bind
+    rightarrow teamdown1</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">It may look
+    complex in a big bulk, but look at it one line at a time, it's no more complex then the
+    report in alias we looked at above. The first time you press the rightarrow key, it plays
+    the radio message <font face="Verdana, Arial, Helvetica, sans-serif" size="2"
+    color="d8a727">Teammate down!</font>, says to your team <font
+    face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">Don't look at me, I
+    didn't kill him/her (delete as applicable)</font>, then binds the rightarrow key to the <font
+    face="Verdana, Arial, Helvetica, sans-serif" size="2" color="d8a727">teamdown2</font>
+    command. Remember that <font color="d8a727">;</font> separates commands.</font><p><font
+    face="Verdana, Arial, Helvetica, sans-serif" size="2">You'll notice that <font
+    color="d8a727">teamdown2</font> is a similar alias, but at the end it binds the rightarrow
+    key to <font color="d8a727">teamdown3</font>. At the end of <font color="d8a727">teamdown3</font>,
+    it binds rightarrow to <font color="d8a727">teamdown1</font>. This means that when all
+    three messages have been used, it goes back to the top one and the loop starts again</font></td>
+  </tr>
+  <tr>
+    <td height="21"></td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"
+    color="#008040"><u>What to do when something goes bad</u></font><p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="21"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">When you start
+    using a new alias, you may find things won't work right, like you won't do all the
+    commands, or it'll say the word which was meant to be a command. Most of the time this is
+    down to spelling mistakes <font color="d8a727">kill18</font> can easily be mis-spelled as <font
+    color="d8a727">kil18</font>, and you won't even notice until you say <font color="d8a727">kil18</font>
+    in a game instead of carrying out the line of the alias</font><p><font
+    face="Verdana, Arial, Helvetica, sans-serif" size="2">So first of all, go to the line
+    which is causing problems and check it carefully for spelling mistakes. If there are no
+    spelling mistakes in that line, check the line before it too. If that fails, maybe the
+    line is too long, Quake 2 only supports lines up to a certain length, the maximum is
+    around 135 characters. If your line is longer than that, cut it down to size. If you still
+    can't figure it out, <a href="mailto:psyduck@planetaction.net" Trouble with an alias"">mail
+    the whole alias to me</a> and I'll do my best to fix it</font></p>
+    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">One thing I do when testing
+    a new alias is to load up a map in AQ2, then simply go through the whole alias. If I
+    notice an error I quit AQ2, fix it, then check the rest until I'm sure it is all working</font></p>
+    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">If you see the error
+    message &quot;<font color="d8a727">Line has unmatched quote, discarded.</font>&quot; when
+    you load AQ2, it means that you have an imcomplete alias, you forgot to close the speech
+    marks at the end of the alias. Open up your config and look for any alias without the
+    speech marks at the end, then add them in</font></td>
+  </tr>
+  <tr>
+    <td height="21">&nbsp;<p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="21"><p align="center"><font face="Verdana, Arial, Helvetica, sans-serif"
+    size="2.5"><a href="http://www.aq2zone.com/aq2.html">Back to AQ2 Index</a></font></td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>

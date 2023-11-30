@@ -1,0 +1,772 @@
+<script>
+var eTopM = "";	
+
+if (document.all)		
+document.onmouseover = mouseOver;
+
+function mouseOver() {
+	var eSource = window.event.srcElement;
+	
+	if (eSource.name == "topMenu") {
+		var eMenu = document.all[eSource.id.replace("div", "")]
+		var intWidth = eSource.offsetWidth
+	
+		if (eTopM && eTopM != eMenu) hideTopMenu(eTopM);
+			 
+		if (eMenu) showTopMenu(eMenu, intWidth)
+	} else if (eTopM && !eTopM.contains(eSource) && !menuRow.contains(eSource))
+		hideTopMenu(eTopM);
+}
+
+function showTopMenu(eSource, intMinWidth) {	
+	x  = window.event.srcElement.offsetLeft + window.event.srcElement.offsetParent.offsetLeft;
+	y  = menuRow.offsetHeight - 2;
+	
+	if (intMinWidth < 150) intMinWidth = 150		
+	if (eSource.style.width < intMinWidth) eSource.style.width = intMinWidth;
+	var intTemp = parseInt(eSource.style.width);		
+	intTemp = Number(x) + intTemp;
+	var intDocWidth = document.body.clientWidth;
+	
+	if(intTemp > intDocWidth) {
+		var intDiff = intTemp - intDocWidth
+		x = x - intDiff - 3; 
+	}
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='hidden';
+	eSource.style.left = x;
+	eSource.style.top = y;
+	eSource.style.visibility = "visible";
+	eSource.style.filter = "alpha(opacity=90)";
+	eTopM = eSource;
+}
+
+function hideTopMenu(eSource){
+	eSource.style.filter = "none";
+	eSource.style.visibility = "hidden";
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='visible';
+}
+</script>
+<style>
+BODY{margin:0;}
+.bTB{background-color:#006600;color:#FFFFFF;font-size:12px;font-family:Arial;border-bottom:2px solid #000000;}
+A.bT:Link,A.bT:Visited,A.bT:Active{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Hover{color:#FFFF99;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+.bSB{background-color:#006600;color:#FFFFFF;padding:2px;font-size:12px;font-family:Arial;border:2px solid #000000;border-top:2px solid #005500;visibility:hidden;position:absolute;z-index:10;left:0;}
+A.bS:Link,A.bS:Visited,A.bS:Active{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Hover{width:100%;padding:2px;background-color:#228822;color:#FFFF99;font-family:Arial;text-decoration:none;}
+B.sh{color:#FFFFFF;}
+</style>
+<div class=bTB>
+<table cellpadding=0 cellspacing=0 border=0 width="100%" background="http://images.barrysworld.com/hmenu/lback.gif" id=menuRow><tr>
+<td class=bwHeader width=19><a href="http://www.barrysworld.com/"><img src="http://images.barrysworld.com/hmenu/lsmile.gif" width="19" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+<td class=bwHeader>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divb name=topMenu>BarrysWorld</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/games/gameservers.asp" id=divg name=topMenu>Game Servers</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/membership/" id=divm name=topMenu>Membership</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divn name=topMenu>Nation</a>&nbsp;&nbsp;
+<a class=bT href="http://leagues.barrysworld.net/" id=divl name=topMenu>Leagues</a>&nbsp;&nbsp;	
+</td><td align=right><a class=bT href="http://www.barrysworld.com"><img src="http://images.barrysworld.com/hmenu/llogo.gif" width="121" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+</tr></table>
+</div><div class=bSB id=b>
+<a class=bS href="http://www.barrysworld.com/news/">News</a><br>
+<a class=bS href="http://www.barrysworld.com/Hosting/">Web Hosting</a><br>
+<a class=bS href="http://forums.barrysworld.com/">Forums</a><br>
+<a class=bS href="http://guides.barrysworld.com/">Guides</a><br>
+</div><div class=bSB id=g>
+<a class=bS href="http://www.barrysworld.com/games/gameservers.asp">Public Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/">Bookables</a><br>
+<a class=bS href="http://www.barrysworld.com/barryservers/">BarryServers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/gameservermasters.asp">Master Servers</a><br>
+</div><div class=bSB id=m>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/PlayerSearch.asp">Players</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/TeamList.asp">Teams</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/RecruitmentList.asp">Player Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/RecruitmentList.asp">Team Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/barrybank/">BarryBank</a><br>
+</div><div class=bSB id=n>
+<a class=bS href="http://www.quakenation.com/">QuakeNation</a><br>
+<a class=bS href="http://www.tribesnation.co.uk/">TribesNation</a><br>
+<a class=bS href="http://www.fortressnation.com/">FortressNation</a><br>
+<a class=bS href="http://www.actionnation.com/">ActionNation</a><br>
+<a class=bS href="http://www.tecnation.co.uk/">TechNation</a><br>
+<a class=bS href="http://www.lanpartynation.com/">LanPartyNation</a><br>
+<a class=bS href="http://www.rtcwnation.com/">RTCWNation</a><br>
+<b>Other Network Sites</b><br>
+<a class=bS href="http://www.xsreality.com/">XSReality</a><br>
+<a class=bS href="http://www.cscentral.com/">CSCentral</a><br>
+<a class=bS href="http://www.unrealfortress.com/">UnrealFortress</a><br>
+<a class=bS href="http://www.avpnetwork.com/">AvP Network</a><br>
+</div><div class=bSB id=l>
+<b class=sh>Quake 3</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwq3dml/">BWQ3DML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ctfl/">BWQ3CTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwra3l/">BWRA3L</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3utl/">BWQ3UTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpml/">BWCPML </a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ftl/">BWQ3FTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpmral/">BWCPMRAL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3pbl/">BWQ3PBL</a><br>
+<b class=sh>Half-Life</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwcsl">BWCSL</a><br>
+<a class=bS href="http://www.bwtfcl.com/">BWTFCL</a><br>
+<a class=bS href="http://www.hlccl.com">HLCCL</a><br>
+<b class=sh>Other</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwjk2l">Jedi Knight II: Jedi Outcast</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwmohl">Medal of Honor</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwrtcwl">Return to Castle Wolfenstein</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwefl/">Star Trek Voyager: Elite Force</a><br>
+</div>
+
+
+<!-- Magic Quotes - 0-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>ActionNation.com  - For all your Action needs</title>
+	<link rel="STYLESHEET" type="text/css" href="style/default.css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<table bgcolor="#9B7A21" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="images/main_logo.jpg" width="454" height="54" alt="" border="0"><br></td>
+	<td>&nbsp;</td>
+	<td align=right><img src="images/main_right.jpg" width="312" height="54" alt="" border="0"></td>
+</tr>
+</table>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0>
+<tr>
+	<td>
+	<table bgcolor="#CECECE" width="100%" cellpadding=2 cellspacing=0 border=0>
+	<tr>
+		<td>&nbsp;&nbsp;<span class="btext"><a class="blink" href="http://www.quakenation.com/">QuakeNation</a> | <a class="blink" href="http://www.tribesnation.co.uk">TribesNation</a> | <a class="blink" href="http://www.actionnation.com/">ActionNation</a> | <a class="blink" href="http://www.lanpartynation.com">LanPartyNation</a> | <a class="blink" href="http://www.rtcwnation.com">RTCWNation</a></span></td>
+		<td align=right></td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+	<td width=150 valign=top>
+	<!-- Left Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Main</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b><a class=wlink href=default.php>News</a></b><br>
+<a href="default.php?section=1" class="wlink">General News</a><br><a href="default.php?section=2" class="wlink">Counter-Strike</a><br><a href="default.php?section=3" class="wlink">Action Quake 2</a><br><a href="default.php?section=4" class="wlink">Halflife</a><br><a href="default.php?section=5" class="wlink">Urban Terror</a><br><a href="default.php?section=6" class="wlink">Unreal Tourney</a><br><a href="default.php?section=7" class="wlink">Quake</a><br><a href="default.php?section=27" class="wlink">Leagues</a><br>
+<a class=wlink href=mailto:deathwatch@barrysworld.com>Submit News</a>
+<p>
+<b>Leagues</b><br>
+<a href="league.php?section=14" class="wlink">BWAQSL</a><br><a href="league.php?section=15" class="wlink">BWCSL</a><br>
+<p>
+<b>Columns</b><br>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width=60%><a href="column.php?section=29&index=594" class="wlink">Noz</a></td><td width=40%><span class=wtext>(07/07/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=587" class="wlink">Noz</a></td><td width=40%><span class=wtext>(20/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=584" class="wlink">Excession</a></td><td width=40%><span class=wtext>(02/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=560" class="wlink">Excession</a></td><td width=40%><span class=wtext>(19/02/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=550" class="wlink">Noz</a></td><td width=40%><span class=wtext>(30/01/02)</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Content</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b>Features</b><br>
+<a href="feature.php?section=9" class="wlink">Features</a><br><a href="interview.php?section=10" class="wlink">Interviews</a><br><a href="review.php?section=11" class="wlink">Reviews</a><br>
+<p>
+<b><a class=wlink href=http://forums.barrysworld.com/forumdisplay.php?forumid=28>Forum</a></b><br>
+<b><a class=wlink href=files.php>Files</a></b><br>
+<b><a class=wlink href=links.php>Links</a></b><br>
+<b><a class=wlink href=contact.php>Contact</a></b><br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Lists</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<b><a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp' class='wlink'>Team Lists</a></b><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp' class='wlink'>Hosted Sites</a></b><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Nation Network</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.actionnation.com/' class='wlink'>ActionNation</a><br>
+	<a href='http://www.fortressnation.com/' class='wlink'>FortressNation</a><br>
+	<a href='http://www.quakenation.com/' class='wlink'>QuakeNation</a><br>
+	<a href='http://www.tribesnation.co.uk/' class='wlink'>TribesNation</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Powered by..</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/' class='wlink'>BarrysWorld</a><br>
+	<a href='http://hosted.barrysworld.net/neville' class='wlink'>Neville</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+	<td width="100%" valign=top>
+	<!-- Content -->
+	<img src="images/spacer.gif" width="2" height="5" alt="" border="0">
+	<table width="100%" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+		<td width="100%">
+		<div align="center"></div>
+		<p>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Rogue Spear: Blackthorn Screenies</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:StealthBuda@barrysworld.com'>StealthBuda</a> on Wed 10 October 2001 08:29:18 | <a href="comments.php?section=1&index=390" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Over at the <A HREF="http://www.redstorm.com/blackthorn" target=_new class=colourise>Official Blackthorn website</A> they've posted 5 new <A href="http://www.redstorm.com/blackthorn/screenshots.php" target=_new class=colourise>screenshots</A> of the upcomming Rouge Spear Expansion.<br><br><IMG SRC="http://www.homelanfed.com/images/jcal/blackthorn1t.jpg"><IMG SRC="http://www.homelanfed.com/images/jcal/blackthorn2t.jpg"><IMG SRC="http://www.homelanfed.com/images/jcal/blackthorn3t.jpg"><IMG SRC="http://www.homelanfed.com/images/jcal/blackthorn4t.jpg"><IMG SRC="http://www.homelanfed.com/images/jcal/blackthorn5t.jpg"></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Max Payne 1.02 Patch</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:StealthBuda@barrysworld.com'>StealthBuda</a> on Wed 10 October 2001 07:27:05 | <a href="comments.php?section=1&index=389" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top><IMG SRC="http://www.buda.nildram.co.uk/max1.jpg" align=right> Over at <A HREF="http://www.3drealms.com/index.shtml" class=colourise target=_new>3D Realms</A> they've put up <A HREF="http://www.3drealms.com/index.shtml" class=colourise target=_new>news</A> on a new Max Payne 1.02 patch.<br><br>Here's what it does:<br><span class=quote>* The clock and other desktop icons are no longer randomly flashing during the game.<br><br>This patch also includes all the fixes that were in v1.01 of the patch.  Those fixes included:<br><br>* Exit to desktop stability issues addressed: The issues with the game crashing to Windows desktop when loading a new map have been addressed. <br>* Game doesn't start with some CD-ROM drives: A newer version of Safedisc copy protection is now in use. <br></span><br><br>Grab it off the <A HREF="ftp://ftp.barrysworld.com/pub/games/max_payne/maxpayne1-02patch.exe" class=colourise target=_new>barrysworld ftp</A>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Some Changes</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Tue 09 October 2001 14:21:58 | <a href="comments.php?section=1&index=384" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>As you might've noticed (or not), there are some changes in the news categories on AN:<br>The Front Line Force and Action Halflife categories have disappeared.<br>There are 3 new categories: Quake, Halflife and Unreal Tourney. These 3 will contain the news on all mods which don't fall in the other categories (AQ2, CS and Urban Terror)<br><br>These changes might mean that some news items are under the wrong headers, but that will sort itself out over time. :)<br><br>Also, as you might've noticed, we got a new newsie at AN, StealthBuda, who'll be providing us with some fresh news.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>AEStats Updated</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Tue 09 October 2001 06:36:41 | <a href="comments.php?section=1&index=378" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The popular server logging tool <a href="http://www.planetquake.com/aeons/aestats/" class=colourise>AEStats</a> got updated to version 5.08 beta. This version offers a lot of new things, fixes and improvements:<br><span class=quote>"added event, role, team tracking for team fortress classic (a half-life mod), use the -tfa option of preaes. tracking 35 events (83 event obits), 5 teams (10 team obits), and 11 roles. This means tons of more info on the output pages, team stats pages are soon to come."</span><br><br>Besides that, the author is looking for some help implementing logging for Counter-Strike servers:<br><span class=quote>"after some more tests and more output pages the next mod that will support events/roles/teams will be counter-strike, for this i will some help of a cs dedicated player/admin, who helps me understand the different game modes, and what the triggered messages in the logs actually mean. so if you want really enhanced team stats for cs send me an email. thanx.</span><br><br>The site reports a lot more about this new version, so <a href="http://www.planetquake.com/aeons/aestats/" class=colourise>go check it out</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>AN Needs You!</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Wed 26 September 2001 12:44:27 | <a href="comments.php?section=1&index=366" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Due to a lack of time, and ICE-M moving to the main BW news, where he is doing a great job, the news on AN has been a bit slow. As you might've guessed, I am looking for one or more dedicated news persons to help keep the news up-to-date on this site.<br><br>If you're interested, you can mail me (Deathwatch) at <a href="mailto:deathwatch@barrysworld.com" class=colourise>deathwatch@barrysworld.com</a> or find me on IRC (QuakeNet) in #barrysworld.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>The BarryMove</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Wed 26 September 2001 12:01:14 | <a href="comments.php?section=1&index=363" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Taken directly from the <a href="http://www.barrysworld.com/news/" class=bwlink>BarrysWorld news</a>:<br><span class=quote>The time is now upon us for the culmination of <span class=colourise>Project Pugwash - aka the BarryMove!</span> This <span class=colourise>Monday 1st October</span> during the daytime we will be unplugging all our kit at our long term hosts <span class=colourise>Level 3</span> and shifting it to <span class=colourise>Harbour Exchange</span> in Docklands. Obviously, all BarrysWorld services (mail, website, forums, irc.barrysworld.com, FTP, game servers, bookables, hosted etc) will be unavailable while we move. If all goes smoothly, we expect to have all services back online by Monday evening.<br><br>We are confident this will happen without a hitch, however those of you who have league and bookable games on Monday night may wish to postphone or re-book them just to be safe. We`ll be working around the clock to get everything back as quickly as humanly (and in Deathace`s case, inhumanly) possible. Following the move will be a period of fine tuning of our network and <a href="http://www.barrysworld.com/news/default.asp?Item=24855&Category=2" class=bwlink>changes to game server ports</a>, and some other things you`ll hear more about soon. See you at Harbour Exchange...<br><br>natrat & the rest of the BW Team</span><br><br>Hopefully everything will go smoothly!</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Global Terrorist Prevention Screenshots</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Mon 17 September 2001 11:39:26 | <a href="comments.php?section=1&index=361" class=blink>Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The upcoming Quake 3 Arena mod <a href="http://www.gtp.org.uk/" class=colourise>Global Terrorist Prevention</a> has updated their site with lots of new screenshots of maps, weapons and mapobjects:<br><br><img src="http://www.gtp.org.uk/maps/soho_05.jpg" alt="Global Terrorist Prevention"> <img src="http://www.gtp.org.uk/weapons/colt.jpg" alt="Global Terrorist Prevention"> <img src="http://www.gtp.org.uk/mapobjects/pepsi.jpg" alt="Global Terrorist Prevention"></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>New Operation Flashpoint patch</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 13 September 2001 11:49:18 | <a href="comments.php?section=1&index=360" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The second patch for the military simulation Operation Flashpoint has been released.<br><br>The patch adds the following:<br><span class=quote><li> Dedicated Server support<br><li> AH64 Helicopter (new vehicle)<br><li> CH-47 Chinook US Transport Helicopter (New vehicle)<br><li> M998 HMMWV (New off-road vehicle)<br><li> Peripheral - Force feedback joystick improved: compatibility<br><li> Multiplayer Features - mission creation wizard with templates</span><br><br>The dedicated server part is probably something most people were looking out for, but here is what SAS said on the <a href="http://forums.barrysworld.com/forumdisplay.php?s=&forumid=90" class=colourise>BW Operation Flashpoint forum</a>:<br><span class=quote>"No dedicated servers... read... <br>Before you think "WHY WHY!!" read the reasons and it will become clear. <br><br>OPF Dedicated (If you can call it that) servers need : <br><br>- A CD in to work. <br>- A cd key. <br>- There is no console to enter commands by (only RCON) <br><br>Reubs has talked with length to codemasters, but the outcome is what we have now. This is not a true dedicated server which can be run like other dedicated servers (i.e halflife, quake3...), and because of this it is impossible to run a full 24/7 dedicated server for operation flashpoint at this time  <br><br>Codemasters will probably patch the dedicated server up some more, but atm sadly we are still stuck with peer-to-peer only gaming."</span><br><br>Anyways, the patch is available from the <a href="ftp://ftp.barrysworld.com" class=bwlink>BarrysWorld FTP</a> and weights about 40mb. You can download it <a href="ftp://ftp.barrysworld.com/pub/games/operationflashpoint/official_patches/ofppatch_upgrade_1_20.zip" class=colourise>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Terrorist Attacks on the USA</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Wed 12 September 2001 12:35:55 | <a href="comments.php?section=1&index=359" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Due to the terrorist attacks on the USA yesterday, every attention is put towards that. Hopefully more details will become clear about this.<br><br>Site likes <a href="http://www.bluesnews.com" class=colourise>Blue's News</a> have halted the gaming news and keep people up-to-date of the happenings.<br><br>Our thoughts go out towards those involved, their friends and their families.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>True Combat Build 9 released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Sun 09 September 2001 00:34:12 | <a href="comments.php?section=1&index=358" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The promising Quake 3 Arena mod <a href="http://www.truecombat.com" class=colourise>True Combat</a> has released an update to their mod, namely build 9.<br><br>This update fixes and adds the following:<br><span class=quote><b>Fixes:</b><br><li> fixed weird hooded head skin on all models <br><li> fixed equipment system (now get what you want) <br><li> fixed handgrenade bug (sometimes no damage) <br><li> fixed team survivor join bug <br><li> fixed general join bug <br><li> decreased grenade damage and range for HK69 <br><li> less clips available for HK69 <br><li> scoreboard will no longer appear when alive to prevent spying <br><li> knife now works correctly (does damage) <br><li> increased "working area" of knife <br><li> warmup counter working again <br><li> round counter working again <br><li> team kills during warmup don't count <br><li> updated models: PSG1 (muzzle suppressor), M4, MP5k, M76 (new sound) <br><br><b>Additions:</b><br><li> new weapon: H&K G3A4 <br><li> IP logging for successful join, IP ban and "wrong password" tries <br><li> logging of players being kicked due to TeamKilling or TeamButchering <br><li> updated Harbour map with fixes and new rooms <br><li> buy profiles for no team, red and blue team</span><br><br>You can download the update <a href="http://www.fileplanet.com/dl/dl.asp?/planetquake/q3t/truecombat/q3tc045b9update.zip" class=colourise>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Terror Quake 3</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Sun 09 September 2001 00:29:26 | <a href="comments.php?section=1&index=357" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Over at the <a href="http://www.teamhavoc.net/tq3/" class=colourise>Terror Quake 3 site</a> they have been showing of weapon models, mapmodels and even some ingame shots of this upcoming Quake 3 mod.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Western Quake 3 Screenshots</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Sun 02 September 2001 13:03:40 | <a href="comments.php?section=1&index=352" class=blink>Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>There are 9 new screenshots of the upcoming Western based Quake 3 modifcation <a href="http://www.planetquake.com/westernq3/" class=colourise>Western Quake 3</a> over at <a href="http://www.planet-multiplayer.de" class=colourise>Planet Multiplayer</a>.<br><br>These screenshots can be seen <a href="http://www.planet-multiplayer.de/index.php?type=news&sub=actual&id=2997#" class=colourise>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Reaction Interview</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Sun 02 September 2001 13:00:21 | <a href="comments.php?section=1&index=351" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Over at <a href="www.news.jolt.co.uk" class=colourise>Jolt</a> they have posted an <a href="http://www.news.jolt.co.uk/index.php?page=raq3.htm" class=colourise>interview</a> with eLDeR_MMHS, one of the developers of the upcoming Quake 3 port of Action Quake 2, <a href="http://www.reactionquake3.com" class=colourise>Reaction Quake 3</a>.<br><br>A few interesting pieces from the interview:<br><span class=quote>"It seems you have been on the verge of releasing a beta build since back <br>in June, is timing a big issue or is it literally a matter of ironing out <br>the 'obvious' bugs?<br><br>Well, something many people misinterpreted was our "going officially public" notice in June. Going public was never intended to mean a release shortly thereafter. We simply reached a point in the development cycle where we could say, "Okay, there's no turning back and forgetting that we started this project. We intend to go through with it all the way, so it's a good time to announce it publicly." It also meant that we were far from the beginning and that you could expect something "soon.""</span><br><br>and:<br><span class=quote>"After Carmack slaved over removing such 'bugs' in Q3, you have said you are going to keep the AQ2 ramp and double jumps. How easy is it to tamper with the sacred in-game physics?<br><br>*laffs* I'm betting almost anyone that has worked with the Q3 source will tell you the player movement code is a bit weird. It's even funkier when you're trying to _reintroduce_ physics-related "bugs" like ramp jumps, double jumps, and so forth. It's an uphill battle, but we're dedicated to getting it as close as possible to Action."</span><br><br>Anyways, if you want to know more, and see some new screenshots of Reaction, go read the <a href="http://www.news.jolt.co.uk/index.php?page=raq3.htm" class=colourise>interview</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Navy Seals M4 and Map Shots</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Mon 27 August 2001 11:55:43 | <a href="comments.php?section=1&index=347" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The <a href="http://www.planetquake.com/nsq3" class=colourise>Navy Seals: Covert Ops</a> team posts some information. <br><br>The first bit of information actually are these screenshots:<br><a href="http://dynamic.gamespy.com/~nsq3/image.pl?http://www.planetquake.com/nsq3/images/misc/preview_m4_01.jpg"><img src="http://www.planetquake.com/nsq3/images/misc/thumb_preview_m4_01.jpg" border=0 alt="Navy Seals: Covert Ops"></a>  <a href="http://dynamic.gamespy.com/~nsq3/image.pl?http://www.planetquake.com/nsq3/images/misc/preview_m4_02.jpg"><img src="http://www.planetquake.com/nsq3/images/misc/thumb_preview_m4_02.jpg" border=0 alt="Navy Seals: Cover Ops"></a><br><br>It is their finished m4 model and skin.<br><br>The second bit is a set of screenshots of one of their new and improved map <a href="http://www.planetquake.com/nsq3/pics_maps_rattlesnake_01.shtml" class=colourise>Warehouse</a>, followed with a small explanation of the author why he improved his map.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Team Factor</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Mon 27 August 2001 11:45:08 | <a href="comments.php?section=1&index=346" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top><a href="http://www.7fx.com/" class=colourise>Team Factor</a>, a team based military game being produced by the Prague based company 7fx, has several screenshots on their site of this upcoming game.<br><br><span class="quote">Team Factor enables the player to choose and develop his or her favourite way of play and fight. After selecting one out of three teams and one of four different character specializations, the player may set up whichever skills he or she likes to cultivate. According to the specific skill development, the player is able to access more "exclusive" weapons and devices. This means, that each created character will be unique and therefore recognizable to the other players by his or her personal ability and record. This feature is called a "RPG factor". All players' records will be stored in the Team Factor on-line central database. "</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Navy Seals: Covert Ops Heads</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Tue 21 August 2001 16:12:18 | <a href="comments.php?section=1&index=345" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The <a href="http://www.planetquake.com/nsq3" class=colourise>Navy Seals: Covert Ops</a> page reports that their <a href="http://www.planetquake.com/nsq3/pics_players.shtml" class=colourise>Players section</a> has been updated with 16 new skins for the heads of the models.<br><br>There are 4 different faces, which all have 4 variations: <span class=quote>"normal, camo, mask and special"</span><br><br>This will give players a bit more personal touch to their models when playing this mod.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>HomeLAN Ghost Recon Interview</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Tue 21 August 2001 16:06:40 | <a href="comments.php?section=1&index=344" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Over at <a href="http://www.homelanfed.com" class=colourise>HomeLAN</a> they have posted <a href="http://www.homelanfed.com/index.php?id=1562" class=colourise>an interview</a> with Red Storm Entertainment's Brian Upton, the game's lead game designer.<br><br><span class=quote>"<b>HomeLAN</b> - How the the idea behind the game come about? <br><br><b>Brian Upton</b> - We were sick of doing Rainbow stuff and wanted a break. Really. We though about doing a police game (like SWAT) but a military title seemed like it would be more fun since soldiers get to shoot their guns more than cops do. "</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Full Metal Jacket Beta 1 Maplist</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Sun 19 August 2001 12:41:06 | <a href="comments.php?section=1&index=343" class=blink>Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Over on the homepage of the Q3a mod <a href="http://www.planetquake.com/fmj/" class=colourise>Full Metal Jacket</a> they have posted the maplist for their first beta:<br><br><span class=quote>-FMJ_Airstrike / Status: Reworking for 1.0 / 8 to 16 Players<br>-FMJ_Aquatica / Status: Completed / 8 to 16 Players<br>-FMJ_Aquatica_Night / Status: Completed / 8 to 16 Players<br>-FMJ_City / Status: On Final Version / 6 to 10 Players<br>-FMJ_Bridge / Status: On Final Version / 8 to 18 Players<br>-FMJ_Hue_City / Status: Completed / 8 to 14 Players<br>-FMJ_Jungle / Status: Reworking for 1.0 / 8 to 14 Players<br>-FMJ_Khong_Tac / Status: Work on US Goal / 6 to 12 Players<br>-FMJ_Temple / Status: Completed / 8 to 16 Players <br>-FMJ_Sewer / Status: Completed / 8 to 12 Players<br>-FMJ_Oblivion / Status: Completed / 8 to 12 Players<br>-FMJ_Terratica / Status: Relighting / 8 to 24 Player</span><br><br>Besides that, they show off two maps by ThermO, giving a short description and showing some screenshots of them.<br><br>Head over to the <a href="http://www.planetquake.com/fmj/" class=colourise>Full Metal Jacket site</a> for more info.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Surround Light?</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 16 August 2001 15:23:11 | <a href="comments.php?section=1&index=340" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>Spotted this on <a href="http://www.bluesnews.com" class=colourise>Blue's News</a>, PC IGN have put up an article about 'Surround Light'.<br><br><span class=quote>"We also used virtual lights to control the lights in the room around you -- if blue photon torpedo shoots by on the right, lights on the right side of the room will glow blue. We also used it for a few special effects -- in a red alert, the whole room glows red, when you combine that with the lights, it's really breathtaking. "</span><br><br>You can read the article <a href="http://pc.ign.com/news/37436.html" class=colourise>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Brain of Combat bot 2.3b</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 16 August 2001 15:15:55 | <a href="comments.php?section=1&index=339" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_general.gif' alt='General News' border=0></td><td width="100%" valign=top>The HL bot for the CS and DoD mods, <a href="http://www.botepidemic.com/boc" class=colourise>Brain of Combat</a>, has a new release.<br><br>This version does the following:<br><span class=quote>better grenade aiming ( over walls) <br>bots look around corners <br>bots jump over valleys <br>better jumping algorithm <br>DoD bots bandage themselves <br>new waypoint saving system <br>camping bots look around <br>fixed bug in brain.exe <br>pronepoint wpts used by snipers only <br>fixed crash if adding more than 4 bots automatically <br>fixed some dedicated server problems <br>fixed mapchange problems </span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><b>News Archive</b><br>
+<div align="center"><span class='nArchiveText'>[<a class='nArchiveLink' href=/default.php?page=0&section=1>1 - 20</a>][<a class='nArchiveLink' href=/default.php?page=1&section=1>21 - 40</a>][41 - 60][<a class='nArchiveLink' href=/default.php?page=3&section=1>61 - 80</a>][<a class='nArchiveLink' href=/default.php?page=4&section=1>81 - 100</a>][<a class='nArchiveLink' href=/default.php?page=5&section=1>101 - 120</a>][<a class='nArchiveLink' href=/default.php?page=6&section=1>121 - 140</a>][<a class='nArchiveLink' href=/default.php?page=7&section=1>141 - 160</a>][<a class='nArchiveLink' href=/default.php?page=8&section=1>161 - 180</a>][<a class='nArchiveLink' href=/default.php?page=9&section=1>181 - 182</a>]</span></div>
+
+		</td>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+	</tr>
+	</table>
+	
+	</td>
+	<td width=150 valign=top>
+	<!-- Right Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="default.php?section=5&index=600" class="wlink"> - Urban Terror Beta 2.6 Released</a><br><a href="default.php?section=1&index=586" class="wlink"> - Operation Red Falcon Update</a><br><a href="default.php?section=1&index=567" class="wlink"> - NS-CO Released</a><br><a href="default.php?section=6&index=566" class="wlink"> - UT - Strike Force 1.75 Released</a><br><a href="default.php?section=3&index=563" class="wlink"> - TNG 2.6 released</a><br><a href="default.php?section=5&index=561" class="wlink"> - Beta Release and League News.</a><br><a href="default.php?section=5&index=559" class="wlink"> - Urban Terror Bug Fix</a><br><a href="default.php?section=5&index=558" class="wlink"> - Urban Terror Beta 2.4 is here!!</a><br><a href="default.php?section=4&index=557" class="wlink"> - DoD Beta 2 Win32 Client</a><br><a href="default.php?section=4&index=556" class="wlink"> - Day of Defeat Beta 2 Server Files</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Features</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="interview.php?section=10&index=349" class="wlink"> - Action Half-Life Interview</a><br><a href="interview.php?section=10&index=336" class="wlink"> - Opera Interview</a><br><a href="interview.php?section=10&index=328" class="wlink"> - Annihilation Interview</a><br><a href="interview.php?section=10&index=324" class="wlink"> - Navy Seals Covert Operations Interview</a><br><a href="interview.php?section=10&index=312" class="wlink"> - The Specialists Interview</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="
+http://www.barrysworld.com/news/default.asp?Item=27596&Category=1" class="wlink"> - 
+
+DoD goes retail !</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27595&Category=2" class="wlink"> - 
+
+BattleField 1942 Bookable Servers Launched woohoo!</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27590&Category=2" class="wlink"> - 
+
+RTCW Changes</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27588&Category=2" class="wlink"> - 
+
+GAME.NET Launches</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27586&Category=1" class="wlink"> - 
+
+Splinter Cell Demo</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27585&Category=2" class="wlink"> - 
+
+A Trio of Bookables</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27584&Category=1" class="wlink"> - 
+
+Age of Mythology Patch</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27583&Category=1" class="wlink"> - 
+
+Impossible Creatures Multiplayer Test</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27582&Category=1" class="wlink"> - 
+
+Microsoft to Publish Steel Battalion</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27581&Category=1" class="wlink"> - 
+
+Art and Level Design</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Services</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/hosting/' class='wlink'>Get your site hosted</a><br>
+	<a href='http://www.barrysworld.com/games/liaisons.asp' class='wlink'>Server Liaisons/Admins</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/gameservers.asp' class='wlink'>Public Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/counterstrike/CounterStrikeServers.asp' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/games/halflife/HalfLifeServers.asp' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/quake2/quake2servers.asp' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/quake3/quake3servers.asp' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/unrealtournament/UnrealTournamentServers.asp' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/bookings/' class='wlink'>Bookable Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Half%2DLife' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+2' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+3+Arena' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Unreal+Tournament' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://leagues.barrysworld.com/' class='wlink'>Leagues</a></b><br>
+	<a href='http://leagues.barrysworld.net/bwcsl/' class='wlink' target=new>BWCSL</a><br>
+	<a href='http://leagues.barrysworld.net/bwaqsl/' class='wlink' target=new>BWAQSL</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<p>
+	<div align="center">Visitors since 03/05/01<br>
+	<img src="http://linweb02.barrysworld.com/cgi-bin/Count.cgi?trgb=ffffff&dd=E&reload=F" alt="Count">
+	</div>
+	<p>
+	<div align="center">
+	<a href="http://www.barrysworld.com" target="_blank"><img src="http://images.barrysworld.com/button_bw.gif" border=0 alt="Hosted by Barrysworld with Barry Power!"></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.tribesnation.co.uk/"><img src="http://images.barrysworld.com/nation/button_tnation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.actionnation.com/"><img src="http://images.barrysworld.com/nation/button_anation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.quakenation.com/"><img src="http://images.barrysworld.com/nation/button_qnation.gif" border=0></a><br>	</div>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0 border=0 background="images/main_footfill.gif">
+<tr>
+	<td><img src="images/spacer.gif" width="1" height="39" alt="" border="0"></td>
+	<td align=right><a href="http://www.actionnation.com/neville/"><img src="images/main_footer.gif" width="143" height="39" alt="" border="0"></a></td>
+</tr>
+</table>
+<table width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#CECECE">
+<tr>
+	<td colspan=2>
+	<div align="right" class=bsmall>
+	ActionNation is part of the <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a> Nation Network<br>
+	Copyright &copy; 2001 <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a></div><br>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

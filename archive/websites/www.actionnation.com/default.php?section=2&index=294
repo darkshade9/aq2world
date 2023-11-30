@@ -1,0 +1,793 @@
+<script>
+var eTopM = "";	
+
+if (document.all)		
+document.onmouseover = mouseOver;
+
+function mouseOver() {
+	var eSource = window.event.srcElement;
+	
+	if (eSource.name == "topMenu") {
+		var eMenu = document.all[eSource.id.replace("div", "")]
+		var intWidth = eSource.offsetWidth
+	
+		if (eTopM && eTopM != eMenu) hideTopMenu(eTopM);
+			 
+		if (eMenu) showTopMenu(eMenu, intWidth)
+	} else if (eTopM && !eTopM.contains(eSource) && !menuRow.contains(eSource))
+		hideTopMenu(eTopM);
+}
+
+function showTopMenu(eSource, intMinWidth) {	
+	x  = window.event.srcElement.offsetLeft + window.event.srcElement.offsetParent.offsetLeft;
+	y  = menuRow.offsetHeight - 2;
+	
+	if (intMinWidth < 150) intMinWidth = 150		
+	if (eSource.style.width < intMinWidth) eSource.style.width = intMinWidth;
+	var intTemp = parseInt(eSource.style.width);		
+	intTemp = Number(x) + intTemp;
+	var intDocWidth = document.body.clientWidth;
+	
+	if(intTemp > intDocWidth) {
+		var intDiff = intTemp - intDocWidth
+		x = x - intDiff - 3; 
+	}
+	bwbanner.style.visibility='hidden';
+	eSource.style.left = x;
+	eSource.style.top = y;
+	eSource.style.visibility = "visible";
+	eSource.style.filter = "alpha(opacity=90)";
+	eTopM = eSource;
+}
+
+function hideTopMenu(eSource){
+	eSource.style.filter = "none";
+	eSource.style.visibility = "hidden";
+	bwbanner.style.visibility='visible';
+}
+</script>
+<style>
+BODY{margin:0;}
+.bTB{background-color:#006600;color:#FFFFFF;font-size:12px;font-family:Arial;border-bottom:2px solid #000000;}
+A.bT:Link{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Hover{color:#FFFF99;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Active{color:#00FF00;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Visited{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+.bSB{background-color:#006600;color:#FFFFFF;padding:2px;font-size:12px;font-family:Arial;border:2px solid #000000;border-top:2px solid #005500;visibility:hidden;position:absolute;z-index:10;left:0;}
+A.bS:Link{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Visited{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Active{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Hover{width:100%;padding:2px;background-color:#228822;color:#FFFF99;font-family:Arial;text-decoration:none;}
+B.sh{color:#FFFFFF;}
+</style>
+<div class=bTB>
+<table cellpadding=0 cellspacing=0 border=0 width="100%" background="http://images.barrysworld.com/hmenu/lback.gif" id=menuRow><tr>
+<td class=bwHeader width=19><a href="http://www.barrysworld.com/"><img src="http://images.barrysworld.com/hmenu/lsmile.gif" width="19" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+<td class=bwHeader>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divb name=topMenu>BarrysWorld</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/games/gameservers.asp" id=divg name=topMenu>Game Servers</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/membership/" id=divm name=topMenu>Membership</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divn name=topMenu>Nation</a>&nbsp;&nbsp;
+<a class=bT href="http://leagues.barrysworld.net/" id=divl name=topMenu>Leagues</a>&nbsp;&nbsp;	
+</td><td align=right><a class=bT href="http://www.barrysworld.com"><img src="http://images.barrysworld.com/hmenu/llogo.gif" width="121" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+</tr></table>
+</div><div class=bSB id=b>
+<a class=bS href="http://www.barrysworld.com/news/">News</a><br>
+<a class=bS href="http://www.barrysworld.com/Hosting/">Web Hosting</a><br>
+<a class=bS href="http://forums.barrysworld.com/">Forums</a><br>
+<a class=bS href="http://guides.barrysworld.com/">Guides</a><br>
+</div><div class=bSB id=g>
+<a class=bS href="http://www.barrysworld.com/games/gameservers.asp">Public Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/">Bookables</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/ClanServers.asp">Private Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/gameservermasters.asp">Master Servers</a><br>
+</div><div class=bSB id=m>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/PlayerSearch.asp">Players</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/TeamList.asp">Teams</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/RecruitmentList.asp">Player Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/RecruitmentList.asp">Team Recruitment</a><br>
+</div><div class=bSB id=n>
+<a class=bS href="http://www.quakenation.com/">QuakeNation</a><br>
+<a class=bS href="http://www.tribesnation.co.uk/">TribesNation</a><br>
+<a class=bS href="http://www.fortressnation.com/">FortressNation</a><br>
+<a class=bS href="http://www.actionnation.com/">ActionNation</a><br>
+<b>Other Network Sites</b><br>
+<a class=bS href="http://www.unrealfortress.com/">UnrealFortress</a><br>
+<a class=bS href="http://www.ukageofkings.com/">UK Age Of Kings</a><br>
+<a class=bS href="http://www.aobreeds.com/">AOBreeds</a><br>
+<a class=bS href="http://www.avpnetwork.com/">AvP Network</a><br>
+<a class=bS href="http://www.unrealtournament.org/">UTO</a><br>
+</div><div class=bSB id=l>
+<b class=sh>Quake</b><br>	
+<a class=bS href="http://leagues.barrysworld.com/bwq3l/dm/">BWQ3DML</a><br>
+<a class=bS href="http://leagues.barrysworld.com/bwq3l/ctf">BWQ3CTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.com/bwra2l">BWRA2L</a><br>
+<a class=bS href="http://leagues.barrysworld.com/bwra3l">BWRA3L</a><br>
+<a class=bS href="http://leagues.barrysworld.com/bwq3fl">BWQ3FL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwaqsl">BWAQSL</a><br>
+<b class=sh>Unreal Tournament</b><br>
+<a class=bS href="http://leagues.barrysworld.net/bwutdml/">BWUTDML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwutctfl/">BWUTCTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwunfl/">BWUNFL</a><br>
+<b class=sh>Half-Life</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwcsl">BWCSL</a><br>
+<a class=bS href="http://www.bwtfcl.com/">BWTFCL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwahl/">BWAHL</a><br>
+
+<b class=sh>Tribes</b><br>
+<a class=bS href="http://leagues.barrysworld.net/bwtl">BWT2L</a><br>
+</div>
+
+<!-- Magic Quotes - 0-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>ActionNation.com  - For all your Action needs</title>
+	<link rel="STYLESHEET" type="text/css" href="style/default.css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<table bgcolor="#9B7A21" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="images/main_logo.jpg" width="454" height="54" alt="" border="0"><br></td>
+	<td>&nbsp;</td>
+	<td align=right><img src="images/main_right.jpg" width="312" height="54" alt="" border="0"></td>
+</tr>
+</table>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0>
+<tr>
+	<td>
+	<table bgcolor="#CECECE" width="100%" cellpadding=2 cellspacing=0 border=0>
+	<tr>
+		<td>&nbsp;&nbsp;<span class="btext"><a href="http://www.actionnation.com/" class="blink">ActionNation</a> | 
+<a href="http://www.fortressnation.com/" class="blink">FortressNation</a> | 
+<a href="http://www.quakenation.com/" class="blink">QuakeNation</a> | 
+<a href="http://www.tribesnation.co.uk/" class="blink">TribesNation</a></span></td>
+		<td align=right></td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+	<td width=150 valign=top>
+	<!-- Left Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Main</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b><a class=wlink href=default.php>News</a></b><br>
+<a href="default.php?section=1" class="wlink">General News</a><br><a href="default.php?section=2" class="wlink">Counter-Strike</a><br><a href="default.php?section=3" class="wlink">Action Quake 2</a><br><a href="default.php?section=4" class="wlink">Action Halflife</a><br><a href="default.php?section=5" class="wlink">Urban Terror</a><br><a href="default.php?section=6" class="wlink">Frontline Force</a><br><a href="default.php?section=7" class="wlink">Leagues</a><br>
+<a class=wlink href=mailto:deathwatch@barrysworld.com>Submit News</a>
+<p>
+<b>Leagues</b><br>
+<a href="league.php?section=14" class="wlink">BWAQSL</a><br><a href="league.php?section=15" class="wlink">BWCSL</a><br>
+<p>
+<b>Columns</b><br>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width=60%><a href="column.php?section=20&index=321" class="wlink">Hotteh</a></td><td width=40%><span class=wtext>(01/08/01)</span></td></tr><tr><td width=60%><a href="column.php?section=25&index=293" class="wlink">executor2k</a></td><td width=40%><span class=wtext>(17/07/01)</span></td></tr><tr><td width=60%><a href="column.php?section=23&index=239" class="wlink">Ice</a></td><td width=40%><span class=wtext>(09/07/01)</span></td></tr><tr><td width=60%><a href="column.php?section=21&index=226" class="wlink">ZaPpeh</a></td><td width=40%><span class=wtext>(05/07/01)</span></td></tr><tr><td width=60%><a href="column.php?section=20&index=223" class="wlink">Hotteh</a></td><td width=40%><span class=wtext>(02/07/01)</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Content</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b>Features</b><br>
+<a href="feature.php?section=9" class="wlink">Features</a><br><a href="interview.php?section=10" class="wlink">Interviews</a><br><a href="review.php?section=11" class="wlink">Reviews</a><br>
+<p>
+<b><a class=wlink href=http://forums.barrysworld.com/forumdisplay.php?forumid=28>Forum</a></b><br>
+<b><a class=wlink href=files.php>Files</a></b><br>
+<b><a class=wlink href=links.php>Links</a></b><br>
+<b><a class=wlink href=contact.php>Contact</a></b><br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Lists</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<b><a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp' class='wlink'>Team Lists</a></b><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp' class='wlink'>Hosted Sites</a></b><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Nation Network</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.actionnation.com/' class='wlink'>ActionNation</a><br>
+	<a href='http://www.fortressnation.com/' class='wlink'>FortressNation</a><br>
+	<a href='http://www.quakenation.com/' class='wlink'>QuakeNation</a><br>
+	<a href='http://www.tribesnation.co.uk/' class='wlink'>TribesNation</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Powered by..</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/' class='wlink'>BarrysWorld</a><br>
+	<a href='http://hosted.barrysworld.net/neville' class='wlink'>Neville</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+	<td width="100%" valign=top>
+	<!-- Content -->
+	<img src="images/spacer.gif" width="2" height="5" alt="" border="0">
+	<table width="100%" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+		<td width="100%">
+		<div align="center"><div name=bwbanner id=bwbanner>
+<!-- BEGIN AD CODE -->
+<script language="JavaScript">
+<!--
+hasIframes = (navigator.appName.substring(0,9) == "Microsoft" && parseFloat(navigator.appVersion) >= 4)
+
+now = new Date();
+r = now.getTime();
+
+if (hasIframes) {
+  document.writeln('<iframe src="http://ad.uk.doubleclick.net/adi/barrysworld.com/home;sz=468x60;ord=' + r + '?" name="ad" width="468" height="60" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>');
+} else  {
+  document.writeln('<a href="http://ad.uk.doubleclick.net/jump/barrysworld.com/home;sz=468x60;ord=' + r + '?" target="_blank"><img src="http://ad.uk.doubleclick.net/ad/barrysworld.com/home;sz=468x60;ord=12345?" border=0 width=468 height=60></a>');
+}
+//-->
+</script>
+<noscript><a href="http://ad.uk.doubleclick.net/jump/barrysworld.com/home;sz=468x60;ord=12345?" target="_blank"><img src="http://ad.uk.doubleclick.net/ad/barrysworld.com/home;sz=468x60;ord=12345?" border=0 width=468 height=60></a></noscript>
+<!-- END AD CODE -->
+</div>
+
+</div>
+		<p>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>CS News</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Tue 17 July 2001 11:34:56 | <a href="comments.php?section=2&index=294">Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top>I haven't been feeling too well for the past couple of days and so haven't been posting news. Here is all of the <a href=http://www.counter-strike.net class=colourise target=_blank>CS</a> News for the past couple of days :)<br><br><a href="http://www.cscentral.com/" class=colourise target=_blank>CS Central</a> have got some nice exclusive screenshots from <a href="http://www.prehistoricplanet.com/3d" class=colourise target=_blank>Theropod-X's</a> new map DE_Museum. Check them out <a href="http://www.cscentral.com/" class=colourise target=_blank>here</a>. You can also check out <a href="http://www.prehistoricplanet.com/3d" class=colourise target=_blank>Theropod-X's homepage</a>.<br><br><a href="http://csm.counterstrikecenter.com" class=colourise target=_blank>CS Madness</a> have released a new sound pack. You can download it <a href="http://csm.counterstrikecenter.com/csmsound2.zip" class=colourise target=_blank>here</a>.<br><br><a href="http://www.games-fusion.net" class=colourise target=_blank>Games-fusion.net</a> have been updated with a new <a href="http://www.games-fusion.net/sniper_sprites.php" class=colourise target=_blank>sniper sprites section</a>. They have also released a new version of their Fusion Pack. Find out information and download links <a href="http://www.games-fusion.net" class=colourise target=_blank>here</a>.<br><br><a href="http://www.halflifeitalia.com" class=colourise target=_blank>Half-Life Italia</a> have posted a nice <a href="http://www.halflifeitalia.com/interviste/3d_mike_01_eng.asp" class=colourise target=_blank>interview</a> with 3D_Mike, who is the creator of de_predator and de_survivor (which might be in cs 1.3). Check out the english version <a href="http://www.halflifeitalia.com/interviste/3d_mike_01_eng.asp" class=colourise target=_blank>here</a>.<br><br><a href="http://www.punkbuster.com" class=colourise target=_blank>Punkbuster</a> have released a fix for people who have been having problems with it. It is something to do with a program called new.net. Check out the fix <a href="http://www.punkbuster.com/news.html" class=colourise target=_blank>here</a>.<br><br>Eino over at <a href="http://csmapping.cscentral.com" class=colourise target=_blank>CSMapping</a> has reviewed de_apcrally. You can find the review and some screenshots <a href="http://csmapping.cscentral.com/apcrally.shtml" class=colourise target=_blank>here</a>.<br><br>Cliffe has reported that the CS 1.3 preview contains false information on new weapons and is generally inaccurate.<br><br>N@rby and Vascas have posted some pictures of a map they are working on called de_destroyer. You can check them out <a href="http://ubb.counter-strike.net/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=11&t=000102 " class=colourise target=_blank>here</a>.<br><br><a href="http://www.counterstrikecenter.com" class=colourise target=_blank>CSC</a> they have updated with 32 new skins. You can click <a href="http://www.counterstrikecenter.com/news.phtml?id=86324&language=en" class=colourise target=_blank>here</a> to see the best skins that were added in this update.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>CS Map Reviews</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Sun 15 July 2001 11:42:15 | <a href="comments.php?section=2&index=282">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href="http://www.iceterminal.com/ class=colourise target=_blank>Ice Terminal</a> have posted a number of <a href=http://www.counter-strike.net class=colourise target=_blank>Counter-Strike</a> map reviews. They are  of <a href="http://www.iceterminal.com/index1.php?content=mapreviews/cs/balkan/balkan.content" class=colourise target=_blank>CS_Balkan</a> by ]==---STAATSSCHUTZ---==[, <a href="http://www.iceterminal.com/index1.php?content=mapreviews/cs/russia/russia.content" class=colourise target=_blank>CS_Russia</a> by Abu & Eldritch, <a href="http://www.iceterminal.com/index1.php?content=mapreviews/cs/wmata/wmata.content" class=colourise target=_blank>CS_Wmata</a> by Freon, and <a href="http://www.iceterminal.com/index1.php?content=mapreviews/cs/nipa/nipa.content" class=colourise target=_blank>CS_Nipa1</a> by Mataleone . All of the reviews include a good selection of screenshots and links to download the maps. Each map is given a score on Ingenuity, Eye Candy, Game Flow, Interest, Pro's vs Con's and an Average Score. They are well worth a look if you are interested in custom maps. </td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>de_torn review</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Sat 14 July 2001 13:38:08 | <a href="comments.php?section=2&index=276">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href=http://dang7.virtualave.net/ class=colourise target=_blank>The Web Domain</a> have posted a  <a href=http://dang7.virtualave.net/tornbeta2.shtml class=colourise target=_blank>review</a> of de_torn. This map is by <a href=http://www.planethalflife.com/crinity/ class=colourise target=_blank>Crinity</a> and is likely to make it onto CS 1.3. The <a href=http://dang7.virtualave.net/tornbeta2.shtml class=colourise target=_blank>review</a> includes some nice screenshots of the map. Below is a extract:<br><br><span class=quote>De_Torn, by esteemed mapmaker Crinity, is truly an amazing map in many respects. Firstly, its great architecture. Great design with amazing detail, without complete overkill. Secondly, great gameplay. Thirdly, pure SIZE! This map is huge, and can be quite overwhelming the first few rounds.</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Punkbuster News</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Fri 13 July 2001 19:44:00 | <a href="comments.php?section=2&index=268">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top>Deathace has made a <a href=http://forums.barrysworld.com/showthread.php?s=&threadid=11012 class=colourise target=_blank>post</a> over on the <a href=http://forums.barrysworld.com class=colourise target=_blank>BW Forums</a> asking for the views of the community on whether <a href=http://www.punkbuster.com/ class=colourise target=_blank>Punkbuster</a> should be installed on <a href=http://www.barrysworld.com class=colourise target=_blank>BarrysWorld</a> servers. On the same topic, <a href=http://www.3dactionplanet.com/ class=colourise target=_blank>3DActionPlanet</a> have an <a href=http://www.3dactionplanet.com/features/interviews/punkbuster/ class=colourise target=_blank>interview</a> with Tony Ray, who is the creator of <a href=http://www.punkbuster.com/ class=colourise target=_blank>PunkBuster</a>. Check it out <a href=http://www.3dactionplanet.com/features/interviews/punkbuster/ class=colourise target=_blank>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>New CS Pack</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Thu 12 July 2001 20:18:28 | <a href="comments.php?section=2&index=263">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href="http://www.games-fusion.net" class=colourise target=_blank>Games-Fusion.net</a>  have just released a new <a href=http://www.games-fusion.net/cspacks.php>CS Pack</a>.  You can download it <a href="http://www.games-fusion.net/files/cs/packs/cspack1.1.exe"  class=colourise target=_blank>here</a>. The contents are listed below:<br><br><span class=quote>- New MP5 Navy weapon model <br>- New Steyr AUG weapon model <br>- New Shells<br>- New Gign player model <br>- New Gsg9 player model <br>- New Guerilla player model <br>- New leet player model <br>- New SAS player model <br>- New Terror player model <br>- New Urban player model <br>- Fixed sounds (MP5, M4, AUG)</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Half-Life and CS Retail Updates</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Wed 11 July 2001 19:14:06 | <a href="comments.php?section=2&index=259">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top>If you have the Mod (downloaded) version of CS, you only need to download the Half-Life Update. If you have the Retail Version of CS, you need to download the Half-Life Update and the CS Retail Update.<br><br>This list will be updated with Mirrors:<br><br>Half-Life 1107 Full Version (66.1 MB)<br><a href=ftp://ftp.barrysworld.com/pub/games/halflife/official_patches/client/win32/hl1107.exe  target=_blank class=colourise>BarrysWorld (UK)</a><br><a href=ftp://ftp.wireplay.net/pub/downloads/fps/halflife/patches/1107/hl1107.exe target=_blank class=colourise>Wireplay.net (UK)</a><br><a href=ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/official/hl1107.exe  target=_blank class=colourise>Blueyonder (UK)</a><br><a href=http://www.bluesnews.com/files/half-life/patches/hl1107.shtml target=_blank class=colourise>Blue's News (USA)</a><br><br>Half-Life 1106 to 1107 Patch (15.2 MB)<br><a href=ftp://ftp.barrysworld.com/pub/games/halflife/official_patches/client/win32/11061107.exe  target=_blank class=colourise>BarrysWorld (UK)</a><br><a href=ftp://ftp.wireplay.net/pub/downloads/fps/halflife/patches/1107/11061107.exe  target=_blank class=colourise>Wireplay.net (UK)</a><br><a href=ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/official/11061107.exe  target=_blank class=colourise>Blueyonder (UK)</a><br><a href=http://www.bluesnews.com/files/half-life/patches/11061107.shtml target=_blank class=colourise>Blue's News (USA)</a><br><br>CS 1002 (retail) full version (49.9 MB)<br><a href=ftp://ftp.barrysworld.com/pub/games/halflife/mods/counterstrike/official_patches/win32/retail/cs1002.exe target=_blank class=colourise>BarrysWorld (UK)</a><br><a href=ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/official/cs1002.exe  target=_blank class=colourise>Blueyonder (UK)</a><br><a href=http://www.bluesnews.com/files/half-life/patches/cs1002.shtml target=_blank class=colourise>Blue's News (USA)</a><br><br>CS 1001 to 1002 (retail) Patch (18.5 MB)<br><a href=ftp://ftp.barrysworld.com/pub/games/halflife/mods/counterstrike/official_patches/win32/retail/cs10011002.exe target=_blank class=colourise>BarrysWorld (UK)</a><br><a href=ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/official/cs10011002.exe  target=_blank class=colourise>Blueyonder (UK)</a><br><a href=http://www.bluesnews.com/files/half-life/patches/cs10011002.shtml target=_blank class=colourise>Blue's News (USA)</a></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>CS Replacement Model Pack Released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Wed 11 July 2001 14:02:17 | <a href="comments.php?section=2&index=255">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href=http://www.games-fusion.net/ class=colourise target=_blank>Game Fusion</a> has released a new replacement model pack for Counter-Strike. It includes replacements for most of the existing weapons and items. They say they have gone through hundreds of different models to find the best ones available. It is around 14 MB and you can download it <a href=http://www.games-fusion.net/files/cs/packs/cspack.exe class=colourise target=_blank>here</a>.<br><br><a href="http://www.games-fusion.net/images/pack.jpg" class=colourise target=_blank><img src="http://www.games-fusion.net/images/pack_sml.jpg" border="0"></a><a href="http://www.games-fusion.net/images/pack2.jpg" class=colourise target=_blank><img src="http://www.games-fusion.net/images/pack2_sml.jpg" border="0"></a><br><a href="http://www.games-fusion.net/images/pack3.jpg" class=colourise target=_blank><img src="http://www.games-fusion.net/images/pack3_sml.jpg" border="0"></a><a href="http://www.games-fusion.net/images/pack4.jpg" class=colourise target=_blank><img src="http://www.games-fusion.net/images/pack4_sml.jpg" border="0"></a></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Half-Life and CS Retail Updates</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Wed 11 July 2001 13:22:07 | <a href="comments.php?section=2&index=252">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href=http://www.counter-strike.net class=colourise target=_blank>The Official Counter-Strike Website</a> has been updated with news that the 1.0.0.2 CS Retail Patch and the 1.1.0.7 Half-Life patch will be released at around 2pm EST, that is around 7pm BST (UK Time). They report that the full CS retail version will be 52 MB and the update will be 19 MB. Note that people who have downloaded CS will only have to download the HL upgrade today. They also report that another new version of CS and HL will be out in a couple of weeks. This will feature Valve's new Voice Communication technology and multicast spectator.<br><br><span class=quote>Later on today (2pm EST), there will be a 1.0.0.2 CS Retail Patch coming out as well as the new 1.1.0.7 Half-Life patch. Check back here for the update. It will also feature a new auto updater program that will be much more useful than the current HL updater utility. The full CS Retail update will be 52 megs while the update will be 19 megs. CS Mod owners will only need to upgrade their HL version today.<br><br>CS Mod 1.3 and CS Retail 1.0.0.3 will be out in a few weeks, if not longer. Remember that these are the patches that will incorporate Valve's new Voice Communication technology and multicast spectator.</span><br><br>A number of news sites, including <a href=http://www.barrysworld.com class=colourise target=_blank>BarrysWorld</a> and <a href=http://www.shacknews.com/ class=colourise target=_blank>ShackNews</a> are reporting that the Half-Life upgrade will be around 15MB. There is no news on how big the full version will be. This update will feature the following new features:<br><span class=quote>- Deathmatch Classic<br>- New Automatic update system<br>- Fixed GL texture binding problem (white skin bug)<br>- Optimized model drawing</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>DE_Celtic Review.</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice@mi-team.co.uk'>Ice</a> on Tue 10 July 2001 12:03:55 | <a href="comments.php?section=2&index=243">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top>De_Celtic has been reviewed at <a href="http://www.planethalflife.com/csmaps" class=colourise target=_blank>cs maps</a>. You can read the review <a href="http://www.planethalflife.com/csmaps/review.asp?map=de_celtic" class=colourise target=_blank>here</a> and download the map <a href="http://www.fileplanet.com/dl/dl.asp?planethalflife/csmaps/de_celtic.zip"class=colourise target=_blank>here</a><br><br>You can read a little bit of it below.<br><br><span class=quote>The unique thing about this map is the bombsites. Instead of bombing the usual stack of crates, the terrorists are supposed to bomb one of two missiles pointing at the sky ready to be launched. The only potential problem I see with the map is players might start complaining about how badly the AWP is “whored” on this map, and I’m sure there are lots of people out there that get angry at the “over-usage” of the weapon.</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>CPL CS Qualifier</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice@mi-team.co.uk'>Ice</a> on Tue 10 July 2001 11:53:45 | <a href="comments.php?section=2&index=242">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href="http://www.theplayingfields.co.uk" class=colourise target=_blank>TPF (The playing fields)</a> have posted the results of the CPL CS UK Qualifier event. The favourites, 4 Kings (4k), were closely beaten by Nocturne (NoC), with the final score being 7-6 on de_dust2.<br><br>The full results can be viewed on <a href="http://www.theplayingfields.co.uk/page.php3?ref=sp-cplloncsres" class=colourise target=_blank>TPF</a> website and additional coverage can be found over at <a href="http://www.ukgamer.net/article.php3?id=123&page=1" class=colourise target=_blank>Uk Gamer</a>. <a href="http://www.theplayingfields.co.uk" class=colourise target=_blank>TPF</a> are also releasing a demo of the final match which can be downloaded off their site soon.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>de_dawn review</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Mon 09 July 2001 13:21:56 | <a href="comments.php?section=2&index=236">Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p>A <a href="http://www.planethalflife.com/csmaps/review.asp?map=de_dawn" class=colourise target=_blank>review</a> of de_dawn has been posted over at <a href="http://www.planethalflife.com/csmaps/" class=colourise target=_blank>CS Maps</a>. This map is by Bargle and not <a href="http://www.planethalflife.com/davej/" class=colourise target=_blank>DaveJ</a> as was previously stated. You can check it out <a href="http://www.planethalflife.com/csmaps/review.asp?map=de_dawn" class=colourise target=_blank>here</a> and download <a href ="http://dl.fileplanet.com/dl/dl.asp?planethalflife/csmaps/de_dawn.zip" class=colourise target=_blank>here</a> if you like the look of it.</p></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Realbot creator interview</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Mon 09 July 2001 13:21:28 | <a href="comments.php?section=2&index=235">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p><a href="http://cs.gamer.com.sg" class=colourise target=_blank>CS city</a> has been updated with an <a href="http://cs.gamer.com.sg/?interviews/stefan" class=colourise target=_blank>interview</a> with the creator of Realbot, Stefan. You can check out it out <a href="http://cs.gamer.com.sg/?interviews/stefan" class=colourise target=_blank>here</a> and find the <a href="http://bot.counter-strike.net/realbot/" class=colourise target=_blank>RealBot</a> site <a href="http://bot.counter-strike.net/realbot/" class=colourise target=_blank>here</a>.</P></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>de_survivor released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Mon 09 July 2001 13:21:00 | <a href="comments.php?section=2&index=234">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p><a href="http://www.planethalflife.com/" class=colourise target=_blank>Planet Half-Life</a> report that 3D_Mike's latest map, <a href="http://www.lanmaniax.com/de_survivor.htm" class=colourise target=_blank>de_survivor</a> has been released over at <a href=http://www.lanmaniax.com class=colourise target=_blank>Lanmaniax</a>. <a href="http://www.planethalflife.com/counter-strike" class=colourise target=_blank>Planet Half-Life</a> and <a href="http://www.lanmaniax.com/de_survivor.htm" class=colourise target=_blank>de_survivor site</a> have some nice screenshots of the map, so you can have a look before you download it. You can download it from his <a href="http://www.lanmaniax.com/files/de_survivor.zip" class=colourise target=_blank>site</a> or over at <a href=http://www.fileplanet.com/dl/dl.asp?planethalflife/counter-strike/maps/de_maps/de_survivor.zip class=colourise target=_blank>File Planet</a>.</P></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>de_torn news</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Mon 09 July 2001 13:20:38 | <a href="comments.php?section=2&index=233">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p><a href="http://www.planethalflife.com/crinity/" class=colourise target=_blank>Crinity</a> has updated his <a href="http://www.planethalflife.com/crinity/" class=colourise target=_blank>site</a> with news on the status of de_torn, which is one of the maps that could be included in a future version of Counter-Strike.</p><br><p><span class=quote>de_torn is in the hands of the CS team for evaluation. The feedback has been very positive so far, but nothing is guaranteed. All we can do is wait now to hear from the CS team about whether or not Torn will be included in the next official release. In the meantime, we are using this waiting period to continue fixing and improving the map, to make it completely ready for release.</span></p><br><p>You can view some screenshots of the map over at the <a href="http://www.planethalflife.com/crinity/wartorn.htm" class=colourise target=_blank>screenshot page</a>.</p></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>cs_apula released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Mon 09 July 2001 13:20:11 | <a href="comments.php?section=2&index=232">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p><a href="http://www.planethalflife.com/" class=colourise target=_blank>Planet Half-Life</a> report that <a href="http://www.planethalflife.com/erikn/" class=colourise target=_blank>ErikN</a> has released a new Counter-Strike map called <a href="http://www.planethalflife.com/erikn/cs_apula_beta1/index.html" class=colourise target=_blank>cs_apula</a>. They have some nice screenshots of the map. You can download it from <a href="http://www.fileplanet.com/dl/dl.asp?planethalflife/erikn/cs_apula.zip" class=colourise target=_blank>here</a>. The <a href="http://www.planethalflife.com/erikn/cs_apula_beta1/index.html" class=colourise target=_blank>cs_apula site</a> has some additional screenshots, and states that there are a few known bugs and a future version will feature hostages.</p></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>ClanMod released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Mon 09 July 2001 13:19:46 | <a href="comments.php?section=2&index=231">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p>The first public version of <a href="http://olo.counter-strike.pl/" class=colourise target=_blank>ClanMod</a> has been released by the person who makes <a href="http://olo.counter-strike.pl/" class=colourise target=_blank>PLBot</a>. It is similar to the popular AdminMod and allows the user to kick, ban, change the map or server variables using a menu. A zip-file containing both the Linux and Windows versions can be found <a href="http://olo.counter-strike.pl/clanmod12.zip" class=colourise target=_blank>here</A>. For people needing some help, the <a href="http://olo.counter-strike.pl/clanmod.htm" class=colourise target=_blank>manual</a> can be found <a href="http://olo.counter-strike.pl/clanmod.htm" class=colourise target=_blank>here</a>.</P></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>NoC win CS Qualifier</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:bigfoot@barrysworld.com'>Bigfoot</a> on Mon 09 July 2001 07:07:11 | <a href="comments.php?section=2&index=230">Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><p>There's been a surprise winner at the <a href="http://www.elsa-cpleurope.com/" class=colourise target=_blank>ELSA CPL-London</a> CS Qualifier that was held at <a href="http://www.theplayingfields.co.uk" class=colourise target=_blank>The Playing Fields</a> yesterday. 4K were the hot favourites but yet again their LAN form let them down as they were defeated 6-7 on de_dust2 in the final by NoC, with the 3rd place won by LCA who defeated cs0 4-3 on de_train. 4K do still qualify for the event proper as there were auto berths for the top 3 sides. The biggest disappointment of the event was probably the performance of # who failed to make it past the group stages, allthough looking at their results they lost to both 4K and cs0 by just 1 round so they will probably get another chance if they apply for one of the non-auto berth spots when registration for the event opens tomorrow. Full results can be found on the TPF site <a href="http://www.theplayingfields.co.uk/page.php3?ref=sp-cplloncsres" class=colourise target=_blank>here</a> and on UKGamer <a href="http://www.ukgamer.net/article.php3?id=123&page=1" class=colourise target=_blank>here.</a></p></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>New CS Map Screenshots</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Thu 05 July 2001 18:42:48 | <a href="comments.php?section=2&index=228">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href="http://www.planethalflife.com/cs" class=colourise target=_blank>CS @ Planet Half-Life</A> have some exclusive screenshots from a new CS map called Sanfran, which is being made by Blazeeer. They also report that the final beta is available to download <a href="http://www.fileplanet.com/dl/dl.asp?planethalflife/counter-strike/maps/cs_maps/cs_sanfran_fbeta.zip" class=colourise target=_blank>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>New version of Freedom Bot released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Thu 05 July 2001 18:42:28 | <a href="comments.php?section=2&index=227">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top>Beta 3.0 of <a href="http://www.geocities.com/freedombot" class=colourise target=_blank >Freedom Bot</a> has been released. <a href="http://www.geocities.com/freedombot"  class=colourise target=_blank >Freedom Bot</a> is an off-line bot for Counter-Strike. This version features a number of bug fixes and improvements, a new Navigation System, tweaked combat AI and a Waypoint menu. You can download it <a href="http://www.geocities.com/freedombot/fbotbeta3.zip" class=colourise target=_blank >here</a>. If you downloaded it shortly after it was released, I would download it again, as the zip file was missing one file and one of the new features.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>CS Cheat Movie</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Wed 27 June 2001 23:04:01 | <a href="comments.php?section=2&index=215">Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_cs.gif' alt='Counter-Strike' border=0></td><td width="100%" valign=top><a href="http://www.nextwish.org" target=_blank class=colourise>NextWish.org</a> has been updated with a movie of the xqz2 Half-Life AutoAim Cheat in action. It is in the DivX format, so you will need the correct codec. This has been so popular that the site has shut down for a couple of days. Don't worry, you can still download this file over at <a href="http://www.fileplanet.com/dl/dl.asp?planetfortress/nextwish/movies/xqz2-movie.avi" target=_blank class=colourise>File Planet</a>. <a href="http://www.nextwish.org" target=_blank class=colourise>NextWish.org</a> has also released a new modification for Counter-Strike, which you should be able to find in a couple of days when the site is back up.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><b>News Archive</b><br>
+<div align="center"><span class='nArchiveText'>[1 - 20][<a class='nArchiveLink' href=/default.php?page=1&section=1>21 - 40</a>][<a class='nArchiveLink' href=/default.php?page=2&section=1>41 - 60</a>][<a class='nArchiveLink' href=/default.php?page=3&section=1>61 - 80</a>][<a class='nArchiveLink' href=/default.php?page=4&section=1>81 - 100</a>][<a class='nArchiveLink' href=/default.php?page=5&section=1>101 - 120</a>][<a class='nArchiveLink' href=/default.php?page=6&section=1>121 - 127</a>]</span></div>
+
+		</td>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+	</tr>
+	</table>
+	
+	</td>
+	<td width=150 valign=top>
+	<!-- Right Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="default.php?section=1&index=345" class="wlink"> - Navy Seals: Covert Ops Heads</a><br><a href="default.php?section=1&index=344" class="wlink"> - HomeLAN Ghost Recon Interview</a><br><a href="default.php?section=1&index=343" class="wlink"> - Full Metal Jacket Beta 1 Maplist</a><br><a href="default.php?section=3&index=342" class="wlink"> - Two New Maps</a><br><a href="default.php?section=3&index=341" class="wlink"> - TNG Beta 3</a><br><a href="default.php?section=1&index=340" class="wlink"> - Surround Light?</a><br><a href="default.php?section=1&index=339" class="wlink"> - Brain of Combat bot 2.3b</a><br><a href="default.php?section=5&index=338" class="wlink"> - Urban Terror 2.3 Reviewed at Q3Cental</a><br><a href="default.php?section=1&index=337" class="wlink"> - The Opera Interview</a><br><a href="default.php?section=6&index=335" class="wlink"> - Front Line Force News</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Features</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="interview.php?section=10&index=336" class="wlink"> - Opera Interview</a><br><a href="interview.php?section=10&index=328" class="wlink"> - Annihilation Interview</a><br><a href="interview.php?section=10&index=324" class="wlink"> - Navy Seals Covert Operations Interview</a><br><a href="interview.php?section=10&index=312" class="wlink"> - The Specialists Interview</a><br><a href="feature.php?section=9&index=246" class="wlink"> - Flashpoint 1985: Letters from the Cold War</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="
+http://www.barrysworld.com/news/default.asp?Item=24602&Category=1" class="wlink"> - 
+
+Project Eden Preview</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24601&Category=1" class="wlink"> - 
+
+Civilization III Interview</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24600&Category=1" class="wlink"> - 
+
+Arx Fatalis Preview</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24599&Category=1" class="wlink"> - 
+
+Asheron`s Call: Dark Majesty Preview</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24597&Category=1" class="wlink"> - 
+
+Etherlords BETA Hands-On</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24596&Category=1" class="wlink"> - 
+
+Today`s reviews</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24595&Category=1" class="wlink"> - 
+
+Earth Force Command Screenies</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24594&Category=1" class="wlink"> - 
+
+Red Faction Update</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24593&Category=1" class="wlink"> - 
+
+The Project Begins</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=24591&Category=1" class="wlink"> - 
+
+The Thing Interview</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Services</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/hosting/' class='wlink'>Get your site hosted</a><br>
+	<a href='http://www.barrysworld.com/games/liaisons.asp' class='wlink'>Server Liaisons/Admins</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/gameservers.asp' class='wlink'>Public Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/counterstrike/CounterStrikeServers.asp' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/games/halflife/HalfLifeServers.asp' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/quake2/quake2servers.asp' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/quake3/quake3servers.asp' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/unrealtournament/UnrealTournamentServers.asp' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/bookings/' class='wlink'>Bookable Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Half%2DLife' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+2' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+3+Arena' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Unreal+Tournament' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://leagues.barrysworld.com/' class='wlink'>Leagues</a></b><br>
+	<a href='http://leagues.barrysworld.net/bwcsl/' class='wlink' target=new>BWCSL</a><br>
+	<a href='http://leagues.barrysworld.net/bwaqsl/' class='wlink' target=new>BWAQSL</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<p>
+	<div align="center">Visitors since 03/04/01<br>
+	<img src="http://linweb02.barrysworld.com/cgi-bin/Count.cgi?trgb=ffffff&dd=E&reload=F" alt="Count">
+	</div>
+	<p>
+	<div align="center">
+	<a href="http://www.barrysworld.com" target="_blank"><img src="http://images.barrysworld.com/button_bw.gif" border=0 alt="Hosted by Barrysworld with Barry Power!"></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.tribesnation.co.uk/"><img src="http://images.barrysworld.com/nation/button_tnation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.actionnation.com/"><img src="http://images.barrysworld.com/nation/button_anation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.fortressnation.com/"><img src="http://images.barrysworld.com/nation/button_fnation.gif" border=0></a><br>	</div>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0 border=0 background="images/main_footfill.gif">
+<tr>
+	<td><img src="images/spacer.gif" width="1" height="39" alt="" border="0"></td>
+	<td align=right><a href="http://www.actionnation.com/neville/"><img src="images/main_footer.gif" width="143" height="39" alt="" border="0"></a></td>
+</tr>
+</table>
+<table width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#CECECE">
+<tr>
+	<td colspan=2>
+	<div align="right" class=bsmall>
+	ActionNation is part of the <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a> Nation Network<br>
+	Copyright &copy; 2001 <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a></div><br>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

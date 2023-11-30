@@ -1,0 +1,772 @@
+<script>
+var eTopM = "";	
+
+if (document.all)		
+document.onmouseover = mouseOver;
+
+function mouseOver() {
+	var eSource = window.event.srcElement;
+	
+	if (eSource.name == "topMenu") {
+		var eMenu = document.all[eSource.id.replace("div", "")]
+		var intWidth = eSource.offsetWidth
+	
+		if (eTopM && eTopM != eMenu) hideTopMenu(eTopM);
+			 
+		if (eMenu) showTopMenu(eMenu, intWidth)
+	} else if (eTopM && !eTopM.contains(eSource) && !menuRow.contains(eSource))
+		hideTopMenu(eTopM);
+}
+
+function showTopMenu(eSource, intMinWidth) {	
+	x  = window.event.srcElement.offsetLeft + window.event.srcElement.offsetParent.offsetLeft;
+	y  = menuRow.offsetHeight - 2;
+	
+	if (intMinWidth < 150) intMinWidth = 150		
+	if (eSource.style.width < intMinWidth) eSource.style.width = intMinWidth;
+	var intTemp = parseInt(eSource.style.width);		
+	intTemp = Number(x) + intTemp;
+	var intDocWidth = document.body.clientWidth;
+	
+	if(intTemp > intDocWidth) {
+		var intDiff = intTemp - intDocWidth
+		x = x - intDiff - 3; 
+	}
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='hidden';
+	eSource.style.left = x;
+	eSource.style.top = y;
+	eSource.style.visibility = "visible";
+	eSource.style.filter = "alpha(opacity=90)";
+	eTopM = eSource;
+}
+
+function hideTopMenu(eSource){
+	eSource.style.filter = "none";
+	eSource.style.visibility = "hidden";
+	var ban = document.getElementById("bwbanner");
+	if (ban != null) ban.style.visibility='visible';
+}
+</script>
+<style>
+BODY{margin:0;}
+.bTB{background-color:#006600;color:#FFFFFF;font-size:12px;font-family:Arial;border-bottom:2px solid #000000;}
+A.bT:Link,A.bT:Visited,A.bT:Active{color:#FFFFFF;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+A.bT:Hover{color:#FFFF99;font-size:12px;font-family:Arial;text-decoration:none;font-weight:bold;}
+.bSB{background-color:#006600;color:#FFFFFF;padding:2px;font-size:12px;font-family:Arial;border:2px solid #000000;border-top:2px solid #005500;visibility:hidden;position:absolute;z-index:10;left:0;}
+A.bS:Link,A.bS:Visited,A.bS:Active{width:100%;padding:2px;background-color:#006600;color:#A8FFA8;font-family:Arial;text-decoration:none;}
+A.bS:Hover{width:100%;padding:2px;background-color:#228822;color:#FFFF99;font-family:Arial;text-decoration:none;}
+B.sh{color:#FFFFFF;}
+</style>
+<div class=bTB>
+<table cellpadding=0 cellspacing=0 border=0 width="100%" background="http://images.barrysworld.com/hmenu/lback.gif" id=menuRow><tr>
+<td class=bwHeader width=19><a href="http://www.barrysworld.com/"><img src="http://images.barrysworld.com/hmenu/lsmile.gif" width="19" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+<td class=bwHeader>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divb name=topMenu>BarrysWorld</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/games/gameservers.asp" id=divg name=topMenu>Game Servers</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com/membership/" id=divm name=topMenu>Membership</a>&nbsp;&nbsp;
+<a class=bT href="http://www.barrysworld.com" id=divn name=topMenu>Nation</a>&nbsp;&nbsp;
+<a class=bT href="http://leagues.barrysworld.net/" id=divl name=topMenu>Leagues</a>&nbsp;&nbsp;	
+</td><td align=right><a class=bT href="http://www.barrysworld.com"><img src="http://images.barrysworld.com/hmenu/llogo.gif" width="121" height="24" alt="BarrysWorld" border="0"></a>&nbsp;</td>
+</tr></table>
+</div><div class=bSB id=b>
+<a class=bS href="http://www.barrysworld.com/news/">News</a><br>
+<a class=bS href="http://www.barrysworld.com/Hosting/">Web Hosting</a><br>
+<a class=bS href="http://forums.barrysworld.com/">Forums</a><br>
+<a class=bS href="http://guides.barrysworld.com/">Guides</a><br>
+</div><div class=bSB id=g>
+<a class=bS href="http://www.barrysworld.com/games/gameservers.asp">Public Servers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/bookings/">Bookables</a><br>
+<a class=bS href="http://www.barrysworld.com/barryservers/">BarryServers</a><br>
+<a class=bS href="http://www.barrysworld.com/games/gameservermasters.asp">Master Servers</a><br>
+</div><div class=bSB id=m>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/PlayerSearch.asp">Players</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/TeamList.asp">Teams</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Players/RecruitmentList.asp">Player Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/Membership/Teams/RecruitmentList.asp">Team Recruitment</a><br>
+<a class=bS href="http://www.barrysworld.com/barrybank/">BarryBank</a><br>
+</div><div class=bSB id=n>
+<a class=bS href="http://www.quakenation.com/">QuakeNation</a><br>
+<a class=bS href="http://www.tribesnation.co.uk/">TribesNation</a><br>
+<a class=bS href="http://www.fortressnation.com/">FortressNation</a><br>
+<a class=bS href="http://www.actionnation.com/">ActionNation</a><br>
+<a class=bS href="http://www.tecnation.co.uk/">TechNation</a><br>
+<a class=bS href="http://www.lanpartynation.com/">LanPartyNation</a><br>
+<a class=bS href="http://www.rtcwnation.com/">RTCWNation</a><br>
+<b>Other Network Sites</b><br>
+<a class=bS href="http://www.xsreality.com/">XSReality</a><br>
+<a class=bS href="http://www.cscentral.com/">CSCentral</a><br>
+<a class=bS href="http://www.unrealfortress.com/">UnrealFortress</a><br>
+<a class=bS href="http://www.avpnetwork.com/">AvP Network</a><br>
+</div><div class=bSB id=l>
+<b class=sh>Quake 3</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwq3dml/">BWQ3DML</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ctfl/">BWQ3CTFL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwra3l/">BWRA3L</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3utl/">BWQ3UTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpml/">BWCPML </a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3ftl/">BWQ3FTL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwcpmral/">BWCPMRAL</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwq3pbl/">BWQ3PBL</a><br>
+<b class=sh>Half-Life</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwcsl">BWCSL</a><br>
+<a class=bS href="http://www.bwtfcl.com/">BWTFCL</a><br>
+<a class=bS href="http://www.hlccl.com">HLCCL</a><br>
+<b class=sh>Other</b><br>	
+<a class=bS href="http://leagues.barrysworld.net/bwjk2l">Jedi Knight II: Jedi Outcast</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwmohl">Medal of Honor</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwrtcwl">Return to Castle Wolfenstein</a><br>
+<a class=bS href="http://leagues.barrysworld.net/bwefl/">Star Trek Voyager: Elite Force</a><br>
+</div>
+
+
+<!-- Magic Quotes - 0-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>ActionNation.com  - For all your Action needs</title>
+	<link rel="STYLESHEET" type="text/css" href="style/default.css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#FFFFFF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+
+<table bgcolor="#9B7A21" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+	<td><img src="images/main_logo.jpg" width="454" height="54" alt="" border="0"><br></td>
+	<td>&nbsp;</td>
+	<td align=right><img src="images/main_right.jpg" width="312" height="54" alt="" border="0"></td>
+</tr>
+</table>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0>
+<tr>
+	<td>
+	<table bgcolor="#CECECE" width="100%" cellpadding=2 cellspacing=0 border=0>
+	<tr>
+		<td>&nbsp;&nbsp;<span class="btext"><a class="blink" href="http://www.quakenation.com/">QuakeNation</a> | <a class="blink" href="http://www.tribesnation.co.uk">TribesNation</a> | <a class="blink" href="http://www.actionnation.com/">ActionNation</a> | <a class="blink" href="http://www.lanpartynation.com">LanPartyNation</a> | <a class="blink" href="http://www.rtcwnation.com">RTCWNation</a></span></td>
+		<td align=right></td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+	<td width=150 valign=top>
+	<!-- Left Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Main</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b><a class=wlink href=default.php>News</a></b><br>
+<a href="default.php?section=1" class="wlink">General News</a><br><a href="default.php?section=2" class="wlink">Counter-Strike</a><br><a href="default.php?section=3" class="wlink">Action Quake 2</a><br><a href="default.php?section=4" class="wlink">Halflife</a><br><a href="default.php?section=5" class="wlink">Urban Terror</a><br><a href="default.php?section=6" class="wlink">Unreal Tourney</a><br><a href="default.php?section=7" class="wlink">Quake</a><br><a href="default.php?section=27" class="wlink">Leagues</a><br>
+<a class=wlink href=mailto:deathwatch@barrysworld.com>Submit News</a>
+<p>
+<b>Leagues</b><br>
+<a href="league.php?section=14" class="wlink">BWAQSL</a><br><a href="league.php?section=15" class="wlink">BWCSL</a><br>
+<p>
+<b>Columns</b><br>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width=60%><a href="column.php?section=29&index=594" class="wlink">Noz</a></td><td width=40%><span class=wtext>(07/07/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=587" class="wlink">Noz</a></td><td width=40%><span class=wtext>(20/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=584" class="wlink">Excession</a></td><td width=40%><span class=wtext>(02/05/02)</span></td></tr><tr><td width=60%><a href="column.php?section=30&index=560" class="wlink">Excession</a></td><td width=40%><span class=wtext>(19/02/02)</span></td></tr><tr><td width=60%><a href="column.php?section=29&index=550" class="wlink">Noz</a></td><td width=40%><span class=wtext>(30/01/02)</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE"><span class=btext>Content</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+<b>Features</b><br>
+<a href="feature.php?section=9" class="wlink">Features</a><br><a href="interview.php?section=10" class="wlink">Interviews</a><br><a href="review.php?section=11" class="wlink">Reviews</a><br>
+<p>
+<b><a class=wlink href=http://forums.barrysworld.com/forumdisplay.php?forumid=28>Forum</a></b><br>
+<b><a class=wlink href=files.php>Files</a></b><br>
+<b><a class=wlink href=links.php>Links</a></b><br>
+<b><a class=wlink href=contact.php>Contact</a></b><br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Lists</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<b><a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp' class='wlink'>Team Lists</a></b><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Membership/Teams/TeamList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp' class='wlink'>Hosted Sites</a></b><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=210' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=13' class='wlink' target=new>Action Quake 2</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=215' class='wlink' target=new>Action Halflife</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=25' class='wlink' target=new>Urban Terror</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=216' class='wlink' target=new>Front Line Force</a><br>
+	<a href='http://www.barrysworld.com/Hosting/Lists/SiteList.asp?g=217' class='wlink' target=new>Firearms</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Nation Network</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.actionnation.com/' class='wlink'>ActionNation</a><br>
+	<a href='http://www.fortressnation.com/' class='wlink'>FortressNation</a><br>
+	<a href='http://www.quakenation.com/' class='wlink'>QuakeNation</a><br>
+	<a href='http://www.tribesnation.co.uk/' class='wlink'>TribesNation</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Powered by..</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/' class='wlink'>BarrysWorld</a><br>
+	<a href='http://hosted.barrysworld.net/neville' class='wlink'>Neville</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	</td>
+	<td width="100%" valign=top>
+	<!-- Content -->
+	<img src="images/spacer.gif" width="2" height="5" alt="" border="0">
+	<table width="100%" cellpadding=0 cellspacing=0>
+	<tr>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+		<td width="100%">
+		<div align="center"></div>
+		<p>
+<table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Beta 2.6 Released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Sat 09 November 2002 20:54:32 | <a href="comments.php?section=5&index=600" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>Finally, Beta 2.6 for <a href="http://www.urbanterror.net">Urban Terror</a> has been released. Below are a few links for the upgrade and full versions. The upgrade weighs in at 87.6 MB, and the full version weighs in at 239 MB.<br><br>2.6 Upgrade Links<br><br><a href="http://www.fileshack.com/file.x?fid=1581">Fileshack</a><br><a href="http://planetquake3.net/download.php?op=viewdownloaddetails&lid=1238">Planetquake3</a><br><a href="http://www.zdwebhosting.com/beta26">ZD Webhosting</a><br><a href="http://q3.utca.hu/files/beta26_upgrade.zip">q3.utca.hu</a><br><a href="ftp://ftp.midwestmayhem.com/pub/UrbanTerror/beta26_upgrade.zip">Midwest Mayhem</a><br><a href="http://www.dawningdusk.de/files/beta26_upgrade.zip">Clan DD</a><br><a href="http://www.extreme-players.de/showfiles.asp?ID=5118">Extreme-Players.de</a><br><a href="http://ut.smartshells.de/">Smartshells</a><br><a href="http://clanhosted.clix.pt/quake3/downloads/">Data Source</a><br><a href="http://www.thedatasource.net/~gleam/beta26_upgrade.zip">Clanhosted</a></font> <br><a href="ftp://ftp.edome.net/online/clientit/beta26_upgrade.zip">eDome</a></font> <br><a href="http://www.barrysworld.com/games/download.asp?file=ftp://ftp.barrysworld.com/pub/games/quake3/mods/urbanterror/official_patches/beta26_upgrade.zip">Barrysworld</a> <br><a href="http://b26.fsk405.net/">FSK405</a></font> <br><a href="http://www.clanbase.com/miscdl.php?did=614">Clanbase</a><br><br>2.6 Full links<br><br><a href="http://www.fileshack.com/file.x?fid=1582">Fileshack</a> <br><a href="http://planetquake3.net/download.php?op=viewdownloaddetails&lid=1237">Planetquake3</a> <br><a href="http://www.zdwebhosting.com/beta26">ZD Webhosting</a> <br><a href="http://q3.utca.hu/files/beta26_full.zip">q3.utca.hu</a><br><a href="ftp://ftp.midwestmayhem.com/pub/UrbanTerror/beta26_full.zip">Midwest Mayhem</a><br><a href="http://www.dawningdusk.de/files/beta26_full.zip">Clan DD</a> <br><a href="http://www.extreme-players.de/showfiles.asp?ID=5119">Extreme-Players</a> <br><a href="http://ut.smartshells.de/">Smartshells</a><br><a href="http://www.thedatasource.net/~gleam/beta26_full.zip">Data Source</a><br><a href="http://clanhosted.clix.pt/quake3/downloads/">Clanhosted</a> <br><a href="ftp://ftp.edome.net/online/clientit/beta26_full.zip">eDome</a><br><a href="http://www.barrysworld.com/games/download.asp?file=ftp://ftp.barrysworld.com/pub/games/quake3/mods/urbanterror/official_patches/beta26_full.zip">Barrysworld</a><br><a href="http://b26.fsk405.net/">FSK405</a><br><br></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Beta Release and League News.</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Mon 25 February 2002 00:10:36 | <a href="comments.php?section=5&index=561" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>Good news on the Beta front, as the 2.5 patch has been released, which fixes a couple of problems found in 2.4.<br><br>For the list of download sites, visit the <a href=" http://www.urbanterror.net/">UrbanTerror.net</a> website.<br><br>Now for the league news. As some of you may know, I was the <a href="http://leagues.barrysworld.net/bwq3utl/index.php">BWQ3UTL</a> organiser, but decided to quit and hand the job over to someone else, ukv|Crusader is now in charge of the league.<br><br>Due to this, earlier tonight, a meeting was held by most of the people who are involved with the league, in the league channel (<a href="irc://irc.barrysworld.com/bwq3utl">#bwq3utl</a>) on Quakenet.<br><br>At the meeting it was decided that the organisational structure of the league should change, to make it easier to run smoothly, as a result of this, there will be another meeting taking place in the <a href="irc://irc.barrysworld.com/bwq3utl">League Channel</a>, on Tuesday the 26th of February, at 9pm GMT.<br><br>Any league admins who cant attend should contact <a href="mailto:crusader@hatstand.cx">Crusader</a> if they want to be considered for the position of Divisional Admin.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Bug Fix</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Thu 14 February 2002 13:15:22 | <a href="comments.php?section=5&index=559" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>Due to a couple of bugs rearing their ugly heads in Beta 2.4, <a href="http://www.silicon-ice.com/">SID</a> are working on a patch, that will hopefully be out soon.<br>The patch should fix the following problems:<br><br>client info problems caused by incorrect handling of team skins - this led to a variety of problems, especially for server admins. Players may have noticed rapidly flicking skins. Server admins would have seen error messages spammed in their logs. <br><br>extra server data being sent to client too often, causing various lag spikes on the server when people died, joined as spectator, or maps changed among others <br><br>bug that caused servers with bots and min_players set to multiply bots until server was filled (the 999 bot problem) <br><br>bug that allowed players to follow enemies when g_followfriendly was set <br><br>added a delay on zoom in that prevents snipers from gaining full accuracy immediately; this is to stop script exploits that let people fire accurately while unzoomed <br><br>unlocked r_gamma as per community requests <br><br>added 4 new cvars to be locked </td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Beta 2.4 is here!!</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Fri 08 February 2002 22:54:45 | <a href="comments.php?section=5&index=558" class=blink>Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>You can download the Beta 2.4 upgrade (21.1mb) if you are currently running Beta 2.3. If this is your first time with Urban Terror, then download the full Beta 2.4 (150mb). Both files will bring you up to the current release.<br>To be honest, I really dont see much point in posting all the links for the download of Beta 2.4 on here, so go to <a href=" http://www.urbanterror.net/">UrbanTerror.net</a> for the full list.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>UrT Beta 2.4 Changes/Fixes</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Tue 05 February 2002 14:39:45 | <a href="comments.php?section=5&index=554" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>Just a small update on the status of Beta 2.4, the release time should be around 9pm Uk time, and here are some of the changes/Bug fixes included in 2.4:<br><span class=quote><br>Features: <br>New non-laggy smoke grenades <br>Volumetric laser scope in water, fog and smoke <br>New laser sight dot effect <br>A new Instant arm mode for grenades <br>Snipers are now a bit inaccurate when unzoomed<br>Locked and limited a number of potential cheat cvars<br>You can save teammates by smothering (crouch on them as they go off) grenades <br>We have improved blood effects <br>Implemented Quake 2-style CTF scoring<br>Implmented a new medic icon if you call for a medic <br>An update user interface for selecting team skins [now assigned depending on which team]<br><br>Modifications: <br>Increased duration of flash grenade effect <br>Decreased SPAS damage and effect range <br>Increased M4 spread over distance<br>Crouching reduces grenade damage less<br>New NVG Effect <br>Improved weapon sounds <br>New and improved impact decays<br><br>Bug Fixes: <br>Fixed a bug that let spectators trigger some entities <br>Some particles were spawning at the wrong position, those have been fixed <br>CTF was reporting incorrect team flag being returned <br>Chopper in sands now a smooth ride <br>Crouching over a grenade kills you <br>Fixed bugs that nerfed the kick <br>Improved knife hit detection <br>ARIES has improved accuracy and hit detection<br>Fixed netcode for LPBs <br>Fixed team bandage exploit that allowed you bandage teammates faster when changing weapons <br>Fixed the exploit that let you reload and fire faster (HK-69)<br>Fixed a bug that was causing the CTF flags to disappear in no_drop zones (ut_paradise water) <br>You can now shoot timed out players (999 bug) <br>Dropped grenades are no longer removed if you can't pick them up <br>Fixed the 1.31 point release intermittent freezing bug<br>Made team survivor spawn points more random <br>Fixed a small bug that was preventing item changes after respawn on some maps <br>Prevented player corpses from kicking living ones<br></span><br></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Beta 2.4 release date</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Mon 04 February 2002 02:12:17 | <a href="comments.php?section=5&index=553" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>The release date for Urban Terror Beta 2.4 will be Friday 8th February. Oswald from <a href="http://www.planetquake.com/siliconice/">Silicon Ice Development</a> Made the announcement a few minutes ago on Urban Radio. A release time should be announced on the <a href="http://www.urbanterror.net/">Urban Terror</a> website later today.<br><br><br>Once Beta 2.4 is released, and put on the servers and tested, a start date for the <a href="http://leagues.barrysworld.net/bwq3utl/index.php">BWQ3UTL</a> will be announced.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Beta 2.4</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:cc-excession@barrysworld.com'>Excession</a> on Tue 29 January 2002 09:21:37 | <a href="comments.php?section=5&index=549" class=blink>Comments (2)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>The latest test build is being given out to the Q&A team over the next couple of days, and rumours are abound that this will be the final build, leading to a release.<br>It will be available as a small 10 mb upgrade and as a full install.<br>Also <a href="http://www.silicon-ice.com">SID</a> have some new wallpapers by Sweetnutz.<br><div align=center><br><img src="http://www.roughryders.org/24_1_thumb.jpg" "border=3" alt ="Urban Terror wallpaper"><br><a href="http://www.twisted-strand.com/sweetnutz/24_1_1280.jpg">1280x1024</a> | <a href="http://www.twisted-strand.com/sweetnutz/24_1_1024.jpg">1024x768</a> | <a href="http://www.twisted-strand.com/sweetnutz/24_1_800.jpg">800x600</a><br><br><img src="http://www.roughryders.org/24_2_thumb.jpg" "border=3" alt="Urban Terror wallpaper"><br><a href="http://www.twisted-strand.com/sweetnutz/24_2_1280.jpg">1280x1024</a> | <a href="http://www.twisted-strand.com/sweetnutz/24_2_1024.jpg">1024x768</a> | <a href="http://www.twisted-strand.com/sweetnutz/24_2_800.jpg">800x600</a><br></div></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Map Stuff</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 29 November 2001 17:07:26 | <a href="comments.php?section=5&index=520" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>A lot of map related news on the <a href="http://www.urbanterror.net">Urban Terror site</a> and on the <a href="http://www.planetquake.com/siliconice">Silicon Ice site</a>.<br><br>They have several screenshots up of finalists of their map contest. These maps are:<br><li> ut_afterhours by Dragonne{TRIAD}<br><li> ut_campus by Dick Dastardly<br><li> ut_complex by MB<br><li> ut_dam by Nyk<br><li> ut_paradise by eXKalibuR<br><li> ut_sliema by OzeDooD<br><br>Also, the Silicon Ice site reports that they will be releasing several mappacks in the near future:<br><span class=quote>"Hopefully we will be announcing the new levels designers in the next few weeks, after we announce our contest map pack and possibly the community designed map pack. By releasing these map packs, it should increase the number of community levels played on the public servers. You can expect 6-8 maps per map pack."</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror PQ Mod of the Week</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Wed 14 November 2001 17:00:37 | <a href="comments.php?section=5&index=503" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><a href="http://www.urbanterror.net">Urban Terror</a> has once again become the mod of the week of their host, <a href="http://www.planetquake.com">Planetquake</a>.<br><br>You can read their ModW article <a href="http://www.planetquake.com/quake3/features/motw/">here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Strike Force 1.65 Soon</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 01 November 2001 00:30:13 | <a href="comments.php?section=5&index=465" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>The <a href="http://www.strikeforcecenter.com">Strike Force</a>, the popular Unreal Tournament modification, has posted some info on their upcoming 1.65 release:<br><span class=quote>"Strike Force V1.65 is almost ready for release! We plan to get a release party going soon so watch for the announcement. <a href="http://www.strikeforce.dk/">StrikeForce.dk</a> has posted another awesome amount of screens (64 screens in total) of the new character skins. These screens also show off the new weapons, muzzle flashes, smoke grenades and more. Check the page out directly <a href="http://www.strikeforce.dk/images/screenshots/sf165IR5/">right here</a>.<br><br>You can also see the large assortment (29 in total) of weapons we have for 1.65 <a href="http://www.strikeforce.dk/images/screenshots/sf165IR5/IR5_inventory/">right here</a>."</span><br><br>I guess that doesn't require further explaination. :)</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Scripts site</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:StealthBuda@barrysworld.com'>StealthBuda</a> on Sat 13 October 2001 03:05:48 | <a href="comments.php?section=5&index=408" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><A HREF="http://www.utscripts.net/" target=_new>UTscripts.net</A> is up and running <span class=quote>and now we have a full website with over 40 ssripts</span>.<br><br>They want to be "the" source for UT Scripting, so go check out what they do and let them know what you think.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Review</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:StealthBuda@barrysworld.com'>StealthBuda</a> on Sat 13 October 2001 02:54:22 | <a href="comments.php?section=5&index=406" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><IMG SRC="http://www.mpz.co.uk/images/staff/110/urbanterrormain.gif" width=200 align=left> Over at <A HREF="http://www.mpz.co.uk" target=_new>Multi Player Zone</A> they've put up a <A HREF="http://www.mpz.co.uk/features/feature.asp?idno=11" target=_new>review</A> or Urban Terror.<br><br>Here's the intro:<br><span class=quote>Urban Terror (or rather confusingly abbreviated, UT) is a Total Conversion for ID Software's Quake 3. <br>When I say "Total Conversion" I mean Urban Terror changes almost everything in the Quake 3 engine, to the extent that when you’re playing UT, it doesn’t even really FEEL like Quake 3 anymore.<br>The maps, the weapons, the player models, the physics, the sounds, the GUI, hell, everything is pretty much different.<br>The only thing that really remains Quake 3 with this mod is the engine driving it all, which co-incidentally lends itself surprisingly well to its new skin.</span><br><br>The <A HREF="http://www.urbanterror.net/" target=_new>official urban terror site</A>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror needs Help</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 04 October 2001 11:32:51 | <a href="comments.php?section=5&index=369" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><a href="http://www.silicon-ice.com" class=colourise>Silicon Ice</a>, the team that developed the popular Quake 3 mod <a href="http://www.urbanterror.net/" class=colourise>Urban Terror</a> is looking for a few new people to help them out create the next versions of the mod.<br><br><span class=quote>"Some current happenings though are getting this juggernaut righted and steaming forward with continued success and development. As we posted a few days ago on the <a href="http://www.silicon-ice.com">Silicon Ice Development site</a>, we are looking to expand the development team. After having three team members, Apoxol, Odd and WetWired hired by Raven Software, Bungie and 4D Rulers, respectively, we are looking to fill their positions. For more details and information check out <a href="http://www.silicon-ice.com">www.silicon-ice.com</a>."</span></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror 2.3 Reviewed at Q3Cental</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:deathwatch@barrysworld.com'>Deathwatch</a> on Thu 16 August 2001 15:13:42 | <a href="comments.php?section=5&index=338" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><a href="http://www.q3center.com/" class=colourise>Q3Center</a> has <a href="http://www.q3center.com/modreviews.phtml?id=93289&language=en" class=colourise>reviewed</a> the new beta of Urban Terror which got released last weekend.<br><br>This review takes a look at every aspect of the game, but doesn't go in very much detail. It's a nice read tho.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror News</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Wed 08 August 2001 22:12:10 | <a href="comments.php?section=5&index=330" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>Beta 2.3 of <a href=http://www.urbanterror.net/ target=_blank class=colourise>Urban Terror</a> and a new map pack will be released on Friday, August 10 (2 days time :)).  This map pack will contain eight new levels and three updated levels, and be 56.5MB.<br><br>The new levels are:<br>- ut_alleys by BotKiller<br>- ut_austria by Tub<br>- ut_casa by SweetnutZ<br>- ut_riyadh by dotEXE<br>- ut_rommel by Bar-B-Q<br>- ut_pressurezone by Gerbil!<br>- ut_uptown by BattleCow<br>- ut_village by Tub [updated by Legomanser and NRGizeR]</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Interview</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Sat 21 July 2001 14:38:06 | <a href="comments.php?section=5&index=300" class=blink>Comments (1)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><a href=http://www.stomped.com/ target=_blank class=colourise>Stomped</a> have posted an <a href=http://www.stomped.com/published/aurora995644876_1_1.html target=_blank class=colourise>interview</a> with members of Silicon Ice Development, who are the developers of popular Quake 3 Mod, Urban Terror. The <a href=http://www.stomped.com/published/aurora995644876_1_1.html target=_blank class=colourise>interview</a> also includes some nice screenshots. Check it out <a href=http://www.stomped.com/published/aurora995644876_1_1.html target=_blank class=colourise>here</a>. </td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Interview</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Sun 15 July 2001 11:42:33 | <a href="comments.php?section=5&index=283" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><A href="http://www.elited.net/interviews/ut.asp" class=colourise target=_blank>Elited</a> have posted an <a href="http://www.elited.net/interviews/ut.asp" class=colourise target=_blank>interview</a> with members of the <a href=http://www.planetquake.com/siliconice/ class=colourise target=_blank>Silicon Ice Development</a> team, who are team behind the popular Q3 mod <a href=http://www.urbanterror.net/ class=colourise target=_blank>Urban Terror</a>. They talk on a vatiety of topics, including what the mod is about and what is likely to be included in future versions of the mod (maps and features). Check it out <a href="http://www.elited.net/interviews/ut.asp" class=colourise target=_blank>here</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Beta 2.2 Released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Fri 13 July 2001 19:42:58 | <a href="comments.php?section=5&index=266" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>Beta 2.2 of <a href="http://www.urbanterror.net" class=colourise target=_blank>Urban Terror</a> has been released. This follows only 3 days after the release of Beta 2.1. This is because Beta 2.1 had a number of issues. It can be downloaded either as a patch from Beta 2.1 (450 KB) or Beta 2.0 (5.3 MB). You can download the Beta 2.2 from 2.1 patch (q3ut2_patch21to22.zip) from either <a href="http://www.3ddownloads.com/?file_id=149814" class=colourise target=_blank>3D Downloads</a> or <a href="http://dl.fileplanet.com/dl/dl.asp?/siliconice/q3ut2_patch21to22.zip" class=colourise target=_blank>FilePlanet</a>. Similarly, you also download the Beta 2.2 from 2.0 patch (q3ut2_patch20to22.zip) from either <a href="http://www.3ddownloads.com/?file_id=149815" class=colourise target=_blank>3D Downloads</a> or <a href="http://dl.fileplanet.com/dl/dl.asp?/siliconice/q3ut2_patch20to22.zip" class=colourise target=_blank>FilePlanet</a>. The following fixes have been implemented:<br><span class=quote><br>- Invisible player bug<br>- Spawning without knife bug<br>- Team DM spawns further apart now<br>- cg_sfxVisibleItems no longer hides your own laser or silencer or medkits<br>- Fixed bug that would cause pressing reload to not work sometimes<br>- Shooting cancels out your respawn protection so make your first shot count<br>- cg_autoRadio now functions as originally designed<br>- Extra ammo now gives 3 more shells to the hk69<br>- Safety measure added to ensure kills, deaths, and times are cleared after a survivor map change<br>- sv_fps now properly capped to prevent crashes at startup</span><br><br><a href=http://www.barrysworld.com class=bwlink target=_blank>BarrysWorld</a> Mirrors:<br><a href=ftp://ftp.barrysworld.com/pub/games/quake3/mods/urbanterror/official_patches/win32/q3ut2_patch20to22.zip class=bwlink target=_blank>q3ut2_patch20to22.zip</a>.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror Beta 2.1 Patch Released</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:ice.m@btinternet.com'>ICE.M</a> on Tue 10 July 2001 15:34:46 | <a href="comments.php?section=5&index=244" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top><a href="http://www.silicon-ice.com" class=colourise target=_blank>Silicon Ice Development</a> have released Beta 2.1 patch for <a href="http://www.urbanterror.net" class=colourise target=_blank>Urban Terror</a>. Beta 2.1 is only a patch and does not include any new levels as was previously annouced. However, it will fix a number of bugs that are in Beta 2 and have some new features.<br><br>Fixes include:<span class=quote><br>- ARIES issue resolved<br>- Errors in ANTI-LAG code resolved<br>- Should no longer get -1 kills for switching teams<br>- Can no longer shoot through thin walls, doors, or glass by getting close to it and shooting<br>- Team DM spawns are now randomized<br>- Ghosts can no longer call votes</span><br><br>New features include:<span class=quote><br>- ut_echo command added to replace the standard echo command<br>- Added joystick option to the menus<br>- Added the "dot" crosshair<br>- Added grenade support to ut_weaptoggle<br>- Overhauled the ut_weaptoggle command. Primary, secondary, grenade and knife works with a single parameter<br>- HK69 ammo lowered to 4 shells<br>- Extra ammo no longer supported for grenades or HK69<br>- Can no longer select grenades when the HK69 is chosen<br>- Grenade damage to distance ratio changed from linear to a curve<br>- Grenade made larger<br>- Grenade bounce sound more identifiable</span><br><br>You can view the full list of changes in the <a href="http://www.urbanterror.net/readme21.txt" class=colourise target=_blank>readme.txt</a> file. You can download the patch from <a href="http://www.3ddownloads.com/?file_id=149724" class=colourise target=_blank>3D Downloads</a> or <a href="http://dl.fileplanet.com/dl/dl.asp?/siliconice/q3ut2_patch20to21.zip" class=colourise target=_blank>FilePlanet</a>. The patch is from Beta 2 to Beta 2.1, so you will need Beta 2 for it to work. This is available to download from the <a href="http://www.urbanterror.net" class=colourise target=_blank>Urban Terror</a> site.</td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><table bgcolor="#000000" width="100%" cellpadding=1 cellspacing=0 border=0>
+<tr><td>
+<table width="100%" cellpadding=2 cellspacing=0 border=0>
+<tr>
+<td bgcolor="#CECECE" class="btext" width="100%"><b>Urban Terror hook up with TerrorStrike</b> - <span class=bsmall>posted by  <a class='nNewsMailLink' href='mailto:show@barrysworld.com'>sHOw</a> on Wed 27 June 2001 22:01:43 | <a href="comments.php?section=5&index=213" class=blink>Comments (0)</a></span></td>
+<td bgcolor="#CECECE" width=17><img src="images/item_icon.gif" width="17" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td bgcolor="#EEEEEE" colspan=2 class=news>
+<table><tr><td valign=top><img src='images/icon_ut.gif' alt='Urban Terror' border=0></td><td width="100%" valign=top>After finally releasing Beta 2, <a href="http://www.planetquake.com/siliconice/" target=_blank class=colourise>Silicon Ice Development</a> have made plans to link up with <a href="http://www.terrorstrike.net" target=_blank class=colourise>Terrorstrike.net</a> and start working on new site features to make things a little more interesting for its regular viewers. These features include a CLQ type Stats system a league of some sort and the renewal of their server listing. They should start popping up on <a href="http://www.urbanterror.net" target=_blank class=colourise>UrbanTerror.net</a> over the next month or so, so stay tuned.<br></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p><b>News Archive</b><br>
+<div align="center"><span class='nArchiveText'>[1 - 20][<a class='nArchiveLink' href=/default.php?page=1&section=1>21 - 40</a>][<a class='nArchiveLink' href=/default.php?page=2&section=1>41 - 60</a>][<a class='nArchiveLink' href=/default.php?page=3&section=1>61 - 80</a>][<a class='nArchiveLink' href=/default.php?page=4&section=1>81 - 100</a>][<a class='nArchiveLink' href=/default.php?page=5&section=1>101 - 120</a>][<a class='nArchiveLink' href=/default.php?page=6&section=1>121 - 140</a>][<a class='nArchiveLink' href=/default.php?page=7&section=1>141 - 160</a>][<a class='nArchiveLink' href=/default.php?page=8&section=1>161 - 180</a>][<a class='nArchiveLink' href=/default.php?page=9&section=1>181 - 182</a>]</span></div>
+
+		</td>
+		<td><img src="images/spacer.gif" width="5" height="1" alt="" border="0"></td>
+	</tr>
+	</table>
+	
+	</td>
+	<td width=150 valign=top>
+	<!-- Right Menu -->
+	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="default.php?section=5&index=600" class="wlink"> - Urban Terror Beta 2.6 Released</a><br><a href="default.php?section=1&index=586" class="wlink"> - Operation Red Falcon Update</a><br><a href="default.php?section=1&index=567" class="wlink"> - NS-CO Released</a><br><a href="default.php?section=6&index=566" class="wlink"> - UT - Strike Force 1.75 Released</a><br><a href="default.php?section=3&index=563" class="wlink"> - TNG 2.6 released</a><br><a href="default.php?section=5&index=561" class="wlink"> - Beta Release and League News.</a><br><a href="default.php?section=5&index=559" class="wlink"> - Urban Terror Bug Fix</a><br><a href="default.php?section=5&index=558" class="wlink"> - Urban Terror Beta 2.4 is here!!</a><br><a href="default.php?section=4&index=557" class="wlink"> - DoD Beta 2 Win32 Client</a><br><a href="default.php?section=4&index=556" class="wlink"> - Day of Defeat Beta 2 Server Files</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>Latest Features</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="interview.php?section=10&index=349" class="wlink"> - Action Half-Life Interview</a><br><a href="interview.php?section=10&index=336" class="wlink"> - Opera Interview</a><br><a href="interview.php?section=10&index=328" class="wlink"> - Annihilation Interview</a><br><a href="interview.php?section=10&index=324" class="wlink"> - Navy Seals Covert Operations Interview</a><br><a href="interview.php?section=10&index=312" class="wlink"> - The Specialists Interview</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Headlines</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext><a href="
+http://www.barrysworld.com/news/default.asp?Item=27596&Category=1" class="wlink"> - 
+
+DoD goes retail !</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27595&Category=2" class="wlink"> - 
+
+BattleField 1942 Bookable Servers Launched woohoo!</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27590&Category=2" class="wlink"> - 
+
+RTCW Changes</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27588&Category=2" class="wlink"> - 
+
+GAME.NET Launches</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27586&Category=1" class="wlink"> - 
+
+Splinter Cell Demo</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27585&Category=2" class="wlink"> - 
+
+A Trio of Bookables</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27584&Category=1" class="wlink"> - 
+
+Age of Mythology Patch</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27583&Category=1" class="wlink"> - 
+
+Impossible Creatures Multiplayer Test</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27582&Category=1" class="wlink"> - 
+
+Microsoft to Publish Steel Battalion</a><br><a href="
+http://www.barrysworld.com/news/default.asp?Item=27581&Category=1" class="wlink"> - 
+
+Art and Level Design</a><br></td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<img src="images/spacer.gif" width="150" height="5" alt="" border="0">
+<table bgcolor="#000000" width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td>
+<table width="100%" cellpadding=2 cellspacing=1 border=0>
+<tr>
+<td bgcolor="#CECECE">  <span class=btext>BarrysWorld Services</span></td>
+</tr>
+<tr>
+<td bgcolor="#9B7A21" class=wtext>
+	<a href='http://www.barrysworld.com/hosting/' class='wlink'>Get your site hosted</a><br>
+	<a href='http://www.barrysworld.com/games/liaisons.asp' class='wlink'>Server Liaisons/Admins</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/gameservers.asp' class='wlink'>Public Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/counterstrike/CounterStrikeServers.asp' class='wlink' target=new>Counter-Strike</a><br>
+	<a href='http://www.barrysworld.com/games/halflife/HalfLifeServers.asp' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/quake2/quake2servers.asp' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/quake3/quake3servers.asp' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/unrealtournament/UnrealTournamentServers.asp' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://www.barrysworld.com/games/bookings/' class='wlink'>Bookable Servers</a></b><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Half%2DLife' class='wlink' target=new>Half-Life</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+2' class='wlink' target=new>Quake 2</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Quake+3+Arena' class='wlink' target=new>Quake 3 Arena</a><br>
+	<a href='http://www.barrysworld.com/games/bookings/bookableServersList.asp?game=Unreal+Tournament' class='wlink' target=new>Unreal Tournament</a><br>
+	<p>
+	<b><a href='http://leagues.barrysworld.com/' class='wlink'>Leagues</a></b><br>
+	<a href='http://leagues.barrysworld.net/bwcsl/' class='wlink' target=new>BWCSL</a><br>
+	<a href='http://leagues.barrysworld.net/bwaqsl/' class='wlink' target=new>BWAQSL</a><br>
+	</td>
+</tr>
+<tr>
+<td bgcolor="#CECECE"><img src="images/spacer.gif" width="1" height="2" alt="" border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>	<p>
+	<div align="center">Visitors since 03/05/01<br>
+	<img src="http://linweb02.barrysworld.com/cgi-bin/Count.cgi?trgb=ffffff&dd=E&reload=F" alt="Count">
+	</div>
+	<p>
+	<div align="center">
+	<a href="http://www.barrysworld.com" target="_blank"><img src="http://images.barrysworld.com/button_bw.gif" border=0 alt="Hosted by Barrysworld with Barry Power!"></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.actionnation.com/"><img src="http://images.barrysworld.com/nation/button_anation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.quakenation.com/"><img src="http://images.barrysworld.com/nation/button_qnation.gif" border=0></a><br><img src="img/spacer.gif" width="5" height="4" alt="" border="0"><br><a href="http://www.lanpartynation.com/"><img src="http://images.barrysworld.com/nation/button_lp.gif" border=0></a><br>	</div>
+	</td>
+</tr>
+</table>
+
+<table width="100%" cellpadding=0 cellspacing=0 border=0 background="images/main_footfill.gif">
+<tr>
+	<td><img src="images/spacer.gif" width="1" height="39" alt="" border="0"></td>
+	<td align=right><a href="http://www.actionnation.com/neville/"><img src="images/main_footer.gif" width="143" height="39" alt="" border="0"></a></td>
+</tr>
+</table>
+<table width="100%" cellpadding=0 cellspacing=0 border=0 bgcolor="#CECECE">
+<tr>
+	<td colspan=2>
+	<div align="right" class=bsmall>
+	ActionNation is part of the <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a> Nation Network<br>
+	Copyright &copy; 2001 <a href="http://www.barrysworld.com/" class="blink">BarrysWorld</a></div><br>
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

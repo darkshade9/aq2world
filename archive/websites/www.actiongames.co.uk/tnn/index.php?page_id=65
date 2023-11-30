@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="description" content= "Gaming News and Resource sites.....">
+<meta name="keywords" content="newbie,fps,first person shooter,first person shootemup,quake,unrealhalflife,Counter Strike,actionquake,action,online,gaming,online gaming,teamgame,action help,information,tnn,forum,hosting,gbloke,rincewind,discussion zone">
+<meta name="copyright" content="Copyright � 2000 Actiongames">
+<title>TNN - Ltk Config</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-language" content="en-GB">
+<link rel="stylesheet" type="text/css" href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/default.css">
+<!-- Modified:  -->
+</head>
+<body>
+<div align="center">
+<table cellpadding="3" cellspacing="0" summary="None" class="mastertable">
+<tr>
+<td class="leftcolumn" align="center" valign="top"><br>
+<br>
+
+<table cellpadding="0" cellspacing="0" summary="None" class="paneltable">
+<tr>
+<td class="paneltitleleft">&nbsp;</td>
+<td class="paneltitle">Action Quake</td>
+<td class="paneltitleright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelleft">&nbsp;</td>
+<td class="panel">
+<a href="index.php">News</a><br>
+<a href="http://forums.actiongames.co.uk/">Forums</a><br><br>
+<a href="index.php?page_id=75">Downloads</a><br>
+<a href="index.php?page_id=64">Installing LTK</a><br>
+<a href="index.php?page_id=65">Ltk Config</a><br>
+<a href="index.php?page_id=74">LTK Routes</a><br>
+<a href="index.php?page_id=63">Using LTK</a><br>
+</td>
+<td class="panelright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelbottomleft" valign="bottom">&nbsp;</td>
+<td class="panelbottom">&nbsp;</td>
+<td class="panelbottomright" valign="bottom">&nbsp;</td>
+</tr>
+</table>
+
+<br>
+
+<table cellpadding="0" cellspacing="0" summary="None" class="paneltable">
+<tr>
+<td class="paneltitleleft">&nbsp;</td>
+<td class="paneltitle">Sites</td>
+<td class="paneltitleright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelleft">&nbsp;</td>
+<td class="panel">
+<a href="/">Actiongames</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/tnn">Action Quake</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/cstrike">Counter Strike</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/rpg">RPGs</a><br>
+</td>
+<td class="panelright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelbottomleft" valign="bottom">&nbsp;</td>
+<td class="panelbottom">&nbsp;</td>
+<td class="panelbottomright" valign="bottom">&nbsp;</td>
+</tr>
+</table>
+
+</td>
+<td class="centercolumn" align="center" valign="top">
+<table cellpadding="0" cellspacing="0" class="maintable">
+<tr>
+<td class="tnnmainlogo" colspan="3">&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" align="center" class="redbar">
+Dedicated to all things Action Quake. The Ultimate Quake 2 Mod</td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" class="maintitle">&nbsp;&nbsp;&nbsp;Ltk Config</td>
+</tr>
+
+<tr>
+<td class="mainleft">&nbsp;</td>
+<td class="main"><br>
+
+
+
+
+
+
+<p class="title">LTK Configuration</p>
+
+<p>Ok, so you've read the <a href=
+"/tnn/ltk/ltkinstall.shtml" target=
+"main">Installation</a>, and the <a href=
+"/tnn/ltk/ltkusing.shtml" >Using</a> section, and
+every other line referred you to here! What's so special about this
+section, well, I'll tell you, this is where you will learn the in's
+and out's of what you can do with the LTK Bot.</p>
+
+<p>We have already shown you a quick way to set up both a DM and TP
+game using the shortcut icons in Windows. The next thing that we
+should show you is how to customise what the
+LTK Bot's will carry in the game with them, with respect to
+weapons and items.</p>
+
+<p>The way we do this is by creating .cfg files, and placing them
+into the /Quake2/action/bots directory. You will remember the
+'BAKasylum' .cfg file that we talked about in the <a href=
+"/tnn/ltk/ltkusing.shtml" >Using LTK</a> section
+earlier. The LTK Bots will then use what ever guns and items you've selected
+for them, but bare in mind, this is only setting what they actually
+start with, once the game commences, if they run out of ammo, or
+find a better weapon, they will drop what you selected for them,
+and pick up something else!</p>
+
+<p>First things first, explore the /Quake2/action/bots directory,
+open the asylum.cfg file, using a text editor (on most systems, you
+should just be able to double click the file, and either notepad or
+wordpad will open it for you).</p>
+
+<p>This is what you should be seeing (unless you've already changed
+something);</p>
+
+<p style="font-family:Courier new;font-size:12pt;">!1<br>
+# Special config for the Asylum level<br>
+# name, model/skin, team, weaponchoice, equipchoice;<br>
+# Weaponchoice [1..5] MP5, M4, M3, HC, SNIPER<br>
+# Equipchoice [1..5] SIL, SLIP, BAND, KEV, LASER<br>
+# If teams then this is Team 1<br>
+"FatGirl Slim", "female/venus", 1, 1, 4;<br>
+"Killer Kombo", "male/cajin", 1, 1, 4;<br>
+"Jackie Chan", "male/mclaine", 1, 1, 4;<br>
+# Team 2 - Mix n Match<br>
+"Kim DeVille", "sydney/sydney", 2, 4, 2;<br>
+"Arnie Black", "male/commando", 2, 3, 1;<br>
+"The Sarge", "male/grunt", 2, 5, 4;</p>
+
+<p>So, what the hell does all this mean! Well, lets work through
+it, line by line. The first line is very important, and although it
+means nothing to you, if its not included, the file will not be
+recognised by the
+LTK code, always make sure its present. The next 5 lines
+beginning with the # are comments, you can add as many of these as
+you wish, it will not hurt, but neither really is it necessary to
+add more. If you read these, you will realise the Connor Caple
+(author of
+LTK), has actually explained most of it for you here.</p>
+
+<p>You just have to enter the information in the same format as its
+already displayed, so lets just add another play for now to Team
+1.</p>
+
+<p>Create a new line somewhere, it doesnt matter where, but it
+easier if you keep the players on Team 1 and Team 2 seperate, so
+lets insert our new line after the line that begins - "Jackie
+Chan".</p>
+
+<p>Now add the following line;</p>
+
+<p style="font-family:Courier new;font-size:12pt;">"Bill Gates", "male/mclaine",1,1,1</p>
+
+<p>What has this just done, well, we've added a new player with a
+name of "Bill Gates", we've given him the "male" model, and the
+"mclaine" skin for that model. The first number that follows this
+is the TEAM number, either 1 or 2, so here we have added Bill to
+Team 1. The numbers that follow give Bill the MP5 (as decribed in
+the comment line beginning with 'Weaponchoice' - number 1), and
+rather cruely we've only given him a pair of slippers to defend
+himself with - bad luck Bill! (as described in the 'Equipchoice'
+comment line - number 1).</p>
+
+<p>You could save this file now, and then run your TP shortcut, and
+you should find that Team 1 now has an extra player to Team 2, and
+his name is Bill. If you want a good laugh, watch them fight it
+out, see how long Bill lives!</p>
+
+<p>You can add as many extra players as you wish, and to either
+team, just remember to get the quotation marks ( " ) aroud the
+players name, and also around the model/skin that he/she will be
+using. Also, ensure you seperate the number with comma's ( , ).</p>
+
+<p>You dont have to have equal sized teams, you may have just one
+LTK Bot on one team, and 10 on the other, but remember, if you
+have lots of Bots in a game, you will more than likely need to
+increase the 'maxclients' command in your shortcut.</p>
+
+<p>*Note : If you want to play on your own verses the LTK Bots, with no other Bots on your team, this to can be done
+easily, but not as you would probably imagine. What you cannot do,
+is leave one team set with NO LTK Bots, so the only way to get around this is to do the
+following.</p>
+
+<p>Set up which ever team it is that you want to fight against,
+lets say team 2. Then add 1 bot to team 1, give him a name that's
+easy to remember, then when the game starts (just after the map
+loads, but before you start fighting) type the following at the
+console;</p>
+
+<p style="font-family:Courier new;font-size:12pt;">sv_removebot BOTNAME where BOTNAME is the name of the LTK Bot you want to remove.</p>
+
+<p>Below is a copy of a .cfg file I use, I also bound one of my
+keys on my keyboard to remove the same LTK Bot at the touch of a button, which saves you having to
+type it everytime, example;</p>
+
+<p style="font-family:Courier new;font-size:12pt;">!1<br>
+# NOTE: model/skin is only used in non-teamplay games!<br>
+# name, model/skin, team, weaponchoice, equipchoice;<br>
+# Weaponchoice [1..5] MP5, M4, M3, HC, SNIPER<br>
+# Equipchoice [1..5] SIL, SLIP, BAND, KEV, LASER<br>
+# Team 1 - RobbieBoy's gang!<br>
+"[Mr]Deleted", "terror/skyterr",1,5,5;<br>
+# Team 2 - The Dogs!<br>
+"[Mr]Orange", "terror/skyterr", 2, 5, 4;<br>
+"[Mr]Black", "terror/skyterr", 2, 1, 4;<br>
+"[Mr]White", "terror/skyterr", 2, 3, 4;<br>
+"[Mr]Blue", "terror/skyterr", 2, 1, 4;</p>
+
+<p>As you can see, I have only 1 LTK Bot on Team 1, I have then 4 Resevoir Dog gang members on
+Team 2 (the names can be fun!). As soon as the game loads, I hit my
+'D' key, which I gave the following bind;</p>
+
+<p style="font-family:Courier new;font-size:12pt;">bind d sv_removebot [Mr]Deleted</p>
+
+<p>This is very handy, and lets you play the round on your own
+verses the LTK Bots.</p>
+
+<br>
+ </td>
+<td class="mainright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="maincrleft">&nbsp;</td>
+<td class="maincopyright">&copy; Copyright Actiongames.co.uk
+2001</td>
+<td class="maincrright">&nbsp;</td>
+</tr>
+</table>
+</td>
+<td class="rightcolumn" align="center" valign="top"><img src=
+"https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/images/aglogo.gif" alt=
+"actiongames.co.uk" width="88" height="87"> <br>
+<br>
+<br>
+<!-- Ad Starts Here -->
+<div align="center">
+<SCRIPT LANGUAGE="javascript" src="http://www.qksrv.net/1e-5t3q"> </SCRIPT><br>
+<span class="small" style="color:#FFFFFF;">Advert</span>
+</div>
+<!-- Ad Ends Here -->
+<br>
+
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

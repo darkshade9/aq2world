@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="description" content= "Gaming News and Resource sites.....">
+<meta name="keywords" content="newbie,fps,first person shooter,first person shootemup,quake,unrealhalflife,Counter Strike,actionquake,action,online,gaming,online gaming,teamgame,action help,information,tnn,forum,hosting,gbloke,rincewind,discussion zone">
+<meta name="copyright" content="Copyright � 2000 Actiongames">
+<title>TNN - Config Part 3</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-language" content="en-GB">
+<link rel="stylesheet" type="text/css" href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/default.css">
+<!-- Modified:  -->
+</head>
+<body>
+<div align="center">
+<table cellpadding="3" cellspacing="0" summary="None" class="mastertable">
+<tr>
+<td class="leftcolumn" align="center" valign="top"><br>
+<br>
+
+<table cellpadding="0" cellspacing="0" summary="None" class="paneltable">
+<tr>
+<td class="paneltitleleft">&nbsp;</td>
+<td class="paneltitle">Action Quake</td>
+<td class="paneltitleright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelleft">&nbsp;</td>
+<td class="panel">
+<a href="index.php">News</a><br>
+<a href="http://forums.actiongames.co.uk/">Forums</a><br><br>
+<a href="index.php?page_id=30">Configuration</a><br>
+<a href="index.php?page_id=91">Installation</a><br>
+<a href="index.php?page_id=29">Lan Guide</a><br>
+<a href="index.php?page_id=56">Optimisation</a><br>
+</td>
+<td class="panelright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelbottomleft" valign="bottom">&nbsp;</td>
+<td class="panelbottom">&nbsp;</td>
+<td class="panelbottomright" valign="bottom">&nbsp;</td>
+</tr>
+</table>
+
+<br>
+
+<table cellpadding="0" cellspacing="0" summary="None" class="paneltable">
+<tr>
+<td class="paneltitleleft">&nbsp;</td>
+<td class="paneltitle">Sites</td>
+<td class="paneltitleright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelleft">&nbsp;</td>
+<td class="panel">
+<a href="/">Actiongames</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/tnn">Action Quake</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/cstrike">Counter Strike</a><br>
+<a href="https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/rpg">RPGs</a><br>
+</td>
+<td class="panelright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="panelbottomleft" valign="bottom">&nbsp;</td>
+<td class="panelbottom">&nbsp;</td>
+<td class="panelbottomright" valign="bottom">&nbsp;</td>
+</tr>
+</table>
+
+</td>
+<td class="centercolumn" align="center" valign="top">
+<table cellpadding="0" cellspacing="0" class="maintable">
+<tr>
+<td class="tnnmainlogo" colspan="3">&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" align="center" class="redbar">
+Dedicated to all things Action Quake. The Ultimate Quake 2 Mod</td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" class="maintitle">&nbsp;&nbsp;&nbsp;Config Part 3</td>
+</tr>
+
+<tr>
+<td class="mainleft">&nbsp;</td>
+<td class="main"><br>
+
+
+
+
+
+
+<p class="title">The Bind Command</p>
+
+<p class="standard">Bind is the most important command in any
+config, without it you basically can't do anything.<br>
+Before we start writing the config it's important that you
+understand bind and alias.</p>
+
+<p class="title">Binding Keys</p>
+
+<p class="standard">Bind is used to tell Q2 what you want a key to
+do, it basically allows you to set up your keyboard configuration
+from within a config file, but since you have much more freedom in
+the config file you can set keys to do things that cannot be
+selected in the menus such as broadcasting custom messages.</p>
+
+<p class="code">bind pause
+"screenshot"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Take
+Screenshot</p>
+
+<p class="standard">The above example would tell Q2 that when you
+press the pause key (above page up) to take a screenshot.<br>
+Note the way the command is laid out, this is how most commands
+should be laid out: Firstly, there's the command itself</p>
+
+<p class="code">bind</p>
+
+<p class="standard">Then, the key that is to be bound</p>
+
+<p class="code">pause</p>
+
+<p class="standard">Then there is a section in speech marks (these
+are not essential for simple commands such as this but it is good
+to get into the habit of using them in all commands because they
+become vital later when you create more complex scripts with the
+alias command), this tells Q2 what command you want it to do when
+the key is pressed.</p>
+
+<p class="code">"screenshot"</p>
+
+<p class="standard">The part at the end after the <span class=
+"c2">//</span> is a comment, it is not required and is ignored by
+Q2 (anything in a config preceded by <span class="code">//</span> is
+ignored). It is called a comment and is put there to allow you to
+easily find what everything does in your config. Commenting your
+work is another good habit to get into because it means that if you
+ever need to change anything you can easily find it without having
+to look too closely at cryptic commands, an organized config makes
+finding things easier too - if you follow the guides on making your
+config you'll see how to organize it.</p>
+
+<p class="title">Holding Keys: +/-</p>
+
+<p class="standard">A lot of commands work like above where you
+press the button and the command is executed, you press it again
+and it's executed again, but for some commands this is
+inappropriate.<br>
+If you want to walk forward you can't just press the key for each
+step, you want to be able to hold down the key and continue walking
+forward untill it is released, then you want to stop. This is
+achieved using a '+' before the 'forward' command:</p>
+
+<p class="code">bind uparrow
+"+forward"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Move
+Forward</p>
+
+<p class="standard">This tells Q2 that you want the 'forward'
+command to remain active as long as you hold down uparrow (the up
+pointing arrow on the right of the keypad below end), when you
+release uparrow the game will execute '-forward' telling your
+character to stop moving (Q2 automatically binds '-' commands so
+you don't need to, handy really since there is no way to do
+it!).</p>
+
+<p class="standard">Common uses for +/- binds are movement keys and
+the trigger, although they can be used in some more complex
+scripts.</p>
+
+<p class="title">Multiple Commands: ;</p>
+
+<p class="standard">It is possible to group commands together in
+one binding allowing you to execute more than one command with a
+single keypress, when doing this the ; symbol is used as a
+seperator for commands.</p>
+
+<p class="code">bind f12 "radioteam reportin;wave 1;say_team ...I'm
+alive with %H health..."</p>
+
+<p class="standard">This will tell Q2 that when you press F12 it
+has to play the file reportin.wav to your team, salute, and send
+the message to your team saying you're alive and informing them of
+your health status. All three things will happen at once with no
+delay between them.</p>
+
+<p style="text-align:center;"><a href="index.php?page_id=31">PREV&nbsp;</a> <a href=
+"index.php?page_id=33">&nbsp;NEXT</a></p>
+
+<br>
+
+<br>
+ </td>
+<td class="mainright">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="maincrleft">&nbsp;</td>
+<td class="maincopyright">&copy; Copyright Actiongames.co.uk
+2001</td>
+<td class="maincrright">&nbsp;</td>
+</tr>
+</table>
+</td>
+<td class="rightcolumn" align="center" valign="top"><img src=
+"https://assets.aq2world.com/archive/websites/www.actiongames.co.uk/actiongames/images/aglogo.gif" alt=
+"actiongames.co.uk" width="88" height="87"> <br>
+<br>
+<br>
+<!-- Ad Starts Here -->
+<div align="center">
+<SCRIPT LANGUAGE="javascript" src="http://www.qksrv.net/1e-5t3q"> </SCRIPT><br>
+<span class="small" style="color:#FFFFFF;">Advert</span>
+</div>
+<!-- Ad Ends Here -->
+<br>
+
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
