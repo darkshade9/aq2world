@@ -1,0 +1,64 @@
+<html><head><title>Making Jumppads</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="597" name="597" class="book-h1">Making Jumppads</h1><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Jumppads -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<B><U>Jump pads</b></u><br>
+
+<p>Let's start with how to make a Jump pad. We'll start by making a room that looks something like this (I have finally used the Gothic textures here =):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/jumpstart.jpg"><br>
+</center>
+<br>
+<p>If you don't have time to make a room, or just don't understand, download the room (It's the same room as from the screenshot, open up the room, and continue to read =). </p>
+
+<p>Now, we need a new block with the Jump pad in the floor. Open the Textures menu, and choose "sfx". When the loading is finished, push "T" and open up the Textures window. If you scroll in the Textures window you will see that there are many jumppad-textures. This is because the texture should match your floor texture, choose the one that seems to have the same floor texture as in your map. </p>
+
+<p>Then make a new box that is 128x128 units large (and maybe 8 units high). Place the new box with the jumppad texture at the same level as the floor and push the "CSG Subtract" button, as we did when we made a corridor. Now, push "S", and fix the texture so it's located at the right position. Now it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/padplace.jpg"><br>
+</center>
+<br>
+<p>Okay, now you can deselect the pad, with ESC. Now load a new texture. Load the "Common" textures. Now choose the very small texture called "trigger", it's tricky to find, but it should look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/trig.jpg"><br>
+</center>
+<br>
+<p>Now, make a new cube, that is the same size as the pad (128x128 units), but make it 16 units high. Place this new cube right on top of the Jumppad cube. It should look like this if you've done it right:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/trigger.jpg"><br>
+</center>
+<br>
+<p>Now push right mouse button, then a small menu will be visible. Go down to "Trigger", and then Choose "Trigger_push". The box with the "trigger" texture will now be a "Trigger_push". </p>
+
+<p>Push ESC to unselect it. <br>
+
+<p>Then click the right mouse button again, go down to "Target", and choose "Target_position". </p>
+
+<p>Push "n" to bring up the Entity window. In the "Key" box, type "targetname". The "Targetname" means the name of the entity, now enter a name for this entity in the value box. I choose the name "jump1", then I just enter "jump1" in the value box, and push <Enter>. It should look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/position.jpg"><br>
+</center>
+<br>
+<p>(Ignore the Origin, that's the position of the entity). This entity (the target_position) tells the "trigger box" what direction, and how high the jump should be. It tells the trigger box this, by it's position. But, not yet. First we need to "bind" the "trigger box" to the "target_position" entity. That's why we put a targetname on the entity, because now, you push ESC to unselsect the target_position entity, and select the box with the "trigger" texture. </p>
+
+<p>Once you've selected it, push "N", to bring up the entity list. Now, simply type in the "Key" box "target" and in the value "jump1" (if you had the targetname "testjump1" on the entity, then you simply put the value "testjump1" here). Now, there should be a line from the trigger-box, to the entity This line simply shows the direction of the jump, and the player will reaches the highest point where the "trigger_position" is. To get the player up to the right place, simply move around the "trigger_position" entity Hope you can get it work now. If not, give me a note.</p></body></html>

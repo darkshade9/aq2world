@@ -1,0 +1,96 @@
+<html><head><title>Patch (Version 1.32/Latest)</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="602" name="602" class="book-h1">Patch (Version 1.32/Latest)</h1><h3 align="center">Quake III Arena Version 1.32 Patch</h3><p class="q3bg1">The latest Quake III Arena updates are always found at <a href="http://www.idsoftware.com/">ID Software</a>. The following is a list of the latest fixes.<br><br>Here are some locations to download the 1.32 Patch/es.<ol>
+    <li><a href="http://planetquake3.net/download.php?op=viewdownloaddetails&lid=1150" target="_blank">PlanetQuake 
+      1.32 Quake III Arena patch download</a></li>
+    <li><a href="http://www.avault.com/pcrl/patches_temp.asp?patch=quake3arena" target="_blank">The 
+      Adrenaline Vault Quake 3 Arena patches</a></li>
+    <li><a href="http://www.voodoofiles.com/8180" target="_blank">Vodoo Files 
+      1.32 QIII Arena patch download</a></li>
+    <li><a href="http://www.3dgamers.com/news/more/1036379327/" target="_blank">3D 
+      Beta Gamers 1.32 Q3 patch for the MAC download</a></li>
+    <li><a href="http://www.megagames.com/news/html/patches/quakeiiiarenapointreleasev132final.shtml" target="_blank">Megagames 
+      1.32 QIIIArena patch download</a></li>
+    <li><a href="http://www.softwarepatch.com/games/quake3.html" target="_blank">SoftwarePatch 
+      1.32 Quake 3 patch download</a></li>
+  </ol>
+</p>
+<hr noshade width="75%" align="center">
+<h3>1.32 updated 10.9.02</h3>
+<p><b>General:</b><br>
+<blockquote class="tinytext"> - new network protocol, 68<br>
+- network code:<br><br>
+~ improved fragmented messages handling<br>
+~ map change while client loads map no longer causes an 'Invalid .PK3' error<br>
+~ map_restart while client loads map no longer causes a reload<br>
+~ fixing donedl being ignored after autodl if map_restart'ed<br>
+- the demo command has a list of compatible protocols, it will loop through 66 67 68. You can do '/demo four' and it will try four.dm_66 four.dm_67 four.dm_68, or you can explicitely give a '/demo demoname.dm_??'<br>
+- added mousewheel support in the console:<br><br>
+~ wheel to scroll, ctrl+wheel to scroll faster, shift+wheel to scroll history<br>
+- UI in baseq3/ and missionpack/ for PunkBuster configuration. Punkbuster server in server creation dialog (sv_punkbuster) Punkbuster client in server browser (cl_punkbuster) added PB Yes/No to the browsers<br>
+- removed obsolete MPlayer UI stuff<br>
+- bumped server browser to handle up to 4096 servers<br>
+- IP maintained in userinfo<br>
+- cl_guid in userinfo (as part of PB integration)<br>
+- printing ports as unsigned ints, no longer printing negative port numbers <br>
+- cleaned up the legacy IP banning code<br><br>
+~ use * for IP pattern matching now instead of 0 (fixes some confusion)<br>
+~ ex: 192.246.12.*<br>
+~ made it safe from overflowing and crashing<br>
+~ NOTE: using PunkBuster's banning system is advised instead though<br>
+- rcon: some fixes to the buffering to avoid overflowing and dropping parts of the message<br>
+- rcon: now supports quoting /rcon g_motd "foo bar"<br>
+- added SVF_CLIENTMASK (0x00000002), works only with <= 32 players set bitmask of players to which send entity<br>
+- pushed cl_maxpackets upper limit to 125<br>
+- added [skipnotify] from RTCW, use to display in the console only, but not on client screen (also fixes pb_msgprefix and pb_sv_msgprefix)<br>
+- new cvar sv_lanForceRate (defaults 1):<br><br>
+- forces LAN clients to the maximum rate instead of accepting client setting (1 is the default behaviour, backward compatible)<br>
+- new cvar sv_strictAuth (defaults 1):<br><br>
+- server side variable to control wether strict CDKEY auth should be performed with the auth server<br>
+- this is required if you want reliable cl_guid for the server (for users tracking)</blockwuote>
+  <div class="tinytext">- filesystem: client re-orders it's pk3s according to 
+    the order given by server (fixes some 'Invalid .PK3 files referenced' situations<br>
+    - fixed invisible entities/players bug (thanks goes to Rick Johnson / Raven 
+    for this one!)<br>
+    - update x86 VM code (better and safer optimisations) (Richk Johnson / Raven 
+    too)<br>
+    - clearing client gentity before GAME_INIT call<br>
+    - failing vote if there's only one voting client (fixes exploit on 2-player 
+    server where one player votes then disconnects, forcing vote to pass)<br>
+    - added trap_FS_Seek<br>
+    - renderer fix: if client game code registers a shader after drawsurfaces 
+    are generated but before frame is rendered had a one-frame visual glitch (shader 
+    indexes messed up)<br>
+    ~ r_roundImagesDown 0 + map q3dm1 -> crash (buffer overflow fix)<br>
+    ~ fixed a crash in widescreen displays (q3dm11)<br>
+    ~ MAX_SHADERS up to 2^12<br>
+    ~ moved screenshot from frontend to backend, fixes broken r_smp 1 screenshots</div>
+</blockquote>
+<p> <strong>TA fixes:</strong></p>
+<blockquote>
+  <div class="tinytext"> - MOD_KAMIKAZE MOD_JUICED logging properly to games.log<br>
+    - fixed bot taunt spamming<br>
+    - fixed typo in scripts/models2.shader (shader error Ursula head)</div>
+</blockquote>
+<hr noshade color="black">
+<p><b>Win32 specific:</b></p>
+<blockquote>
+  <div class="tinytext">- fixed the DirectInput mouse init procedure<br>
+    - rcon: fixed rcon not working on NT/2000/XP workstations that have a long 
+    uptime</div>
+</blockquote>
+<hr noshade color="black">
+<p><b>Linux specific:</b></p>
+<blockquote>
+  <div class="tinytext">- no longer trying to load libMesaVoodooGL.so obsolete 
+    code, was confusing when trying to setup correct OpenGL acceleration<br>
+    <br>
+    - SMP support in the renderer. Detects CPU count, r_smp 1 default if available. 
+    (thanks to Gareth Hughes for contributing this)<br>
+    <br>
+    - changed default GL driver from libGL.so to libGL.so.1 see LSB 1.2 spec:<br>
+    - <a href="http://www.linuxbase.org/spec/refspecs" target="_blank">http://www.linuxbase.org/spec/refspecs</a><br>
+    - Handle Ctrl and Space key together correctly (Ctrl was disabling Space)<br>
+    - sub-frame timing of input events (key/mouse) (input timing quality now equivalent 
+    to win32)</div>
+</blockquote></body></html>

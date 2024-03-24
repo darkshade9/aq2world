@@ -1,0 +1,195 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Compiling Maps In KPRadiant - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Kingpin</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/130">FAQ</a></li><li class="collapsed"><a href="node/158">Info</a></li><li class="leaf"><a href="node/204">Kingpin:Final Crime</a></li><li class="expanded"><a href="node/131">Tutorials</a><ul><li class="leaf"><a href="node/548" class="active">Compiling Maps In KPRadiant</a></li><li class="leaf"><a href="node/138">How to create character witch cigar, fedora hat, etc.?</a></li><li class="leaf"><a href="node/137">How to create character's combattarget?</a></li><li class="leaf"><a href="node/140">How to create character's deathtarget?</a></li><li class="leaf"><a href="node/142">How to create characters with different kinds of head?</a></li><li class="leaf"><a href="node/153">How to create characters with different scale?</a></li><li class="leaf"><a href="node/148">How to create cutscene?</a></li><li class="leaf"><a href="node/154">How to create fixed size trigger?</a></li><li class="leaf"><a href="node/134">How to create gang territory?</a></li><li class="leaf"><a href="node/133">How to create gang war?</a></li><li class="leaf"><a href="node/144">How to create killtarget?</a></li><li class="leaf"><a href="node/152">How to create pathtarget?</a></li><li class="leaf"><a href="node/141">How to divide the world into areas?</a></li><li class="leaf"><a href="node/147">How to group characters in gang?</a></li><li class="leaf"><a href="node/146">How to light props?</a></li><li class="leaf"><a href="node/145">How to make character follow another character?</a></li><li class="leaf"><a href="node/151">How to make character head towards path_corner_cast?</a></li><li class="leaf"><a href="node/132">How to set character's accuracy?</a></li><li class="leaf"><a href="node/136">How to set character's calibur?</a></li><li class="leaf"><a href="node/139">How to set character's currentcash?</a></li><li class="leaf"><a href="node/143">How to set character's health?</a></li><li class="leaf"><a href="node/149">How to set character's moral?</a></li><li class="leaf"><a href="node/150">How to set character's name?</a></li><li class="leaf"><a href="node/135">How to set character's skins?</a></li><li class="leaf"><a href="node/155">How to unlock a targeted door?</a></li><li class="leaf"><a href="node/547">Setting Up QERadiant</a></li><li class="leaf"><a href="node/268">The BSP Process and Visibility</a></li></ul></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/548" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">What kind of maps Q4 lacks in?</div><div class="text">Tourney</div><div class="bar"><div style="width: 23%;" class="foreground"></div></div><div class="percent">23%</div><div class="text">Team DM</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">CTF</div><div class="bar"><div style="width: 27%;" class="foreground"></div></div><div class="percent">27%</div><div class="text">Deathmatch</div><div class="bar"><div style="width: 37%;" class="foreground"></div></div><div class="percent">37%</div><div class="total">Total votes: 30</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/1243">Eurocom Development are currently recruiting for Gameplay / Level Designers!</a></li><li><a href="node/1241">The Search begins</a></li><li><a href="node/1236" title="9 comments">Excellent Vinyl Cutter, Laser Engraver from Redsail</a></li><li><a href="node/1230" title="9 comments">THE people who can't make it</a></li><li><a href="node/1225" title="9 comments">Jarhead Games - Hiring - Level Designers</a></li><li><a href="node/1224" title="9 comments">Focused Game Design</a></li><li><a href="node/1215" title="10 comments">Map Ideas Needed...</a></li><li><a href="node/1210" title="10 comments">Attention All Active Quake 2 Mappers!</a></li><li><a href="node/1196" title="9 comments">i need help</a></li><li><a href="node/1177" title="8 comments">A game team wanted</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/4599" title="View user profile.">morris</a></li><li><a href="user/4598" title="View user profile.">kristoph</a></li><li><a href="user/4597" title="View user profile.">mariori</a></li><li><a href="user/4596" title="View user profile.">Promorask</a></li><li><a href="user/4595" title="View user profile.">babyfootprinter</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 30 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Compiling Maps In KPRadiant</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/128" title="">Kingpin</a> &raquo; <a href="node/131">Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2157" title="View user profile.">Method</a> on Thu, 2004-08-19 00:40.</div>
+<h3>Compiling Maps In KPRadiant </h3>
+- by Zirco<br><br>
+
+<b>Introduction:</b><br><br>
+
+Compiling is probably the most important thing you must learn in mapping. This tutorial will show you how to compile your map to bsp format in QERadiant.<br><br>
+
+<b>Step 1:</b><br><br>
+
+If you have Kingpin installed to a custom directory or on a different hard drive letter:<br><br>
+
+
+<b>Step 2:</b><br><br>
+
+By this time, you should have a map with a light entity in it. If not build one now. Remember, if your map does not have any light entities or light brushes in it, all you will see is dark when it comes to play your map.<br><br>
+
+Save your map to .../Kingpin/main/maps, the directory may not exist so you will have to make a new folder called 'maps' in your 'main' folder. Next save your map to the .../Kingpin/KPRad directory when it comes time to compile and test your map. It is important that both maps are the exact same thing. Now go to the 'bsp' menu and click 'bsp_FullVis'. A DOS window should pop up then everything should run okay, if you get any errors and the compile process stops, it means your project file settings is not correct.<br><br>
+
+Although it may seem useless and a little time consuming to save your map to two different locations, it is required for it to work.<br><br>
+
+<b>Step 3:</b><br><br>
+
+When the compile process is done, close the window and QERadiant if you want then run Kingpin. Type in the console "map x" without quotation marks and x being the name of your map. If you do not have the console enabled, startup shortcut with "+set developer 1" without the quotation marks.<br><br>
+
+<b>Step 4 (optional):</b><br><br>
+
+Other BSP compile types:
+If 'bsp_FullVis' takes too long or if you're map is huge, then try 'bsp_FastVis' or if you want to see your map with full brightness which takes only a second to compile then try 'bsp_only (novis/norad)'. When releasing a final map, use bsp_FullVis.<br><br>
+
+<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/131" title="View the previous page.">previous</a></div><div class="next">&nbsp;</div><div class="up"><a href="node/131" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Tutorials</div></div></div></div></div>
+
+<div class="links"><a href="book/print/548" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

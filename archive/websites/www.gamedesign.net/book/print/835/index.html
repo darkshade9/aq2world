@@ -1,0 +1,90 @@
+<html><head><title>Patches 101</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="835" name="835" class="book-h1">Patches 101</h1><link href="themes/rusted/rusted.css" rel="stylesheet" type="text/css"> 
+<h3 align="center">GTKRadiant Patches 101 for Rusties</h3>
+<h5 align="center">Greg (skinmaster) Crockatt</h5>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-patches.jpg" border="5"></center>
+<p align="left" class="rustbg4">(<a href="/content/quake3/tutorials/gtk-patches-101/patches-101.zip?PHPSESSID=120281db4e1606e32845fa2039f69e02">MAP FILE HERE</a>) 
+  For this tutorial I'll be dealing only with the menu items show in the above 
+  image. Thicken and cap are useful in their own ways but are not dealt with here 
+  as my methods don't apply them often.</p>
+<!--break-->
+<p align="left" class="rustbg1">1st you should understand the concept of rows 
+  and columns. A row runs horizontally on a patch, even if the orientation of 
+  the patch changes a row will always stay a row based on its initial location. 
+  A column runs vertically and will also always be a column based on its original 
+  location. There's a means to convert rows to columns, reversing the control 
+  orientation on a patch but it's unpredictable..<br><br>
+<small class="r">NOTE - Using bobtoolz merge patches and split patches(pictured above) can somehow 
+  force a row/column orientation change depending on if you've inverted one of 
+  the merged patches and which direction the inversion was done on. It's often 
+  best to make both sides seperately and distinguish betweeen them for future 
+  use, texture application can be really screwed up if you merge a flipped patch 
+  with its parent.</small>
+<p align="left" class="rustbg1">Second you should know that every square or rectangle 
+  surface on a patch will generate 2 triangles, 5 edges, 4 verts. The more faces 
+  on a patch surface, the more edges and verts the engine must calculate and thus 
+  you must be certain to optimize all your patch shapes down to their least row/column 
+  counts.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-tris.jpg" border="5"></center>
+<p align="left" class="rustbg1">Lets just start with something like a bent arch for use is a corridor or some such area..</p><br>
+
+<p align="left" class="rustbg3">1. Make a brush and convert it into an endcap and make it like so.. #1 is top view, then a side insert to show height. 2 and 3 are top view also.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-1-2-3.jpg" border="5"></center>
+<p align="left" class="rustbg3">2. Copy the endcap and rotate it z once, then  use the patch menu to delete the last two columns.<br>3. Duplicate and flip-x and put the dupe on the left side. You'll arrive at 3 (pictured above)</p><br>
+
+<p align="left" class="rustbg3">4. Duplicate the three patches at once and place it above the originals. (the pics below are all grid 6)<br><br>5. Hit v to enter vertex editing mode while the patches are selected. 
+Be sure you are editing all 3 patches at once.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-4-8.jpg" border="5"></center>
+<p align="left" class="rustbg3">6. Drag a selection area around the top row of verts and select them. Hit the rotate x button on the toolbar (pictured above) and the verts will end up where 6 shows them to be.<br><br>
+7. Drag the verts all together to the position show above, the top of our arch.<br><br>
+8. Drag the remaining row verts to their right angle center points. Just hit v twice to turn off vertex editing and turn it back on, then drag a new selection box around the verts on all three patches at once.</p><br>
+
+<p align="left" class="rustbg3">9. Deselect everything, select all the patches at once, duplicate 
+and flip-y and move to the other side.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-9.jpg" border="5"></center></p>
+<p align="left" class="rustbg4">Now that we've got our basic arch, lets see how we can improve it. This will involve working on one side, deleting the unedited side and replacing it with an updated mirror. I'm going to double arch it.</p>
+<p align="left" class="rustbg3">10. Hide the right half, select the top three patches and insert two rows. This will create new vertexes which will of course.. be off the grid. Select all the verts and hit ctrl-g, this will snap them to the grid, then align them the following way.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-10-11.jpg" border="5"></center>
+<p align="left" class="rustbg3">11. Delete the first two rows, this is where we can see that our earlier duplication and flip-x of out half endcap led to the inversion of its first and last rows. So we end up with most of what we need anyway.. we'll just compensate for it and work with what we've got.</p><br>
+<p align="left" class="rustbg3">12. Duplicate and flip the pieces you need to fill in the holes, then vert edit the top two patches so that they are risen up a bit like so, keeping the right angle position of the middle verts. This ensures better texture application.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-12-13.jpg" border="5"></center>
+<p align="left" class="rustbg3">13. Make a brush where i've made it and convert it to a 3x3 simple 
+patch mesh.</p><br>
+<p align="left" class="rustbg3">14. Move the bottom left vert right one square, then select all the bottom verts.<br><br>
+15. Change to front view and move those three verts to the center, one unit left.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-14-16.jpg" border="5"></center>
+<p align="left" class="rustbg3">16. Change back to side view and move the left middle vert down to the location of the previous left bottom one.</p><br>
+<p align="left" class="rustbg3">17. Move the top left vert down to the bottom.<br><br>
+18. Move the top middle vert over to the 90 degree point.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-17-19.jpg" border="5"></center>
+<p align="left" class="rustbg3">19. Move the two remaining middle verts down to the bottom, you'll notice in camera view that because we move the other bottom verts to the side, we've created a nice bend on the bottom of this.</p><br>
+<p align="left" class="rustbg3">20. Duplicate everything that needs it until you get the following geometry.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-20.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">21. The floor could be one brush but i want to trim the frame and this les me save on the overlap. Using three brushes in this manner give us no more or less tris, but it does remove a smll bit of overdraw that we'd get using only one brush. Using patches to avoid overlap completely is possible but it creates more tris than this method.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-21.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">22. Making the walls seam up to this door frame is less a problem than you might think, it's going to involve 2 simple patch meshes to do it, but they must meet the same point on the wall. That where the ceiling joins   it, so in order to do this properly, you must first decide how much more wall exists above the frame if any.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-22.jpg" border="5"></center><br><br>
+<p align="left" class="rustbg3">23. Next you make a fan like so. Then insert it into the proper place described in the next image. <br><br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/fan.gif"><br>
+<br>
+<p align="left" class="rustbg3">24. Duplicate the fan, move the associated vertexes to fit it into the remaining hole.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-23-24.jpg" border="5"></center><br>
+<p align="left" class="rustbg1">You ought to have something like this now.. I've been making both 
+sides of the door at once, since I'm working with the pieces.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-door.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">25. This and the next step are merely to fill in the structural holes left by this type of modelling. Press ctrl-p to hide patches and fill in the three selected brushes in #25.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-25-26.jpg" border="5"></center>
+<p align="left" class="rustbg3">26. To make the doorframe allow less visibility through it, I've taken steps in 26 to narrow it as close to the confines of its patches as possible. I did this procedure with patches visible, I've hidden them in this illustration so brushwork is clear.</p><br>
+<p align="left" class="rustbg3">27. This step is just to show that the patches are moldable still 
+if you grab them in the right places you wont create gaps. This step changes the look of the doorframe on one side only.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-27.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">28. I now make the surrounding geometry a little more complex. 
+This has overlapping brushes for a very good reason. The larger brushes would have a large piece of overlap on the back side if I textured that face, so I leave it caulked and place another caulked brush in the correct areas with texture where the other brush has caulk. This uses two brushes to texture one volume, and does so at a savings.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-28.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">29. Lets make a couple of posts now for these patches that stick out. We'll make a top and a base (from cylinders) since they can be textured seperately, and we'll redisperse the columns of both so that we have the lowest possible number of tris.
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-29.jpg" border="5"></center>
+<p align="left" class="rustbg3">Optimize. Finally we add AND insert two rows and two columns before redispersing them to get this geometry. You can see the difference between the optimized left patchwork and unoptimized right.
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-optimize.jpg" border="5"></center>
+<p align="left" class="rustbg3">Here's how it looks after optimization and some random texturing..
+<center><img src="/content/quake3/tutorials/gtk-patches-101/final.jpg" border="5"></center></body></html>

@@ -1,0 +1,373 @@
+<html><head><title>Xen</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="627" name="627" class="book-h1">Xen</h1><!-- Submitted by Andy Sep 04-->
+<a name="Top"><h3>Half-Life Xen Entities</h3></a>
+<!-- Start description -->
+<p><b>
+<ul>
+<li><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#xen_hair">Xen_hair</a></li>
+<li><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#xen_plantlight">Xen_plantlight</a></li>
+<li><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#xen_spore_large">Xen_spore_large</a></li>
+<li><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#xen_spore_medium">Xen_spore_medium</a></li>
+<li><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#xen_spore_small">Xen_spore_small</a></li>
+<li><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#xen_tree">Xen_tree</a></li>
+<br></ul></b>
+</p>
+<hr noshade color="black">	
+<br><br>	 
+<a name="xen_hair"><h3>xen_hair</h3></a>
+  <p>Creates a little swaying grass thing... that looks a bit like a hair. </p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/xen/hair.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1)Sync Movement</font> - If set, all the hairs in the map will move in sync with 
+  each other.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="xen_plantlight"><h3>xen_plantlight</h3></a>
+  <p>Spawns a shy light-emitting plant. </p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/xen/plant_light.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> - When an entity is activated, it triggers the entity with the 
+  name specified by Target.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  To make the plantlight actually control a light, set it to target the 'Name' of a light 
+  entity.<br> The reason you would want to do this is so that in a dark area, if the 
+  player approaches the plant, the lights go out.<br> Set the xen_plantlight Target 
+  to the Name of the light.<br>
+  You can give the plant a little halo by setting Render Color (255 255 255)and 
+  Render Amount (try 200). The Plantlight will not emit light, but these 
+  settings make it look as though it does.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="xen_spore_large"><h3>xen_spore_large</h3></a>
+  <p>Spawns a large sack like thing with legs. </p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/xen/spore_large.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> - When an entity is activated, it triggers the entity with the 
+  name specified by Target.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  This entity has a coded animation that makes it look like it's breathing.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="xen_spore_medium"><h3>xen_spore_medium</h3></a>
+  <p>Spawns a medium sack like thing with legs. </p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/xen/spore_medium.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> - When an entity is activated, it triggers the entity with the 
+  name specified by Target.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="xen_spore_small"><h3>xen_spore_small</h3></a>
+  <p>Spawns a medium sack like thing with legs. </p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/xen/spore_small.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> - When an entity is activated, it triggers the entity with the 
+  name specified by Target.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="xen_tree"><h3>xen_tree</h3></a>
+  <p>Spawns a tree with attitude. </p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/xen/tree.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> - When an entity is activated, it triggers the entity with the 
+  name specified by Target.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+ The tree acts like a tentacle, Great for defending an area if used in groups of 4.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  None <br><br>
+<hr noshade color="black">
+<p align=center><a href="book/view/627?PHPSESSID=21993f601162cdd654ee7066f88b1005#Top">Top of Page</a></p>
+<hr noshade color="black">
+<br></body></html>

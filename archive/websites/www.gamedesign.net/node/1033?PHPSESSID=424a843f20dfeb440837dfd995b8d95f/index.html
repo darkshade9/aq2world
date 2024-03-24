@@ -1,0 +1,383 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>The Tangled Web We Weave: Ropes in HL2 - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life 2</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/897">Custom Source Tools</a></li><li class="leaf"><a href="node/1024">Entity Guide</a></li><li class="leaf"><a href="node/1015">Source Utilities Roundup</a></li><li class="expanded"><a href="node/775">Tutorials</a><ul><li class="expanded"><a href="node/776">Mapping - Hammer 4</a><ul><li class="leaf"><a href="node/777">Creating a Skybox</a></li><li class="leaf"><a href="node/1006">Doors in HL2: The prop_door_rotating Entity</a></li><li class="leaf"><a href="node/1039">Hang 'Em High: phys_ballsocket</a></li><li class="leaf"><a href="node/1013">Hidden and Dangerous: npc_sniper</a></li><li class="leaf"><a href="node/780">Import Custom Textures</a></li><li class="leaf"><a href="node/1016">Making Props Show Up</a></li><li class="leaf"><a href="node/1010">Practical Displacements</a></li><li class="leaf"><a href="node/1068">Real Constructive: Hammer Geometry for Unreal Mappers</a></li><li class="leaf"><a href="node/1033" class="active">The Tangled Web We Weave: Ropes in HL2</a></li><li class="leaf"><a href="node/779">Using the Nodraw Texture</a></li></ul></li><li class="leaf"><a href="node/934">Reducing Vis Times</a></li></ul></li><li class="leaf"><a href="node/1009">Modelling - Softimage XSI</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/1033" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">What kind of maps Q4 lacks in?</div><div class="text">Tourney</div><div class="bar"><div style="width: 21%;" class="foreground"></div></div><div class="percent">21%</div><div class="text">Team DM</div><div class="bar"><div style="width: 15%;" class="foreground"></div></div><div class="percent">15%</div><div class="text">CTF</div><div class="bar"><div style="width: 24%;" class="foreground"></div></div><div class="percent">24%</div><div class="text">Deathmatch</div><div class="bar"><div style="width: 39%;" class="foreground"></div></div><div class="percent">39%</div><div class="total">Total votes: 33</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/1403">tsnouqrjog</a></li><li><a href="node/1402">ghwkiqzqdy</a></li><li><a href="node/1401">oosfxcgrnm</a></li><li><a href="node/1400">dgxxmiixpj</a></li><li><a href="node/1399">jvhgqfkxly</a></li><li><a href="node/1398">ujeatphnyu</a></li><li><a href="node/1397">yjrjjaulgo</a></li><li><a href="node/1396">govcccoyol</a></li><li><a href="node/1395">tfzkzrtfgj</a></li><li><a href="node/1394">zdyufnmebp</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/6023" title="View user profile.">dkioewd</a></li><li><a href="user/6022" title="View user profile.">gjjot</a></li><li><a href="user/6021" title="View user profile.">iz_26</a></li><li><a href="user/6020" title="View user profile.">tararaid</a></li><li><a href="user/6019" title="View user profile.">vikinah</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 41 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>The Tangled Web We Weave: Ropes in HL2</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/663" title="">Half-Life 2</a> &raquo; <a href="node/775">Tutorials</a> &raquo; <a href="node/776">Mapping - Hammer 4</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/408" title="View user profile.">yesukai</a> on Tue, 2005-03-29 15:57.</div>
+<h2>The Tangled Web We Weave: Ropes in HL2</h2>
+<p>Half-Life 2 provides many outstanding visual features, including cables(ropes). The cables swing in the wind and get disturbed by passing airships. They can also snap at the end or have objects swing on them. Lets get down to learning about them.</p>
+<h3>Found In</h3>
+<p>Ropes are found in the <a href="/node/1025">Base FGD</a>.</p>
+<h3>Tutorial</h3>
+<p>There are two base entities used to create ropes, move_rope and keyframe_rope. They are both found in the base.fgd. The move_rope entity is what starts the rope, the keyframe_rope defines each piece of the rope. We are going to learn about ropes today by making power cables. Open up your map in hammer. First, we need to place the power cables. These will be prop_static entities with the <b>world model</b> set to <b>models/props_c17/utilitypole03a.mdl</b>. Make two of these. Now we create the cable. </p>
+<p>Using the entity tool, (shift-E), place a move_rope near the end of one of the arms on the first power pole. Now the move_rope has a number of key/values you can adjust:<br>
+<br>
+<ul>
+   <li><b>Parent:</b> Used if you want to make the rope's start point move with another entity. You simple enter the name of another entity here, and the rope's start point moves with it.<br>
+   
+   <li><b>Next KeyFrame:</b> The keyframe_rope that this rope is going to. You always want you keyframe_rope names to end in a number, so that Hammer can auto-increment them if you decide clone (drag-shift) your keyframes to make more segments of rope. For our example, this will be <b>rope1key1</b>.<br>
+   
+   <li><b>Slack:</b> How much additional length to add to the rope. For example, if our move_rope is 512 units away from our keyframe_rope and we have value of 64 here, the total length of the rope will be 576 units, which will cause the rope to hang down between the points. The default value works fine for power lines.<br>
+   
+   <li><b>Type:</b> Make the rope act like a rope or like a piece of solid metal. The <b>rigid</b> setting may be useful for hanging things like lights from. We are going to leave this at <b>Rope</b> for our power lines.<br>
+   
+   <li><b>Subdivision:</b> How many segments the rope should have between the start and end points. A higher value would make a smoother rope, but at a hit to performance.<br>
+   
+   <li><b>Width:</b> How thick the rope is. For power lines, 2 or 3 is fine. You may want to increase it larger for things like suspension cables on bridges, but be warned that the end points tend to look funky the thicker the rope is.<br>
+   
+   <li><b>Collide with World:</b> If the rope should have collisions. Usually not needed for high up power lines, however, if you were to have things down where the player can get to them or if you were going to break the rope, you may want to turn this on. You would also want this on if you plan on making the rope detachable or breaking it at any point, else it will clip through brushes.<br>
+   
+   <li><b>Start Dangling:</b> when a rope breaks, its "dangles". The rope will still be attached to its start point, but not its end point. We want intact power lines, so leave this as no.<br>
+   
+   <li><b>Breakable:</b> Set this to yes to be able to shoot the ends of the rope to make that end detach.<br>
+   
+   <li><b>Rope Material:</b> Default is black cable, should you want fiber rope or even blue CAT-5 cable, you will need to specify a different material here.<br>
+   
+</ul>
+And there is one key to worry about:
+
+<ul>
+   <li><b>Auto Resize:</b> Set this to make the rope make itself short or longer depending on the distance of its end point. Other wise, if the endpoint moves, the rope will pull tight or increase in slack.<br>
+   
+</ul>
+</p>
+<p>Now, place a keyframe_rope at the end of the same arm of the other power pole. Open up its properties, and set the <b>name</b> to <b>rope1key1</b>. The properties are the same as for the move_rope, and will effect the next segment of rope should you make more then two power poles. You should now see a green to red line between the two points. This is Hammer's approximation of what you rope will look like in game. I find it to have a little more slack then you will actually have in game. But now our cable is done. To fill in the rest of the cables on the power poles, simple repeat the steps replacing "rope1" with "rope2", "rope3", etc for each of the name properties. Should you wish to add more power poles, simply select all of the keygrame_rope entities and the prop_static power pole, and drag them while holding shift. Hammer should automatically change the names for you, and you have a quick and easy continuation of your power lines.</p>
+<h3>Tips and Tricks</h3>
+<ul>
+<li>To make something attached to the end of a rope, simple set that entity as the parent of the keyframe_rope. A phys_ballsocket or phys_lengthconstraint with the entity 1 set to the move_rope and entity 2 set to the entity you want attached to the rope.
+</ul>
+<br>
+
+<h3>Technical Data</h3>
+<h4>move_rope</h4>
+<div style="margin-left: 25px; padding: 10px; background-color: #cccccc; border: 2px solid #000000; font-size: small; font-family: monospace; width: 480px;">
+<b style="text-decoration: underline;">KEYS</b><br>
+<br>
+<b>Name</b> targetname <i>target_source</i><br>
+<br>
+<b>Parent</b> parentname <i>target_destination</i><br>
+<br>
+<b>Next KeyFrame</b> NextKey <i>target_destination</i><br>
+<br>
+<b>Speed (units per second)</b> MoveSpeed <i>integer</i><br>
+<br>
+<b>Minimum DX Level</b> mindxlevel <i>choices</i> <br>
+<br>
+<b>Maximum DX Level</b> maxdxlevel <i>choices</i><br>
+<br>
+<b>spawnflags</b> spawnflags <i>flags</i><br>
+<br>
+<b>Slack</b> Slack <i>integer</i><br>
+<br>
+<b>Type</b> Type <i>choices</i><br>
+<br>
+<b>Subdivision</b> Subdiv <i>integer</i><br>
+<br>
+<b>Barbed</b> Barbed <i>choices</i><br>
+<br>
+<b>Width (1-64)</b> Width <i>string</i><br>
+<br>
+<b>Texture Scale</b> TextureScale <i>string</i><br>
+<br>
+<b>Collide with world</b> Collide <i>choices</i><br>
+<br>
+<b>Start Dangling</b> Dangling <i>choices</i><br>
+<br>
+<b>Breakable</b> Breakable <i>choices</i><br>
+<br>
+<b>Rope Material</b> RopeMaterial <i>material</i><br>
+<br>
+<b>Position Interpolator</b> PositionInterpolator <i>choices</i><br>
+<br>
+<br>
+<b style="text-decoration: underline;">INPUTS</b><br>
+<br>
+<b>Kill</b> Removes this entity from the world.<br>
+<br>
+<b>KillHierarchy</b> Removes this entity and all its children from the world.<br>
+<br>
+<b>AddOutput</b> <i>string</i> Adds an entity I/O connection to this entity. Format: output name targetname:inputname:parameter:delay:max times to fire (-1 == infinite)>. Very dangerous, use with care.<br>
+<br>
+<b>FireUser1</b> Causes this entity's OnUser1 output to be fired.<br>
+<br>
+<b>FireUser2</b> Causes this entity's OnUser2 output to be fired.<br>
+<br>
+<b>FireUser3</b> Causes this entity's OnUser3 output to be fired.<br>
+<br>
+<b>FireUser4</b> Causes this entity's OnUser4 output to be fired.<br>
+<br>
+<b>SetParent</b> <i>string</i> Changes the entity's parent in the movement hierarchy.<br>
+<br>
+<b>SetParentAttachment</b> <i>string</i> Change this entity to attach to a specific attachment point on its parent. Entities must be parented before being sent this input. The parameter passed in should be the name of the attachment.<br>
+<br>
+<b>ClearParent</b> Removes this entity from the the movement hierarchy, leaving it free to move independently.<br>
+<br>
+<b>SetScrollSpeed</b> <i>float</i> Set the speed at which the texture scrolls.<br>
+<br>
+<b>SetForce</b> <i>string</i> Apply a force instantaneously to the rope. The parameter should be a vector containing the force to be applied (X Y Z).<br>
+<br>
+<b>Break</b> Break the rope, if it's marked to do so.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">OUTPUTS</b><br>
+<br>
+<b>OnUser1</b> Fired in response to FireUser1 input.<br>
+<br>
+<b>OnUser2</b> Fired in response to FireUser2 input.<br>
+<br>
+<b>OnUser3</b> Fired in response to FireUser3 input.<br>
+<br>
+<b>OnUser4</b> Fired in response to FireUser4 input.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">Code</b><br>
+<b>\src\cl_dll\c_rope.cpp</b><br>
+</div>
+<br>
+<br>
+<h4>keyframe_rope</h4>
+<div style="margin-left: 25px; padding: 10px; background-color: #cccccc; border: 2px solid #000000; font-size: small; font-family: monospace; width: 480px;">
+<b style="text-decoration: underline;">KEYS</b><br>
+<br>
+<b>Name</b> targetname <i>target_source</i><br>
+<br>
+<b>Parent</b> parentname <i>target_destination</i><br>
+<br>
+<b>Next KeyFrame</b> NextKey <i>target_destination</i><br>
+<br>
+<b>Speed (units per second)</b> MoveSpeed <i>integer</i><br>
+<br>
+<b>Minimum DX Level</b> mindxlevel <i>choices</i> <br>
+<br>
+<b>Maximum DX Level</b> maxdxlevel <i>choices</i><br>
+<br>
+<b>spawnflags</b> spawnflags <i>flags</i><br>
+<br>
+<b>Slack</b> Slack <i>integer</i><br>
+<br>
+<b>Type</b> Type <i>choices</i><br>
+<br>
+<b>Subdivision</b> Subdiv <i>integer</i><br>
+<br>
+<b>Barbed</b> Barbed <i>choices</i><br>
+<br>
+<b>Width (1-64)</b> Width <i>string</i><br>
+<br>
+<b>Texture Scale</b> TextureScale <i>string</i><br>
+<br>
+<b>Collide with world</b> Collide <i>choices</i><br>
+<br>
+<b>Start Dangling</b> Dangling <i>choices</i><br>
+<br>
+<b>Breakable</b> Breakable <i>choices</i><br>
+<br>
+<b>Rope Material</b> RopeMaterial <i>material</i><br>
+<br>
+<b>Position Interpolator</b> PositionInterpolator <i>choices</i><br>
+<br>
+<br>
+<b style="text-decoration: underline;">INPUTS</b><br>
+<br>
+<b>Kill</b> Removes this entity from the world.<br>
+<br>
+<b>KillHierarchy</b> Removes this entity and all its children from the world.<br>
+<br>
+<b>AddOutput</b> <i>string</i> Adds an entity I/O connection to this entity. Format: output name targetname:inputname:parameter:delay:max times to fire (-1 == infinite)>. Very dangerous, use with care.<br>
+<br>
+<b>FireUser1</b> Causes this entity's OnUser1 output to be fired.<br>
+<br>
+<b>FireUser2</b> Causes this entity's OnUser2 output to be fired.<br>
+<br>
+<b>FireUser3</b> Causes this entity's OnUser3 output to be fired.<br>
+<br>
+<b>FireUser4</b> Causes this entity's OnUser4 output to be fired.<br>
+<br>
+<b>SetParent</b> <i>string</i> Changes the entity's parent in the movement hierarchy.<br>
+<br>
+<b>SetParentAttachment</b> <i>string</i> Change this entity to attach to a specific attachment point on its parent. Entities must be parented before being sent this input. The parameter passed in should be the name of the attachment.<br>
+<br>
+<b>ClearParent</b> Removes this entity from the the movement hierarchy, leaving it free to move independently.<br>
+<br>
+<b>SetScrollSpeed</b> <i>float</i> Set the speed at which the texture scrolls.<br>
+<br>
+<b>SetForce</b> <i>string</i> Apply a force instantaneously to the rope. The parameter should be a vector containing the force to be applied (X Y Z).<br>
+<br>
+<b>Break</b> Break the rope, if it's marked to do so.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">OUTPUTS</b><br>
+<br>
+<b>OnUser1</b> Fired in response to FireUser1 input.<br>
+<br>
+<b>OnUser2</b> Fired in response to FireUser2 input.<br>
+<br>
+<b>OnUser3</b> Fired in response to FireUser3 input.<br>
+<br>
+<b>OnUser4</b> Fired in response to FireUser4 input.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">Code</b><br>
+<b>\src\cl_dll\c_rope.cpp</b><br>
+</div>
+<br>
+<br>
+<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/1068" title="View the previous page.">previous</a></div><div class="next"><a href="node/934" title="View the next page.">next</a></div><div class="up"><a href="node/776" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Real Constructive: Hammer Geometry for Unreal Mappers</div><div class="next">Reducing Vis Times</div></div></div></div></div>
+
+<div class="links"><a href="book/print/1033" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

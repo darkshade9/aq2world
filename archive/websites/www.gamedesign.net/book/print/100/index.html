@@ -1,0 +1,1241 @@
+<html><head><title>Tutorials</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="100" name="100" class="book-h1">Tutorials</h1>Miscellaneous Quake III Areana Tutorials.<h1 id="577" name="577" class="book-h1">Compiling</h1><ul><h3>Compiling</h3></ul><h1 id="269" name="269" class="book-h2">The BSP Process and Visibility</h1><ul>This is a link to a tutorial that was originally written for Quake II but largely applies to all Quake engine games including Quake 3 Arena and games based on the Q3 engine.<br />
+<br />
+<A HREF="http://www.gamedesign.net/node/view/266">Click to view the tutorial</A></ul><h1 id="576" name="576" class="book-h1">Editing</h1><ul><h3>Editing</h3></ul><h1 id="569" name="569" class="book-h2">Advanced Texturing</h1><ul><!-- tutorial1 - converted 26/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Advanced Texturing -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>This time we're going to make a little more advanced texturing, by giving a cube many textures, and also making a small lamp, where we let the texture an amount of light.</p>
+<br>
+
+<p>Okay, in the last tutorial we made the corridor, and changed textures on boxes. Now your map probably look like this between the corridor and one of the rooms (if you have different textures on the corridor and the wall that is):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/kant.jpg"><br>
+</center>
+<br>
+<p>We don't want that edge to look like that do we? So, what do we do about it? </p>
+<br>
+
+<p>Well, first we open Q3Eradiant (that's for sure =). Next, we know how to select a box (SHIFT + left mouse button), but that's not exactly what we should do. We want to select the small face of the box. We can select it by pressing down <Shift> + <Ctrl> + left mouse button, on the face (you should do this in the 3D view). The face will now become red (note that the whole box will not be red, only one side of it, and that's only in the 3D view, the other views wouldn't show anything). It should look something like this now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/kantmarkerad.jpg"><br>
+</center>
+<br>
+<p>Don't mind the bad quality of the picture =). Okay, now we load some textures from the Textures menu (you should know how now =) When the loading is finished, open the Textures by pressing "T", scroll down to a nice texture and select it. Then press ESC to deselect the face. A note here is that you can select the texture of another wall easy by pushing the middle mouse button on it. When you're done, it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/brakant.jpg"><br>
+</center>
+<br>
+<p>Fix all faces you want to fix like this. You might ask yourself why you need this tool, and what you can make with it. It's actually even more powerful than this. If any of you have downloaded my map "jondm1" you can se a lamp hanging over a corridor. That lamp has 2 different textures, and the "lamp"-texture that shows the lamp actually sends out light. Let's take a look of what I mean:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/jondm1.jpg"><br>
+</center>
+<br>
+<p>This looks pretty good, doesn't it? So, why don't we make a lamp? Okay, lets get to business.</p><br>
+
+<p>First, load a NON-lamp texture. I will load a wall texture, (this is the easiest way to make the lamp, because the lamp will have 5 faces with the wall texture and 1 face with the lamp texture, so it's easier to change 1 face, than change 5 =), you'll know what I mean later). </p>
+<br>
+
+<p>Now, I actually know how big the lamp texture is, so it's really easy then, but if you don't, just test a little bit I will make a small cube that is 128 units long, 32 units wide, and 8 units tall (that 8 units doesn't matter actually, you can make it bigger). Let's take a look how it looks like now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/lampstorlek.jpg"><br>
+</center>
+<br>
+<p>Now, push ESC to deselect the lamp, and select the bottom face of it, by pushing <Shift> + <Ctrl> + Left mouse button. The Bottom of the cube will now be red. Now choose under the Textures menu the "Base_Light" textures (cause that's what I'm about to do in this tutorial =). </p>
+<br>
+
+<p>Once the loading is done, open up the Textures by first pressing "T" and then open the window. I will select the Texture that is located at the very top, second to the left. Now the texture will be placed, but it's probably not right! The texture can be rotated 90 degrees to any direction, or it just don't fit. Just relax, go grab a Jolt Cola or something, and let's make it look good. Now, push the "S" button on your keyboard. This will open up a small window called "Surface inspector", it looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/surface.jpg"><br>
+</center>
+<br>
+<p>Here you can rotate the texture, move it forward/backward, left and right + a lot more =). Test moving around the texture by changing the values at the upper left of this window.</p><br>
+
+<p>Now you should have a workable lamp on your level. But you might not be satisfied yet, maybe you want to tilt your lamp a little bit, so it will light more of the room. </p>
+<br>
+
+<p>To do this, push ESC and Select the entire Lamp box with <Shift> + Left mouse button. Now go to Selection in the menu, and choose Rotate. There you can choose to either rotate the object in the X-axis, Y-axis or the Z-axis. It's hard, even for me, to know witch direction I want to rotate it in, to get it right. Those three options will rotate your object 90 degrees, and I (maybe you too =), want to rotate my lamp 45 degrees. Then I choose "Arbitrary Rotation" (under the same menu). Now a small window will be visible, and you can rotate your object how ever you want. Observe that Q3Eradiant can transform your object a little bit if you use this rotation. Instead you can use "manual" rotation, by using your mouse. Then you have to Select the "Free Rotation" button in the menu. It looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/rotation.jpg"><br>
+</center>
+<br>
+<p>Now your object will change color to pink in all the views except for the 3Dview, where it's red. Now, you can rotate the object by holding down Left mouse button and moving the mouse. You will rotate it in different directions in the different views. When you have finished the rotation, push the "Free rotation" button again, so you can move around your lamp to the right possession again.</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/mylamp.jpg"><br>
+</center>
+<br>
+<p>After a few attempts to get it right, it might look like my lamp here. Remember to save your map, and then run the "bsp_FullVis (light -extra)" under the BSP menu.</p></ul><h1 id="566" name="566" class="book-h2">Basics of Qeradiant</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Basics of Qeradiant -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>This tutorial will start from the very beginning stages of Q3Eradiant, plus how to make your first room. I will use a 3-buttoned mouse, as well as the View option:</p><br>
+
+C, Xy, Xz, Yz<br>
+(the third option from the left).<br><br>
+
+<p>When you start up Q3Eradtiant, with my view option, it should look something like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/start.jpg"><br>
+</center>
+<br>
+<p>The blue thing you see in the three white views is the Camera, the position and direction. You have no use of the small Z when you're working with the view layout as we do, so just ignore it. The upper left view is the 3D view. You can take a look how your map will look in Q3A from this view.</p>
+
+<p>Now, we're ready to make our first room. </p>
+<br>
+
+<p>First we need a texture. Pull down the Textures-menu and choose "base_wall". The Q3Eradiant will load for a while, and when the Mouse cursor returns to a normal Arrow, push "T". </p>
+<br>
+
+<p>Now you will have a small window (minimized) in the lower left (in the Qeradiant window). It should have the title "Textures", open that window. (press "T") Choose a Texture, by clicking once with your left mouse button. When you have selected a texture, you can minimize the small "Textures" window again (press "T"). </p>
+<br>
+
+<p>Now, we're ready to make a room. This is really simple, just go to your upper right view, and choose a coordinate to the upper left (in that view, it's the Top view), push your left mouse button (and hold it down), and drag the mouse down to the lower right corner. It should look like this now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/firstblock.jpg"><br>
+</center>
+<br>
+<p>As you can see, the other views are updated too, with the newly created block. Now we need to give the block heightk (most textures are 128 units high, so lets make it 128 units). </p>
+<br>
+
+<p>Go to one of the lower views, and hold the cursor just above the upper red line, push the left mouse button, and move the cursor up (while holding the button). The upper red line will now move up (you get some thickness of your object). If the whole object is moving, then your holding your cursor inside the object, and that's exactly how to move objects =). Now, move the upper line to the 128 unit line. It should look like this now: </p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/tjockare.jpg"><br>
+</center>
+<br>
+<p>The 3D view (the upper left) doesn't show the box now, and that's because the camera is inside of the box. We need to make this box as a room. </p>
+<br>
+
+<p>This is also very easy, but it's one thing we need to know, and that is, when we make the solid box into a room, the room will be 16 units smaller. This means that we have to make our box 16 units higher on all sides. We can do this by increasing the top of the box by 8, and the lower by 8, just as we did before (We have to do this so the textures will align correctly). </p>
+<br>
+
+<p>Now, we can make this cube into a room. If you go up to the small buttons at the top of the Qeradiant window, you will see a button that has the name: "Hollow", it's located here:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/hollowbut.jpg"><br>
+</center>
+<br>
+<p>Push that button. Now you will get 6 rectangles, instead of the first one. Those 6 rectangles make the ceiling, floor, and 4 walls. Everything is red, because everything is selected. </p>
+<br>
+
+<p>Push "ESC" to deselect the objects. Try to move around the camera in the upper right view by holding the middle button of your mouse, observe how the 3D view follows your camera. </p>
+<br>
+
+<p>3d View Movement keys (for those without a 3-button mouse)</p>
+<hr width=300 height=2 align="center" color="#533000"><br>
+<p>
+"Arrow Keys" - Up, Down, Left, Right<br>
+" , " and " . " - Strafe Left/Right<br>
+"d" and "c" - Fly Up/Down<br>
+"a" znd "z" - Look Up/Down<br>
+<p>
+
+<p>Now we need to insert a start location for our room. This is fairly simple as well.. </p>
+<br>
+
+<p>By pushing your right mouse button twice (and not moving the cursor) in any of the three views (except the 3d view), you will get a menu where you can insert different entities. </p>
+<br>
+
+<p>Go down to the name "Info", the menu will be extended with a few new options. There, under "info" you will find different entities like "info_player_start". </p>
+<br>
+
+<p>Choose the "info_player_deathmatch". This is a spawn point for deathmatch play. You have to locate the "deathmatch box" (it's red if you haven't pushed ESC) inside the room, make sure it's really inside. It's better to locate it about 8 units above the floor than 8 units below =) (its not fun to start with your foot stuck in the floor). When you have moved it into position, press ESC. If you now found that you've moved it to the wrong location, you can select it by pressing left mouse button. Sometimes it's hard to select the right item/wall, and then the 3D view is handy, because you can push the left mouse button to select items/walls there too. Your map should look like this now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/done.jpg"><br>
+</center>
+<br>
+<p>The pink object that is in the 3D view is the info_player_deathmatch, and the white arrow shows what direction you will be facing when you are spawned. If you want to change the direction or something else on any other entity, press "N", then you will see this window:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/entety.jpg"><br>
+</center>
+<br>
+<p>Now we're ready to place a light in the map, so it's not completely black. We do this by pressing ESC first, so we don't have anything selected, and then the right mouse button twice (as we did for the info_player_deatmatch item). Now select the item "light", a smaller entity will be shown in the views, move it to the middle of the room. So it looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/light.jpg"><br>
+</center>
+<br>
+<p>When you have the light entity selected you can push "N" to bring up the entity list. Read the information, and enter "light" in the key, and a value for how much the light show shine in the "value" box, then press enter, and you're done. </p>
+<br>
+
+<p>Now it's only the compilation of the map left. First save your map, and then push "BSP" in the menu. Go down and choose the option at the very top, called "bsp_FullVis (light -extra)". Look at the compilation, and when it's done close it. Startup Quake3Arena, and pull down the console. Enter "/sv_pure 0" (this makes it possible running your map), and then "/map" where is the name of your map, ex "/map jondm1".</p></ul><h1 id="570" name="570" class="book-h2">Making a mirror</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making a mirror -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>First I thought I should make a tutorial how the Curved faces works, but I changed my mind, and made this Mirror tutorial instead. I made this choice basically because the curved faces is tricky to understand, and I think I will make a tutorial about it in Tutorial #5 or #6. So, how do you make a mirror? Just read the stuff below. First, the mirror has one bad thing with it, it will not reflect light, but you wouldn't see it if you don't think about it =). Here comes the tutorial. </p>
+
+<p>Let's open our map, the map I have added upon since tutorial 1. I want to place a mirror at one of the sides in the room where I have my lamp (from tutorial #3). First, do as we always do, load a texture, but this time, you have to load the "common" textures, because that's where the mirror is located. Choose the left of the "Mirror" textures, and make a new object, it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial4/mirrortextur.jpg"><br>
+</center>
+<br>
+<p>Now, many of you think you're done, but it's not that simple =). </p>
+<ul>
+<p><li><i>Now, we're done with the new cube, so push ESC to deselect it. Now we need to put a new entity in front of the mirror. Press your right mouse button in any of the views (except for the 3dview) until you get the small menu, popping up where the mouse cursor is.</i></p>
+
+<p><li><i>Go down on that menu, and choose "misc", and then "misc_portal_surface". A new entity will be shown, place the new entity in front of the mirror. (the entity must be closer than 64 units from the mirror texture). </i></p>
+</ul>
+<br>
+
+<p>If you compile your map, the mirror will work, but act really strange. It wouldn't work from all angles, and that's because the mirror can only have 1 viewable surface. This mean that we have to cover all surfaces except the one we want as a mirror. I will do this by adding new boxes, that I put around the mirror. So it looks like this: </p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial4/done.jpg"><br>
+</center>
+<br>
+<p>Now you can compile your map, and you got yourself a nice mirror =). One thing to know is that if you use mirrors, the clients FPS will be completely killed! But I agree that it is a nice effect. Another note is that
+the mirror will not effect lights.</p></ul><h1 id="568" name="568" class="book-h2">Making a second room</h1><ul><!-- tutorial2 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making a second room -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<p>If you haven't already, please take a look at tutorial number #1 if something is unclear here. We will use the room we made in tutorial number #1. I had a few complaints that I used to many pictures, so the tutorial page loaded really slow. I am really sorry about this, but I will keep the pictures because I think it's easier to understand what I'm talking about. Let's get started!</p>
+<br>
+
+<p>First off, I must give you this tip, that I forgot, or just didn't mention in the tutorial #1. Look at the bar above the four views. You should find a button that looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/tvm.jpg"><br>
+</center>
+<br>
+<p>If your Q3Eradiant becomes slow when your map is growing larger and larger, its about 99% because of the 3Dview render of your map. If the map is big, the more the 3D view your 3d-card has to render, and the slower it gets doing so. Simply push this button. Now you'll see a few options, where "Wireframe" is on top, and "Trilinear" at the bottom. If I'm not to wrong I think the "Nearest Mipmap" is set to default (it's the one that's in use when you install Q3Eradiant for the first time). I had to change that to "Nearest" when I made my map "jondm1", you might have to do the same. When you do this, observe that the 3D view quality gets worse By changing it back it will get better again. Change it until you find an option that fits your computer. </p>
+<br>
+
+<p>When I left you last time, we had just made one room, with the same texture on all sides of the room, including a Ceiling and a Floor. Now we will make two rooms, and change a few of the textures. This is how it looked when we stopped last time:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/tut1done.jpg"><br>
+</center>
+<br>
+<p>I received an e-mail from "Jim Franchetti", who asked how to do an outdoor level, so I thought since we're about to change the texture on the floor and on the ceiling, let's make the ceiling like a sky! </p>
+<br>
+
+<p>First of all, we need to change the texture of the floor, and to do this we need to select the floor cube. The easiest way to do this is to hold shift and push SHIFT + left mouse button on the floor in the 3Dview. It's really hard to try catching the floor in any other view, so i highly recommend that you move your camera either with your middle mouse button in the three views, or by using the arrows on your keyboard. When you have selected the floor, it should be red like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/selectfloor.jpg"><br>
+</center>
+<br>
+<p>Now we load a floor texture, we do this by pushing "Textures" in the menu, and choose for example "base_floor". It takes a few seconds and when the cursor is an arrow again, push "T", and open the small window in the lower left (just like in Tutorial #1). You can now choose a texture, and you can see in the 3D view how the texture change when you push a new texture. When you're ready minimize the "Textures" window, and the floor is finished. Now your 3D view might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/textfloor.jpg"><br>
+</center>
+<br>
+<p>Now we have the ceiling left. Push ESC to deselect the floor, and select the Ceiling, like we did with the floor before. We need to have a sky texture on this one, and you will find under "Textures" in the menu.</p>
+<br>
+
+<p>Select the word "skies", and wait until the textures areloaded. Then open the Textures window in the low left. Here you see a few sky textures. I will choose the texture called [pj arena2sky] (it's one of the blue ones). </p>
+<br>
+
+<p>When you've selected your texture, minimize the "Textures" window. Now the sky is finished, wasn't really hard was it? =). Now for some trickier stuff.</p>
+<br>
+
+<p>Now we will combine two rooms with a corridor between them. First of all, make the other room. We do as we did in Tutorial #1. First choose a texture, so we don't make a room with the Sky texture, then drag out a cube (Be sure that the floor of the new room is in the same level as the old room (also remember that the room gets 8 units smaller from all sides), and make it hollow with the bottom, located above the views. A small tip is that you can move your coordinate system by holding down the right mouse button and moving the mouse. You can also zoom in and out using "insert"-key and "delete"-key (deleting objects, like entities and cubes from your map is made by the "Backspace" key) Let's, you're ready with the second room? Then it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/tworoom.jpg"><br>
+</center>
+<br>
+<p>This next step to make a corridor is fairly simple too. First push ESC to un/deselect (I don't know what sounds best =) the new room. And make another smaller cube between the two rooms (sounds strange? I know, it's hard to explain, hope this picture help)</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/mellancub.jpg"><br>
+</center>
+<br>
+<p>(if you still don't get it, send me a mail, this is kinda tricky) Don't make this new cub hollowed with the "hollow" command, it's not necessary. Our next step is to create a cube that is a little bit smaller than this cube. We put this smaller cube inside the bigger cube, and be sure that the smaller cube reaches the two rooms too, here's two pictures showing what I mean (it's a TOP, and FRONT view):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/holwcub1.jpg"><br><br>
+<img src="./content/quake3/tutorials/tutorial2/holwcub2.jpg"><br>
+</center>
+<br>
+<p>Now we want to make a hole where the new smaller cube is, right. We make a hole by pushing this button:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/hollowbutton.jpg"><br>
+</center>
+<br>
+<p>It's just to the left from the "Hollow" button. This button called "CSG Subtract". Push this button, only once. You will probably see no difference after pushing this button, not until you push "Backspace" on your keyboard (this will delete the small cube). Now you can se the small corridor. Yeah! It should look something like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/corridordone.jpg"><br>
+</center>
+<br>
+<p>Now you can start changing textures in the new room. A small tip if you want to use the same floor texture as in the other room is to select the floor you want to change texture on, and then push your middle mouse button in the 3D view on the texture you want to have. This way you don't need to brows threw all the textures all over again to find the same texture twice =). </p>
+<br>
+
+<p>I hope the pictures explain the stuff I couldn't explain good enough, but be sure to give me a mail if you have ANY questions! Keep up the good work!</p></ul><h1 id="598" name="598" class="book-h2">Making Doors</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Doors -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<B><U>Making a door</B></U><br>
+
+<p>It's easier than you may think to make a door. I have two rooms, a small corridor between them, and I want a door right in the corridor.</p>
+
+<p>First, load a nice texture for a door. There is nice Wall textures for a door, but there is also specific textures for doors. I will load the Gothic_door textures, for my map. Most of the Door textures are hard to make a good door with, so I will take a more Wall-like texture.</p>
+
+<p>Once I've chosen a texture I make a new box, and this is the box that will be my door, so I form the box so it fits the corridor. To make it even more complicated, I want a door that is 2 parts, one left part, and one right part. The right part should move right, and the left should move left when the door opens. Actually, it's pretty easy =). </p>
+
+<p>The thing is that those doors are actually two doors. One door moves left, and the other right. This makes an illusion that it's one door that moves apart when you run thru it. </p>
+
+<p>Okay, the texture is set, and everything is set to go. Let's select the door (or one half of the door). Now, push the right mousebutton, so the menu appears. Choose "func", and then "func_door". This will set the box to be a door. Push "n" to bring up the "entity list", and here you can enter a few new keys, with values, but we want a simple door, so we don't have to change anything (the keys is listed in the text in the Entety window). </p>
+
+<p>The only thing we have to do here is to push one of the direction buttons. The "Direction buttons" are the buttons that are located in the lower left in the entity window. It says "135", "90", "45" ... This tells the game what direction the door should move to get opened. If you don't know for sure, look in the Top view (upper left in the Q3radiant window). For my door, i had to push the "270" button to get my door right. Now, that door is finished. If you only have one door, you're done. But if you have a two parted door, you have to select the other door-half, and makes the same step as with the first one, except that the direction should be the opposite. That makes my other door half to be in the direction of "90". Now, this is how my door looks like:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/door.jpg"><br>
+</center>
+<br>
+<p>I've written a tutoruial about more complexed doors in another tutorial.</p></ul><h1 id="597" name="597" class="book-h2">Making Jumppads</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Jumppads -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<B><U>Jump pads</b></u><br>
+
+<p>Let's start with how to make a Jump pad. We'll start by making a room that looks something like this (I have finally used the Gothic textures here =):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/jumpstart.jpg"><br>
+</center>
+<br>
+<p>If you don't have time to make a room, or just don't understand, download the room (It's the same room as from the screenshot, open up the room, and continue to read =). </p>
+
+<p>Now, we need a new block with the Jump pad in the floor. Open the Textures menu, and choose "sfx". When the loading is finished, push "T" and open up the Textures window. If you scroll in the Textures window you will see that there are many jumppad-textures. This is because the texture should match your floor texture, choose the one that seems to have the same floor texture as in your map. </p>
+
+<p>Then make a new box that is 128x128 units large (and maybe 8 units high). Place the new box with the jumppad texture at the same level as the floor and push the "CSG Subtract" button, as we did when we made a corridor. Now, push "S", and fix the texture so it's located at the right position. Now it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/padplace.jpg"><br>
+</center>
+<br>
+<p>Okay, now you can deselect the pad, with ESC. Now load a new texture. Load the "Common" textures. Now choose the very small texture called "trigger", it's tricky to find, but it should look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/trig.jpg"><br>
+</center>
+<br>
+<p>Now, make a new cube, that is the same size as the pad (128x128 units), but make it 16 units high. Place this new cube right on top of the Jumppad cube. It should look like this if you've done it right:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/trigger.jpg"><br>
+</center>
+<br>
+<p>Now push right mouse button, then a small menu will be visible. Go down to "Trigger", and then Choose "Trigger_push". The box with the "trigger" texture will now be a "Trigger_push". </p>
+
+<p>Push ESC to unselect it. <br>
+
+<p>Then click the right mouse button again, go down to "Target", and choose "Target_position". </p>
+
+<p>Push "n" to bring up the Entity window. In the "Key" box, type "targetname". The "Targetname" means the name of the entity, now enter a name for this entity in the value box. I choose the name "jump1", then I just enter "jump1" in the value box, and push <Enter>. It should look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/position.jpg"><br>
+</center>
+<br>
+<p>(Ignore the Origin, that's the position of the entity). This entity (the target_position) tells the "trigger box" what direction, and how high the jump should be. It tells the trigger box this, by it's position. But, not yet. First we need to "bind" the "trigger box" to the "target_position" entity. That's why we put a targetname on the entity, because now, you push ESC to unselsect the target_position entity, and select the box with the "trigger" texture. </p>
+
+<p>Once you've selected it, push "N", to bring up the entity list. Now, simply type in the "Key" box "target" and in the value "jump1" (if you had the targetname "testjump1" on the entity, then you simply put the value "testjump1" here). Now, there should be a line from the trigger-box, to the entity This line simply shows the direction of the jump, and the player will reaches the highest point where the "trigger_position" is. To get the player up to the right place, simply move around the "trigger_position" entity Hope you can get it work now. If not, give me a note.</p></ul><h1 id="571" name="571" class="book-h2">Making Stairs</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Jumppads, Doors and Stairs -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<B><U>Stairs</B></U><br>
+
+<p>Since Quake3Arena doesn't support Ladders, we have to make stairs or Jumppads. I'm going to show how to make very easy stairs. We have our map, as before. It should look something like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/jumpstart.jpg"><br>
+</center>
+<br>
+<p>Now we want to reach the upper level, by making a stair. The first thing I do is to select the floor texture by pushing the middle mouse button on the floor in the 3D view. Then I make a new box that is 128 units long, 16 units wide, and 8 units tall. I copy this new box, by pushing <Ctrl> + C, and then paste a copy of it by pressing <Ctrl> + V (the new copy will be on the same place as the original one, so I move it a little bit. After doing this twice, so I have three boxes, my stairs have started (you don't follow what I mean, do you =), probably not), It should look like this now :</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/stairstart.jpg"><br>
+</center>
+<br>
+<p>Now, lets continue, by making more steps. Copy the objects till you reach the floor. It should look like this when you have done this :</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/stairdone.jpg"><br>
+</center>
+<br>
+<p>Tada, the first really basic stairs are done. Now you can change the texture on the top of each step to make it look really good, place two boxes on the side of the stair and so on. If you didn't get what I meant, give me a note.</p></ul><h1 id="101" name="101" class="book-h2">Perfect Arch Tutorial - Part 1</h1><ul><!-- q3Arch_1.html - converted 27/08/01 from old rust documents -->
+
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Perfect Arch Tutorial - Part 1 
+		<a href="mailto:tattoo@enteract.com">tattoo</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at the new rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+
+<h3>Part One</h3>
+
+ <p>This tutorial will demonstrate the procedures that need be taken to make a 
+	perfect a arch.</p>
+
+	Ok, first you'll need to be in the <font color="#FFCC00">XY TOP</font> 
+	view in the editor.<br><br>
+			
+	Now make a brush and size it to the length of the arch you want. I went 
+	<font color="#FFCC00">312 x 64.</font><br><br>
+	
+    Go to the <font color="#FFCC00">Curve</font> menu and select 
+    <font color="#FFCC00">More Cylinders/Square Cylinder</font>.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC01.jpg"></div>
+	
+	Next, <b>WITHOUT</b> unselecting the Square Cylinder, change to the 
+	<font color="#FFCC00">YZ SIDE</font> view so you can see the rows of the 
+	Cylinder.<br><br>
+	
+	You'll notice that there are <font color="#FFCC00">6 Rows</font> 
+	from top to bottom.<br><br>
+	
+	You'll want to add another set of Rows to this Square Cylinder - You'll 
+	see why in a minute.<br><br>
+	
+	Now go to the <font color="#FFCC00">Curve</font> menu again and select 
+	<font color="#FFCC00">Insert/Insert (2) Rows</font>.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC02.jpg"></div><br><br>
+	
+	A little explanation of Rows &amp; Columns is that <i>Rows</i> go the 
+	length of the brush and <i>Columns</i> go around the brush, so you'll 
+	have <font color="#FFCC00">6 Rows</font> and 
+	<font color="#FFCC00">24 Columns</font> in a default Square Cylinder.
+    
+	You'll see here that there are now 
+	<font color="#FFCC00">12 Rows</font> now.<br><br>
+	
+	Again, without unselecting the Square Cylinder,	go to the 
+	<font color="#FFCC00">Curve</font> menu and select 
+	<font color="#FFCC00">Matrix/Re-disperse/Rows</font>.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC03.jpg"></div><br><br>
+	
+	This is what the Square Cylinder looks like after you select the 
+	<font color="#FFCC00">Matrix/Re-disperse/Rows</font> from the 
+	<font color="#FFCC00">Curve</font> menu.<br><br>
+	
+	This makes the Square Cylinder have the proper shape when bending.<br><br>
+	
+	Now save your map so you don't lose any of this. I've messed up many of 
+	these and had to start all over again.<br><br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC04.jpg"></div><br><br>
+	
+	What I do is after I get this far, before trying to bend it, I'll make a 
+	copy of the Square Cylinder so I don't have to redo it all again.<br>
+			
+	After you get this down, though, you won't have to be so worried about 
+	messing up. 
+    
+	Now, stretch the Square Cylinder to make it longer.<br><br>
+	
+	Figure out about how long you'll be needing it to make the curve.<br>
+    It doesn't matter a whole lot what length it is right now, it's just 
+    easier to use this way.<br><br>
+	
+	You can resize it to the correct size later.<br><br>
+	
+	Now, from the Button Bar, with the Square Cylinder still highlighted, 
+	select the <font color="#FFCC00">Patch Bend Mode</font> button. 
+	<font color="Red">The Red Arrow</font>.<br>
+	After selecting it the Information window will pop up. This tells you 
+	what to do.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC05.jpg"></div><br><br>
+	
+	Ok, this is where this gets tricky. Bare with me. This is where you will 
+	choose what point the Square Cylinder is bent from. I circled the 
+	<font color="#FFCC00">Bend Axis</font> dots, this is where the Square 
+	Cylinder bends.<br><br>
+	
+	You use the Tab button on your keyboard to cycle thru the available 
+	<font color="#FFCC00">Bend Axis</font>. When you get to the point where 
+	you want to bend it from, hit enter to select that point.<br><br>
+	
+	You shouldn't have to 'Tab' thru them. The first point should look like 
+	the picture with the <font color="#FFCC00">Bend Axis</font> at the correct 
+	point. If they are not like the picture, 'Tab' thru and get them at the 
+	first point that looks like the picture.<br><br>
+	
+	When you get the <font color="#FFCC00">Bend Axis</font> at the point in 
+	the picture, hit enter 'Only once', then change back to the 
+	<font color="#FFCC00">XY TOP</font> view.
+    
+	Now you should see a blue dot as one of the Bend Axis points.<br>
+	the picture to the left of the top two shows what you should be looking 
+	at.<br><br>
+	
+	This blue dot is the another bending point for the Square Cylinder.<br><br>
+	
+	From here, you'll use the 'Tab' button again to move the blue dot around 
+	to the center dot of the side that will be bent. The picture to the right 
+	of the top two shows how it should look.<br><br>
+			
+	Now switch to the <font color="#FFCC00">XZ FRONT</font> view and change 
+	the grid to <font color="#FFCC00">Grid1</font>.<br>
+	Take your mouse and bend the Square Cylinder until the end of it is 
+	perfectly squared with the grid lines. This is VERY important.<br>
+	You'll probably have to zoom in to see this. I have to any ways.<br><br>
+			
+	The bottom picture shows what it should look like.<br><br>
+			
+	Now, save your work!!<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC06a.jpg"></div><br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC06b.jpg"></div><br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC06c.jpg"></div><br><br>
+	
+	Next, hit ESCAPE to unselect the Square Cylinder.<br>
+	We'll have to go thru the steps to select the Bend Axis again.<br><br>
+	
+	Hit the Bend Axis button again and 'Tab' to the next point in the Square
+	Cylinder. The top picture shows what you should be looking at. Hit enter, 
+	only once, to lock it in and move the blue dot around again to the same 
+	point as in the previous bend.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC07.jpg"></div><br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch/q3Arch_PIC08.jpg"></div><br><br>
+	
+	Make certain that your grid is set to <font color="#FFCC00">Grid1</font>
+	again.<br><br>
+	
+    Now bend this other end until the end of it is perfectly squared with the 
+	grid lines. Again this is 'VERY' important.<br><br>
+			
+	Your Square Cylinder should look like the bottom picture. Both ends of 
+	the Square Cylinder should be perfectly in line on 'ONE' grid line. If it
+	is not, you've done something wrong and will have to correct it before 
+	proceeding.<br><br>
+	
+	Right now, your Square Cylinder should be an arch. Upside down, but this 
+	is ok for now. If everything is correct, we can proceed after you save 
+	your work, of coarse.<br><br>
+	
+	Now on to <a href="/?file=rust/content/quake3/tutorials/arch2&amp;PHPSESSID=99b72d4737ff363898d35ee90f3af002">Part Two</a>!
+    
+
+<!-- eof @ 203 --></ul><h1 id="102" name="102" class="book-h2">Perfect Arch Tutorial - Part 2</h1><ul><!-- q3Arch_1.html - converted 27/08/01 from old rust documents -->
+
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Perfect Arch Tutorial - Part 2 - 
+		<a href="mailto:tattoo@enteract.com">tattoo</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at the new rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+
+ <p>This tutorial will demonstrate the procedures that need be taken to make a 
+	perfect a arch.</p>
+
+			Ok, now, you'll probably want to turn your arch around the proper way. 
+			You don't have to right now. It's just the way I've done it. The way it 
+			looks now would work, but it's not the way to go if you want perfection.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC09.jpg"></div><br><br>
+			
+            You'll notice from the picture that the shape of this isn't correct. The 
+			ends and the very top are are not sized correctly with the grid. It 
+			doesn't hit both sides of the major grid to make a 64 unit square. It's 
+			more like 58 or 59. And in between that it is squeezed a little. This is
+			what we're going to fix.<br><br>
+			
+			From here, we're going to drag the vertices to get the correct shape.<br><br>
+			
+			First you'll need to resize this to a descent grid size. I like to use 
+			<font color="#FFCC00">Grid16</font>, but you may use what ya like. You'll 
+			want to resize it to the size you want it to be when finished. The only
+			important thing here is that only the 
+			<font color="#FFCC00">outer edges</font> of this should be hitting the 
+			major grid. This makes it easier on you to get it to where it needs to be 
+			with the way I do this. You'll find out later on what I mean by this as 
+			you make more of these. Also, I don't know if this is the way the guys at 
+			ID Software does their arches, it's just the way I found to do it to look 
+			correct.
+
+			Ok, from here, you'll need to make an <font color="#FFCC00">End cap</font>. 
+			I use the End cap because it the correct shape already and does not need
+			to be reshaped. It is the standard shape of all the curves in Quake III 
+			Arena.<br><br>
+			
+			First draw another brush, any size, and go to the 
+			<font color="#FFCC00">Curve</font> menu and select
+			<font color="#FFCC00">End cap</font>. Now turn it and position it by your 
+			arch to look like the picture. <br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC10.jpg"></div><br><br>
+		
+            From this you can see where the 
+			imperfections are. Make CERTAIN that the End cap is positioned correctly 
+			on the major grid lines, as shown. After you've done that, unselect the 
+			<font color="#FFCC00">End cap</font> and select the arch. you may have to 
+			move these around a little so you can select each one when you like. By 
+			that, I mean, the <font color="Yellow">End cap</font> should be in front 
+			of the arch. <br><br>
+        
+			After you have everything in position and the arch selected, go to the 
+			<font color="#FFCC00">Selection</font> menu and select 
+			<font color="#FFCC00">Drag/Drag Vertices</font>.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC11.jpg"></div><br><br>
+		
+			Here you should see the <font color="#FFCC00">Vertices</font> around the 
+			arch. These are what we move to reposition the arch so it is the correct 
+			shape. Now, this can get a little tricky too. First, save your work. You 
+			don't have to unselect anything to so.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC12.jpg"></div><br><br>
+		
+			First you'll need to set your grid again to <font color="#FFCC00">Grid1</font> 
+			and zoom in to see the grid lines. Now, go to the bottom left end of the arch 
+			and position your mouse over the right <font color="#FFCC00">Vertice</font>.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC13.jpg"></div><br><br>
+
+			Now press and hold the left button and drag the corner right 
+			<font color="#FFCC00">Vertice</font> to the right so that the corners of 
+			both the arch and the <font color="#FFCC00">End cap</font> are perfectly 
+			in line.<br><br>
+			
+			One thing you'll have to be careful about is if you click on a 
+			<font color="#FFCC00">Vertice</font> and let off and go right back to it 
+			and drag it again, you'll notice that there are more 
+			<font color="#FFCC00">Vertices</font> under the one and/or ones you moved. 
+			This can get aggravating. Not to worry though. Just hit escape and move 
+			the <font color="#FFCC00">Vertice</font> back to where ya started.<br><br>
+			
+			There are 5 <font color="#FFCC00">Vertices</font> that need to be moved 
+			for the bottom. Then 5 for the top and 5 for the middle. There are 15 
+			<font color="#FFCC00">Vertices</font> all together that need to be 
+			moved.<br><br>
+			
+			Ok, now go onto the middle bottom <font color="#FFCC00">Vertice</font>. <br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC14.jpg"></div><br><br>
+		
+			Now align that to the very top of the 
+			<font color="#FFCC00">End cap</font>. Now go on to the right end of the 
+			arch.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC15.jpg"></div><br><br>
+		
+			Align this one up with the corners. Now just move up to the 
+			<font color="#FFCC00">Vertice</font> between the right end and the middle 
+			one.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC16.jpg"></div><br><br>
+		
+			This one is a little tricky. The <font color="#FFCC00">Vertice</font> 
+			isn't at the corner or where the lines meet but up into the arch a 
+			little. You can see it in the picture. Just move it down and to the left
+			and align the line of both the Arch and the 
+			<font color="#FFCC00">End cap</font>. Now one more at the other end.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC17.jpg"></div><br><br>
+		
+			Same as the last. Line it up the same way. Now zoom out and the next 
+			picture is what it should look like all lined up.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC18.jpg"></div><br><br>
+
+			This is the way it looks with the correct shape at the bottom.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC19.jpg" width="450"></div><br><br>
+		
+			Now save your work and we'll move onto the top 
+			<font color="#FFCC00">Vertices</font>.<br>
+			Which is <a href="/?file=rust/content/quake3/tutorials/arch3&amp;PHPSESSID=99b72d4737ff363898d35ee90f3af002">Part Three</a>
+       
+
+<!-- eof @ 190 --></ul><h1 id="103" name="103" class="book-h2">Perfect Arch Tutorial - Part 3</h1><ul><!-- q3Arch_1.html - converted 27/08/01 from old rust documents -->
+
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Perfect Arch Tutorial Part 3 - 
+		<a href="mailto:tattoo@enteract.com">tattoo</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at the new rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+
+<h3>Part Three</h3>
+
+ <p>This tutorial will demonstrate the procedures that need be taken to make a 
+	perfect a arch.</p>
+
+			Ok, this should be easy for you now and I probably don't need to write 
+			the rest of this but I'm going to just for the people that might need 
+			it.<br>
+			<br>
+			What you need to do here is unselect the Arch and select the 
+			<font color="#FFCC00">End&nbsp;cap</font>. You'll need to resize it to the 
+			outer edges of the Arch and you'll see how the top of the Arch is out of 
+			shape. After you resize it, you'll have to reposition the 
+			<font color="#FFCC00">End&nbsp;cap</font> so that you can select the Arch. 
+			Now select the Arch again and we'll start.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC20.jpg"></div><br><br>
+	
+			As you can see here there are only two 
+			<font color="#FFCC00">Vertices</font> that need moving. The two corners 
+			and middle are already in line. Now go to the 
+			<font color="#FFCC00">Selection</font> menu and select 
+			<font color="#FFCC00">Drag/Drag&nbsp;Vertices</font>. The top left 
+			<font color="#FFCC00">Vertice</font> is the one that we'll be moving.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC21.jpg"></div><br><br>
+		
+			After you have selected 
+			<font color="#FFCC00">Drag/Drag&nbsp;Vertices</font>, change your Grid 
+			again to <font color="#FFCC00">Grid1</font> and zoom in and move the 
+			<font color="#FFCC00">Vertice</font> to the upper left corner as shown in 
+			the picture.<br>
+			<br>
+			Now for the right side.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC22.jpg" width="450"></div><br><br>
+	
+			Here, you'll do the same thing as the left side. After this one is
+			aligned, unselect it and zoom out and you'll how it looks all lined upped
+			as in the next picture.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC23.jpg" width="450"></div><br><br>
+		
+			Don't forget to save your work.<br>
+			<br>
+			Now there's only one more thing to do. That's resize the 
+			<font color="#FFCC00">End&nbsp;cap</font> so that it is aligned with the 
+			center of the arch like in the next picture.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC24.jpg" width="450"></div><br><br>
+	
+			You really can't see if it is out of line or not and probably wouldn't 
+			even matter but if you zoom in and look closer like in the next picture, 
+			you'll see that it isn't correct.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC25.jpg" width="450"></div><br><br>
+		
+			Here you'll see that it 'is' off a little. This probably wouldn't make a
+			difference, but, just for the correct alignment I'm going to go ahead and
+			align this too.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC26.jpg" width="450"></div><br><br>
+		
+			The <font color="Red">red circle</font> is the 
+			<font color="#FFCC00">Vertice</font> we will be moving.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC27.jpg" width="450"></div><br><br>
+		
+			This is where it ended up and is aligned. Now go to the right side and 
+			move that one.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC28.jpg" width="450"></div><br><br>
+	
+			This is where this one is aligned. Now we'll check the middle to see if 
+			it needs to be aligned.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC29.jpg" width="450"></div><br><br>
+	
+			This needed to be aligned as well. Now we'll go to the left end and align 
+			that one.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC30.jpg" width="450"></div><br><br>
+	
+			This one needed aligning. Now go to the right end.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC31.jpg" width="450"></div><br><br>
+	
+			This needed aligning as well. Ok, now zoom out and you'll see how it looks.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC32.jpg" width="450"></div><br><br>
+	
+			Here is the finished arch. I've taken and made three 
+			<font color="#FFCC00">End&nbsp;caps</font> and put them in, as you can see
+			of coarse just so you would see how it looks all lined up.<br>
+			<br>
+			And there ya have it,<br> 
+			<font color=#6699CC><b>'The&nbsp;Perfect&nbsp;Arch'</b></font>.<br><br>
+
+    <p><div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC33.jp" width="450"></div><br><br>
+		
+			Well, that was my good deed for today. I sure hope this helps someone 
+			out. I don't want anyone to think that I'm a Q3Radient guru or anything. 
+			This is just something I figured out since it's release and wanted to 
+			share what I have learned with everyone else that is wanting to make 
+			killer maps for Quake III Arena. I might write another tutorial on other 
+			things as I learn them. Just right now, I need to concentrate on the 
+			making of my own map.<br>
+			<br>
+			All the credit I can give for my knowledge 	would be to raYGunn and the 
+			rest of the crew at 
+			<a href="http://www.gamedesign.net/">RUST</a>.<br> 
+			They are who I turn to
+			when in need of an answer. Thanks guys...<br>
+			<br>
+			&nbsp;&nbsp;&nbsp;- <a href="mailto:tattoo@enteract.com">tattoo</a><br>
+			<br>
+			[Ed. Note: Example map can be found <a href="<?&amp;PHPSESSID=99b72d4737ff363898d35ee90f3af002 echo $file; ?>/Perfect_arch.map">here</a>.]
+		
+
+<!-- eof @ 200 --></ul><h1 id="563" name="563" class="book-h1">Shaders</h1><ul><h3>Shaders</h3></ul><h1 id="564" name="564" class="book-h2">Basic Shaders - Part 1</h1><ul><!-- by old Q3Lab Tutorial -->
+	 
+<h3>Quake 3</h3>
+<blockquote>
+		<b>Basic Shaders - Part 1</b> - Created by <b>Alvar Jansson</b><br>
+</blockquote>
+<br><br>
+
+ <p><b>Preface:</b></p>
+
+<p>This tutorial tries to resolve the meaning of "shader" and also create some simple ones ourselves. Unfortunately, shaders are a *very* complex subject, one that isn't easily explained in half a minute.</p>
+
+<p>You should download the Official <a href="http://www.heppler.com/shader/">Quake 3 Shader Manual</a>, or you will go nuts, when you don't understand something! You should also get the cool program <a href="http://www.jgsoft.com/">Editpad</a>, this is because q3radiant has a routine for editing shaders, based on the use of Editpad.</p> 
+
+<hr noshade color="black">
+
+<h3>Basic Shader Concepts</h3>
+ 
+<b>1: What is a shader?</b><br><br>
+
+<p>A shader is a script, that tells the q3 engine, how to treat the surface. A shader may not only change the way a surface looks, but as well as the actual shape of it, (like water waves). The shader also affects how the surface behaves in the game (if it is non-solid, or a water surface).</p> 
+
+<b>2: How do I use shaders?</b><br><br>
+ 
+<p>You have probably used shaders allready, you see, most of the "textures" in q3 radiant are actually shaders. You can tell the difference by looking at the thumbnail in the texture window, all shaders have a white border. It is not necessarily the texture that shows in the editor, that you will see in the game.</p>
+
+<b>3: How do I make my own? </b><br><br>
+
+<p>This is not as hard as you might think. First, you make a new shaderfile in the baseq3\scripts path, it should have the extension .shader, you may want to call it the same name as your level, like if you made some cool blood shaders for use in your splat.map, you could call your file splat.shader, for this tutorial, create tut.shader. Now, we have to make an entry in the file shaderlist.txt. This is to make q3radiant load our shaders, type tut in the end of the file. To see our shaders in the textures menu, we also have to make a new folder under the textures folder, call it the same as your shaderfile (baseq3\textures\tut\). If you now (re)open q3radiant, you will see a new entry in the textures menu called tut, for now, it is empty.</p> 
+
+<hr noshade color="black">
+
+<h3>Make Your first Shader</h3> 
+
+<p>We are now set up to make our first shader! We will start out by adjusting the strength of a light emitting texture. (This a good place to point out the fact that neither the Surf flags nor the Content flags in the Surface inspector have ANY effect in quake 3, they are ONLY for quake2 editing! The surface inspector is only good for sizing/moving textures in q3 editing)</p>
+
+<p>Let's get started! make a small room, make two lamp brushes and apply the base_light/baslt4_1_2k shader to the bottom face (and of course a non-light texture to the other faces). </p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/editor1.jpg" width="450"> 
+</center>
+
+<p>(As you see you can run q3 in a window, at the same time as q3radiant, I doubt this will work without a sturdy amount of ram (like 128 mb)) So, what if we want the light a little dimmer on one of the lamps? Well, then we have to make a shader of our own! Open the texture window (textures in use) and shift click on the light texture. If Editpad is correctly installed, it will now open, browsing down to the beginning of the shader. Now select the whole shader (as you probably have guessed, the shader consists of the declaration, and all the indented text, including the brackets). Copy the selected text, now open tut.shader (your empty shader script which we created earlier) and paste the text, we should now be here:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/editor2.jpg" width="450"> 
+</center>
+
+<p>First, to avoid conflicts, rename the shader. This is done by changing the line:</p>
+
+<blockquote>
+textures/base_light/baslt4_1_2k</br> 
+to </br>
+textures/tut/mylight_2k</br></br>
+</blockquote>
+
+<p>Now save the shader script choose textures|shaders|Load all (reload) from the q3radiant menu to reload the shaders. You should now see your shader if you load the texture set textures|tut. Apply your shader to one of the lamps, and bsp the map. The map should look the same. And now for the actual change! Enter the shader script and change the line:</p>
+
+<blockquote>
+q3map_surfacelight 2000</br> 
+to</br> 
+q3map_surfacelight 500</br></br> 
+</blockquote>
+
+<p>This will cut the ammount of light emitted by the surface in half. To reflect the change, rename your shader to mylight_500. Reload the shaders, and apply your new shader (q3radiant will think that your old shader is still there, I suppose this is a bug, and the old shader will disappear next time you restart q3radiant). Bsp the map, you will now clearly see that the left lamp, which we edited has a dimmer light.</p> 
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/editor3.jpg" width="450"> 
+</center>
+
+<p>So, how do they get that fancy colored light then? This one is not as straight forward... If you study the .pk3 files, you can see that the light textures also have a blend texture. (This is a picture of the light emitting parts of the light, for example, the blend file for baslt4_1.tga is baslt4_1.blend.tga /*baslt4_1.tga baslt4_1.blend.tga */) In quake 3, the blend texture is drawn fullbright, using the formula: blendfunc GL_ONE GL_ONE This texture is also drawn last, so that it covers the other textures. When rendering the lightmap, q3map uses the average of all the pixels in the texture. For our light, this means gray, with a little brown, but if we want a blue light? Well, if we take a look at the shader textures/gothic_light/ironcrosslt2_2000 It contains the line</p> 
+
+<blockquote>
+q3map_lightimage textures/gothic_light/ironcrosslt2.blend.tga </br></br>
+</blockquote>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/baslt4_1.jpg" width="200"> 
+</center>
+
+<p>This makes q3map use the specified texture, instead of the default. This was made, because the designer wanted a more yellow light than the original texture would give. Now we want to make a cool blue light! Then we need a blue lightimage. I saved you the trouble. download the tga by pressing the picture.(right-click|save target as)</p> 
+
+<blockquote>
+<b>DO THE FOLLOWING:</b></br></br>
+
+- Place it in your baseq3\textures\tut folder.</br></br> 
+
+- Copy the entire shader script nd paste it below, so that you have two identical shaders.</br></br>
+ 
+- Rename the new one to mylight_500_blue</br></br> 
+
+- Now inert the line q3map_lightimage 
+textures/tut/baslt4_1.blueblend.tga just above the q3map_surfacelight line.</br></br> 
+
+- Change the map textures/base_light/baslt4_1.blend.tga line in the final shader stage to map textures/tut/baslt4_1.blueblend.tga this will give the texure a blue look too.</br></br> 
+</blockquote>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/editor4.jpg" width="450"> 
+</center>
+
+<p>Now that you have a some sort of clue of what shader editing is all about, we are going to do something that a lot of people have asked about, which is changing the look of fog.</p> 
+
+<blockquote>
+<b>DO THE FOLLOWING:</b></br></br>
+
+- Create a pit where the fog will reside, and make a big brush that covers the pit, remember that only one side of the brush should be visible, the fog may be bigger than the space that it should fill, the brushes inside it will show up correctly.</br></br>
+
+- Shift-click the shader, (that one didn't work for me, if it just steps to the end of the sfx.shader, use the find function to search for fog_intel, or use the go to line function and type in 5020). Copy the fog_intel shader and paste it to your own tut.shader.</br></br> 
+
+- Rename the shader to textures/tut/fog_yellow1 Reload the shaders in q3radiant and apply your yellow_fog1 to the fog brush. Bsp, and you will hopefully see the yellow smog.</br>
+</blockquote>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/editor5.jpg" width="450"> 
+</center>
+
+<p>But, we would like a green smog instead, so we have to modify the shader. The fog's appearance is controlled by a function called fogparms.</p> 
+
+<p>fogparms ( .75 .38 0 ) 800 means ( r g b ) distance-to-opaque The r, g and b values are the same as for lights, they range from 0 to 1 and thereby controls the color of the fog. Distance-to-opaque is the distance, in game units, from the player, to the point where the fog stops being transparent.</p> 
+
+<p>So lets make that fog <i>green</i>! Copy the shader and paste another copy of it below, name it fog_green1 Very well, a nice poisionus color is ( 0 0.7 0.2 ). (don't forget the spaces inside the paranteces, your fog will just be a gray grid without them).</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/editor6.jpg" width="450"> 
+</center>
+
+<p>As you experiment with colors, a good thing to notice is that the shaders stand free of the bsp, if you want to experiment with different settings, well, except the q3map parameters (duh..), You don't have to re-bsp your map, just save the shader file, and restart your map (nom \map_restart won't work... use the \map command).</p> 
+
+<p>But, you have seen that flashy hellfog with moving textures on it, well, let's take a look at it!</p>
+
+<p>Snatch the hellfog shader from the sfx.shader and paste it to our file, rename it tut/myhellfog make a cosy little hellfog pit so that we can study it a little closer. As you see, it emits light, because the surfacelight parameter. There is also two texture passes, they both apply the same texture, though one of them is flipped, this makes for a darker texture, as well as a little more complexity. The tga texture is white, so we are free to create a nice blue strange hellfog, by changing the color to ( 0 0.1 0.4 ). But... even if I re-bsp the emitted light is red! Now this is a little problem, that we could easily fix by making a 16*16 (or whatever) tga file filled with blue, and specify it as q3map_lightimage, but today I am lazy so I specify our good old baslt4_1.blueblend.tga which is blue by nature. So, add the line q3map_lightimage textures/tut/baslt4_1.blueblend.tga </p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut1/ingame1.jpg" width="300"> 
+</center>
+
+<p>Goodluck and I hope you have learned something new!</p></ul><h1 id="575" name="575" class="book-h2">Basic Shaders - Part 2</h1><ul><!-- by old Q3Lab Tutorial -->
+	 
+<h3>Quake 3</h3>
+<blockquote>
+		<b>Basic Shaders - Part 2</b> - Created by <b>Alvar Jansson</b><br>
+</blockquote>
+<br><br>
+
+ <p><b>Preface:</b></p>
+
+<p>This time we're going to make a Space map. Before we begin I want to say that we will not use the already used space texture. This time we will make our own texture, shader ... and space! If you don't want make a space texture, just move down to step 3 in this tutorial.</p>
+
+<hr noshade color="black">
+
+<h3>Step 1:</h3>
+
+<p>We first begin with making a new texture that we will use as a "space sky". I will use my Photoshop to make this texture, and i make it 256x256 pixels big. Now you can make it black only, or maby add some white spots that should looks like stars. My one looks like this:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut2/sky.jpg" width="250"><br>
+</center>
+
+<p>As you can see i try to make it very dark. I do this because of the Quake3Arena engine will make all textures much more brighter. I will place this texture under the "baseq3/textures/tutorial" directory. Now, we have a texture. Should we load up the Q3radiant now? Nope, q3radiant checks for shaders that it uses for "compiling" the map. Therefor we need to make a shader for this new "sky".</p>
+
+<hr noshade color="black">
+
+<h3>Step 2:</h3>
+
+<p>Why do we need shaders for this texture? Well, first of all we don't want the guns to do impacts on it. To do this, we need to use shaders. I will try to explain each line below.<p>
+
+                <br>
+		<font color="red">
+                <b>textures/tutorial/sky <br>
+                { <br>
+                //************************** <br>
+                //*** &nbsp;Space map shader&nbsp; ***<br>
+		//************************** <br>
+                surfaceparm nomarks <br>
+                surfaceparm noimpact <br>
+                &nbsp;&nbsp;{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;map textures/tutorial/sky.tga <br>
+                &nbsp;&nbsp;} <br>
+                }</b> <br>
+                <br></font>
+
+<p>Like that, now. Note that the lines with // infront of it is comments, and will not have any effect of the shader. Copy the code above, and place in a new file called &quot;my.shader&quot; under baseq3/scripts.</p>
+ 
+<p>Also add a new line &quot;my&quot; in the shaderlist.txt too.</p>
+               
+<p><b>What does all this do?</b></p> 
+
+<p>The first line &quot;textures/tutorial/sky&quot; is a quick note what texture you're using. The &quot;surfaceparm&quot; lines tells Quake3Arena what surface parameters that will be used. The first one changes so there's nomarks, and the other one makes the guns make noimpact. Now we just have to move on to the fun part, making the map itself =).</p>
+	
+<hr noshade color="black">
+
+<h3>Step 3:</h3>
+
+<p>Now we have a new texture, we have the shader for this new texture. What we need is a map. Let's load up Q3radiant.</p>
+
+<p>This part is very easy. Simply make your map, and then place a new very big room around the map, with the new "space sky" texture on it.</p> 
+
+<p><b>Note:</b> You have to place lights to get the level bright. But, if you have made a space map looking like Q3DM17, then the hole level should have the same light. Easy to do!</p> 
+
+<p>Select one of the boxes on the map (not entities, the other map objects). Push "N" to bring up the Entity list. It should now say that you have selected the "worldspawn" entity. Enter a new Key called: "ambient", and give it the value of how much light the map should have. Then Enter a new key, and name it "_color", 
+enter a value for it "&lt;R&gt; &lt;G&gt; &lt;B&gt;" Where &lt;R&gt;=Red, &lt;G&gt;=Green and &lt;B&gt;=Blue.</p> 
+
+<p>This is the value of what color the light should have. You should add a value between 0 and 1. To get a white color, simply enter "1 1 1".</p>
+
+<p>That's about it! Hope you get your new space-maps working as you want it!</p></ul><h1 id="546" name="546" class="book-h2">Falling leaves!</h1><ul><!-- by Jon Eriksson -->
+
+<h3>Half-Life</h3>
+<blockquote>
+       <b>Falling Leaves</b> - by Jon Eriksson
+</blockquote>
+<br><br>	
+
+<p>This is a nice effect that Quake3Arena allows you to have, Falling leaves.<p> 
+
+<p><hr color=black noshade width=75%><p>
+
+<p>First, you need a texture that looks something like this:<p> 
+
+<center>
+    <img src="content/quake3/tutorials/shadertut4/picture1.jpg">
+</center>
+
+
+<p>Now select the "leaves", and save it. I saved mine as mytextures/le.tga. Now, over to the Scripting part.</p>
+
+<p>Open notepad and type this:</p>
+
+<font color="red"><<pre>
+textures/mytextres/leav
+{
+    qer_editorimage textures/mytextures/le.tga
+    surfaceparm nonsolid
+    surfaceparm trans
+    cull none
+    deformVertexes wave 30 sin 0 10 0 .2
+    nopicmip
+    {
+        map textures/mytextures/le.tga
+        tcMod scale 2 2
+        blendFunc GL_ONE GL_ZERO
+        alphaFunc GE128
+        depthWrite
+        rgbGen identity
+        tcmod scroll 0 .25
+    }
+    {
+        map $lightmap
+        rgbGen identity
+        blendFunc GL_DST_COLOR GL_ZERO
+        depthFunc equal
+    }
+}
+</pre></font>
+
+<p>Now save it under your baseq3/scripts directory. I saved mine as "my.shader", remember to call it *.shader.
+Load up Qeradiant, and apply the texture "mytextures/leav" to an object, and compile.</p></ul><h1 id="578" name="578" class="book-h2">Transparency</h1><ul><!-- by old Q3Lab Tutorial -->
+	 
+<h3>Quake 3</h3>
+<blockquote>
+		<b>Transparency</b> - Created by <b>Alvar Jansson</b><br>
+</blockquote>
+<br><br>
+
+ <p><b>Preface:</b></p>
+
+<p>This tutorial illustrates how to make transparent shaders.</p>
+
+<hr noshade color="black">
+
+<h3>Step 1</h3>
+
+<p>Perhaps you've tried to make something that looks like this:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut3/picture1.jpg"><br></center>
+
+<p>But you haven't found the right texture for it? Well, why not make your own. First, we need to do the texture, i'll use Photoshop. Here's what my texture looks like:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut3/picture2.jpg"><br></center>
+
+<p>Now, save this file as a 24- or 32bit TGA file. While we are in Photoshop, do a selection at the areas that should be visable. In this case you should select the "Brown" areas.</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut3/picture3.jpg"><br>(Note: this image is enlarged)
+</center>
+
+<p>Now, save the selection (under the "Select" menu in Photoshop), and save the picture. You have just made the base for your transparent Texture, now it's just the Shader writing left.</p>
+
+
+<hr noshade color="black">
+
+<h3>Step 2</h3>
+
+<p>Now, open Notepad and type in this:</p>
+
+<font color="red"><blockquote>
+textures/mytextures/transparenttexture<br>
+{	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surfaceparm trans<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surfaceparm alphashadow<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surfaceparm nomarks	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cull none<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nopicmip<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textures/mytextures/transparenttexture.tga<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blendFunc GL_ONE GL_ZERO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alphaFunc GE128<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depthWrite<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbGen identity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map $lightmap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbGen identity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blendFunc GL_DST_COLOR GL_ZERO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depthFunc equal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br><br>
+</blockquote></font>
+
+<p><b>Note:</b> I've called my texture "transparenttexture.tga", and it's located in textures/mytextures.</p> 
+
+<p>There will be no bullet marks on this texture, cause we have the "surfaceparm nomarks" on it. Also, it will not give any shadows. The rest fixes so the texture will look right compared to the lightning and so on. Now, save this file in the scripts directory, i'll save mine as "my.shader" (remember to save it as *.shader), then add it to the shaderlist.txt file.</p>
+
+<p>Here we go, load up qeradiant, and start using your new texture!</p></ul></body></html>

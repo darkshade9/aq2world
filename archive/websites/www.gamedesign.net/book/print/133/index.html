@@ -1,0 +1,69 @@
+<html><head><title>How to create gang war?</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="133" name="133" class="book-h1">How to create gang war?</h1><!-- (c) 2004, [DS]Kingpin_xatrix -->
+
+<h3>AI_EVENT_HOSTILE</h3>
+<b>
+Character touching this brush will become a<br>
+hostile enemy to all other characters in LOS, that have<br>
+the same "cast_group" as the brush.<br><br>
+</b>
+Example use: select 2 characters and open Entity inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	153<br><br>
+</font>
+Value is the number of their cast_group.<br><br>
+<font color = "red">
+Key	localteam<br>
+Value	postbattery1<br><br>
+</font>
+Value is the name of their localteam.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	119<br><br>
+</font>
+Value is the targetname of the character.<br><br>
+
+Select another 2 cast_ entities and open Entity inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	152<br><br>
+</font>
+Value is the number of their cast_group.<br><br>
+<font color = "red">
+Key	localteam<br>
+Value	postbattery2<br><br>
+</font>
+Value is the name of their localteam.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	119<br><br>
+</font>
+Value is the targetname of the character.<br><br>
+
+Create ai_event_hostile brush with x: 64 y: 64 z: 32 and<br> place it on the ground. Select it and open Entity <br>inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	152<br><br>
+</font>
+Place it inside character with cast_group 153.<br>
+That means that this cacharacter and members of his <br>localteam is enemy of cast_group 152.<br><br>
+
+Create another ai_event_hostile brush with X: 64 y: 64 z: <br>32 and place it on the ground. Select it and open <br>Entity inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	153<br><br>
+</font>
+Place it inside character with cast_group 152. That means <br>that this character and members of his localteam is <br>enemy of cast_group 153.<br><br>
+
+Create trigger_once brush with x: 32 y: 288 z: 128 (or x: <br>128 y: 16 z: 128)<br><br>
+<font color = "red">
+Key	target<br>
+Value	t119<br><br>
+</font>
+Value is the target of character.<br><br>
+
+Place this brush away from characters.<br>
+So when player trigger trigger_once, characters will start<br> blasting.<br><br>
+To see this tutorial load sr2.bsp, get bike battery and <br>watch Rats and Scorps waste each other.</body></html>

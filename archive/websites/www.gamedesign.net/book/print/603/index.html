@@ -1,0 +1,79 @@
+<html><head><title>Updates</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="603" name="603" class="book-h1">Updates</h1>Latest updates for Quake II<h1 id="604" name="604" class="book-h1">Version 3.20 Patch</h1><ul><h3>Quake II Version 3.20 Patch</h3>
+
+<blockquote>
+	<p>The latest Quake II updates are always found at <a href="http://www.idsoftware.com/">ID Software</a>. The following is a list of the latest fixes.
+</blockquote><br><br>
+
+<hr noshade color="black">
+
+<h3>CHANGES 3.20</h3>
+    
+- Fixed a network problem where and oversize packet could cause a client crash.<br><br>
+
+- Fixed the long standing Quake2 bug of where you would occasionally spawn or teleport and find yourself either looking straight at the ceiling or down at the floor.<br><br>
+
+- Changed it so that the function keys (F1 through F12) now get executed when depressed during demo playback or attract modes.  This allows you to take screen shots (F12) during demos and other features.  An example of other features is a fast forward for demos:<br><br>
+
+<blockquote>
+      alias +ff "timedemo 1"<br>
+      alias -ff "timedemo 0"<br>
+      bind f7 +ff<br>
+</blockquote>
+  
+This binding will cause the current demo playing to zip into timedemo mode while F7 is depressed, effectively acting like a fast forward key.<br><br>
+
+- Wrong packaging of 3.19 patch.  The Rogue CD has a 45k pak2 and vwep .md2 files in baseq2/players, but the 3.19 x86 patch we released has a 2.7MB pak2.  3.20 has a 45k pak2 and the vwep models go in baseq2/players.<br><br>
+
+- VWep code has been added to Xatrix dll, new VWep models for the Xatrix specific weapons (Ion Ripper and Phalanx) have been included.<br><br>
+
+- Rogue Linux game library was wrong version and had some unlinked symbols,this has been corrected.<br><br>
+
+- Occasional error of: "D_SCAlloc: bad cache width 16384" in software renderer.This had to do with surfaces to SURF_FLOWING and were transparent.  This has been fixed in the refs now so flowing transparent textures now works.<br><br>
+
+- <u>Unix</u> Net_ErrorToString calls were wrong, was using %i and not %s resulting in random numbers being printed for error messages.<br><br>
+
+- Color shell mixing restored to the same blends as previous versions.  This was changed in 3.19 for the new color shells the Rogue mission pack introduced.<br><br>
+
+- Fixed a possible server crash in the new "playerlist" command.<br><br>
+
+- Fixed a case where a person joining a server could be invisible (left over setting of SVF_NOCLIENT from previous spectator).<br><br>
+
+- Invalid pak files no longer cause a crash and are just ignored<br><br>
+
+- Fixed a 3.19 bug where linked models (modelindex2) who's modelindex was greater than 0x7f causes the wrong model to be drawn (in some cases, the world would be drawn twice).  This was the cause of many of the "extreme" frame lag people were seeing in 3.19 on servers using old-style VWep code.<br><br>
+
+- <u>Linux:</u> Complete rewrite of the OpenGL library handling.  This was needed to cleanly integrate OpenGL extension checking.  Linux now supports extensions such as multitexture and better dynamic loading of libraries. It's cleaner now in that you don't have to preload hack stuff to use the 3DFX Miniport rather than libMesa3D.  The Linux version now uses the gl_driver to specify the 3D library to dynamically load.  For example, to use the lib3dfxgl.so miniport, one would now use:<br><br>
+
+<blockquote>
+      ./quake2 +set vid_ref gl +set gl_driver lib3dfxgl.so<br>
+</blockquote>
+
+This change fixes several bugs that were apparant in the older method, such as a segfault occasionally when connecting to a server with a different game directory. The vid menu in the Linux version has been changed to reflect the new options, the current list of supported video drivers are now:<br><br>
+
+<blockquote>
+  software, software X11, Mesa 3-D 3DFX, 3DFXGL Miniport, OpenGL glX, and Mesa 3-D glX<br>
+</blockquote>
+
+- Railgun shots now go through gibs as well as other players.<br><br>
+
+- New server variable, "needpass" that can been seen with server browser tools such as GameSpy.  This variable indicates whether a password or spectator password is needed to get onto a server.  Bit 0 is password and bit 1 is spectator password.<br><br>
+ 
+- Quake2 will no longer look for gamex86.dll in the main Quake2 directory. It will always load out of the game directory first.<br><br>
+
+- Players joining a server during an intermission are now moved to the intermission position.<br><br>
+
+- The "logfile" cvar has been extended with the following values:<br><br>
+
+<blockquote>
+	0 - don't log (default)<br>
+	1 - overwrite qconsole.log and use buffered writes<br>
+	2 - overwrite qconsole.log and flush write every line<br>
+	3 - append to existing qconsole.log and flush write every line<br>
+</blockquote>
+
+- Several minor bug fixes to the Rogue mission pack gamex86.dll<br><br>
+
+- <u>Linux:</u> Rebuild of Rogue mission pack shared library to correct some dynamic symbol errors (is NAN errors).<br><br>
+</ul></body></html>

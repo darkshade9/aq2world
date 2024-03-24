@@ -1,0 +1,51 @@
+<html><head><title>Quake 4 Ambient Light</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="1186" name="1186" class="book-h1">Quake 4 Ambient Light</h1><h3>Quake 4 Ambient Light</h3>
+<p>
+by Method
+<p>
+<div style = "background-color: darkgray"><b>INTRO</b></div>
+<p>
+I was wondering how Raven achieved that ambient light in their maps. So I looked through the levels and checked to see how many light entities overlap by using <i>"r_showlightcount 1"</i> command. I noticed that there's no black color, that means that every surface is lit with a light. I hid the light entities in the editor and tested to see if the level would still be lit. It wasn't, so the next thing I did, was enable light boundaries, which revealed a huge light box that covered the whole map. I looked at the Light Editor and noticed that the light entity has an ambient texture.
+<p>
+<div style = "background-color: darkgray"><b>CREATING AMBIENT LIGHT</b></div>
+<p>
+Make a light entity and resize it, so it covers the whole level. Then select it and press <i>"J"</i> to go into the Light Editor. Uncheck Cast checkboxes, except <i>Cast Diffuse</i>. In the texture scrollbox, pick <i>"lights/ambientlight_nofall"</i>. Next you need to pick an ambient color, but make sure to lower the value scale on the right, so it'll be close to black. Play around with it, to see how it lights the level.
+<p>
+<div style = "background-color: darkgray"><b>EXAMPLE</b></div>
+<p>
+I'll use a map, which I recently begun designing as an example:
+<p>
+<center>
+<img src = "http://www.gamedesign.net/content/quake4/ambient1.jpg">
+<p>
+<i>Without ambient light (ambient light color set to black)</i>
+</center>
+<p>
+<p>
+<center>
+<img src = "http://www.gamedesign.net/content/quake4/ambient2.jpg">
+<p>
+<i>With ambient light (ambient light set to dark grey)</i>
+</center>
+<p>
+<div style = "background-color: darkgray"><b>AMBIENT LIGHT SHADER</b></div>
+<p>
+Here's the shader for the ambient light:
+<pre>
+lights/ambientLight_nofall
+{
+	ambientLight
+
+	lightFalloffImage	_white
+
+	{
+		map _white
+		colored
+		zeroClamp
+	}
+}
+</pre>
+<div style = "background-color: darkgray"><b>OUTRO</b></div>
+<p>
+You can extract .map files from q4base/pak002.pk4 with WinZip and load those files in the editor. Look through the maps to see Raven's lighting techniques.</body></html>

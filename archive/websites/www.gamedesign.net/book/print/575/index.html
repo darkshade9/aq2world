@@ -1,0 +1,71 @@
+<html><head><title>Basic Shaders - Part 2</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="575" name="575" class="book-h1">Basic Shaders - Part 2</h1><!-- by old Q3Lab Tutorial -->
+	 
+<h3>Quake 3</h3>
+<blockquote>
+		<b>Basic Shaders - Part 2</b> - Created by <b>Alvar Jansson</b><br>
+</blockquote>
+<br><br>
+
+ <p><b>Preface:</b></p>
+
+<p>This time we're going to make a Space map. Before we begin I want to say that we will not use the already used space texture. This time we will make our own texture, shader ... and space! If you don't want make a space texture, just move down to step 3 in this tutorial.</p>
+
+<hr noshade color="black">
+
+<h3>Step 1:</h3>
+
+<p>We first begin with making a new texture that we will use as a "space sky". I will use my Photoshop to make this texture, and i make it 256x256 pixels big. Now you can make it black only, or maby add some white spots that should looks like stars. My one looks like this:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut2/sky.jpg" width="250"><br>
+</center>
+
+<p>As you can see i try to make it very dark. I do this because of the Quake3Arena engine will make all textures much more brighter. I will place this texture under the "baseq3/textures/tutorial" directory. Now, we have a texture. Should we load up the Q3radiant now? Nope, q3radiant checks for shaders that it uses for "compiling" the map. Therefor we need to make a shader for this new "sky".</p>
+
+<hr noshade color="black">
+
+<h3>Step 2:</h3>
+
+<p>Why do we need shaders for this texture? Well, first of all we don't want the guns to do impacts on it. To do this, we need to use shaders. I will try to explain each line below.<p>
+
+                <br>
+		<font color="red">
+                <b>textures/tutorial/sky <br>
+                { <br>
+                //************************** <br>
+                //*** &nbsp;Space map shader&nbsp; ***<br>
+		//************************** <br>
+                surfaceparm nomarks <br>
+                surfaceparm noimpact <br>
+                &nbsp;&nbsp;{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;map textures/tutorial/sky.tga <br>
+                &nbsp;&nbsp;} <br>
+                }</b> <br>
+                <br></font>
+
+<p>Like that, now. Note that the lines with // infront of it is comments, and will not have any effect of the shader. Copy the code above, and place in a new file called &quot;my.shader&quot; under baseq3/scripts.</p>
+ 
+<p>Also add a new line &quot;my&quot; in the shaderlist.txt too.</p>
+               
+<p><b>What does all this do?</b></p> 
+
+<p>The first line &quot;textures/tutorial/sky&quot; is a quick note what texture you're using. The &quot;surfaceparm&quot; lines tells Quake3Arena what surface parameters that will be used. The first one changes so there's nomarks, and the other one makes the guns make noimpact. Now we just have to move on to the fun part, making the map itself =).</p>
+	
+<hr noshade color="black">
+
+<h3>Step 3:</h3>
+
+<p>Now we have a new texture, we have the shader for this new texture. What we need is a map. Let's load up Q3radiant.</p>
+
+<p>This part is very easy. Simply make your map, and then place a new very big room around the map, with the new "space sky" texture on it.</p> 
+
+<p><b>Note:</b> You have to place lights to get the level bright. But, if you have made a space map looking like Q3DM17, then the hole level should have the same light. Easy to do!</p> 
+
+<p>Select one of the boxes on the map (not entities, the other map objects). Push "N" to bring up the Entity list. It should now say that you have selected the "worldspawn" entity. Enter a new Key called: "ambient", and give it the value of how much light the map should have. Then Enter a new key, and name it "_color", 
+enter a value for it "&lt;R&gt; &lt;G&gt; &lt;B&gt;" Where &lt;R&gt;=Red, &lt;G&gt;=Green and &lt;B&gt;=Blue.</p> 
+
+<p>This is the value of what color the light should have. You should add a value between 0 and 1. To get a white color, simply enter "1 1 1".</p>
+
+<p>That's about it! Hope you get your new space-maps working as you want it!</p></body></html>

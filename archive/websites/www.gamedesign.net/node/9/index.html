@@ -1,0 +1,360 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Creating Environment Maps With Terragen - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/34">FAQ</a></li><li class="collapsed"><a href="node/36">Updates</a></li><li class="collapsed"><a href="node/929">Half-Life 1 Mod List</a></li><li class="collapsed"><a href="node/33">Entity Properties</a></li><li class="expanded"><a href="node/35">Half-Life 1 Tutorials</a><ul><li class="leaf"><a href="node/194">Big Block Method of Error Finding</a></li><li class="leaf"><a href="node/3">Chairs, Scientists and Barneys</a></li><li class="leaf"><a href="node/290">Code Locks</a></li><li class="leaf"><a href="node/831">Creating an Overview</a></li><li class="leaf"><a href="node/9" class="active">Creating Environment Maps With Terragen</a></li><li class="leaf"><a href="node/6">Creating Proximity Doors</a></li><li class="leaf"><a href="node/5">Customizing the lights.rad File</a></li><li class="leaf"><a href="node/596">Dimensions</a></li><li class="leaf"><a href="node/8">How to Make a Sphere in Worldcraft</a></li><li class="leaf"><a href="node/196">How to make respawnable glass</a></li><li class="leaf"><a href="node/4">Making a Custom Console Background</a></li><li class="leaf"><a href="node/539">Making New Buttons for Your MOD</a></li><li class="leaf"><a href="node/1046">R_speeds</a></li><li class="leaf"><a href="node/541">Sentry continued: adding Sentry-parts box and hud-icon</a></li><li class="leaf"><a href="node/538">Sentry Tutorial</a></li><li class="leaf"><a href="node/558">Skies</a></li><li class="leaf"><a href="node/613">Skies (2)</a></li><li class="leaf"><a href="node/687">Sprites</a></li><li class="leaf"><a href="node/7">Taming the Speaker Entity</a></li><li class="leaf"><a href="node/267">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/303">Ways to Prevent Leaks</a></li><li class="collapsed"><a href="node/628">WorldCraft/Hammer 3.4 Editing</a></li></ul></li><li class="collapsed"><a href="node/1084">Day of Defeat Tutorials</a></li><li class="leaf"><a href="node/1023">Modelling</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/9" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 50%;" class="foreground"></div></div><div class="percent">50%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 25%;" class="foreground"></div></div><div class="percent">25%</div><div class="total">Total votes: 8</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2385">mekiboz.cn</a></li><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8452" title="View user profile.">Stacy Cunningham</a></li><li><a href="user/8451" title="View user profile.">fudpa</a></li><li><a href="user/8450" title="View user profile.">naone</a></li><li><a href="user/8449" title="View user profile.">whzwd</a></li><li><a href="user/8448" title="View user profile.">gjoit</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 1 user and 50 guests online.<div class="item-list"><h3>Online users:</h3><ul><li><a href="user/8228" title="View user profile.">Lord Nikademis</a></li></ul></div></div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Creating Environment Maps With Terragen</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/921" title="">Half-Life</a> &raquo; <a href="node/35">Half-Life 1 Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2" title="View user profile.">Gard</a> on Tue, 2003-11-04 02:34.</div>
+<!-- by Merl (merlinis@bigpond.net.au) 2001
+     by Gard (stephen@geol.uwa.edu.au) 2003
+     Updated format Feb 05 Andy -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+Creating Environment Maps With Terragen - <a href="mailto:mithodiel@softhome.net">Mithodiel</a>
+</blockquote>
+&nbsp;
+<p>
+<span style="font-weight: bold">Preface:</span><br /> 
+<span style="font-style: italic">This tutorial consists of two parts.  In Part I, we explain exactly what an environment map otherwise known as a &quot;sky&quot; is, and what it is used for in a Half-Life level. Then in Part II, we discuss how to make an environment map using <a href="http://www.planetside.co.uk/terragen/">Terragen</a>.
+</span>
+</p>
+<p>
+<span style="font-style: italic">Experienced mappers who already understand how a Quake-engine environment map works can skip Part I.  The rest of us should start with Part I.
+</span>
+</p>
+<hr />
+<h3>Part I: What Is an Environment Map?</h3>
+<p>
+An <span style="font-style: italic">environment map</span> is used in a Half-Life level to provide the the player with the illusion of being in an outdoor environment. Confining ourselves to the walls of some building would become quite boring after a while, but &quot;rooms&quot; (that is, areas enclosed by brushes) are the only player-space areas that the game engine understands. So, rather than forcing the player to be indoors all of the time, we use special brushes (<span style="font-style: italic">sky brushes</span>, covered all over with the SKY texture) wherever the player is capable of viewing the sky outdoors. The game engine paints sky brushes with special graphics that provide the illusion of being contained in a 3D outdoor environment. The whole idea is to convince the player that he or she is not simply contained inside some big box. :)
+</p>
+<p>
+That said, let's get a bit more technical. An environment map takes the form of a hollow cube. The &quot;outdoors&quot; panorama is then painted on this cube so that it appears to be continuous in every direction, as far as the eye can see. Confused yet? What if I told you that the sky was the projection of a spherical picture on the environment cube? Oh well, no matter. For our purposes, it's not all that important anyway.
+</p>
+<hr />
+<h3>Environment Maps In Half-Life</h3>
+<p>
+Since the &quot;outdoors&quot; is painted on a cube, this implies that there are six separate graphics that make up the sky, each of them the same size. In Half-Life, each environment map consists of six 256x256 graphics that make up the sky. The images are named <span style="font-style: italic">skyname</span>rt (right), <span style="font-style: italic">skyname</span>ft (front), <span style="font-style: italic">skyname</span>lf (left), <span style="font-style: italic">skyname</span>bk (back), <span style="font-style: italic">skyname</span>up (up), and <span style="font-style: italic">skyname</span>dn(down), where <span style="font-style: italic">skyname</span> is the name of the sky that you are creating. You must store your sky graphics in two formats: 8-bit uncompressed BMP (for those without 3D accelerators) and 24-bit compressed TGA (for those with 3D accelerators).
+</p>
+<p>
+Hmmm. Perhaps a picture of an unfolded skybox would help:
+</p>
+<center>
+<img src="content/half-life/tutorials/terragen/tgen_skybox.jpg" width="440"  height="332" alt="Sky Box" />
+</center>
+<p>
+Wherever two sides of the skybox meet, you must take care to make the graphics  blend together seamlessly. These sides are denoted by colored bars in the  picture -- sides that touch are banded in the same color. If you do not take  care to match them up properly, then you will see a seam in the game where  the sides of the sky meet, and the player will realize that they are caught  inside some big box. That is a Bad Thing.
+</p>
+<hr />
+<h3>Part II: Using Terragen to Make an Environment Map</h3>
+<p>
+Now that we understand the concept of an environment map, I can explain how to actually go about making one.
+</p>
+<p><a href="mailto:matt@planetside.co.uk">Matt Fairclough</a> has developed a nifty program called <a href="http://www.planetside.co.uk/terragen/">Terragen</a> that generates photo-realistic terrain images. These terrain images can include lighting, fogging, and other atmospheric effects. Of course, there are other programs out there that can do the same thing. (Bryce and 3D Studio MAX come to mind.) The best thing about using Terragen is that it is <span style="font-weight: bold">free</span> (for non-commercial use) and it is <span style="font-weight: bold">fast</span> (at 75&#37; detail, I was able to render the entire sky in about 30 minutes on a P-200 MMX machine with 32MB of RAM). These two qualities make generating environment maps with it easy for amateur mappers (like me).
+</p>
+<p>
+First, if you don't have Terragen already, then you will need to <a href="http://www.planetside.co.uk/terragen/download.shtml">download Terragen from the Terragen site</a>. As of the time of this writing (21 July 2000), the latest version is 0.8.11. The examples and screen shots assume that you are using this version.
+</p>
+<p>
+Once you have obtained Terragen and installed it, your next step is to generate  your sky environment. This tutorial is not designed to explain all of the  inner workings of Terragen, so I will have to leave you to generate your  own world. <a href="http://www.planetside.co.uk/terragen/">The main Terragen page</a> has links to the <a href="http://www.planetside.co.uk/terragen/guide/">official User's Guide</a> and to beginner tutorials to get you started. Use your imagination -- the  possibilities are endless.
+</p>
+<hr />
+<h3>Rendering the Environment Map</h3>
+<p>
+After you create your environment, you are ready to render your sky. The  technique for doing this in Terragen is very similar to the technique for doing it in Bryce. You will first select an initial position and orientation for the camera, and then take 90-degree field-of-view snaps of the scene in each of the six cardinal directions (right, front, left, back, up, and down).
+</p>
+<p>
+To set the initial camera position, bring up the <span style="font-weight: bold">Render Controls</span> window. An overhead map of your terrain appears at the bottom right-hand side of the window. Clicking on the map with the left mouse button sets the camera position; clicking on it with the right mouse button sets the camera target (that is, the point that the camera always looks toward). You can also enter numbers manually in the Camera Position fields if you prefer. I usually enter 128 for the camera position X and Y values, which sets the camera in the center of the map. You might want to adjust the Z coordinate for the camera position as well. Then set all three of the Camera Orientation values to 0 and do a render preview. If you are satisfied, then move on to the next step; otherwise, keep adjusting the camera position until you are satisfied.
+</p>
+<p>
+Once you have set the camera position, click on the Camera Settings button and manually set the Zoom to 1. A Zoom value of 1 results in a 90-degree field of view, which is what we need for a Half-Life sky. The other settings are optional, but <span style="font-weight: bold">Zoom must be 1</span>, no more and no less. Once you have set the zoom value, exit the Camera Settings dialog.
+</p>
+<p>
+Now, you need to decide what size that you want for the rendered images. Half-Life sky images are 256x256, so you can snap images at that size if you want to. Alternatively, you can snap the images at a larger size (say, 512x512) and resample them down to 256x256 using a paint program such as <a href="http://www.jasc.com/">Paint Shop Pro</a>. Doing this can give you greater graphical detail, but may require additional post-processing to make the graphics seamless. So for now, set the Image Size to 256x256. Also, set the Detail level to maximum for best image quality. (The example shots are done at 75&#37; detail, and it shows in the final result.)
+</p>
+<hr />
+<h3>Snapping the Sky Images</h3>
+<p>
+Now we are ready to snap the sky images. Snapping each image involves adjusting the Camera Orientation values in order to point the camera in the proper direction, and pressing the Render Image button to snap the scene. The three Camera Orientation values control the camera as follows:<br />
+</p>
+<ul type="square">
+<li>
+<span style="font-weight: bold">Head</span>: This value controls the camera heading, or compass direction. This value represents degrees clockwise from &quot;north&quot;, and ranges from 0 to 360, where 0 is &quot;north&quot; (straight up) on the terrain map, 90 is &quot;east&quot;, and so on.
+</li>
+<li>
+<span style="font-weight: bold">Pitch</span>: This value controls the camera pitch, or up-and-down tilt. This value represents some number of degrees above the horizon, and ranges from -90 (straight down) to 90 (straight up). A pitch of 0 makes the camera level.
+</li>
+<li>
+<span style="font-weight: bold">Bank</span>: This value controls the bank of the camera, or its side-to-side tilt. This value should always be 0, unless you are using the bank to produce special sky effects (which are beyond the scope of this tutorial).
+</li>
+</ul>
+<p>
+For each of the six cardinal directions listed below, adjust the Camera Orientation values as shown, render the image, and then save it to disk using the proper file name convention. (Replace <span style="font-style: italic">skyname</span> with the name of our own sky in each file name.) Each direction has a thumbnail picture of the process, and you can click on the picture for a larger version of the image.
+</p>
+<table border="0" cellpadding="1" cellspacing="2">
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap1.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb1.jpg" width="100" height="87" alt="Right" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Right (<i>skyname</i>rt.bmp)</b><br />
+      Camera orientation: Head=0, Pitch=0, Bank=0<br />
+      Large image size: 86K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap2.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb2.jpg" width="100" height="87" alt="Front" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Front (<i>skyname</i>ft.bmp)</b><br />
+      Camera orientation: Head=90, Pitch=0, Bank=0<br />
+      Large image size: 83K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap3.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb3.jpg" width="100" height="87" alt="Left" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Left (<i>skyname</i>lf.bmp)</b><br />
+      Camera orientation: Head=180, Pitch=0, Bank=0<br />
+      Large image size: 86K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap4.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb4.jpg" width="100" height="87" alt="Back" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Back (<i>skyname</i>bk.bmp)</b><br />
+      Camera orientation: Head=270, Pitch=0, Bank=0<br />
+      Large image size: 88K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap5.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb5.jpg" width="100" height="87" alt="Up" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Up (<i>skyname</i>up.bmp)</b><br />
+      Camera orientation: Head=0, Pitch=90, Bank=0<br />
+      Large image size: 78K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap6.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb6.jpg" width="100" height="87" alt="Down" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Down (<i>skyname</i>dn.bmp)</b><br />
+      Camera orientation: Head=0, Pitch=-90, Bank=0<br />
+      Large image size: 83K
+    </td>
+  </tr>
+</table>
+<p>
+Once you have snapped the scenes, you need to save them in the proper format. Terragen will save them in 24-bit BMP format. You will need to convert these images to 24-bit compressed TGA, and then also convert them to 8-bit uncompressed BMP format before you can use them with Half-Life.
+</p>
+<hr />
+<h3>Testing the Sky in Half-Life</h3>
+<p>
+Once you have converted your sky into the proper formats, place them in the <span style="font-style: italic">half-life\valve\gfx\env</span> subdirectory (where <span style="font-style: italic">half-life</span> here is the directory where you installed Half-Life). Then load it up in the game. You can create your own test map, or you can <a href="content/half-life/tutorials/terragen/sky_test.zip">download this example map</a> that I created for this purpose. It consists of little more than an (unsealed!) skybox, a CLIP brush for the player to stand on, and a player start. This allows you to view the entire sky unobstructed by other map geometry. If you use the <a href="content/half-life/tutorials/terragen/sky_test.zip">example map</a>, then you will obviously want to edit it so that it loads your sky instead of trying to load my sky.
+</p>
+<center>
+    <a href="content/half-life/tutorials/terragen/tgen_snap7.jpg">
+    <img src="content/half-life/tutorials/terragen/tgen_thmb7.jpg" width="200" height="150" alt="In Game 1" hspace="5" /></a>
+     <a href="content/half-life/tutorials/terragen/tgen_snap8.jpg">
+    <img src="content/half-life/tutorials/terragen/tgen_thmb8.jpg" width="200" height="150" alt="In Game 2" hspace="5" /></a><br />
+    <span style="font-style: italic">In-game screen 
+    <a href="content/half-life/tutorials/terragen/tgen_snap7.jpg">shot #1</a> (115K) and
+    <a href="content/half-life/tutorials/terragen/tgen_snap8.jpg">shot #2</a> (113K) of new environment map </span><br />
+    <span style="font-style: italic">Click on a thumbnail to view a larger version of the image</span>
+</center>
+<p>
+The first shot is especially significant, because the area shown crosses a sky image intersection (specifically, between the Right and the Back images). Notice how seamlessly the sky images blend together! Also, notice the importance of high detail (which the larger shots bring out much more clearly). This example sky would look <span style="font-style: italic">much</span> better in the game if I had rendered the images at 100&#37; detail level instead of at 75&#37;. So will yours.
+</p>
+<hr />
+<h3>Tutorial Files</h3>
+<ul type="square">
+	    <li><a href="content/half-life/tutorials/terragen/sky_test.zip" target="_blank">Example map (sky_test.zip)</a> [1K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap1.jpg" target="_blank">Screen shot: Rendering the Right sky image</a> [86K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap2.jpg" target="_blank">Screen shot: Rendering the Front sky image</a> [83K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap3.jpg" target="_blank">Screen shot: Rendering the Left sky image</a> [86K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap4.jpg" target="_blank">Screen shot: Rendering the Back sky image</a> [88K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap5.jpg" target="_blank">Screen shot: Rendering the Up sky image</a> [78K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap6.jpg" target="_blank">Screen shot: Rendering the Down sky image</a> [83K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap7.jpg" target="_blank">Screen shot: In-game sky shot #1</a> [115K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap8.jpg" target="_blank">Screen shot: In-game sky shot #2</a> [113K]</li>
+    </ul>
+    <!--eof@195--><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/831" title="View the previous page.">previous</a></div><div class="next"><a href="node/1084" title="View the next page.">next</a></div><div class="up"><a href="node/35" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Creating an Overview</div><div class="next">Day of Defeat Tutorials</div></div></div></div></div>
+
+<div class="links"><a href="book/print/9" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

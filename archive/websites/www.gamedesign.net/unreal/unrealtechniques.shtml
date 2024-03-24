@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<TITLE>rust - Unreal Techniques</TITLE>
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+<link rel=stylesheet href="../stylesheets/main.css">
+</HEAD>
+
+<BODY bgcolor="White">
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<H1>t&nbsp;e&nbsp;c&nbsp;h&nbsp;n&nbsp;i&nbsp;q&nbsp;u&nbsp;e&nbsp;s</H1>
+<H2>U&nbsp;n&nbsp;r&nbsp;e&nbsp;a&nbsp;l</H2>
+
+
+<div class="bodytext">Do you have any cool tips or techniques for that you've figured out? Well...let us know and we will post it. E-mail me at <A HREF="mailto:fishman@planetquake.com">fishman@planetquake.com</A></div>
+
+<BR><BR>
+
+<!--begin-->
+
+<TABLE WIDTH="90%" BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#DDDDDD" BORDERCOLOR="#FFFFFF" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#FFFFFF">
+	<TR><TD><LI><B>Exporting/Saving Brushes</B></LI></TD><TD ALIGN="RIGHT"><B>Submitted by</B> <A HREF="mailto:vorlon@iglou.com">Gregor</A></TD></TR>
+</TABLE>
+<blockquote><div class="bodytext">
+If you haven't yet figured out how to save brushes to disk for later use, do the following.
+Select the brushes you want to save to disk, after they have been added to the world.  Do this by clicking on the edges in a 2d view.<br><br>
+Go to the Brush menu, select either save, save as, or export.  (export saves to the .t3d format which you may be able to use in another 3d program, whereas save saves it to UED's own .u3d format.  neither option will keep the textures since they reload to the UED wireframe &quot;brush&quot;, as far as I can tell)</div></blockquote>
+
+<TABLE WIDTH="90%" BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#DDDDDD" BORDERCOLOR="#FFFFFF" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#FFFFFF">
+	<TR><TD><LI><B>Rotation Values</B></LI></TD><TD ALIGN="RIGHT"><B>Submitted by</B> <A HREF="mailto:jcaesar@mediaone.net">Joel Caesar</A></TD></TR>
+</TABLE>
+<blockquote><div class="bodytext">One bit of info. regarding rotation values.  Apparently binary values (2^x) are being used at least as far as the four cardinal directions is concerned. 90 deg. would be 128, 16384 for 180 deg., and 32768 for 270 deg. and of course 0 is 0 deg.  Use of negative values rotates in the opposite direction.  For most actors, this is in Movement -&gt; Rotation for the actors' properties.</div></blockquote>
+
+<TABLE WIDTH="90%" BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#DDDDDD" BORDERCOLOR="#FFFFFF" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#FFFFFF">
+	<TR><TD><LI><B>Making Rooms, Halls, etc</B></LI></TD><TD ALIGN="RIGHT"><B>Submitted by</B> <A HREF="mailto:jcaesar@mediaone.net">Joel Caesar</A></TD></TR>
+</TABLE>
+<blockquote><div class="bodytext">To create a room, select the cube menu item.  Right click on it and bring up cube properties.  When choosing your size, keep it a multiple of 16 (I prefer 32) to keep it aligned via the grid.  Brushes are aligned according to the CENTER point of the brush, NOT the edges.  Get your brush the way you want it, before subtraction.  Until more info comes from Epic on how to manipulate brushes, this will probably save you a lot of time.  Also, as with Q2, attempt to get the brush size to be a multiple of your texture size (if you right click on the texture of your choice, you should be able to bring up a requester with info on the surface size).<br><br>
+To create an adjoining room or hall, place your build brush (in the shape of the new room of course) so that its edge is flush with the original room.  Perform a subtract.  It's that easy.</div></blockquote>
+
+<TABLE WIDTH="90%" BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#DDDDDD" BORDERCOLOR="#FFFFFF" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#FFFFFF">
+	<TR><TD><LI><B>Sizing rooms, halls, etc.</B></LI></TD><TD ALIGN="RIGHT"><B>Submitted by</B> <A HREF="mailto:jcaesar@mediaone.net">Joel Caesar</A></TD></TR>
+</TABLE>
+<blockquote><div class="bodytext">If you take a building brush of 256x256x256 (or any size really) and scale it or shear it, the textures that would fill the brush when built, will be scaled to fit the new size (possibly the &quot;shear&quot; also).  This can be an advantage or disadvantage, depending on how you look at it.  Fortunately, by right clicking on the selected textures (after building your brush) and selecting surface properties, you will find a bunch of tools for aligining, panning, rotating, and scaling textures.  These tools help a lot when you just can't make your brush a multiple of your texture sizes.</div></blockquote>
+
+<TABLE WIDTH="90%" BORDER="0" CELLSPACING="0" CELLPADDING="0" BGCOLOR="#DDDDDD" BORDERCOLOR="#FFFFFF" BORDERCOLORLIGHT="#FFFFFF" BORDERCOLORDARK="#FFFFFF">
+	<TR><TD><LI><B>UnrealED Problem and solution</B></LI></TD><TD ALIGN="RIGHT"><B>Submitted by</B> <A HREF="mailto:jcaesar@mediaone.net">Joel Caesar</A></TD></TR>
+</TABLE>
+<blockquote><div class="bodytext">if you've loaded a large (in this case one of the original) maps to see how something was done, before going back to your map, quit the Editor and then start it up again.  Otherwise, things get Real slow, and out of control (a mouse tracking delay basically).</div></blockquote>
+
+<br><br><br><br>
+
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+
+</BODY>
+</HTML>
+
+

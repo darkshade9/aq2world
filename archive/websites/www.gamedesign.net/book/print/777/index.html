@@ -1,0 +1,47 @@
+<html><head><title>Creating a Skybox</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="777" name="777" class="book-h1">Creating a Skybox</h1><p> The following tutorial has been republished with consent:<br>
+- By  <a href="http://www.adamowen.com/"> Adam "Phatsniper" Owen</a></p>
+<p>I've seen quite a few threads on various forums already by people who are confused as to how you create a 3D skybox. In this tutorial I'll explain both how to create the 3D skybox itself, and how to get it up and running in game.</p>
+<p>Firstly, let's create the 3D skybox.</p>
+<p>Load up the map you wish to add the skybox to, or if you don't have one just download mine <a href="http://www.adamowen.com/assets/tuts/3dskybox_ex01.zip">here</a>.</p>
+<center><a href="/content/half-life2/tutorials/skybox/sbox01.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox01_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 1"></a></center>
+<p>The ground outside of the ruins will later be part of the skybox, I've created this so I know how far out I want the skybox to go. I've also thrown in a spawn point for each team and a light_enviroment.</p>
+<p>Add the point entity "sky_camera" at the coordinates 0, 0, 0 (dead center in all 3 views). This is a reference point to align the skybox to your map.</p>
+<center><a href="/content/half-life2/tutorials/skybox/sbox02.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox02_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 2"></a></center>
+<p>The next step seems awkward at first but after doing it a couple of times it's a breeze. You need to select some "reference" brushes (no models!) to use as a guideline for the scale and position of the skybox. For this example, select the brushes coloured red in the image by ctrl + clicking on each one. You must also add the "sky_camera" entity to the selection!</p>
+<p>*<b><i> Please Note</i></b>: In more complex maps you may need to select many "landmarks" including all the outer walls of your map for the position of the skybox and some large buildings etc. for the height. What this selection process is basically doing is defining the major boundries of your map so when it comes to creating the structures in the skybox, you'll have these objects as reference to where and how large you should build. *</p>
+<p>Your selection should look like this :</p>
+
+<center><a href="/content/half-life2/tutorials/skybox/sbox03.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox03_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 3"></a></center>
+<p>Copy then paste this selection and go to Tools > Transform. Select the Scale button and type .0625 in all 3 fields. This is the decimal value of 1/16th which is the default scale of a 3D skybox.</p>
+<center><img src="/content/half-life2/tutorials/skybox/sbox04.jpg" border="0" vspace="10" hspace="10" alt="Transformation"></center>
+<br>
+<center><a href="/content/half-life2/tutorials/skybox/sbox05.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox05_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 5"></a></center>
+<p>Your selection should now look like the above picture. The reason we scaled the brushes right down is because when the source engine renders a 3D skybox it scales everything up by 16 (which will now be the correct size for our map).</p>
+<p>Drag these brushes outside the map. It doesn't really matter where, I just move it out and down a couple of thousand units from an edge of the map. Now go ahead and delete the original "sky_camera" entity, but make sure you keep the one inside the 3D skybox!</p>
+<p>Now for the fun part, building the skybox! I just edited the large ground sections to make them slope up into the distance ala de_dust, but feel free to experiment!</p>
+<center><a href="/content/half-life2/tutorials/skybox/sbox06.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox06_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 6"></a></center>
+<p>When you're happy with the result you need to enclose the skybox inside 6 brushes (ceiling, floor and 4 walls, just like a room) and texture it with the "tools\toolsskybox" material. You must make sure there are no gaps in the outer skybox otherwise it won't work.</p>
+
+<center><a href="/content/half-life2/tutorials/skybox/sbox07.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox07_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 7"></a></center>
+<p>Now just copy and paste your light_enviroment inside the skybox and delete the reference geometry you don't need. In this case I deleted all of the walls from inside the 3D skybox, and I deleted the ground outside the ruins in the main map.</p>
+<center><hr noshade color="#808080" width="75%"></center>
+<p>That's the 3D skybox finished! There's still a couple of steps left before we can get it running properly ingame.</p>
+<p>Firstly, seal your map with the "tools\toolsskybox" material. This is exactly the same as creating the sky for the 3D skybox, just create walls and ceiling brushes to fully enclose the map.</p>
+
+<center><a href="/content/half-life2/tutorials/skybox/sbox08.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox08_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 8"></a></center>
+<p>Last but definately not least is changing the sky texture. Go to Map > Map Properties and click on the field "SkyBox Texture Name". You'll see that the default is "sky_wasteland02", and as of right now that can't be used with Counter-Strike : Source. You can find all the skies you can use by filtering "sky" in the texture browser and typing in the sky name. There are 6 textures for each sky, a front, back, left, right, up and down. You only need to type in the name that appears the most, in this case sky_dust.</p>
+<p>Here's a full list of skies you can use. Type them exactly as they appear :</p>
+<ul>
+<li> cx</li>
+<li> de_cobble</li>
+<li> de_piranesi</li>
+<li> hav</li>
+<li> italy</li>
+<li> jungle</li>
+<li> office</li>
+<li> sky_dust</li></ul>
+<p>Now just compile your map and providing everything is sealed up, you now have a fully functioning 3D skybox!</p>
+<center><a href="/content/half-life2/tutorials/skybox/skybox_final.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/skybox_final_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox Final"></a></center>
+<p>Thanks for reading and good luck! Don't hesitate to <a href="http://www.adamowen.com/">contact me</a> with any questions or comments!</p></body></html>

@@ -1,0 +1,436 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Surface Properties and Content Properties - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Quake II</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/17">FAQ</a></li><li class="collapsed"><a href="node/603">Updates</a></li><li class="collapsed"><a href="node/263">Miscellaneous</a></li><li class="expanded"><a href="node/42">Tutorials</a><ul><li class="leaf"><a href="node/43">Advanced Brushes</a></li><li class="leaf"><a href="node/45">Area Light</a></li><li class="leaf"><a href="node/50">Clip Brush Q&A</a></li><li class="leaf"><a href="node/48">Colored Light</a></li><li class="leaf"><a href="node/595">Creating an outdoor area using Gensurf</a></li><li class="leaf"><a href="node/530">Custom door/plat/button sounds</a></li><li class="leaf"><a href="node/51">Environmental Maps</a></li><li class="leaf"><a href="node/241">Func_areaportal - 1 - Addendum</a></li><li class="leaf"><a href="node/242">Func_areaportal - 2 - Problems</a></li><li class="leaf"><a href="node/243">Func_areaportal - 3 - Common Problems</a></li><li class="leaf"><a href="node/52">Hint Brushes De-Mystified</a></li><li class="leaf"><a href="node/46">Jump pads in Q2? You betcha!</a></li><li class="leaf"><a href="node/47">Making ENV. Maps with Bryce 2</a></li><li class="leaf"><a href="node/561">Making Rain</a></li><li class="leaf"><a href="node/54">Partial Transparency</a></li><li class="leaf"><a href="node/53">Polygon Count Reduction</a></li><li class="leaf"><a href="node/235">Sunlight - Part 1</a></li><li class="leaf"><a href="node/237">Sunlight - Part 2</a></li><li class="leaf"><a href="node/55" class="active">Surface Properties and Content Properties</a></li><li class="leaf"><a href="node/238">Texture Blending</a></li><li class="leaf"><a href="node/44">The Absolute Beginner's Guide to Quake 2 Editing</a></li><li class="leaf"><a href="node/266">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/56">Timing in Quake 2</a></li><li class="leaf"><a href="node/57">Turrets</a></li><li class="leaf"><a href="node/49">Using Clip Brushes</a></li><li class="leaf"><a href="node/552">Using Text Editors for Mapping</a></li></ul></li><li class="collapsed"><a href="node/21">Entity Properties</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/55" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 60%;" class="foreground"></div></div><div class="percent">60%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 20%;" class="foreground"></div></div><div class="percent">20%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 20%;" class="foreground"></div></div><div class="percent">20%</div><div class="total">Total votes: 5</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/1872">freewebtown.com</a></li><li><a href="node/1871">freewebtown.com</a></li><li><a href="node/1869">ekgjpjgmme</a></li><li><a href="node/1868">fiffcwwcyf</a></li><li><a href="node/1867">fiffcwwcyf</a></li><li><a href="node/1866">mrgwhaeckc</a></li><li><a href="node/1865">mrgwhaeckc</a></li><li><a href="node/1864">yczurrabii</a></li><li><a href="node/1863">gckqthujyd</a></li><li><a href="node/1862">gckqthujyd</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/7994" title="View user profile.">hsknq</a></li><li><a href="user/7993" title="View user profile.">jimtj</a></li><li><a href="user/7992" title="View user profile.">gdqwt</a></li><li><a href="user/7991" title="View user profile.">effpu</a></li><li><a href="user/7990" title="View user profile.">ohyyu</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 40 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Surface Properties and Content Properties</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/11" title="">Quake II</a> &raquo; <a href="node/42">Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2" title="View user profile.">Gard</a> on Sat, 2003-11-08 03:33.</div>
+<!--  converted 15/12/01 from old rust documents -->
+<h2>Surface Properties and Content Properties</h2>
+<blockquote>
+		By Fishman
+</blockquote><br><br>
+
+ <p>One of the newest, coolest editing options in quake2 is the ability to set surface properties and content properties. They are:
+    <ul type="square">
+        <b>Surface Properties</b>
+        <li>light
+        <li>slick
+        <li>sky
+        <li>warp
+        <li>trans33, trans66
+        <li>flowing
+        <li>nodraw
+        <li>hint
+        <li>skip
+    </ul>
+    <ul type="square">
+        <b>Content Properties</b>
+        <li>solid
+        <li>window
+        <li>aux
+        <li>lava, slime, water
+        <li>mist
+        <li>player clip, monster clip
+        <li>current_0, _90, _180, _270, _up, _down
+        <li>origin
+        <li>monster, corpse
+        <li>detail
+        <li>translucent
+        <li>ladder
+    </ul>
+    </p>
+
+<h3>Differences between a surface property and a content property.</h3>
+
+<p>The main difference between surface and content properties is that <b>surface  properties</b> can be applied to any number of a brush's faces.  <b>Content  properties</b> must be the same on every face of a brush.<br><br>
+For example, you could mark one brush face as light, or two face, or three, etc, but for a detail brush, every face must be marked as detail, or you will get an error when you compile the level (<b>Entity x, Brush x: mixed face contents</b>) Thanks <a href="mailto:autolycus@valvesoftware.net">autolycus</a> for the above info.
+</p>
+
+<h3>How to Set a Surface\Content Property</h3>
+
+<p>In each editor setting surface properties are done differently.
+    <ul type="square">
+        
+<li><b>In BSP:</b><br>
+            Select the brush, press the '<b>S</b>' key, select the properties you want to set, then hit apply to brush, or apply to face. <br>&nbsp;
+
+<li><b>In QERadiant & GTKRadiant:</b><br>
+            Surface properties work the same in QERadient as in BSP. Select the brush, 
+            press the '<b>S</b>' key, select the properties you want, then hit apply.
+            <br>&nbsp;
+       
+ <li><b>In QOOLE:</b><br>
+            Select the brush or surface and hit <b>alt-t</b>, select the property you 
+            want, hit apply
+            <br>&nbsp;
+        
+<li><b>In QuArK:</b><br>
+            In QuArK you must select the brush and side you wish to add the surface 
+            attribute to and then click (no flag). <br><br>
+                    
+<li><b>In WorldCraft 1.6:</b><br>
+            Select the brush & Press Shift+A to call up the face properties window.<br><br>
+        
+<li><b>In DeathMatch Maker 2:</b><br>
+            My pal <a href="mailto:DMM2Editor@aol.com">Richard Neff</a> has sent along this 
+            <a href="/content/quake2/tutorials/surface/dmm2.zip">ScreenCam tutorial</a>(405 kb) on how to work with surface 
+            properties and contents. So if your a DMM2 user then check em out.
+            <br>&nbsp;
+        
+<li><b>In qED:</b><br><ol>
+                <li>Select the brush from the level outline (tree view).
+                <li>Select the "texture" tab from the properties notebook.
+                <li>Right-click on the proper brush surface in the list or the top
+                    &lt;brush&gt; line for all brush surfaces.
+                <li>Select "surface attributes" from the pop-up menu that appears.
+                <li>Put a check mark in the proper boxes and set the light value
+                if necessary.
+            </ol>&nbsp;<br>
+        
+<li><b>In BSP:</b><br>
+            <ol>
+                <li>Select the Brush
+                <li>Hit the 'S' key
+                <li>set the properties and remember to hit the 'apply to brush' button
+            </ol>&nbsp;
+        
+<li><b>In Quest:</b><br>
+            Select the face or brush, press <b>ALT-F</b>, select the properties
+            you want to set, then hit <b>OK</b>. - thanks <a href="mailto:martin.fuchs@physik.fu-berlin.de">Martin Fuchs</a>
+            <br>&nbsp;
+    </ul>
+    </p>
+
+ <p>If there is an editor I missed (which I did) and you know how to use the surface properties then 
+    please post on the <a href="http://forums.gamedesign.net/viewforum.php?f=14">RUST Q2 forum</a> and I will add it.
+    </p>
+    
+<h3>What the Surface Properties/Contents Do</h3>
+
+<ul type="square">
+    <li><b>light</b><br>
+        This means that the face will emit light the color of the texture. So if you 
+        have a yellow texture emmiting light then the light will be yellow. This is 
+        probably the most often used and useful surface property. To set the 
+        brightness of the light you must enter the number of the brightness in the 
+        value edit box that should appear on most editors' surface properties 
+        windows'. This is a great alternative for creating your own light entities, 
+        because it is much easier and provides more realistic lighting effects.<br>
+        <br>
+        The only thing that you should know is that sometimes, depending on the size 
+        of the brush that will be emitting light, you will have to set the brightness
+        of the light very bright. Sometimes as high as <b>10000</b> is needed.
+        <br>&nbsp;
+    <li><b>slick</b><br>
+        Slick will make the selected surface slippery and the player will slide. Used
+        in the id level cool1, the Cooling Station. There's an area where you jump on
+        some crates and hop onto a large piston that takes you up to the next
+        floor.  At the bottom around the piston there's a green slick area you can
+        slide around in.
+        <br>&nbsp;
+    <li><b>warp</b><br>
+        Makes the surface warp like water. Should be used when making water, forcefields, lava, etc.
+        <br>&nbsp;
+    <li><b>trans33, trans66</b><br>
+        These make the selected surface transparent. 33 means 66 percent transparent, 
+        66 means 33 percent transparent. So therefore trans33 is going to be more 
+        transparent then trans66.<br>
+        <br>
+        You should also remember that <b>entities cannot be transparent</b>, so you 
+        couldn't have a transparent func_water, or a transparent func_door, etc.
+        <br>&nbsp;
+    <li><b>flowing</b><br>
+        flowing makes the surface look like it is moving. It is usually used along with 
+        the <b>current_*</b> surface property to create the effect of a river flowing.<br>
+        <br>
+        It will move in the direction of the texture so if you wish it to flow in a 
+        different direction then you need to <b>adjust the rotation of the texture</b>.
+        <br>&nbsp;
+    <li><b>nodraw</b><br>
+        This is used for triggers and clip brushes. What it does is makes the selected
+        surface invisible if it is a clip brush or a trigger such as a trigger_once 
+        and a trigger_multiple.<br>
+        <br>
+        By default though, triggers are already set to not drawn.
+        <br>&nbsp;
+    <li><b>hint</b><br>
+        A hint brush blocks vis from seeing into certain areas, thus decreasing frame 
+        rate(which is a good thing) They are difficult to determine where to place though.
+        There is a good <a href="http://www.gamedesign.net/node/52">tutorial</a> 
+        written by <a href="mailto:jcaesar@mediaone.net">Joel Caesar</a> on hint brushes 
+        that will help you figure out how to use them.
+        <br>&nbsp;
+    <li><b>solid</b><br>
+        Solid is the default for all brushes. Not real sure on why you would have to use it though.
+        <br>&nbsp;
+    <li><b>window</b><br>
+        Prevents the renderer from drawing the backfaces of a brush.  Used on windows 
+        (or other transparent brushes.) For an example, look at the window at he very beginning of base1.
+        <br>&nbsp;
+    <li><b>skip</b><br>
+        A skip brush is very strange. It does nothing if a whole brush is set as a skip brush, 
+        but if you only set one face of it to a skip brush then it will create the effect of 
+        one way glass. The player on the side of the brush that is marked as skip will be able
+        to see through the brush, but not shoot through it, and the player on the sides which
+        are not marked skip will not be able to see through or shoot through the brush.
+        <br>&nbsp;
+    <li><b>aux</b><br>
+        Does not do anything. I may be wrong though.
+        <br>&nbsp;
+    <li><b>lava, slime, water</b><br>
+        these 3 are pretty self explanatory. Lava takes off the most damage. Slime takes off a 
+        lower amount of damage, and water takes off no damage, unless you stay in it too long.<br>
+        <br>
+        The brush that has one of these properties turned on will not actually warp like water until
+        you also give the brush the <b>warp</b> property. It will act the same way though without warp 
+        set (you will be able to walk through it).
+        It's cool to use these attributes with different textures, like give the lava attribute to a 
+        metal brush, etc for some strange different effects. For example, in the 
+        <a href="/content/quake2/tutorials/surface/surface.zip">example
+        map</a> I created water but I didnt use a water texture. I used the crystal texture. It turned out pretty good.
+        <br>&nbsp;
+    <li><b>mist</b><br>
+        Mist makes the brush nonsolid, thus you could walk through it. You can also create a mist 
+        type effect by setting the mist, warp, and trans_33 properties on. Pretty cool.
+        <br>&nbsp;
+    <li><b>player clip, monster clip</b><br>
+        The player cannot walk through a brush set with player clip but he will be able to shoot 
+        through it. Monster clip is the same thing but it affects the monster_ entities instead of 
+        the player. Good for not allowing monsters past a certain point or restricting the player 
+        so he/she can't get into areas in which there is a possibility of getting stuck.  The use of clip brushes discussed in detail in <a href="http://www.gamedesign.net/node/49"this tutorial</a>.<br>
+        <br>
+        You must also have nodraw set for the clip properties to work.
+        <br>&nbsp;
+    <li><b>current_0, _90, _180, _270, _up, _down</b><br>
+        all the current properties are used to push the player in the selected direction (in water). 
+        So current_0 will push the player in the angle of 0, which is straight right.<br>
+        <br>
+        The majority of the time current_ will be used along with the flowing and water properties to 
+        create the effect of flowing, moving water.
+        <br>&nbsp;
+    <li><b>origin</b><br>
+        The origin property is used with certain entities like the <a href="http://www.gamedesign.net/node/39">turret_</a> 
+        entities, <a href="http://www.gamedesign.net/node/24#func_rotating">func_rotate</a>, and 
+        <a href="http://www.gamedesign.net/node/24#func_door_rotating">func_door_rotating</a>. Check those corresponding pages on how
+        to use the origin property with these entities.
+        <br>&nbsp;
+    <li><b>monster, corpse</b><br>
+        These do nothing at all. I may be wrong though
+        <br>&nbsp;
+    <li><b>detail</b><br>
+        Detail brushes are very useful. They can be used to decrease vis time for a level. When a brush is 
+        marked as a detail brush, vis will ignore it, thus decreasing the amount of time that qvis3 will 
+        take while compiling your level.<br>
+        <br>
+        Too many detail brushes though will actually slow a level down. Try to keep detail brushes restricted
+        to brushes that the player will not often see.<br>
+        <br>
+        Detail brushes, and how to use them, are discussed in 
+        <a href="http://www.gamedesign.net/node/53">this tutorial</a>.
+        <br>&nbsp;
+    <li><b>translucent</b><br>
+        if you have water and trans33 or 66 *not* set and the surface
+        light flag 0 as well, then the water brush interior isn't lighted.
+        when you set the translucent flag, light from outside can come inside
+        although the water surface is not-see-thru. thanks 
+        <a href="mailto:martin.fuchs@physik.fu-berlin.de">Martin Fuchs</a>
+        <br>&nbsp;
+    <li><b>ladder</b><br>
+        The ladder attribute allows the player to climb up or down the brush. Most often used for creating ladders. 
+        A number of people have been having problems with creating ladders but they are actually pretty easy to make.<br>
+        <br>
+        Make the ladder and then give every brush that the ladder is made up of the surface property of ladder. It's that 
+        simple. The trouble comes up when you have the steps of the ladder too far apart and the player can't touch the next 
+        step. If this is the case then you will have to create a very thin brush right in front of the ladder and set 
+        the surface property player_clip and ladder to it. This will create the illusion of the player climbing up the
+        ladder when in fact the player is climbing up the invisible player_clip brush.
+        <br>&nbsp;
+</ul>
+
+<h3>Things to Remember about Surface/Content Properties</h3>
+
+ <p>All the textures that are used with quake2 and are available for use by level 
+    designers have default surface properties already set. For example... If you 
+    select a glass texture, then it will already have the trans_33 property on. It 
+    also follows that all the light textures, already have the light surface property
+    set and with a light value that the creators of the texture thought was right. 
+    All of this can overridden though if you desire.<br><blockquote>(Editor's Note:  Users of GTKRadiant, which was not written with Quake 2 in mind, may find that Surface & Content Properties are not set by default and will have to be set manually)</blockquote>
+    <br>
+    Surface Properties can also be mixed. So you could have one texture with lava, 
+    flowing, current_0, tran_33 all set.<br>
+    <br>
+    Also remember that the surface <B>properties</B> can have selected faces with properties
+    while, surface <B>contents</B> MUST have the whole brush selected with the same content 
+    or a mixed face error will occur.<br>
+    <br>
+    The 
+    <b><a href="/content/quake2/tutorials/surface/surface.zip">example map</a></b> 
+    I made does not show examples of all the surface properties but it does show some
+    potential of some of the cool effects you can get. It also shows how you can 
+    misuse the light emitting textures. =) Way too colorful. <br>
+    <br>
+    Well anyways if you still don't understand please post your questions to the 
+    <a href="http://forums.gamedesign.net">forums</a>.
+    </p>
+
+
+<!-- eof --><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/237" title="View the previous page.">previous</a></div><div class="next"><a href="node/21" title="View the next page.">next</a></div><div class="up"><a href="node/42" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Sunlight - Part 2</div><div class="next">Entity Properties</div></div></div></div></div>
+
+<div class="links"><a href="book/print/55" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

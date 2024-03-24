@@ -1,0 +1,179 @@
+<html><head><title>R_speeds</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="1046" name="1046" class="book-h1">R_speeds</h1><!--R_speeds, submitted by Andy APR 05 originally written for TWHL 2003-->
+<h3>Half-Life</h3>
+<blockquote>R_speeds -  by Andy<br />
+This tutorial was first written late 2002 and predominantly deals with the original Half-Life, since then there has been a massive increase in the average household PC's ability to render games, HL2 is an example of that. Most of this information is still valid across all platforms but some of the quoted maximums might be severely outdated.<br />
+Regardless of that the theory is still sound. 
+</blockquote>
+<h3>Contents</h3>
+<ul>
+<li><a href="/node/1046#speeds">What are 'r_speeds'</a></li>
+<li><a href="/node/1046#limits">What is within 'limits'</a></li>
+<li><a href="/node/1046#reduce">Reducing r_speeds</a></li>
+<li><a href="/node/1046#corners">Corners, Mitering and molding</a></li>
+<li><a href="/node/1046#texture">Sky Textures and Boxes</a></li>
+<li><a href="/node/1046#brush">General brush building</a></li>
+<li><a href="/node/1046#clip">Clipping, Carving and more VM</a></li>
+<li><a href="/node/1046#vis">Vis Blockers</a></li>
+<li><a href="/node/1046#summary">Summary</a></li>
+<li><a href="/node/1046#read">Further Reading</a></li>
+</ul>
+<p>
+My first level of any consequence lagged badly and I didn't understand why. I posted on a few well known and authorative sites, read all I could on the subject and ended up being more confused than when I started. <br />
+So not to be left in the dark, I did some research and read all the articles written by the &quot;Experts&quot; on r_speeds, unfortunately and a lot of what I read contradicted itself, so I decided to test all the theories. 
+</p>
+<h3 id="speeds">What are 'r_speeds' ?</a></h3>
+<p><span style="font-weight: bold;">OpenGl</span><br />
+First let's have a look at what r_speeds are. Most sites I visited agreed that <span style="color: #ff0000">r_speed</span> stands for Render Speed. The speed at which the game engine draws the frames you see to the screen.<br /> 
+If you open the <span style="font-weight: bold;"><a href="content/half-life/tutorials/speeds/r_speeds.zip">example map</a></span> it contains an RMF and a .map file that walks you through the some examples. The first thing you need to do is bring up the console by typing <span style="font-weight: bold;">~</span> (tilde key) and then type <span style="font-weight: bold;">r_speeds 1</span> you will be presented with 4 lines of numbers in the top left hand corner of the screen. If your Half-Life graphics options are set to use OpenGL, they should look something like this:
+</p>
+<div style="margin: 0px auto; padding: 1px; width: 268px; border: 1px solid #999; text-align: center; display: block;">
+<img src="content/half-life/tutorials/speeds/r_speeds_6_small.jpg"  width="268" height="76" alt="OpenGL Numbers" title="OpenGL Numbers" />
+</div>
+<p class="clear: both;"></p>
+<ul>
+<li><span style="color: #ff0000">60fps</span>: the number of frames being drawn to the screen per second. The game should appear fluid at above about 25fps.</li>
+<li><span style="color: #ff0000">0ms</span>: the time in milliseconds that it takes to execute one game cycle (or the time taken to draw this frame). </li>
+<li><span style="color: #ff0000">112 wpoly</span>: the World Polygon count. This is the figure that people often talk about when they are describing r_speeds. This number is a result of the engine dividing the areas of the map that require a texture into polygons based on the scale of the texture to be rendered. It is not the number of brushes in the map.</li>
+<li><span style="color: #ff0000">0 epoly</span> is the Entity Polygon count, but not the entities you're thinking of. It is the number of Model polygons (xxx.mdl) being rendered. Visible point-based entities like monsters, suits, weapons, shell casings, gibs are all models. An <span style="font-style: italic;">item_suit</span>, for example, will increase this figure to 960. </li>
+</ul>
+<p>Epolys do have an affect on the <span style="font-weight: bold;">fps</span> and <span style="font-weight: bold;">ms</span> counts, so keep this in mind when placing models, monsters and items. <br />
+You can use up to 500 non-visible entities, such as path_corners, trigger_xxx and multi_managers in in your map and the epoly count (and the wpoly count) will not be affected. But beware of possible Entity Overflow errors.
+</p>
+<p><span style="font-weight: bold;">Software Mode</span><br />
+If on the other hand you have your HL video properties set to Software mode, the figures will look like this:
+</p>
+<div style="margin: 0px auto; padding: 1px; width: 268px; border: 1px solid #999; text-align: center; display: block;">
+<img src="content/half-life/tutorials/speeds/r_speeds_7_small.jpg" alt="Software Numbers" width="268" height="76" />
+</div>
+<p class="clear: both;"></p>
+<p>And they mean.....</p>
+<ul>
+<li><span style="color: #ff0000">20.1ms</span>: the number of milliseconds it takes to execute one game cycle.</li>
+<li><span style="color: #ff0000">205</span>: the total number of polygon surfaces in view.</li>
+<li><span style="color: #ff0000">180</span>: the number of polygon surfaces in view that are drawn.</li>
+<li><span style="color: #ff0000">155</span>: total visible polygons which aren't drawn.</li>
+<li><span style="color: #ff0000">0 surf</span>: the number of dynamically lit surfaces.</li>
+</ul>
+<p>
+The interesting thing about using software mode to check your r_speeds is that you can see how many polygons the software engine is trying to draw. The important figure is the 'polygon surfaces in view' (180) - this is the figure that you need to keep down.<br />
+The software engine stops rendering textured polygons after it reaches <span style="color: #ff0000">800</span>, the brushes are still there, but the engine will not render texture on any more. So if you are designing a map that will be played on a machine that can only render in Software mode, this is worth remembering.
+</p>
+<p>
+The other thing of interest is the surf reading. Basically this is the number of surfaces that have a changing light characteristic, such as a surface affected by a flashing light. Throw a few pulsating lights into your level and you will notice the difference. Muzzleflash from weapons also effects the surf reading, but not as drastically as Dynamic Lights.<br />
+You must limit the number of Dynamic lights (Lights that have a custom or appearance property) to approximately 4 in one given viewable area or you will receive the error &quot; Too many light faces &quot; but once again there are exceptions to this rule.
+</p>
+<p>
+So now you know what the figures represent...
+</p>
+<h3 id="limits">What is 'within limits'?</h3>
+<p>
+There are so many figures suggested in other forums, web sites and tutorials that it hard see what they are referring to. The reason for this is that it depends on what your map will be used for and what computer it will be run on. If it's multi-player map, 'what is the average speed of the connection to the server?' Questions like this, and their response will determine what you think is acceptable. [After all, it is up to you...]
+</p>
+<p>
+As a really general rule of thumb, single-player maps can get away with a wpoly count of 600 to 800 without any appreciable lag. Having said this, if you were to run the same map on a 486DX66 with a 1Mb graphics card in software mode, it wouldn't run.... So the thing to remember here is what machine the map will eventually be used on. If you are distributing an SP Mod, then spare a thought for the guy who doesn't own a supercomputer.
+</p>
+<p>
+A multi-player map or bot-filled map should be built with a wpoly count of 400 to 600 or less. Don't forget that the epoly count will increase rapidly as players (entity models) arrive in the same area (this is also seen in SP maps that have a large number of visible entity models in the same space, such as a lot of monsters or an Osprey). This will cause lag, but the reason I have not mentioned an acceptable figure here is that I really don't know. Some suggestions are for 10 000 max with the inclusion of all possible player entities. Personally I think this is a bit high, and some tutorials actually limit the areas by model count and max player count. Just remember that a high epoly count does increase lag. So the placing of static models is crucial. When everyone runs to grab the grenades, the epoly count will go through the roof. So in these areas, limit the number of wpolys belonging to static models such as cars, tanks, etc. and limit epolys belonging to any entities rendered visible that might be functional or not. 
+</p>
+<p>
+As recent as March 2005, it is still good practice to limit your r_speeds to 800 in normal traffic areas of your map.
+</p>
+<h3 id="reduce">Reducing r_speeds</h3>
+<p>
+Building a huge box will not increase r_speeds until you add a visible texture. So build a box, 3008x256x3008 and add the <span style="color: #ff0000">crete3_wall01</span> texture to all faces with a scale of <span style="font-weight: bold;">X</span>: <span style="color: #ff0000">1</span> and <span style="font-weight: bold;">Y</span>: <span style="color: #ff0000">1</span>. Add an <span style="font-style: italic;">info_player_start</span> and a <span style="font-style: italic;">light</span> entity. Now compile it. You hate me don't you? Is your machine still trying to compile the map?...<br />
+When your map finally compiles, bring up the console and enter <span style="font-weight: bold;">r_speeds 1</span>. We are going to have a look at how the engine divides your map into sections for texturing, so enter <span style="font-weight: bold;">gl_wireframe 2</span> (this will only work in OpenGL mode). You should have a wpoly figure of about 506. Also of interest is that the millisecond refresh speed may have jumped. The gl_wireframe mode will show you a set of white lines. Lots of them aren't there?<br />
+Now go back to the texture properties and increase the scale of the texture to <span style="color: #ff0000">10</span> in both axes and recompile the map (faster this time wasn't it?) Enter <span style="font-weight: bold;">r_speeds 1</span> and <span style="font-weight: bold;">gl_wireframe 2</span> and you will see that the wpoly count has been reduced to <span style="color: #ff0000">16</span>; there are also a lot fewer white lines. In fact there are 16 boxes outlined by the white lines.<br />
+Has the penny dropped?<br /> This is the big theory folks. The size of a visible texture rendered directly affects the wpoly count. The game engine divides the visible map into sections called world polygons based on the scale of the textures applied to brushes.<br /> 
+So if the scale of your texture on a single surface is high the wpoly count will be low (above <span style="font-weight: bold;">X:Y:</span><span style="color: #ff0000">1</span>, but less than <span style="font-weight: bold;">X:Y:</span><span style="color: #ff0000"> 3</span> I will get to this a bit later...).<br />
+Multiple textures on multiple brushes will also increase the wpoly count, but the wpoly count created by a single texture applied to multiple brushes that form a solid will be dependent on the scale of the texture chosen and not on the number of brushes in the solid.<br />
+Have I lost anyone yet? <br />
+It is <b>important</b> to mention at this stage, that the rescaling of the texture to a value of <span style="font-weight: bold;">X:Y:</span><span style="color: #ff0000">10</span> was only an example. It is not good practice to stretch your textures beyond <span style="color: #ff0000">2</span> , and I have noticed that the savings gained in the reduction of r_speeds seems to reverse when you resize above a scale of <span style="color: #ff0000">2</span>. Stretching beyond 3 times the normal texture size might cause compiling errors.
+</p>
+<p>
+If you do follow this concept then great, but unfortunately no-one builds maps with a single texture, or without anything in them. So let's look at some ways to reduce r_speeds in a normal map. In the <span style="font-weight: bold;"><a href="content/half-life/tutorials/speeds/r_speeds.zip">example map</a></span> I have added boxes of similar construction. Basic blocks, hollowed and then a corridor carved into some of them. There are columns in most of the boxes.<br />
+Actually the columns are borrowed from the original Help file that came with Hammer 3.4 and provide multiple faces to work with.<br /> 
+The first one is a normal cylinder, and the rest are vertex manipulated columns. Also included is a teleporter between boxes for the first few, while you get used to the gl_wireframe picture. Print out the <span style="font-weight: bold;">'Tour.txt'</span> to guide you through the example map.
+</p>
+<h3 id="corners">Corners, Mitering and molding</h3>
+<div style="margin: 0px auto; padding: 1px; width: 340px; border: 1px solid #999; text-align: center; display: block;">
+<a href="content/half-life/tutorials/speeds/r_speeds_5.jpg"><img src="content/half-life/tutorials/speeds/r_speeds_5_small.jpg" width="340" height="235" alt="Corners 1" title="Corners 1" /></a>
+<br />Click to enlarge 
+</div>
+<p class="clear: both;"></p>
+<p>
+Blending of corners has no affect on r_speeds, and sometimes leads to strange texture placement.<br />
+Mitering is another form of Vertex manipulation (VM). VM of solids can sometimes increases the wpoly count, because you are adding additional faces to be textured, but it should only be by about 2 or so, if your reshaped solid is conventional (ie: block). As mentioned in most tutorial's on VM, it also takes care of those brushes that don't quite meet. There are a number of error codes associated with VM. 
+</p>
+<h3 id="texture">Sky Textures and Boxes</h4>
+<p>
+Sky texture is one of the few textures that doesn't require Scaling. You will get the same wpoly count using SKY texture with a Scale <span style="font-weight: bold;">X:</span><span style="color: #ff0000">1</span> and <span style="font-weight: bold;">Y:</span> <span style="color: #ff0000">1</span> as you would with <span style="font-weight: bold;">X:</span> <span style="color: #ff0000">10</span><br />
+and <span style="font-weight: bold;">Y:</span> <span style="color: #ff0000">10</span>. The only brush that affects the r_speeds when sky is rendered is any other visible textured brush in the map. So if you had a massive box as in the example map and added sky to the walls and the ceiling and added a light_environment then compiled it, you should get a wpoly count based on the scale of the floor texture. (12 wpoly in the example map because the walls are textured at <span style="font-weight: bold;">X:</span> <span style="color: #ff0000">10</span> <span style="font-weight: bold;">Y:</span> <span style="color: #ff0000">10</span>.)<br />
+It is important to understand the boundaries of your map. Building a huge skybox around it is not a good idea, because the engine will render texture on brushes underneath your map, and on the sides even though you will never see them. This will increase r_speeds. I use the &quot;build the map add the sky technique&quot; and end up filling in the gaps. This method basically caps off the sides of the map, and then adds the top.
+</p>
+<h3 id="brush">General brush building</h3>
+<p>
+If a brush that is textured touches another brush that is textured, the engine carves up one of the brushes into additional world polygons to correctly display the texture. This increases the wpoly count. You can work around this in two ways:
+</p>
+<ul>
+<li> First is to leave a 1 unit gap between the brushes, although there are areas where this isn't possible.</li>
+<li>The second way is to turn one of the brushes into a <span style="font-style: italic;">func_wall</span> entity (actually any entity that will render texture). An entity brush that touches a solid textured brush will not affect the way the solid brush is rendered, and this is why it is recommended that you use entity brushes for light fittings, and small objects.</li>
+<li>Using entity brushes reduces r_speeds, but don't be fooled into thinking that entity brushes do not contribute to speed. Remember, any surface that is textured will increase the r_speeds of a map, regardless of wether it is an entity brush or not.</li>
+</ul>
+<p>
+Entity Brushes also have an effect on the white lines in gl_wireframe view. It looks as though the entity brush is blocking the lines behind it, that might lead you to believe that the engine isn't rendering textures or brushes behind the entity brush. The truth is that Entity brushes dont block VIS, just the same as the light shining through them problem, that came before Zoners came up with a fix. SlayerA and I discovered this in a little test map with an arm chair behind a <span style="font-style: italic;">func_wall</span> and an armchair in the other same sized and textured room. When the map ran, it looked like a blank wall, but the r_speeds were similar in both rooms. The engine was rendering both chairs, but we could only see one with gl_wireframe enabled.
+</p> 
+<div style="margin: 0px auto; padding: 1px; width: 340px; border: 1px solid #999; text-align: center; display: block;">
+<a href="content/half-life/tutorials/speeds/r_speeds_4.jpg"><img src="content/half-life/tutorials/speeds/r_speeds_4_small.jpg"  width="340" height="255" alt="Brushes" title="Brushes" /></a>
+<br />Click to Enlarge 
+</div>
+<p class="clear: both;"></p>
+<h3 id="clip">Clipping, Carving and more VM</h3>
+<p>
+If you build 4 cubes and piece them together to build a square, Select all of them, add texture and they will be rendered as 1 cube. Reduction in wpoly count, you bet.  However you have to apply the texture to the blocks when they are all selected (<span style="font-weight: bold;">Grouped</span>). The reason the blocks don't act as 4 separate cubes is because you have textured them together. This is where good texture Scaling and placement comes in. So if you can, Select the separate brushes and texture them as one, why can't you do that with brushes that touch each other? Because the cube becomes a solid for rendering purposes and the unseen areas are stripped out, where as the touching brushes form a &quot;T&quot; junction and require rendering differently.
+</p>
+<p>
+Lot's of tutorials tell you not to Clip or Carve solids because it increases r_speeds, I haven't found any evidence of that unless the clipping is on a plane that is not square. So the trick is to stick to VM. If you are going to Carve, just be mindful that there can be problems. Test Carving until you get used to it, try the carve and then run the map to see if there have been any changes. Avoid carving with anything other than solid blocks.
+</p>
+<h3 id="vis">Vis Blockers</h3> 
+<p>
+In the example map, as you move between the boxes, you will come to a box with a corridor. You should see the wireframe extending into the next box, because the engine is rendering some of the textures in that box in advance. What you think you can see and what the engine thinks you should see are two different things. <br />
+This is where vis blocking comes in. Entities do not block vis as you have probably found out (and I mentioned above). Lights on one side of a door will shine through a <span style="font-style: italic;">func_door</span> entity. So they cannot be used to stop the rendering of textures in another room. But a quick fix way is by building a blocking brush between boxes.
+</p>
+<div style="margin: 0px auto; padding: 1px; width: 340px; border: 1px solid #999; text-align: center; display: block;">
+<a href="content/half-life/tutorials/speeds/r_speeds_1.jpg"><img src="content/half-life/tutorials/speeds/r_speeds_1_small.jpg"  width="340" height="317" alt="Wireframe" title="Wireframe" /></a>
+<br />Click to Enlarge 
+</div>
+<p>
+In the example you will see that the Vis blocking brushes are actually touching the wall. This creates fractures of the wall for texture rendering purposes, as did the columns, and increases the wpoly count. But you have to way up the benefits, try placing the brushes 1 unit away from the walls and floor, run the map and the try it again. If the 1 unit gap works then go with it. I tried this example with the brushes 1 unit away from the walls, and didn't get the reduction in the wpoly count that I had hoped for.<br />
+By letting the brushes touch the walls I got the best reduction in wpoly count. The difference was about <span style="color: #ff0000">30</span>-<span style="color: #ff0000">40</span> wpoly.
+</p>
+<div style="margin: 0px auto; padding: 1px; width: 340px; border: 1px solid #999; text-align: center; display: block;">
+<a href="content/half-life/tutorials/speeds/r_speeds_3.jpg"><img src="content/half-life/tutorials/speeds/r_speeds_3_small.jpg"  width="340" height="255" alt="Block out" title="Block out" /></a>
+<br />Click to Enlarge 
+</div>
+<div style="margin: 0px auto; padding: 1px; width: 340px; border: 1px solid #999; text-align: center; display: block;">
+<a href="content/half-life/tutorials/speeds/r_speeds_2.jpg"><img src="content/half-life/tutorials/speeds/r_speeds_2_small.jpg"  width="340" height="255" alt="Block in" title="Block in" /></a>
+<br />Click to Enlarge 
+</div>
+<p class="clear: both;"></p>
+<h3 id="summary">What have we learnt?</h3>
+<p>
+r_speeds increase in direct proportion to the amount of solid textured brushes in your map and their interaction with other solid visible textured brushes. The Scale of the texture drawn on those brushes can increase or decrease the wpoly count. Models, such as Monsters, other players, gib's and anything ending in &quot;.mdl&quot; will increase the epoly count. High epoly counts (above about 10,000) will increase overall r_speeds and refresh rates creating Lag. Entities that are not models do not affect the epoly count unless they are textured. <br />
+If you're having trouble, run your map in OpenGL with <span style="font-weight: bold;">r_speeds 1</span> and <span style="font-weight: bold;">gl_wireframe 2</span> selected. Areas of high r_speeds will be visible then by the amount  of white gl_wireframe lines and High woply counts as you move around. Initial Design can save you some hassle but don't get too hung up on some of the old myths.<br />
+It is basically all about how many visible brush faces the engine has to render...
+</p>
+<h3 id="read">Further Reading</h3>
+<ul>
+<li><a href="../node/266">BSP and the Visibility Process</a></li>
+</ul>
+<p>&nbsp;</p>
+<hr />
+<h4>Special mention and thanks go to:</h4>
+<span style="font-weight: bold; font-style: italic;">FireBinders Test Chamber</span>: Issues, loved and hated it :-)<br />
+<span style="font-weight: bold; font-style: italic;">Andrew C. Weldons Article on VERC</span>: Thanks Andrew,<br />
+<span style="font-weight: bold; font-style: italic;">Handy Vandal's Site</span>: Thank's Karl<br />
+Happy Mapping, and don't forget... <br />
+If you have a question, post it in the forum.
+<!--EOF@175--></body></html>

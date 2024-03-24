@@ -1,0 +1,127 @@
+<html><head><title>Sunlight - Part 2</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="237" name="237" class="book-h1">Sunlight - Part 2</h1><h1>Sun part II</h1>
+
+<p>I swear, these guys are worse than Intel! Just when you think you have one radiosity program nabbed, someone goes and releases another.
+</p>
+<p>
+Actually, thanks goes to Tim Wright (Argh!) for making so many improvements. And thanks goes to Geoffry DeWan for getting the ball rolling. If you don't already have ArghRad, download it now!
+<BR><BR>
+<A HREF="http://www.planetquake.com/arghrad">Arghrad Homepage</A>
+</p>
+<h2>Contents</h2>
+      
+<h3>Why should I use something new...</h3>
+<ol>
+<li>
+<a href=book/view/237/?PHPSESSID=4c50bf3b30333f16bac5f5c589aade80#why>...when what I have works fine?            </a>
+</li>
+</ol>
+
+<h3>What's new?</h3>
+<ol>
+<li>
+<a href=book/view/237/?PHPSESSID=4c50bf3b30333f16bac5f5c589aade80#four>Did you say FOUR suns?</a>
+</li>
+<li>
+<a href=book/view/237/?PHPSESSID=4c50bf3b30333f16bac5f5c589aade80#shadow>Ambient shadow coloring</a>
+</li>
+<li>
+<a href=book/view/237/?PHPSESSID=4c50bf3b30333f16bac5f5c589aade80#diffusion>Shadow diffusuion</a>
+</li>
+<li>
+<a href=book/view/237/?PHPSESSID=4c50bf3b30333f16bac5f5c589aade80#alternate>Alternate aiming techniques</a>
+</li>
+</ol>
+<hr width=100%>
+<br><br>
+
+<h3>Why should I use something new...</h3>
+
+<div class="bodytext">
+<a name=why>...when what I have works fine?</a>
+</div>
+<p>
+Progress.
+</p>
+<p>
+For real, though, ArghRad is like a version update of gddqrad3. It fixes some of limitations of gdqrad3 that caused the shadows caused by sunlight to look blocky, and made some definite improvements (like ambient color control and multiple suns. It does all of this WITHOUT sacrificing support of gddqrad3 and qrad3.
+</p>
+
+<h3>What's new?</h3>
+<p>
+Here are all of the new keys available for the sun. If you're hungry for more, go to the online manual         at the Arghrad page.
+</p>
+
+<h5>
+&quot;_sun_angle&quot;<br>
+&quot;_sun_mangle&quot;<br>
+&quot;_sun_vector&quot;<br>
+&quot;_sun_diffuse&quot;<br>
+&quot;_sun_diffade&quot;<br>
+&quot;_sun_difwait&quot;
+</h5>
+<p>
+"_sun_angle" and "_sun_mangle" are aliases for the same function, as are "_sun_fade" and "_sun_wait", but that still leaves us with four new options, plus the ability to use up to four suns.
+</p>
+<div class="bodytext">
+<a name=four>Did you say FOUR suns?</a>
+</div>
+<p>
+Yes! You can now use up to four suns in your maps, each with their own color and angle. To use multiple suns, you would simply define them as you normally do, except you substitute "_sun2" "_sun3" and "_sun4" for "_sun" when entering information on your second, third, and fourth suns.
+</p>
+<p>
+You can use multiple suns on all of the _sun keys except "_sun_ambient".
+</p>
+<div class="bodytext">
+<a name=shadow>Ambient shadow coloring</a>
+</div>
+<p>
+You can color your ambient shadows now (the part that can't see the sun, but can see the sky). If you define a straight light value instead of a color value, the shadow color will default          to the average of all of your suns' colors. To define the color of the shadow, simply enter three values after the "_sun_ambient" key instead of one.
+</p>
+<h5>"_sun_ambient" "[red] [green] [blue]"</h5>
+<p>
+Each value represents the brightness of each individual color, so if the value entered were 120 150 50, the shadow color would have a minimum red brightness of 120, a minimum green brightness         of 150, and a minimum blue brightness of 50.    </p>
+<div class="bodytext">
+<a name=diffusion>Shadow diffusion</a>
+</div>
+<p>
+This feature is so freakin' cool, I can't contain myself! What shadow diffusion does is provide an buffer of hazy shadow between the shade and the direct sunlight. This can make your shadows look much smoother less harsh. To define the diffusion, simply enter a value less than the highlight value,
+and greater than the shadow value.
+</p>
+<h5>
+"_sun_diffuse"   "[value]"
+</h5>
+<p>
+To control the fade distance of the diffusion, Tim Wright has added the _sun_diffade and _sun_difwait keys. A value less than 1 will cause the diffusion to fade out slower, while a value greater than 1 will make it fade faster. Be aware, however, that if you use a large value, you may need to reduce         your -chopsky value (or else you will get a chunky shadow). This defaults to a value of 1, and any value entered will scale relative to the default. For example, if you entered a value of .5, the diffusion would fade twice as rapidly as it          did at 1.
+</p>
+<h5>
+"_sun_diffade"   "[value]"
+</h5>
+<h5>
+"_sun_difwait"   "[value]"
+</h5>
+<div class="bodytext">
+<a name=alternate>Alternate aiming techniques</A>
+</div>
+<p>
+There are now two additional ways to aim your sun (both of which you can substitute for the "_sun" "targetname" method. The first method is angle aiming. This uses pitch and yaw to aim. This method is the same as is used to aim info_player_intermission minus the roll.
+</p>
+<p>
+The yaw is the position on the z axis. You aim yaw the same way you aim a door, or a player facing, with 0 pointing east, and moving counter-clockwise. Pitch is the angle on the horizon. Pitch values range from negative 90 to positive 90. -90 points straight down, and 90 points straight up.
+</p>
+<h5>
+"_sun_angle"    "[yaw] [pitch]"
+</h5>
+<h5>
+"_sun_mangle"    "[yaw] [pitch]"
+</h5>
+<p>
+The second method is vector aiming. By using vector         aiming, you enter a vector coordinate into the value field, and ArghRad will calculate the angle from the origin (0 0 0) to the vector (x y z) coordinates you entered. The resulting angle         will be the sun's angle.
+</p>
+<h5>
+"_sun_vector"    "[x] [y] [z]"
+</h5>
+<br><br><br><br><br>
+<center>      
+This was written by Michael N. Meadows, AKA Ryche AKA eg0. My sources were as follows: Me, the text file included with ArghRad 1.0, Tim Wright, and a lot of hard work. Feel free to quote me. Feel free to steal my words and claim them as your own. Your conscience is all that stands in your way. Most important of all, however, is that you have fun.</center></body></html>

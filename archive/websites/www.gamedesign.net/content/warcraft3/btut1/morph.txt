@@ -1,0 +1,24 @@
+Hero Morph
+    Events
+        Unit - A unit owned by Player 1 (Red) Begins casting an ability
+    Conditions
+        And - All (Conditions) are true
+            Conditions
+                (Level of (Ability being cast) for (Triggering unit)) Equal to 1
+                (Ability being cast) Equal to Morph 
+    Actions
+        Set HeroCache1 = (Triggering unit)
+        Game Cache - Create a game cache from map01.w3v
+        Game Cache - Store HeroCache1 as Hero of Category in (Last created game cache)
+        Special Effect - Create a special effect attached to the chest of (Triggering unit) using Abilities\Spells\Orc\FeralSpirit\feralspirittarget.mdl
+        Wait 0.50 seconds
+        Unit - Replace (Triggering unit) with a Morph 1 using The old unit's relative life and mana
+        Set HeroMorph = (Last replaced unit)
+        Selection - Select HeroMorph for Player 1 (Red)
+        Wait 45.00 seconds
+        Special Effect - Create a special effect attached to the chest of (Triggering unit) using Abilities\Spells\Orc\FeralSpirit\feralspirittarget.mdl
+        Wait 0.50 seconds
+        Game Cache - Restore Hero of Category from (Last created game cache) for Player 1 (Red) at (Position of HeroMorph) facing 0.00
+        Set HeroCache2 = (Last restored unit)
+        Unit - Remove HeroMorph from the game
+        Selection - Select HeroCache2 for Player 1 (Red)

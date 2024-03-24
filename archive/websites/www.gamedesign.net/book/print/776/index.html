@@ -1,0 +1,485 @@
+<html><head><title>Mapping - Hammer 4</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="776" name="776" class="book-h1">Mapping - Hammer 4</h1><p>Hammer 4 Editing Tutorials.</p>
+<center><img src="http://www.gamedesign.net/content/half-life2/tutorials/hammer4.jpg" width="350" height="80" border="0" alt="Hammer 4 Valve Copyright"></center><h1 id="777" name="777" class="book-h1">Creating a Skybox</h1><ul><p> The following tutorial has been republished with consent:<br>
+- By  <a href="http://www.adamowen.com/"> Adam "Phatsniper" Owen</a></p>
+<p>I've seen quite a few threads on various forums already by people who are confused as to how you create a 3D skybox. In this tutorial I'll explain both how to create the 3D skybox itself, and how to get it up and running in game.</p>
+<p>Firstly, let's create the 3D skybox.</p>
+<p>Load up the map you wish to add the skybox to, or if you don't have one just download mine <a href="http://www.adamowen.com/assets/tuts/3dskybox_ex01.zip">here</a>.</p>
+<center><a href="/content/half-life2/tutorials/skybox/sbox01.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox01_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 1"></a></center>
+<p>The ground outside of the ruins will later be part of the skybox, I've created this so I know how far out I want the skybox to go. I've also thrown in a spawn point for each team and a light_enviroment.</p>
+<p>Add the point entity "sky_camera" at the coordinates 0, 0, 0 (dead center in all 3 views). This is a reference point to align the skybox to your map.</p>
+<center><a href="/content/half-life2/tutorials/skybox/sbox02.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox02_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 2"></a></center>
+<p>The next step seems awkward at first but after doing it a couple of times it's a breeze. You need to select some "reference" brushes (no models!) to use as a guideline for the scale and position of the skybox. For this example, select the brushes coloured red in the image by ctrl + clicking on each one. You must also add the "sky_camera" entity to the selection!</p>
+<p>*<b><i> Please Note</i></b>: In more complex maps you may need to select many "landmarks" including all the outer walls of your map for the position of the skybox and some large buildings etc. for the height. What this selection process is basically doing is defining the major boundries of your map so when it comes to creating the structures in the skybox, you'll have these objects as reference to where and how large you should build. *</p>
+<p>Your selection should look like this :</p>
+
+<center><a href="/content/half-life2/tutorials/skybox/sbox03.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox03_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 3"></a></center>
+<p>Copy then paste this selection and go to Tools > Transform. Select the Scale button and type .0625 in all 3 fields. This is the decimal value of 1/16th which is the default scale of a 3D skybox.</p>
+<center><img src="/content/half-life2/tutorials/skybox/sbox04.jpg" border="0" vspace="10" hspace="10" alt="Transformation"></center>
+<br>
+<center><a href="/content/half-life2/tutorials/skybox/sbox05.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox05_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 5"></a></center>
+<p>Your selection should now look like the above picture. The reason we scaled the brushes right down is because when the source engine renders a 3D skybox it scales everything up by 16 (which will now be the correct size for our map).</p>
+<p>Drag these brushes outside the map. It doesn't really matter where, I just move it out and down a couple of thousand units from an edge of the map. Now go ahead and delete the original "sky_camera" entity, but make sure you keep the one inside the 3D skybox!</p>
+<p>Now for the fun part, building the skybox! I just edited the large ground sections to make them slope up into the distance ala de_dust, but feel free to experiment!</p>
+<center><a href="/content/half-life2/tutorials/skybox/sbox06.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox06_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 6"></a></center>
+<p>When you're happy with the result you need to enclose the skybox inside 6 brushes (ceiling, floor and 4 walls, just like a room) and texture it with the "tools\toolsskybox" material. You must make sure there are no gaps in the outer skybox otherwise it won't work.</p>
+
+<center><a href="/content/half-life2/tutorials/skybox/sbox07.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox07_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 7"></a></center>
+<p>Now just copy and paste your light_enviroment inside the skybox and delete the reference geometry you don't need. In this case I deleted all of the walls from inside the 3D skybox, and I deleted the ground outside the ruins in the main map.</p>
+<center><hr noshade color="#808080" width="75%"></center>
+<p>That's the 3D skybox finished! There's still a couple of steps left before we can get it running properly ingame.</p>
+<p>Firstly, seal your map with the "tools\toolsskybox" material. This is exactly the same as creating the sky for the 3D skybox, just create walls and ceiling brushes to fully enclose the map.</p>
+
+<center><a href="/content/half-life2/tutorials/skybox/sbox08.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/sbox08_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox 8"></a></center>
+<p>Last but definately not least is changing the sky texture. Go to Map > Map Properties and click on the field "SkyBox Texture Name". You'll see that the default is "sky_wasteland02", and as of right now that can't be used with Counter-Strike : Source. You can find all the skies you can use by filtering "sky" in the texture browser and typing in the sky name. There are 6 textures for each sky, a front, back, left, right, up and down. You only need to type in the name that appears the most, in this case sky_dust.</p>
+<p>Here's a full list of skies you can use. Type them exactly as they appear :</p>
+<ul>
+<li> cx</li>
+<li> de_cobble</li>
+<li> de_piranesi</li>
+<li> hav</li>
+<li> italy</li>
+<li> jungle</li>
+<li> office</li>
+<li> sky_dust</li></ul>
+<p>Now just compile your map and providing everything is sealed up, you now have a fully functioning 3D skybox!</p>
+<center><a href="/content/half-life2/tutorials/skybox/skybox_final.jpg" target="_blank"><img src="/content/half-life2/tutorials/skybox/skybox_final_small.jpg" border="0" vspace="10" hspace="10" alt="Skybox Final"></a></center>
+<p>Thanks for reading and good luck! Don't hesitate to <a href="http://www.adamowen.com/">contact me</a> with any questions or comments!</p></ul><h1 id="1006" name="1006" class="book-h1">Doors in HL2: The prop_door_rotating Entity</h1><ul><p style="text-align: justify;"><img src="content/half-life2/tutorials/prop_door_rotating/dev_door.gif" style="float: left; padding: 10px;" width="256" height="249" alt="dev_door" title="dev_door" />Believe it or not, most doors in HL2 are not func_door or even func_door_rotating. They came up with a better way to do the common door, and that is the prop_door_rotating. This is a much more versatile entity then a func_door_rotating, as it provides better physics and generally just acts more like a door.</p>
+<p style="text-align: justify;">In order to make our door, we first need to make our doorway. To do this, we are going to use the <b>/dev/dev_measuredoor01</b> texture. This texture, when properly scaled to .25 for X and Y, shows use the size of a door, and even where the knob will be. Go ahead and make a bush where you want your doorway, 128 units tall and 64 units wide. Fit the texture if you have to, and have a look. The gray area is where you should build the walls around the door, the orange area is what you leave open.</p>
+<p style="text-align: justify;">Now for the door. Using the Entity Tool (Shift-E), place a prop_door_rotating in the doorway. The model to use for doors is <b>models/props_c17/door01_left.mdl</b>. This model is great for doors, its standard size, and has many, many skins (more on that later). After you have the door model in, hit apply. Now you have to position the door in the door way, by rotating and moving it. A little tip: hold down Shift while you rotate if you want the door to rotate in 15 unit increments, which helps keep the door flush with the walls around it.</p>
+<p style="text-align: justify;">After you have your door in place, there are all sorts of keyvalues to play with. Some of the important ones are:<br></p>
+<ul>
+<li><b>World Model:</b> The model you are using for the door. Most of the time, you will be using <b>models/props_c17/door01_left.mdl</b>.<br>
+<li><b>Skin:</b> Changes the appearance of the door. Takes a number from 0-13, giving you 14 different doors to choose from.<Br>
+<li><b>Ajar Angles:</b> Lets you have the door start partway open. Uses Pitch Yaw Roll (YZX), for most doors, you only want to change the middle number, Yaw (Z).<br>
+<li><b>Spawn Position:</b> Paired with the above, lets you choose closed, open forward, open backward, and ajar. The ajar value uses the angle you entered in "ajar angles".<br>
+<li><b>Hinge Axis:</b> tells the door what invisible line to turn on. Takes a value of two YZX numbers. You can either use the Hammer "helper", the purple ball, to define this by dragging it upward, or you can just make the third number of the second YZX triplicate larger then the third number of the first YZX triplicate. Either way, the end result is that the doors rotates around where its hinges would be.<br>
+<li><b>Rotation Distance:</b> How for the door should swing either way. Default is 90, which means the door can open 90 degrees to the back, or 90 degrees to the front.<br>
+<li><b>Speed:</b> how fast the door swings. Higher number means a more well oiled door, while lower numbers make for rusty hinges. :)<br>
+<li><b>Fully Open Sound:</b> The sound you want to play when the door opens all the way. Like a "clang" or something.<br>
+<li><b>Fully Closed Sound:</b> Same as above, but for closed. Perhaps a nice "slam" sound.<br>
+<li><b>Moving Sound:</b> Here is where you can make the door squeak.<br>
+<li><b>Delay Before Close:</b> How long before the door closes itself. If you are scared of ghosts, set this to -1, that will keep the door open till Gordon decides to close it.<br>
+<li><b>Damage Inflicted When Blocked:</b> The amount of damage any creature unlucky enough to get his fingers caught in the door takes. Set from the low (jump around swearing) to the high (gets gibed). Just like when you were a kid, right?<br>
+<li><b>Health:</b> Leave at 0 for invincible doors. Give it a value to be able to bust the door in S.W.A.T. style.<br>
+<li><b>Locked Sound:</b> Sound to play if you try to open a locked door (see the flags). Something like a rattle sound or "access denied".<br>
+<li><b>Unlock Sound:</b> Sound to play if the door isn't locked, like a door handle sound.<br>
+<li><b>Force Closed:</b> Nothing will stop the door from closing. Similar to setting the "damage when blocked" to 4000, but not as messy.<br>
+</ul>
+<p style="text-align: justify;">And then there are the oh-so-important flags:<br></p>
+<ul>
+<li><b>Starts Open:</b> No brainier here.<br>
+<li><b>Starts Locked:</b> The door will not open. It will play the Locked Sound if one is defined. To unlock the door, have an IO send to the "Unlock" input of the door.<br>
+<li><b>Door Silent:</b> Another no brainier.<br>
+<li><b>Use Closes:</b> When you +use the door, it closes. Assuming its open.<br>
+<li><b>Door Silent to NPCs:</b> You can here the door, and so can they. Check this to make them oblivious to the sound of an opening door, as most minions are.<br>
+<li><b>Ignore Player +USE:</b> When poor little Gordon comes up to use the door, ignore him!<br>
+</ul>
+<p style="text-align: justify;">That about wraps up the prop_door_rotating. At the bottom of the document I have a image of the different skins you can use and the corresponding number to enter into "skin". As usual, if you have any questions or comments regarding this article, post here or email me at jeffca51 <b>at</b> yahoo <b>dot</b> com.</p>
+<p>
+Door skins and thier number to use for the <b>skin</b> atribute:<br></p>
+<p><img src="content/half-life2/tutorials/prop_door_rotating/doors.gif" width="500" height="288" alt="doors" title="doors" />
+</p></ul><h1 id="1039" name="1039" class="book-h1">Hang 'Em High: phys_ballsocket</h1><ul><h2>Hang 'Em High: phys_ballsocket</h2>
+<p>The Source engine features the Havok physics engine, which allows for a number of incredible physical simulations. To facilitate this, there are a number of entities that allow mappers to define the physical relationship between two entities. One of these entities is the phys_ballsocket. Think of it as, well, a ball and socket joint. One entity acts as the anchor, and the other entity is free to move around that anchor at a set distance. In our tutorial we are going to use this entity to hang a corpse.</p>
+<h3>Found In</h3>
+<p>phys_ballsocket is found in the <a href="/node/1025">Base FGD</a>.</p>
+<h3>Tutorial</h3>
+<p>First make something in Hammer to hand the corpse from, be it a gallows, a tree, or whatever. I'm just going to use a simple gallows. Under the gallows, make a prop_ragdoll using the Entity Tool (shift-E). Give the ragdoll a <b>name</b> of "deadMan" and a <b>world model</b> of "models/Humans/corpse1.mdl". Now create a move_rope underneath him, and set its <b>next keyframe</b> to "hangRope1" and set its <b>parent</b> to "deadMan". This is the part that makes the rope stay with the corpse. Create a keyframe_rope above the ragdoll, right up at the gallows. Name this "hangRope1". Now, you have a rope that stretches from the gallows to the ragdoll, and will continue to do so even if the ragdoll is moved.</p>
+<p>But wait, you say, what about the ballsocket? Well, as it is now, if you were to compile, the ragdoll will fall right to the ground. He will still be attached to the rope, but the rope will simply stretch to allow him to fall. This is where the phys_ballsocket comes in. Create one right where you made you keyframe_rope. Open up its properties and simply set <b>Entity 1</b> to "deadMan". The engine will use the phys_ballsocket as the other entity if you dont specify one. Now the corpse is incapable of moving farther away from the phys_ballsocket then it currently is; however, it may move in a spherical pattern around the phys_ballsocket.</p>
+<p>Lets have a look at some of the important values from the phys_ballsocket:<br>
+<br>
+<ul>
+<li><b>Name:</b> Use this to set the name of the phys_ballsocket, useful if you had to trigger the ballsocket; an example of which would have the rope trigger the ballsocket off when it breaks.<br>
+
+<li><b>Entity 1:</b> The first entity to join together.<Br>
+
+<li><b>Entity 2:</b> The second entity to join together.<Br>
+
+<li><b>Constraint System Manager:</b> If you have multiple phys_ constraints acting on our dead man, you would want to make them part of the same system or else they would fight each other. An example would be if you wanted to have our hanging man tethered to a wall and hanging from the gallows.<Br>
+
+<li><b>Force Limit to Break:</b> If the player (or something else) gets particularly frisky with the corpse, you can have the ballsocket stop working (break).<Br>
+
+<li><b>Force Limit to Break:</b> Same as above.<Br>
+
+<li><b>Play Sound on Break:</b> Play a sound when the ballsocket breaks, like a nice snapping sound.<Br>
+</ul>
+<br>
+</p>
+<!--break-->
+<h3>Technical Data</h3>
+<h4>phys_ballsocket</h4>
+<div style="margin-left: 25px; padding: 10px; background-color: #cccccc; border: 2px solid #000000; font-size: small; font-family: monospace; width: 480px;">
+<b style="text-decoration: underline;">KEYS</b><br>
+<br>
+<b>Name</b> targetname <i>target_source</i><br>
+<br>
+<b>spawnflags</b> spawnflags <i>flags</i> <br>
+<br>
+<b>Entity 1</b> attach1 <i>target_destination</i><br>
+<br>
+<b>Entity 2</b> attach2 <i>target_destination</i><br>
+<br>
+<b>Constraint System Manager</b> constraintsystem <i>target_destination</i><br>
+<br>
+<b>Force Limit to Break (lbs)</b> forcelimit <i>float</i><br>
+<br>
+<b>Torque Limit to Break (lbs * distance)</b> torquelimit <i>float</i><br>
+<br>
+<b>Play Sound on Break</b> breaksound <i>sound</i><br>
+<br>
+<br>
+<b style="text-decoration: underline;">INPUTS</b><br>
+<br>
+<b>Kill:</b> Removes this entity from the world.<br>
+<br>
+<b>KillHierarchy:</b> Removes this entity and all its children from the world.<br>
+<br>
+<b>AddOutput:</b> <i>string</i> Adds an entity I/O connection to this entity. Format: output name targetname:inputname:parameter:delay:max times to fire (-1 == infinite). Very dangerous, use with care.<br>
+<br>
+<b>FireUser1:</b> Causes this entity's OnUser1 output to be fired.<br>
+<br>
+<b>FireUser2:</b> Causes this entity's OnUser2 output to be fired.<br>
+<br>
+<b>FireUser3:</b> Causes this entity's OnUser3 output to be fired.<br>
+<br>
+<b>FireUser4:</b> Causes this entity's OnUser4 output to be fired.<br>
+<br>
+<b>Break:</b> Force the constraint to break.<br>
+<br>
+<b>TurnOn:</b> Enable the constraint.  Do this when the objects don't exist when the constraint spawns - or when you have deactivated the constraint.  Broken constraints can NOT be turned on.  They have been deleted.<br>
+<br>
+<b>TurnOff:</b> Disable this constraint.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">OUTPUTS</b><br>
+<br>
+<b>OnUser1:</b> Fired in response to FireUser1 input.<br>
+<br>
+<b>OnUser2:</b> Fired in response to FireUser2 input.<br>
+<br>
+<b>OnUser3:</b> Fired in response to FireUser3 input.<br>
+<br>
+<b>OnUser4:</b> Fired in response to FireUser4 input.<br>
+<br>
+<b>OnBreak:</b> Fired when the constraint breaks.<br>
+<br>
+</div></ul><h1 id="1013" name="1013" class="book-h1">Hidden and Dangerous: npc_sniper</h1><ul><p style="text-align: justify;"><img src="content/half-life2/tutorials/npc_sniper/sniper.gif" style="float: left; padding: 10px;" width="256" height="253" alt="Sniper" title="Sniper" />One of the cooler enemies in Half-Life 2 was the npc_sniper. Your invisible foe, firing well aimed leaded death from the other end of a blue laser. Getting these guys into the game is fairly simply, but getting them to work well takes a few more entities then just a npc_sniper.</p>
+<p style="text-align: justify;">The first thing to do is make your sniper's nest. The nest should be fairly high up, but close enough to the ground to make shoving a grenade down his throat easy. Make it (at least) about 80 units tall and 48 units wide/deep. Cutting out the window from a texture works well for making a room large enough, and as a plus, it actually looks like he is inside a window. Now, do not put a light source in the room, snipers are not meant to be seen, and they look pretty bad if they are. Between shots their &quot;idle&quot; animation is the same as their ragdoll, so unless you want a sniper that plays &quot;airplane&quot; between shots, keep it dark.</p>
+<p style="text-align: justify;">The next step is to place the sniper in the nest. Using the entity tool (Shift-E), simply place a <span style="font-weight: bold;">npc_sniper</span> in the nest, away from the walls and close to the opening. Rotate the sniper to face out the window. Now, the sniper has a few keyvalues that you may find useful:</p>
+<ul>
+<li><span style="font-weight: bold;">Squad Name:</span> If this is set to the same as some troops on the ground, and the Wake Squad attribute is set on all of them, the sniper will alert the troops to your presence when he sees you, (or visa-versa).</li>
+<br><br>
+<li><span style="font-weight: bold;">Initial Misses:</span> How many times the sniper should miss you when he firsts sees you. You should probably make this 1, as its no fun to get pw0ned before you even see the enemy.</li>
+<br><br>
+<li><span style="font-weight: bold;">Beam Brightness:</span> How bright to make the &quot;blue laser of death&quot;.</li>
+<br><br>
+<li><span style="font-weight: bold;">Bullet Shield Distance:</span> Turns out bullets don't hurt snipers. This and the Bullet Shield Radius control how large of a shield of protection these guys have. The default value works well.</li>
+<br><br>
+</ul>
+<p>This guy pretty much uses standard flags, you really shouldn't have to mess with any of them.</p>
+<p style="text-align: justify;">So, now that we have the sniper, lets make him more dramatic. In the opening you made for him to shoot out of, make a thin brush covered with <span style="font-weight: bold;">tools/NODRAW</span>. Using the Texture Application Tool (shift-A) change the face that faces outward from the sniper into a nice partially transparent window textures, like glass/glasswindow002c. Resize it to look less like glass and more like just a frame, then tie it to a <span style="font-weight: bold;">func_illusionary</span> with a render mode of <span style="font-styler: italic;">solid</span> and a render amount of <span style="font-styler: italic;">255</span>. This will make the glass panels transparent, but will leave the bars. Give the <span style="font-weight: bold;">func_illusionary</span> a name, like <span style="font-styler: italic;">sniperwindow</span>. You will use the name to destroy the window, by having an output on the sniper's OnDeath target the <span style="font-weight: bold;">func_illusionary</span>'s Input of Kill. Sniper dies (which will happen by explosion), the window frame is gone.</p>
+<p style="text-align: justify;">Now, one last step that no sniper can be without is the <span style="font-weight: bold;">phys_ragdollmagnet</span>. This is the physics entity that, after the sniper is dead, will pull his corpse out of his nest, sending him tumbling towards the ground in true Hollywood fashion. Simply place one of the these bad boys to the front and down a little from the sniper, out in the open air. Make sure the &quot;effective radius&quot; is high enough to envelope our sniper, and give the &quot;force&quot; key a reasonable value, like 5000.</p>
+<p style="text-align: justify;">Well, we are done. When the sniper sees Gordon he will attempt to kill him, at which time Gordon throws a grenade into the window and sends our poor sniper plummeting to his death. Doesn't get any better then lasers and falling corpses. As usual, if you have any questions or comments about this article, post them here or email me at jeffca51 <span style="font-weight: bold;">at</span> yahoo <span style="font-weight: bold;">dot</span> com. Any other mapping questions can be directed to the <a href="http://forums.gamedesign.net/viewforum.php?f=9">Half-Life 2</a> or <a href="http://forums.gamedesign.net/viewforum.php?f=31">Hammer</a> forums.</p>
+</ul><h1 id="780" name="780" class="book-h1">Import Custom Textures</h1><ul><p>The following tutorial has been republished with consent:<br>
+- By  <a href="http://www.adamowen.com/"> Adam "Phatsniper" Owen</a></p>
+<p>It seems the new material system has caused some confusion within the community, so here's a basic guide to get your custom textures working.</p><!--break-->
+<p>I'm going to be using Adobe Photoshop 7, but any image editing program with the ability to export to Targa (.tga) will suffice. <br><i>Please note, in order to save .tgas with alpha channels in Photoshop 7 you will need <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=1544" target="_blank">this bug fix</a>.</i></p>
+<p>Open your image in Photoshop and go to File > Save As and save it to a sub directory inside your SDK's materialsrc directory.</p>
+<p> For example :</p>
+<code> "Steam\SteamApps\USERNAME\sourcesdk\cstrike_sample_content\materialsrc\test"</code>
+<p>You can choose any folder name you like, I just called mine test. In the window that pops up select "24 bits/pixel", turn off "Compress (RLE)" and hit Ok.</p>
+<center><img src="http://www.gamedesign.net/content/half-life2/tutorials/textureimport/cmat01.jpg" width="233" height="154" vspace="6" hspace="6" border="0" alt="Targa options"></center>
+<p>Open up Windows Explorer and browse to the materialsrc directory, copy the new folder you made containing your texture, and paste it in your: </p>
+<code> "sourcesdk\cstrike_sample_content\materials" directory".</code>
+<p> Finally, browse back into your<code> "materialsrc\test</code> (or whatever you called it) directory and move it out the way / minimize it for now.
+<p> Ok now we've got the folders set up we can go ahead and create the .vtf file. We do this by running the "vtex.exe" program that resides in your "sourcesdk\bin" directory.</p>
+<p>Open a <b>new</b> Windows Explorer and browse to:</p><code>"Steam\SteamApps\USERNAME\sourcesdk\bin"</code><p> Now re-open your sub folder and drag your .tga file across to the other window and drop it onto the file "vtex.exe". A Command Prompt window will pop up and create a .vtf file of your texture. Don't worry when the message about a missing file appears, it will create the empty .txt file you need. Just hit spacebar when it's finished to get rid of the window.</p>
+<p>We're nearly there now, just a couple more things left to do.</p>
+<p>Close the "sourcesdk\bin" window and browse to </p><code> "sourcesdk\cstrike_sample_content\materials\test"</code>.
+<p>  Right click and select New > Text Document. This is going to be our .vmt file that you use to set which shaders will be applied to the .vtf texture.</p>
+<p>To keep things simple just paste this into the document :</p>
+<code>
+<font color="#ff0000">"LightmappedGeneric"<br>
+{<br>
+ "$basetexture" "test/test01"<br>
+}</font>
+</code><br><br>
+<p>This tells the engine to render the texture with lightmapping.</p>
+<p>Save the file, close it and then rename it to "test01.vmt". Last thing to do is copy your</p><code> "sourcesdk\cstrike_sample_content\materials\test"</code><p>folder and paste it in:</p> <code>"Steam\SteamApps\USERNAME\counter-strike source\cstrike\materials"</code>
+<p>We're done! Load up Hammer and your texture will be in the texture browser.</p>
+<p>Of course, this is just scratching the surface on what you can do with materials. You can change surface types, sounds, shaders and even physics properties. I know the new system is a bit fiddly but I do find it helpful to have all your textures imported and sorted automatically as folders.</p>
+<p>Thanks for reading and good luck!<br> As usual don't hesitate to <a href="http://www.adamowen.com/contact.htm">contact me</a> with any questions or comments!</p></ul><h1 id="1016" name="1016" class="book-h1">Making Props Show Up</h1><ul><p>After the long wait, you are excited to finally make maps for HL2. You fire up Hammer, make a room, and think it would be cool to have a bunch of props. You add them in, compile, and... they aren't there. What happened?</p>
+<p>The most common reason for props not showing up in the game has to do with how props describe themselves to the game engine. Each prop has a number of attributes built right into it, including what type of prop it should be. For example, most of the vehicle props have two versions: one designed for use as a <i>prop_static</i>, and one designed for use as a <i>prop_physics</i>.</p>
+<p>The reason the prop didn't show up in the game is that you have mismatched its type. If you attempt to use a prop intended for use as a <i>prop_dynamic</i> as a <i>prop_physics</i>, it will not show up; the same applies to a <i>prop_physics</i> being used as a <i>prop_dynamic</i>. I currently do not know if there is a way to check the prop type ahead of time, beyond if it tells you in the name.</p>
+<p>If you really want to use a prop for a type it's not designed for, you're in luck; there's a way to do it. The <i>prop_dynamic_override</i> and the <i>prop_physics_override</i> entities allow you to override the built-in prop information, forcing it to be the type of your choosing. There is a downside to this: by overriding the built-in information, you are losing all of the built-in information, including some potentially useful information such as mass and buoyancy, so use the overrides only when you have to.</p>
+<p>In case you're wondering why <i>prop_static</i> has no "prop_static_override", it's because <i>prop_static</i> already overrides all of the built-in information in a prop. All the of the weight and physics info in a prop is useless to a <i>prop_static</i>: it doesn't move.</p>
+<p>While wrong prop type certainly seems to be the most frequent reason for props not showing up, there are other common ways. If you have had problems with <i>prop_static</i>, particularly small ones, and <i>prop_detail</i> not showing up, there is another source (pun intended) for this problem: the Source engine is great at scaling back graphics for performance. If you have a DirectX 7 video card, the engine does not display <i>prop_detail</i> models. The engine also fades out props based on their size; smaller props fade out sooner. I have had some small <i>prop_static</i> models that were about twelve feet up a wall, and it took me forever to figure out why they weren't showing up in-game. Turned out the engine was fading them from that distance, so that I couldn't even see them when I jumped. The solution is to adjust the fadescale attribute in the prop's properties.</p>
+<p>The start/end fade distance can also be the source of your problems. The default value for the end fade distance in Hammer is 0 and the start fade distance is -1. The -1 means that the prop will not "fade" out the closer you get to the end fade distance, it will simply disappear. The value of 0 for end fade distance means that the prop will not fade out. If this value is set for something really small, this may be the source of your trouble. This is easily done by accidentally dragging the "helper" in Hammer, this sets it to some other number, making the prop only visible within the sphere of the "helper", which may be smaller then the prop's bounding box. Another related problem is the Screen Space Fade on <i>prop_static props</i>. This attribute can set the prop to disappear based on how large the object is on-screen; how many pixels it is. Lets say you want the prop to fade out if you are 1024 pixels away from it, but you accidentally turn on "Screen Space Fade". Now, the prop will fade out if it takes up less then 1024 pixels on screen, not what you intended. So make sure this is set to "no" unless your actually trying to use it.</p>
+<p>In conclusion, there are a multitude of ways to not have a prop show up. Luckily, most of the common ways have been caught be the community and we have solutions for them. If you are still confused or if you have any questions, you can post a comment here or email me at jeffca51 <b>at</b> yahoo <b>dot</b> com.</p></ul><h1 id="1010" name="1010" class="book-h1">Practical Displacements</h1><ul><p>Displacements grant users the ability to "paint" surfaces, allowing for more realistic terrain. On problem with this is that it is difficult for newer users to meld  these chaotic surfaces into their very ordered brush based maps. I'll go through a few ways to control your displacements more precisely. For information on displacement basics, check out the <a href="http://www.valve-erc.com/srcsdk/Levels/displacements.html">Official SDK Doc</a> on displacements.</p>
+<p>To start with, when you make a brush and turn the top side into a displacement, that edge is considered "0" height. You can go up or down from this height. Now, lets say our displacement has to line up with the brushes next to it, but when we go painting it, we always end with the edges above the surrounding brushes. Moving them down can fix this, but we can end up under the zero-level or slightly above it. In order to control exactly what elevation a vertex in a displacement ends up, we are going to use the "Raise To" tool under displacements. Set the slider to 0, then simply click each of the edge vertices. Each time you click a vertex on the displacement, it is moved to the zero level. As you have guessed, this is also useful for things like ramps, when you have a 32 unit high brush next you displacement, and you want the displacement to act a ramp. You would simply type 32 in the box next to the slider, and up it goes to the proper level. It should probably be called the "raise/Lower To" tool; it is often handy at lowering a displacement.</p>
+<p>As you can tell in the previous paragraph, you can set numbers for "raise to" that are not on the slider. This lets you go above 30 units, to match a 32 unit high brush. What you can also do, though, is specify a negative number here. Lets say our displacement is around a bunch of other brushes, and the edges, though at 0, are showing up very obviously in game. A solution for this is to lower the edge vertices of the displacement to -1. Simply type -1 in the box next to the slider, and click the vertices, they are now below the zero point. You also need to extend the brushes around the displacement over the displacment's brush. The displacement will have its bottom underneath the brushes, getting rid of that nasty "square" look.</p>
+<p>Another great use of displacements is for their alpha properties. This lets you smoothly transition between two textures on the displacement, good for hills and the like where the side of the hill has a different amount of vegetation then the top. However, this is also useful for normal brushes, like a piece of ground with a path on it. Instead of making a path texture, you can have your displacement texture that uses a grass texture and a dirt texture. By turning this surface into a displacements, you can "paint" the dirt path onto the grass. You can use this for many things besides a path, like mold on walls.</p>
+<p>Displacements are a great tool that save mappers loads of time otherwise spent in vertex manipulation with tons of triangles. In the hands of the untrained, though, it can be unruly and prone to looking like crap when mixed with normal brushes. Fortunately, we now know how to instill a little order into them. If you have any questions or comments about the article, please post here or send me an email at jeffca51 at yahoo dot com. Any further questions about mapping in general can be directed to the <a href="http://forums.gamedesign.net/viewforum.php?f=9">Half-Life 2</a> or <a href="http://forums.gamedesign.net/viewforum.php?f=31">Worldcraft/Hammer</a> forums.</p>
+</ul><h1 id="1068" name="1068" class="book-h1">Real Constructive: Hammer Geometry for Unreal Mappers</h1><ul><p>If your reading this, you're probably are like me, in that you started with Unreal engine based games and eventually found your way over to the Quake side of the fence. There are some rather radical difference between mapping in UnrealEd and mapping in Hammer, though. So, let's be constructive and get to it. ;) </p>
+<p>The primary difference between all Quake and Unreal games is the way the engine handles geometry. Unreal uses what is called Subtractive Geometry. You start out with a huge expanse of solid world. From there, you use assorted shapes to carve pieces out of that world to create your level. Quake based games, on the other hand, use Constructive Solid Geometry (CSG). This is where you start out with a large piece of absolutely nothing, called the VOID. Your job as a mapper is to use solid blocks to construct a volume of VOID that is separate from the rest of the VOID. Confused&#63; Lets take a more visual approach.</p>
+<p>This is a picture of the void, as seen in Hammer.</p>
+<p style="text-align: center;"><img src="content/half-life2/tutorials/real/void.gif" width="176" height="176" alt="Nothing. Abolute nothing." title="Nothing. Abolute nothing." /></p>
+<p>Not much to look at, is it&#63; Think of it as outer space (or Bill Gate's soul). You need to build a &quot;spaceship&quot; that will protect poor little Gordon from the harsh vacuum of space. Do do this, you need to build barriers. These are called &quot;brushes&quot; in quake based games.  By adding brushes, you can construct areas that are completely sealed off from the VOID.</p>
+<p>Before we go any further, you need to know a couple rules about brushes.</p>
+<p>1. Brushes ABSOLUTELY have to be convex (oposite of concave). This means that if you were to draw a line through the brush at any given point, it will only hit TWO planes (or edges) of the brush. Here's a visual:</p>
+<p style="text-align: center;"><img src="content/half-life2/tutorials/real/convex_concave.gif" width="256" height="150" alt="a square is convex. a &quot;L&quot; is not."  title="a square is convex. a &#038;quotL&#038;quot is not." /></p>
+<p>See how that works&#63; The blue line is our imaginary line. On the first shape, it is impossible to have the strait line cross more then 2 sides. On the latter two shapes, however, its fairly easy.</p>
+<p>2. Brushes are made out of planes. These planes need to be unique to the brush; you cannot have a duplicate plane in a brush. If you do, its called &quot;coplanar&quot;. And, the visual:</p>
+<p style="text-align: center;"><img src="content/half-life2/tutorials/real/coplanar.gif" width="256" height="150" alt="Coplanar" title="Coplanar" /></p>
+<p>The red dots are vertices (technically, in this example, edges) and the lines in between them are (portions of)  planes. The brush on the left is perfectly valid. The brush on the right has two planes that are on the same plane. There is no reason to have a brush like this, and it will generate an error.</p>
+<p>Now that you know how brushes are to be made, let's make a couple. We are going to make one of the more simple kinds of brushes, a cube. With a new map open in Hammer, press Shift-B to use the Block Tool. In a 2D view, drag to create an outline. Notice how it updates on all the views. When you are satisfied with the size of the outline, hit enter. This will change the outline into a brush. It is just a piece of solid matter floating in a VOID. Now make 5 more brushes, each to be one side of a square room (4 walls, ceiling and floor). It should look like this:</p>
+<p>See how you have constructed some solid geometry to seal an area off from the VOID&#63; By making many of these brushes, often thousands, you can shape entire worlds out of the VOID. But wait, you say. What happens if I defy the Gods of Mapping and don't completely seal off my area&#63; What are they going to do about it&#63; Good questions.</p>
+<p>Should you choose (or accidentally stumble upon) the path of unrightesness and create a map that isn't sealed off from the VOID, the Gods will cause a plague called a &quot;leak&quot; to befall your map. To visualise this, lets think of the inside of our space ship-world as being filled with air, while the VOID has none. If there were a hole, all the air would leak out into the void, would it not? Same idea here, but fortunately Gordon won't suffocate. He will most likely lag though. Without the world completely sealed off, VIS can't do its job. VIS is the program that computes the visibility of different parts of the engine. It is VIS that tells your basement that it can't see your bedroom upstairs. Without VIS, your entire map is visible from any part of your map. Obviously, this is very bad. Luckily, if you do get a LEAK LEAK LEAK error when you compile your map, you can go to Map->Load Pointfile to see a nice red line that will show you the hole that your map is leaking through. Repent and fix your transgression.</p>
+<p>Hope this gives you a good start on how to get started with Hammer after coming over from UnrealEd. I know it took a bit to get used to when I did. But don't worry, using this basic knowledge you should be able to build your way up to a very constructive future. As usual, if you have any questions related to this article, go ahead and post in the <a href="http://forums.gamedesign.net/viewforum.php?f=31">Hammer Forums</a> or send me an email at jeffca51 at yahoo.</p></ul><h1 id="1033" name="1033" class="book-h1">The Tangled Web We Weave: Ropes in HL2</h1><ul><h2>The Tangled Web We Weave: Ropes in HL2</h2>
+<p>Half-Life 2 provides many outstanding visual features, including cables(ropes). The cables swing in the wind and get disturbed by passing airships. They can also snap at the end or have objects swing on them. Lets get down to learning about them.</p>
+<h3>Found In</h3>
+<p>Ropes are found in the <a href="/node/1025">Base FGD</a>.</p>
+<h3>Tutorial</h3>
+<p>There are two base entities used to create ropes, move_rope and keyframe_rope. They are both found in the base.fgd. The move_rope entity is what starts the rope, the keyframe_rope defines each piece of the rope. We are going to learn about ropes today by making power cables. Open up your map in hammer. First, we need to place the power cables. These will be prop_static entities with the <b>world model</b> set to <b>models/props_c17/utilitypole03a.mdl</b>. Make two of these. Now we create the cable. </p>
+<p>Using the entity tool, (shift-E), place a move_rope near the end of one of the arms on the first power pole. Now the move_rope has a number of key/values you can adjust:<br>
+<br>
+<ul>
+   <li><b>Parent:</b> Used if you want to make the rope's start point move with another entity. You simple enter the name of another entity here, and the rope's start point moves with it.<br>
+   
+   <li><b>Next KeyFrame:</b> The keyframe_rope that this rope is going to. You always want you keyframe_rope names to end in a number, so that Hammer can auto-increment them if you decide clone (drag-shift) your keyframes to make more segments of rope. For our example, this will be <b>rope1key1</b>.<br>
+   
+   <li><b>Slack:</b> How much additional length to add to the rope. For example, if our move_rope is 512 units away from our keyframe_rope and we have value of 64 here, the total length of the rope will be 576 units, which will cause the rope to hang down between the points. The default value works fine for power lines.<br>
+   
+   <li><b>Type:</b> Make the rope act like a rope or like a piece of solid metal. The <b>rigid</b> setting may be useful for hanging things like lights from. We are going to leave this at <b>Rope</b> for our power lines.<br>
+   
+   <li><b>Subdivision:</b> How many segments the rope should have between the start and end points. A higher value would make a smoother rope, but at a hit to performance.<br>
+   
+   <li><b>Width:</b> How thick the rope is. For power lines, 2 or 3 is fine. You may want to increase it larger for things like suspension cables on bridges, but be warned that the end points tend to look funky the thicker the rope is.<br>
+   
+   <li><b>Collide with World:</b> If the rope should have collisions. Usually not needed for high up power lines, however, if you were to have things down where the player can get to them or if you were going to break the rope, you may want to turn this on. You would also want this on if you plan on making the rope detachable or breaking it at any point, else it will clip through brushes.<br>
+   
+   <li><b>Start Dangling:</b> when a rope breaks, its "dangles". The rope will still be attached to its start point, but not its end point. We want intact power lines, so leave this as no.<br>
+   
+   <li><b>Breakable:</b> Set this to yes to be able to shoot the ends of the rope to make that end detach.<br>
+   
+   <li><b>Rope Material:</b> Default is black cable, should you want fiber rope or even blue CAT-5 cable, you will need to specify a different material here.<br>
+   
+</ul>
+And there is one key to worry about:
+
+<ul>
+   <li><b>Auto Resize:</b> Set this to make the rope make itself short or longer depending on the distance of its end point. Other wise, if the endpoint moves, the rope will pull tight or increase in slack.<br>
+   
+</ul>
+</p>
+<p>Now, place a keyframe_rope at the end of the same arm of the other power pole. Open up its properties, and set the <b>name</b> to <b>rope1key1</b>. The properties are the same as for the move_rope, and will effect the next segment of rope should you make more then two power poles. You should now see a green to red line between the two points. This is Hammer's approximation of what you rope will look like in game. I find it to have a little more slack then you will actually have in game. But now our cable is done. To fill in the rest of the cables on the power poles, simple repeat the steps replacing "rope1" with "rope2", "rope3", etc for each of the name properties. Should you wish to add more power poles, simply select all of the keygrame_rope entities and the prop_static power pole, and drag them while holding shift. Hammer should automatically change the names for you, and you have a quick and easy continuation of your power lines.</p>
+<h3>Tips and Tricks</h3>
+<ul>
+<li>To make something attached to the end of a rope, simple set that entity as the parent of the keyframe_rope. A phys_ballsocket or phys_lengthconstraint with the entity 1 set to the move_rope and entity 2 set to the entity you want attached to the rope.
+</ul>
+<br>
+
+<h3>Technical Data</h3>
+<h4>move_rope</h4>
+<div style="margin-left: 25px; padding: 10px; background-color: #cccccc; border: 2px solid #000000; font-size: small; font-family: monospace; width: 480px;">
+<b style="text-decoration: underline;">KEYS</b><br>
+<br>
+<b>Name</b> targetname <i>target_source</i><br>
+<br>
+<b>Parent</b> parentname <i>target_destination</i><br>
+<br>
+<b>Next KeyFrame</b> NextKey <i>target_destination</i><br>
+<br>
+<b>Speed (units per second)</b> MoveSpeed <i>integer</i><br>
+<br>
+<b>Minimum DX Level</b> mindxlevel <i>choices</i> <br>
+<br>
+<b>Maximum DX Level</b> maxdxlevel <i>choices</i><br>
+<br>
+<b>spawnflags</b> spawnflags <i>flags</i><br>
+<br>
+<b>Slack</b> Slack <i>integer</i><br>
+<br>
+<b>Type</b> Type <i>choices</i><br>
+<br>
+<b>Subdivision</b> Subdiv <i>integer</i><br>
+<br>
+<b>Barbed</b> Barbed <i>choices</i><br>
+<br>
+<b>Width (1-64)</b> Width <i>string</i><br>
+<br>
+<b>Texture Scale</b> TextureScale <i>string</i><br>
+<br>
+<b>Collide with world</b> Collide <i>choices</i><br>
+<br>
+<b>Start Dangling</b> Dangling <i>choices</i><br>
+<br>
+<b>Breakable</b> Breakable <i>choices</i><br>
+<br>
+<b>Rope Material</b> RopeMaterial <i>material</i><br>
+<br>
+<b>Position Interpolator</b> PositionInterpolator <i>choices</i><br>
+<br>
+<br>
+<b style="text-decoration: underline;">INPUTS</b><br>
+<br>
+<b>Kill</b> Removes this entity from the world.<br>
+<br>
+<b>KillHierarchy</b> Removes this entity and all its children from the world.<br>
+<br>
+<b>AddOutput</b> <i>string</i> Adds an entity I/O connection to this entity. Format: output name targetname:inputname:parameter:delay:max times to fire (-1 == infinite)>. Very dangerous, use with care.<br>
+<br>
+<b>FireUser1</b> Causes this entity's OnUser1 output to be fired.<br>
+<br>
+<b>FireUser2</b> Causes this entity's OnUser2 output to be fired.<br>
+<br>
+<b>FireUser3</b> Causes this entity's OnUser3 output to be fired.<br>
+<br>
+<b>FireUser4</b> Causes this entity's OnUser4 output to be fired.<br>
+<br>
+<b>SetParent</b> <i>string</i> Changes the entity's parent in the movement hierarchy.<br>
+<br>
+<b>SetParentAttachment</b> <i>string</i> Change this entity to attach to a specific attachment point on its parent. Entities must be parented before being sent this input. The parameter passed in should be the name of the attachment.<br>
+<br>
+<b>ClearParent</b> Removes this entity from the the movement hierarchy, leaving it free to move independently.<br>
+<br>
+<b>SetScrollSpeed</b> <i>float</i> Set the speed at which the texture scrolls.<br>
+<br>
+<b>SetForce</b> <i>string</i> Apply a force instantaneously to the rope. The parameter should be a vector containing the force to be applied (X Y Z).<br>
+<br>
+<b>Break</b> Break the rope, if it's marked to do so.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">OUTPUTS</b><br>
+<br>
+<b>OnUser1</b> Fired in response to FireUser1 input.<br>
+<br>
+<b>OnUser2</b> Fired in response to FireUser2 input.<br>
+<br>
+<b>OnUser3</b> Fired in response to FireUser3 input.<br>
+<br>
+<b>OnUser4</b> Fired in response to FireUser4 input.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">Code</b><br>
+<b>\src\cl_dll\c_rope.cpp</b><br>
+</div>
+<br>
+<br>
+<h4>keyframe_rope</h4>
+<div style="margin-left: 25px; padding: 10px; background-color: #cccccc; border: 2px solid #000000; font-size: small; font-family: monospace; width: 480px;">
+<b style="text-decoration: underline;">KEYS</b><br>
+<br>
+<b>Name</b> targetname <i>target_source</i><br>
+<br>
+<b>Parent</b> parentname <i>target_destination</i><br>
+<br>
+<b>Next KeyFrame</b> NextKey <i>target_destination</i><br>
+<br>
+<b>Speed (units per second)</b> MoveSpeed <i>integer</i><br>
+<br>
+<b>Minimum DX Level</b> mindxlevel <i>choices</i> <br>
+<br>
+<b>Maximum DX Level</b> maxdxlevel <i>choices</i><br>
+<br>
+<b>spawnflags</b> spawnflags <i>flags</i><br>
+<br>
+<b>Slack</b> Slack <i>integer</i><br>
+<br>
+<b>Type</b> Type <i>choices</i><br>
+<br>
+<b>Subdivision</b> Subdiv <i>integer</i><br>
+<br>
+<b>Barbed</b> Barbed <i>choices</i><br>
+<br>
+<b>Width (1-64)</b> Width <i>string</i><br>
+<br>
+<b>Texture Scale</b> TextureScale <i>string</i><br>
+<br>
+<b>Collide with world</b> Collide <i>choices</i><br>
+<br>
+<b>Start Dangling</b> Dangling <i>choices</i><br>
+<br>
+<b>Breakable</b> Breakable <i>choices</i><br>
+<br>
+<b>Rope Material</b> RopeMaterial <i>material</i><br>
+<br>
+<b>Position Interpolator</b> PositionInterpolator <i>choices</i><br>
+<br>
+<br>
+<b style="text-decoration: underline;">INPUTS</b><br>
+<br>
+<b>Kill</b> Removes this entity from the world.<br>
+<br>
+<b>KillHierarchy</b> Removes this entity and all its children from the world.<br>
+<br>
+<b>AddOutput</b> <i>string</i> Adds an entity I/O connection to this entity. Format: output name targetname:inputname:parameter:delay:max times to fire (-1 == infinite)>. Very dangerous, use with care.<br>
+<br>
+<b>FireUser1</b> Causes this entity's OnUser1 output to be fired.<br>
+<br>
+<b>FireUser2</b> Causes this entity's OnUser2 output to be fired.<br>
+<br>
+<b>FireUser3</b> Causes this entity's OnUser3 output to be fired.<br>
+<br>
+<b>FireUser4</b> Causes this entity's OnUser4 output to be fired.<br>
+<br>
+<b>SetParent</b> <i>string</i> Changes the entity's parent in the movement hierarchy.<br>
+<br>
+<b>SetParentAttachment</b> <i>string</i> Change this entity to attach to a specific attachment point on its parent. Entities must be parented before being sent this input. The parameter passed in should be the name of the attachment.<br>
+<br>
+<b>ClearParent</b> Removes this entity from the the movement hierarchy, leaving it free to move independently.<br>
+<br>
+<b>SetScrollSpeed</b> <i>float</i> Set the speed at which the texture scrolls.<br>
+<br>
+<b>SetForce</b> <i>string</i> Apply a force instantaneously to the rope. The parameter should be a vector containing the force to be applied (X Y Z).<br>
+<br>
+<b>Break</b> Break the rope, if it's marked to do so.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">OUTPUTS</b><br>
+<br>
+<b>OnUser1</b> Fired in response to FireUser1 input.<br>
+<br>
+<b>OnUser2</b> Fired in response to FireUser2 input.<br>
+<br>
+<b>OnUser3</b> Fired in response to FireUser3 input.<br>
+<br>
+<b>OnUser4</b> Fired in response to FireUser4 input.<br>
+<br>
+<br>
+<b style="text-decoration: underline;">Code</b><br>
+<b>\src\cl_dll\c_rope.cpp</b><br>
+</div>
+<br>
+<br>
+</ul><h1 id="779" name="779" class="book-h1">Using the Nodraw Texture</h1><ul><p>The following tutorial has been republished with consent:<br>
+- By  <a href="http://www.adamowen.com/"> Adam "Phatsniper" Owen</a></p>
+<p>One of the great features of Half-Life 2 is the ability to import highly detailed models from software such as XSI and 3D Studio Max to use in your levels. <br>
+Using these models is much more efficient than creating the detail with normal brushes, and because models don't split BSP geometry, you can intersect walls / floors etc. with them.<br> <!--break-->
+Unfortunately, the brush faces behind the model are still being drawn by the engine despite the player not seeing them. </p>
+<p>This is where the nodraw texture comes into play.</p>
+<p>If a face is textured with the "tools/toolsnodraw" texture the Source engine will not render them, thus lowering the face count and speeding up gameplay. You apply this texture just like any normal material, using the texture application tool and applying the nodraw texture to the faces you don't want the engine to draw.</p>
+<p>The nodraw texture :</p>
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw01.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw01_small.jpg" width="300" height="217" border="0" alt="Nodraw 1"></a></center>
+<p>So, when will you want to use the nodraw texture?</p>
+<p>There are many possible situations for this tool and I'll show you a couple of examples here.</p>
+<p>The first use is on faces the player should never see, especially the roofs of buildings.</p>
+
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw02.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw02_small.jpg" width="300" height="217" border="0" alt="Nodraw 2"></a></center>
+<p>As you can see in the above image, there are a few faces that the player can't see during normal gameplay so we'll apply the nodraw texture to them.</p>
+
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw03.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw03_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 3"></a></center>
+<p>We've saved the engine from drawing 14 faces here, and while that might not seem such a major difference, complex maps will highly benefit from not drawing roofs and other high objects.</p>
+<p>One thing I must mention is balancing the nodraw texture. This example would be great for a single player level if there are no high windows to look out of. The main problem comes from multiplayer games, especially team based mods which make heavy use of the freelook spectator camera. Of course, when you are spectating graphics aren't a major issue, but it can look strange if lower faces such as the top of the bottom walls aren't there (you'll see straight through those faces). I leave this to your own discretion, but it's something to keep in mind.</p>
+<p>The other example I mentioned earlier is applying the nodraw texture to faces hidden by models. Here is a doorway with the model prop, and without :</p>
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw04.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw04_small.jpg" width="300" height="217" vspace="10" hspace="10" border="0" alt="Nodraw 4"></a><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw05.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw05_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 5"></a></center>
+<p>The brush geometry roughs out the basic shape of the door, while the model contains the detail. After carefully placing the model and checking it from all angles to make sure there are no gaps you can apply the nodraw texture to the obstructed faces.</p>
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw06.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw06_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 6"></a></center>
+<p>That's 4 faces saved for one doorway which otherwise would have just been sitting there eating up resources.</p>
+<p>It doesn't stop at doorways, any face that is hidden by a model should have the nodraw texture applied to it.</p>
+
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw07.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw07_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 7"></a><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw08.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw08_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 8"></a></center>
+<p>Finally, type <font color="#ff0000">+showbudget</font> into the console while testing your map.<b><br> This is the new r_speeds command</b>.<br> Use the on screen information to narrow down problem areas and find out what is draining resources.</p>
+<p>As you can see, the nodraw texture is an invaluable tool to combat the everlasting battle against low frame rates.</p>
+<p>Thanks for reading and good luck! Don't hesitate to <a href="http://www.adamowen.com/contact.htm">contact me</a> with any questions or comments!</p></ul></body></html>

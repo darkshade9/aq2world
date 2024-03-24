@@ -1,0 +1,700 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Sprites - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/34">FAQ</a></li><li class="collapsed"><a href="node/36">Updates</a></li><li class="collapsed"><a href="node/929">Half-Life 1 Mod List</a></li><li class="collapsed"><a href="node/33">Entity Properties</a></li><li class="expanded"><a href="node/35">Half-Life 1 Tutorials</a><ul><li class="leaf"><a href="node/194">Big Block Method of Error Finding</a></li><li class="leaf"><a href="node/3">Chairs, Scientists and Barneys</a></li><li class="leaf"><a href="node/290">Code Locks</a></li><li class="leaf"><a href="node/831">Creating an Overview</a></li><li class="leaf"><a href="node/9">Creating Environment Maps With Terragen</a></li><li class="leaf"><a href="node/6">Creating Proximity Doors</a></li><li class="leaf"><a href="node/5">Customizing the lights.rad File</a></li><li class="leaf"><a href="node/596">Dimensions</a></li><li class="leaf"><a href="node/8">How to Make a Sphere in Worldcraft</a></li><li class="leaf"><a href="node/196">How to make respawnable glass</a></li><li class="leaf"><a href="node/4">Making a Custom Console Background</a></li><li class="leaf"><a href="node/539">Making New Buttons for Your MOD</a></li><li class="leaf"><a href="node/1046">R_speeds</a></li><li class="leaf"><a href="node/541">Sentry continued: adding Sentry-parts box and hud-icon</a></li><li class="leaf"><a href="node/538">Sentry Tutorial</a></li><li class="leaf"><a href="node/558">Skies</a></li><li class="leaf"><a href="node/613">Skies (2)</a></li><li class="leaf"><a href="node/687" class="active">Sprites</a></li><li class="leaf"><a href="node/7">Taming the Speaker Entity</a></li><li class="leaf"><a href="node/267">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/303">Ways to Prevent Leaks</a></li><li class="collapsed"><a href="node/628">WorldCraft/Hammer 3.4 Editing</a></li></ul></li><li class="collapsed"><a href="node/1084">Day of Defeat Tutorials</a></li><li class="leaf"><a href="node/1023">Modelling</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/687" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">What kind of maps Q4 lacks in?</div><div class="text">Tourney</div><div class="bar"><div style="width: 28%;" class="foreground"></div></div><div class="percent">28%</div><div class="text">Team DM</div><div class="bar"><div style="width: 12%;" class="foreground"></div></div><div class="percent">12%</div><div class="text">CTF</div><div class="bar"><div style="width: 28%;" class="foreground"></div></div><div class="percent">28%</div><div class="text">Deathmatch</div><div class="bar"><div style="width: 32%;" class="foreground"></div></div><div class="percent">32%</div><div class="total">Total votes: 25</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/1236" title="7 comments">Excellent Vinyl Cutter, Laser Engraver from Redsail</a></li><li><a href="node/1230" title="7 comments">THE people who can't make it</a></li><li><a href="node/1225" title="7 comments">Jarhead Games - Hiring - Level Designers</a></li><li><a href="node/1224" title="7 comments">Focused Game Design</a></li><li><a href="node/1215" title="8 comments">Map Ideas Needed...</a></li><li><a href="node/1210" title="7 comments">Attention All Active Quake 2 Mappers!</a></li><li><a href="node/1196" title="8 comments">i need help</a></li><li><a href="node/1177" title="6 comments">A game team wanted</a></li><li><a href="node/1161" title="7 comments">G-Max Tutorial Posted...</a></li><li><a href="node/1160" title="6 comments">Huh?  Part Two.</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/4136" title="View user profile.">gautam_1700</a></li><li><a href="user/4135" title="View user profile.">b14ze</a></li><li><a href="user/4134" title="View user profile.">Sara</a></li><li><a href="user/4133" title="View user profile.">RIDDICK</a></li><li><a href="user/4132" title="View user profile.">mynameis</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 38 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Sprites</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/921" title="">Half-Life</a> &raquo; <a href="node/35">Half-Life 1 Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2198" title="View user profile.">Andy</a> on Sun, 2004-11-07 02:27.</div>
+<!--
+by Andy Nov 2004 
+Validated Mar 05, XHTML 1.1, since I don't have access to the CSS to add a few style lines, I just put them in here, but  a thumbnail <div> would be nice
+ -->
+<h3>Half-Life</h3>
+<blockquote>Visual Sprite list - by Andy</blockquote>
+<p><span style="font-weight: bold">
+Sprites</span> - A visual representation of 128 sprites. <br />
+</p>
+
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/aexplo.jpg" height="64" width="64" alt="aexplo" /><br />
+&nbsp;&nbsp;&nbsp;aexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bexplo.jpg" height="64" width="64" alt="bexplo" /><br />
+&nbsp;&nbsp;&nbsp;bexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/blueflare2.jpg"  height="64" width="64" alt="blueflare2" /><br />
+blueflare2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/b-tele1.jpg" height="64" width="64" alt="b-tele1" /><br />
+&nbsp;&nbsp;b-tele1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/c-tele1.jpg" height="64" width="64" alt="c-tele1" /><br />
+&nbsp;&nbsp;c-tele1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/eexplo.jpg" height="64" width="64" alt="eexplo" /><br />
+&nbsp;&nbsp;eexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/explode1.jpg" height="64" width="64" alt="explode1" /><br />
+&nbsp;explode1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/flare4.jpg" height="64" width="64" alt="flare4" /><br />
+&nbsp;&nbsp;&nbsp;flare4
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/glow04.jpg" height="64" width="64" alt="glow04" /><br />
+&nbsp;&nbsp;&nbsp;glow4
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/mushroom.jpg" height="64" width="64" alt="mushroom" /><br />
+mushroom
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz4.jpg" height="64" width="64" alt="muz4" /><br />
+&nbsp;&nbsp;&nbsp;muz4
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz8.jpg" height="64" width="64" alt="muz8" /><br />
+&nbsp;&nbsp;&nbsp;muz8
+</p>
+<p style="float: left; width: 60px; border: none; margin:0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muzzleflash3.jpg" height="64" width="64" alt="muzzleflash3" /><br />
+<span style="font-size: 75%">muzzleflash3</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/poison.jpg" height="64" width="64" alt="poison" /><br />
+&nbsp;&nbsp;poison
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/tile.jpg" height="64" width="64" alt="tile" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;tile
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/wexplo.jpg" height="64" width="64" alt="wexplo" /><br />
+&nbsp;wexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xflare1.jpg" height="64" width="64" alt="xflare1" /><br />
+&nbsp;&nbsp;&nbsp;xflare
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/yelflare2.jpg" height="64" width="64" alt="yelflare2" /><br />
+&nbsp;yelflare2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/animglow.jpg" height="64" width="64" alt="animglow" /><br />
+animglow
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/dexplo.jpg" height="64" width="64" alt="dexplo" /><br />
+&nbsp;&nbsp;&nbsp;dexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/enter.jpg" height="64" width="64" alt="enter" /><br />
+&nbsp;&nbsp;&nbsp;enter
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/explode2.jpg" height="64" width="64" alt="explode2" /><br />
+explode2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/flare1.jpg" height="64" width="64" alt="flare1" /><br />
+&nbsp;&nbsp;&nbsp;flare1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/flare5.jpg" height="64" width="64" alt="flare5" /><br />
+&nbsp;&nbsp;&nbsp;flare5
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/glow01.jpg" height="64" width="64" alt="glow01" /><br />
+&nbsp;&nbsp;glow01
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/gwave1.jpg" height="51" width="64" alt="gwave" /><br />
+&nbsp;&nbsp;gwave1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz1.jpg" height="64" width="64" alt="muz1" /><br />
+&nbsp;&nbsp;&nbsp;muz1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz5.jpg" height="64" width="64" alt="muz5" /><br />
+&nbsp;&nbsp;&nbsp;muz5
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muzzleflash.jpg" height="64" width="64" alt="muzzelflash" /><br />
+<span style="font-size: 75%">muzzelflash</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/nhth.jpg" height="64" width="64" alt="nhth" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nhth
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/portal1.jpg" height="64" width="64" alt="portal1" /><br />
+&nbsp;&nbsp;portal1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/richo2.jpg" height="64" width="64" alt="richo2" /><br />
+&nbsp;&nbsp;richo2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/shellchrome.jpg" height="64" width="64" alt="shellchrome" /><br />
+<span style="font-size: 75%">shellchrome</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/wsplash.jpg" height="64" width="64" alt="wsplash" /><br />
+&nbsp;&nbsp;wsplash
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xfire.jpg" height="64" width="64" alt="xfire" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;xfire
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xflare2.jpg" height="64" width="64" alt="xflare2" /><br />
+&nbsp;xflare2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bloodspray.jpg" height="64" width="64" alt="bloodspray" /><br />
+<span style="font-size: 75%">bloodspray</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bm1.jpg" height="64" width="64" alt="bm1" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;bm1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/cexplo.jpg" height="64" width="64" alt="cexplo" /><br />
+&nbsp;&nbsp;&nbsp;cexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/e-tele1.jpg" height="64" width="64" alt="e-tele1" /><br />
+&nbsp;e-tele1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/flare6.jpg" height="64" width="64" alt="flare6" /><br />
+&nbsp;&nbsp;&nbsp;flare6
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/glow02.jpg" height="64" width="64" alt="glow02" /><br />
+&nbsp;&nbsp;glow02
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/ballsmoke.jpg" height="64" width="64" alt="ballsmoke" /><br />
+ballsmoke
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/blast.jpg" height="64" width="64" alt="blast" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;blast
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/blueflare1.jpg" height="64" width="64" alt="blueflare1" /><br />
+blueflare1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/cnt1.jpg" height="64" width="64" alt="cnt1" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;cnt1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/d-tele1.jpg" height="64" width="64" alt="d-tele1" /><br />
+&nbsp;&nbsp;d-tele1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/exit1.jpg" height="64" width="64" alt="exit1" /><br />
+&nbsp;&nbsp;&nbsp;exit1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/fexplo1.jpg" height="64" width="64" alt="fexplo1" /><br />
+&nbsp;fexplo1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/glow03.jpg" height="64" width="64" alt="glow03" /><br />
+&nbsp;glow02
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/hotglow.jpg" height="64" width="64" alt="hotglow" /><br />
+&nbsp;hotglow
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz2.jpg" height="64" width="64" alt="muz2" /><br />
+&nbsp;&nbsp;&nbsp;muz2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz6.jpg" height="64" width="64" alt="muz6" /><br />
+&nbsp;&nbsp;&nbsp;muz6
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muzzleflash1.jpg" height="64" width="64" alt="muzzleflash1" /><br />
+<span style="font-size: 75%">muzzleflash1</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/oriented.jpg" height="64" width="64" alt="oriented" /><br />
+oriented
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/redflare1.jpg" height="64" width="64" alt="redflare" /><br />
+redflare
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/rjet1.jpg" height="64" width="64" alt="rjet1" /><br />
+&nbsp;&nbsp;rjet1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/shockwave.jpg" height="64" width="64" alt="shockwave" /><br />
+<span style="font-size: 75%">shockwave</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/spotlight01.jpg" height="64" width="64" alt="spotlight01" /><br />
+<span style="font-size: 75%">spotlight01</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/streak.jpg" height="64" width="64" alt="streak" /><br />
+&nbsp;&nbsp;streak
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/wallpuff.jpg" height="64" width="64" alt="wallpuff" /><br />
+&nbsp;wallpuff
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xfire2.jpg" height="64" width="64" alt="xfire2" /><br />
+&nbsp;&nbsp;xfire2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xflare3.jpg" height="64" width="64" alt="xflare3" /><br />
+&nbsp;&nbsp;xflare3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz3.jpg" height="64" width="64" alt="muz3" /><br />
+&nbsp;&nbsp;&nbsp;muz3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muz7.jpg" height="64" width="64" alt="muz7" /><br />
+&nbsp;&nbsp;&nbsp;muz7
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/muzzleflash2.jpg" height="64" width="64" alt="muzzleflash2" /><br />
+<span style="font-size: 75%">muzzelflash2</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/redflare2.jpg" height="64" width="64" alt="redflare2" /><br />
+redflare2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/spotlight02.jpg" height="64" width="64" alt=" spotlight02" /><br />
+<span style="font-size: 75%">spotlight02</span>
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/tele1.jpg" height="64" width="64" alt="tele1" /><br />
+&nbsp;&nbsp;&nbsp;tele1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xfireball3.jpg" height="64" width="64" alt="xfireball3" /><br />
+&nbsp;xfireball3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/yelflare.jpg" height="64" width="64" alt="yelflare" /><br />
+&nbsp;yelflare
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zerogxplode.jpg" height="64" width="64" alt="zerogxplode" /><br />
+zerogxplode
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/laserbeam.jpg" height="64" width="32" alt="laserbeam" /><br />
+laserbeam
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/smoke.jpg" height="64" width="32" alt="smoke" /><br />
+smoke
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xffloor.jpg" height="64" width="32" alt="xffloor" /><br />
+xffloor
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xsmoke3.jpg" height="64" width="32" alt="xsmoke3" /><br />
+xsmoke3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xsmoke4.jpg" height="64" width="32" alt="xsmoke4" /><br />
+xsmoke4
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bluejet1.jpg" height="64" width="32" alt="bluejet1" /><br />
+bluejet1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/flare2.jpg" height="64" width="32" alt="flare2" /><br />
+flare2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/lgtning.jpg" height="64" width="32" alt="lgtning" /><br />
+lgtning
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bolt1.jpg" height="64" width="32" alt="bolt1" /><br />
+bolt1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xssmke1.jpg" height="64" width="32" alt="xssmke1" /><br />
+xssmke1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/plasma.jpg" height="64" width="32" alt="plasma" /><br />
+plasma
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/wdrip2.jpg" height="64" width="32" alt="wdrip2" /><br />
+wdrip2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xenobeam.jpg" height="64" width="32" alt="xenobeam" /><br />
+xenobeam
+</p>
+<p style="clear: both"></p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xsmoke1.jpg" height="32" width="32" alt="xsmoke1" /><br />
+xsmoke1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xspark2.jpg" height="32" width="32" alt="xspark2" /><br />
+xspark2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/richo1.jpg" height="32" width="32" alt="richo" /><br />
+richo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xspark3.jpg" height="32" width="32" alt="xspark" /><br />
+xspark
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/mommaspit.jpg" height="32" width="32" alt="mommaspit" /><br />
+mommaspit
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/stmbal1.jpg" height="32" width="32" alt="stmbal1" /><br />
+stmbal1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bigspit.jpg" height="32" width="32" alt="bigspit" /><br />
+bigspit
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xspark4.jpg" height="32" width="32" alt="xspark" /><br />
+xspark
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/mommaspout.jpg" height="32" width="32" alt="momaspout" /><br />
+momaspout
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/flare3.jpg" height="32" width="32" alt="flare3" /><br />
+flare3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/gargeye1.jpg" height="32" width="32" alt="gargeye1" /><br />
+gargeye1
+</p>
+<p style="clear: both"></p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zbeam4.jpg" height="64" width="16" alt="zbeam4" /><br />
+zbeam4
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zbeam3.jpg" height="64" width="16" alt="zbeam3" /><br />
+zbeam3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xbeam3.jpg" height="64" width="16" alt="xbeam3" /><br />
+xbeam3
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xbeam4.jpg" height="64" width="16" alt="xbeam4" /><br />
+xbeam4
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zbeam1.jpg" height="64" width="16" alt="zbeam1" /><br />
+zbeam1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zbeam5.jpg" height="64" width="16" alt="zbeam5" /><br />
+zbeam5
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/arrow.jpg" height="64" width="16" alt="arrow" /><br />
+arrow
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xbeam1.jpg" height="64" width="16" alt="xbeam1" /><br />
+xbeam1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xbeam5.jpg" height="64" width="16" alt="xbeam5" /><br />
+xbeam5
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zbeam2.jpg" height="64" width="16" alt="zbeam2" /><br />
+zbeam2
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/zbeam6.jpg" height="64" width="16"  alt="zbeam6" /><br />
+zbeam6
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xbeam2.jpg" height="64" width="16" alt="xbeam2" /><br />
+xbeam2
+</p>
+<p style="clear: both"></p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/blood.jpg" height="16" width="16" alt="blood" /><br />
+blood
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bhit.jpg" height="16" width="16" alt="bhit" /><br />
+bhit
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/blooddrop.jpg" height="16" width="16" alt="blooddrop" /><br />
+blooddrop
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/bubble.jpg" height="16" width="16" alt="bubble" /><br />
+bubble
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/laserdot.jpg" height="16" width="16" alt="laserdot" /><br />
+laserdot
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/tinyspit.jpg" height="16" width="16" alt="tinyspit" /><br />
+tinyspit
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/dot.jpg" height="16" width="16" alt="dot" /><br />
+dot
+</p>
+<p style="clear: both"></p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/fire.jpg" height="64" width="21" alt="fire" /><br />
+fire
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/gexplo.jpg" height="64" width="53" alt="gexplo" /><br />
+gexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/fexplo.jpg" height="64" width="53" alt="fexplo" /><br />
+fexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/steam1.jpg" height="64" width="42" alt="steam1" /><br />
+steam1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/hexplo.jpg" height="64" width="42" alt="hexplo" /><br />
+hexplo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/spark1.jpg" height="40" width="40" alt="spark1" /><br />
+spark1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/xspark1.jpg" height="32" width="32" alt="xspark1" /><br />
+xspark1
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/moths.jpg" height="16" width="32" alt="moths" /><br />
+moths
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/rope.jpg" height="32" width="16" alt="rope" /><br />
+rope
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/sdrip1.jpg" height="64" width="8" alt="sdrip" /><br />
+sdrip
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/mommablob.jpg" height="16" width="64" alt="mommablob" /><br />
+mommablob
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/logo.jpg" height="12" width="64" alt="logo" /><br />
+&nbsp;&nbsp;logo
+</p>
+<p style="float: left; width: 60px; border: none; margin: 0 15px 15px 0; padding 1px">
+<img src="content/half-life/tutorials/hlsprites/small_logo.jpg" height="12" width="64" alt="small_logo" /><br />
+small_logo
+</p>
+<p style="clear: both"></p>
+<h3>Notes</h3>
+<p>
+There are 180 Sprites in the original Half-Life folder. Some of these are game specific and have not been listed here, others are 'fillers' or blank.<br /> 
+Here are the ones not listed:<br />
+White, vp_parallel, vp_parallel_oriented, voice_icon, camera, crosshairs, spot3 and spot 4, agrunt1<br />
+glow5. In addition to those, there are &quot;16&quot; txt files, 19 Hud Sprites and 7 Multiplayer icons in the folder.
+</p>
+<!--EOF@534--><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/613" title="View the previous page.">previous</a></div><div class="next"><a href="node/1084" title="View the next page.">next</a></div><div class="up"><a href="node/35" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Skies (2)</div><div class="next">Day of Defeat Tutorials</div></div></div></div></div>
+
+<div class="links"><a href="book/print/687" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

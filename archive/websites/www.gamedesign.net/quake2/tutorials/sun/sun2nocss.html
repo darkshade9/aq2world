@@ -1,0 +1,216 @@
+<html>
+   <head>
+      <title>
+         The sun is neater than you thought!
+      </title>
+   </head>
+   <body bgcolor=white>
+      <h1>
+         Sun part II
+      </h1>
+      <br><br>
+         I swear, these guys are worse than Intel!&nbsp; Just when you
+         think you have one radiosity program nabbed, someone goes and
+         releases another.
+      </p>
+      <br><br>
+         Actually, thanks goes to Tim Wright (Argh!) for making so many
+         improvements.&nbsp; And thanks goes to Geoffry DeWan for
+         getting the ball rolling.&nbspl If you don't already have
+         ArghRad, download it now!
+      </p>
+      <h2>
+         Contents
+      </h2>
+      <h3>
+         Why should I use something new...
+      </h3>
+      <ol>
+         <li>
+            <a href=#why>
+               ...when what I have works fine?
+            </a>
+         </li>
+      </ol>
+      <h3>
+         What's new?
+      </h3>
+      <ol>
+         <li>
+            <a href=#four>
+               Did you say FOUR suns?
+            </a>
+         </li>
+         <li>
+            <a href=#shadow>
+               Ambient shadow coloring
+            </a>
+         </li>
+         <li>
+            <a href=#diffusion>
+               Shadow diffusuion
+            </a>
+         </li>
+         <li>
+            <a href=#alternate>
+               Alternate aiming techniques
+            </a>
+         </li>
+      </ol>      
+      <hr width=100%>
+      <br><br><br><br>&nbsp<br>
+      <h3>
+         Why should I use something new...
+      </h3>
+      <div class="text">
+         <a name=why>
+         ...when what I have works fine?
+      </div>
+      <br><br>
+         Progress.
+      </p>
+      <br><br>
+         For real, though, ArghRad is like a version update of gddqrad3.&nbsp; It
+         fixes some of limitations of gddqrad3 that caused the shadows caused by
+         sunlight to look blocky, and made some definite improvements (like ambient
+         color control and multiple suns).&nbsp; It does all of this WITHOUT
+         sacraficing support of gddqrad3 and qrad3.
+      </p>
+      <h3>
+         What's new?
+      </h3>
+      <br><br>
+         Here are all of the new keys available for the sun.&nbsp; If
+         you're hungry for more, go to the online manual (not quite
+         online yet).
+      </p>
+      <h5>
+         &quot;_sun_angle&quot;<br>
+         &quot;_sun_mangle&quot;<br>
+         &quot;_sun_vector&quot;<br>
+         &quot;_sun_diffuse&quot;<br>
+         &quot;_sun_diffade&quot;<br>
+         &quot;_sun_difwait&quot;
+      </h5>
+      <br><br>
+         "_sun_angle" and "_sun_mangle" are aliases for the same
+         function, as are "_sun_fade" and "_sun_wait", but that still
+         leaves us with four new options, plus the ability to use up to
+         four suns.
+      </p>
+      <div class="text">
+         <a name=four>
+         Did you say FOUR suns?
+      </div>
+      <br><br>
+         Yes!&nbsp; You can now use up to four suns in your maps, each
+         with their own color and angle.&nbsp; To use multiple suns, you
+         would simply define them as you normally do, except you
+         substitute "_sun2" "_sun3" and "_sun4" for "_sun" when entering
+         information on your second, third, and fourth suns.
+      </p>
+      <br><br>
+         You can use multiple suns on all of the _sun keys except
+         "_sun_ambient".
+      </p>
+      <div class="text">
+         <a name=shadow>
+         Ambient shadow coloring
+      </div>
+      <br><br>
+         You can color your ambient shadows now (the part that can't see
+         the sun, but can see the sky).&nbsp; If define a straight light
+         value instead of a color value, the shadow color will default
+         to the average of all of your suns' colors.&nbsp; To define the
+         color of the shadow, simply enter three values after the
+         "_sun_ambient" key instead of one.
+      </p>
+      <h5>
+         &quot;_sun_ambient&quot;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[red] [green] [blue]&quot;
+      </h5>
+      <br><br>
+         Each value represents the brightness of each individual color,
+         so if the value entered were 120 150 50, the shadow color would
+         have a minimum red brightness of 120, a minimum green brightness
+         of 150, and a minimum blue brightness of 50.
+      </p>
+      <div class="text">
+         <a name=diffusion>
+         Shadow diffusion
+      </div>
+      <br><br>
+         This feature is so freakin' cool, I can't contain myself!&nbsp;
+         What shadow diffusion does is provide an buffer of hazy shadow
+         between the shade and the direct sunlight.&nbsp; This can make
+         your shadows look much smoother less harsh.&nbsp; To define the
+         diffusion, simply enter a value less than the highlight value,
+         and greater than the shadow value.
+      </p>
+      <h5>
+         &quot;_sun_diffuse&quot;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[value]&quot;
+      </h5>
+      <br><br>
+         To control the fade distance of the diffusion, Tim Wright has
+         added the _sun_diffade and _sun_difwait keys.&nbsp; A less than
+         1 will cause the diffusion to fade out slower, while a value
+         greater than 1 will make it fade faster.&nbsp; Be aware,
+         however, that if you use a large value, you may need to reduce
+         your -chopsky value (or else you will get a chunky shadow).
+         
+         This defaults to a value of 1, and any value entered will scale 
+         relative to the default.&nbsp; For example, if you entered a
+         value of .5, the diffuasion would fade twice as rapidly as it
+         did at 1.
+      </p>
+      <h5>
+         &quot;_sun_diffade&quot;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[value]&quot;
+      </h5>
+      <h5>
+         &quot;_sun_difwait&quot;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[value]&quot;
+      </h5>
+      <div class="text">
+         <a name=alternate>
+         Alternate aiming techniques
+      </div>
+      <br><br>
+         There are now two additional ways to aim your sun (both of
+         which you can substitute for the "_sun" "targetname"
+         method.&nbsp; The first method is angle aiming.&nbsp; This uses
+         pitch and yaw to aim.&nbsp; This method is the same as is used
+         to aim info_player_intermission minus the roll.
+      </p>
+      <br><br>
+         The yaw is the position on the z axis.&nbsp; You aim yaw the
+         same way you aim a door, or a player facing, with 0 pointing
+         east, and moving counter-clockwise.&nbsp; Pitch is the angle on
+         the horizon.&nbsp; Pitch values range from negative 90 to
+         positive 90.  -90 points straight down, and 90 points straight
+         up.
+      </p>
+      <h5>
+         &quot;_sun_angle&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[yaw] [pitch]&quot;
+      </h5>
+      <h5>
+         &quot;_sun_mangle&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[yaw] [pitch]&quot;
+      </h5>
+      <br><br>
+         The second method is vector aiming.&nbsp; By using vector
+         aiming, you enter a vector coordinate into the value field, and
+         ArghRad will calculate the angle from the origin (0 0 0) to the
+         vector (x y z) coordinates you entered.&nbsp; The resulting angle
+         will be the sun's angle.
+      </p>
+      <h5>
+         &quot;_sun_vector&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;[x] [y] [z]&quot;
+      </h5>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <center>      
+This was written by Michael N. Meadows, AKA Ryche AKA eg0.&nbsp My
+sources were as follows:&nbsp Me, the text file included with ArghRad
+1.0, Tim Wright, and a lot of hard work.&nbsp Feel free to quote
+me.&nbsp Feel free to steal my words and claim them as your own.&nbsp
+Your conscience is all that stands in your way.&nbsp Most important of
+all, however, is that you have fun.
+      </center>
+   </body>
+</html>

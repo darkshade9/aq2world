@@ -1,0 +1,48 @@
+<html><head><title>Key</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="25" name="25" class="book-h1">Key</h1><h3>Quake 2 Key Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+
+	<p><a name="#key_airstrike_target"></a><b><a href="/content/quake2/entity/samples/key.zip?PHPSESSID=19e6e2afc42ccde4b2859a492cffac1e">Download Sample Map</a></b><h3>key_airstrike_target</h3>
+
+	<p><a name="#key_blue_key"></a><h3>key_blue_key</h3>
+
+	<p><a name="#key_commander_head"></a><h3>key_commander_head</h3>
+
+	<p><a name="#key_data_cd"></a><h3>key_data_cd</h3>
+
+	<p><a name="#key_data_spinner"></a><h3>key_data_spinner</h3>
+
+	<p><a name="#key_pass"></a><h3>key_pass</h3>
+
+	<p><a name="#key_power_cube"></a><h3>key_power_cube</h3>
+
+	<p><a name="#key_pyramid"></a><h3>key_pyramid</h3>
+	
+	<p><a name="#key_red_key"></a><h3>key_red_key</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>You might be thinking thinking why the hell I did a tutorial over keys cause they are just items that you can place anywhere and they have no spawnflags or key value pairs to mess with. Well you are right. They are very simple to put in your level but getting some use out of them is a different story.<br><br>
+	
+	There are 9 different kinds of keys. They are <b>key_airstrike_target</b>, <b>key_blue_key</b>, <b>key_commander_head</b>, <b>key_data_cd</b>, <b>key_data_spinner</b>, <b>key_pass</b>, <b>key_power_cube</b>, <b>key_pyramid</b>, and <b>key_red_key</b>.<br><br>
+	
+	All of them act in exactly the same way, they just look different. What's cool about the keys is that they can be used to trigger anything you want them to, not just doors. You could have a key stop a turbine or make a computer explode. The possibilities are endless.<br><br>To get the keys to do these kind of things you must use a few different entities. For example:<br><br>
+	
+	Lets make it so that you have to use a <b>key_data_spinner</b> to turn off a big fan. <br><br>
+	
+	<ul><li>First we would make the fan of course and make it into a func_rotating and then make the computer that you will stick the key_data_spinner into that will turn off the fan. If you don't know how to do this then I suggest you check out my tutorial on the func_rotating entity. You also need to give the func_rotating a targetname. Lets give it a targetname of fan. targetname=fan.<li>The next thing we want to do is to place a trigger_key somewhere in the level and target it to the fan. target=fan. You should also give the trigger_key a targetname. Lets give it a targetname of key. targetname key<li>Next we need to specify what item will be needed to trigger the func_rotating and turn it off. You do this by setting the key value pair item to the name of the key. So in this example we would set item=key_data_spinner on the trigger_key entity.<li>There is one more thing to do and that is there must be a trigger where you want the key to be used that will trigger the trigger_key entity. So we would go to the area we made where the key_data_spinner will need to be placed and put a trigger_multiple right in front of the area. The closer and smaller the better. Then target the trigger_key with the trigger_multiple. In this example we would set target=key for the trigger_multiple.</ul><br><br>
+	
+	<center><img src="/content/quake2/entity/images/key.gif"></center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Hope this clears everything up for ya. Now this is just one little example. There are unlimited uses for these keys. Instead of turning off a fan the key to make some computers explode. One of the more noticable uses of the keys that is in the id maps was the airstrike, which is just the key_airstrike_target and a trigger_key that triggers the misc_viper_bomb to fly by and a big explosion. I will definitly explain this in a future tutorial.<br><br>
+
+	
+	<!-- End description -->
+
+	</ul></body></html>

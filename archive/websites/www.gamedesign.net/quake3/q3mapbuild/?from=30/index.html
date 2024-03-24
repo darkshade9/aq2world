@@ -1,0 +1,744 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><base href="http://www.gamedesign.net/" />
+<style type="text/css">
+@import url(misc/drupal.css);
+</style>
+<title>RUST - GameDesign.Net</title>
+<style type="text/css">.body
+{
+	font-size: 12px;
+	text-align: justify;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana;
+
+}
+
+
+.body a
+{
+color: #111111;
+text-decoration: underline;
+	font-family: Verdana;
+}
+
+.body_title
+{
+font-size: 14px;	
+font-weight: bold;
+padding-top: 10px;
+color: #ffcc00;
+text-align: center;
+	font-family: Verdana;
+}
+.body_title2
+{
+font-size: 14px;	
+font-weight: bold;
+padding-top: 10px;
+color: #ff6600;
+text-align: center;
+	font-family: Verdana;
+}
+
+.body_box_header
+{
+font-size:  14px;	
+font-weight: bold;
+color: #111111;	
+margin: 8px;
+padding: 8px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+	font-family: Verdana;
+}
+
+.body_box
+{
+font-size: 12px;
+text-align: justify;
+margin: 4px;
+padding: 4px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+	font-family: Verdana;
+}
+.body_box2{	font-family: Verdana;font-size: 12px;text-align: justify;margin: 4px;padding: 4px;background-color: #E5DBCF;}
+.sidebar{	font-family: Verdana;font-size: 12px;margin: 12px;background-color: 9C8C75;}
+.comment_box{	font-family: Verdana;margin: 8px;padding: 12px;border: 1px;border-color: #9C8C75;border-style: solid;background-color: #C7B9A4;}
+.sidebar A:link{	font-family: Verdana;font-size: 12px;text-decoration: none;color: #372801;}
+.sidebar A:visited{font-size: 12px;   text-decoration: none;color: #372801;}
+.sidebar A:hover{font-size: 12px;color: #FFCC00;text-decoration: none;}
+.sidebar_head{	font-family: Verdana;font-size: 12px;font-weight: bold;color: #ffcc00;text-align: center;}
+.sidebar_head A:link{font-size: 12px;	text-decoration: none;color: #FFCC00;}
+.sidebar_head A:visited{font-size: 12px;   color: #FFCC00;text-decoration: none;}
+.sidebar_head A:hover{font-size: 12px;color: #FFCC00;text-decoration: none;}
+
+.tfbar{font-size: 12px;color: #ffffff;}
+
+/* NETWORK BAR */
+.networkBar
+{
+
+font-size:12px;
+color:#996633;
+padding:1px;
+margin:0px;
+margin-bottom:0px;
+line-height:14px;
+font-family: Verdana;
+}
+
+.networkBar A:link { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.networkBar A:visited { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.networkBar A:hover { font-size:11px; color:#FFCC00; text-decoration:none; }	
+
+.networkBar2
+{
+
+font-size:11px;
+color:#FFFFFF;
+	font-family: Verdana;
+}
+
+.networkBar2 A:link { color:#FFCC00; text-decoration:none; }
+.networkBar2 A:visited { color:#FFCC00; text-decoration:none; }
+.networkBar2 A:hover { color:#FFCC00; text-decoration:none; }	
+
+.networkBar3{font-size:11px;color:#FFFFFF;padding:1px;margin:0px;margin-bottom:0px;line-height:14px;text-align: right;}
+.networkBar3 A:link{font-size:11px;color:#0099FF;text-decoration:none;text-align: right;}
+.networkBar3 A:visited{font-size:11px;color:#0099FF;text-decoration:none;text-align: right;}
+.networkBar3 A:hover{font-size:11px;color:#0099FF;text-decoration:none;text-align: right;}
+
+.storyfoot{
+background-image: url(../../images/body_footer.jpg);
+background-repeat: repeat;
+background-position: center top;
+height: 41px;
+	font-family: Verdana;
+}.tinytext {
+	color: #333333;
+	font: normal 10px Verdana;
+}
+.navbg {
+background-color: #9C8C75;
+background-image: url(../../images/lsb_bodytop.jpg);
+background-repeat: repeat-x;
+background-position: top;
+
+}
+.q2bg1 {
+margin: 0px 8px;
+padding: 25px 12px;
+border: 3px solid #9C8C75;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #410101;
+background-image: url(../../images/qii-bg1.jpg);
+background-repeat: no-repeat;
+background-position: right bottom;
+color: #B0915A;
+}
+.q2bg1 A:link { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.q2bg1 A:visited { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.q2bg1 A:hover { font-size:11px; color:#FFCC00; text-decoration:none; }
+
+.q3bg1 {
+margin: 0px 8px;
+padding: 25px 12px;
+border: 3px solid #9C8C75;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #410101;
+background-image: url(../../images/qiii-bg1.jpg);
+background-repeat: no-repeat;
+background-position: right bottom;
+color: #B0915A;
+}
+.q3bg1 A:link { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.q3bg1 A:visited { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.q3bg1 A:hover { font-size:11px; color:#FFCC00; text-decoration:none; }
+.q3bg1b {
+margin: 0px 8px;
+padding: 25px 12px;
+border: 2px solid #D9D1C7;
+background-color: #C7B9A3;
+background-image: url(../../images/qiii-bg1bb.jpg);
+background-repeat: no-repeat;
+background-position: right bottom;
+}
+.q3bg1b A:link {
+	font-size:11px;
+	color:#660000;
+	text-decoration:none;
+	font-weight: bold;
+}
+.q3bg1b A:visited { font-size:11px; text-decoration:none; }
+.q3bg1b A:hover { font-size:11px; color:#990000; text-decoration:none; }
+
+.q3bg2 {
+margin: 0px 8px;
+padding: 12px;
+border: 3px solid #9C8C75;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/qiii-bg2.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+.q3bg3 {
+	margin: 0px 8px;
+	padding: 25px 12px 60px;
+	border: 2px solid #D9D1C7;
+	background-image: url(../../images/qiii-bg3.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.q3bg3 A:link {
+	font-size:11px;
+	color:#660000;
+	text-decoration:none;
+	font-weight: bold;
+}
+.q3bg3 A:visited { font-size:11px; text-decoration:none;	font-weight: bold; }
+.q3bg3 A:hover { font-size:11px; color:#990000; text-decoration:none; 	font-weight: bold;}
+.hlbg1 {
+margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/hlbg1.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+text-indent: 35px; 
+}
+.hlbgent { 
+font-size: x-large; 
+font-weight: bold; 
+text-indent: 35px; 
+margin: 0px 8px; 
+padding: 12px; 
+border: 1px; 
+border-color: #9C8C75; 
+border-style: solid; 
+background-color: #C7B9A4; 
+background-image: url(../../images/hlbg2.jpg); 
+background-repeat: no-repeat; 
+background-position: left top; 
+}
+.hlbg2 {
+margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/hlbg2.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+.hl2bg1
+{	margin: 0px 8px;
+	padding: 25px 12px 60px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/hl2bg1.jpg);
+background-repeat: no-repeat;
+background-position: right bottom;}
+
+.hl2bg1a
+{margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/hl2bg1a.jpg);
+background-repeat: no-repeat;
+background-position: left top;}
+
+.hammerbg1 {
+margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/hammerbg1.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+.hammerbg2 {
+margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/hammerbg2.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+.rustbg1 {
+margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/rustbg1.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+.rustbg2 {
+margin: 0px 8px;
+padding: 12px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/rustbg2.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+.rustbg3 {
+margin: 0px 8px;
+padding: 6px;
+border: 1px;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/rustbg3.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+}
+
+.rustbg4 {
+background-image: url(../../images/rustbg4.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+padding-top: 12px;
+padding-right: 5px;
+padding-bottom: 15px;
+padding-left: 5px;
+}
+
+.d3bg1 {
+margin: 0px 8px;
+padding: 25px 12px;
+border: 1px solid #9C8C75;
+background-color: #C7B9A4;
+background-image: url(../../images/d3bg1.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+}
+.d3bg2 {
+margin: 0px 8px;
+padding: 12px;
+border: 3px solid #9C8C75;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #C7B9A4;
+background-image: url(../../images/d3bg2.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+padding-top: 12px;
+padding-right: 5px;
+padding-bottom: 15px;
+padding-left: 5px;
+}
+.warcraft3bg1 {
+margin: 0px 8px;
+padding: 25px 12px;
+background-color: #C7B9A4;
+background-image: url(../../images/warcraft3.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+}
+.warcraft3bg3 {
+margin: 0px 8px;
+padding: 25px 12px;
+background-color: #C7B9A4;
+background-image: url(../../images/warcraft3-3.jpg);
+background-repeat: no-repeat;
+background-position: right top;
+}
+.wc3bg1b {
+margin: 0px 8px;
+padding: 25px 12px;
+border: 2px solid #D9D1C7;
+background-color: #C7B9A3;
+background-image: url(../../images/warcraft3-2.jpg);
+background-repeat: no-repeat;
+background-position: right top;
+}
+.wc3bg1b A:link {
+	font-size:11px;
+	color:#660000;
+	text-decoration:none;
+	font-weight: bold;
+}
+.wc3bg1b A:visited { font-size:11px; text-decoration:none; }
+.wc3bg1b A:hover { font-size:11px; color:#990000; text-decoration:none; }
+
+.wc3bg1a 
+{margin: 0px 8px;
+padding: 25px 12px;
+border: 3px solid #9C8C75;
+border-color: #9C8C75;
+border-style: solid;
+background-color: #000000;
+background-image: url(../../images/warcraft3-2a.jpg);
+background-repeat: no-repeat;
+background-position: right top;
+color: #B0915A;}
+
+.wc3bg1a A:link { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.wc3bg1a A:visited { font-size:11px; color:#FFFFFF; text-decoration:none; }
+.wc3bg1a A:hover { font-size:11px; color:#FFCC00; text-decoration:none; }
+
+.wt {
+color: #ffffff;
+font-style: italic;
+}
+.skyboxbg1 {
+background-image: url(../../images/skyboxbg1.jpg);
+background-repeat: no-repeat;
+background-position: left top;
+padding-top: 5px;
+padding-right: 5px;
+padding-bottom: 0px;
+padding-left: 5px;
+}
+.surveybg1 {
+background-image: url(../../images/surveybg1.jpg);
+background-repeat: no-repeat;
+background-position: bottom right;
+padding-top: 0px;
+padding-right: 5px;
+padding-bottom: 0px;
+padding-left: 5px;
+}
+.note {
+font-style: italic;
+color: #FFCC00;
+}
+.imgrb {
+padding: 0px 15px 0px 20px;
+float: right;
+margin: 0px;
+}
+.imglb {
+padding: 0px 5px 0px 0px;
+float: left;
+margin: 0px;
+}
+.feat {
+font-family: Verdana;
+text-align: center;
+color: #FFFFFF;
+list-style-position: inside;
+list-style-type: circle;
+}
+.r {color: #ff0000;}
+.g {color: #C0C0C0;}
+hr {color: #666666;width: 75%;text-align: center;}
+.top {
+	background-image: url(../../images/topbg.jpg);
+	background-repeat: repeat-x;
+	height: 17px;
+	width: 50px;
+	text-align: center;
+	vertical-align: middle;
+	margin-left: 200px;
+	font-weight: bold;
+}
+.top A:link {
+	font-family: Verdana;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.top A:visited {	font-family: Verdana;color: #000000;text-decoration: none;text-align: center;		font-weight: bold;}
+.top A:hover {	font-family: Verdana;color: #FFCC00;text-decoration: none;text-align: center;		font-weight: bold;}
+.highlight {
+	background-color: darkgray;
+	font-family: arial;
+	padding: 5px;
+}
+A:link {	font-family: Verdana;color: #554C43;text-decoration: none;}
+A:visited {	font-family: Verdana;color: #554C43;text-decoration: none;}
+A:hover {	font-family: Verdana;color: #FFCC00;text-decoration: none;}
+/*pre {
+	color: #9C8C75;
+	width: 75%;
+	padding: 10px;
+	margin-left: 35px;
+	border-top: thin dotted #999999;
+	border-right: thin none;
+	border-bottom: thin none;
+	border-left: thin dotted #999999;
+}*/
+
+
+input {
+	background: #82766B;
+	margin: 0px;
+	padding: 0px 4px;
+	border: thin solid #403931;
+	font-weight: bold;
+}
+select {
+	background: #82766B;
+	margin: 0px;
+	padding: 0px 4px;
+	border: thin solid #403931;
+	font-weight: bold;
+}
+.form-radio {
+	background : #E5DBCF;
+	border: none;
+} 
+.form-checkbox {
+	background : #E5DBCF;
+	border: none;
+} 
+form {margin: 0px 0px; padding: 0px 0px;}</style>
+<script type="text/javascript"  language="JavaScript1.2" src="/js/main15.js"></script></head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#000000">
+</head><body>
+<DIV id="tiplayer" style="visibility:hidden;position:absolute;z-index:1000;top:-100"></DIV>
+<script type="text/javascript" language="JavaScript1.2" src="/js/style.js"></script>
+<table width="900" cellspacing="0" cellpadding="0" align="center"><tr><td  align="left" valign="middle" nowrap>
+<div class="networkBar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.telefragged.com">TeleFragged</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.telefragged.com/network">Network Sites</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.3ddownloads.com">3D Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</div></td><td align="left" valign="middle" nowrap><iframe width=500 height=18 marginwidth=0 marginheight=0 frameborder=0 scrolling=no src="http://www.ugo.com/syndicatedContent/todayOnUGO/680x18_IframeContent.asp?channel=games&site=gamebanshee&bgcolor=000000&fontcolor=ffffff"></iframe></td></tr></table>
+<table width="900" border="0" cellpadding="0" cellspacing="0" align="center"><tr><td colspan="5">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="900" height="88">
+  <param name="movie" value="/images/top.swf">
+  <param name="quality" value="high">
+  <embed src="/images/top.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="900" height="88"></embed></object></td></tr><tr><td valign="top" width="7">
+<img src="images/mh_lowerbg1.jpg" width="7" height="150" /></td><td valign="top" width="150">
+<!-- Left Sidebar -->
+<table border="0" cellpadding="0" cellspacing="0"><tr><td valign="center" background="images/lsb_firstheader.jpg" width="150" height="24"><div align="center" class="sidebar_head"><a href="#" onMouseOver="stm(Text[1],Style[1])" onMouseOut="htm()">Navigation</a></div></td></tr>
+<tr><td valign="top" class="navbg" width="150"><div class="sidebar">	
+- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://www.gamedesign.net/node/view/710" title="">Design Comps.</a><br />- <a href="http://www.gamedesign.net/node/view/708" title="">Interviews</a><br />- <a href="http://www.gamedesign.net/node/view/757" title="">RUST Community</a><br />- <a href="http://www.gamedesign.net/node/view/726" title="">RUST Resumes</a><br />- <a href="http://www.gamedesign.net/node/view/837" title="">RUST Web IRC</a><br />- <a href="http://www.gamedesign.net/node/view/839" title="">RUSTY Reviews</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a><br />- <a href="http://forums.gamedesign.net" onMouseOver="stm(Text[3],Style[0])" onMouseOut="htm()">RUST Forums</a><br /><br />
+<center><form action="http://www.gamedesign.net/search" method="post"><input type="hidden" name="PHPSESSID" value="22c99242e08e8a46226a2e15805cfa15" /><input type="text" class="form-text" style="width: 108px;" size="15" value="" name="keys" /><input type="submit" class="form-submit" value="- Search -" /></form></center>
+</div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+<tr><td valign="center" background="images/lsb_header.jpg" width="150" height="24">
+<div align="center" class="sidebar_head"><a href="#" onMouseOver="stm(Text[2],Style[0])" onMouseOut="htm()">Game Design</a></div></td></tr>
+<tr><td valign="top" class="navbg" width="150"><div class="sidebar">	
+- <a href="/book/view/1?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Half-Life</a><br />- <a href="/book/view/11?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Quake II</a><br />- <a href="/book/view/12?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Quake III Arena</a><br />- <a href="/book/view/111?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Game/Map Design</a><br />- <a href="/book/view/128?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Kingpin</a><br />- <a href="/book/view/167?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Doom 3</a><br />- <a href="/book/view/663?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Half-Life 2</a><br />- <a href="/book/view/532?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">3D Modeling</a><br />- <a href="/book/view/813?PHPSESSID=22c99242e08e8a46226a2e15805cfa15">Warcraft III</a><br />
+</div>
+<img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+	
+<td valign="center" background="images/lsb_header.jpg" width="150" height="24">
+<div align="center" class="sidebar_head">Register</div></td></tr>
+<tr><td valign="top" class="navbg" width="150"><div class="sidebar"><small>By becoming a member you can contribute content to the site and access more of it features. We encourage you to <A href="http://forums.gamedesign.net/profile.php?mode=register">register</a>. Our apologies that our forum is not integrated into this site and remind you that in order to participate in the gamedesign forums, you'll have to <a href="http://forums.gamedesign.net/profile.php?mode=register&sid=c58d4979613bbe115bb3582177006290">sign up</a> there also.</small></div>
+<img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+<!-- vert ad -->
+<tr><td valign="center" background="images/lsb_header.jpg" width="150" height="24"><div align="center" class="sidebar_head"><a href="#" onMouseOver="stm(Text[4],Style[0])" onMouseOut="htm()">Advertisement</a></div></td></tr>
+<tr><td valign="top" class="navbg" width="150"><div class="sidebar" align="center" style="overflow:hidden;">	
+<!-- AdSpace Network=ugo size=120x600 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=120 height=600 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+<pre>warning: virtual(): A session is active. You cannot change the session module's ini settings at this time. in /usr/local/etc/httpd/gamedesign.net/themes/rusted/rusted.theme on line 95.</pre></div>
+<img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+
+</table></td>
+<td valign="top" width="7"><img src="images/mh_lowerbg2.jpg" width="7" height="90" /></td>
+<td valign="top">
+<!-- Body and Right Sidebar -->
+<table width="729" cellpadding="0" cellspacing="0"><tr><td valign="top" background="images/mh_lowerbg_ad.jpg" colspan="3">	
+<div id="" style=""></div><!-- AdSpace Network=ugo size=728x90 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=728 height=90 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace --><!-- AdSpace Network=ugo size=1x1 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/Network=ugo&size=1x1&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><!-- /AdSpace -->
+<!-- START RedSheriff Customer Intelligence V4 - Java v1.1  Revision: 1.8 -->
+<!-- COPYRIGHT 2002 Red Sheriff Limited -->
+<script language="JavaScript"><!--
+var pCid="us_us-ugo_network-telefragged";
+var w0=1;
+var refR=escape(document.referrer);
+if (refR.length>=252) refR=refR.substring(0,252)+"...";
+//--></script>
+<script language="JavaScript1.1"><!--
+var w0=0;
+//--></script>
+<script language="JavaScript1.1" src="http://server-us.imrworldwide.com/a1.js">
+</script>
+<script language="JavaScript"><!--
+if(w0){
+var imgN='<img src="http://server-us.imrworldwide.com/cgi-bin/count?ref='+
+        refR+'&cid='+pCid+'" width=1 height=1>';
+if(navigator.userAgent.indexOf('Mac')!=-1){document.write(imgN);
+}else{
+        document.write('<applet code="Measure.class" '+
+        'codebase="http://server-us.imrworldwide.com/"'+'width=1 height=2>'+
+        '<param name="ref" value="'+refR+'">'+'<param name="cid" value="'+pCid+
+        '"><textflow>'+imgN+'</textflow></applet>');
+        }
+}
+document.write("<COMMENT>");
+//-->
+</script>
+<noscript>
+<img src="http://server-us.imrworldwide.com/cgi-bin/count?cid=us_us-ugo_network-telefragged" width=1 height=1>
+</noscript>
+</COMMENT>
+<!-- END RedSheriff Customer Intelligence V4 --></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+<tr><td colspan="3">
+<table width="729" cellpadding="0" cellspacing="0"><tr><td>
+<td valign="top" width="422" height="250">
+<table width="422" height="250" border="0" cellspacing="0" cellpadding="0"><tr><td height="23" valign="center" background="images/midbar_head.jpg"><div align="center" class="sidebar_head"><a href="#" onMouseOver="stm(Text[3],Style[0])" onMouseOut="htm()">RUST Community Forums</a></div></td></tr><tr><td valign="top" class="navbg"><div class="sidebar"><center>| <a href="http://forums.gamedesign.net/profile.php?mode=register">Sign up for an Account</a> | <a href="http://forums.gamedesign.net/">View the Forums</a> |</center><div align="justify"><h5>Become a member to turn off 2 of the 3 ads on the site. Accept the cookie/Check the "remember me" so that you auto login whenever you drop by.</h5></div><small>This panel is updated every 30 minutes.<br /><br />	
+The forums are done for an important upgrade across all of Telenation, please check back later! Thanks!</small>
+</div></td></tr>
+<tr><td valign="bottom">
+<img src="images/midbar_bottom.jpg" /></td></tr></table></td>
+<td valign="top" width="7" height="250">
+<img src="images/spacer.gif" width="7" height="7"></td>
+<td valign="top" width="300" height="250">	
+<!-- AdSpace Network=ugo size=300x250 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=300 height=250 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+</td></tr></table></td></tr>
+<tr><td valign="top" height="7" colspan="3">
+<img src="images/spacer.gif" width="7" height="7"></td></tr>	
+<tr><td width="729" valign="top">
+<table id="main_body" border="0" width="522" cellpadding="0" cellspacing="0"><tr><td valign="middle" width="522" height="52" background="images/body_header.jpg">
+<div align="center" class="sidebar_head"><a href="#" onMouseOver="stm(Text[6],Style[0])" onMouseOut="htm()">RUST - Gamedesign.net</a><br /><br /></div></td></tr>
+<tr><td valign="top" background="images/body_bg.jpg" width="522"><div class="body_box">	
+<table><td class="body_box2">
+<!-- Node: "New MigoIcons DHTML Tooltips!" -->
+<div class="body_box_header">New MigoIcons DHTML Tooltips!</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a> on Thursday, November 11, 2004 - 23:11</small><br /><br />
+<p class="rustbg3">As you can see on this page, by rolling over the various block titles, I'm workin on creating DHTML Tooltips for the site. These will be informative rollover tips to help you understand the navigation of the site.<br><br>I'll also leave it up to the moderators and admins to create tips for their areas and send them to me in the forums so that we'll be capable of offering you a more informative experience. Expect more from RUST in the future. Get more.
+<br /><div align=right>
+<a href="http://www.gamedesign.net/node/view/773#comment" title="Jump to the first comment of this posting.">1 comment</a> &middot; 61 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Quake III Content Updates" -->
+<div class="body_box_header">Quake III Content Updates</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a> on Thursday, November 11, 2004 - 21:06</small><br /><br />
+<p class="q3bg1b">I've spent a bit more time in the <a href="/book/view/12">Q3 section tonight</a> adding entity information from the editor. This information is still in it's default state and I hope to be able to improve upon it's content as we continue to grow.<br><br>Thus far I've added the <a href="/book/view/760">Function Entities</a>: func_bobbing, func_button, func_door, func_group, func_pendulim, func_plat, func_rotating, func_static, func_timer and func_train. Check em out.</p>
+<br /><div align=right>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Site Updates" -->
+<div class="body_box_header">Site Updates</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a> on Wednesday, November 10, 2004 - 01:19</small><br /><br />
+<div class="rustbg4">A few of us stayed up well into the night these past two days working on various features in the site. We've centered it, fixed up the header and added "our sites" to a block on the left. Jherax has fixed a bug in the cms which displayed static pages in the handbook block. Oirfid has transferred all the interviews from handbook pages to static ones and I've transferred the community, resumes and comps.<br><br>If you've got links anywhere on any of your sites referring to any of these pages, know that the url has now changed and you'll have to update your links.
+<br /><div align=right>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://www.gamedesign.net/node/view/758" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 32 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Quake III Content" -->
+<div class="body_box_header">Quake III Content</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a> on Sunday, November 7, 2004 - 12:47</small><br /><br />
+<p class="q3bg1b"><img src="/images/qiii-bg1b.jpg" align="left" hspace="5" vpsace="0"><b>I've been workin..</b> in the <a href="http://www.gamedesign.net/book/view/12">Quake III</a> level editing area. Enhancing the look of it by adding a new styles to our css. New media, Quake III medals, weapons and ammo, and character/tier information.<br><br>In addition I've suppliedthe following.. The <b class="wt">BSP</b> Compile Stage, & Compile Switch List, The <b class="wt">BSPC</b> or <b class="wt">BSP2AAS</b> Compile Stage, The <b class="wt">LIGHT</b> Compile Stage & Compile Switch List, The <b class="wt">VIS</b> Compile Stage & Compile Switch List.. A mod list is in the works.
+<br /><div align=right>
+<a href="http://www.gamedesign.net/node/view/695#comment" title="Jump to the first comment of this posting.">1 comment</a> &middot; <a href="http://www.gamedesign.net/node/view/695" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 53 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Half-Life mod list" -->
+<div class="body_box_header">Half-Life mod list</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2203" title="View user profile.">pepper</a> on Sunday, November 7, 2004 - 07:57</small><br /><br />
+<p class="hlbg1">I've added the Half-Life mod list, its not much yet. I'm still working on it:<br><br><b><a href="http://www.gamedesign.net/book/view/692">half life mod list</a></b><br>If you like you can add your own mods by commenting. Then we'll add them to the list. Dont forget to check it daily!</p>
+<br /><div align=right>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; 2 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "New DOOM 3 Tutorial" -->
+<div class="body_box_header">New DOOM 3 Tutorial</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2157" title="View user profile.">Method</a> on Sunday, November 7, 2004 - 06:11</small><br /><br />
+<p class="d3bg1">After few people asked how to bend cylinder patches in D3Radiant (DOOM Edit) into a wire, I decided to write a tutorial entitled <a href="http://www.gamedesign.net/book/view/688">Bending Cylinder Patches</a>.<br><br>It includes a brief description of how to bend a patch cylinder into a pipe and two methods on how to bend wires.<br><br>Don't forget to check out <a href="http://forums.gamedesign.net/viewforum.php?f=50">The Doom 3</a> and the <a href="http://forums.gamedesign.net/index.php?c=4">Editors and Tools</a> Forums.</p>
+<br /><div align=right>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; 5 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Source SDK Released Through Steam" -->
+<div class="body_box_header">Source SDK Released Through Steam</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/31" title="View user profile.">mazemaster</a> on Friday, November 5, 2004 - 17:07</small><br /><br />
+The Source Engine SDK has just been released. It is available for immediate download through Steam for anyone who owns a Source game (ie: CS:S, or HL2 preorder through Steam).<br />
+<br />
+The announcement can be found in <a href="http://www.chatbear.com/board.plm?a=viewthread&t=655,1099693563,25397&id=722276&b=4986&v=flatold">this forum post</a>, documentation can be found <a href="http://www.valve-erc.com/srcsdk/">here</a> and information about the Hammer 4 editor is available in the <a href="http://www.valve-erc.com/srcsdk/Hammer/html/Hammer_Users_Guide.html">Hammer Users Guide</a>
+<br /><div align=right>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "What's going on at RUST?" -->
+<div class="body_box_header">What's going on at RUST?</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a> on Thursday, November 4, 2004 - 20:49</small><br /><br />
+<div class="rustbg3"><b>Well guys and gals,</b> things are brewing in gamedesign land. The <a href="http://forums.gamedesign.net/viewforum.php?f=81">Moderators</a> and <A href="http://forums.gamedesign.net/viewforum.php?f=81">Administrators</a> are coming together to get things swinging into a new sort of the motion our logo implies.<br><br>Cogs are turning & mice whimper to keep up with the mad gamer frankensteins we're creating...</div>
+<br /><div align=right>
+<a href="http://www.gamedesign.net/node/view/679#comment" title="Jump to the first comment of this posting.">5 comments</a> &middot; <a href="http://www.gamedesign.net/node/view/679" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 166 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Milkshape 1.7.2 released" -->
+<div class="body_box_header">Milkshape 1.7.2 released</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2203" title="View user profile.">pepper</a> on Thursday, November 4, 2004 - 08:15</small><br /><br />
+This version can import and export Max Payne 2 KF2 and SKD files. A lot of smaller bugs have been fixed and the 3rd party plugins have been updated.
+<br /><div align=right>
+<a href="http://www.gamedesign.net/node/view/678#comment" title="Jump to the first comment of this posting.">2 comments</a> &middot; <a href="http://www.gamedesign.net/node/view/678" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 94 reads</div>
+</div></td></table><br />
+<table><td class="body_box2">
+<!-- Node: "Kold Releases 8 New Sky Boxes For Mappers" -->
+<div class="body_box_header">Kold Releases 8 New Sky Boxes For Mappers</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2" title="View user profile.">G.A.R.D.</a> on Wednesday, November 3, 2004 - 04:03</small><br /><br />
+<p class="skyboxbg1"><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=1835">Kold</a> has released eight sky textures on his <a href="http://www.chilledout.net">Chilledout webpage</a>. These skyboxes are a breathe of fresh air to level designers who are constantly on the lookout for the right backdrop for their worlds.<br><br>You can check out the rest of <a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=1835">Kold's</a> skyboxes (which are freely available to download and put into your levels) by clicking the <i>"read more"</i> below or visiting Kold's <a href="http://www.chilledout.net/">Chilledout website</a>.<br><br> Here's just one example:<br></p>
+<center><img src="/content/news/04_NOV_03/koldsky.jpg"></center>
+<br /><div align=right>
+<a href="http://www.gamedesign.net/node/view/677#comment" title="Jump to the first comment of this posting.">3 comments</a> &middot; <a href="http://www.gamedesign.net/node/view/677" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 127 reads</div>
+</div></td></table><br />
+<div id="pager" class="container-inline"><div><a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=0">first page</a></div><div><a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=20">previous page</a></div><div><a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=0">1</a> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=10">2</a> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=20">3</a> <b>4</b> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=40">5</a> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=50">6</a> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=60">7</a> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=70">8</a> <a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=80">9</a> ...</div><div><a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=40">next page</a></div><div><a href="http://www.gamedesign.net/quake3/q3mapbuild/?from=188">last page</a></div></div></div></td></tr>
+<tr><td valign="top" width="522" height="41" background="images/body_footer.jpg">&nbsp</td></tr></table></td>
+<td valign="top" width="7"><img src="images/spacer.gif" width="7" height="7" /></td>
+<td valign="top" width="200"><table border="0" cellpadding="0" cellspacing="0"><td>	
+<!-- Box: User login (all)-->	
+
+<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">User login</div></td></tr>
+<tr><td valign="top" background="images/rsb_bodybg.jpg" width="200">
+<img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="user-login-link"><div class="user-login-block">
+<form action="http://www.gamedesign.net/user/login" method="post">
+<input type="hidden" name="edit[destination]" value="http://www.gamedesign.net/quake3/q3mapbuild/" />
+<div class="form-item"><div class="title">Username:</div><input type="text" maxlength="64" class="form-text" name="edit[name]" size="15" value="" /></div>
+<div class="form-item"><div class="title">Password:</div><input type="password" class="form-password" maxlength="64" name="edit[pass]" size="15" value="" /></div>
+<input type="hidden" name="edit[remember_me]" value="0" />
+<div class="form-item"><input type="checkbox" class="form-checkbox" name="edit[remember_me]" value="1" class="radio"/> Remember me</div>
+<input type="submit" class="form-submit" name="op" value="Log in" />
+
+</form>
+</div>
+<div class="item-list"><ul><li><a href="http://www.gamedesign.net/user/register" title="Create a new user account.">Create new account</a></li><li><a href="http://www.gamedesign.net/user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div></div>
+<img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+<tr><td valign=center background="images/rsb_header.jpg" width="200" height="24">
+<div class=sidebar_head>Rust Competition 2 Entries</div><tr><td valign=top class=navbg width=200><img src=images/rsb_bodytop.jpg width=200 height=1 /><div class=sidebar><center><table cellpadding=1 bgcolor=black><td><a href=content/competitions/compo-002/kiiia.jpg target=_blank><img src=content/competitions/compo-002/kiiia_small.jpg border=0 alt=kiiia_small.jpg\ - by KIIIA title=kiiia_small.jpg - by KIIIA /></a></td></table></center><center><br />Entry by <b>KIIIA</b><br /></center><br />To enter the latest RUST Contest click <a href=http://forums.gamedesign.net/viewforum.php?f=80><b>here</b></a>.<br /></div><img src=images/rsb_bodybottom.jpg width=200 height=1 /></td></tr><tr><td><img src=images/spacer.gif width=7 height=7 /></td></tr><!-- Box: Poll (all)-->	
+
+<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Poll</div></td></tr>
+<tr><td valign="top" background="images/rsb_bodybg.jpg" width="200">
+<img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="poll-title">What kind of contest would you like to participate in?</div><br><div class="poll"><div class="text">1 Month MP Map</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 35%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 65%;" \></div><div class="percent"> 35%</div><div class="text">Speed Map (2 or 3 day)</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 13%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 87%;" \></div><div class="percent"> 13%</div><div class="text">Single Player Map</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 19%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 81%;" \></div><div class="percent"> 19%</div><div class="text">Mini Game Design</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 6%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 94%;" \></div><div class="percent"> 6%</div><div class="text">Puzzle Design</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 6%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 94%;" \></div><div class="percent"> 6%</div><div class="text">Screenshot Comp.</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 3%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 97%;" \></div><div class="percent"> 3%</div><div class="text">Concept Sketch Design</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 13%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 87%;" \></div><div class="percent"> 13%</div><div class="text">no time for this..</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 3%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 97%;" \></div><div class="percent"> 3%</div><div class="total">Total votes: 31</div><div class="links"><a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; 19 reads &middot; <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Older polls</a></div></div></div>
+<img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+<!-- Box: Who's new (all)-->	
+
+<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Who's new</div></td></tr>
+<tr><td valign="top" background="images/rsb_bodybg.jpg" width="200">
+<img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="item-list"><ul><li><a href="http://www.gamedesign.net/user/view/2387" title="View user profile.">dannyjr89</a></li><li><a href="http://www.gamedesign.net/user/view/2386" title="View user profile.">carbon</a></li><li><a href="http://www.gamedesign.net/user/view/2385" title="View user profile.">Sagnor</a></li><li><a href="http://www.gamedesign.net/user/view/2384" title="View user profile.">kevink 2005</a></li><li><a href="http://www.gamedesign.net/user/view/2383" title="View user profile.">kevink2005</a></li></ul></div></div>
+<img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+<!-- Box: Who's online (all)-->	
+
+<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Who's online</div></td></tr>
+<tr><td valign="top" background="images/rsb_bodybg.jpg" width="200">
+<img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar">There are currently 0 users and 37 guests online.</div>
+<img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr>
+<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>	
+</td></table></td></tr></table></td><td valign="top" width="7">&nbsp</td></tr></table>	
+<br />
+<center class="wt"><small>RUST website modified by jherax and skinmaster&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></center>
+<br /></body></html>	

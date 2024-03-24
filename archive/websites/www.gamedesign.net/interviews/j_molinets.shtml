@@ -1,0 +1,353 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>rust Interviews - Level Designer Jim Molinets</title>
+<LINK rel="Start" title="Main r u s t Page" type="text/html" href="http://www.gamedesign.net">
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Title" CONTENT="rust Game Designer Interviews - Level Designer Jim Molinets">
+<META NAME="DC.Creator" CONTENT="Shane Sherman(fishman)">
+<META NAME="DC.Subject" CONTENT="game editing and design">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+
+<link rel=stylesheet href="../stylesheets/main.css">
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+<tr>
+	<td colspan="2" valign="TOP" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a>
+
+<h1>Interviews</h1>
+<h3>Jim Molinets</h3>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<Br></td>
+
+
+	<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+	
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+	</td>
+<!--menu ends here-->
+</tr>
+<tr>
+	<td width="100%" valign="TOP">
+<div class="text">
+<blockquote>
+
+<I>Interviewed by <A HREF="mailto:granny@gamedesign.net">GrrandMaMa</A> on Saturday, April 25<SUP><U>th</U></SUP>, 1998</I>
+
+Jim Molinets, of <A HREF="http://rogue.stomped.com/" TARGET="_parent">Rogue Entertainment</A> agreed to let me bug him about all sorts of map-related stuff
+
+<CENTER><BR>Questions are in <B>bold</B>. Answers are in...um...not-bold.</CENTER>
+<HR ALIGN="CENTER" WIDTH="75%">
+<BLOCKQUOTE>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>For the kids, could you tell us a bit about yourself?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>I'm the President and lead designer for Rogue Entertainment Inc. I've been in the software business for about 6 years and have produced three commercial titles: Raptor: Call of the Shadows, Strife and Dissolution of Eternity.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Rogue's Mission Pack for Quake, Dissolution of Eternity, was a perfect example of balancing seemingly complex architecture and game flow, with machine-friendly speeds. Are there any particular methods you used to accomplish this?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Yes, there were several.<BR><BR><B>1) Set benchmarks.</B> This is extremely important! Find out what the limits that you can push are, and then set a logical benchmark in between the upper and lower limits so that everyone can enjoy the game equally. For DOE, we made sure that each and every area was not only architecturally interesting, but that it was also kept under an r_speeds rating of 350. For the most part we succeeded in accomplishing this.<BR><BR><B>2) Playtesting.</B> Even with benchmarks, areas that are normally fast will slow down once you place in a couple of high-ploy monsters. Playtesting will identify these areas and also any other problem spots within the level. In this, it's also important to remember that single-play, co-op and DM will all give very different results for the exact same areas. Watch how these interact and then balance the level based on your requirements.<BR><BR><B>3) Plain old common sense.</B> If you're working on a map, or an area on the map and it feels like you are trying to 'shoe-horn' something in there, you should stop and think about it. If it's something that doesn't work, try something else. I've seen people lose a lot of time because they simply refuse to give up on something that just simply won't work in whatever state it's currently at.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Another thing I noticed, is that every inch of a map was put to use on multiple levels. Any tips on how to get so much gameplay out of relatively little square-footage?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>The easiest way to accomplish this is to plan ahead. Take your time and remember what you're trying to accomplish with the level and then visualize how the areas can and will be connected. 3D space is the Quake(both 1 and 2) technology's specialty. Use it. It also makes the levels much more fun in DM.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>What can we expect from the Quake 2 mission pack, in terms of level design?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Well, what we are trying to accomplish, in terms of design, is to keep the excellent atmosphere and quality of Quake2, while offering the player a whole new array of challenges. We want them to feel like they are in a familiar place, but constantly keep them guessing as to what they will be facing next.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Is there a title for it yet?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>We have chosen a name, but until the copyright search results come back, we cannot tell anyone what it is. So, it's "Unnamed Mission Pack", for now.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Will you be sticking with the general look of Quake 2 in terms of texturing and theme, or will there be something as different as we saw in the Egyptian episode of DoE?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Since Quake2 had more of a plot than Quake, (Yes, I did say plot.) we are going to be following the established architecture styles, but putting the player in different environments and hazards within those environments. Like I said earlier, we really want more than just the monsters to play a part in the challenge of the game.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Will you be focusing a lot on the hubbing system, and crosslevel events in Quake 2? If so, do you have any thoughts on how to keep the tempo up each time through a map?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>We are, of course, going to utilize the hubbing system as much as possible. That was part of what made Quake2 and Hexen2 so much fun. We all really like the ability to cross between levels again and again and research and explore new areas. This is something we are familiar with, going way back to our days with Strife.<BR><BR>The best way to keep the tempo up throughout a 'hubbing' level system is to make sure that you keep the player's attention as they work their way through. There are several easy ways to do this. Logically re-stocking enemies, letting the players explore new areas within the familiar territory and confronting them with new environmental challenges.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Are there any new map entities (apart from weapons/monsters, etc) planned for the Mission Pack? (trains, doors, things like that)</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Yes, we are definitely adding some new interesting entities for the pack. We are also making some interesting modifications to the older ones. What these are, I'd rather not say until the pack is completed.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Where do you look for ideas? (movies, books, walking down the street, your head, etc)</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Well, normally I just sit back relax and listen to the voices in my head. ;) I usually use either books or movies as my media of choice when looking for inspiration. Both of these are immediately accessible and can be poured over again and again. But, I also watch the architecture outside whenever I get a chance to actually go out.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>About how long does it take for you to complete a map, from the initial concept to the final build?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>That depends on what type of map I'm building and also how complicated the detail is in those maps. But, a good estimate is usually 2 weeks from start to 'Beta' stage. After that, I'll tinker with a map until the product ships, trying to make it the best that I can.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>How often do you compile? Do you only do a full compile at the end, or a few times throughout the process?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>When I'm just laying out basic architecture, I will compile as needed. Once I get into lighting, I'll vis the level about 2-3 times per day. I like to go through, place all of the lights that I think are needed, then do a fast vis and work from there. Then comes monster and entity placement. That's when the compiling really goes up. I like to region the area I'm working on and get the monster placement right and then go through placing health, ammo, and the rest as needed. While I'm doing this, I will compile as much as 15-20 times per day.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Do you ever feel a map is 'finished'?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>NO! Even once the map is on the Gold Master, you will still think: "I wish I did X, or if I changed Y, I bet it would have been a little better. I think that's part of the curse of being a designer, you're never happy.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Have you had a chance to look at any user-created maps for Q2?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Yes, we recently hired on some new designers at Rogue and during the search for the new team members we had people constantly sending in work for evaluation. I have to say that most of the work I saw was truly inspired and us 'professional' designers had better watch out.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>If so, what do you think? Are there any common mistakes that you've noticed?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>The quality of these user created levels has grown exponentially since the days of Doom and Quake.<BR><BR>Common mistakes? Hmm... Well there are a couple that I've noticed, but these relate more to specifics than general.<BR><BR><B>1) Texture use:</B> If you use a set of textures that someone has made (ie: id), than try to follow the established use for those textures. If it says floor, it's a floor and so on. Most of those textures were designed with specific lighting in mind so they are shaded a specific way. Using them in other aspects looks wrong. Also, and directly related to this is: Use the texture wads correctly. If you using the power wad, don't mix stuff in from 5 other wads unless it fits. I really hate seeing sewer walls with tech ceilings.<BR><BR><B>2) Bad stairs/ramps:</B> DO NOT make these slope at higher than a 30" angle. This not only blocks the players view, it just plain looks bad.<BR><BR><B>3) Lighting:</B> Use this as a way to make your architecture look impressive. Sure, you can light you level with 1,000 value lights across the board, but then everything looks flat and uninteresting.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Do you have any suggestions for amateur designers?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Persevere. Don't give up no matter what happens. If you're having trouble, ask someone for help, or put that map aside for now and then return to it later when you're thinking clearly again. Don't get stuck in one genre either. It really shows true talent when a designer can move from Tech to Medieval to Fantasy to whatever else pops into their head.</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Seen any good movies lately?</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>Not Lost in Space. Want to know why they're lost? Joey's driving!</UL>
+
+<P><BR><U><B>GrrandMaMa:</B></U><B><UL>Thanks a lot for answering, take care, and good luck on the Mission Pack.</UL></B>
+  
+<P><U><B>Jim:</B></U><UL>No problem. Glad to help in any way that I can. This community is why I'm here and I want to make sure that the people who support us are getting our support in any way shape or form that it can come in.<BR><BR>Jim Molinets</UL>
+
+</BLOCKQUOTE>I would like to thank Jim for taking the time out (being president can't be easy) to answer these.  The level design in DoE blew me away, and I'm sure the new Mission Pack will be equally impressive.
+</blockquote>
+</div>
+<br><br><br><br>
+
+</td></tr></table>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>

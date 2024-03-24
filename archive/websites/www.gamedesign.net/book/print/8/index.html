@@ -1,0 +1,103 @@
+<html><head><title>How to Make a Sphere in Worldcraft</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="8" name="8" class="book-h1">How to Make a Sphere in Worldcraft</h1><!-- by Merl (merlinis@bigpond.net.au) 2001
+     by Gard (stephen@geol.uwa.edu.au) 2003 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		How to Make a Sphere in Worldcraft - <a href="mailto:n_alger_@hotmail.com">Mazemaster</a>
+</blockquote>
+<br> <br>
+
+<h3>So you want to make a sphere, eh?</h3> 
+<br>
+<p>Well there are several techniques to make one, but by far the easiest method in 
+Worldcraft is called the “cone slicing” method. The basic principle of the cone slicing 
+method is to take a cone, slice it into pieces and then scale the pieces up or down to 
+give it a spherical shape.<br><br>
+
+<p><hr color=black noshade width=75%><p>
+<p><a href="content/half-life/tutorials/sphere/sphere.zip?PHPSESSID=eb01b030db71aa71f64644f5b8bb4890">Download</a> 
+the sample maps (rmf format) - 6.00 KB<br><br>
+<p><hr color=black noshade width=75%><p>
+
+<p>Lets get started. First you will need to fire up Worldcraft. To begin, select spike 
+from the block tool make yourself a cone. It should have at least 8 sides if you want 
+your sphere to look spherical, the more sides the more spherical it will look for a 
+given size.</p>
+<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere1.jpg"></center><br><br>
+
+<p>Now you need to set up some template cylinders on the sides of the spheres to give 
+you a guide of where to slice the cone. These template cylinders will not actually be 
+in the final sphere, they are just there to guide you as you are messing with the cone. 
+Since the cone will only be the top half of the sphere, you only really need half of the 
+template cylinder.<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere2.jpg"></center><br><br>
+
+<p>From now on, you will only need to deal in 1 2d window, the
+one that shows the profile of the template cylinder and the upright cone (y/z in
+this example). First resize your cone so that it is the height of the template
+cylinder.<br><br>
+
+<!-- Image Three -->
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere3.jpg"></center><br><br>
+
+<p>Now go into the 1 unit grid. Note that you should not use
+the 1 unit grid for 99% of mapping, only special situations such as making a
+sphere.<br><br>
+
+In the next step, you will determine WHERE to slice your
+cone and this is of critical importance. To find out where you should slice your
+cone, drop an imaginary line down from a point on your template cylinder and
+find where it intersects the cone. Use the clip tool to slice the cone
+horizontally at this location.<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere4.jpg"></center><br><br>
+
+<p>Next, you will have to scale the pieces of the cone to
+match the form of the template. This is done using vertex manipulation. Now
+select all the ‘middle’ verticies of the two pieces of the cone. This is
+most easily done by making a bounding box around all of them. If you click on
+verticie by vertecie then you will only select the verticies for 1 piece instead
+of both.<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere5.jpg"></center><br><br>
+
+<p>Now to move the verticies up! Now that all of your
+verticies are selected, grab the CENTER verticie and drag it up until the shape
+fits the template. Be sure to grab verticies that are literally on grid units
+when dragging all of the verticies or else everything will snap to grid in weird
+ways which will make all of your objects invalid. )-:<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere6.jpg"></center><br><br>
+
+<p>now you have ½ of your sphere. All you have to do is turn
+it upside down and you’ll have your full sphere. Be sure to delete the
+template cylinder as well. The sphere made in this tutorial only uses 4 rows and
+8 columns, so it’s kind of “blocky” looking, but its at least ok.<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere7.jpg"></center><br><br>
+
+
+<p>Remember, the number of sides your initial cone has
+determines the number of columns the sphere will have, and the number of sides
+your template cylinder has determines the number of rows or “stacks” that
+your sphere will have.<br><br>
+
+Beware, if you resize your sphere and stretch it about, you
+may get invalid objects due to floating point errors so it is best to make your
+sphere the size you want it to be the first time instead of using a prefab
+sphere and resizing it. This is especially true with higher-poly spheres.<br><br>
+
+The following is a sphere I made with 12 stacks and 12
+rows, you can see how much better it looks:<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/sphere/sphere8.jpg"></center><br><br>
+
+<p>If you are going to be making different parts of the
+sphere into different entities then you might consider putting the ‘null’
+texture on the inside faces of the sphere in conjunction with Merl’s modified
+ZHLT (<a href="http://www.chatbear.com/uploaded/1011059245-nulltex.zip">http://www.chatbear.com/uploaded/1011059245-nulltex.zip</a>).</body></html>

@@ -1,0 +1,14 @@
+<html><head><title>Reducing Vis Times</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="934" name="934" class="book-h1">Reducing Vis Times</h1><p>The new vvis is slow, and until the next Zoner gets their hands on the compile tool source it looks like it will stay that way.</p>
+<p>That said, here are some tips to reduce your vis times:<br />
+1: Avoid large outside areas like the plague. It is not enough to hint-brush off large sections anymore. The new tools aren't smart enough to take advantage of that. You can cut your vis times in half by simply reducing the volume of empty space in your map even if the complexity remains the same.</p>
+<p>2: Use func_details. A lot. Any brush that is not doing some serious visblocking should be turned into a func_detail. A single non-func_detail object can add hours to your vis times. Heck, don't be afraid to turn whole buildings into func_details if they don't block vis much:<br />
+<img src="http://www3.hmc.edu/~nalger/vis1.PNG"></p>
+<p>3: Clip roofs to be flush with buildings, and turn the overlapping peices into func_details. This sounds like a hack, but it really helps a lot.<br />
+<img src="http://www3.hmc.edu/~nalger/vis2.PNG"></p>
+<p>4: Place hint brushes on borders between different areas - windows, doors, entryways, etc. While people have a good intuition about what constitutes the "inside" of a building vs. the outside, the compile tools do not. You have to help the tools out a bit.<br />
+<img src="http://www3.hmc.edu/~nalger/vis4.PNG"></p>
+<p>5: Where you have angled or odd world geometry that you can't simplify, surround it with a big hint brush block so that the sector splits it creates don't continue out through the whole map.<br />
+<img src="http://www3.hmc.edu/~nalger/vis3.PNG"></p>
+</body></html>

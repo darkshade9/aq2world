@@ -1,0 +1,158 @@
+<html><head><title>Making New Buttons for Your MOD</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="539" name="539" class="book-h1">Making New Buttons for Your MOD</h1><!-- by Cheesemonster (http://rcbot.bots-united.com/emailuser.php?u=1) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>Making New Buttons for Your MOD</b> by <a href="http://rcbot.bots-united.com/emailuser.php?u=1">Cheesemonster</a> .
+</blockquote>
+
+<h3>Introduction</h3>
+<p>
+Allows you to add custom buttons to your MOD
+</p>
+
+<hr noshade color="black">
+<!--break-->
+<h3>Step 1: open file input.cpp</h3>
+
+<p>
+you need to first create a variable, typically global to the file which is a "kbutton_t"
+</p>
+
+<p>
+you'll find a lot of these declared at once in input.cpp, 
+so add something like:
+</p>
+
+<font color="red"><pre>
+kbutton_t in_my_new_button;
+</pre></font>
+
+<p>
+Or whatever you want to call it :p</p>
+</p>
+
+<h3>Step 2: Specify the Command you want to use</h3>
+
+<p>Each button has a command, e.g. attack has +attack as a console command</p>
+
+<p>
+You need to create a command in console from it as well, you can do this by using pfnAddCommand()
+</p>
+
+<p>
+Although first you need to make a function which just makes the key down or up (pressed or released)
+</p>
+
+<p>
+So you need to make TWO functions and TWO pfnAddCommand statements. Have a look...
+</p>
+
+<font color="red"><pre>
+// pressed button
+void IN_My_New_Button_Down(void)
+{
+      KeyDown( &in_my_new_button );
+}
+
+// released button
+void IN_My_New_Button_Up(void)
+{
+      KeyUp( &in_my_new_button );
+}
+</pre></font>
+
+<p>
+There is also a place in input.cpp where a lot of pfnAddCommand()'s are made. Add your commands there.
+</p>
+
+<p>
+you need to specify the command you want it to be and the name of the function which deals with it that you just made above. For example:
+</p>
+
+<font color="red"><pre>
+      gEngfuncs.pfnAddCommand ("+my_button", IN_My_New_Button_Down);
+      gEngfuncs.pfnAddCommand ("-my_button", IN_My_New_Button_Up);
+</pre></font>
+
+<p>
+remember your button whatever you want.
+</p>
+
+<h3>Step 3: Giving the button an ID</h3>
+ 
+<p>
+Each button has a cont=stant identification to know what buttons are pressed. e.g. Attack has the constant IN_ATTACK, we want to make our own.
+</p>
+<p>
+Now you should make a new bit for your button that will work with 'pev->button' in entvars.
+</p>
+
+<p>
+Define it in input.h, as follows:
+</p>
+
+<font color="red"><pre>
+#define IN_MY_NEW_BUTTON (1<<16)
+</pre></font>
+
+<h3>Step 4: Check if button is pressed</h3>
+ 
+<p>
+That's your new button's bit mask set that you can check in game if it is pressed.
+</p>
+
+<p>
+Now you've done that you can go down into the CL_ButtonBits() function. Like this:
+</p>
+
+<font color="red"><pre>
+int CL_ButtonBits( int bResetState )
+</pre></font>
+
+<p>
+Add some new code to add your new bitmask to the bits pressed when your button in_my_new_button's state is 3 (i Think!)
+</p>
+
+<p>
+Here is an example:
+</p>
+
+<font color="red"><pre>
+      if ( in_my_new_button.state & 3 )
+      {
+            bits |= IN_MY_NEW_BUTTON;
+      }
+</pre></font>
+
+<h3>Step 5: Resetting the button State</h3>
+
+<p>
+You also have to add the button when your resetting the state at the bottom of the function.. where it has all of this stuff..
+</p>
+
+<font color="red"><pre>
+      if ( bResetState )
+      {
+            in_attack.state &= ~2;
+            in_duck.state &= ~2;
+               ...
+               ...
+        }
+</pre></font>
+
+<p>
+so now just add..
+</p>
+
+<font color="red"><pre>
+in_my_new_button.state &= ~2;
+</pre></font>
+
+
+<h3>Finished</h3>
+
+<p>
+That's it. You have just codified your first button in Half-life. Congratulation!!!
+</p></body></html>

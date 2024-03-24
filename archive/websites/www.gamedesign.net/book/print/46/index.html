@@ -1,0 +1,159 @@
+<html><head><title>Jump pads in Q2? You betcha!</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="46" name="46" class="book-h1">Jump pads in Q2? You betcha!</h1><!-- <html> --> 
+<!-- temp tag used for previewing, remove later -->
+
+<!-- angles_data.htm - converted 21/08/01 from old rust documents -->
+<h3>Quake 2</h3>
+<blockquote>
+		Jump pads in Q2? You betcha! - 
+		<a href="mailto:rascal@magnolia.net">David Hyde</a> &amp; 
+		<a href="mailto:tonykat127@earthlink.net">Mad Dog</a>
+</blockquote>
+<br><br>	
+
+<h3>The "angles" key/value pair</h3>
+
+ <p>OK, this is a long story, but you goons are required to read the whole thing... 
+	that's the price you pay for cool information. My 
+	<a href="http://tarot.telefragged.com"> Tarot</a> teammate and spiritual advisor 
+	Monsto Brukes wanted to simulate Q3 jump pads in Q2 for map testing purposes. 
+	Tarot's bit_twiddling nerd guy (that's me) opened up the Q2 source and started to 
+	plug in an elevation value. But wait... he found that trigger_push code refers to 
+	the "angles" key... but that's not right he says... trigger_push just uses 
+	"angle". Well it turns out id didn't trust you mapper goons to be able to do a 
+	little simple trigonometry, so they published the input for trigger_push as 
+	"angle" only, but the code does not have that limitation.</p>
+
+ <p>The "angles" values are pitch (up/down), yaw (left/right) and roll (fall over). 
+	If "angle" is specified for an entity, then the code automatically sets "angles" 
+	to 0,angle,0... and these values are used for the entity. But what happens if 
+	instead of specifying "angle" in the .map file, you set the three "angles"?... 
+	heh heh... you know the answer, don't ya? And all it takes is a little math to 
+	translate those angles into movement directions... but not to worry, Tarot's 
+	bit_twiddling nerd has done that for you. The translations performed by the game 
+	source end up making a positive pitch down from horizontal. Yaw is unaffected by 
+	this, so you'd use the same angle you've previously used for the angle key. And 
+	roll is ignored for trigger_push, which is a shame, really... it would be nice 
+	to have a trigger_push that made you do flips. Anyhow... quick example, and I'm 
+	sure you can take it from there. Say you want the trigger_push to push you up 60
+	degrees from horizontal and to the west. Set "angles" to _60 180 0. That's it.</p>
+
+ <p>So how do you go about using this info in your editor? If your editor allows you 
+	to enter user_defined keys (qED, QERadiant, QuArk), you're all set. Just enter 
+	"angles" for the key and "<_pitch> <yaw> 0" for the value. If you're using Tread, 
+	open up quake2.gdf, find trigger_push, and enter the following below the "angle" 
+	line:<br>
+	<blockquote><pre>def_key : string : "angles" : "pitch yaw roll" : ""</pre></blockquote><!-- <br> -->
+	If you're using WorldCraft, Mad Dog has already done the work for you... 
+	<a href="http://home.earthlink.net/~tonykat127/mapediting/fgd_q2.zip">get his new 
+	.fgd file.</a> If you're using Qoole, stop. (ed. I’d have to agree.)</p>
+
+ <p>One qualifier that could foul this up for you: If your editor forces an "angle" 
+	key to be written to the .map file, "angles" will still work as long as it occurs 
+	after the "angle" definition. So if you try this and you get the same old 
+	trigger_push behavior, open up your .map file in a text editor, find the 
+	trigger_push, and delete the "angle" line.<br>
+	<br>
+	The syntax for an 'angles' keyvalue is:<br>
+	<blockquote><pre>"angles" "pitch yaw roll"</pre></blockquote><!-- <br> -->
+	Pitch can be any number from _90 to 90; negative numbers "aim" up and positive 
+	numbers "aim" down. Yaw can be virtually any positive number, generally 0_360 
+	(this would be the same value one would typically use for 'angle'). Roll can be 
+	any number from _180 to 180; this affects the "canted" view one can achieve with 
+	an info_player_intermission. Depending on the entity, a "roll" value of anything 
+	other than 0 can yield no result, an interesting result, or a result you want to 
+	avoid.</p>
+	
+ <p>Some example entities by way of explanation:
+	<ul type="square">
+		<li><b>Ammo</b> - Ammo need not lie flat. If you want to put a box of ammo 
+			on a tilted floor, or simulate an item amid a jumble of other debris you 
+			can. Note that the bounding box of the ammo does not change position or 
+			orientation, so you may need to work in a wedge_shaped mist brush in 
+			there to get the visual effect just right. Giving values to all three 
+			angles is fine.
+			<br>&nbsp;
+		<li><b>Player starts, deathmatch starts, teleporters</b> - DM spawn points 
+			and teleporter/dest platforms can be canted just like ammo. However the 
+			'angles' value translates into the direction the player looks when he 
+			spawns. So if you want the player to spawn up on a high ledge, looking 
+			down on the action, you could give the spawn point an 'angles' value of 
+			"45 0 0", for example. Even if the player has freelook off and lookspring 
+			on it works fine. I strongly advise against using a "roll" value of 
+			anything other than 0, since the player gets stuck with the canted view. 
+			Until he hits a teleporter dest which straightens him out anyway. Unless 
+			of course you want to simulate drunkeness.
+			<br>&nbsp;
+		<li><b>Strogg ships, Vipers</b> - Simulate diving or launching ships. Or a 
+			crashed misc_bigviper. Looks cool; use all 3 values. Advise the use of a 
+			playerclip brush to avoid weird clipping problems with the misc_bigviper 
+			model in the game.
+			<br>&nbsp;
+		<li><b>Banner</b> - All 3 values work, but the appearance is odd; so "roll" 
+			has little value __ but a slight "pitch" effect could have its place I 
+			suppose.
+			<br>&nbsp;
+		<li><b>Monsters</b> - Good for a laugh. Give a monster_soldier an 'angles' 
+			keyvalue of "60 0 0" and he "swims" on the floor. Too bad monsters drown 
+			in water. Death animations can be even funnier.
+			<br>&nbsp;
+		<li><b>Target_blasters</b> - Want a blaster that shoots up or down at an 
+			angle? No problem. "Roll" values don't matter. Works with lasers too, if 
+			you don't want to bother with an info_null. And it works with the 
+			target_splash too.
+			<br>&nbsp;
+		<li><b>Doors and buttons</b> - This is very very cool. You can have
+			multi_piece doors that move up/down at angles, and buttons that recess 
+			properly into angled consoles. Figuring out 'lip' may be a problem; 
+			I haven't experimented but I suspect that the game uses either a 
+			horizontal or vertical orientation for calculating 'lip'; so I would
+			avoid using _45 and 45 for "pitch", so you can get predictable results. 
+			Again, "roll" doesn't matter.
+			<br>&nbsp;
+		<li><b>Weapons, keys, armor, etc</b> - Spinning crap seems to ignore 
+			'angles'. Too bad.
+	</ul>	
+	Anyway these are some ideas. In order to use the 'angles' key properly in 
+	Worldcraft, you should set 'angle' to '0'; this removes the 'angle' key from 
+	the .map file. My .FGD prompts you for "pitch yaw roll" for entities which can 
+	make use of "roll", and it prompts you for "pitch yaw 0" for entities which 
+	can't.</p>
+	
+ <p>The team was so fired up about this that we built a fun DM map for you guys to 
+	check out. We started out making a small tutorial sort of thing, but it got out 
+	of hand pretty quickly and turned into the real deal: <br>
+	<a href="http://tux.telefragged.com/file.pl?filename=jumpbch.zip&dir=telefragged/tarot/ryo/">
+	You can download the map here (589Kb)</a>.<br>
+	The map is an r_speeds hog, so if you don't have a 3D card please don't bother. 
+	The .map file is included.</p>
+	
+ <p>You can download Mad Dogs .FGD 
+	<a href="http://home.earthlink.net/~tonykat127/mapediting/fgd_q2.zip">here</a>.</p>
+										
+ <p><b>David Hyde:</b><!-- <br> -->
+	<ul type="square">
+		<li><a href="http://www.magnolia.net/~rascal">Home Page</a>
+		<li><a href="http://mapspy.gamedesign.net">MapSpy 1.0</a>
+		<li><a href="http://www.planetquake.com/gensurf">GenSurf 1.7</a>
+		<li><a href="http://tarot.telefragged.com">Tarot Game Development</a>
+	</ul>
+	</p>
+
+ <p><b>Mad Dog:</b><!-- <br> -->
+	<ul type="square">
+		<li><a href="http://home.earthlink.net/~tonykat127/">Home Page</a>
+	</ul>
+	</p>
+
+ <p>Note: This tutorial was copied almost verbatim from the 
+	<a href="http://forums.gamedesign.net">Rust Forums</a> (ed. note: the 
+	<a href="http://forums.gamedesign.net/forums/">OLD Rust forums</a>, 
+	that is - <a href="mailto:merlinis@bigpond.net.au">Merl</a>) with minimal 
+	editing by <a href="mailto:raygunn@gamedesign.net">raYGunn</a>. It is also 
+	interesting to note the discovery of the usage of the angles key by the authors 
+	was independent and for different purposes.</p>
+
+</font> <!-- jic -->
+
+<!-- eof @ 163 --></body></html>

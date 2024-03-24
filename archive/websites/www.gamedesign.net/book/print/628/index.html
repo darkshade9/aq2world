@@ -1,0 +1,949 @@
+<html><head><title>WorldCraft/Hammer 3.4 Editing</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="628" name="628" class="book-h1">WorldCraft/Hammer 3.4 Editing</h1><!-- Submitted by Andy Nov 04-->
+
+<b>What is Hammer v3.4 :</b><br>
+<p >Hammer is a revised version of WorldCraft, it includes useful tools and options that were not available in the initial release.<br><br>
+WorldCraft 2.1 came with a set of tutorials that gave step by step instructions for people new to the editor, but for some reason they were not updated when Hammer was released.</p>
+<p></p>
+<b>Tutorials:</b><br>
+<p>The first three tutorials listed here are a recreation of the original information, and take into account most of the changes introduced by Valve Hammer 3.4.<br><br>
+Simple Doors is our own home grown tutorial, and there will be more to follow.<br> 
+If there is a topic you would like to see a tutorial on...<br> Just add a comment at the bottom of the page and we will try to add it to the growing list.</p>
+<!--break-->
+<h1 id="651" name="651" class="book-h1">Getting Started</h1><ul><!--
+Submitted by Andy Oct 04 
+Updated  Feb 2005 - Validated at W3C, XHTML1.0 Transitional
+ -->
+<h3>Hammer 3.4</h3>
+<blockquote>Getting Started - by Andy</blockquote>
+<h3>
+Getting Started with Hammer
+</h3>
+<p>
+<span style="font-weight: bold">It's important</span> to get used to referring to the Help Section in Hammer 3.4 as that's where the Setup Guide is located.
+</p> 
+<p>
+When you first load Hammer, it'll ask you if you want to view the help files. Use these to assist you in the initial Setup of Hammer.<br />
+Once you have Hammer set up, go to the File menu and click New.
+</p><!--break-->
+<p>
+If you left the defaults in for the options General, 2D Views and 3D Views during setup then you should be presented with 4 windows: <br />
+Camera View, Top (x/y), Front (y/z) and Side (x/z). I prefer having the scroll bars option checked in 2D Views. 
+</p>
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig1.jpg"><img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig1_small.jpg" height="240" width="320" alt="Fig 1" title="Fig 1" style="border: none" /><br />
+<small>Click to enlarge</small></a>
+</center>
+<p>
+You should have something that looks like the screen shot above, without the blue green and red lines in it. I have drawn back in camera mode to show you the centre of the map. The lines intersect at the centre, also shown in the other windows by the darker green lines. 
+</p>
+<p>
+<span style="font-weight: bold">The editing screen</span>:
+<br />
+The 2D Views on your screen have white Grid Lines on them. The outer edges of the grid represent the largest possible map size that the engine can handle (<span style="font-style: italic">actually you need to stay within about 128 units of the edge</span>). So when you get around to creating your first brush, try to start on the centre. The centre is designated by a crossed set of dark green lines.
+</p>
+<p>
+The most common problem for new mappers is that their imagination is bigger than what the engine can handle.<br />
+To get an understanding of what a map is all about, think of it as a shoebox. Everything inside the box is the map, or what the engine will render, everything outside the box (including the outer faces of the box) is the Void. No mans land, space, nothingness. This means that the engine will not render it.<br />
+The biggest single problem for new mappers occurs when they build a box. The brushes must mate or touch each other creating an area inside the box that is &quot;airtight&quot; to the outside Void. 
+</p>
+<p>
+Care taken during the initial brushwork saves the trouble later of re-doing the whole thing. If there is a hole in your box, there will be a problem when you run it. An error will occur called a LEAK. And that is just what it is! a LEAK. <br />
+The engine can see from the inside of the box to the outside of the box, and this can lead to other important compiling programs not being run. Apart form bad building technique, the other most common problem is having Entity Types and Brushes in the Void. <br />
+When placing monsters and entities, always make sure they are inside your &quot;airtight&quot; shoebox.<br />
+As you get better at level design, you will find that there are exceptions to these rules... Just stick with this for the time being.
+</p>
+<p>
+<span style="font-weight: bold">Brushes</span>:<br />
+A Brush is just another name for a block created in the editor.<br />
+Click on the Block Tool on the left-hand side of the screen, place your cursor on the Top (x/y) window and left click on the intersection of the dark green lines. Hold and drag your cursor diagonally up and to the right about 4 squares (this assumes that you have Snap: On Grid: 64 at the bottom-right) and let go. You now have a white dotted line that is starting to represent a rectangle. <br />
+Click on the Selection Tool on the left-hand side of the screen and position the cursor over the centre of the white outlined brush in any of the 2D views. Right click and select Create Object. <br />
+You should now have a rectangle in your 2D view.
+</p>
+<p>
+<span style="font-weight: bold">2 and 3D Navigation</span>:<br />
+Your rectangle should be visible in the Camera View. If it isn't then place your cursor on that view and hit the Z key. That should give you a cross cursor and all you need to do now is use the W,S,A and D keys to navigate around.<br />
+To get out of Camera mode just hit the Z key again. <br />
+While I am on the subject, you can navigate around the 2D views by placing the cursor over them and using the D and C keys to change the Zoom, and the Arrow Keys to move around. <br />
+We need to do now is to make our rectangle a cube. 
+</p>
+<p>
+In the Side (x/z) 2D View, click on the little cross in the centre of your rectangle. That should highlight the rectangle. <br />
+Now click and hold the top centre little white square (handle) on the outline and drag it down or up so that you end up with a square box in that view. <br />
+You should have a square in all the 2D views. 
+</p>
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig2.jpg"><img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig2_small.jpg" height="240"  width="320" alt="Fig 2" title="Fig 2" style="border: none" /><br />
+<small>
+Click to enlarge
+</small></a>
+</center>
+<p>
+Clicking on your cube in the Camera or 2D Views will highlight it. When it is highlighted the whole object should change colour. Normally it will go red to indicate that is the item you are working with. <br />
+Select Tools from the main menu bar and select Make Hollow. [Or right-click the object and select Hollow, or press Ctrl+H]. <br />
+You should now have box asking what thickness you want the walls to be. <br />
+The default is 32 units. It will not let you select 1 or -1. </p>
+<p>
+Here is what happens:<br />
+When you select a number greater than 1 it will automatically carve a piece out of the centre of your cube and leave you with the internal wall thickness that you choose. <br />
+If you select a negative number, it will leave a hollow the size of the original cube and build the walls externally to the thickness you have selected. <br />
+For the purpose of this we will stay with the default (32) and click Ok.
+</p>
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig3.jpg"><img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig3_small.jpg" height="240" width="320" alt="Fig 3" title="Fig 3" style="border: none" /><br />
+<small>
+Click to enlarge
+</small></a>
+</center>
+<p>
+As you can see from the above figure you now have a hollow cube. The hollow tool works well for simple things like cubes, but be careful when using it on anything that has non-perpendicular angles (i.e. anything that's not a cube ). 
+</p>
+<p>
+To get inside your square and have a look, click on the Entity Tool, click in the middle of your square, and adjust the little green box so that it is in the middle of the space you have created in all the 2D views. <br />
+The entity you want is info_player_start so make sure this is selected in the Object Bar. Hold the cursor over the green box, right click and select Create Object [or press Enter]. <br />
+You should now have a green rectangle in your cube. (If you are using the Hammer 3.5 Beta, you will see Gordon) This is the player start information that the game engine uses to work out where the player will join the map at.<br />
+Click on the Entity Tool again and as you did with the info_player_start and insert a light entity above your player start. 
+</p>
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig4.jpg"><img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb_fig4_small.jpg" height="240" width="320" alt="Fig 4" title="Fig 4" style="border: none" /><br />
+<small>
+Click to enlarge
+</small></a>
+</center>
+<p>
+What next... Hit F9 and if you have set up the compile programs correctly (<span style="font-style: italic">Hammer Setup</span>) you should end up standing in a really revolting pink room. <br />
+The 'F9' key will take you to a compile screen. It is important to check the boxes next to Vis and Rad, as by default they are not checked.
+</p>
+<p>
+Congratulations! More to follow - now that you have an ugly pink room (that isn't very big) we will explore some of the ways you can make it look good and expand on it. 
+</p>
+<hr /> 
+<!--Original Submitted by Andy Oct 04-->
+<p>
+<span style="font-weight: bold">Part 2: Walls and Halls</span>
+</p>
+<p>
+So you managed to compile the map from Part 1 and find yourself standing in an awful pink room. If you didn't, then I suggest you get aquainted with the Hammer Help file and Setup guide before you read any further.<br />
+The most commonly asked questions on the forums always have something to do with Setup or Compiling Problems.<br />
+Reopen that RMF file and let's go to work on it. First thing we need to do is change the grid size. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb2_sog.jpg" height="23" width="234" alt="Snap to Grid" title="Snap to Grid" />
+</center>
+<p>
+To do this use your <span style="color: #ff0000"> [ </span> and<span style="color: #ff0000">  ] </span> keys to adjust the setting. You should find that the cube you created fits exactly in four of the grids. 
+</p>
+<p>
+Now for a texture. Select your cube. Only got one wall? Click on the <span style="color: #ff0000"> Ignore Group</span> button. You can call up your texture application tool by pressing <span style="color: #ff0000">Shift + A</span> or by clicking the button on the toolbar. 
+</p>
+<p>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb2_textures.jpg" align="left" height="303"  width="124" hspace="6" alt="Texture Application" title="Texture Application"  />You should be presented with the default <span style="color: #ff0000">aaatrigger</span>. Select the <span style="color: #ff0000">Browse</span> button and look for a texture you like. I have used <span style="color: #ff0000">crete3_wall01b</span>. When you have found the texture you want just double click on it to select. It should appear just above the <span style="color: #ff0000">Replace</span> button. Ok, playing with textures is a tutorial in it's own right, so for now just click <span style="color: #ff0000">Apply</span> and your cube should be that texture. Now create a second room. Do this by cloning. First, select the existing room. Then, while pressing the <span style="color: #ff0000">Shift</span> key, click and drag with the left mouse button. Place the second room <span style="color: #ff0000">128</span> units away from the first room.
+Your top view should look like the one below. <img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb2_topview1.jpg" align="right" height="231" width="300" vspace="8" alt="Top View" title="Top View" />
+</p>
+<p>
+<span style="font-weight: bold">The Corridor</span>:<br />
+Now, we need to make a hole in each room so we can connect them together. If you have read the hints and tips at various other sites you will know that carving is a mortal sin. The idea is that you should construct each brush individually. This makes sense, especially when you are dealing with more intricate work. But today we are going to carve... just remember to carve sparingly later on, and only when you are making holes in solid blocks. Carving cylinders can lead to all sorts of problems. First, create a brush that displaces the area that you want to carve. It's a good idea to make the brush big enough for the player to move through.
+</p>
+<p>
+<span style="font-style: italic; font-weight: bold">TIP</span>: Have a look at the tutorial <a href="/node/596?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0" target="_blank"><span style="font-weight: bold"> Half-life Dimensions</span></a>. The minimum height of an overhead object in the standing position is <span style="color: #ff0000">73</span> units and the minimum width is <span style="color: #ff0000">33</span> units. 
+</p>
+<p>
+In this example I have created a brush that is <span style="color: #ff0000">200w&nbsp;&nbsp;64l&nbsp;&nbsp; 96h</span> and placed it so that it is just above the floor brush and is slightly off center and just pierces each of the walls. Now, click the selected object to highlight it, and select <span style="color: #ff0000">Carve</span> from the menu. This will cut out a hole from each wall, leaving the carving object in place. Click on the carving object again to select it and choose <span style="color: #ff0000">Make Hollow</span> from the tools menu. You will be asked to provide a wall thickness. I have used <span style="color: #ff0000">4</span> for this example because that will make the walls 4 units thick and still leave the corridor big enough to move through.
+</p>
+ <p>
+ (<span style="color: #ff8040">Note</span>: don't use negative numbers for this as the parts of the corridor extending into the rooms will intersect the rooms' walls. You could optionally resize the carving block before hollowing so that it just touches the outside of each room, then holow to -32 or something).
+ </p>
+<p>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb2_topview2.jpg" align="left" hspace="8" vspace="6" height="211" width="272" alt="Top View 2" title="Top View 2" />Great, now we have a hollow object connecting both the rooms but if you look at the corridor in <span style="color: #ff0000">Camera</span> view, you won't be able to see through. To correct this just click on <span style="color: #ff0000">Ignore Group</span> and highlight the end brush of the new corridor and delete it. Do the same with the redundant wall brush and the other wall brush and end. Be really careful when you're doing this - make sure that the brush you delete is the right one. Use all the views to avoid problems. (This is where <span style="color: #ff0000">Undo Delete</span> comes in handy). Notice how the carving has removed the wall brushes from the original cube group and created several other brushes. This is one of the reasons that carving can be problematic. A 'leak error' reported during compiling, more often than not, will be caused by moving a brush that has been affected by a carve. I make a habit of extending brushes into walls after carving, to help with inadvertent shifts of the main group. Anyway that is it. You can compile and run the map. The second room will be dark unless the light was part of the original cube group. So while pressing the <span style="color: #ff0000">Shift</span> key select the light and drag it across to the new room. Great. Try resizing and making the corridor just big enough to move through. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb2_corridor.jpg" height="240" width="320" alt="Final Product" title="Final Product" />
+</center>
+<p align="center">
+<span style="font-style: italic">Next Part 3: Textures.</span>
+</p>
+<!--EOF@153--></ul><h1 id="652" name="652" class="book-h1">Texture and Lighting</h1><ul><!--
+Submitted by Andy Oct 04 
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+ -->
+<h3>Hammer 3.4</h3>
+<blockquote>Texture - by Andy</blockquote>
+Now that you've created a couple of rooms, it's time to think about textures. Open the rmf from the last tutorial. Firstly, what sort of playing area are you constructing? It's important to have a theme or at least know where you are going with this. Once you have a general idea of the type of environment you're creating, choosing textures becomes much easier. 
+</p><!--break-->
+<p>
+For this tutorial I am using some basic room textures. Open the <span style="color: #ff0000">Texture Application</span> tool (unless you have it as part of your Screen Element Views) and click the <span style="color: #ff0000">Browse</span> button to have a look at what is available. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb3_1.jpg" height="227" width="336" alt="Image 1" title="Image 1" />
+</center><br />
+<p>
+The texture browser has some great features. Type <span style="color: #ff0000">floor</span> in the filter line and the browser will only show textures that have 'floor' as part of their name. Size set to <span style="color: #ff0000">1:1</span> will show you the actual size of the texture and what grid space it normally covers (128x128 in this example). If you select <span style="color: #ff0000">Only Used Textures</span>, it will show you all the textures you have used on your map so far. (<span style="font-style: italic">Useful, since using too many textures looks bad and also wastes the limited texture memory.</span>)
+</p>
+<p>
+Textures have different functions based on the prefix in their name:
+</p>
+<blockquote>
+<span style="color: #ff0000">{ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transparent<br />
+<span style="color: #ff0000">! </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Water (a special texture that acts like water)<br />
+<span style="color: #ff0000">~ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Light (Textures begining with this will emit light)<br />
+<span style="color: #ff0000">+ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Animated (Triggering shows the next texture)<br />
+<span style="color: #ff0000">+A </span>&nbsp;&nbsp; Animated Toggle (cycles through Max 10 frames)<br />
+<span style="color: #ff0000">- </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random Tiling (there will be 3 or 4 in a set) 
+</blockquote>
+<p>
+So <span style="color: #ff0000">!WATERBLUE</span> is a functional water texture and <span style="color: #ff0000">+0~ELEV1_PAN</span> is a the first in a sequence of special animated light emitting textures. You will find a mixture of the prefixes through out the <span style="color: #ff0000">.wad</span> files.
+</p>
+<p>
+<span style="font-weight: bold">The Floor</span>:<br />
+I have chosen <span style="color: #ff0000">c1a3floor02</span> for the floor. So in the <span style="color: #ff0000">Texture Browser</span> double click the texture you require and that texture should now be shown in <span style="color: #ff0000">Face Properties</span> box (or on the right hand side of your screen in the <span style="color: #ff0000">Texture Bar</span>.<br />
+I have found that the easiest way to apply textures to entire brushes is to have the Texture Bar as part of your screen view. To select a brush click on the <span style="color: #ff0000">Ignore Group</span> button, as this will stop you from accidentally applying the texture to an entire group, and select the brush you want to apply the texture to, in this case the Floor. <br />
+Use <span style="color: #ff0000">Ctrl + Left Click</span> to highlight the second floor in the map and with both the floors highlighted, just click on the <span style="color: #ff0000">Apply Current Texture</span> button. Both floors should now resemble concrete tiles. 
+</p>
+<p>
+<span style="font-weight: bold">The Walls</span>
+Using the same method as above, find a suitable texture for the walls such as <span style="color: #ff0000">c2a4e_w1c</span> and select all the wall brushes and apply the texture. Just to give you an idea of what can be achieved with textures, click on <span style="color: #ff0000">Browse</span> in either the Texture Bar or the Face Properties box. Check the box for Only Used Textures and type <span style="color: #ff0000">c2a</span> in the Filter line.<br />
+You should have the <span style="color: #ff0000">c2a4e_w1c</span> texture as the only one showing in the Textures box. (If there is more than one texture showing, then all the textures showing will be marked).<br />
+Now click on <span style="color: #ff0000">Mark</span> and this will select all the brushes in your map that have that texture (84 or so). </p>
+<p>
+Move the Face Properties box so that it isn't obstructing the <span style="color: #ff0000">Camera View</span> and move that view so that you have a clear perspective of the corridor, wall, floor and ceiling.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb3_2.jpg" height="281" width="381" alt="Image 2" title="Image 2" />
+</center>
+<p>
+In the Face Properties box adjust the <span style="color: #ff0000">Y Scale</span> to <span style="color: #ff0000">0.60</span> and the <span style="color: #ff0000">Y Shift</span> to <span style="color: #ff0000">70</span> or <span style="color: #ff0000">71</span>. This should leave the walls with a dark line at the top and bottom accentuating the ceiling and floor.<br />
+You can adjust the scale and shift to suit your needs and try the <span style="color: #ff0000">Align: World</span> or <span style="color: #ff0000">Face</span> check boxes. When you have got it looking how you want it, just close the Face Properties box. 
+ </p>
+<p>
+I used the same method to apply <span style="color: #ff0000">fifties_ceil5</span> to the roof and then as with the walls I adjusted the ceiling to fit. Scale <span style="color: #ff0000">X</span>:<span style="color: #ff0000">1.00</span> and <span style="color: #ff0000">Y</span>:<span style="color: #ff0000">1.00</span>, Shift <span style="color: #ff0000">X</span>:<span style="color: #ff0000">16</span> and <span style="color: #ff0000">Y</span>:<span style="color: #ff0000">55</span> and the Align: World box checked. 
+</p>
+<p>
+I have left the corridor as the original texture. You might want to create a border and apply a neutral texture to it. <br />There are heaps of ways to apply texture. Just remember that applying texture to the entire brush can avoid mixed texture errors when compiling.<br /> Try not to use too many textures and spend some time aligning your textures so they look good. For large areas use a large texture (128x128 or larger) and for outdoors or other huge areas make the scale high so that the texture isn't repeated too often. This also improves performance.<br /> Getting it to look right is really important. Experimenting with textures and the tools can produce great results. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb3_3.jpg" height="252" width="336" alt="Image 2" title="Image 2" />
+</center>
+&nbsp;
+<hr />
+<p>
+<span style="font-weight: bold">Part 4: Lighting</span>:<br />
+In this tutorial we will look at the effects of lighting. Good lighting is great for atmosphere. It's also good to have a few dark places but not too many.
+</p>
+<p>
+Before we go any further, when you compiled your Map did the light look as though there was a real light? By that I mean, did the map look as though there was a light where you placed it or did it look like the whole map was floodlit?. If it looked floodlit or really bright, then you might want to compile it again and look at the <span style="color: #ff0000">Error Log</span>. It is normally saved in the same area as your .rmf file. Look for a line that indicates an Error. If there is a LEAK in your map, then the map will be floodlit or "Fullbright". If you do not fix the LEAK, then the rest of this tutorial is pointless, because you will not see the lighting as it is meant to be.  <br />
+Another way to check for a LEAK is to bring up the console with the <span style="color: #ff0000">~</span> tiald key and type in pointfile. If there is a LEAK, the pointfile will be generated and it will tell you the number of points read. If it is <span style="color: #ff0000">0</span> then your map doesn't LEAK..... yet.
+</p>
+<p>
+<span style="color: #ff0000">The Properties</span> dialog (found by right-clicking the <span style="color: #ff0000">light</span> entity) allows you to customize the brightness, colour, appearance (flickering, fading, etc), target, and name of the light.
+</p>
+<center>
+<img  src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_7.jpg" height="217" width="300" alt="Brightness" title="Brightness" />
+</center>
+<p>
+Also, in the <span style="color: #ff0000">Flags</span> section, you have the option of indicating that the light should be <span style="color: #ff0000">Initially Dark</span>. In this case you'd also have to supply a name for the light so it could be "triggered" to turn on. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_1.jpg" height="150" width="200" alt="Image 1" title="Image 1" />&nbsp;<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_2.jpg" height="150" width="200" alt="Image 2" title="Image 2" /> <br />
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_3.jpg" height="150" width="200" alt="Image 3" title="Image 3" />
+</center>
+<p>
+The effect created by just changing the colour is dramatic. The first figure uses the default settings. For the second room I have selected the light's properties and highlighted <span style="color: #ff0000">Brightness</span>. This will bring up an additional setting, <span style="color: #ff0000">Pick Color</span>. <img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_4.jpg" align="left" vspace="8" hspace="8" height="200" width="300" alt="Image 4" title="Image 4" /><br /> 
+Clicking on this option takes you to a colour palette where you can choose what suits you. The colour palette has an Add to <span style="color: #ff0000">Custom Colors</span> button - if you find a colour that suits the theme of your room, just click that bar to save the colour. It will appear under Custom Colors: this will remain set even when you close the map or compile it. Great for large levels that need consistency. You can see from the figure that I have saved the three Colours used above. The default Brightness setting is the yellow hue shown. <br />
+Placement of the lights has a varied effect. The lights in the figures above are <span style="color: #ff0000">8</span> units below the ceiling. Adding a ceiling light fixture will enhance the effect. 
+</p>
+<p>
+<span style="font-weight: bold">Working with Light Textures</span>:<br />
+There are a lot of textures that can be used and the easiest way to find them is to open your texture browser and type <span style="color: #ff0000">+</span> in the filter [or have a look in the file lights.rad in your WorldCraft folder]. Create a brush <span style="color: #ff0000">64 x 80 x 4</span> units to apply your light texture to. In the example map I have used <span style="color: #ff0000">+0~fifts_lght01</span> (because the texture size is the same as the brush) and applied another texture to the border of the light. Place this brush in the centre of the room above the existing light. To add a little realism to the light you might want to change the light entity property Appearance to <span style="color: #ff0000">Flicker A</span>. The Fluorescent Flickersetting actually turns the light off and on, transitioning the room between light and dark. <br />
+Most light textures can be used in conjunction with <span style="color: #ff0000">func_</span> entities, by setting the <span style="color: #ff0000">Minimum Light Level</span> in the entity properties to &gt; <span style="color: #ff0000">1</span>. This gives the appearance of the texture being lit, but adds no light to the actual room. If you add a light texture to the borders of your light brush, they will also light up and sometimes this lessens the effect and reduces the shadow, giving the light an unnatural look. 
+</p>
+<center>
+<img  src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_5.jpg" height="188" width="250" alt="Image 5" title="Image 5" />&nbsp;<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_6.jpg" height="188" width="250" alt="Image 6" title="Image 6" />
+</center>
+<p>
+Create a small brush using the <span style="color: #ff0000">exit1</span> texture on the front face and position it above the corridor (makes sense). Select the brush and change it to a func_wall entity with a Minimum Light Level of <span style="color: #ff0000">1</span> (you can make this value 500, but it doesn't make any difference. The range is 0 to 1, so 0.5 is half-lit). The figures above show the enhancement gained by applying an entity to the brush. If you don't have any light in the room, and there is a really inviting "EXIT" sign at the other end, it doesn't take a genius to work out where your player is going to go. Great place for a trap or monster trigger. 
+</p>
+<p>
+<span style="font-weight: bold; font-style: italic">NOTE</span>:<br /> If you give the light a name to use with a trigger or switch, remember that the game engine can only cope with about 4 named lights or animated lights in the same visual area. More than that might produce weird effects and an error (<i>Warning to many direct lights...</i>) in some compiling programs. I am not sure how many unnamed lights the engine can cope with, but less is better. Try making use of texture lighting. The same applies with <span style="color: #ff0000">light_spot</span> entities. 
+</p>
+<p>
+As I said in the first paragraph, if your map does not compile properly or VIS and RAD do not finish, then your map will be lit &quot;Fullbright&quot; and any changes you have made to the lights properties will not show in the final map. Be sure to check for LEAK's as this is the most common cause.
+</p>
+<p>
+Experiment and try new things. The secret to a good level is in the texturing and the lighting. 
+</p>
+<p align="center"><span style="font-style: italic"> Next Part 5: Furniture Prefabs</span>
+</p>
+&nbsp;
+<hr />
+<!--EOF@116--></ul><h1 id="653" name="653" class="book-h1">Prefabs and Monsters</h1><ul><!--
+Submitted by Andy Oct 04 
+Updated Nov 04 
+Updated Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Prefabs and Monsters - by Andy</blockquote>
+<p>Now you should have a couple of rooms connected by a corridor with walls that look good and a little mood lighting. Remember the first level of Half-Life? Where you got to walk around and interact with the items in the rooms. Each of the areas was pretty much defined by what sort of additions were in the rooms such as desks, lamps or lab tables. Furniture is just as important as good lighting and texture, to give your level realism. <br /><!--break-->
+Most of the work in this tutorial will be done using the <span style="color: #ff0000">Object Bar</span> and inserting items that are already available.
+</p>
+<p>
+<span style="font-weight: bold">Prefab Objects</span>:<br />
+One of the simplest ways to add details is through the use of prefabs. Prefabs are prefabricated objects that are stored in libraries. Let's add a number of prefabs to this level from the prefab library.
+</p>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb5_1.jpg" align="right" height="337" width="154" vspace="20" hspace="8" alt="Image 1" title="Image 1"  /> 
+<ol>
+<li>Select <span style="color: #ff0000">Usable Objects</span> from the categories list, and <span style="color: #ff0000">File Cabinet,west</span> from the objects list (the use of entities in prefabs is a bit dated and sometimes pretty useless, as with this usable filing cabinet. If you want the draw to open, then all well and good, but you can't fit anything in it. One way around this is to change its properties to <span style="color: #ff0000">func_breakable</span> and set the properties to spawn something on break.)</li>
+<li>On the lower part of the <span style="color: #ff0000">Objects</span> dialog is the <span style="color: #ff0000">Insert original   prefab</span> button. Press this now.</li>
+<li>The prefab is now inserted in your room. Move it around the 2D views until you have it in a position you like. I have placed it in the first room, up against the wall. If you look at the example map you will see that the cabinet is about two units away from each wall but sitting on the floor. This will give it a more realistic lighting profile [and is good practice in cases where the object is not an entity - this way it won't split up the wall]. Move the cabinet hard up against the wall and look at the difference in shadow when you compile the map.</li>
+<li>I have inserted another filing cabinet, a trash can, a black chair and an old desk, north from the random objects category. Note that the trashcan needs to be transformed by <span style="color: #ff0000">270</span> on the <span style="color: #ff0000">Z</span> axis so that the push sign aligns with the room and I have also scaled it to<span style="color: #ff0000"> 0.7</span> on all axes. </li>
+</ol>
+<p>
+So now we have some things in our office, here are a few tips. The black chair created by the Prefab factory is a <span style="color: #ff0000">func_pushable</span> entity. If you leave it free in the room it can be pushed around. If you don't want it to move, then it's a good idea to select it and click <span style="color: #ff0000">to World</span>. By doing this you won't be able to push it and it won't make a moving sound every time you brush against it.
+</p>
+<img  src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb5_2.jpg" height="208" width="274" hspace="6" align="left" alt="Image 2" title="Image 2" />
+<p>
+In the second room I have added <span style="color: #ff0000">Modern shelves, south</span> and <span style="color: #ff0000">Metal shelves</span> (transformed <span style="color: #ff0000">180 Z</span> axis) from the random objects category. (The 'south' modern shelves are bound to a <span style="color: #ff0000">func_door</span> for some reason, so click <span style="color: #ff0000">to World</span> unless you actually want the shelves to act as a door.) The metal shelves have four boxes on them.<br />
+You can adjust the <span style="color: #ff0000">Spawn on Break</span> properties with the Map -&gt; <span style="color: #ff0000">Entity Report</span> by selecting the properties of each box. If you choose to spawn any item other than a weapon, ammo for instance, then you will find that if you break the box the ammo will fall through the shelf (<span style="font-style: italic">this is because there is no world entity below the box - it doesn't happen when you build the prefab yourself</span>).
+</p>
+<p>
+Have fun inserting prefabs. Just remember to check their properties as most of them are designed to function in one way or another. Practice transforming and scaling prefabs, so that they look right. What you're trying to achieve is playability balanced with good looks. There are numerous resource sites that have downloadable prefabs, but use caution and check them before putting them into your maps.
+</p>
+&nbsp;
+<hr />
+<!--Submitted by Andy Oct 04-->
+<p>
+<span style="font-weight: bold">Part 6: Monsters</span>:<br />
+If you take a look at the entity list you will see that there are lots of 'monster' entities. Now that you have created a simple map you probably want to know how to get it to interact with the player (or in other words, put in something to blow away). While it can be fun running around looking at great scenery and impressive detail, it becomes boring after a while. So this tutorial is a really basic guide to placing monster entities.
+</p>
+<p>
+First up, we are going to look at how a <span style="color: #ff0000">monster_barney</span> can make a map interesting. Use your entity tool to place a monster_barney in the second room. Leave all of his properties as default. Run the map, pick up the crowbar and go to Barney. First up try getting him to follow you into the other room with the <span style="color: #ff0000">Use</span> key. If that isn't successful give him whack on the forehead with the crowbar. Now run back into the other room. 
+</p>
+<p>
+A couple of things you have probably noticed already:<br />
+Getting him to follow you was like pulling teeth and then once you had banged him on the head, he pulled out his gun but didn't chase you. Main reason for this is that poor old Barney didn't know where to go.
+</p>
+<p>
+<span style="font-weight: bold">Info_node Placement</span><br />
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_infonodes.jpg" height="202" width="242" hspace="6" align="right" alt="Info Nodes" title="Info Nodes" /> Barney is one of the monster entities that will follow <span style="color: #ff0000">info_nodes</span> as well as <span style="color: #ff0000">path_corners</span>. To get Barney to chase you into the next room, he needs a map. Info_nodes provide Barney with a path to follow. Same as you would place a normal entity, place an info_node at the entrance to the corridor, one in the middle and one at the other end. Info_nodes are shown here as yellow squares.
+</p>
+<p>
+It doesn't matter how high of the ground you put them as the game engine always drops them down to 8 units off the floor; what does matter is where you put them. I have placed these nodes just 3 units from each corridor wall. This really isn't a good thing as it is better to place them a minimum of 24 units from walls or any other brush in your map. Included in the download is a small text file that was part of the original Wordcraft tutorials, which includes good information about placement. 
+</p>
+<p>
+If you compile the map now and talk to Barney with the Use key and move into the other room he should follow you down the corridor. If you hit him with the crowbar, he will draw his gun and come looking for you.<br /> (<span style="font-style: italic">Note: that info_nodes and path_corners are not interchangable: the former are used by all monsters that need to act on AI, and move dynamically, while the latter are used to specify movements - Barney will follow the path_corners until you bash him, and then he will rely on the info_nodes to hunt you down.</span>)
+</p>
+<span style="color: #ff0000">Info_air_nodes</span> work with flying monsters ie; <span style="color: #ff0000">monster_alien_controller</span>. 
+<p>
+<span style="font-weight: bold">Path_corners</span>:<br />
+You can get Barney to follow path_corner entities as though he was checking security. Just place one at each end of the corridor (In their properties name them <span style="color: #ff0000">p1</span> and <span style="color: #ff0000">p2</span> and set their <span style="color: #ff0000">next stop targets</span>. In this case p1 with a next stop of p2 and p2 with a next stop of p1). In Barney's properties, change his <span style="color: #ff0000">Target</span> to p1. If you compile the map now and don't move, Barney will be walking up and down the corridor. If you approach him, he will stop following the path_corners. All monsters do this to some extent.
+</p> 
+<p>
+<span style="color: #ff0000">Monster_scientists</span> behave in pretty much the same way and you can make them follow path_corners or info_nodes.
+</p>
+<p>
+<span style="color: #ff0000">Monster_human_grunts</span> behave slightly differently. First of all you don't really interact with them, you try to kill them. So the main thing is to decide if you want them to chase after the player. If so, info_node placement is important (<span style="font-style: italic">and reading the file included with the example map for this tutorial will save time</span>). A good coverage of info_nodes (maximum 128 visible at any point) within a room will make it impossible for the player to hide. The grunts will attack until killed, or you get capped, whichever is first. 
+</p>
+<p>
+<b>Monster Properties</b>:<br />
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_flags.jpg" height="141" width="235" hspace="8" vspace="8" align="left" alt="Flags" title="Flags" /> In the Flag properties, checking <span style="color: #ff0000"> WaitTillSeen</span> will make the monster stand there until the player sees him, then he will revert to his normal AI (This will not work if the monster is following path_corners). Checking <span style="color: #ff0000">Gag</span> will shut them up. This means that the player will not know they are around the corner.
+</p> 
+<p>
+Checking <span style="color: #ff0000">Prisoner</span> for any monster entity will stop the monster from attacking the player.
+</p> 
+&nbsp;
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_properties.jpg" height="167" width="235" hspace="8" vspace="8" align="left" alt="Properties" title="Properties" />
+<p>
+You can use monsters to activate or deactivate things by entering the name of the target you want to trigger in <span style="color: #ff0000">Trigger Target</span>. There are <span style="color: #ff0000">Trigger Conditions</span> that can be set and are pretty much self-explanatory (<span style="font-style: italic">Ok, well maybe not, it seems that some of the conditions are redundant. So test each one.</span>)
+</p>
+<p>
+One of the things that can be done is to trigger a <span style="color: #ff0000">monstermaker</span> entity. By using this trigger, the new monsters don't appear until the Trigger Condition is met. Monstermakers are a tutorial in their own right, there is so much you can do with them. If you try them out, just remember to change the <span style="color: #ff0000">Angle</span> of the entity so that the monsters it produces face the player or the info_node path when they appear. If you don't they will appear and end up looking at the walls, not doing much until the player attacks.
+</p>
+<p>
+I have included a test room map to show how info nodes, Trigger Conditions and monstermaker entities work. Kill the first <span style="color: #ff0000">monster_houndeye</span> and watch the fun start. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_houndeye.jpg" height="209" width="279" alt="Houndeye" title="Houndeye" />
+</center>
+<p>
+One last note: There are so many things you can do with monsters. Some of them can be used in conjunction with <span style="color: #ff0000">scripted_sequences</span> and <span style="color: #ff0000">aiscripted_sequences</span> which is outside the scope of this tutorial, but set up a test map, and check out what the different flags and properties of monsters do. It pays to be in God Mode when working with monsters. Remember that monsters that wait to get shot at are boring so get them to do something! And also, too many monsters can ruin the pace of play.
+</p>
+&nbsp;
+<hr />
+<center>
+Downloads :
+</center><br />
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb5.zip"><span style="text-decoration: none">Getting Started Final Map</span></a>
+</center><br />
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6.zip"><span style="text-decoration: none">The Monster Map</span></a>
+</center>
+<br />
+<hr />
+<!--EOF@107--></ul><h1 id="669" name="669" class="book-h1">Simple Doors</h1><ul><!--
+submitted by Andy Oct 04 
+Updated Nov 04 
+Updated Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Simple Doors - by Andy</blockquote>
+<p>This is a guide to simple doors in Half-Life, and how to get them working using WorldCraft or Hammer 3.4<br /><br />
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/sdoors.zip">Simple Doors</a>.zip file contains a small <b><span style="font-style: italic">.rmf</span></b> file and a <b><span style="font-style: italic">.map</span></b> file. The layout we are using has 9 doors, each with a different function.
+</p><!--break-->
+<p>
+<b>Building the door</b>:<br />
+The first thing we need to look at are the entities involved in creating a door. Have a look in the Entity Guide at&nbsp;&nbsp;<a href="book/view/619?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#func_door" target="_blank"> Func_door </a>&nbsp;&nbsp;as our first set of doors use the Func_door Entity.
+</p>
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/d1_large.jpg" target="_blank">
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/d1_small.jpg" alt="Func_door" height="215" width="300" hspace="8" vspace="8" /><br />
+<small>Click to enlarge</small></a>
+</center>
+<p>
+To make the door, build a brush 64 x 96 units and about 8 units wide. (<span style="font-style: italic">The reason I use this size is that most of the generic door textures in Half-Life are 64 x 96.</span>)<br />
+Choose the door texture you want to use by browsing through the texture window, and then right click on your brush and choose 'Create Object'.<br /> You should now have a textured door. Left click the Texture Application tool and then Left click the front of the door. Click <span style="color: #ff0000">FIT</span> and the texture will align with the brush.<br />(<span style="font-style: italic"> Do not do this with the whole door selected as it will shrink the texture on the edges of the door and could cause errors later on. You should only fit the texture to the front and rear faces of the door.</span>)
+</p>
+<p>
+<b>Getting the door to work</b>:<br />
+Select the brush and click <span style="color: #ff0000"> To Entity </span> or <span style="color: #ff0000"> Ctrl+T </span>. Scroll through the available entities in the Object Properties box until you come to Func_door. Click on Func_door to select it and now you can modify the properties of your door.<br />
+The first thing we want to do is get the door to open. In the first example I have chosen a sliding door.<br /> Looking at the Object Properties box in the picture above, the thing we need to concentrate on is the direction that we want the door to move in.<br />
+Hammer gives us two methods to achieve this, <span style="color: #ff0000">The Angle Compass</span> and the <span style="color: #ff0000">Pitch Yaw Roll (Y Z X)</span> attribute.
+</p>
+<p>
+For this door I have aligned the compass to point in the direction I want the door to go, when looking at the door in the Top(x/y) view. The Angle setting next to the compass will then display 270.<br />
+If I wanted to use the Pitch Yaw Roll attribute, I could manually type in 0 270 0. This means the door will move in the 'Z' axis at 270 degrees.
+</p>
+<p>
+<span style="color: #ff0000">Note</span>:<span style="font-style: italic"> Top (x/y) is the 'Z' axis, Front (y/z) is the 'X' axis and Side (x/z) is the 'Y' axis.</span></p>
+<p>
+The only other attribute I have set for the first door is a <span style="color: #ff0000">Lip</span> value of <span style="color: #ff0000">5</span>. The Lip value tells the door how far to retract along it's width. When triggered the door will move in the chosen direction the same distance as it's width.<br /> Lip value subtracts the number used from the width making the door travel more or less depending on the value set. If I enter a Lip value of '5' then the door will protrude out of the door frame by 5 units. If I wanted it to disappear altogether, then i would use a negative number.<br /> Using a 'Lip' value is important, because 'In Game' the door edge texture will look bad if it ends flush with the door frame.<br />
+Ok, so that is door one. The next two door in the sequence are not much different.
+</p>
+<p>
+The <b>Second door</b> will rise vertically because the Angle drop down box next to the Compass has been set to <span style="color: #ff0000">Up</span>. <br />Manually, I could have set this in the Pitch Yaw Roll attribute by entering -90 0 0 where this instructs the door to move -90 degrees in the 'Y' plane. <br /> I have also increased the lip value to '10' so that when the door is open, a larger amount is visible at the top.
+</p>
+<p>
+The <b>Third door</b> is just a reverse of the first to give you a better idea of how it all works, however I have set the <span style="color: #ff0000">Delay before Close</span> to -1 so that the door stays open.
+</p>
+<p>
+<b>Rotating Doors</b>:<br />
+For rotating doors have a look in the Entity Guide at: <a href="book/view/619?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#func_door_rotating" target="_blank"> Func_door_rotating </a>.<br />
+Nearly all doors that move other than in a straight plane are made using the func_door_rotating entity.
+</p>
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/d4_large.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/d4_small.jpg" alt="Func_door_rotating" height="215" width="300" hspace="8" vspace="8" /><br />
+<small>Click to enlarge</small></a>
+</center>
+<p>
+In the Second set of doors, 4 to 6, I have made use of the func_door_rotating entity and the Origin texture.<br />
+Here is a step by step guide to making a rotating door:
+</p>
+<ul>
+<li>Build you basic 64 x 96 brush and texture it.</li>
+<li>Build a small square brush about 8 x 8 x 50</li>
+<li>Texture the small brush with the Origin Texture</li>
+<li>Align the small brush so that it overlaps the door brush as though you were adding a hinge</li>
+<li>Select the Door Brush, and hold Ctrl and select the Origin Brush</li>
+<li>With both the brushes highlighted, click To Entity or Ctrl+T.</li>
+<li>Select func_door_rotating from the Object properties box</li>
+</ul>
+<p>
+The door is finished!<br />
+That is all you need to do to make a swinging door.<br /> The position of the Origin brush is important, but the size is not. It acts like a hinge and let's the game engine know which way the door should go.<br /> The biggest mistake people make is that they don't tie both the origin and the door to the func_door _rotating entity. 
+</p>
+<p>
+<b>Door 5</b> is slightly different in that I have placed the origin at the top of the door. This will make it move up and away from the player.<br /> To get this to work, you need to decide what plane you want the door to move in. In the example map, I wanted the door to move in the 'Y' plane or side view.<br /> To make the door move in the 'Y' plane you need to change the <span style="color: #ff0000">Flag Property</span> of the door. One of the options is 'Y axis", check this and the door will move in the 'Y" axis.
+</p>
+<p>
+<b>Door 6</b> operates in the 'X' axis. I have added a small Origin brush in the top corner of the door and selected the Flag "X axis". The door will hinge on the Origin and move up and away. Understanding how Origin's work is vital when using func_door_rotating.
+</p>
+<p>
+<b> Doors and triggers</b>:<br />
+<b>Door 7</b> is a simple sliding door very similar to door 1. The difference here is that we are going to use a button to open the door.<br />
+To achieve this we need a <a href="book/view/619?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#func_button" target="_blank"> Func_button</a>.
+</p>
+<ul>
+<li> Build a small brush next to the door and assign that to the func_button entity. (Ctrl+T)</li>
+<li> In the Properties of your func_button, add a 'Target' of <span style="color: #ff0000">door_7</span>.</li>
+<li> In the 'Flag properties' check <span style="color: #ff0000">Dont Move</span>.</li>
+<li> Select your door and add a 'Name" of door_7.</li>
+<li>Under 'Locked sound' choose 'Latch locked'.</li>
+</ul>
+<p>
+I have added a 'Move Sound' and a 'Stop Sound' to this door just to give it a bit of ambience and given the door a negative 'Lip' value.<br /> The reason for the negative Lip value is that with the Latched Locked sound added, the door will produce a locked sound when the player touches it regardless of wether it is open or not. To fix this, just add the negative lip so the player can't touch it.
+</p>
+<p>
+<b>Door 8</b> is a simple locked door. To achieve this all you need to do is 'Name' the door and assign a 'Locked Sound' to it.
+</p>
+<p>
+<b>Door 9</b> is slightly more complicated. It is locked from the outside and when touched by the player makes the 'Latch Locked' sound, but it swings open when approached from the other side. Setting this up is simple when you start with the basic swinging door:
+</p>
+<ul>
+<li>In the Object Properties of the Door assign a 'Name' of <span style="color: #ff0000"> door_9</span>.</li>
+<li>Assign a 'Master' of <span style="color: #ff0000"> door_9_master</span>.</li>
+<li>Assign a 'Locked Sound' of <span style="color: #ff0000"> Latch Locked </span>.</li>
+</ul>
+<p>
+(<span style="font-style: italic">Flag choice will depend on where your door is, but for this door I needed to check 'Reverse Direction' and 'One Way'. This will ensure that the door does not swing toward the player</span>.)
+</p>
+<p>
+Add a <a href="book/view/623?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#multisource" target="_blank"> Multisource</a> and a <a href="book/view/625?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#trigger_multiple" target="_blank"> Trigger_multiple</a> near the door and set the 'Multisource up like this:
+</p>
+<ul>
+<li>'Name' <span style="color: #ff0000"> door_9_master</span>.</li>
+<li>'Target' <span style="color: #ff0000"> door_9</span>.</li></ul>
+<p>Set Up the Trigger_multiple like this:</p>
+<ul>
+<li>'Target' <span style="color: #ff0000"> door_9_master</span>.</li>
+</ul>
+<p>
+Approaching the door from the locked side will play the 'Locked Latched' Sound. The door will not open even if the player presses the 'Use' key. It wont open because the 'Multisource' is waiting for the trigger to be activated before allowing the door to open. 
+</p>
+<p>
+The download example map makes use of textured lighting. Make sure you include a 'lights.rad' in your root folder for compiling. Check the Half-Life tutorials for more info on <a href="http://www.gamedesign.net/node/5" target="_blank"> 'Lights.rad'</a>.
+</p>
+<p align="center">Download the <a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/sdoors.zip">Simple Doors</a> .zip</p>
+<!--EOF@125--></ul><h1 id="834" name="834" class="book-h1">Creating a dark environment.</h1><ul><!--
+Submitted by Andy
+Updated  Feb 2005 - Validated at W3C, XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Creating a dark environment - by Andy</blockquote>
+<p>
+Not all of the maps in the original HL were daylight bright, but most of the outdoor maps were. Counter-Strike has enabled the player to use &quot;Nightvision goggles&quot; for the first time, and there is no point in running around with them on, in full daylight.<br />
+Here we will try to cover the easiest method of adding darkness to your level.
+</p>  <!--break-->
+<p>
+With your outdoor area open in Hammer go to the tool bar and select <span style="font-weight: bold">Map</span> and then <span style="font-weight: bold">Map properties...</span> you should be presented with the <span style="font-weight: bold">Worldspawn Object Properties</span> box below:
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/darksky/darksky_1.jpg" width="400" height="317" alt="Dark Sky 1" title="Dark Sky 1" />
+</center>
+<center>
+Hammer 3.5b shown
+</center>
+<p>
+Change the <span style="color: #ff0000">environment map (cl_skyname)</span> to a suitable night type sky. <br />
+The darker defaults in HL are:
+</p>
+<ul>
+<li>night</li>
+<li>space</li>
+<li>black</li>
+<li>dusk</li>
+</ul>
+<p>
+You could use a day time sky texture, but it will look really odd, because the texture is not actually lit by the <span style="color: #ff0000">light_environment</span>. It will be bright and visible regardless of the settings you change. Changing the <span style="font-weight: bold">Default Light Level</span> in the Worldspawn Properties does not seem to do anything regardless of the figure entered.
+</p>
+<p>
+<span style="font-weight: bold">Light_environment</span>:<br />
+Add a light_environment (or a light_spot with FLAG: &quot;Is Sky&quot; checked) to your map. If you compile your map now, you will get something that looks like this:
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/darksky/darksky_3.jpg" width="400" height="300" alt="Dark Sky 3" title="Dark Sky 3" />
+</center>
+<p>
+This is because the light environment has a default brightness of 200.<br />
+Open the properties for the light_environment and adjust the <span style="color: #ff0000">4th</span> number in the sequence to a lower figure. The example map is set to 2.
+</p>
+<p>
+<span style="color: #ff0000; font-style: italic">NOTE:</span> &nbsp; If you change it to 0 it won't go black, it will actually appear like a medium lit map. The other three numbers in the sequence are Red, Green, Blue identifiers. Using the <span style="color: #ff0000"> Pick Color</span> option will change these figures, but will not change the 4th number.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/darksky/darksky_2.jpg" width="400" height="312" alt="Dark Sky 2" title="Dark Sky 2" />
+</center>
+<p>
+You can change the Pick Color option to add atmosphere but you will notice that the actual brightness of the map is not effected by the Luminosity of the colour chosen. Changing the colour to a deep blue or red will give the map some more feel, if it is a bit lighter than the example map. 
+</p>  
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/darksky/darksky_4.jpg" width="400" height="300" alt="Dark Sky 4" title="Dark Sky 4" />
+</center>
+<p>
+Great, Now we have a dark outdoor map just waiting for some action. I added a small texture light just to give the map some perspective, and some thing to look at..  </p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/darksky/darksky_5.jpg" width="400" height="300" alt="Dark Sky 5" title="Dark Sky 5" />
+</center>
+<p>
+If you have the SKY texture in other areas of your map, they will appear the same as this area. You only need <span style="font-weight: bold">one</span> light_environment in a single map regardless of where the sky textures are, however if you are using Zoners Half Life Tools 253 custom Build 1.7 then you can make use of the -noskyfix line for your RAD compile to make use of multiple light_environments.
+</p>
+<p>
+There is a lot more you can do with the light_environment and skies, but this is just a really basic starter tutorial, If you are using ZHLT 253 1.7 then you have the option of adding <span style="color: #ff0000">-ambient</span> to your hlrad compile. Figures like:<br />
+-ambient 0.0040 0.0040 0.0040<br />
+Will add a small amount of ambient light to your shadows. The figures are very sensitive but the ones above seem to work best for general level design.
+</p>
+<!--EOF@67--></ul><h1 id="871" name="871" class="book-h1">Glass and Moving Doors</h1><ul><!--
+Submitted by Andy  Dec 04
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Glass and Moving Doors - by Andy</blockquote>
+<p>
+Most of the door textures available in Half-Life have areas that are just dying to be filled with glass and the problem for most new mappers seems to be getting the glass to move with the door.<br /> 
+To get the most out of this tutorial, you should have an understanding of Glass Rendering and the basics of Doors.<br />
+I have added a list of RUST tutorials below to help you on your way.
+</p><!--break-->
+<p>
+To get started, let's look at the humble triggered sliding door on the left of the picture below.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/glassdoors/glassdoors_fig4.jpg" height="276" width="400" alt="Finished Product" title="Finished Product" />
+</center>
+<p>
+<span style="font-weight: bold">A sliding door with moving glass</span>:
+</p>
+<p>
+I started off with a brush textured C1A0B_DR4b as the basis for a simple sliding steel door. It isn't as well defined as some HL textures as to where the glass fits, but it does provide a good base for testing.<br />
+Create a brush approximately the size you want your 'see through' glass panel to be. Size it against the door and position it so that it passes through the door.<br /> 
+Things to consider are that the look ahead height is about 50 units, so you want your glass to be positioned in the door with the center around that height.<br /> 
+I have positioned it just above the texture's buttons, and fitted it so that it looks as though it should be there. When you have your brush positioned correctly, create it <span style="color: #ff0000">(Enter)</span> and select the Carve <span style="color: #ff0000">(Shift+X)</span> tool to create a hole for the glass. When you Carve, remember never to Carve entities. <br />
+Remove your newly created brush from the hole, as we are going to use that as the door glass later. Select all the parts of your door (NOT the glass piece) and assign them to the func_door entity. Open the door properties and adjust them to suit the direction and speed of the door and make sure that the FLAG &quot;Use Only&quot; is NOT checked. (<span style="font-style: italic">If you want your door to be &quot;Use Only&quot; then the properties of the glass and the door must be exactly the same.</span>)
+</p>
+<p>
+<span style="font-weight: bold">The Glass</span>:
+</p>
+<p>
+The piece you used to carve the hole in the door only needs a few modifications. First, assign it to a func_door entity and give it exactly the same attributes as your sliding door. Don't forget the angle, so that it moves in the same direction as the door. To make the glass see-through set the Render Mode to &quot;Texture&quot; and the Render FX to about 90 (<span style="font-style: italic">a setting of 0 is totally transparent and 255 is solid</span>).
+</p>
+<p>
+An important part of setting up the glass is the &quot;lip&quot; value.  For sliding doors, the lip value of the glass should be equal to the size of the opening edge frame of the door. When you place the glass in the door, make sure that you stretch it to match up with the outer edge of the door that will move into the wall.<br />
+Another way to acheive the same effect is to make the glass the same size as the hole and set the lip value to equal the right-hand frame thickness added to to the left-hand frame thickness.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/glassdoors/glassdoors_fig1.jpg" width="220" height="281" alt="Glass Lip" title="Glass Lip" />
+</center>
+<p>
+<span style="font-weight: bold">Making it Work</span>:
+</p>
+<p>
+To get everything going, add a simple button and set it to trigger the door. That's about all there is too it. You can set the FLAG properties of the door and button to &quot;toggle&quot;  if that's the effect you want to achieve. Just don't forget that whatever you use as door properties must be set for the glass as well.
+</p>
+<p>
+On a final note, adjusting the texture inside the hole you cut for the glass is a good idea, as the area is now visible.
+</p>
+<p>
+<span style="font-weight: bold">Wooden swinging (rotating) door with glass</span>
+</p>
+<p>
+Based on the idea above, we need to add two glass panels with two &quot;origin&quot; brushes.<br />
+Create a new wooden door (I used the FIFTIES_DR6A2 texture) with an Origin brush and assign it to the func_door_rotating entity. Create two new glass panels to fit so that they are thinner than the door but extend to the hinged side of the door. Add an Origin brush to each of the glass panels and assign the each panel to the func_door_rotating entity.<br /> 
+The glass panels should have the same settings as the door, with the exception of the Render Mode and RenderFx for the glass.<br /> 
+In the Top View make sure all the Origin brushes are all in line and reasonably centered on the edge of the panels. To trigger the door open I have used a simple trigger_multiple that runs through the door. Just set its Target to the name of the door and glass.
+</p>
+<p>
+That is about it, but just a few things to consider, if you are going to assign locked or moving sounds to this door it is a good idea to make sure the doorframe and the large glass panel have the same properties selected.<br /> 
+As for setting the Flag properties of the door and the glass panels, well it depends on what you want your door to look like and how you want it to behave. Just remember to set the flags for all three items and to make sure they all have the same Name(targetname).
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/glassdoors/glassdoors_fig3.jpg" width="268" height="271" alt="Origin Placement" title="Origin Placement" />
+</center>
+<p>
+The front shot of the door shows the two glass panels (white) grouped with their Origin brushes. It also shows the position of the original door and Origin brush (red).
+</p>
+
+I have included a small zip file containing an .rmf and .map file called<br /><center><a href="http://www.gamedesign.nethttp://www.gamedesign.net/content/half-life/tutorials/wchbasic/glassdoors/glassdoors.zip">Glassdoors.zip</a>
+</center>
+<hr />
+<p>
+<span style="font-weight: bold">Other Door and Glass related tutorials</span>:
+</p>
+<p>
+<a href="http://www.gamedesign.net/book/view/6">Creating Proximity Doors</a><br />
+<a href="http://www.gamedesign.net/book/view/669">Simple Doors</a><br />
+<a href="http://www.gamedesign.net/book/view/196">How to make respawable glass</a>
+</p>
+<hr/>
+<!--EOF@82--></ul><h1 id="875" name="875" class="book-h1">Rope, Water and Waterfalls</h1><ul><!--
+Submitted by Andy 2004
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Rope, Water and Waterfalls - by Andy<br />
+Dripping water info, special thanks to 'yesukai'</blockquote>
+<p>
+<span style="font-weight: bold">ROPE</span><br />
+There are a few ways to make ROPE, but I have found the easiest way is to create a brush <span style="color: #ff0000">1</span> unit by <span style="color: #ff0000">1</span> unit in the 2D top (x/y) view. No need to do anything special to it just yet, but stretch it out to the desired length.
+</p><!--break-->
+<p>
+If you want to be able to walk up to the rope and begin to climb it, then it will have to be about <span style="color: #ff0000">66</span> units from floor level. Not much fun there, let's make it difficult and set it at about <span style="color: #ff0000">75</span> units from the floor, two things happen here. Firstly, your player will be able to walk under it, and secondly, they will have to jump to get on it.<br />
+Back to the rope. You should have a perfectly formed square block. Let's texture it.
+</p>
+<p>
+There are some textures that lend themselves to being ROPE, the main one I use is actually called that! <span style="color: #ff0000">ROPE</span> but the fun doesn't end there. If you apply the ROPE texture to your newly formed brush, then you will get what looks like a strange catapillar.<br />
+To make the ROPE more realistic, reduce the <span style="font-weight: bold">Y</span> Scale to about <span style="color: #ff0000">0.30</span> and it should start looking more ropey, if there is such a thing.
+</p>
+<p>
+Adjust the <span style="font-weight: bold">Rotation:</span> to around <span style="color: #ff0000">30</span> and that will make the ROPE spiral slightly. Just a few other things while we are at this, Click on the <span style="font-weight: bold">Justify:</span> buttons Left or Right, Bottom or Top, but whatever you do, don't click <span style="font-weight: bold">Fit:</span>, that makes the texture fit the brush, and might be Ok for doors, but is disasterous for ROPE.</p>
+<p>
+To make your ROPE climbable, you need to create another brush and assign it to the entity <span style="color: #ff0000">func_ladder</span> (If you turn the rope brush into a func_ladder, it wont show up when you compile, because there are no Render Modes with the ladder entity). The easiest way to do this is to copy the rope brush and extend it so that it is about a unit either side of the original textured rope brush. Select your new brush and move it away from the original rope brush and select <span style="font-weight: bold">To Entity</span>, choose func_ladder. Move your ladder brush back over the top of the rope brush. You now have a really good looking ROPE, with a ladder brush covering it. </p>
+<p>
+You might be wondering what the smallest unit is in Half-Life. Well it is half of one unit, because you can take your ROPE from the above example and use Vertex Manipulation to merge the corner verticies to create a little triangle that is half a unit in size. This shouldn't effect your texture, but you might like to tweak the rotation angle, or Scale again.<br />
+Side by side, there really isn't much difference.<br />
+</p>
+<p>
+<span style="font-weight: bold">What about swinging rope?</span><br />
+We know that you can't have two entities assigned to the same brush, so how are we going to get a rope to swing, and be climbable at the same time? Your guess is as good as mine.... They did it in OpFor so it should be easy? Well after hours of testing the <span style="color: #ff0000">func_pendulum</span> and reading everything to do with rope in HL, I couldn't do it. <span style="font-weight: bold">KingNic</span> came good and provided the answer:<br />
+<span style="font-style: italic">The ropes in Opposing force were a specially coded entity which used models to make the rope and had simple physics applied. You can't recreate the same effect in normal HL without coding.</span>
+</p>
+<p>
+<span style="font-weight: bold">WATER</span><br />
+Water type textures in HL begin with the <span style="color: #ff0000">!</span> symbol. To have a look at all the available water textures just open the texture browser and type <span style="color: #ff0000">!</span> in the <span style="font-weight: bold">Filter</span> box. You should be presented with about 40 different textures. While we are on the subject, here are the basic meanings behind the preface symbols for textures:
+</p>
+<blockquote>
+<span style="color: #ff0000">{ </span>&nbsp;&nbsp;&nbsp;&nbsp; Transparent<br />
+<span style="color: #ff0000">! </span>&nbsp;&nbsp;&nbsp;&nbsp; Water<br />
+<span style="color: #ff0000">~ </span>&nbsp;&nbsp;&nbsp;&nbsp; Light<br />
+<span style="color: #ff0000">+ </span>&nbsp;&nbsp;&nbsp;&nbsp; Animated<br />
+<span style="color: #ff0000">+A </span>&nbsp; Animated Toggle (Max 10 frames)<br />
+<span style="color: #ff0000">- </span>&nbsp;&nbsp;&nbsp;&nbsp; Random Tiling
+</blockquote>
+<p>
+To make water, just add water! sorry couldn't help myself. Build a brush the size and shape you want, and assign a water texture to the whole brush. That is the most basic way of acheiving water. But it wont do things that the water in Half-Life normally does. For instance, it wont react correctly to light, it won't have any animated wave height and it wont be very realistic. To fix this we need to tie the water brush to an entity.
+</p>
+<p>
+Get your brush the size and shape you want, and then assign it to the func_water entity. Select <span style="font-weight: bold">To Entity</span> and choose func_water.<br />
+Remember that when you add a water texture to a brush, after compiling, only the top face of the brush will actually show the texture, so make sure that the visable part of your brush is the top face, any sides that show will be opaque and look a little weird. Great, now we have a water brush. You will also find that if you have a large block of water, and a large wave height that you will have to stretch the <span style="color: #ff0000">X : Y</span> Scale of the texture otherwise it will look as though it is breaking up. <br />Let's have a look at the entity properties of func_water.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/rope/rope_water.jpg" width="350" height="276" vspace="10" alt="Water 1" title="Water 1" />
+</center>
+<p>
+The most useful attribute of func_water is the <span style="font-weight: bold">Wave Height</span> propety. This is set by default to <span style="color: #ff0000">3.2</span> This is the same default as assigned by the <span style="font-weight: bold">Worldspawn, Map Properties</span> function. But the good thing about using the func_water properties, is that you can assign different wave heights to seperate brushes. There is no need to change any of the other properties, as the defaults will give you acceptable water.
+</p>
+<p>
+<span style="font-weight: bold">A Waterfall</span><br />
+Moving water is a different story. If you assign a water texture to a vertical func_water brush, it wont flow. Even if you assign a Scrolling texture to the brush it still wont flow. The only way I have found to make the water flow is to assign the brush to a <span style="color: #ff0000">func_conveyor</span> entity. The default speed on a func_conveyor is 100, and that might be a bit quick, I find that 50 to 70 seems Ok. The added bonus in using the func_conveyour is that you can set it's Flag Property to Not Solid and that will allow you to walk through your waterfall.
+</p>
+<p>
+To make it more realistic change the Render Mode to <span style="color: #ff0000">Texture</span> and the FX Amount to <span style="color: #ff0000">255</span>. It will still look a bit block like, so you can then select all the func_conveyor brushes and give them the { Blue texture. This will make them transpearent with the Render Mode settings mentioned above. Now for the water texture, select only the front faces of the water and assign the scrolling texture to them. In the example map I used the Xen Scrolling water texture <span style="color: #ff0000">SCROLLXEN1</span>.
+</p>
+<p>
+I have also done a bit of the good 'ol Vertex Manipulation to to top brush so that it looks a bit more realistic. I added an Ambient_Generic and assigned the <span style="color: #ff0000">ambience/waterfall3.wav</span> sound to it. OK, so it doesn't look like real water, but it is as close as you are going to get in HL.<br /> 
+If your water isn't flowing the way you want it to, adjust your textures rotation. Best advice I can give on this is to highlight the face of the texture with the Texure tool open. Notice that on the face of the texture (3D view) in the center there are three arms of an indicator Yellow, Blue and Red. If you change the Rotation of the texture until the Yellow arm is facing the direction you want the texture to scroll then it will scroll that way after compiling.
+</p>
+<p>
+<span style="font-weight: bold">Dripping Water</span><br />
+Dripping water is really easy to create, the main idea I follow comes from <span style="font-style: italic">Jeff 'Yesukai' Pritchard</span> who suggests using an <span style="color: #ff0000">evn_blood</span> to create the effect. Place an env_blood in your map and change it's attributes: <span style="font-weight: bold">Name</span>, I creatively called mine Drip.<br /> 
+Pitch Roll Yaw (Y Z X) to <span style="color: #ff0000">90 0 0</span> or Down, and the <span style="font-weight: bold">Amount of blood (damage to simulate)</span> to <span style="color: #ff0000">1</span>. In the Flag Properties, Check Blood Stream
+</p>
+<p> 
+Next we need a multi_manager. Assign the multi_manager a <span style="font-weight: bold">Name</span> and enter new Key value for Drip and the Name of your multi_manager (so that it reactivates itself), set the values of these to something like <span style="color: #ff0000">0.8</span>. Don't forget to check the Multithreaded Flag. Now a trigger, I just used a trigger_auto to target the multi_manager as I figured that the drips might as well start with the map.
+</p>
+<center>
+<img src="content/half-life/tutorials/wchbasic/rope/rope_water2.jpg" width="450" height="337" alt="Rope 1" title="Rope 1" />
+</center>
+<hr />
+<center>I have added a small RMF to help you out:<br />
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/rope/rope.zip">Rope.zip</a>
+</center>
+<!--EOF@82--></ul><h1 id="876" name="876" class="book-h1">Texture Application</h1><ul><!--
+Submitted by Andy Dec 04
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Texture Application - by Andy</blockquote>
+<p>
+There is more than one way to apply texture so this isn't going to show you all of them, just the basics. What I am going to discuss is the best way to avoid the error <span style="color: #ff0000">Bad Surface Extents</span> and weird texture placement.
+</p><!--break-->
+<h4>
+The Map
+</h4>
+<ul>
+<li>Open Hammer 3.4</li>
+<li>Open a new map.</li>
+<li>On the top <span style="font-weight: bold">Tool Bar</span> click <span style="font-weight: bold">View</span>.</li> 
+<li>Highlight <span style="font-weight: bold">Screen Elements</span> and make sure that <span style="font-weight: bold">Texture Bar</span> is ticked.</li>
+</ul>
+<p>
+Your Screen should look something like this:
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/textureapp/text_align1.jpg" width="400" height="235" alt="The Screen" title="The Screen" />
+</center>
+<p>
+Using the <span style="color: #ff0000">Block Tool</span> draw a square <span style="color: #ff0000">256</span> x <span style="color: #ff0000">256</span> x <span style="color: #ff0000">128</span>, but do not create it yet.<br />
+Now Click on the <span style="font-weight: bold">Browse</span> button in the Texture Group: shown above you should now be able to see all the textures you have listed in the Tools>Options>Texture Tab that you added when you set Hammer up.<br />
+Every time you open a new map, you need to make sure that the textures listed in the setup are the one's you want to use. Hammer does not save previous texture listings, so you can't switch between them. (<span style="font-style: italic"> Lot's of people have asked for this to be included! Maybe in Hammer 4?</span>).<br />
+If you want to Browse a single .wad file that is in your texture list, just click the down arrow where it say's <span style="font-weight: bold">All Textures</span> and choose the .wad file you want to browse.
+</p>
+<p>
+To select one of the textures from the Browse screen (<span style="font-style: italic">I used OUT_HCW2A because it is a <span style="color: #ff0000">128</span> x <span style="color: #ff0000">128</span> texture</span>), just double click on it and you will be returned to the main map screen. Notice how the texture you double clicked on is now shown in the Texture group: It also tells you how big it is.<br />
+Right Click on your white dotted box in the 2D views and select <span style="font-weight: bold">Create Object</span>. You are now the proud owner of a textured cube. Select the cube and hollow it to a wall thickness of 2.<br />
+First thing to do is click on <span style="font-weight: bold">Ignore Group</span> and select each of the walls. Now bring up the <span style="font-weight: bold">Toggle Texture Application</span> by clicking the tool or using Shift+A.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/textureapp/text_align2.jpg" width="400" height="327" alt="The Walls" title="The Walls" />
+</center>
+<p>
+This is where all the fun starts.<br />
+Click on <span style="font-weight: bold">B</span> (Bottom), <span style="font-weight: bold">C</span> (Center) or <span style="font-weight: bold">T</span> (Top)  to align the texture. Sometimes it is useful to use the <span style="color: #ff0000">Hide Mask</span> button, to get rid of the red and see what your doing, the brushes will be identifyable by there own little orientation arrows. This texture works well with <span style="font-weight: bold">Top</span> or <span style="font-weight: bold">Bottom</span> keys because it is a 128 unit texture.<br />
+With the <span style="color: #ff0000">Face Properties</span> box open, you can just click the floor and add your floor texture. But this will only change the face of the floor, not the whole brush. To texture the whole brush, close the Face Properties box and select the brush, then open it again and do the same as above.
+</p>
+<h4>
+Doors
+</h4>
+<p>
+The easy way to texture doors is to find a door texture you like, and build a brush the size of the texture. For this example I have chosen the <span style="color: #ff0000">LAB1_DOOR7</span> texture. Make a brush <span style="color: #ff0000">64</span> x <span style="color: #ff0000">96</span>, browse to the texture, and create the textured brush the same as you did before.<br />
+Great, the texture is all over the place... Bring up the <span style="font-weight: bold">Texture Application Tool</span>. Notice how the texture is already shown in the tool, that is because you used the texture group Browse to find it. Now click on the face of the door so that only that face is higlighted. Click on the <span style="font-weight: bold">Fit</span> button, and the texture will fit the face. This is important way to get textures to look right if your door brush is not the same size as the texture.<br />
+So why didn't I just FIT the whole door as one? becasue the texture tool will then fit the whole door texture onto <span style="font-weight: bold">each face</span>, so there will be a really weird door texture on the sides and top and bottom.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/textureapp/text_align3.jpg" width="226" height="237" vspace="8" alt="The alignment" title="The Alignment" />
+</center>
+<p>
+To fix those, highlight the side and click <span style="font-weight: bold">L</span> (Left) or <span style="font-weight: bold">R</span> (Right). That normally makes it look ok, but you might want to fine tune the alignment with the <span style="color: #ff0000">Shift X : Y</span> settings. To fix the top and bottom, use the <span style="font-weight: bold">T</span> (Top) or <span style="font-weight: bold">B</span> (Bottom) buttons.
+</p>
+<h4>
+Things to remember
+</h4>
+<p>
+Try to apply texture at Scale 1:1 initially, and resize visible faces to reduce r_speeds, where possible.<br />
+Don't use the <span style="font-weight: bold">Fit</span> button to texture to a whole brush, just do the face you need.<br />
+Spend some time using the settings on the texture tool to find out what they do. Try selecting multiple faces and using the <span style="color: #ff0000">Treat as One </span> setting to do lot's of brushes at once. Great for getting Hallways to look good.<br />
+If all else fails, read the Hammer Help file (Texture Application Mode). <span style="font-style: italic">Which is what you should have done in the first place!</span>
+</p>
+<hr />
+<center>I have added a small RMF to help you out:<br />
+<a href="http://www.gamedesign.net/content/half-life/tutorials/textureapp/text_align.zip" style="text-decoration: none">Text_Align.zip</a>
+</center>
+<!--EOF@70--></ul><h1 id="883" name="883" class="book-h1">Grunts and Gun's</h1><ul><!--
+Submitted by Andy Dec 04
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Grunts and Guns - by Andy<br/>
+Special thanks to Raymond Talavera and Handy Vandal</blockquote>
+<p>
+Remember that rocket launcher in the Half-Life map <span style="font-weight: bold; font-style: italic">On a Rail</span>?&nbsp; The one that was at the end of the tunnel. You had to kill the grunt to get it to stop firing. 
+</p><!--break-->
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/gruntgun/gruntgun_1.jpg" width="400" height="300" vspace="6" alt="turret" title="turret" />
+</center>
+<p>
+This tutorial assumes that you can already build a turret. In this example I have used the func_tank entity because you can set the Bullets to &quot;None&quot; and this saves you having to go into God Mode to test it.<br />
+The turret I have used was built from scratch as I had a particular field gun theme in mind, but you don't have to limit yourself to the func_tank. This tutorial will work with the func_tanklaser, tankmortar or rocket.
+</p>
+<p>
+Place your func_tank in the map and give it a name. I have used <span style="color: #ff0000">Gun1</span>. <br />
+The only other thing you have to do is set Active on in its flag properties. Don't set the Controllable flag just yet, we will discuss that later.
+</p>
+<p>
+Place a monster_grunt behind it and set the grunt properties to:<br />
+Trigger Target: <span style="color: #ff0000">Gun1</span> (the name of the func_tank)<br />
+Trigger Condition: <span style="color: #ff0000">Death</span> (<span style="font-style: italic">the reason I haven't set it to 50% is that I had trouble with the tank stopping if the grunt was killed outright on the first shot - sometimes the gun would continue to function</span>)
+</p>
+<p>
+And in the monster_human_grunt Flag properties check &quot;Prisoner&quot; as this will stop the grunt from leaving the gun and attacking.<br />
+You can also check Gag if you want the grunt to stay silent.<br />
+Ok, run the map and you should have a functioning gun with a grunt behind it.<br />
+Shoot the grunt, the gun stops! 
+</p>
+<p>
+<span style="font-style: italic; color: #ff0000">Note</span>:<br />
+If the gun doesn't stop when you kill the grunt, then go over the settings again. If it still doesn't work you can add a trigger_relay and get the grunt to Trigger Target the relay's name, and the relay to target the func_tank, with the Trigger State set to <span style="color: #ff0000">Off</span>.  Either way you now have a gun that will target the player.
+</p>
+<p>
+<span style="font-weight: bold">What if you want to kill the grunt and then let the player use the gun?</span>
+</p>
+<p>
+Taking what you have achieved above, copy your tank.
+</p>
+<ul>
+<li>Give it a name of <span style="color: #ff0000">Gun2</span>.</li>
+<li>Change the Render Mode attribute to <span style="color: #ff0000">Texture</span>.</li>
+<li>Leave the FX Amount set at <span style="color: #ff0000">0</span>.</li>
+<li>Set the Controllable flag on, and make sure Active is <span style="font-style: italic">not</span> checked.</li>
+<li>Place gun 2 in the exact same place as gun 1, so that they look like one in all views.</li>
+<li>Create a brush and tie it to a func_tankcontrols entity, Set the Tank Entity Name to <span style="color: #ff0000">Gun2</span> and place the brush so Gun2 will be controllable.</li>
+</ul>
+<p> 
+Check out the <a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/gruntgun/gruntgun.zip"><span style="font-weight: bold; text-decoration: none">Downloadable Example</span></a>:<br /> 
+The func_tankcontrols is placed at the player end of the gun, but to make it useable a clip brush is added so the player won't get caught on the gun. Also in the initial trial the corpse of the grunt got in the way; Check Fade Corpse in the grunt's properties to fix this.
+</p>
+<p>
+Add two env_render entities to your map. For ease of use I put them above and to the right of the gun.<br />
+The first env_render:
+</p>
+<blockquote>
+Name it <span style="color: #ff0000">unrend1</span>.<br />
+Target is <span style="color: #ff0000">Gun1</span>.<br />
+Set the Render Mode to <span style="color: #ff0000">Texture</span>.
+</blockquote>
+<p>
+The second env_render:
+</p>
+<blockquote>Name it <span style="color: #ff0000">rend2</span>.<br />
+Target is <span style="color: #ff0000">Gun2</span>.<br />
+Leave the rest of the settings at their defaults.
+</blockquote>
+<p>
+Add a multi_manager to your map. Name it <span style="color: #ff0000">rendermm</span>. With Smart Edit off, add the following keys and values:<br />
+</p>
+<blockquote>
+unrend1 <span style="color: #ff0000">0.2</span><br />
+rend2 <span style="color: #ff0000">0.2</span><br />
+gun1 <span style="color: #ff0000">0</span>
+</blockquote>
+<p>
+Click on your grunt, and change his Trigger Target property to <span style="color: #ff0000">rendermm</span>.
+</p>
+<span style="font-weight: bold">So what's happening?</span><br />
+<p>
+The gun will commence firing when it has the player in range.<br />
+Shooting the grunt triggers <span style="color: #ff0000">rendermm</span> which instantly switches off <span style="color: #ff0000">Gun1</span>, then triggers <span style="color: #ff0000">unrend1</span> and <span style="color: #ff0000">rend2</span>.<br />
+Unrend1 makes Gun1 disappear. Rend2 makes Gun2 appear and Gun2 is flagged as Controllable.<br />
+The player can now use the gun!
+</p>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/gruntgun/gruntgun_2.jpg" width="514" height="427" alt="Entity Setup" title="Entity Setup" />
+<p>
+Just a few things added to this map to make it more realistic, I have added another multimanager, an env_shake and an ambient_generic because the func_tank is set to <span style="color: #ff0000">No Bullets</span>. There is no need to add the ambient_generic if you set the gun to fire something as it is already included as part of the entity. 
+</p>
+<p>
+multi_manager:<br />
+Name set to <span style="color: #ff0000">mm2</span>.<br />
+Smart edit off and keys and values added for bang, <span style="color: #ff0000">0</span> and shake, <span style="color: #ff0000">0</span>.
+</p>
+<p>
+env_shake:<br />
+Name set to <span style="color: #ff0000">shake</span>.
+</p>
+<p>
+ambient_generic:<br />
+Name set to <span style="color: #ff0000">bang</span>.<br />
+WAV File Name set to <code>weapons/explode3.wav</code>.
+</p>
+<p>
+To get this part of it to work, you need to set Gun1 and Gun2 to Target <span style="color: #ff0000">mm2</span>. 
+That way mm2 will turn the sound and shake on for Gun1 when it fires, and turn it on again when Gun2 is fired by the player.
+</p>
+&nbsp;
+<!--EOF@109--></ul><h1 id="1044" name="1044" class="book-h1">Security Cards</h1><ul><!--submitted by Andy 01 Apr 05-->
+<h3>Hammer 3.4</h3>
+<blockquote>
+Security Cards - by Andy<br />
+</blockquote>
+<p>Here's a really quick tutorial about getting a key to open a door (there might be an easier way to do this but I found that this method works pretty well).  You can also use the key in other levels by just cloning the door, trigger and multisource.
+</p>
+<p>The idea here is to make sure that the door will not open until you have the key. First up place an <a href="node/958?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#item_security">item_security</a> entity, an <a href="node/954?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#env_global">env_global</a> entity and a <a href="node/959?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#multisource">multisource</a> in your map. Oh yeah, don't forget the door and the card scanner.
+</p>
+<p>In the properties of the item_security entity, set the 'Target' to the name of the env_global.<br />
+I have used the name card to make things easy. [ Something of interest here is that you could also use a world_items entity because it does the same thing.]
+</p>
+<p> In the properties of the env_global entity, set the Name to card, Global State to Set to cardtaken, Trigger Mode to On and Initial State to Off.
+</p>
+<p>In the properties of the multisource set the Name to Cardms and Global State Master to cardtaken. 
+</p>
+<p>You need to set the properties of the door and the door's <a href="node/955?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#func_button">func_button</a> (card scanner) so that it actually works. The card scanner does not need a name; the only properties that really need 
+setting are the Target, in this case door2 (the name of the door) and 
+Master, cardms (the name of the multisource). If you want the door to close behind the player, make sure that Toggle is not checked in the flag properties and that the door has the same flag.
+</p>
+<b>So What's Going On?</b>
+<p>Picking up the security card calls the global (card) which sets the state to cardtaken. 
+The multisource will not let the func_button operate until the cardtaken 
+state has been called and now that it has, it allows the func_button to operate.
+</p>
+<p>There are <a href="content/half-life/tutorials/wchbasic/secards/securitycard.zip?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0"><b>two maps provided</b></a> because I wanted to prove the Global.</p>
+<center><img src="content/half-life/tutorials/wchbasic/secards/securitycard.jpg" width="250" height="188" alt="Final map" title="Final Map" /></center>
+<p>
+So this is what it looks like. Someone has bashed poor old Barney on the head, and the key is by his side . Try using the card scanner on the table before you get the card. The set of entities used lend themselves to endless possibilities, so have fun and if you find more uses then let us know through the forum.</p>
+<hr>
+<blockquote>This tutorial first appeared at <a href=http://www.twhl.co.za/index.php?">TWHL</a> in 2002, as an attempt to duplicate a tutorial I once read. I believe the original article was written by Venomus @ The SpawningTank and all credit for the initial guide should go to him.</blockquote></ul></body></html>

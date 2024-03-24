@@ -1,0 +1,197 @@
+<html><head><title>Creating Environment Maps With Terragen</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="9" name="9" class="book-h1">Creating Environment Maps With Terragen</h1><!-- by Merl (merlinis@bigpond.net.au) 2001
+     by Gard (stephen@geol.uwa.edu.au) 2003
+     Updated format Feb 05 Andy -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+Creating Environment Maps With Terragen - <a href="mailto:mithodiel@softhome.net">Mithodiel</a>
+</blockquote>
+&nbsp;
+<p>
+<span style="font-weight: bold">Preface:</span><br /> 
+<span style="font-style: italic">This tutorial consists of two parts.  In Part I, we explain exactly what an environment map otherwise known as a &quot;sky&quot; is, and what it is used for in a Half-Life level. Then in Part II, we discuss how to make an environment map using <a href="http://www.planetside.co.uk/terragen/">Terragen</a>.
+</span>
+</p>
+<p>
+<span style="font-style: italic">Experienced mappers who already understand how a Quake-engine environment map works can skip Part I.  The rest of us should start with Part I.
+</span>
+</p>
+<hr />
+<h3>Part I: What Is an Environment Map?</h3>
+<p>
+An <span style="font-style: italic">environment map</span> is used in a Half-Life level to provide the the player with the illusion of being in an outdoor environment. Confining ourselves to the walls of some building would become quite boring after a while, but &quot;rooms&quot; (that is, areas enclosed by brushes) are the only player-space areas that the game engine understands. So, rather than forcing the player to be indoors all of the time, we use special brushes (<span style="font-style: italic">sky brushes</span>, covered all over with the SKY texture) wherever the player is capable of viewing the sky outdoors. The game engine paints sky brushes with special graphics that provide the illusion of being contained in a 3D outdoor environment. The whole idea is to convince the player that he or she is not simply contained inside some big box. :)
+</p>
+<p>
+That said, let's get a bit more technical. An environment map takes the form of a hollow cube. The &quot;outdoors&quot; panorama is then painted on this cube so that it appears to be continuous in every direction, as far as the eye can see. Confused yet? What if I told you that the sky was the projection of a spherical picture on the environment cube? Oh well, no matter. For our purposes, it's not all that important anyway.
+</p>
+<hr />
+<h3>Environment Maps In Half-Life</h3>
+<p>
+Since the &quot;outdoors&quot; is painted on a cube, this implies that there are six separate graphics that make up the sky, each of them the same size. In Half-Life, each environment map consists of six 256x256 graphics that make up the sky. The images are named <span style="font-style: italic">skyname</span>rt (right), <span style="font-style: italic">skyname</span>ft (front), <span style="font-style: italic">skyname</span>lf (left), <span style="font-style: italic">skyname</span>bk (back), <span style="font-style: italic">skyname</span>up (up), and <span style="font-style: italic">skyname</span>dn(down), where <span style="font-style: italic">skyname</span> is the name of the sky that you are creating. You must store your sky graphics in two formats: 8-bit uncompressed BMP (for those without 3D accelerators) and 24-bit compressed TGA (for those with 3D accelerators).
+</p>
+<p>
+Hmmm. Perhaps a picture of an unfolded skybox would help:
+</p>
+<center>
+<img src="content/half-life/tutorials/terragen/tgen_skybox.jpg" width="440"  height="332" alt="Sky Box" />
+</center>
+<p>
+Wherever two sides of the skybox meet, you must take care to make the graphics  blend together seamlessly. These sides are denoted by colored bars in the  picture -- sides that touch are banded in the same color. If you do not take  care to match them up properly, then you will see a seam in the game where  the sides of the sky meet, and the player will realize that they are caught  inside some big box. That is a Bad Thing.
+</p>
+<hr />
+<h3>Part II: Using Terragen to Make an Environment Map</h3>
+<p>
+Now that we understand the concept of an environment map, I can explain how to actually go about making one.
+</p>
+<p><a href="mailto:matt@planetside.co.uk">Matt Fairclough</a> has developed a nifty program called <a href="http://www.planetside.co.uk/terragen/">Terragen</a> that generates photo-realistic terrain images. These terrain images can include lighting, fogging, and other atmospheric effects. Of course, there are other programs out there that can do the same thing. (Bryce and 3D Studio MAX come to mind.) The best thing about using Terragen is that it is <span style="font-weight: bold">free</span> (for non-commercial use) and it is <span style="font-weight: bold">fast</span> (at 75&#37; detail, I was able to render the entire sky in about 30 minutes on a P-200 MMX machine with 32MB of RAM). These two qualities make generating environment maps with it easy for amateur mappers (like me).
+</p>
+<p>
+First, if you don't have Terragen already, then you will need to <a href="http://www.planetside.co.uk/terragen/download.shtml">download Terragen from the Terragen site</a>. As of the time of this writing (21 July 2000), the latest version is 0.8.11. The examples and screen shots assume that you are using this version.
+</p>
+<p>
+Once you have obtained Terragen and installed it, your next step is to generate  your sky environment. This tutorial is not designed to explain all of the  inner workings of Terragen, so I will have to leave you to generate your  own world. <a href="http://www.planetside.co.uk/terragen/">The main Terragen page</a> has links to the <a href="http://www.planetside.co.uk/terragen/guide/">official User's Guide</a> and to beginner tutorials to get you started. Use your imagination -- the  possibilities are endless.
+</p>
+<hr />
+<h3>Rendering the Environment Map</h3>
+<p>
+After you create your environment, you are ready to render your sky. The  technique for doing this in Terragen is very similar to the technique for doing it in Bryce. You will first select an initial position and orientation for the camera, and then take 90-degree field-of-view snaps of the scene in each of the six cardinal directions (right, front, left, back, up, and down).
+</p>
+<p>
+To set the initial camera position, bring up the <span style="font-weight: bold">Render Controls</span> window. An overhead map of your terrain appears at the bottom right-hand side of the window. Clicking on the map with the left mouse button sets the camera position; clicking on it with the right mouse button sets the camera target (that is, the point that the camera always looks toward). You can also enter numbers manually in the Camera Position fields if you prefer. I usually enter 128 for the camera position X and Y values, which sets the camera in the center of the map. You might want to adjust the Z coordinate for the camera position as well. Then set all three of the Camera Orientation values to 0 and do a render preview. If you are satisfied, then move on to the next step; otherwise, keep adjusting the camera position until you are satisfied.
+</p>
+<p>
+Once you have set the camera position, click on the Camera Settings button and manually set the Zoom to 1. A Zoom value of 1 results in a 90-degree field of view, which is what we need for a Half-Life sky. The other settings are optional, but <span style="font-weight: bold">Zoom must be 1</span>, no more and no less. Once you have set the zoom value, exit the Camera Settings dialog.
+</p>
+<p>
+Now, you need to decide what size that you want for the rendered images. Half-Life sky images are 256x256, so you can snap images at that size if you want to. Alternatively, you can snap the images at a larger size (say, 512x512) and resample them down to 256x256 using a paint program such as <a href="http://www.jasc.com/">Paint Shop Pro</a>. Doing this can give you greater graphical detail, but may require additional post-processing to make the graphics seamless. So for now, set the Image Size to 256x256. Also, set the Detail level to maximum for best image quality. (The example shots are done at 75&#37; detail, and it shows in the final result.)
+</p>
+<hr />
+<h3>Snapping the Sky Images</h3>
+<p>
+Now we are ready to snap the sky images. Snapping each image involves adjusting the Camera Orientation values in order to point the camera in the proper direction, and pressing the Render Image button to snap the scene. The three Camera Orientation values control the camera as follows:<br />
+</p>
+<ul type="square">
+<li>
+<span style="font-weight: bold">Head</span>: This value controls the camera heading, or compass direction. This value represents degrees clockwise from &quot;north&quot;, and ranges from 0 to 360, where 0 is &quot;north&quot; (straight up) on the terrain map, 90 is &quot;east&quot;, and so on.
+</li>
+<li>
+<span style="font-weight: bold">Pitch</span>: This value controls the camera pitch, or up-and-down tilt. This value represents some number of degrees above the horizon, and ranges from -90 (straight down) to 90 (straight up). A pitch of 0 makes the camera level.
+</li>
+<li>
+<span style="font-weight: bold">Bank</span>: This value controls the bank of the camera, or its side-to-side tilt. This value should always be 0, unless you are using the bank to produce special sky effects (which are beyond the scope of this tutorial).
+</li>
+</ul>
+<p>
+For each of the six cardinal directions listed below, adjust the Camera Orientation values as shown, render the image, and then save it to disk using the proper file name convention. (Replace <span style="font-style: italic">skyname</span> with the name of our own sky in each file name.) Each direction has a thumbnail picture of the process, and you can click on the picture for a larger version of the image.
+</p>
+<table border="0" cellpadding="1" cellspacing="2">
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap1.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb1.jpg" width="100" height="87" alt="Right" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Right (<i>skyname</i>rt.bmp)</b><br />
+      Camera orientation: Head=0, Pitch=0, Bank=0<br />
+      Large image size: 86K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap2.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb2.jpg" width="100" height="87" alt="Front" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Front (<i>skyname</i>ft.bmp)</b><br />
+      Camera orientation: Head=90, Pitch=0, Bank=0<br />
+      Large image size: 83K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap3.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb3.jpg" width="100" height="87" alt="Left" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Left (<i>skyname</i>lf.bmp)</b><br />
+      Camera orientation: Head=180, Pitch=0, Bank=0<br />
+      Large image size: 86K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap4.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb4.jpg" width="100" height="87" alt="Back" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Back (<i>skyname</i>bk.bmp)</b><br />
+      Camera orientation: Head=270, Pitch=0, Bank=0<br />
+      Large image size: 88K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap5.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb5.jpg" width="100" height="87" alt="Up" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Up (<i>skyname</i>up.bmp)</b><br />
+      Camera orientation: Head=0, Pitch=90, Bank=0<br />
+      Large image size: 78K
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="content/half-life/tutorials/terragen/tgen_snap6.jpg">
+      <img src="content/half-life/tutorials/terragen/tgen_thmb6.jpg" width="100" height="87" alt="Down" align="left" hspace="5" />
+      </a>
+    </td>
+    <td>
+      <b>Down (<i>skyname</i>dn.bmp)</b><br />
+      Camera orientation: Head=0, Pitch=-90, Bank=0<br />
+      Large image size: 83K
+    </td>
+  </tr>
+</table>
+<p>
+Once you have snapped the scenes, you need to save them in the proper format. Terragen will save them in 24-bit BMP format. You will need to convert these images to 24-bit compressed TGA, and then also convert them to 8-bit uncompressed BMP format before you can use them with Half-Life.
+</p>
+<hr />
+<h3>Testing the Sky in Half-Life</h3>
+<p>
+Once you have converted your sky into the proper formats, place them in the <span style="font-style: italic">half-life\valve\gfx\env</span> subdirectory (where <span style="font-style: italic">half-life</span> here is the directory where you installed Half-Life). Then load it up in the game. You can create your own test map, or you can <a href="content/half-life/tutorials/terragen/sky_test.zip">download this example map</a> that I created for this purpose. It consists of little more than an (unsealed!) skybox, a CLIP brush for the player to stand on, and a player start. This allows you to view the entire sky unobstructed by other map geometry. If you use the <a href="content/half-life/tutorials/terragen/sky_test.zip">example map</a>, then you will obviously want to edit it so that it loads your sky instead of trying to load my sky.
+</p>
+<center>
+    <a href="content/half-life/tutorials/terragen/tgen_snap7.jpg">
+    <img src="content/half-life/tutorials/terragen/tgen_thmb7.jpg" width="200" height="150" alt="In Game 1" hspace="5" /></a>
+     <a href="content/half-life/tutorials/terragen/tgen_snap8.jpg">
+    <img src="content/half-life/tutorials/terragen/tgen_thmb8.jpg" width="200" height="150" alt="In Game 2" hspace="5" /></a><br />
+    <span style="font-style: italic">In-game screen 
+    <a href="content/half-life/tutorials/terragen/tgen_snap7.jpg">shot #1</a> (115K) and
+    <a href="content/half-life/tutorials/terragen/tgen_snap8.jpg">shot #2</a> (113K) of new environment map </span><br />
+    <span style="font-style: italic">Click on a thumbnail to view a larger version of the image</span>
+</center>
+<p>
+The first shot is especially significant, because the area shown crosses a sky image intersection (specifically, between the Right and the Back images). Notice how seamlessly the sky images blend together! Also, notice the importance of high detail (which the larger shots bring out much more clearly). This example sky would look <span style="font-style: italic">much</span> better in the game if I had rendered the images at 100&#37; detail level instead of at 75&#37;. So will yours.
+</p>
+<hr />
+<h3>Tutorial Files</h3>
+<ul type="square">
+	    <li><a href="content/half-life/tutorials/terragen/sky_test.zip" target="_blank">Example map (sky_test.zip)</a> [1K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap1.jpg" target="_blank">Screen shot: Rendering the Right sky image</a> [86K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap2.jpg" target="_blank">Screen shot: Rendering the Front sky image</a> [83K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap3.jpg" target="_blank">Screen shot: Rendering the Left sky image</a> [86K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap4.jpg" target="_blank">Screen shot: Rendering the Back sky image</a> [88K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap5.jpg" target="_blank">Screen shot: Rendering the Up sky image</a> [78K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap6.jpg" target="_blank">Screen shot: Rendering the Down sky image</a> [83K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap7.jpg" target="_blank">Screen shot: In-game sky shot #1</a> [115K]</li>
+	    <li><a href="content/half-life/tutorials/terragen/tgen_snap8.jpg" target="_blank">Screen shot: In-game sky shot #2</a> [113K]</li>
+    </ul>
+    <!--eof@195--></body></html>

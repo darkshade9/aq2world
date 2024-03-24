@@ -1,0 +1,290 @@
+<html><head><title>Q3MAP2 BSP Compiler</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="798" name="798" class="book-h1">Q3MAP2 BSP Compiler</h1><h3>Q3Map2</h3>
+<p class="q3bg3"><img src="/images/q3map2.jpg" width="96" height="96" hspace="10" align="left"><a href="http://shaderlab.com" target="_blank">Official 
+  Site</a> - Q3Map2 is a BSP compiler for Quake 3 engined games. It currently 
+  fully supports Quake 3 Arena/Team Arena, Return to Castle Wolfenstien, Star 
+  Trek Elite Force, and has partial support for Jedi Knight II and Soldier of 
+  Fortune 2.<br>
+  <br>
+It is designed to replace the Q3Map.exe that comes with QERadiant, GtkRadiant
+and GMAX Tempest. However, there are significant enhancements that require
+a little twiddling to use, such as faster lighting and enhanced surface
+production.</p>
+<p class="q3bg1b">Download: <a href="http://shaderlab.com/q3map2/2.5/q3map_2.5.16_win32_x86.zip" target="_blank">Win32 
+  x86</a> - <a href="http://shaderlab.com/q3map2/2.5/q3map_2.5.16_linux_x86.tar.gz" target="_blank">Linux 
+  x86</a> - <a href="http://shaderlab.com/q3map2/2.3/q3map_2.3.36_darwin_ppc.tar.gz" target="_blank">Darwin/OS 
+  X PPC (2.3.36)</a> <br>
+  <a href="http://shaderlab.com/q3map2/shader_manual" target="_blank">Q3MAP2 Shader 
+  Manual</a> - Obsidian and ydnar <br>
+  <a href="http://splashdamage.com" target="_blank">Official Q3MAP2 Forum</a> 
+  - Splash Damage<br>
+  <a href="http://en.wikibooks.org/wiki/Q3Map2" target="_blank">Q3MAP2 Compiler 
+  Wiki</a> - Community<br>
+  <a href="http://shaderlab.com/q3map2/2.5/readme.txt" target="_blank">Q3MAP2 
+  readme</a></p>
+<h1 id="577" name="577" class="book-h1">Compiling</h1><ul><h3>Compiling with Q3MAP2 for Quake 3</h3>
+<p class="q3bg1"><b>The first thing you should know</b> about compiling a map into a bsp for quake III arena is that theres another application involved. It's called Q3MAP2 by ydnar. It's a cmd window program that's run using either a command line, a batch file, a GUI or through the bsp menu in GTKRadiant.</p>
+<center>- Places of Note -</center>
+<p class="q3bg2"><a href="http://www.splashdamage.com/index.php?name=pnPHPbb2&file=viewforum&f=8">SplashDamage - Official Q3Map2 Forum</a><br>
+<a href="http://shaderlab.com">Official Q3Map2 Download Location</a> -Shaderlab<br>
+<a href="http://en.wikibooks.org/wiki/Q3Map2">Q3MAP2 Compiler Wiki</a><br>
+<a href="http://www.shaderlab.com/q3map2/shader_manual">Q3MAP2 Shader Manual</a></p>
+<p class="q3bg1"><b>If you're a beginner,</b> there's a few things you should now, before you start. This are important information as it will help keep you from askin silly questions later on. Turning a .map file into a .bsp file for use in Quake III Arena involves two to four stages. The BSP, VIS, LIGHT, and BSPC or BSP2AAS.<br><br>The following sections will break each of these stages down in depth and give you a better grasp of compiling for Quake III. Please be sure to read them carefully, and check the urls above for additional information before posting questions in the <a href="http://forums.gamedesign.net/viewforum.php?f=15&sid=fb58bca8604292b6fa98513d94211d5b">Rust Q3W Forum</a></p>
+</ul><h1 id="696" name="696" class="book-h2">The BSP Compile Stage</h1><ul><center>BSP info by William 'SmallPileofGibs' Joseph<br>
+edited and added to by skinmaster<br><br>
+The Q3 compile process has four stages: BSP, VIS, LIGHT, BSPC.</center><br><br><p class="q3bg2">Stage 1. "BSP" (q3map mapname.map)<br>
+mapname.bsp is the format that compiled Q3 levels are stored as. The important part of this process is the actual creation of the BSP Tree from the brushes of a map.</p>
+<h3>What does the BSP stage do?</h3>
+<p class="q3bg1">The player-navigable space inside the World is split into convex volumes bounded by planes. These convex volumes are called Leaf Nodes. The Leaf Nodes are stored in a binary tree called a BSP Tree.<br><br>Note: The "player-navigable space" inside the World means: everywhere in the game World that isn't a brush which is both solid and structural. The area the player can navigate around in the World using noclip, without passing through a Solid structural Brush. All World Brushes are Solid and structural unless they have a different content property set.<br><br>Non-structural content properties are detail, playerclip, trans. Non-Solid properties are water, lava, nonsolid Detail brushes are set by surfaceparm detail, or by making the brush detail in Radiant (viewing detail brushes is toggled by ctrl+d, viewing structural ctrl+shift+d). Some of the common/ shaders are structural, but not visible, including: common/caulk, common/hint, common/nodrawnonsolid, common/areaportal. The rest are either non-structural, are only used on Entities, or are not commonly used in maps.</p>
+<h3>How and why is the BSP created?</h3>
+<p class="q3bg2">A map is a 3-dimensional volume of space extending +/- 4096 units from the origin in X Y and Z, containing smaller solid convex volumes bounded by planes (structural brushes). The goal is to use the fewest splits possible to split the space of the map into convex volumes, each of which do not contain any structural brushes.
+A simple cube room is a convex volume bounded by six planes. Convex volumes are important for visibility, because it is simple and fast to determine whether two convex volumes can see one another.<br><br>These convex volumes are stored as Leaf Nodes in a binary tree, making it easy to determine which Leaf Node the viewpoint or objects (entities, tris, patches) are in. This is called a Binary Space Partitioning Tree, or BSP Tree.<br><br>A BSP tree is produced using a recursive operation. A recursive operation is one that causes itself to repeat within itself. The operation is performed on a Volume, starting with the entire map as a single Volume: If the Volume contains structural Brushes... Then split the volume along the Plane of the Face of one structural Brush. Continue to the first child Volume produced and repeat the operation.<br><br>Else, if the Volume does not contain structural Brushes, it contains no Planes for splitting, and a Leaf Node is created for the volume. Then return to the next child Volume up the tree and repeat the operation. If there is no child Volume, end the operation.<br><br>Note: Each split-plane does not always divide the volume exactly in half. Axial split-planes are chosen before non-axial split-planes.<br><br>The split-plane which cuts through the maximum number of brushes is chosen. It is important to split the tree roughly in half each time in order that each Leaf Node is roughly the same distance from the tree's root, balancing the branches of the tree.</p>
+<h3>How can I control the BSP splits?</h3>
+(a way to use detail and Hint brushes)<br><br>
+<p class="q3bg2">ALL structural brush face-planes, Including completely hidden or nodraw faces, are possible candidates to split the BSP and create extra Leaf Nodes. Leaf Nodes are currently NEVER merged, even if the result of the merge would be a new convex leaf. The ideal situation is to have all structural brush faces axial and perpendicular to the grid lines every 128 units. Any more complex brushes can be made detail, and all hidden structural or detail Brush faces can be made nodraw as well, by applying the common/caulk shader. The effect is similar to using Bezier Patch surfaces, which also do not block vis or have any other visible faces than the front surface.<br><br>Hint Brushes are structural, trans, and nonsolid. This means they are totally invisible in a compiled Quake 3 level, but their Face-Planes are used to split the BSP like other structural Brush Face. A large Axial Hint brush face will be an ideal candidate to be used for a BSP Split. Adding Hints with Axial faces (perpendicular to the 128-unit grid lines) aligned with other Axial Planes from structural Brush faces, minimises the number of extra split-Planes and Leaf Nodes.<br><br>Basing a map on the 128-unit grid allows you to hugely simplify the visibility process. If the leaf nodes are all 128-unit cubes, its very easy for the designer to predict whether one area can see into another, and place simple axial hint brushes to reduce visibility with minimal increase in vis pre-processing time. As Detail brushes and bezier patch surfaces do not affect the shape of nodes they can be used to build up complex architecture in front of simple axial structural nodraw brushes</p>
+<h3>What is a leak?</h3>
+<p class="q3bg1">A quake3 map is a hollow space made up from a number of convex volumes (Leaf Nodes) contained within a solid outer hull. The Leaf Nodes "outside" the map are discarded (pruned =) after the BSP Tree is created. There is a "leak" if you cannot separate the Entities on the inside from the "void" outside the radiant grid. If there is a leak q3map generates a detailed error message (seen if you use q3map -v) and records the path of the leak to the Pointfile "mapname.lin". Usually a leak will be displayed in Radiant as a path from the origin of an entity to a Leaf Node touching the area outside the radiant grid without passing through a solid brush.</p>
+<h3>What is the .prt file?</h3>
+<p class="q3bg2">The Leaf Nodes remaining in the BSP Tree after the outside Leaf Nodes are removed are bounded either by other nodes or by structural brush faces. A Portal is created for every face of a Leaf Node that is bounded by another Leaf Node. Each Portal is like a window from one node looking outwards into another. The Portal information is not needed in the BSP, but it is essential to VIS, so it is stored in the portal file "mapname.prt". </p>
+<h3>How are the brushes/patches turned into triangles?</h3>
+<p class="q3bg1">All faces that are "outside" the map (facing the void) are discarded. Hidden areas of brush-faces are discarded. The remaining area of a brush-face must always be a convex polygon, so if only an area in the middle of the face is hidden then no part of the face will be discarded. If two areas separated by a wall are sharing the same brush for a floor, the floor Face will not be split and will be shared between the two rooms.<br><br>
+Note: Part of a face is considered hidden if it is covered completely by a brush flush/overlapping with it. Hidden areas are discarded ONLY if they are part of a structural brush-face. Faces hidden on detail brushes are NOT discarded.<br><br>Every remaining face is divided into a separate Triangle Strip to minimise the number of Vertices needed. In order to avoid cracks where T-junctions occur between edges and vertices, edges are split when they touch another triangle vertex. If a vertex lies on an edge that cannot be split, creating a T-junction, there will be a tiny crack in the hull of the map (along the bar of the "T"), known as "sparklies" when something brighter is drawn behind the crack and shows through. <br><br>Bezier Patch Surfaces are treated as a collection of points during the BSP compile, and are turned into triangles when the map is loaded.<br><br>Note: Edges of Brush faces touching a green Patch control-point will be split to avoid a t-junction, creating a vertex.<br><br>Texture coordinates are generated for each vertex. Texture coordinates are two values U and V (UV Coordinates) which specify the location of the vertex on the texture image. These coordinates are normalized decimal values (values between 0 and 1), so the image size in pixels will not affect the shape or size that it appears to be in Q3. Note: each brush-face or patch-surface is a separate mesh with its own vertices, enabling it to have different set of Texture Coordinates and Shader properties.</ul><h1 id="697" name="697" class="book-h2">The BSP Compile Switch List</h1><ul><h3>The BSP Compile Switches</h3>
+<p><i>This information is drawn from the Q3MAP2 WIKI</i></p>
+.-<strong>custinfoparms</strong><br>
+Enables custom surfaceparms for game mods without the need to recompile Q3Map2 itself.<br><br>Custom surfaceparms are stored in custinfoparms.txt, in the "scripts" directory. Custom surfaceparms follow the format: <br>
+<p class="q3bg2">{ <br>
+surfaceparmName 0x0000 //whatever bitflag is used by your mod for said surfaceparm <br>
+}</p><br>
+-<strong>debuginset</strong><br>
+Enables debugging of surface triangle insetting. //I'm totally not sure what this is? <br><br>
+
+-<strong>debugportals</strong><br>
+Draws the portals into the bsp as translucent polygons. Omit -vis and -light for best -debugportals results. <br><br>
+
+-<strong>debugsurfaces</strong><br>
+Colors every surface a different color (very trippy). Omit -vis and -light for best -debugsurfaces results. <br><br>
+
+-<strong>fakemap</strong><br>
+Creates a new .map file with a blank worldspawn entity and all the world brushes from your original .map file. //Don't know much about this one. <br><br>
+
+-<strong>flares</strong><br>
+Used in Raven games to generate coronas on light sources. //Another one that I've never been able to get working. <br><br>
+
+-<strong>flat</strong><br>
+Forces all texture coordinates for a given surface to the pixel that best fits the average color of the assigned texture. <br><br>
+
+-<strong>fulldetail</strong><br>
+Will cause all detail brushes to be handled as if they were structural. <br><br>
+
+-<strong>leaktest</strong><br>
+Will cause Q3Map2 to abort compile if a leak is encountered. <br><br>
+
+-<strong>meta</strong><br>
+At one time, there was a clear definition as to what, exactly, the -meta switch did. Now, it has become the "magic" switch that is required for most of Q3Map2's advanced features. Always -meta, and always -v. <br><br>
+
+-<strong>mi</strong> (N)<br>
+Sets the maximum per-surface index count to N. <br><br>
+
+-<strong>mv</strong> (N)<br>
+Sets the maximum per-surface vertex count to N.<br><br>
+
+-<strong>nocurves</strong><br>
+Will not compile patch meshes into the .bsp.<br><br>
+
+-<strong>nodetail</strong><br>
+Will not compile detail brushes into the .bsp. <br><br>
+
+-<strong>nofog</strong><br>
+Will not compile fog brushes into the .bsp. <br><br>
+
+-<strong>nohint</strong><br>
+Will not compile hint brushes into the .bsp. <br><br>
+
+-<strong>nosubdivide</strong><br>
+Visible surfaces will not be split. TessSize is ignored. <br><br>
+
+-<strong>notjunc</strong><br>
+Will not fix T-Junctions (can cause sparklies and LOD cracks). <br><br>
+
+-<strong>nowater</strong><br>
+Will not compile liquid brushes into .bsp. <br><br>
+
+-<strong>np</strong> (shadeangle (1 through 179))<br>
+Forces all planar shaders to become nonplanar with the shadeangle specified. <br><br>
+
+-<strong>onlyents</strong><br>
+Only changes the entities in the compiled .bsp. Needs a compiled .bsp (as well as a .map) to act as a file-filter. <br><br>
+
+-<strong>patchmeta</strong><br>
+Creates meta surfaces from patch meshes. This "bakes" a set LOD into patches in your .bsp. <br><br>
+
+-<strong>samplesize</strong> (N)<br>
+Writes the prescribed samplesize argument to the .srf surface file. The .srf file (and thus -samplesize) affects the -light phase of compile. A lower -samplesize value produces more sharply defined lightmaps. The default samplesize is 16; a samplesize value of 4 produces a very high quality compile, suitable to call "final." A samplesize value of 1 would be total overkill, resulting in epochal compile times and immensely bloated .bsp filesize. <br><br>
+
+-<strong>skyfix</strong><br>
+Enables fix for buggy ATI GL_CLAMP behavior. Always use this. <br><br>
+
+-<strong>snap</strong><br>
+Enables axial bevel plane snapping to reduce clipped model plane count (use with care). <br><br>
+
+-<strong>texrange</strong> (N)<br>
+Limits per-surface texel count to N. <br><br>
+
+-<strong>v</strong><br>
+Enables verbose mode for the bsp phase. Always use this. <br><br>
+
+-<strong>verboseentities</strong><br>
+Outputs more information about compiling entity sub-models into the .bsp.</ul><h1 id="702" name="702" class="book-h2">The BSPC or BSP2AAS Compile Stage</h1><ul><center>BSPC/BSP2AAS info by William 'SmallPileofGibs' Joseph<br>
+edited and added to by skinmaster<br><br>
+The Q3 compile process has four stages: BSP, VIS, LIGHT, BSPC.</center><br><br><p class="q3bg2">Stage 4. "BSPC" (bspc -bsp2aas mapname.bsp)<br><br>
+This stage uses the bspc tool, and generates an Area file mapname.aas. The Area file is used by bots to navigate the map. BSPC is a separate process from the other compile stages, and and it has no effect on and ignores any information created in those stages. BSPC requires only a mapname.bsp which does not leak.</p>
+
+<h3>How does BSPC interpret the map?</h3>
+<p class="q3bg1">BSPC uses the Brush Face information in the mapname.bsp to make a list of Faces which clip the bots. Bezier Patches are tessellated into into planar Faces called "curve brushes" and are then treated the same as other Brush Faces. Face content properties which clip bots include: structural (all brushes or curves are structural by default), detail, Trans, playerclip. All Faces which clip the player are considered solid to bots, so they are all treated identically as "solid" and any other content property is forgotten.</p>
+<h3>What is the "Brush CSG" stage of BSPC?</h3>
+<p class="q3bg1">During this stage unnecessary Brushes are discarded. If any Brush is completely contained within another Brush it will be discarded, by CSG-Subtracting the container brush from the contained brush. The more brushes BSPC ignores the better - use large simple clip brushes to completely contain any complex architecture made from multiple brushes.</p>
+<h3>How is the area file created?</h3>
+<p class="q3bg1">BSPC splits the bot-navigable space in the map up into convex volumes called Areas, in a process similar to q3map BSP. Each Area must be convex, like the Leaf Nodes in a BSP Tree. BSPC also tries to minimise the number of Areas by merging any two Areas where the result is another convex Area. BSPC stores the Areas in groups called Clusters, in the Area file "mapname.aas". A Cluster is a group of connected Areas, separated from other Clusters by Solid walls or Clusterportals. Without Clusterportals, most maps will have a single large Cluster of Areas.
+You can see the Cluster/area info in bspc.log after creating the area file.</p>
+<p class="q3bg2">Note: Bot-navigable space in a map is anywhere on the inside that isn't a solid player-clipping brush. Solid player-clipping brush content properties include: solid(default for all brushes unless nonsolid), playerclip. </p>
+<h3>How do Bots use the area file?</h3>
+<p class="q3bg1">Bots use the Areas in the Area file to navigate between Entities in the map. At any point in time they have to be thinking about all the areas in whichever Cluster they are in. If there are a large number of areas in that Cluster, the bots' cpu usage will be noticeably larger while they are in it. More than 1000 areas in the Cluster gives a very noticable performance hit - below 500 is much better, and the smaller the number of areas in the largest Cluster the better. </p>
+<h3>How do I make Clusterportals?</h3>
+<p class="q3bg1">Clusterportal Brushes are used to control the way BSPC creates Clusters, by adding potential Clusterportals for BSPC to consider.<br><br>Clusterportal Brushes should not be confused with Areaportal Brushes as there are a few important differences in their use. Clusterportal Brushes should be thin axial brushes, up to 32 units thick. For a Clusterportal brush to be accepted by BSPC as a ClusterPortal it must have two opposite faces touching two separate Clusters. It must be placed in a doorway or a horizontal passage where bots can freely walk through it rather than falling through vertically. The two opposite faces should be identical in shape and size, and the other four faces should be against solid brushes or clip brushes.</p>
+<p class="q3bg2">Note: In the same way as Areaportals, Clusterportals must be used to entirely separate parts of the map from each other. If a bot can reach area 2 from area 1 (via any other areas) without passing through a Clusterportal, both areas are connected and will be part of the same Cluster.</p></ul><h1 id="700" name="700" class="book-h2">The LIGHT Compile Stage</h1><ul><center>LIGHT info by William 'SmallPileofGibs' Joseph<br>
+edited and added to by skinmaster<br><br>
+The Q3 compile process has four stages: BSP, VIS, LIGHT, BSPC.</center><br><br><p class="q3bg2">Stage 3. "LIGHT" (q3map -light mapname.bsp)<br><br>
+This is the lighting stage, where lightmaps are generated for every world surface in the map. It has no effect on bsp, hints, vis or r_speeds.</p>
+
+<h3>How do lightmaps work?</h3>
+<p class="q3bg1">The Q3map -light algorithm creates a lightmap pixel for every 16 game world units on a brush, and every 20 units on a patch, stored in 128*128 pages.<br><br>The lightmaps are 24bit RGB, and are blended with the textures by multiplying the lightmap RGB values with the RGB values of the texture (see the Shader Manual: blendfunc filter).</p>
+<h3>How are lightmaps generated?</h3>
+<p class="q3bg1">All lightmap pixels start pure black (RGB 0 0 0). A straight line is traced from the centre of each lightmap pixel towards the origin of each point light source. The distance between the pixel and the light source decides the brightness the light adds to the RGB values of that pixel. If the line is blocked by any visible non-transparent brush, the light source does not have any effect on the lightmap pixel.<br><br>The time taken by the LIGHT stage is proportional the number of lightmap pixels multiplied by the number of point light sources.</p>
+<h3>What about surface lights?</h3>
+<p class="q3bg1">Surface lights are subdivided using the q3map_lightsubdivide value (default 64), creating a point light source on the surface every 64 units. These are used in the light calculations in the same way as other point light sources.</p>
+<h3>What does -extra do?</h3>
+<p class="q3bg1">Using the -extra option a straight line is traced from four extra points on each lightmap pixel in addition to the original one. The average of the result is taken, which helps to smooth out jagged shadows. Unfortunately it also makes -light take five times as long.</ul><h1 id="701" name="701" class="book-h2">The LIGHT Compile Switch List</h1><ul><h3>The LIGHT Compile Switches</h3>
+<p><i>This information is drawn from the Q3MAP2 WIKI</i></p>
+-<strong>areascale</strong> (N.N)<br>
+Scales up area (shader) lights by the prescribed factor. Q3Map2 -light -areaScale 0.25 will result in area lights that are only 25% as bright as those in a .bsp compiled with -light -areaScale 1.0. <br><br>
+-<strong>approx</strong> (N)<br>
+Approximates lightmaps within a byte tolerance of N. Q3Map2 -light -approx forces simple surfaces without much shadow detail to be vertex lit, thus saving lightmaps. The range is from 0-255, 0 being default (no approximation). <br><br>
+-<strong>border</strong><br>
+Creates a debugging border around each lightmap. <br><br>
+-<strong>bounce</strong> (N)<br>
+Enables Q3Map2 radiosity, calculating radiosity light through N bounces. <br><br>
+-<strong>bouncegrid</strong><br>
+Allows bounced light to affect the lightgrid. <br><br>
+-<strong>bouncescale</strong> (N.N)<br>
+Scales up radiosity lights by the prescribed factor. <br><br>
+-<strong>cheap</strong><br>
+Stops Q3Map2 from calculating light on a sample after it exceeds (255, 255, 255). This may produce odd artifacts on maps with lots of saturated colored lighting. Also, do not use cheap with radiosity if you want to preserve all the emitted light. <br><br>
+-<strong>cheapgrid</strong><br>
+Stops Q3Map2 from calculating light on a sample after it exceeds (255, 255, 255), but only for the lightgrid. <br><br>
+-<strong>compensate</strong> (N.N)<br>
+Scales back lightmap values to adjust for overbrighting when -gamma is used. For Quake III: Arena, a good compensate value is 4, though some experimentation may be needed to find an aesthetic that suits your particular map. <br><br>
+-<strong>cpma</strong><br>
+Enables brand spanking new asstastic vertexilicious cpma-styled lighting. Use of this switch leads to much pie. <br><br>
+-<strong>dark</strong><br>
+Enables darkening of lightmaps at brush/lightmap seams. Sort of like a half-assed occlusion pass, ends up looking a bit Unreal 1-ish. Very subtle. <br><br>
+-<strong>debug</strong><br>
+Enables lightmap debugging. <br><br>
+-<strong>debugaxis</strong><br>
+Colors lightmaps based on their projection axis. <br><br>
+-<strong>debugcluster</strong><br>
+Colors lightmaps based on the PVS cluster the luxel falls into. <br><br>
+-<strong>debugorigin</strong><br>
+Colors lightmaps based on the luxel origin relative to the raw lightmap's bounding box. <br><br>
+-<strong>debugunused</strong><br>
+Colors unused luxels hot pink. <br><br>
+-<strong>dump</strong><br>
+Dumps radiosity lights into numbered prefabs. <br><br>
+-<strong>fast</strong><br>
+Enables light envelopes for area (shader) lights. This includes radiosity lights. Results in a much quicker -light compiles, but darkens all enveloped light sources considerably—this can be compensated for easily by raising your surfacelight values.  Do not be confused by the "fast" nomenclature... -fast is perfectly suitable for "final" compiles. <br><br>
+-<strong>fastbounce</strong><br>
+Enables -fast style calculations, but only for radiosity lights. <br><br>
+-<strong>faster</strong><br>
+Enables -faster light calculation.<br><br>
+-<strong>fastgrid</strong><br>
+Enables -fast style calculations, but only for the lightgrid. <br><br>
+-<strong>filter</strong><br>
+Applies a gaussian blur to lightmaps, smoothing out shadows. Sounds good in theory, but -filter doesn't play nice with a lot of the more interesting effects... don't use it. Use -samples instead. <br><br>
+-<strong>gamma</strong> (N.N)<br>
+Creates a more realistic color ramp between "light" and "dark." Good values are in the 1.4-2.2 range. Games that use r_overBrightBits and r_mapOverBrightBits (Quake III: Arena, most notably) will need those cvars disabled unless -compensate is used accordingly. <br><br>
+-<strong>lightmapsize</strong> (N)<br>
+Limits the lightmap size. <br><br>
+-<strong>lomem</strong><br>
+Trades increased compile time for decreased memory usage. If you are getting safe_malloc errors (or just running out of RAM), try this switch. <br><br>
+-<strong>nocollapse</strong><br>
+Disables collapsing of identical lightmaps. This switch is required for Q3Map2 lightstyles. <br><br>
+-<strong>nogrid</strong><br>
+Disables calculation of the lightgrid. <br><br>
+-<strong>normalmap</strong><br>
+Colors lightmaps based on the facings of their vertex normals. <br><br>
+-<strong>nosurf</strong><br>
+Disables the surface tracing of detail brushes and patch meshes for shadow casting. <br><br>
+-<strong>notrace</strong><br>
+No light tracing is performed. As a result, no shadows will be cast. <br><br>
+-<strong>novertex</strong><br>
+Disables the calculation of vertex lighting. <br><br>
+-<strong>patchshadows</strong><br>
+Enables the casting of shadows by patch meshes. <br><br>
+-<strong>pointscale</strong> (N.N)<br>
+Scales up point (entity) lights by the prescribed factor. <br><br>
+-<strong>samples</strong> (N)<br>
+Enables intelligent antialiasing of shadow edges in lightmaps. A value of 2 both looks good and compiles quickly, while a value of 3 looks great but compiles somewhat more slowly. <br><br>
+-<strong>scale</strong> (N.N)<br>
+Scales up all light sources by the precribed factor. <br><br>
+-<strong>sky</strong> (N.N)<br>
+Scales up all sun/sky light sources by the prescribed factor. In this new era of -gamma -compensate, -sky 3 can allow "old style" sky shaders to be used without manually rewriting them. <br><br>
+-<strong>sunonly</strong><br>
+Computes sun/sky light only, no other light sources. <br><br>
+-<strong>super</strong> (N)<br>
+Enables arbitrarily ordered grid supersampling of lightmaps. This is much, much, much slower than -samples, by the way. <br><br>
+-<strong>thresh</strong> (N.N)<br>
+Sets the recursive triangle subdivision threshhold. The range is 0.0-1.0. //I don't know much about -thresh. <br><br>
+-<strong>v</strong><br>
+Enables verbose mode. Always use this. </ul><h1 id="698" name="698" class="book-h2">The VIS Compile Stage</h1><ul><center>VIS info by William 'SmallPileofGibs' Joseph<br>
+edited and added to by skinmaster<br><br>
+The Q3 compile process has four stages: BSP, VIS, LIGHT, BSPC.</center><br><br>
+<p class="q3bg2">Stage 2. "VIS" (q3map -vis mapname.bsp) bsp_fullvis<br><br>
+VIS is short for Visibility. The relevant part of this process is the creation of the PVS Table for the Portals in the map.
+As the player's viewpoint moves around a FULLY vis'ed bsp different areas become visible or hidden, depending on which area the viewpoint is in.</p>
+<h3>How is the PVS created? </h3>
+<p class="q3bg2">Every Portal in the portal file is checked against every other Portal for visibility. Portal 1 is visible to Portal 2 if a straight line of sight can be drawn between any part of Portal 1 and Portal 2 without passing through a solid structural brush. Every Portal then gets a list of the other Portals that can be seen from it. This information is the Potentially Visible Set and is stored in the PVS Table. </p>
+<h3>What does -vis -fast do? </h3>
+<p class="q3bg2">Otherwise know as "bsp_fastvis", using the -vis -fast option does not create a PVS, leaving every Portal visible to every other Portal.</p>
+<h3>How do Portals affect visibility?</h3>
+<p class="q3bg2">Every Leaf Node has one or more Portals (unless there is only one node in the BSP tree). If a Portal belonging to Node 1 can see a Portal belonging to Node 2, Node 1 is visible to Node 2. When the player Viewpoint is anywhere in Node 1, every object in Node 2 is drawn. When the player Viewpoint is in Leaf Node x, every object in every other Leaf Node visible from x will be drawn.<br><br>Objects include Brush Faces, Bezier Patches, Entities. One object can be in more than one Leaf Node at the same time. A Brush Face is drawn when any part of the face is touching a visible Leaf Node. A Bezier patch is drawn when any of its control points are touching a visible Leaf Node.
+An entity is drawn when any part of its bounding box is touching a visible Leaf Node.<br><br>
+To summarise: Effectively, solid structural brushes block visibility between the contents of Leaf Nodes. Curves, detail brushes and Entities do not block visibility. Visibility between two areas will only be blocked when both areas are completely hidden from each other. Generally, the more Leaf Nodes visible from the Leaf containing the Viewpoint, the more objects will be drawn. The aim when optimising for visibility, is to have the smallest number of other Leaf Nodes visible from any one Leaf Node.<br><br>More of the map will be drawn if the BSP has a small number of large leaf Nodes, or an innefficient arrangement of Leaf Nodes. You can reduce the number of Leaf Nodes created by reducing the number of unique structural Planes in the map, by making all unnecessary structural Face-Planes into detail Brushes. You can control visibility by placing Hints to create the Leaf Nodes and their Portals exactly where you want them to be, splitting the space into more Leaf Nodes only in areas where they are needed.</p>
+<h3>How can I make VIS more efficient?</h3>
+<p class="q3bg2">The time -vis takes is roughly proportional to the number of Portals in the map. The number of portals is displayed when you start VIS, as "numportals xxxx". The visdatasize is the size the PVS table takes up in the mapname.bsp file - this is limited to around 2MB.<br><br>A lot of Leaf Nodes means a lot of Portals. A lot of Portals means a long vis time. The number of Leaf Nodes depends entirely on the complexity of the BSP.  Solution: detail brushes - Making a brush detail will stop it from affecting the BSP Tree, reducing the number of Leaf Nodes formed.
+To make any brush a detail brush, select it and press ctrl+m or Selection > Make detail. Toggle viewing of detail brushes with ctrl+D or use the View > Show menu.<br><br>The drawback of wide use of detail is that over-simplifying the Leaf Nodes can hurt your visibility efficiency (see visibility summary). Solution: HINT brushes - A Hint brush (common/hint) will be invisible in Q3, but is structural, so it will affect the BSP Tree and create more Leaf Nodes. This gives you a lot of control over WHERE the Leaf Nodes are created. Placing a hint brush in an area of open space will force creation of a Leaf Node within the area of that hint brush. Hints can also intersect with other structural solid brushes or Hints, creating multiple Leaf Nodes or isolating groups of Leaf Nodes. Hint brushes use a shader which makes the brushes nonsolid and nodraw, called common/hint.<br><br>Hints are best used to make large axial cuts along planes shared by other structural brushes, to maximise the amount of area hidden by each vis-blocking structural brush, by minimising the number and size of the Leaf Nodes visible. <br><br>Intelligent use of detail and Hint brushes in combination can reduce vis time and r_speeds in almost any map. However the map must be designed from the start with this in mind. Redoing an inneffiently made map is a lot of work. <br><br>Note: Making a brush detail will stop it from blocking visibility, so don't make your vis-blocking walls into detail brushes.</ul><h1 id="699" name="699" class="book-h2">The VIS Compile Switch List</h1><ul><h3>The VIS Compile Switches</h3>
+<p><i>This information is drawn from the Q3MAP2 WIKI</i></p>
+-<strong>fast</strong><br>
+Only calculates rough visibility data. Quick and dirty, not actually useful for VIS purposes. <br><br>
+
+-<strong>hint</strong><br>
+Will merge the bsp leaves (except for hint portals) before calculating the visiblity list. <br><br>
+
+-<strong>merge</strong><br>
+Will merge the bsp leaves before calculating the visibility list. <br><br>
+
+-<strong>nopassage</strong><br>
+Disables the passage visiblity algorithm. Passage VIS is a bit faster and tighter than the old algorithm. <br><br>
+
+-<strong>nosort</strong><br>
+Disables the sorting of portals by complexity. Sorting speeds up visiblity calculations. <br><br>
+
+-<strong>passageonly</strong><br>
+Will use the passage visibility algorithm only. <br><br>
+
+-<strong>nohint</strong><br>
+Omits hint brushes from visibility calculations. <br><br>
+
+-<strong>saveprt</strong><br>
+Disables the automatic deletion of the .prt portal file after VIS finishes.<br><br>
+-<strong>v</strong><br>
+Enables verbose mode. Always use this. </ul></body></html>

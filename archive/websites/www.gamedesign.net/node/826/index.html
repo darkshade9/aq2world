@@ -1,0 +1,423 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Morphing A Hero (Or Learning To Use Triggers) - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Warcraft III</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/1164">Resources</a></li><li class="expanded"><a href="node/819">Tutorials</a><ul><li class="collapsed"><a href="node/823">Advanced Tutorials</a></li><li class="expanded"><a href="node/822">Beginner Tutorials</a><ul><li class="leaf"><a href="node/1166">Making Cheat Codes</a></li><li class="leaf"><a href="node/826" class="active">Morphing A Hero (Or Learning To Use Triggers)</a></li><li class="leaf"><a href="node/815">Object Editor Basics</a></li></ul></li></ul></li><li class="leaf"><a href="node/1158">Warcraft III v1.18 Patch Information</a></li><li class="leaf"><a href="node/873">Warcraft III v1.17 Patch Information</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/826" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 43%;" class="foreground"></div></div><div class="percent">43%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 29%;" class="foreground"></div></div><div class="percent">29%</div><div class="total">Total votes: 7</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2385">mekiboz.cn</a></li><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8348" title="View user profile.">vague312</a></li><li><a href="user/8347" title="View user profile.">Rоnaldо</a></li><li><a href="user/8346" title="View user profile.">x5204b6</a></li><li><a href="user/8345" title="View user profile.">Terbitium</a></li><li><a href="user/8344" title="View user profile.">xe37b5f</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 28 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Morphing A Hero (Or Learning To Use Triggers)</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/813" title="">Warcraft III</a> &raquo; <a href="node/819">Tutorials</a> &raquo; <a href="node/822">Beginner Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/76" title="View user profile.">RaVenous</a> on Sun, 2004-11-14 17:19.</div>
+<H2><B>Introduction</B></H2>
+The Metamorphosis skill is one way you can morph a hero into something else.  However, you're stuck with having to use the same stats and primary attribute, as well as the same skills (else the spell won't work and Warcraft III will error out).
+<BR>
+In this tutorial, I will show you how to create a skill similiar to Metamorphosis that will use triggers to do exactly what we want the ability to do; using a different model, stats, and skills.  Plus, not only will the ability transform the hero into a different unit, but it will do so in a cinematic fashion by playing animations.  Also, as you read through this tutorial and follow along, you will gain a better understanding as to how triggers work as well as how to set up triggers.
+<BR>
+<BR>
+<BR>
+<H2><B>How To Do It</B></H2>
+The first thing you must do is set up a hero.  I'll leave that part up to you.  For this tutorial, I will use 
+<UL>
+<FONT FACE="Courier New">Hero1</FONT>
+</UL>
+as the name.
+<BR>
+Next, create a new spell (doesn't matter what it is based off of).  Set the spell up so that it does nothing when clicked; only has text that tells you that this skill will morph the hero (and set it to however many levels you want; for this tutorial, I'm going to make the skill 3 levels).  I'll name the new skill:
+<UL>
+<FONT FACE="Courier New">Morph</FONT>
+</UL>
+Now, I'll give my hero the new ability.
+<BR>
+Finally, create a new unit that you want the hero to morph into (a sheep, a human, a princess, whatever).  Since I am making my skill 3 levels, I will copy and paste this new unit 2 times so that I have a total of 3 units (you can make them heroes or not; if they are not heroes, then they will not get the items from the original hero, but they will get them if they are heroes).  Then, I'll make each one a bit stronger than the last.  I'll use 
+<UL>
+<FONT FACE="Courier New">Morph1
+<BR>
+Morph2
+<BR>
+Morph3</FONT>
+</UL>
+for the names.
+<BR>
+<BR>
+Now, to put together all the triggers that will make this spell work properly.
+<BR>
+In the Trigger Editor, create a new trigger.  Mine will be called
+<UL>
+<FONT FACE="Courier New">Morph</FONT>
+</UL>
+just like the skill.  Now, select your new trigger, and click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic2.png"> ) or press Ctrl+E to create a new "Event".  A dialog box will appear with 2 drop-down boxes.  
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic1.png">
+<BR>
+<BR>
+Click on the smaller box and select "Unit".  Next, click on the bigger box and select "Player-Owned Unit Event".  It should say this in the dialog box:
+<UL>
+<FONT FACE=Courier New">A unit owned by Player 1 (Red) Dies</FONT>
+</UL>
+Now, you should be able to click on "Player 1 (Red)" and "Dies".  Click on "Dies" and select "Begins casting an ability".  You should now see this:
+<UL>
+<FONT FACE="Courier New">A unit owned by Player 1 (Red) Begins casting an ability</FONT>
+</UL>
+Now click the "OK" button.
+<BR>
+Now we have set up the trigger to function whenever a unit owned by Player 1 casts an ability; however, this could be any ability, but we want only the "Morph" ability to turn on this trigger.
+<BR>
+<BR>
+So, now we need to set up some conditions.  First, click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic3.png"> ) or just press Ctrl+D.  A diablog box will appear that looks just like the last one we saw.  Select the bigger drop-down box and click on "And, Multiple Conditions", then click "OK".  Once that is done, click on the text that says "Conditions" underneath the "And - All (Conditions) are true" text.  Right-click and select "New event" or click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic3.png"> ) or press Ctrl+D.  The same dialog box appears.  Select "Integer Comparison" from the big drop-down box.  You should now see this in the dialog box:
+<UL>
+<FONT FACE="Courier New">(Number of units in (Units in (Playable map area))) Equal to 0</FONT>
+</UL>
+First, click on the number 0.  Set the new value to 1 and press "OK".  Now click on "(Number of units in (Units in (Playable map Area)))".  This dialog box will pop up:
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic5.png">
+<BR>
+<BR>
+From the currently selected drop-down box, click on "Unit - Level Of Ability For Unit".  You should see this:
+<UL>
+<FONT FACE="Courier New">Level of Ability for (Triggering Unit)</FONT>
+</UL>
+Click on "Ability".  Now, in the middle section of the new dialog box, click on the radio button next to the word "Function" and press "OK".  Then, hit "OK" again.  Here's what you should have:
+<UL>
+<FONT FACE="Courier New">(Level of (Ability being cast) for (Triggering unit)) Equal to 1</FONT>
+</UL>
+Click "OK" one last time.
+<BR>
+Now, create a second condition under our multiple conditions box by doing what I described earlier.  Once you have done that, select "Ability Comparison".  You should see this:
+<UL>
+<FONT FACE="Courier New">(Ability being cast) Equal to Animate Dead</FONT>
+</UL>
+Click on "Animate Dead".  In the bottom section of the new dialog box, you'll see a list of skills.  First, select "Custom" from the second drop-down menu.  Then click on your custom ability (in this case, "Morph").  Click "OK".  Here's what you get:
+<UL>
+<FONT FACE="Courier New">(Ability being cast) Equal to Morph</FONT>
+</UL>
+Now that our trigger is set up so that it will only operate when our custom spell is cast, it's time to set up the trigger to do what we want it to; that is, morph the hero into a different unit.
+<BR>
+At this point all the dialog boxes will still look like the ones we have seen earlier.
+<BR>
+Alright... To start off, first we need to set up some variables.  Click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic6.png"> ) or just press Ctrl+b.
+In the following window, click on the circled button to create a new variable.
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic7.png">
+<BR>
+<BR>
+Now, name the new variable
+<UL>
+<FONT FACE="Courier New">HeroMorph</FONT>
+</UL>
+and in the drop-down box, select "Unit".  Do the same thing to create 2 more variables named 
+<UL>
+<FONT FACE="Courier New">HeroCache1
+<BR>
+HeroCache2</FONT>
+</UL>
+and make both of them "Unit" variable types as well.  Hit "OK" and you should be back at the main trigger editing window.
+<BR>
+<BR>
+The next thing to do is start creating your "Action" commands.  To do this, simply right-click and select "New Action" or click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic4.png"> ) or press Ctrl+R.  The same window you should already be familiar with will pop up.  From the small drop-down menu select "-General", and then from the large drop-down menu select "Set Variable".  First click on the red text labeled "Variable".  Select this variable:
+<UL>
+<FONT FACE="Courier New">HeroCache1</FONT>
+</UL>
+and hit "OK".  Now click on value and set it to "Event Response - Triggering Unit" from the drop-down menu that is currently selected.  Hit "OK" and then hit "OK" again.
+<BR>
+What we have just done is set a variable equal to the original hero unit; that way we can save the unit (with all of its abilities, items, and stats) and reload it again later.
+<BR>
+Now, create another "Action".  This time, in the small drop-down menu, select "Game Cache".  After that, just click on the blue text labeled "MapName.w3v" and set the name to whatever you like.  For this tutorial, I used the name "map01.w3v" (which is also the name of the map itself).  Now click "OK" twice.
+<BR>
+Create another "Action".  From the small drop-down box, click on "Game Cache" again.  In the big drop-down menu, click on "Store Unit".  Now, click on the red text labeled "Unit".  In the new window, click on the middle radio button next to the "Variable" text.  The variable we want to use is already selected for us, so hit "OK".  Now click on "Label".  Give it a value of whatever; for this tutorial, I just used "Hero", but you can use the hero's name or classification or whatever you like.  Now hit "OK" twice and we're done setting that up.
+<BR>
+<BR>
+Now, to make the spell look cool, we'll use a special effect while the unit is morphing.  I just used the "Feral Spirit" special effect (it's the cloud that you see when feral spirits are summoned using the "Feral Spirit" skill).  You can use whichever effect you like though.
+<BR>
+Alright, first thing is, of course, create a new "Action".  From the small menu, select "Special Effect", and from the larger menu select "Create Special Effect on Unit".
+<BR>
+First, let's decide where we want the special effect to appear at on the unit.  Click on the blue text labeled "overhead".
+<BR>
+<BR>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"Here is a list of all the attachment points and modifiers:  <A HREF="http://www.gamedesign.net/node/1165">Attachment Points And Modifiers</A>."
+</TD>
+</TR>
+</TABLE>
+<BR>
+Once you've entered in the value you want, hit "OK" (for this tutorial, I used the "chest" value).
+<BR>
+Next click on the blue text labeled "Abilities\Spells\Other\TalkToMe\TalkToMe.mdl".  In the new window, click on the "Choose Model" button.  Once you've chosen the effect (Feral Spirit for this tutorial), click "OK" 3 times.
+<BR>
+To make sure that the special effect plays at the same time that the unit morphs, create a new "Action" and in the large drop-down menu, select "Wait".  Click on the "2.00" and enter the number "0.50"; that is the number I found that causes the trigger to wait long enough so that the unit morphs and the special effect plays at the same.
+<BR>
+<BR>
+Now that that is done, let's make the unit actually morph.
+<BR>
+At this point, you should be pretty familiar with how the trigger system works.  So, to make things simpler, I will just tell you what you need to change or set certain things to.
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "Unit"
+<BR>
+Large drop-down menu:  "Replace"
+<BR>
+Click on the blue text labeled "Footman".  In the new window, find your custom unit (for this tutorial, that would be "Morph1").  Click "OK" twice.  Now our hero with "morph" into the unit "Morph1".
+<BR>
+Now we need to set a variable to the morphed unit so that we can have the unit selected.
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "-General"
+<BR>
+Large drop-down menu:  "Set Variable"
+<BR>
+Now, set the variable "HeroMorph" equal to "Last Replaced Unit".
+<BR>
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "Selection"
+<BR>
+Large drop-down menu:  "Select Unit For Player:
+<BR>
+Click on the blue text labeled "(Triggering Unit)".  In the new window, select the "Variable" radio button and click on "HeroMorph" from the drop-down menu next to it.  Click "OK" twice.
+<BR>
+<BR>
+Alright.  So far, we have a trigger set up so that is will morph the unit and play a special effect at the same time and it will also select the morphed unit for the player.  Now it's time to set the time limit that the unit is morphed for and the "Actions" that will morph the unit back to its original state.
+<BR>
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "-General"
+<BR>
+Large drop-down menu:  "Wait"
+<BR>
+Click on the number "2.00" and change it to a number value that you would like the duration of the morph to be (for this tutorial, I set the value to 45, which means that after 45 seconds, the nhero will return to normal).
+<BR>
+<BR>
+Now, click on the first special effects "Action" and press Ctrl+C (to copy it).  Now, paste it.  Make sure the "Action" you just pasted is at the bottom (you can move it by clicking and holding and then dragging it down with the mouse).  Do the same thing and copy and paste the "Wait - 0.50 seconds" "Action" (again making sure it is at the bottom).
+<BR>
+<BR>
+Now, it's time to make the "Action" that will restore the hero back to their original form.  Create a new "Action".
+<BR>
+Small drop-down menu:  "Game Cache"
+<BR>
+Large drop-down menu:  "Restore Unit Facing Angle"
+<BR>
+First, click on "Label".  Now type in the label you gave your hero earlier (in this tutorial, I used "Hero" as the label).  Click "OK".
+<BR>
+Next, click on the blue text called "(Center of (Playable map area))".  From the selected drop-down box, click on "Unit - Position Of Unit".  Now, click on "(Triggering Unit)".  Click on the variable radio button and select the variable "HeroMorph".  Click "OK" 3 times.
+<BR>
+<BR>
+Create a new "Action".  Set the variable "HeroCache2" equal to "Last Restored Unit".
+<BR>
+<BR>
+Now we take out the morphed form of the hero.  Create a new "Action".
+<BR>
+Small drop-down menu:  "Unit"
+<BR>
+Large drop-dwon menu:  "Remove"
+<BR>
+Click on "(Triggering Unit)" and select the variable radio button.  From the drop-down menu, select the "HeroMorph" variable.  Click "OK" twice.
+<BR>
+<BR>
+And finally, create 1 last "Action".
+<BR>
+Small drop-down menu:  "Selection"
+<BR>
+Large drop-down menu:  "Select Unit For Player"
+<BR>
+Click on "(Triggering Unit)" and select the variable radio button.  From the drop-down menu, select the "HeroCache2" variable.  Click "OK" twice.
+<BR>
+<BR>
+Now we are done!  If you decided to make the ability more than 1 level, you can copy the trigger you just made.  Then, all you have to do is change one of the conditions to say:
+<UL>
+<FONT FACE="Courier New">(Level of (Ability being cast) for (Triggering unit)) Equal to 1</FONT>
+</UL>
+Just note that the only thing you change is the number (to match the level).  The other thing you'll need to change is the "Action" that changes the hero:
+<UL>
+<FONT FACE="Courier New">Unit - Replace (Triggering unit) with a Morph 1 using The old unit's relative life and mana</FONT>
+</UL>
+For that "Action" all you would do is change "Morph 1" to the respective morphed form unit.
+<BR>
+Here is what the complete product will look like (for skill level 1):
+<UL>
+<A HREF="http://www.gamedesign.net/content/warcraft3/btut1/morph.txt">Morph Trigger</A>
+</UL>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"Some steps in this tutorial can be (and have been) simplified by copying and pasting.  You can use copying and pasting to create multiple "Actions" (or "Events" or "Conditions") that do the same thing or do similiar things but with a couple different settings.  Experiment more to get a better understanding of copying/pasting."
+</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<H2><B>Wrap Up</B></H2>
+At the time of this tutorial being compiled, I was unable to figure out a way to make the skill still recharging when the unit morphed back to normal.  So, as soon as the unit returns to normal, the skill can be used again (there's no delay from cooldown).
+<BR>
+I'm pretty sure that certain items that are used (like tomes) won't apply to the hero in the hero's original form.
+<BR>
+Items picked up by the hero in their morphed form do not stay when the hero returns to normal (working on a fix).
+<BR>
+<BR>
+<BR>
+<H2><B>Resources Used</B></H2>
+<A HREF="http://www.gamedesign.net/node/1165">Attachment Points And Modifiers</A><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/1166" title="View the previous page.">previous</a></div><div class="next"><a href="node/1158" title="View the next page.">next</a></div><div class="up"><a href="node/822" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Making Cheat Codes</div><div class="next">Warcraft III v1.18 Patch Information</div></div></div></div></div>
+
+<div class="links"><a href="book/print/826" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a></div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

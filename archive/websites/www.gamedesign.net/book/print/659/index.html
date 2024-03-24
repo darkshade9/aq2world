@@ -1,0 +1,65 @@
+<html><head><title>Map DEF File</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="659" name="659" class="book-h1">Map DEF File</h1><h3>Map DEF File</h3>
+
+by Method<br><br>
+<i>Special Thanks to Brian Harris of id Software</i><br><br>
+
+<b>INTRO</b><br>
+All maps should have a DEF (definition) file, which will tell the engine what kind of map it is, if it's a MultiPlayer, SinglePlayer, etc. So you should create a def folder in C:\Program Files\Doom 3\base if you don't already have one.<br><br>
+
+<b>SINGLEPLAYER DEF</b><br>
+Here's example of def file for a SP map by id.<br><br>
+<pre style = "background-color: darkgray">
+mapDef game/mars_city1 {
+	"name"		"Mars City"
+	"devname"		"01-Mars City"
+	"singleplayer"	"1"
+	"size0"		"241381796"
+	"size1"		"241381796"
+	"size2"		"360373649"
+	"size3"		"509824838"
+}
+</pre><br>
+First line tells the engine that the file is the map definition and the path to the map. "Name" is the name of the map, "devname" is the development name, "singleplayer" tells the engine that this map is a SinglePlayer map. "Size0" - "size3" is the map size info in 4 quality modes.<br><br>
+
+<b>MULTIPLAYER DEF</b><br>
+Here's example of def file for a MP map by id.<br><br>
+<pre style = "background-color: darkgray">
+mapDef game/mp/d3dm1 {
+	"name"		"Tomiko Reactor"
+	"Deathmatch"	"1"
+	"Team DM"		"1"
+	"Last Man"	"1"
+	"Tourney"		"1"
+	"size0"		"114318720"
+	"size1"		"114318720"
+	"size2"		"196881115"
+	"size3"		"312221073"
+}
+</pre><br>
+First line tells the engine that the file is the map definition and the path to the map. "Name" is the name of the map. "Deathmatch", "Team DM", "Last Man" and "Tourney" tell the engine that this map can be played in those modes. "Size0" - "size3" is the map size info in 4 quality modes.<br><br>
+
+<b>SIZE INFO</b><br>
+The only hard part about writing a DEF for a map is to getting the size info. Cvar "com_udateLoadSize 1" will update the size info automaticly. Thanks to Brian Harris of id Software for explanation and for showing the batch file which they used to get size info's for their maps.
+Here's a snippet of the batch file:<br><br>
+<pre style = "background-color: darkgray">
+doom +com_updateLoadSize 1 +map game\admin.map +quit
+doom +com_updateLoadSize 1 +map game\alphalabs1.map +quit
+doom +com_updateLoadSize 1 +si_map game\mp\d3dm1.map +si_pure 0
++spawnserver +quit
+doom +com_updateLoadSize 1 +si_map game\mp\d3dm2.map +si_pure 0
++spawnserver +quit
+</pre><br>
+During development of D3 the executable file was called doom.exe, but later was renamed to doom3.exe, so for batch file to work you need to change "doom" to "doom3".<br><br>
+
+<b>WRITING BATCH FILE</b><br>
+If I wanted to get size info's for my map, let's call it methd3dm1, I would open a text editor (Notepad) and type this:<br><br>
+<pre style = "background-color: darkgray">
+doom3 +com_updateLoadSize 1 +si_map game\mp\methd3dm1.map 
++si_pure 0 +spawnserver +quit
+</pre><br>
+After I would save it as sizeinfo.bat in C:\Program Files\Doom 3. You can name it whatever you want, but you must include .bat, this tells Windows that it's a batch file. If you can't see the extenions, click on My Computer, then on Tools->Folder Options... click on View tab and uncheck "Hide extensions for known file types".<br><br>
+
+<b>WRITING MAP DEF</b><br>
+Use examples above to write map def file and save it as name.def (where name is the name of your map) in C:\Program Files\Doom 3\base\def. Now laod D3 and change game's quality to lowest, exit and run the batch file. It should automaticly add size info to your def file. Continue changing the quality of the game and running the batch untill you have 4 size info's in your map def. Brian Harris also said that they tend to always have the same number through size0 and size1.</body></html>

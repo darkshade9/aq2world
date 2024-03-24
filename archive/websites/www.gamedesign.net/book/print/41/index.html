@@ -1,0 +1,47 @@
+<html><head><title>Worldspawn</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="41" name="41" class="book-h1">Worldspawn</h1><h3>Quake 2 Worldspawn Entities</h3><p>
+
+<p><a name="worldspawn"><b>worldspawn</b></a> - This entity has got to be one of the easiest entities to use, (hence one of the easiest tutorials to write, heh) but it adds immensely to the completeness of a level.<br><br>
+
+If you've compiled and run a map, you've already used worldspawn. There are, however, a few keys that you can add to it, that change the environment throughout the map. These are: <br><br>
+
+<blockquote>		
+	<strong>sky -</strong> 
+	
+<blockquote>
+	This key changes the environment map for the level. In order to use it, add the <strong>&quot;sky&quot;</strong> key, and give it the value of the sky you wish to use. The environment maps included in Quake II are <strong>unit1_</strong> through<strong> unit9_</strong> and <strong>space1</strong>. 
+</blockquote>
+	
+	<strong>skyaxis -</strong> <blockquote>
+	
+	If you would like to have a rotating sky, like in the final boss level, you'll need to define an axis for the sky to rotate around. Simply add a key of <strong>&quot;skyaxis&quot;</strong> and give it a vector using three numbers (vectors are the same values that define projectile paths, and line of sight for monsters.) If you don't quite know vectors, just play around with the numbers until you find one you like. Don't use 0 0 0 however, as this will give you a hall of mirrors effect. (doesn't define a vector, so it doesn't draw the sky) 0 0 1 will give a flat rotation.</blockquote><br><br>
+	
+	<strong>skyrotate -</strong>
+	
+<blockquote>
+	This controls the speed of rotation for the sky. Add the <strong>&quot;skyrotate&quot;</strong> key, and give it a value in degrees per second.
+</blockquote>
+	
+	<strong>sounds -</strong>
+	
+<blockquote>
+		This is the CD track that will play during the level. Add the <strong>&quot;sounds&quot;</strong> key, and give it a track number.
+</blockquote>
+	
+	<strong>gravity -</strong> 
+
+<blockquote>
+	This controls the gravity level. Default is 800. The gravity in the <strong>Comm Sattelite</strong> level is set at 100. 
+</blockquote>
+	
+	<strong>message -</strong> 
+	
+<blockquote>
+	This is the text that will appear at the console when you begin the level, and in the computer. Anything more than 32 characters, and you'll get a warning at the beginning of the level. Add a key of <strong>&quot;message&quot;</strong> and give it a value of whatever the title of 			the level is. 
+</blockquote> <br>
+</blockquote>
+
+
+
+-GrrandMaMa<BR><BR></body></html>

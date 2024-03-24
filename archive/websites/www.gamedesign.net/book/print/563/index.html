@@ -1,0 +1,189 @@
+<html><head><title>Tutorials (Shader and Scripting)</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="563" name="563" class="book-h1">Tutorials (Shader and Scripting)</h1><p class="q3bg1">Quake III Arena Shader Tutorials<br><br>
+Here you'll find an assorted and growing collection of tutorials for Quake III Arena and the editro GTKradiant or QERadiant. These tutorials cover, texturing, scripting, texture creation, advanced scripting, and much more.<br><br>
+If you have a tutorial you'd like to submit to the collection, or if you have suggestions for revisions to existing tutorials, jump into the <a href="http://forums.gamedesign.net/viewforum.php?f=15">Quake III Arena Game Design Forums!</a></p><h1 id="578" name="578" class="book-h1">Alpha Channels and Transparencies</h1><ul><p class="q3bg3"><b>There are 2 methods</b> to make transparencies in Quake 
+III. <br><br>
+One alpha method works with normal optimized jpgs and one with 24 bit TGAs. The one 
+that works with jpgs needs either a 100% black background or a 100% white background 
+in order to work(depending on scripting). The one that works with TGAs needs a 
+proper 8 bit alpha channel saved in the tga. This involves for some older photoshop 
+users a <a href="http://www.adobe.com/support/techdocs/327530.html">plug-in</a> thats available from Adobe. 
+(Some older versions have a faulty tga exporter and do not include the alpha channel 
+upon export).<br>
+<br>
+In order to decide what type of alpha you will need, just figure out the difference 
+between how the two work. If you want something thats solid, but has the cookie 
+cutout edges to it, you'll want to go the TGA route.. If you want a fuzzy flare 
+or beams of dusty sunlight.. the jpg is the path to take.. If you're making a 
+jump pad you will often combine both tga and jpg in order to achieve an overall 
+layered effect.</p>
+<h4 align="center">JPG Examples</h4>
+<p class="q3bg1b"><small>a)<img src="/content/quake3/tutorials/alphas/blue_flare.jpg"> 
+b)<img src="/content/quake3/tutorials/alphas/laserfx.jpg"> 
+c)<img src="/content/quake3/tutorials/alphas/light-vert-trim-1.jpg"> 
+d)<img src="/content/quake3/tutorials/alphas/light-vert-trim-2.jpg"> 
+e)<img src="/content/quake3/tutorials/alphas/red-laser.jpg"><br><br>
+a) A 128x128 black bg jpg image of a blue lense flare.<br>
+b) A 64x256 black bg up/down scrolling modulating static field blend stage image.<br>
+c) A 64x256 black bg up scrolling light/blend stage image.<br>
+d) A 64x256 black bg up scrolling light/blend stage image.<br>
+e) A 64x256 white bg up/down scrolling modulating energy field blend stage image.</small></p>
+<p class="q3bg1">An example jpg script for a light fixture beam/flare sprite.. This is a simple square shaped black background jpg image with an air brushed type of flare effect on it. You can make anything you like and substitute in tcmod effects so that it grows and shrinks or rotates.. <a href="/book/view/798">See the</a> Q3MAP2 Shader manual for info about tcmod..<br><br>//NOTE - comments are preceeded by two forward slashes in Quake III shader files (*.shader) which can be edited by associating .shader with notepad or by using a shader GUI like Q3Ase.</p>
+<h4>Example JPG Script</h4>
+<pre>textures/foldername/shadername <span class="r">//Shader name</span>
+{ <span class="r">//script opening tag</span>
+surfaceparm nolightmap <span class="r">//Don't light it</span>
+surfaceparm nomarks <span class="r">//Don't let bullets mark it</span>
+surfaceparm trans <span class="r">//It's See through</span>
+surfaceparm nonsolid <span class="r">//It's not solid</span>
+cull disable <span class="r">//It's going to be seen from both sides</span>
+deformVertexes autosprite <span class="r">//It's going to always face the player</span>
+qer_trans .5 <span class="r">//In the editor it's semi transparent</span>
+{ <span class="r">//script mid-opening tag</span>
+clampmap textures/ecel/flare.tga 
+<span class="r">//This clamps the pixels to the face for rotating</span>
+blendFunc add <span class="r">//Adds the value of the sprite pixels</span>
+} <span class="r">//script mid-closing tag</span>
+} <span class="r">//script closing tag</span></pre>
+<p class="q3bg1">An example of a side scrolling 24 bit TGA image of mist with 
+an 8 bit alpha channel to define the mist edges. Removing the tcmod information 
+will stop the mist from moving.. this could be people or cars or anything really 
+moving along at a nice smooth pace..<br><br>
+Get the TGA <a href="content/quake3/tutorials/alphas/mist.zip">here</a></p>
+<h4>Example TGA Script</h4>
+<pre>textures/leafland/mist <span class="r">//Shader name</span>
+{
+surfaceparm nomarks
+surfaceparm nonsolid
+surfaceparm trans
+qer_trans 0.5
+qer_nocarve <span class="r">//Exclude this from cutting during compile</span>
+cull disable
+ {
+ map textures/leafland/mist.tga
+ tcMod scale 1 4 <span class="r">//1 high and 4 wide</span>
+ tcMod scroll 0 .07 <span class="r">//moving left slowly</span>
+ blendFunc blend <span class="r">//um.. this ought to be different.. like,</span>
+<span class="r">//GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA</span>
+<span class="r">//also see shaderlabs shader manual for info on blending</span>
+ rgbGen vertex <span class="r">//Lights itself</span>
+ }
+}</pre></ul><h1 id="564" name="564" class="book-h1">Basic Shaders - Part 1</h1><ul><!-- by old Q3Lab Tutorial -->
+<h3>Basic Shaders - Part 1<br><span class="tinytext">Created by Alvar Jansson</span></h3>
+<h4>Preface:</h4>
+<p>This tutorial tries to resolve the meaning of "shader" and also create some simple ones ourselves. Unfortunately, shaders are a *very* complex subject, one that isn't easily explained in half a minute.<br><br>
+You should download the Official <a href="http://www.heppler.com/shader/">Quake 3 Shader Manual</a>, or you will go nuts, when you don't understand something! You should also get the cool program <a href="http://www.jgsoft.com/">Editpad</a>, this is because q3radiant has a routine for editing shaders, based on the use of Editpad.</p>
+<hr>
+<h4>Basic Shader Concepts</h4>
+<b>1: What is a shader?</b><br><br>
+<p>A shader is a script, that tells the q3 engine, how to treat the surface. A shader may not only change the way a surface looks, but as well as the actual shape of it, (like water waves). The shader also affects how the surface behaves in the game (if it is non-solid, or a water surface).</p>
+<b>2: How do I use shaders?</b><br><br>
+<p>You have probably used shaders allready, you see, most of the "textures" in q3 radiant are actually shaders. You can tell the difference by looking at the thumbnail in the texture window, all shaders have a white border. It is not necessarily the texture that shows in the editor, that you will see in the game.</p>
+<b>3: How do I make my own?</b><br><br>
+<p>This is not as hard as you might think. First, you make a new shaderfile in the baseq3\scripts path, it should have the extension .shader, you may want to call it the same name as your level, like if you made some cool blood shaders for use in your splat.map, you could call your file splat.shader, for this tutorial, create tut.shader. Now, we have to make an entry in the file shaderlist.txt. This is to make q3radiant load our shaders, type tut in the end of the file. To see our shaders in the textures menu, we also have to make a new folder under the textures folder, call it the same as your shaderfile (baseq3\textures\tut\). If you now (re)open q3radiant, you will see a new entry in the textures menu called tut, for now, it is empty.</p>
+<hr>
+<h4>Make Your first Shader</h4>
+<p>We are now set up to make our first shader! We will start out by adjusting the strength of a light emitting texture. (This a good place to point out the fact that neither the Surf flags nor the Content flags in the Surface inspector have ANY effect in quake 3, they are ONLY for quake2 editing! The surface inspector is only good for sizing/moving textures in q3 editing)</p>
+<p>Let's get started! make a small room, make two lamp brushes and apply the base_light/baslt4_1_2k shader to the bottom face (and of course a non-light texture to the other faces). </p>
+<center><img src="content/quake3/tutorials/shadertut1/editor1.jpg"></center>
+<p>(As you see you can run q3 in a window, at the same time as q3radiant, I doubt this will work without a sturdy amount of ram (like 128 mb)) So, what if we want the light a little dimmer on one of the lamps? Well, then we have to make a shader of our own! Open the texture window (textures in use) and shift click on the light texture. If Editpad is correctly installed, it will now open, browsing down to the beginning of the shader. Now select the whole shader (as you probably have guessed, the shader consists of the declaration, and all the indented text, including the brackets). Copy the selected text, now open tut.shader (your empty shader script which we created earlier) and paste the text, we should now be here:</p>
+<center><img src="content/quake3/tutorials/shadertut1/editor2.jpg"></center>
+<p>First, to avoid conflicts, rename the shader. This is done by changing the line:</p>
+<blockquote>textures/base_light/baslt4_1_2k<br>to<br>textures/tut/mylight_2k</blockquote>
+<p>Now save the shader script choose textures|shaders|Load all (reload) from the q3radiant menu to reload the shaders. You should now see your shader if you load the texture set textures|tut. Apply your shader to one of the lamps, and bsp the map. The map should look the same. And now for the actual change! Enter the shader script and change the line:</p>
+<blockquote>q3map_surfacelight 2000<br>to<br>q3map_surfacelight 500</blockquote>
+<p>This will cut the ammount of light emitted by the surface in half. To reflect the change, rename your shader to mylight_500. Reload the shaders, and apply your new shader (q3radiant will think that your old shader is still there, I suppose this is a bug, and the old shader will disappear next time you restart q3radiant). Bsp the map, you will now clearly see that the left lamp, which we edited has a dimmer light.</p>
+<center><img src="content/quake3/tutorials/shadertut1/editor3.jpg"></center>
+<p>So, how do they get that fancy colored light then? This one is not as straight forward... If you study the .pk3 files, you can see that the light textures also have a blend texture. (This is a picture of the light emitting parts of the light, for example, the blend file for baslt4_1.tga is baslt4_1.blend.tga /*baslt4_1.tga baslt4_1.blend.tga */) In quake 3, the blend texture is drawn fullbright, using the formula: blendfunc GL_ONE GL_ONE This texture is also drawn last, so that it covers the other textures. When rendering the lightmap, q3map uses the average of all the pixels in the texture. For our light, this means gray, with a little brown, but if we want a blue light? Well, if we take a look at the shader textures/gothic_light/ironcrosslt2_2000 It contains the line</p>
+<blockquote>q3map_lightimage textures/gothic_light/ironcrosslt2.blend.tga</blockquote>
+<center><img src="content/quake3/tutorials/shadertut1/baslt4_1.jpg"></center>
+<p>This makes q3map use the specified texture, instead of the default. This was made, because the designer wanted a more yellow light than the original texture would give. Now we want to make a cool blue light! Then we need a blue lightimage. I saved you the trouble. download the tga by pressing the picture.(right-click|save target as)</p>
+<blockquote><b>DO THE FOLLOWING:</b><br><br>
+- Place it in your baseq3\textures\tut folder.<br><br> 
+- Copy the entire shader script nd paste it below, so that you have two identical shaders.<br><br>
+- Rename the new one to mylight_500_blue<br><br> 
+- Now inert the line q3map_lightimage 
+textures/tut/baslt4_1.blueblend.tga just above the q3map_surfacelight line.<br><br> 
+- Change the map textures/base_light/baslt4_1.blend.tga line in the final shader stage to map textures/tut/baslt4_1.blueblend.tga this will give the texure a blue look too.</blockquote>
+<center><img src="content/quake3/tutorials/shadertut1/editor4.jpg"></center>
+<p>Now that you have a some sort of clue of what shader editing is all about, we are going to do something that a lot of people have asked about, which is changing the look of fog.</p>
+<blockquote><b>DO THE FOLLOWING:</b><br><br>
+- Create a pit where the fog will reside, and make a big brush that covers the pit, remember that only one side of the brush should be visible, the fog may be bigger than the space that it should fill, the brushes inside it will show up correctly.<br><br>
+- Shift-click the shader, (that one didn't work for me, if it just steps to the end of the sfx.shader, use the find function to search for fog_intel, or use the go to line function and type in 5020). Copy the fog_intel shader and paste it to your own tut.shader.<br><br> 
+- Rename the shader to textures/tut/fog_yellow1 Reload the shaders in q3radiant and apply your yellow_fog1 to the fog brush. Bsp, and you will hopefully see the yellow smog.</blockquote>
+<center><img src="content/quake3/tutorials/shadertut1/editor5.jpg"></center>
+<p>But, we would like a green smog instead, so we have to modify the shader. The fog's appearance is controlled by a function called fogparms.</p>
+<p>fogparms ( .75 .38 0 ) 800 means ( r g b ) distance-to-opaque The r, g and b values are the same as for lights, they range from 0 to 1 and thereby controls the color of the fog. Distance-to-opaque is the distance, in game units, from the player, to the point where the fog stops being transparent.</p>
+<p>So lets make that fog <i>green</i>! Copy the shader and paste another copy of it below, name it fog_green1 Very well, a nice poisionus color is ( 0 0.7 0.2 ). (don't forget the spaces inside the paranteces, your fog will just be a gray grid without them).</p>
+<center><img src="content/quake3/tutorials/shadertut1/editor6.jpg"></center>
+<p>As you experiment with colors, a good thing to notice is that the shaders stand free of the bsp, if you want to experiment with different settings, well, except the q3map parameters (duh..), You don't have to re-bsp your map, just save the shader file, and restart your map (nom \map_restart won't work... use the \map command).</p>
+<p>But, you have seen that flashy hellfog with moving textures on it, well, let's take a look at it!</p>
+<p>Snatch the hellfog shader from the sfx.shader and paste it to our file, rename it tut/myhellfog make a cosy little hellfog pit so that we can study it a little closer. As you see, it emits light, because the surfacelight parameter. There is also two texture passes, they both apply the same texture, though one of them is flipped, this makes for a darker texture, as well as a little more complexity. The tga texture is white, so we are free to create a nice blue strange hellfog, by changing the color to ( 0 0.1 0.4 ). But... even if I re-bsp the emitted light is red! Now this is a little problem, that we could easily fix by making a 16*16 (or whatever) tga file filled with blue, and specify it as q3map_lightimage, but today I am lazy so I specify our good old baslt4_1.blueblend.tga which is blue by nature. So, add the line q3map_lightimage textures/tut/baslt4_1.blueblend.tga </p>
+<center><img src="content/quake3/tutorials/shadertut1/ingame1.jpg"></center>
+<p>Goodluck and I hope you have learned something new!</p></ul><h1 id="575" name="575" class="book-h1">Basic Shaders - Part 2</h1><ul><!-- by old Q3Lab Tutorial -->
+<h3>Basic Shaders - Part 2<br><span class="tinytext">Created by Alvar Jansson</span></h3>
+<h5>Preface:</h5><p>This time we're going to make a Space map. Before we begin I want to say that we will not use the already used space texture. This time we will make our own texture, shader ... and space! If you don't want make a space texture, just move down to step 3 in this tutorial.</p>
+<hr>
+<h4>Step 1:</h4>
+<p>We first begin with making a new texture that we will use as a "space sky". I will use my Photoshop to make this texture, and i make it 256x256 pixels big. Now you can make it black only, or maby add some white spots that should looks like stars. My one looks like this:</p>
+<center><img src="content/quake3/tutorials/shadertut2/sky.jpg" width="250"><br></center>
+<p>As you can see i try to make it very dark. I do this because of the Quake3Arena engine will make all textures much more brighter. I will place this texture under the "baseq3/textures/tutorial" directory. Now, we have a texture. Should we load up the Q3radiant now? Nope, q3radiant checks for shaders that it uses for "compiling" the map. Therefor we need to make a shader for this new "sky".</p>
+<hr>
+<h4>Step 2:</h4>
+<p>Why do we need shaders for this texture? Well, first of all we don't want the guns to do impacts on it. To do this, we need to use shaders. I will try to explain each line below.<p>
+<div class="r"><pre>
+textures/tutorial/sky
+{
+//*********************
+//***Space map shader***
+//*********************
+surfaceparm nomarks
+surfaceparm noimpact
+{
+map textures/tutorial/sky.tga 
+}
+}</pre></div>
+<p>Like that, now. Note that the lines with // infront of it is comments, and will not have any effect of the shader. Copy the code above, and place in a new file called &quot;my.shader&quot; under baseq3/scripts.</p>
+<p>Also add a new line &quot;my&quot; in the shaderlist.txt too.</p><h5>What does all this do?</h5>
+<p>The first line &quot;textures/tutorial/sky&quot; is a quick note what texture you're using. The &quot;surfaceparm&quot; lines tells Quake3Arena what surface parameters that will be used. The first one changes so there's nomarks, and the other one makes the guns make noimpact. Now we just have to move on to the fun part, making the map itself =).</p>
+<hr>
+<h4>Step 3:</h4>
+<p>Now we have a new texture, we have the shader for this new texture. What we need is a map. Let's load up Q3radiant.</p>
+<p>This part is very easy. Simply make your map, and then place a new very big room around the map, with the new "space sky" texture on it.</p><h5>Note:</b> You have to place lights to get the level bright. But, if you have made a space map looking like Q3DM17, then the hole level should have the same light. Easy to do!</p> 
+<p>Select one of the boxes on the map (not entities, the other map objects). Push "N" to bring up the Entity list. It should now say that you have selected the "worldspawn" entity. Enter a new Key called: "ambient", and give it the value of how much light the map should have. Then Enter a new key, and name it "_color", 
+enter a value for it "&lt;R&gt; &lt;G&gt; &lt;B&gt;" Where &lt;R&gt;=Red, &lt;G&gt;=Green and &lt;B&gt;=Blue.</p> 
+<p>This is the value of what color the light should have. You should add a value between 0 and 1. To get a white color, simply enter "1 1 1".</p>
+<p>That's about it! Hope you get your new space-maps working as you want it!</p></ul><h1 id="546" name="546" class="book-h1">Falling leaves!</h1><ul><!-- by Jon Eriksson -->
+<h3>Falling Leaves<br><span class="tinytext">by Jon Eriksson</span></h3>
+<p>This is a nice effect that Quake 3 Arena allows you to have, Falling leaves.<p> 
+<hr>
+<p>First, you need a texture that looks something like this:<p> 
+<center><img src="content/quake3/tutorials/shadertut4/picture1.jpg"></center>
+<p>Now select the "leaves", and save it. I saved mine as mytextures/le.tga. Now, over to the Scripting part.</p>
+<p>Open notepad and type this:</p>
+<pre>textures/mytextres/leav
+{
+    qer_editorimage textures/mytextures/le.tga
+    surfaceparm nonsolid
+    surfaceparm trans
+    cull none
+    deformVertexes wave 30 sin 0 10 0 .2
+    nopicmip
+    {
+        map textures/mytextures/le.tga
+        tcMod scale 2 2
+        blendFunc GL_ONE GL_ZERO
+        alphaFunc GE128
+        depthWrite
+        rgbGen identity
+        tcmod scroll 0 .25
+    }
+    {
+        map $lightmap
+        rgbGen identity
+        blendFunc GL_DST_COLOR GL_ZERO
+        depthFunc equal
+    }
+}</pre>
+<p>Now save it under your baseq3/scripts directory. I saved mine as "my.shader", remember to call it *.shader. Load up Qeradiant, and apply the texture "mytextures/leav" to an object, and compile.</p></ul></body></html>

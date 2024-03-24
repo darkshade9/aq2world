@@ -1,0 +1,2147 @@
+<html><head><title>Level Designers</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="59" name="59" class="book-h1">Level Designers</h1>Expert knowledge from level designers who have worked on popular games.<h1 id="90" name="90" class="book-h1"> Paul Jaquays, Quake 2 and Quake 3: Arena, Id Software</h1><ul><h3>Interview -  Paul Jaquays, Quake 2 and Quake 3: Arena Level Designer, Id Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 			
+<b>Rust: </b>I recently heard that Q3 had a few lighting changes like a 'sun' feature, what exactly is this and how does it work?
+<br><br>
+<b>Paul: </b>The "sun" feature is a shader command applied to the sky texture in a map.  What is happening is that the game is overbrightening the texture areas touched by the light. This makes for some extremely cool light/shadow contrasts. Parameters define the color of the emitted light (in RGB values), intensity of the direct light (this is the "sun" light), intensity of the ambient or diffused light (essentially a glow off the sky), the sun's height relative to the horizon (expressed as an angle value) and the direction of the sunlight (using the same directional coordinates as found for entity facings for the light source).
+<br><br>
+
+<b>Rust: </b>How are the poly counts different from Quake II?
+<br><br>
+<b>Paul: </b>While there may be some argument about what defines a polygon in Quake 2 as opposed to the definition of a polygon in Quake 3, it really boils down to a number to use as a benchmark.  In Quake 2, the preferred number of polies was 500 or less (and after 800, they started dropping out in software) but it only counted rectilinear geometry (normal brushes). The counts in Quake 3 take into account the geometry, but also add in the multipass texture rendering and dynamic level of detail on curves.
+<br><br>
+
+<b>Rust: </b>How much does the multipass stuff like fog, etc. affect the poly count?
+<br><br>
+<b>Paul: </b>Significantly. Generally speaking, all textures drawn in the world require a minimum of two redraw passes.  Every time you add a stage of manipulation to a texture, you must redraw the world (or at least that part of it), essentially adding the number the polies containing that texture to the total poly count.  If you can see a polygon through another polygon, as is the case with many of the alpha channel functions (transparencies, translucencies, cutouts, decals) and special cases like water and fog, you add the count for the texture that you are seeing through to the textures you can see. Think of it as stacking up layers. Each pass on a texture is a layer.  Each pass on a texture you are looking through is a layer added to the stack.  Each layer requires a redraw pass of the world.
+<br><br>
+
+<b>Rust: </b>What are your target poly counts for a map?
+<br><br>
+<b>Paul: </b>In Quake 3, the goal is to keep the total environmental polies (including curves and entities) in your worst view under 12,000.  Generally speaking, this means trying to keep geometry polies under 7 - 8000.
+<br><br>
+
+<b>Rust: </b>Are there still hint brushes and area portals, or something similar?
+<br><br>
+<b>Paul: </b>Yes.  We still use hint brushes, perhaps even more than in Q2, but their companion skip brushes are gone.  Area portals are still with us, but are far simpler to implement than in Quake 2 (they are no longer classed as entities).
+<br><br>
+
+<b>Rust: </b>Are some of the detailed brushes in q3 alias models? The gargoyles for example.
+<br><br>
+<b>Paul: </b>The gargoyles, the skull torch sconces, the corpse, and the pylon lamps in Q3Test2 are all misc_model .md3 models made by either Paul Steed or Kenneth Scott.  In essence, they are the same type of model as is currently used for the Quake 3 player models.
+<br><br>
+
+<b>Rust: </b>If so, how are they skinned or textured compared to regular models. Do the level designers do this?
+<br><br>
+<b>Paul: </b>Our artists made the models using a modeling program.  They textured the models the same way they would texture a player model.  They are placed in the maps like entities.  The graphic engine lights them as if they were world geometry.
+<br><br>
+
+<b>Rust: </b>How bad do curved surfaces hurt poly counts?
+<br><br>
+<b>Paul: </b>The more complex the curve, the more triangles are needed to define it.  A simple beveled edge (in carpentry terms, that would be a quarter-round moulding) is probably the cheapest. Bending curves into complex configurations adds up polies fast. Close up, they are triangle intensive.  At distances, the dynamic LOD brings the counts down some (which doesn't occur with rectilinear geometry).
+<br><br>
+
+<b>Rust: </b>Are the way the entities work basically the same? with spawnflags, etc.
+<br><br>
+<b>Paul: </b>Yes.  The only distinctions right now are between CTF and DM
+<br><br>
+
+<b>Rust: </b>Any new entities that are really cool you can mention?
+<br><br>
+<b>Paul: </b>I think the misc_models (like the gargoyles) are pretty darn cool (and easy to use).  The func_bobbing entity (think of a box floating it water for the effect) is neat.  Xian's got an entire level built around that single feature.  Trains, doors and other movers can be built out of misc_models.
+<br><br>
+
+<b>Rust: </b>What do you think will be the toughest thing with Q3 editing compared to Q2/Q1 Editing for newbies to learn?
+<br><br>
+<b>Paul: </b>Shader manipulation of textures and efficient use of shaders. Second, I think curve manipulation in any editor without a real-time 3D view window will be difficult.
+<br><br>
+
+<b>Rust: </b>
+<b>Seen any good movies lately?</b>
+<br><br>
+<b>Paul: </b>Just this really obscure road trip movie about a bipedal amphibian stand up comic and his two straight man sidekicks.  
+
+
+<br><br>I would like to thank the Paul Jaquays for taking the time to answer my questions and the guys from #gamedesign(on <a href="http://www.3dnet.net">3dnet</a> for helping me with the questions.</ul><h1 id="62" name="62" class="book-h1">Bastiaan Frank, Digital Extremes</h1><ul><h3>Interview - Bastiaan Frank, Level Designer - <a href="http://www.digitalextremes.com/">Digital Extremes</a>.</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>
+
+<p><b>Rust:</b> First of all, tell us a little bit about yourself and your position at Digital Extremes.
+<br><br>
+<b>Bastiaan:</b> I am a 21-year-old guy working as a freelance mapper, currently for Digital
+Extremes. I am born and raised in the Netherlands, and did my high school
+there, called Havo. Afterwards I started doing contract work, and am still
+doing so now. At Digital Extremes we are working on Unreal Championship,
+which is going to kick ass! 
+<br><br>
+ 
+<b>Rust:</b> Has working as a professional in the gaming industry changed your views of gaming at all?
+<br><br>
+<b>Bastiaan:</b> Not really so much the gaming, but definitely the things that go on behind
+the scene. It takes so much effort to make a game and get it out to the
+public. The mean thing that makes a game successful in my opinion is fun. A
+game must be challenging and fun at the same time. Working as a professional
+taught me to see the things that attracted me in games, or pushed me away
+from a game. Defining what is good and what isn't is really important,
+because you don't want to make the same mistake someone else did.
+<br><br> 
+
+<b>Rust:</b> What do you feel is the most important part of level design?
+<br><br> 
+<b>Bastiaan:</b> Balance, definitely balance. Gameplay is about balance, fast action but also
+time to catch your breath and get a weapon. The balance in visuals as well, good
+visuals are great but too much isn't good at all, balance in lighting with
+dark spots and light spots. I could go on forever :) A good level will
+usually go through many versions, and lots of testing.
+<br><br> 
+
+<b>Rust:</b> What limitations do you feel hurt you the most when designing game levels?
+<br><br>
+<b>Bastiaan:</b> The usual limits for speed, but most of all I think time will limit me in
+making maps. If we had more time to make levels we could polish it more and
+add little details. But on the other side its good that we have the time
+pressure, then we know it will get done ;)
+<br><br>
+
+<b>Rust:</b> As professionals in the industry, what is the most common mistake you see in amateur maps?  What’s a common mistake you see other professionals make?
+<br><br>
+<b>Bastiaan:</b> Not so much a mistake but I think the UT community is missing a bit of
+originality. Most good maps tend to look the same, and were built in the
+same fashion. The editor gives you endless possibilities, it’s just coming up
+with the ideas. About the other professionals, I don't think I have enough
+experience to comment on something like that.
+<br><br>
+
+<b>Rust:</b> When it comes down to pre-planning your levels, what do you do?
+<br><br>
+<b>Bastiaan:</b> Thinking, drawing, thinking, trying stuff out in the editor, talking about
+the ideas with other mappers here. Sometimes the best thing to do is set
+your brain to 0 and just start making something without thinking too much
+about it. A very nice experience I had was speed mapping, trying to make
+something in an hour, I was very surprised with the results :)
+
+<br><br>
+
+<b>Rust:</b> What first sparked your interested in becoming a level designer in the game industry?
+<br><br> 
+<b>Bastiaan:</b> Making worlds, creating environments. I always loved that. I had played many
+games, and had dreams of making my own as most other kids have, I wanted to
+make a real-time maze, very simple stuff. Then I read in gaming magazine
+about level editors, and how easy UnrealEd was to use. So I bought Unreal
+and gave it a shot. The editor didn't run though, so I left it, till I got
+the internet and got the editor going. That’s when I started playing Unreal1
+multiplayer, started to enjoy that, got a lot of support while trying my
+hand at mapping, and the urge to become better, to make better maps was what
+got me in the business I guess. I never intended, my goal wasn't to get in
+the business, but to make great levels :)
+
+<br><br>
+
+<b>Rust:</b> What were you doing before you worked at Digital Extremes? What do you envision yourself doing after your stint at Digital Extremes?
+<br><br>
+<b>Bastiaan:</b> I was in school before I got to work here, and I haven't got a clue what
+will happen after this big adventure, I guess I take live by the day and see
+what happens :)
+
+<br><br>
+
+<b>Rust:</b> While you’re not designing games, what are you doing in your spare time?
+<br><br>
+<b>Bastiaan:</b> Free time??? Hehehe. I play games here on the LAN. A lot of Quake 3 RA, and
+UT. Then all kinds of other games that come and go. I also love to go out
+and just listen to birds and look at the pond behind the office, lots of
+frogs, fish, muskrats etc. etc. out there.
+<br><br>
+
+<b>Rust:</b> What sources do you use for inspiration? 
+<br><br>
+<b>Bastiaan:</b> Everything. Everything I can get your hands on. Moving, drawings, paintings,
+concept art, real live architecture and well, I could go on forever :)
+<br><br></ul><h1 id="77" name="77" class="book-h1">Bobby Pavlock, Daikatana, ION Storm</h1><ul><h3>Interview -  Bobby Pavlock, Daikatana Level designer for ION Storm</h3>
+
+<p><hr width=75% color=black noshade>
+						
+<br>
+
+<b>Rust: </b>Howdy Bobby, for the few people who don't know tell us who you are, what you do, what your working on, and whatever the hell else you would like all these rabid fans to know about you? ;)
+<br><br>
+<b>Bobby: </b>My name is Bobby Pavlock (aka Xcalibur).  I am a level designer at Ion Storm, currently working on Daikatana, trying to finish it up and make it as badass as possible :)
+<br><br>
+<b>Rust: </b>Besides getting paid, what are the lesser known advantages of full-time, in-house, game design?
+ <br><br>
+<b>Bobby: </b>Well, the biggest thing for me is just actually having the time to devote to making cool stuff.  I used to have all kinds of things that would eat up all my time, like college (yuck!), and I could never get enough spare time to do some of the really cool stuff I always wanted to.  Then, of course, there is the convenience of having a texture artist at your disposal any time you need a cool new texture, and programmers for when you need a cool new feature coded.
+<br><br>
+<b>Rust: </b>What would you consider the most difficult aspect of level design?
+<br><br>
+<b>Bobby: </b>I would say the most difficult aspect of level design, for me, is the planning stages - trying to come up with something fresh and new, that has never been done before.  There are SO many levels, both professional and user-made nowadays, that almost everything has been thought of by now, that is, that can be done with the technology available at this point.
+<br><br>
+<b>Rust: </b>what's the easiest?
+<br><br>
+<b>Bobby: </b>The actual building of a level is rather simple, especially the architecture.  It's just a matter of knowing how to use an editor.
+<br><br>
+<b>Rust: </b>What kind of machine do you create your levels on, and what editor do you use?
+<br><br>
+<b>Bobby: </b>Before I came to ION, I was trying to edit Quake2 levels on a WinChip 200 (some off-brand pentium wanna-be chip) that runs about the equivalent of a 166, with no 3D card either.  When I got here, they had a P2 450 waiting for me.  Slight difference :P  We are using IONRadiant,a modified version of QERadiant.  And, yes, it will be included in the game. 
+<br><br>
+<b>Rust: </b>When planning a level, do you outline it out on paper first, or start in the editor?
+<br><br>
+<b>Bobby: </b>I do both actually, it just depends.  I usually come up with the look I want for the level in my head just by thinking about it and using some imagination.  Sometimes I get a clear picture of how everything is going to look, and how it's going to be laid out, and I just dive right in.  Other times, I get a feel for what I want it to look like, but don't know exactly how I want the layout to be, or what exactly I want to happen as you progress through the level, so I do some very loose sketches to kind of give me a feel for what the layout should be. 
+<br><br>
+<b>Rust: </b>How is Daikatana editing compared with other Quake/Quake2 engine based games? Any new functionality?
+<br><br>
+<b>Bobby: </b>Well, it is based on the Q2 engine, so it is very similar.  It has alot of the same basic entities used in Q2 editing.  Some of the cool new stuff we have is effects like fog, rain, snow, lightning, rotating trains, moveable glass and midtextures, parent targeting (so you can attach a button directly onto an elevator or lift and it travels with it), entities with sound flags built-in eliminating the need for 1000 target_speakers, etc.  There's alot more, but I can't divulge everything :)
+<br><br>
+<b>Rust: </b>How often do you compile and playtest your level being made?
+<br><br>
+<b>Bobby: </b>
+I make extensive use of the region utility in Radiant, and do several region compiles a day, checking to make sure everything is looking and working the way it should be.  The maps in Daikatana are so huge, that even with the mammoth compile machines we have, it still takes a while.  So I usually will do a full compile of the entire map only once every few days, usually after I have added alot of new stuff.
+<br><br>
+<b>Rust: </b>What would you suggest to someone who is wanting to be a professional designer some day?
+<br><br>
+<b>Bobby: </b>My advice, for what it's worth, would be to spend your time making a map as badass as humanly possible, making sure to have something out of the ordinary that will catch people's eyes.  When you have added everything you can possibly think of to make it as cool as possible, then go on to another one. It is better to have a few awesome maps, rather than several decent ones.  Quality is definitely better than quantity.
+<br><br>
+<b>Rust: </b>What other games are you looking forward to in the future?
+<br><br>
+<b>Bobby: </b>There are several games coming out this year that look impressive.  "<a href="http://www.DawnOfDarkness.com/" target="_top">Dawn of Darkness</a>", a Quake 2 TC by <a href="http://www.wardsix.com/" target="_top">Ward Six</a>, is looking awesome for a great single player experience.  For multiplayer, Quake 3 and TF2 should be awesome.  And of course, Daikatana, Anachronox, and Deus Ex. :)  
+<br><br>
+<b>Rust: </b>Any closing comments?
+<br><br>
+<b>Bobby: </b>Just can't wait for Daikatana to get done so I can make people "Suck it down" in some Daikatana DM. :)  Thanks for the interview Shane. Keep on rockin' with Rust!</ul><h1 id="78" name="78" class="book-h1">Bobby Pavlock, Quake 3: Arena, Rogue Entertainment</h1><ul><h3>Interview -  Bobby Pavlock, Quake 3: Arena Level Designer for Rogue Entertainment</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>
+
+<b>Rust: </b>When we last caught up with you, you were working on the long-awaited Ion Storm title Daikatana.  Since that time, you have left Ion Storm and gone over to Rogue Entertainment to work on American McGee's Alice.  Tell us what kind of challenges you faced in this change, in terms of level design.
+<br><br>
+<b>Bobby: </b>Well, I guess the most obvious difference is working in the Quake3 engine with Alice, as opposed to working with the Quake2 engine with Daikatana. I had to learn all the new functionality available in the Q3 engine, like curves, and shaders and such, but with the help of Brandon James and the other designers here at Rogue, it was a fairly seamless transition.  
+<br><br>I also had to adapt to the new method in which designers approached constructing a level here at Rogue.  At Ion, designers had almost complete creative freedom with the levels, almost to the point of having TOO much freedom.  By that I mean there wasn't a whole lot of structure, or a real organized plan of attack for building DK levels.  For Alice, before we even lay a brush, we sit down and plan out the entire level's flow, puzzles, etc. and list out all the resources we are going to need for the level, whether it be art or programming-related.  Once all that is complete, only then do we sit down at the computer, look at our plans for the level, and begin to actually lay brushes.  We still have the creative freedom to design the look and feel of the level how we envision it, but it's just a more structured approach, which I like.
+<br><br>Other than that, the only challenge was to try to measure up to the level of talent of the designers we have here at Rogue.  
+<br><br>
+<b>Rust: </b>What, in your opinion, are the coolest new features of the Quake 3 Engine, and what are the most difficult features to grasp?
+<br><br>
+<b>Bobby: </b>Curves, of course are alot of fun.  There's so many things you can do with them.  Sometimes I find myself just playing with all the different curves and curve functions, seeing what kinda cool, new things I can come up with.  Another thing I am really enjoying is being able to cram more detail into an area.  I am able to design areas in Alice using the Q3 engine that would NEVER fly in Q2 r_speeds.
+<br><br>I haven't completely grasped the full functionality of shaders yet.  But I'm trying to learn what I can slowly but surely.  Our scripting engine for Alice is another thing I haven't really delved into a whole lot as of yet, but in time I plan to learn that inside and out as well.
+<br><br>
+<b>Rust: </b>What is your design process like at Rogue?  Describe how you get from the concept to the finished product.
+<br><br>
+<b>Bobby: </b>Well, I think I kinda explained this a little bit in Question 1, but I'll go into a little more detail about it.  
+<br><br>When we're preparing to start a level, the first thing we do is get the ENTIRE design team to sit down and brainstorm until we come up with an overall gameflow for the level.  We discuss everything from puzzles the player will have to solve, to points of environmental and/or monster interaction, to ambient details that will help create the mood and feel we want for that particular level.  Once that brainstorming session is done, then the designer actually building the level will sit down and draw out a detailed overhead view of the map and list what happens when and where throughtout the level.  After that, we type up a list of art, programming, and scripting needs that we're going to need for the level.  Once all that is done, then the designer who is going to be handling the architecture for that level is ready to sit down and start laying brushes.  When I say the "designer who is going to be handling the architecture for that level", what I mean is this...
+<br><br>Here at Rogue we have decided to approach level design as more of a "team" effort, as opposed to a level being the work of one designer.  We're using more of an assembly-line approach.  Some of us are stronger in architecture, and some of us are stronger in scripting/lighting/detail work.  The "architecture" guys will go through and construct the level architecture, and when he's done, he'll hand it off to the "detail" guys, who will go through and do all the scripting, detailing, lighting, etc.  This works out really well as every level benefits from the strong points of the entire design team.  This also helps all the levels have a more consistent look and feel, and most importantly to me, helps prevent us from getting burned out from working on the same level for too long.
+<br><br>
+<b>Rust: </b>What will set Alice apart from other Quake 3 engine games, as well as the other action titles coming out over the next year?
+<br><br>
+<b>Bobby: </b>We are going to great lenths to exploit the whole "Wonderland" setting as much as possible to give Alice a look and feel that has never been seen before. The last thing we want is for Alice to look like just another shooter.  >From a design aspect, we are approaching every level, and, in fact, every single brush we lay from an aspect of "what can I do to make this look different, or 'Wonderland-ish'", for lack of a better term.  We want the player to constantly be walking around going "What the f--k were these guys on when they made this game?"  :)
+<br><br>There are, of course, plenty of other fun little things that we have planned, but I can't go into any of that stuff yet.  
+<br><br>
+<b>Rust: </b>Do you see level design becoming more of a group effort as game titles become more complex?  In other words, do you think the trend will be towards having a level being passed around from one person to another during the design process?
+<br><br>
+<b>Bobby: </b>Heh, see question 3 :)
+<br><br>
+<b>Rust: </b>What tips would you give to amateur level designers to improve the quality of their work?
+<br><br>
+<b>Bobby: </b>My advice would be to go through and really study the levels produced by both professionals and many of the top amateur designers.  Scrutinize every last detail, from brushwork, to texture usage, to lighting, sounds... everything.  Then go back into your levels and *honestly* critique your work.  Look for both what you do the same as the top designers and, more importantly, for the aspects of your level that you seem to be lacking in, and try to emulate what the top designers have done in their levels to elevate their levels to that next level.  Also, one of the most important things IMO, is to try to  do something to distinguish your levels from the rest of the countless levels being produced every day.  Do something original.  If everyone is using a similar theme or design for their levels, then try to come up with something new that noone has done.
+<br><br>I use this example often, but it illusrates my point effectively...  When Q2 first came out, everyone was making levels using the "Base" texture set. Level after level that I saw on review sites was a base level.  So I decided to be different, and do my first level ('Ad Mortem') using the Q2 "palace" theme.  Upon release, it received extremely high praise for being something "original".
+<br><br>So you see, it doesn't have to necessarily be anything mind-blowing to be different.  I have always found that cookie-cutter levels come and go, and the vast majority of them, even many of the good ones, are quickly forgotten.  But if you can come up with something that offers something different from the norm, those are the levels that will stick out in people's minds over time.
+<br><br>
+<b>Rust: </b>Final thoughts?
+<br><br>
+<b>Bobby: </b>Love the site.  Keep up the good work.  
+<br><br>Thanks for the interview.  Hope it helps.  :)</ul><h1 id="67" name="67" class="book-h1">Charlie Wiederhold, Sin, Ritual Entertainment</h1><ul><h3>Interview -  Charlie Wiederhold, Sin Level Designer for Ritual Entertainment</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>				
+
+<b>Rust: </b>As always, tell us a little about yourself, who you are, what you do, etc.>
+<br><br>
+<b>Charlie: </b>Hello, my name is Charlie Wiederhold, and I'm addicted to making maps for 3D games. I am currently working on Sin at Ritual Entertainment in the greatest piece of land on earth: Texas.
+<br><br>
+
+<b>Rust: </b>How many levels have you designed for Sin?
+<br><br>
+<b>Charlie: </b>I've currently made five deathmatch maps (don't know if all of them will be used... I'll probably force a couple to be trashed, haha), the Headquarters Training Facility, and one of the single player maps. I also have about 6 more single player maps that I will now be working on and finishing to completion for the rest of the project.
+<br><br>
+
+<b>Rust: </b>We all have seen the kickass map scripting in Sin, but what else can all us amateur level designers look forward to with sin editing?
+<br><br>
+<b>Charlie: </b>One of the biggest things you will notice is a much larger selection of art. Each level has a look and a feel and thus you have the texture sets from each level to use along with all the generic textures. This gives you much more freedom as a level designer. However, with this freedom comes the problem of bad texture usage. You will notice this in a lot of Duke user maps. It is much harder to make a professional looking map in a realistic game than in a fantasy game because the players can identify with what they are looking at and thus can put it up to more scrutiny. Plus, you simply have more control over almost every aspect of the map. Surface Properties, entity control, lights, etc. The trouble most people will have with editing in Sin is knowing when to stop and use the effects tastefully.
+<br><br>
+
+<b>Rust: </b>What are some of the neat new things we can do with SinEd?
+<br><br>
+<b>Charlie: </b>Honestly that's a tough question to answer, mostly because of the massive list of features in SinEd. Most of them are small but they add up quickly. Imagine QERadiant, but take out the things that are clunky or frustrating (no offense to the author of Radiant... I used it while making my Q2 CTF map and loved it). SinEd has been put to the test of having six level designers (all with experience in many different editors) giving input and suggestions to make it easiest and most functional editor possible. 3 point clipper, all three 2D windows, transparency in 3D view, drawing models in 3D view (very useful for placing plants, decorations, etc), popup window for creating entities (idea we got from Radiant... thanks guys!!!!), massive amounts of surface properties to modify per texture, flat shading/lighting of textures (great for getting rid of cuts on evenly lit surfaces), hot key filters (so you can turn off details, entities, etc to clear up the screan), able to select and modify multiple surface.
+<br><br>
+There are also simply tons of hotkeys and shortcuts for allowing you to quickly set properties for all sorts of things. You won't really appreciate it until you have used it though.
+<br><br>
+
+<b>Rust: </b>When designing a level do you do any design on paper first or just start creating the level within the editor?
+<br><br>
+<b>Charlie: </b>I try to have a fairly clear idea in my head what the general layout of the map is going to be, along with basically what it is going to look like. I then will sketch out the overall layout but by the time I really get into things I've come up with better ideas so the original sketch starts to become less relevent. But it is definitely good for getting me started on the right path. Once I have a picked a general lighting and architechtural style that I like I will stick with it throughout the map. By then I've got most of the map in front of me and it's just going in and filling the details. I try to sketch the map with brushes in the editor as well so that I can get a decent feel of the scale, etc.
+<br><br>
+
+<b>Rust: </b>What would you suggest to someone who is wanting to be a professional designer some day?
+<br><br>
+<b>Charlie: </b>It's pretty easy. Make maps and release them. But the tricky part is you have to keep getting better, study the games you play, study the real world, etc. Figure out what makes things work well and sometimes more importantly what makes things not work (so you know not to do them). Get your name out there and make sure people know you are getting better and are serious about getting in the industry. I never told anyone I wanted to be a professional level designer but people could see the drive in me and boom I got hired.
+<br><br>
+
+<b>Rust: </b>So ummm.... i read somewhere you were a longhorn, does that mean you would hate me cause I’m an aggie? =)
+<br><br>
+<b>Charlie: </b>Haha, I won't hate you, but I will hold a slightly friendly grudge against you. Especially on the years that we lose! Hook'em Horns! :)
+<br><br>
+
+<b>Rust: </b>Are yall planning on supporting sin editing once the game is released? In what ways?
+<br><br>
+<b>Charlie: </b>We are going to encourage it as much as possible, but obviously we can't answer all the questions people will have. Some of it the community is going to just have to figure out on it's own (much like what happened with Quake). I plan on writing up some scripting documentation outlining all the commands available as well as some key points on good style and the way to approach problems, etc. But just like with any other game, when the users get their hands on the engine/tools they do things that make the creators shake their heads in awe. I personally will be trying to help people out as much as is humanly possible because I really want people to take Sin scripting/editing to heart. I honestly don't feel there is a better environment for users to edit in due to Sin's functionality and environments.
+<br><br>
+
+<b>Rust: </b>Is it true that Texas girls go for the man in the pickup truck?
+<br><br>
+<b>Charlie: </b>Why do you think I currently drive a nice big black truck? ;)
+<br><br>
+Of course, that doesn't answer the question of why I'm still single with no likely prospects. But hey, those are just details! The girls are just scared off right now, I gotta give them time to get used to simply how cool that truck is.
+<br><br>
+Hah! Yeah, whatever Charlie. :)
+<br><br>
+
+<b>Rust: </b>What are some of the biggest differences in level editing between quake2 and sin?
+<br><br>
+<b>Charlie: </b>Well, doing real world environments is a whole new ballgame. Primarily, it's a much more difficult ballgame. Due to the nature of Quake 2, it's fairly easy to make a map that looks like it would fit in Quake 2 (a testimony to the art gods of id). However in Sin you suddenly have this much much larger set of art to work with and most of it was never meant to be used together. A good comparision is too look at Duke user maps. Most of them are very sloppy, unpolished, and unfinished. Fun... yes, but professional, no. When you have this much art, and this much freedom to make whatever you want in a world that the player can identify with you have to work that much harder to make it look professional.
+<br><br>
+Also, as has been harped on time and time again, the functionality you are given with Sin is simply unmatched. UnrealScript gives more control regarding some things but is unfortunately something that the average level designer can not take advantage of. SinScript is something that anybody can use (if a func_door makes sense to you than moveUp will make sense to you too). Within the limits of the Q2 engine (along with the limits we have expanded upon in Sin) there is very little that you can't toy with in Sin to make it do what you want.
+<br><br>
+
+<b>Rust: </b>What other games have you been playing lately and what games are you most looking forward to in the future?
+<br><br>
+<b>Charlie: </b>I just got done beating Outlaws again for the second time. I've also been playing a bit more Age of Empires to get my mind off of first person shooters. Online I've been playin the Sin demo. Gotta see what people like and don't like, especially when they have no idea who I am. It really trips me out to hear people say "I love this map!" when sindm6 loads and even more when they say "I can't stand this map!". You have to take the good with the bad. When someone does say they don't like it I try to find out what they don't like so that things can be improved. I'm also a complete Team Fortress addict (sniper and scout). I'm most looking forward to, well... a lot of games. Half Life, Team Fortress 2 (although I'm wary of having to buy it, bleh), Age of Empires 2, Perfect Dark, among others that I can't think of off the top of my head.
+<br><br>
+
+<b>Rust: </b>What is the most difficult aspect of level design in your opinion? and why?
+<br><br>
+<b>Charlie: </b>The details. I love them but they get very tedious and annoying. There are times where you just want to say "To hell with it, it's good enough. Who cares if blah blah blah". But then you have to remember that this is your job and you have to pay attention to those details. The devil lies in the details.
+<br><br>
+
+<b>Rust: </b>What’s the easiest?</font>
+<br><br>
+<b>Charlie: </b>Talking about how cool it would be if we did this and that. Game developers are the kings of *talking* about what would be cool.
+<br><br>
+
+<b>Rust: </b>Do you design the basic shape and flow of the level then go back and do all the detail work or do you detail as you go?
+<br><br>
+<b>Charlie: </b>I get the first part of my map to look like I want the rest to look and then I go through and lay out brushes where the rooms should go. Then I go in and turn those boxes into rooms. Then I connect them up and make them the general shell that will eventually be the proper building, etc. and keep refining until all the details are there.
+<br><br>
+
+<b>Rust: </b>Any closing comments or words for all those crazy fans out there?
+<br><br>
+<b>Charlie: </b>I'll be they're not half as crazy as some of the guys I work with. :) Have fun, it's just about the only thing worth the effort.</ul><h1 id="80" name="80" class="book-h1">Christian Antkow, Quake 3: Arena, Id Software #1</h1><ul><h3>Interview -  Christian "Disruptor" Antkow, Quake 3: Arena Level Designer for <a href="http://www.idsoftware.com" target="_top">id</a> Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+I had a chance to fire off some very specific Quake 3:Arena level editing questions to Christian Antkow of <A href="http://www.idsoftware.com">id software</a> recently and got some great information, as well as some exclusive screenshots of the Quake3:Arena Editor in action. I don't know about you, but I can not wait to start making some levels for Q3! Below is the interview:
+
+<b>Rust: </b>Are there still Surface Properties? And are they implemented the same way?
+<Br><Br>
+<b>Christian: </b>Not in the same way as Quake II. Surface properties are now set up in the shader files.
+<br><br>
+
+<b>Rust: </b>How are Curved Surfaces created in the editor?
+<Br><Br>
+<b>Christian: </b><a href="/content/interviews/disruptor2/images/rust_curve_BIG.gif?PHPSESSID=e5353856ffec8c823c21f372d236573c"><img src="/content/interviews/disruptor2/images/rust_curve_SMALL.gif" width=500 height=392 border=0 alt="Click to Enlarge"></a>
+<br><br>
+
+<b>Rust: </b>How are the map compile times compared to Quake2? I thought I remember Carmack mentioning at QuakeCon that the actual .bsp files were just text now.
+<Br><Br>
+<b>Christian: </b>Map compile times are a bit longer than Quake II, but that's mostly spent in vis and light. The actual BSP process doesn't take that long.
+<br><br>
+
+<b>Rust: </b>Pertaining to Level Editing, what do you think will be the most difficult learning curve from Q2 Editing to Q3 Editing?
+<Br><Br>
+<b>Christian: </b>Probably curves. Even now we're still learning how to make our curves properly so that they t-junction properly and don't "crack" when they touch another brush.
+<br><br>
+
+<b>Rust: </b>Is Lighting handled the same way? As in entity based lighting or Surface Lighting.
+<Br><Br>
+<b>Christian: </b>We still have both pointlights and surface lights. Most of our light is emitted from surfaces however. And John also wrote in spiffy new Sunlight code, so we can set the angle and intensity of the sun, so it gives us really neat shadows in the world if used effectively.
+<br><br>
+
+<b>Rust: </b>How are the new portal effects done in the editor?
+<Br><Br>
+<b>Christian: </b><a href="/content/interviews/disruptor2/images/rust_portal1_BIG.gif?PHPSESSID=e5353856ffec8c823c21f372d236573c"><img src="/content/interviews/disruptor2/images/rust_portal1_SMALL.gif" width=500 height=391 border=0 alt="CLICK TO ENLARGE"></a>
+<br>
+<a href="/content/interviews/disruptor2/images/rust_portal2_BIG.gif?PHPSESSID=e5353856ffec8c823c21f372d236573c"><img src="/content/interviews/disruptor2/images/rust_portal2_SMALL.gif" width=500 height=390 border=0 alt="CLICK TO ENLARGE"></a>
+<br><br>
+1) This is a trigger_multiple which is used for a teleporter. (links to 3) Notice the "portal" texture in the background. This is a special shader which is applied to the surface where we wish to see through to another area.
+<br><br>
+2) This is a misc_portal_surface entity which should be placed right in front of a "portal" texture. The shader definition for the portal texture is as below.
+<br><br>
+The misc_portal_surface entity will "lock on" to the nearest texture with a "portal" parm set in the shader, and that view is then linked to a "misc_portal_camera" entity (see 4)
+<br><br>
+
+<code><pre>
+textures/common/portal
+{
+        qer_editorimage textures/common/qer_portal.tga
+        portal  
+        surfaceparm nolightmap
+        {
+                depthWrite
+                blendFunc GL_ONE GL_ONE
+                map textures/common/static.tga
+                tcMod scroll 1292.7 11233.9
+        }
+}
+</pre></code>
+<Br><Br>
+3) This is a "target_teleporter" entity. It teleports the activator to a misc_teleporter_dest (6) entity.
+<br><Br>
+4) This is a "misc_portal_camera" entity (should be linked from entity 2). This is pointed to an "info_notnull" (5) to set the camera direction. This entity is also used to grab the PVS of the destination area
+<br><Br>
+6) "misc_teleporter_dest" -- This can either display a teleporter pad, or if you select the "Nodraw" checkbox in the editor, nothing is displayed (so that you can make Q1 style teleporters)
+<Br><br>
+
+<b>Rust: </b>Any new really cool features in the level editor?
+<Br><Br>
+<b>Christian: </b>Curves mostly. That's the biggest.
+<br><br>
+
+<b>Rust: </b>Are textures stored in the .bsp file Q1 style or in the PAK file, q2 style, or in an all new style?
+<Br><Br>
+<b>Christian: </b>Textures are stored in a directory and not the BSP file like Q1. They are simply TGA images which the engine loads in directly. 
+<br><br>
+
+<b>Rust: </b>Do you think Q3 curved surfaces will be abused more then Q2 colored lights were in the custom map community?
+<Br><Br>
+<b>Christian: </b>I don't think so. Curved surfaces add to the geometry of a level and generally make things look nicer when used properly, whereas gaudy use of coloured lighting just makes things look... well... gaudy.
+<Br><Br>
+
+<b>Rust: </b>what exactly are the 'shader files' ?
+<Br><Br>
+<b>Christian: </b>A "shader file" is simply a text file with a bunch of "shader" entries in it. From Brian Hook's internal "Shader Manual"
+<br><Br>
+<font face="Courier New" size="-1">
+"A Quake 3 shader file consists of a series of brace (“{“ and “}”) delimited, line oriented surface attribute and rendering specifications. "
+</font>
+<Br><br>
+That line I pasted in in my previous e-mail was an example of a shader entry for how our portal texture is defined, with an alpha texture applied over it to give a sort of "TV-Static" effect.
+<br><Br>
+<small>--<b>Rust: </b>editors note: he is referring to question #6 about the portals</small>
+<Br><Br>
+
+<b>Rust: </b>I'd like to thank Christian Antkow for taking the time to answer my questions!
+<Br><br>
+So after hearing all the stuff above, what are your thoughts on Quake 3 Arena Level Editing now?<br><br>
+<b>Rust: </b>Post your thoughts in the <a href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Gamedesign.net Quake3 Arena Editing Forum</a>.</ul><h1 id="79" name="79" class="book-h1">Christian Antkow, Quake 3: Arena, Id Software #2</h1><ul><h3>Interview -  Christian "Disruptor" Antkow, Quake 3: Arena Level Designer for <a href="http://www.idsoftware.com" target="_top">id</a> Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+<b>Rust: </b>As with all first questions of interviews...Tell us about yourself and what you do, for those that don't know.
+<br><br>
+<b>Christian: </b>I'm a level designer and network admin (Web/FTP/NT stuff) at <a href="http://www.idsoftware.com" target="_top">id</a>.
+<br><br>
+
+<b>Rust: </b>Describe a typical day at id.
+<br><br>
+<b>Christian: </b>I usually roll in between 10:30-11:30am. Check e-mail/voicemail and check the news pages. Most of my day is comprised of working on my part of Quake 3. I usually take a break around 7pm or so for dinner. And work until midnight.
+<br><br>
+Repeat monday through friday. On weekends I usually sleep in and roll into the office around 3pm and work until midnight or so, but I also fit in time to play other games on the weekends (lately it's been BattleZone, Q2CTF, and I'm giving StarCraft another try...)
+<br><br>
+
+<b>Rust: </b>What is your roll in the development of quake3?
+<br><br>
+<b>Christian: </b>Level design, work with the other designers in filtering programming requests with John Cash, work with Robert Duffy in filtering requests on Q3Radiant, and I sort of tag along with Brandon &quot;KillMe&quot; James on music work for Q3.
+<br><br>
+
+<b>Rust: </b>After a year in Texas now, how do you like it? Wearing a cowboy hat yet? ;)
+<br><br>
+<b>Christian: </b>Hell no! Not wearing a cowboy hat, never will (unless I'm *REALLY* drunk). My friends back in Canada would lynch me! I like the weather in Texas, sure beats Canadian winters. Dallas is ok, but it just doesn't compare to Toronto in terms of nightlife (I was a club freak back in Toronto). The cullinary scene in Dallas is great though. A lot of good restaurants. Everyone here is generally much friendlier than Toronto.
+<br><br>
+
+<b>Rust: </b>What would you consider the most difficult aspect of level design?
+<br><br>
+<b>Christian: </b>Trying to be original, and finding creative ways of using new technology. Personally, my style of design is a sense of great vertical scale, so the challenge there is making something that looks huge, yet runs fast. Sewer64 is a good example of that, and is probably a good prelude to my work on Q3.
+<br><br>
+
+<b>Rust: </b>What are some of the obvious errors you see amateur level designers making?
+<br><br>
+<b>Christian: </b>Texture choice. Take a look at the way we use textures in Q2 and try to emulate that. Certain textures should be used in specific ways, ie: you shouldn't have a grate texture for a support beam.
+<br><br>
+
+<b>Rust: </b>What is the purpose of the 'skip' content property in quake2?
+<br><br>
+<b>Christian: </b>&quot;skip&quot; is similar to the &quot;hint&quot; brush. Where &quot;hint brushes&quot; make a volume that splits the PVS, a brush with &quot;skip&quot; on a face creates a plane which splits the PVS.
+<br><br>
+
+<b>Rust: </b>So what's this about you getting new p1mpin car? Does it have air conditioning? :)
+<br><br>
+<b>Christian: </b>Hell yeah! You don't buy a car in Texas without air conditioning. It's my first Porsche and I love it. I'm already on the waiting list for a Boxster S when they come out next year (I'll trade my current one in)
+<br><br>
+
+<b>Rust: </b>What do you think the major differences will be between quake3 level editing and quake2 level editing?
+<br><br>
+<b>Christian: </b>Well, the graphics portion of the Trinity code isn't finished yet, so that's a bit premature to ask. But so far, I'd have to say curves will be a big difference. You can do a lot of really cool things with curves, but you give up some functionality you've learned to use with the Q2 technology. Like I said, it's still in development, so things may change.
+<br><br>
+
+<b>Rust: </b>What level of yours are you most proud of designing and why?
+<br><br>
+<b>Christian: </b>Hmm. That's a tough one. I'd have to say I'm proud of Sewer64 because of it's scale and that I actually managed to pull it off pretty much how I envisioned it. I like the way Strike turned out. The level that I was the most proud of was a version of command that didn't ship. Originally, there were a lot more open spaces in the central computer core, so that in deathmatch you could actually leap from the top level down below, but due to speed issues, I had to fix things.
+<br><br>
+
+<b>Rust: </b>Where do you get inspiration when designing a level? Books, movies, etc?
+<br><br>
+<b>Christian: </b>A lot of my inspiration post Quake II (applying to Sewer64 and my current work on Q3) has been from Aliens. I pick up all the Aliens comics and books I can get my hands on. I love the dark, and grungy feeling of Alien 3, and the feeling of how you never know when something will pop out of the dark to pounce on you. I wish Fox would get their asses in gear and release their stuff on DVD instead of that destined-to-fail bullshit DIVX format so I can buy the whole Aliens trillogy on DVD and freezeframe certain architecture so that I can sketch them out.
+<br><br>
+
+<b>Rust: </b>What are some of the other games you've been playing lately and what are the ones your looking forward to playing?
+<br><br>
+<b>Christian: </b>I've been playing BattleZone and StarCraft lately. I sat down and played through all of Wing Commander: Prophecy in a couple days last month, and I play Magic: The Gathering with Brandon. <br><br> I'm looking forward to seeing Dune 2000 (I'm a sci-fi RTS nut), and look forward to seeing what Valve has done on Half-Life
+<br><br>
+
+<b>Rust: </b>When designing a map do you design it all out on paper, or just kind of have a mental image of what you want and go from there?
+<br><br>
+<b>Christian: </b>A bit of both. The first level of my Q3 work was drawn up on graph paper, and I built it in about 2 weeks. In the end, we weren't pleased with it, so I scrapped it and started fresh with some new concepts. Working with curves really forces you to re-think the way you design your levels. There some stuff we can do now that we really weren't able to do in either Q1 or Q2.
+<br><br>
+Right now I'm working from a mental image I have in my head. We're sort of in a &quot;research&quot; phase right now exploring some ideas and experimenting with the new tools, but I think in a week or two, I'll probably sit down and sketch everything out on graph paper so I have a clear picture.
+<br><br>
+I can't stress enough how important it is to sketch out the flow of the map on paper beforehand. I was amazed that I finished the first draft of my Q3 work so quickly from working from a sketch. It really gives you a clear picture and direction in which to work from.
+ 
+<br><br>
+
+<b>Rust: </b>Any suggestions for all us amateur designers out here on how to improve our 'skillz' ?
+<br><br>
+<b>Christian: </b>Emulate. Look at Quake II, and find a style that appeals to you. Do your best to try to copy that style and put your own spin on it (That's what Tim taught me)
+<br><br>
+
+<b>Rust: </b>Any closing comments (music, movies, farm animals, etc)?
+<br><br>
+<b>Christian: </b>Hi Mom.</ul><h1 id="68" name="68" class="book-h1">Dan Koppel, Mal Blackwell, and Alex Mayberry, Quake 2, Xatrix</h1><ul><h3>Interview -  Dan Koppel, Mal Blackwell, and Alex Mayberry, Quake 2 level designers for Xatrix</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>
+						
+<B>Tell us a little bit about yourselves and Xatrix?  How did you guys get
+into the level designing business?
+</B>
+<br><br>
+<blockquote><B>Dan:</B>I've always been into computer games and before that it was
+strategy/wargames. Until the arrival of (classic) quake I was a graduate
+student studying biophysics studying 3d modeling of proteins who just toyed
+with modifying levels for descent and doom2. After quake, I became
+completely absorbed with making levels. For quake, I made 4 user levels. A
+couple of my levels were noticed by the people here at Xatrix and I left
+school to join the great team here at Xatrix. I joined Xatrix in September
+of 97. Also, I'm married and love baseball (big Cleveland Indians fan). 
+
+
+<br><br><B>Alex:</B>I had been working in law enforcement for almost five years when I realized 
+that I'd made a bad career choice.  Taking a risk, I decided to quit my job
+and go 
+back to school.  While my wife worked two jobs, I studied computer science
+at our local community college. Everything was going great...I was getting
+good grades, 
+I was completing the courses that I needed for my degree, and finally I
+thought I knew what I wanted to do in life. Then this little game called
+DOOM was released.  I found out about level designing, 
+and I started to dabble a bit in my spare time.  It wasn't long before I was
+neglecting
+my classes and spending all day building levels.  To make a long story
+short, Xatrix saved
+my life by hiring me as a level designer;  I'm sure if things had gone on
+much longer
+they'd have found me murdered in front of my computer with a half finished
+DOOM level up on the
+screen.  Lucky for me that my wife has a lot of patience :)
+
+
+<br><br><B>Mal:</B>
+Well,  I started out as a Graphic Designer for textiles.  I had owned my own
+business for about 2 years before getting a computer (to do work with of
+course).  At the time Wolfenstien 3D was a pretty popular game.  As you can
+guess I had a copy of Wolf, and thought it was the best thing since sliced
+bread.  Being new to computers I also had that swell America Online
+Subscription, through which I heard about the "Next Great Thing"  the soon
+to be released "Doom!"  The night the shareware was released on the net, I
+logged on, started the down load and went home.  Without knowing it would be
+the last full night of sleep I'd ever have again.  Well, the next morning I
+got in, unzipped the file and started up Doom.  Wow!  That was it, I was
+hooked.  I ordered the full version the same day and played till Doom was
+burned into my retinas.  Soon a neat little program surfaced on AOL, Deu.  A
+Doom map editor, a new reason to stay at the office till' 4am every night.
+Doom2 was soon released as well as Due2 and finally Deth.  I spent about 12
+hours a day building levels and 2 or 3 doing work for real money (suffice it
+to say my business went under a year later).  At about this time I
+happened to start a correspondence with another level builder on AOL, Dr.
+Sleep.  We would exchange tips for building and critique each other's work.
+John, being more involved with the Doom community than I, soon found himself
+on a number of work for hire projects like Blood and Unreal.  Thanks To John
+Anderson (of Ion Storm)  I too was contacted by Q Studios (Blood) and Epic
+MegaGames (Unreal) and was able to work for a time on both of these
+projects.  Unfortunately working from home part time was starting to strain
+my day job performance, and I was unable to stay on with either of these
+projects.  These experiences though, solidified my desire to find a full
+time position in the gaming industry.  Just before getting onboard with Epic
+John and I were to start a Doom2 TC known as Eternal Doom.  Though John and
+I never really did anything on Eternal, John stayed in contact with several
+Eternal designers.  At any rate,  Alex Mayberry (of the Eternal Team), our
+Lead level designer at Xatrix happened to be looking for a Designer in the
+Los Angeles area and John was happy to drop my name (again) Thanks John.
+</blockquote>
+
+<br><br>
+<b>
+Did all of you work on Redneck Rampage before the mission pack?  If so,
+how does level design for Quake2 compare in terms of difficulty and time?
+</B>
+<br><br>
+<BLOCKQUOTE>
+<B>Dan:</B>
+Alex and Mal did, the q2 mission pack is my first professional project.
+
+
+<br><br><B>Alex:</B>Both engines have unique problems and challenges to deal with.  Build levels
+tended to be
+more what I'd call "handcrafted," as literally everything had to be done by
+the designer
+in order to achieve the greatest degree of realism.   Quake2 on the other
+hand has automated many things for us, and obviously given us the awesome
+power of true 3D.  This of course does not come without a price, as the
+engine forces us to deal with r_speed issues, long compile times and other
+limitations.  On average, Quake2 levels take longer to build, but the end
+result is naturally worth the extra effort.
+
+
+
+<br><br><B>Mal:</B>
+I'd have to say that both the Quake2 and Build engines have their own
+difficulties to deal with.  In Redneck I had to work a lot harder to put
+together really interesting environments without the help of a true 3D
+engine.  With Quake2 I'd say the lighting is the hardest thing to master.
+Lighting can make or break a level.  There's also the r_speed limitations to
+deal with.  The one thing I miss about Build is the instant gratification of
+building a level and going into the game to see it without waiting for a Bsp
+to finish.
+
+
+</blockquote><br><br>
+
+<br><br><B>
+From Redneck Rampage (2.5D Build Engine Game) to Q2, were there any
+stumbling blocks for you guys, or was it an easy transition?
+</B>
+<br><br>
+ <blockquote><B>Dan:</B>
+ Most of my difficulties have come from my relative lack of experience.
+Making a unit (5 levels) that has a single theme is not as easy as it
+sounds. After about 3/4 of a level I'm ready to move on to something
+different. But for a unit you want the player to feel he/she is in a real
+place and that things go together.
+
+
+<br><br><B>Alex:</B>For me it wasn't an easy transition.  I'd never worked with true 3D before,
+and at first I found it very alien to me.  I had to forget everything I knew
+about constructing levels, and learn to think more 3 dimensionally.
+Fortunately, Mal had had a lot of experience with 3D, and he was able to
+help me over the rough spots.
+
+
+<br><br><B>Mal:</B>
+For me Quake2 was easier than Rampage.  I'd been working with 3D as a hobby
+for a couple of years, TrueSpace and Lightwave.  I liked to model so 3D was
+more or less second nature for me.
+
+</blockquote><br><br>
+<B>
+In your opinion, what is the most difficult thing with designing levels
+for a 3d game engine like Quake2?
+</B>
+<br><br>  
+ <blockquote><B>Dan:</B>
+ Finding time to sleep. ;)  Staying within the limits of the engine. I am
+constantly running into situations were I want to do something sooo cool but
+either the entities don't support it or the limits of the engine just make
+it impossible. As level designers we are always looking at r_speeds, if we
+don't get the feel or functionality we want  under our r_speed limit we need
+to rip it out and try something else.
+
+
+<br><br><B>Alex:</B>The most difficult thing about designing levels has nothing to do with the
+engine itself.  It's about taking the time and putting in the effort to do
+things right.  It's about looking at a room and knowing that there's that
+one extra thing that would make it really cool, and then taking the extra
+time to build it.  It's about spending hours getting the lighting just right
+and aligning the textures.  It's about placing the enemies and then testing
+and testing and testing until you HATE the freakin' thing.  And then
+finally, it's about not being married to any of the work that you've done,
+and if needed, being able to trash it all in favor of a better idea or
+needed change.  
+
+
+<br><br><B>Mal:</B>
+My greatest difficulty is my obsession with detail and perfection.  I can
+build and delete a room 6 or 7 times before I feel I am happy with just the
+base geometry.  Then there's the detail.  Balancing what you want to build
+with in the limits of the engine  and the "minimum system requirements" has
+always been a struggle for me.  Sometimes I have to tell myself that less
+really is more&lt;not&gt;.
+</blockquote><br><br>
+
+<B>
+How would you describe your methods of learning the ins and outs of the
+entities themselves and how they work?  Did each of you work out the details
+for yourselves?  Did you get any help from id?
+</B>
+<br><br>  
+ <blockquote><B>Dan:</B>
+ Until, the quake2 was released id's entities changed quite a bit and many
+weren't fully functional until the game was done. (Some never became
+functional, target_actor) Many of the rest were similar to (classic) quake
+so I knew most of the ins and outs. Some of the rest we worked out ourselves
+and others we did get help from id (area portals and hint brushes).
+
+<br><br><B>Alex:</B>
+Once you get the hang of how things work in the Quake2 engine, most of the
+entities are fairly easy to figure out.  If something becomes tricky,
+there's always the old trial and error method, or we could simply  look at
+the original Quake2 maps as a guide.  Of course, the guys at id have been a
+big help in answering any questions that we've had along the way, so
+learning the ins and outs of the engine for the most part has been fairly
+painless.
+
+
+<br><br><B>Mal:</B>
+We did alot of experimentation at the beginning with some of the newer
+entities and id was always willing to explain the stuff we had problems
+with.  Also, if I still don't get it I just ask Dan.
+</blockquote><br><br>
+
+<B>
+Have you learned any neat new tricks within the existing Quake2 entities?
+(Do tell.)
+</B>
+<br><br>  
+<blockquote><B>Dan:</B>
+One trick I've played with is using pathtargets with a trigger_elevator, by
+doing this you can get an elevator to go to a number of path_corners. The
+path_corner has a pathtarget which goes to a trigger_relay wich sends the
+elevator to another path_target. After it stops (or you kill the
+trigger_relays) you can hit another button which sends the elevator to a
+different set of path_corners.   
+
+<br><br><B>Alex:</B>
+You bet!  There's this one thinnng thatnlkldld  damn keyboard is
+stickkkkin......gjdjkdk   damn.....dj ....oh well, guess you'll just have to
+wait and see...
+
+<br><br><B>Mal:</B>
+Well, I have had to re-think the whole conveyor belt problem.  Having
+funk_trains actually "be" the conveyor was not working well with the insanes
+I was dropping onto it.  The insanes were getting stuck going around corners
+and the belt was slowly going out of sync with itself.  So I devised a much
+simpler funk_train using trains with the clip texture on them to push the
+insanes from behind rather than try to conveyor them.  It's also great
+because it doesn't effect my E or W polys.
+</blockquote><br><br>
+
+
+  <br><br><B>
+Are you planning on adding any new entities or major changes to others?
+
+</B>
+<br><br>
+<blockquote><B>Dan:</B>
+We have plenty of new monsters, weapons, keys, power-ups, etc. but not
+really any new geometry based entities. We already have some in mind for our
+next game but that's for another time.
+
+<br><br><B>Alex:</B>We've definitely added some new things to enhance the game experience, but
+nothing that will drastically change anything that was done in Quake2.
+Rather, most of the changes we've made will fall right into place in the
+Quake2 universe, and should fit in seamlessly with everything that id has
+done.  
+
+<br><br><B>Mal:</B>
+We have a few new toys.
+</blockquote><br><br>
+
+<B>
+How does the mission pack compare to quake2 in terms of gameplay?  Are
+you guys going for a more interactive story line or are you keeping the same
+basic level hub system of Quake2
+</B>
+  
+<blockquote><B>Dan:</B>
+Id did such a great job with quake2 that it's hard to improve on and were
+making a mission pack so with that in mind the game play is quite similar to
+quake2. You are actually another space marine invading stroggos but we do
+have a couple of great twists.
+<br><br><B>Alex:</B>
+The game takes place at the same time as the events of Quake2.  You play a
+different marine that touches down in another region of the planet, your
+mission to locate and destroy a secret enemy moonbase.  Gameplay for the
+most part will follow that of the original levels.
+
+<br><br><B>Mal:</B>
+The Mission pack takes place at the simultaneously with Q2 and we've adhered
+to the same level structure as Q2.
+</blockquote><br><br>
+
+<B>Do you plan out a level on paper before the actual designing begins or do
+you just have a mental image of it and go from there?
+</B>
+  
+<blockquote><B>Dan:</B>
+Yes ...  This one varies from level to level and depends on what I'm trying
+to do. I usually sketch out my level to get the 3d placement and flow down
+but the look and feel are usually based off of mental images.
+
+<br><br><B>Alex:</B>
+I used to plan out levels on graph paper when I first started designing.  As
+I became more experienced though, and developed certain techniques and
+themes, I found myself doing this less and less.  These days, I generally
+build free-form, and let the level take form along the way.   Once in a
+while I'll sketch something out on paper just to get a rough idea of
+placement, but otherwise I just try to get a level started (usually from
+some sort of image I have in my head) and then let it flow from there.
+
+<br><br><B>Mal:</B>
+I will usually build free form, with just a mental image of what it is I
+want to build.  I will resort to paper and pencil if I'm dealing with really
+specific routs or complex geometry.
+</blockquote><br><br>
+
+<B>
+What do you use for inspiration when building a level?  Books,
+Buildings, Movies etc?
+</B>
+<br><br>
+<blockquote><B>Dan:</B>
+Yes, Yes, Yes. When you crank through a level in 2-4 weeks and then start
+another one etc. anything that can give you an inspiration is a godsend. 
+
+<br><br><B>Alex:</B>
+Once in a while I'll see something that will give me inspiration, but for me
+level ideas generally just spring to mind.  If I'm stuck, I'll start
+building brushes and moving them around, changing heights here and there, or
+clipping off an edge, and soon enough something cool will start to develop.
+Getting started is always the hardest part...but once you get that first
+room going, then the rest falls into place.
+
+<br><br><B>Mal:</B>
+All of the above and then some.  Comic books are also a great source for
+inspiration.  Building levels all the time can sometimes strain your
+creativity levels and any kind of outside stimuli helps.
+</blockquote><br><br>
+
+<B>
+In the screenshots released, I have noticed that there seem to be a lot
+of outdoor areas.  What techniques do you use to create terrain and large,
+open, outdoor areas?
+</B>
+<br><br>
+<blockquote><B>Dan:</B>
+Since Mal and Alex did most of the preliminary work in this area, I'll let
+them answer this one ;)
+
+<br><br><B>Alex:</B>
+We've found a fairly efficient method to creating organic environments,
+minimizing the amount of brushes used and keeping the r_speeds down.  As for
+a detailed description of this, I'll leave that question for Mal to answer,
+as he was the one to first hit upon this method.
+
+<br><br><B>Mal:</B>
+This may be a little tough without being able to illustrate some of the
+finer points  and all my experience has been with Qe4 or QeRadiant but here
+goes.  I got the basic idea for the canyons from a small set of rocks in
+Base1.  What I did was build a wall of parallel brushes all 16 pixels thick
+and all of the same height, but I would vary the lengths randomly.  After
+building each brush I would go into edge mode and pull one side of the brush
+out to create a jaggy sort of wall.  The trick here is to keep the edges of
+the brushes parallel to each other.  After that I would go into edge mode
+again and pull the top leading edge of each brush out say 32 pixels (you can
+vary this however you like but you need to make sure you do the same for
+each brush).  After you have the lower wall done you select the entire wall,
+copy it and Z-flip it.  Put it on top of the lower wall and do it again till
+desired height is reached.  Perhaps when this pack is shipped Shane will
+allow me to do a proper tutorial.
+</blockquote><br><br>
+
+<B>
+How do you guys feel about maps changing hands within a company?
+(Everybody working on every map, even if only for tweaking, lighting etc.)
+</B>
+<br><br>
+<blockquote><B>Dan:</B>
+For tweaking and touch-ups it's fine but for a partially finished level I
+don't think it's a good idea. When you design a level you have an idea of
+what you want to do with it an where you want to take the player this can
+get watered down and lost if the levels are past around. My feeling is if
+it's not working it's probably better to trash it and start over. (This is
+probably easier than completely redoing a level - which I have done, ugh.)
+
+<br><br><B>Alex:</B>
+We did this quite a bit for Redneck Rampage, but it's really not needed as
+much with the Quake2 engine.  Quake2 is so advanced that many of the
+detailing elements that would have been done by other people for us is now
+done by the engine itself.   Not to say that maps don't ever change hands;
+indeed, sometimes when a deadline is near, one designer might help out
+another by doing some touch up work, or place enemies and sound, etc.
+Generally though, maps tend to stay with their respective owners.
+
+<br><br><B>Mal:</B>
+Actually, it's very rare that someone other than the level designer building
+the map ever gets to work on it.
+</blockquote><br><br>
+
+<B>
+Do you ever feel that a map is 'finished'?
+</B>
+<br><br>
+<blockquote>Dan:</B>
+When I first got here the answer was no. Now, the answer is well sorta.
+There is always another map I can do such and such on. So when I'm finished,
+I'm done and it's time to move on to the next map.
+
+<br><br><B>Alex:</B>
+You can ALWAYS find something in a map that you'll want to tweak.  If you're
+building levels as a hobby, then nothing ever is truly finished (nor does it
+need to be). When making a commercial product though, there does come a
+point when you have to walk away from a level and let it stand on its own.
+
+<br><br><B>Mal:</B>
+This is a trick question, right?  Sure, there comes a point when I feel my
+maps are done and ready to be shipped.  Although there will always be
+something that I could of done to make it better.  Little tweaks here little
+tweaks there, ya' know.
+</blockquote><br><br>
+
+<B>
+Have you had much of a chance to look at any of the user-created levels?
+</B>
+<br><br>
+<blockquote><B>Dan:</B>
+I've tried to play some of the quake2 user maps and have seen a number of
+good ones. I haven't had a chance for about a month now so if there are some
+great newer ones I probably haven't seen them. 
+
+<br><br><B>Alex:</B>
+Just a few, and surely not as many as I'd like to.  I imagine when the
+Mission Pack is done, we'll start taking a look at more of what's out there.
+
+<br><br><B>Mal:</B>
+Yes, I've seen quite alot actually. We've always got our eye out.
+</blockquote><br><br>
+ 
+<B>
+Any advice to all us amateur level designers out there?
+</B>
+<br><br> 
+ <blockquote><B>Dan:</B>
+ Try to keep the players on their toes. If a level gets me to jump out of my
+seat, I'm sold. I can overlook a misaligned texture or a loss of texture
+theme and even higher r_speeds (still not over 1000), but a boring level is
+a sin, even if it looks good. Also a very important trait for a level
+designer is attention to detail. The most anal people here at Xatrix are all
+level designers. ;)
+
+<br><br><B>Alex:</B>
+First off, do things right.  If you build an area, make sure to finish it.
+Don't leave the polishing work for the end, because by that time you'll be
+tired of the level and you'll get sloppy.  Be a perfectionist, and polish as
+you go.  Next, use lighting effectively.  Don't over use colored lights, and
+learn to create areas with a good diversity of light and shadow (always
+making sure that your lighting is logical of course).  Finally, build
+vertically.  It's a 3D engine, so use it to its full potential.  Try to make
+levels that double back and revisit areas from a different height.  This
+will maximize the amount of space used in the level, as well as make the
+environments more interesting and enjoyable for the player.
+
+<br><br><B>Mal:</B>
+I would have to agree with what Alex already wrote, take your time and do it
+right.
+</blockquote><br><br>
+
+<B>
+If there is one thing that you think is most important for a level
+designer to remember what would it be?
+</B>
+<br><br>  
+<blockquote><B>Dan:</B>
+Game flow. Often overlooked but extremely important. 
+
+<br><br><B>Alex:</B>
+I'll say it again, do things right.  Don't cheese out and leave something
+incomplete.  If a texture isn't aligned, then align it.  If the lighting
+isn't quite right, then spend the time it takes to make it so.  No one
+really notices when you do things right (after all, who walks around a level
+and says, "Oooh, look, he aligned that texture!"), but they sure as hell
+notice when you do them WRONG.
+
+<br><br><B>Mal:</B>
+If there is one thing that is most important for a level designer to
+remember it's the end result, the quality of your map when you feel your
+finished. (see question 15.)
+</blockquote><br><br>
+
+<B>
+Doom had the rabbits, Heretic had the chickens, Hexen 2 had the
+sheep...what farm animals can we expect with 'The Reckoning'?  Remember…the
+sheep are taken.
+</B>
+<br><br>  
+<blockquote><B>Dan:</B>
+You forgot that redneck had the pig ;)
+
+<br><br><B>Alex:</B>
+You're kidding, right?  Remember, we're the guys who did Redneck Rampage.
+We've butchered more virtual livestock than an Arkansas slaughter house.
+We gotta lay low for a while before we piss off the wrong animal rights
+group....
+
+<br><br><B>Mal:</B>
+We had chickens, pigs, dogs and cows in Redneck Rampage, I think were farm
+animaled out!
+</blockquote><br><br>
+
+<B>
+Thanks for doing the interview. Any kind of closing comments you guys
+would like to make?
+</B>
+<br><br>  
+<blockquote><B>Dan:</B>
+The quake community rocks. I felt that way when I first got into level
+design and got great feedback on my quake levels. Now working on a quake2
+mission pack I get to see all the excitement from the other end. Later.</ul><h1 id="61" name="61" class="book-h1">Dan Kramer and John Scott, Soldier of Fortune, Raven</h1><ul><h3>Interview -  Dan "ElKrem" Kramer and John "Pagan" Scott, Soldier of Fortune Level Designers for Raven Software</h3>
+
+<p><hr width=75% color=black noshade>
+							
+<b>[LiquidX]: </b>any release date?
+<br><br>
+<b>Pagan: </b>After Quake3.  thats all I can say :)
+<br><br>
+
+<b>Llama: </b>How are you going to combat q3a on the multiplayer side of things?
+<br><br>
+<b>ElKrem: </b>They are different games.  SOF is more of a quicker, lethal game.  One shot kills and such.<br>
+<b>Pagan: </b>We are also stressing the single player game... competing directly with Q3A would be not very clever.
+<br><br>
+
+<b>[LiquidX]: </b>have you guys done any testing with the amd athlon?
+<br><br>
+<b>Pagan: </b>None yet....we received 2 machines early this week.... I don't think Rick has set them up because he has been on vacation until today.
+<br><br>
+
+<b>TraderX: </b>Will Soldier of Fortune Support 32 bit Textures?
+<br><br>
+<b>Pagan: </b>Yes..and you can change the gl internal format to force it.
+<br><br>
+
+<b>Mr_Oreo: </b>How did you guys get your start in the game industry?
+<br><br>
+<b>ElKrem: </b>Pagan, you first.<br>
+<b>Pagan: </b>I applied for a job at Krisalis in the UK after getting my degree..... worked there for 2 years then went self employed for 6 years before applying to Raven.<br>
+<b>ElKrem: </b>One day I got fed up with grad school in astronomy...  I applied at Raven...  They hired me anyway ;)
+<br><br>
+
+<b>guf: </b>Pagan what was your degree in?</b>
+<br><br>
+<b>Pagan: </b>Chemistry...specialising in pyshical chemistry and computer sims of reactions.
+<br><br>
+
+<b>guf: </b>and you ElKrem? astronomy?
+<br><Br>
+<b>ElKrem: </b>Undergrad was physics and applied mathematics.
+<br><br>
+
+<b>xegment: </b>what will the multiplayer be like? what modes? will there be teamplay out of the box?
+<br><br>
+<b>ElKrem: </b>Right now, we're looking at supporting several different games, from vanilla deathmatch to other, more specialized games.<br>
+<b>Pagan: </b>The deathmatch is deadly... because it is real; an average person doesn't take many bullets!<br>
+<b>ElKrem: </b>Teamplay will likely be supported out of the box.<br>
+<b>Pagan: </b>... a lot like Action Quake.
+<br><br>
+
+<b>guf: </b>Ya, you guys had your first real dm game runs recently? how did that go?
+<br><br>
+<b>Pagan:</b> Twas a lot of fun... most things worked but there were a few bugs (of course).
+<br><Br>
+
+<b>AgentJ: </b>In Star Trek Voyager: Elite Force, have you finalized a list of alien races you will encounter?
+<br><br>
+<b>Pagan:</b> I've no idea about StarTrek...sorry.<br>
+<b>ElKrem:</b> I can't speak for StarTrek either... ;(
+<br><br>
+
+<b>monyx: </b>have you guys played the half life mod Counterstrike? would you say SoF is similar in terms of realism levels?
+<br><br>
+<b>ElKrem:</b> I haven't played it.<br>
+<b>Pagan:</b> I"m afraid not... but we will now :)<br>
+<b>ElKrem:</b> Too much Everquest.<br>
+<b>Pagan:</b> Everquest is the game of the moment here.
+<br><br>
+
+<b>xegment: </b>Are they gonna be carding when you buy SOF like they are supposed to for kingpin?
+<br><br>
+<b>ElKrem:</b> That is up to the individual retailers.<br>
+<b>Pagan:</b> That isn't up to us...but it is very likley.  we are having parental control stuff too... so youngsters can play the game without the gore.
+<br><br>
+
+<b>ZooL: </b>Will there be animations of swimming and climbing etc?
+<br><br>
+<b>ElKrem:</b> There are approximately a bazillion different animations in already, with more being added for scripted events.
+<br><BR>
+
+<b>Llama: </b>Are you planning to make the game extensivly tweakable ala q1 & 2?
+<br><br>
+<b>ElKrem:</b> This is a tough one...<br>
+<b>Pagan:</b> The game will be as tweakable as Q2 and a lot more moddable.<br>
+<b>ElKrem:</b> If you make it too tweakable, too many different versions get out there and a standard never really develops.<Br>
+<b>ElKrem:</b> Too rigid, and people can't be creative...<br>
+<b>ElKrem:</b> It's a fine line, and we're trying to walk it.<br>
+<b>Pagan:</b> Nathans effects system, menu system... ghoul... all can be changed.<br>
+<b>Pagan:</b> You'll all have to learn C++ tho :)
+<br><br>
+
+<b>raYGunn: </b>Will SOF ship with an editor? and which one if it does?
+<br><br>
+<b>ElKrem:</b> There will be an editor.  Likely a version of Radiant but no promises.
+<br><br> 
+
+<b>PDC_Blitz: </b>I've heard rumors about you being able to hire out and control other operatives (soldiers of fortune, I guess you could call them :) in the game, but I haven't heard any hardcore evidence of this being in the game. Is this true, and if it is, how much control can you exert over your squadmates?
+<br><br>
+<b>Pagan:</b> That was considered for a while... but not in at the moment.. and likely to never be in.<br>
+<b>ElKrem:</b> We decided to focus on the individual player in the single player game.  It's supposed to be a very cinematic, action-oriented game.  Worrying about controlling AI teammates can get in the way of that.
+<br><Br>
+
+<b>guf: </b>What editor are you guys using? a version of Radiant?
+<br><br>
+<b>Pagan:</b> QERadient.
+<br><br>
+
+<b>guf: </b>How much modification have you done to the original editor?
+<br><br>
+<b>ElKrem:</b> A whole lot...
+<br><br>
+
+<b>[LiquidX]: </b>Will the software be as demanding on the hardware as q3a? ie a p3 500@620 getting 40fps in high quality 800x600
+<br><br>
+<b>Pagan:</b> We have put lots of scalability in to push the high end machines..... while still running on a Voodoo1.  So the simple answer is yes.<br>
+<b>ElKrem:</b> I though it looked really nice on a TNT...
+<br><br>
+
+<b>Sniper342: </b>have you been able to license the guns, or will they go by more generic names?
+<b>ElKrem:</b> We're going to be using the generic names for copyright reasons...
+<br><br>
+
+<b>Crusher: </b>What are the chances a Madison native could get the opportunity to do some beta testing?
+<br><br>
+<b>Pagan:</b> none I'm afraid... it all goes thru Activision so if u r in Cali....much better chance<br>
+<b>ElKrem:</b> Well, when the time comes we MIGHT have some sway over that, but nothing for sure.
+<br><br>
+
+<b>guf: </b>You guys don't do much internal testing?
+<br><br>
+<b>ElKrem:</b> We test internally every day!  But the "official" QA is done through Activision.<br>
+<b>Pagan:</b> the designers and artists do when they are waiting for us programmers to finish!
+<br><br>
+
+<b>xegment: </b>Is your neeto GHOUL modeling system better than what is in place in the Q3 engine?
+<br><br>
+<b>Pagan:</b> it looks better....takes more memory though.<br>
+<b>ElKrem:</b> They are different.  How's that for a non-answer?
+<br><br>
+
+<b>[LiquidX]: </b>would it be possible to beta test SoF? if so, how? (like seriously beta test it, not get a preview on the software :))
+<br><br>
+<b>Pagan:</b> contact the QA department at Activision.<br>
+<b>ElKrem:</b> Your best bet is to contact Activision Visioneers...  Pull any Madison strings or name dropping with them, and who knows...<br>
+<br><Br>
+
+<b>Zoner: </b>C++ has been seemingly slow adopting in game development it seems, the language is well suited for them, but adoption is slow.   Quake engine has an excuse (portability), but what about the others?
+<br><br>
+<b>Pagan:</b> We have gone over to C++ completely.  Maybe it is because the old programmers were brought up on ASM and don't like relinquishing control?  There is a learning curve for C++ .. and maybe it wasn't viable to spend the time in the past?
+<br><Br>
+
+<b>MexicanRadio: </b>Which is harder, building realistic levels a la SOF, or fantasy/SF levels?
+<br><br>
+<b>ElKrem:</b> Well, I'm not a designer, but from what I have seen I'd say realism is harder.<br>
+<b>Pagan:</b> Realistic levels are harder.  You are not constrained by anything when doing fantasy....whereas everyone knows what a subway looks like.<br>
+<b>ElKrem:</b> Let's face is, most real architecture is, well, boring...  It's a challenge to make something real AND fun.
+<br><br>
+
+<b>autolycus: </b>What are your views on violence and gaming?  Have recent events made you rethink the violence levels in SoF?
+<br><br>
+<b>Pagan:</b> we designed it for a mature audience.... and will be putting parental locks in there.<br>
+<b>ElKrem:</b> Wow, that's a tough one...  No easy answers here.  First off, the game is not for kiddies.<br>
+<b>Pagan:</b> we can't let a couple of psychos stop our creativity.
+<br><br>
+
+<b>Ghaleon: </b>Everyone says that you must play games all the time to work in the game industry, but learning how to program and actual programming takes all my time, how do you guys find time to play games with such busy schedules?
+<br><br>
+<b>ElKrem:</b> Well, you make time for the things you love to do...
+<br><br>
+
+<b>guf: </b>What audience are you, er, shooting for? (no pun intended)
+<br><br>
+<b>ElKrem:</b> I'm not sure of the official demographic, but it's likely the 18-35ish crowd?  Not sure about the upper end though.<br>
+<b>Pagan:</b> the 20 somethings with cash to burn and high end PCs.
+<br><br>
+
+<b>guf: </b>What kind of hours do you guys work? Weekly/daily/ etc.
+<br><br>
+<b>Pagan:</b> Only 40-50 hours for about 75% of the time...however, during crunch time it goes up to 80-120 a week.<br>
+<b>ElKrem:</b> Hours vary...  sometimes nice, 40ish weeks, sometimes a whole LOT more.
+<br><br>
+
+<b>guf: </b>Are you in crunch mode now?
+<br><br>
+ElKrem not yet...<br>
+<b>Pagan:</b> nope...normally its the last month or 2 of a project
+<br><Br>
+
+<b>odex: </b>What's the most important factor of gameplay in SoF, realism or action?
+<br><br>
+<b>Pagan:</b> action.....<br>
+<b>ElKrem:</b> I think action is the main focus.  Realism is great, but it shouldn't impede great gameplay. It should enhance it, rather.<br>
+<b>Pagan:</b> If it isn't fun to play - who cares about the realism?
+<br><br>
+
+<b>Llama: </b>How on earth do raven manage to churn out quality games at such a pace? are you guys borg? :)
+<br><br>
+<b>ElKrem:</b> You will be assimilated<br>
+<b>Pagan:</b> We have 3 projects and 50 people...<br>
+<b>ElKrem:</b> There are a lot of people here who pour their hearts into their work...  That makes a lot of difference.
+<br><Br>
+
+<b>guf: </b>Raven has been expanding quite a bit recently, no?
+<br><Br>
+<b>Pagan:</b> We haven't been expanding much in the past year at all actually.<br>
+<b>ElKrem:</b> Oh, and Potsy says hello.<br>
+<b>Pagan:</b> if the developers are happy - things go so much better.
+<br><br>
+
+<b>Crusher: </b>Will SoF support environment mapped bump mapping? S3TC?
+<br><br>
+<b>Pagan:</b> No bump mapping... but s3tc is in. S3tc works a treat :)<br>
+<b>ElKrem:</b> We tried bump mapping, but it didn't add enough to justify it's inclusion.
+<br><br>
+
+<b>Llama: </b>With the incredible level of quality seen in recent commercial games, how do you feel about amateur mappers being left behind?
+<br><br>
+<b>ElKrem:</b> Well, all our mappers were amateurs once.<br>
+<b>Pagan:</b> Thats why you pay for our games :)<br>
+<b>ElKrem:</b> Well, all except Biessman<br>
+<b>ElKrem:</b> but he is the mapmaster<br>
+<b>ElKrem:</b> and also standing behind me
+<br><br>
+
+<b>BloodBath: </b>Will SOF have different dlls for player code and Client FX like Heretic2 did?
+<br><br>
+<b>ElKrem:</b> Yes<br>
+<b>Pagan:</b> There is a separate player dll. But all our effects are done with a system that you can modify yourself so they aren't required to be in a dll.<br>
+<b>ElKrem:</b> Nathan, who has some nasty tooth problems, has made a great effects system
+<br><br>
+
+<b>kaiser: </b>if action is the focus does this mean that the AI will be substandard?
+<br><br>
+<b>ElKrem:</b> No, the AI is part of what makes the action work so well.<br>
+<b>Pagan:</b> Nope... the AI is great... the enemies dive out the way...looks really cool.<br>
+<b>ElKrem:</b> You need smart AI to put the pressure on the player, rather than the old, step into room, activate monsters, back out of room, wait for monsters to come out and gun them down one by one.
+<br><br>
+
+<b>PDC_Blitz: </b>Although we've seen enough from the banned E3 trailer to almost confirm it, I need to hear it from you guys... Will SOF be as violent, or more violent than Kingpin? Just say the words ;)
+<br><br>
+<b>ElKrem:</b> SOF is more graphic than Kingpin, but that isn't what we're relying on to sell our game.<br>
+<b>ElKrem:</b> Also, we dont say f*ck as much.<br>
+<b>Pagan:</b> much more graphic violence, more blood and guts... but that is only to enhance what is already there.....
+<br><Br>
+
+<b>Jone: </b>Is it possible to tie moving 'n shooting entityes together in sof or st: voager? (say, like a moving train with doors and stuff inside that can be used)
+<br><Br>
+<b>ElKrem:</b> I'm not sure I understand the question, Manx?<br>
+Manx: There are no limitations on that sort of thing when it is controlled through the scripter.
+<br><br>
+
+<b>kaiser: </b>will there be a story driven plot (quest) or just mission based, um.. missions?
+<br><Br>
+<b>ElKrem:</b> It is entirely story based.<br>
+<b>Pagan:</b> Entirely story based.
+<br><br>
+
+<b>ZooL: </b>will you be able to interact with other characters?
+<br><br>
+<b>Pagan:</b> The interaction is mainly cinematic.....We put the systems in... it is up to the designers to put in the content.<br>
+<b>ElKrem:</b> As a side note, The Doctor, MasterBiess and Potsy are DMing right now, and boy are they yelling.<br>
+<b>ElKrem:</b> I wish I could stream the audio into IRC.<br>
+<b>Pagan:</b> I can hear them from here!
+<br><br>
+
+<b>We'd like to thank John Scott and Dan Kramer for taking the time to come to #gamedesign and chat with us.</b></ul><h1 id="66" name="66" class="book-h1">Dario Casali, Halflife, Valve Software</h1><ul><h3>Interview -   Dario Casali, Halflife Level Designer for Valve Software</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>											
+
+<b>Rust: </b>First, I have to ask you who you are, and what you do? (I have no choice, you see)
+<br><br>
+<b>Dario: </b>I'm "the English Guy" with an Italian name who enjoys making 3D game maps (I hate the term "level"), I work at Valve and am currently building maps for Half-Life. My map building began when DEU for Doom was released and I found myself incapable of ever satisfying my hunger for building more and more maps. I contributed to megawads such as Momento Mori and Requiem, then Final Doom. 
+<br><br>
+
+<b>Rust: </b>Your single player levels for Quake are very puzzle-oriented.  Can we expect the same in Half-Life?
+<br><br>
+<b>Dario: </b>My single player maps for Quake were intended to expand on the established Quake style gameplay. I really wanted to do so much more with it, but all I had to play with was a very limited set of tools (I'm no programmer). I put as much unusual and innovative gameplay as I could, and I ended up scrapping three extra levels because I simply couldn't do what I wanted to with the Quake tools. That's all different with Half-Life - Valve has a team of incredible programmers who have expanded our horizons significantly.
+<br><BR>
+We've got a lot of unique gameplay and puzzle solving in Half-Life. We've been very careful to ensure that puzzles are not frustrating in the least, and that the player is actually having fun solving them. Most puzzles are action based, requiring physical movement rather than button pressing and door opening. Other puzzles are almost invisible to the player since they integrate seemlessly with the action. An example of this is an area patrolled by grunts which you have to pass by - the puzzle here is to time the grunt patrols so that you can set a charge by a group of exploding barrels, wait for the grunts to walk by, then set it off - BOOM!
+<br><br>
+
+
+<b>Rust: </b>Are there any particular methods you use to keep the level of action up while the player works out a puzzle or mission?
+<br><br>
+<b>Dario: </b>We never let the player get lost or too confused. The player always has a clear goal in mind. We always present the goal before the puzzle, otherwise the player is simply stumbling through the world accidentally solving puzzles "I wonder what this button does <click> - oh look, a door opened!" - this kind of thing is what we're staying away from.
+<br><BR>
+There are time-based puzzles which set the adrenaline going, there are also hoardes of very devious alien and human monsters to deal with - you WILL respect them!
+<br><BR>
+
+<b>Rust: </b>From what I've seen, Half-Life is, for the most part, set in a very realistic, modern environment.  Was it challenging at first to make the architecture as interesting as your other work?
+<br><br>  
+<b>Dario: </b>For me personally it was a challenge because I'm not at all familiar with the kinds of places we're building and all my previous work had been so detached from reality. It's not impossible to make a missile base look interesting, but it is tough since realism is our main concern. We've taken some liberties in realistic design, so that you're not always playing through similar looking areas. Spooky lighting plays a large role in making functional areas look cool, and the improvements we made to our tools have enabled us to get amazing results.
+<br><br>
+
+<b>Rust: </b>Anyone who has followed the progress of Half-Life has heard about the ability to incorporate AI elements into map-making.  Is there anything you can tell us about it?
+<br><br>
+<b>Dario: </b>Steve Bond's AI system uses several types of nodes that the monsters use to navigate through the maps. In addition to the generic navigation nodes, there are tactical and behaviour nodes. For example if I was to create a room which had multiple low level entrances and a higher, more tactical spot, I'd place a "tactical point" node at that high spot, which certain intelligent monsters would seek out. The human grunt knows this is a good spot, so he'll stay there, and then flush you out with grenades. Other nodes contribute to the monster AI, but you'll have to wait and see what they do :)
+<br><br>
+
+<b>Rust: </b>How do you go about planning a level?  Do you work the basics out on paper, or in an editor?
+<br><br>
+<b>Dario: </b>Before working on Half-Life, I never planned my maps out on paper, mostly I knew what I wanted to do with the map, and didn't waste any time with paper. For Half-Life however, all the areas in the game were planned out (this enabled more than one person to contribute to design). Small teams of people came up with the ideas, others gave their input, then the details were thrashed out. Once the area was described in detail, concept sketches were made, and the brush laying began. This process ensures continuity since our level transition process is almost transparent to the player and the whole game is seemless (with a couple of exceptions). It also allowed Marc Laidlaw to guarantee the story was told properly as we went. When actually building the area in brushwork, we have the freedom to diverge from and add to the "spec", since alot of good design is spontaneous.
+<br><br>
+
+<b>Rust: </b>Where do you look for ideas?
+<br><br>
+<b>Dario: </b>My major influences come from nightmares. (I'm a very troubled guy) I look for ideas from movies I watch and books I read, but mostly things just hit me when I'm playing through parts of my maps.
+<br><br>
+
+<b>Rust: </b>What particular part of designing maps is the most time-consuming (lighting, architecture, initial design, etc.)?
+<br><br>  
+<b>Dario: </b>intial design - 20%<BR>brush building - 15%<BR>playtesting - 25%<BR>fixing / adding details - 40%
+<br><br>
+
+<b>Rust: </b>What comes the easiest?
+<br><br>  
+<b>Dario: </b>The brush building part is simple and fast. I'm decisive enough to be able to choose the look and feel for an area quickly. I'm also well versed in the brush laying process, it's almost second nature to me.
+<br><br>
+
+<b>Rust: </b>Do you tend to work on one map at a time, or a few at once?
+<br><br>  
+<b>Dario: </b>I'm usually brush building for just one at a time. But every so often, I have to change something in another map because someone's going through and adding things like scripted sequences.
+<br><br>
+
+<b>Rust: </b>Do the designers at Valve work on maps alone, or as a team? (passing maps around for optimization, etc.)
+<br><br>  
+<b>Dario: </b>Everyone has their strengths and weaknesses in map design and building. So when we get stuck, there's always somone else on hand who's good at that particular thing, so they help out. We're not doing a construction line job where everyone adds one little thing to the map though.
+<br><br>
+
+<b>Rust: </b>If I remember right (and I hope I do, or else I would feel really stupid) you used BSP prior to working with Valve.  Are you using Worldcraft now?
+<br><br>
+<b>Dario: </b>I made all my Quake maps using BSP because I found it the closest to DEU and DETH (the tools I used for Doom). I'm now using WC because it's evolved significantly from when I last saw it. It's also now the best editor out there (and I've tried the others). Nobody likes switching editors once they're used to the one they're with. It's a credit to WC's user interface that I managed to do so without major headaches. I'm delighted that we have Yahn Bernier working for us now who is ensuring that the best parts of BSP are merged with WC.
+<br><br>
+
+<b>Rust: </b>Have you had a chance to look at any of the user-created levels?  If so, what do you think of them?
+<br><br>  
+<b>Dario: </b>I look at the level review sites occasionally but I play very little single player Quake these days. 
+<br><br>
+
+<b>Rust: </b>From what you've seen, (even if it's only from the original Quake) what are some of the more common mistakes made in user maps?
+<br><br>  
+<b>Dario: </b>Interestingly, the mistakes that were being made in the Doom levels populating the net years ago still infect the Q and Q2 maps we see today. It seems improvements in technology will never cure poor design. I'm a great believer in innovation. The games (and user created maps) that do best are those that offer something new and exciting. How many "doom clones" were there? quite a few, but we can't remember (m)any of them today. Nukem was different because it offered more than the same old formula.
+<br><br>
+
+<b>Rust: </b>Do you ever feel that a map is 'finished'?
+<br><br>  
+<b>Dario: </b>Rarely.
+<br><br>
+
+<b>Rust: </b>From a designing perspective, what feature would you most like to see in a future game-engine?
+<br><br>
+<b>Dario: </b>Good depth clipping or a similar trick to make large outdoor areas a possibility
+<br><br>
+
+<b>Rust: </b>Caffeine of choice: Coffee or soda?
+<br><br>
+<b>Dario: </b>I ***ing hate coffee, don't you know?</ul><h1 id="65" name="65" class="book-h1">David Kelvin, Unreal, Legend Games</h1><ul><h3>Interview -   David Kelvin, Unreal Level Designer for Legend</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>														
+<B>Rust: </B>Tell us a bit about yourself, and the company you work for.
+<br><br>
+<B>David: </B>I'm Dave, and I make levels. I'm nobody special. I work for Legend, the most ass-kicking company around next to Victoria's Secret. Legend is working on Wheel Of Time, the game that will make you cry like a baby and bark like a seal for more, and Unreal 2. Oh, and there's the level pack for Unreal, too.
+<br><Br>
+
+<B>Rust: </B>UnrealEd. You like it a lot. Why?
+<br><br>
+<B>David: </B><i>"...it gives me the POWER!!!!"</i><br> - Shane Caudle
+<br><br>
+Seriously, though, I really like UnrealEd a lot. I'll admit it still needs work, but it's currently good enough to keep me from looking at the current crop of level editors (and I used to be a hardcore Worldcraft user =)
+<br><br> 
+As I wrote in a recent article comparing some of the (engine-specific) level editors, UnrealEd is a wonderful editing tool that is not to be taken lightly. I won't go into details, it's just an experience you have to discover for yourself I guess.
+<br><br>
+
+<B>Rust: </B>Do you have any comments on the supposed death of the Unreal editing
+community?</b>
+<br><Br>
+<B>David: </B>Hmm, suppose I haven't been following close enough to see this actually. I have noticed that most of the veteran level designers from the Quake days haven't produced any work for Unreal, either due to lack of interest or the learning curve it brings (those level designers who weren't hired that is.) If there is a "supposed death of the Unreal editing community" I would say it's due to the lack of creative and inspiring work that we saw with Quake. Before you fire up that flame email, let me explain. I do have rather high standards, but for me to really say 'cool map' it has to be something that is at least as good as what shipped with the original game. To date, I do not believe there has been more than a small handful that have done this, probably 5% of what's out there now. And the maps I'm referring to were done soon after the game shipped. Not everyone makes maps with the intent of getting hired in the industry, but it is often those designers who pave the way for the ones who enjoy mapping purely for fun as they provide ideas and inspiration to continue editing for the game.
+<br><br>
+
+<B>Rust: </B>What do you forsee in the future of level design?
+<br><Br>
+<B>David: </B>Level designers with VR helmets, sculting worlds with VR gloves. Yeah right! God, I hope not. Then there wouldn't be much of an editing community because no one would be able to afford the equipment =)
+<br><Br>
+
+<B>Rust: </B>Do you take ideas from movies, other games, and real world objects, or do you try to be completely original?
+<br><Br>
+<B>David: </B>Sometimes I take ideas for events from movies, but rarely. For actual architecture (esp. Unreal) I tend to decide what kind of structure is needed, then just flesh out from the faint images in my head.
+<br><br>
+
+<B>Rust: </B>If you where still a member of the none paid editing community, what game would you be editing right now?
+<br><br>
+<B>David: </B>Unreal, and probably even Quake.
+<br><br>
+
+<B>Rust: </B>What do you think is the most important trait of a mapper trying to get into the industry?
+<br><br>
+<B>David: </B>Professional quality of his/her work. I can't emphasize this enough. I'd rather play one amazing map then 100 horribly made levels.
+<br><Br>
+
+<B>Rust: </B>If you could go back and change one thing in your map making career, what would it be?
+<br><Br>
+<B>David: </B>Not release my first 6 levels =)
+<br><br>
+
+<B>Rust: </B>What’s is your favorite level that “you” made?
+<br><br>
+<B>David: </B>They all suck! Well, I don't really have a favorite (yet). If I'm proud of a level I've done then it's just one of my favs.
+<br><br>
+
+<B>Rust: </B>Thanks for your time :)
+<br><br>
+<B>David: </B>np =)</ul><h1 id="71" name="71" class="book-h1">Greg Barr, Soldier of Fortune, Raven Software</h1><ul><h3>Interview -  Greg Barr, Soldier of Fortune Level Designer for Raven Software</h3>
+
+<p><hr width=75% color=black noshade>
+<br>
+
+<b>Rust: </b>First of all, tell us a little about yourself and how you made it to Raven.
+<br><br>
+<b>Greg: </b>Born in Scotland a mere 27 years ago, I have moved around and lived in more places than can be good for any normal person. As far as I remember the tally is up to 21 homes now.
+<br><br>Prior to working at Raven and in-between education I worked on the "Eve" CD-ROM for Real World Multimedia and several projects for Workhouse Interactive as a designer, programmer and part time sound technician.
+<br><br>My education laid the foundations for where I was heading even though I was not aware of it at the time. With a background in Fine Art, a Masters Degree in Computer Graphics and Animation and an ongoing hobby interest in gaming and programming you would think I would have noticed.
+<br><br>I was keeping myself busy dabbling making maps for Quake2 (which had just come out) while seeking jobs in the CG industry. It was quite by chance that I spotted a story on Blue's that mentioned Raven was looking for designers. On a whim I sent Eric (Biessman) one of the levels I was working on at the time. After that things moved fast for a while and then very, very slowly as I waited for my visa to clear. That was a long eight months.<br><br>
+
+<b>Rust: </b>What challenges did you face in creating maps for Soldier of Fortune?  Did it take some time to get used to the genre?
+<br><br>
+<b>Greg: </b>Aside from the challenges that every map faces a couple of extra things came up with SoF. Real world scale was the first thing we all noticed when making the maps that took a little bit of adjusting to. Doorways could no longer be 6 feet wide and 12 feet tall in order to allow the player to move cleanly through. The challenge was to present realistic environments and yet allow players to move around unrestricted. This was accomplished with rigorous clip brush application and carefully playing through and watching folk play through the levels and refining areas where problems were occurring.
+<br><br>Certain areas called for by the design doc were simply at odds with the engine. The train level I was responsible for and Scott McNutts Iraqi Refinery both had very large open areas with a long line of sight. Oddly enough the tools were not happy about this at all. For these levels Rick Johnson designed a system to allow us to set a distance cull in the worldspawn. These maps would now cull architecture out after the distance specified no matter what the tools had to say. This combined with fogging to hide features popping into view allowed us to pull this off. I was very happy with the result even if the train did take forever to compile.
+<br><br>
+
+<b>Rust: </b>Describe your design process, from the general idea of the map to the finished product.  Do you draw the map out first, or just fire up the editor?  Does only one person work on a map, or does it get passed around?
+<br><br>
+<b>Greg: </b>This would depend on the kind of level I was working on. For instance for a deathmatch level I tend to sketch out a simple layout in Radiant then run around and get a feel for the space, look for connections, hotspots and possibilities for adding features. As weapons, pickups and features (parts that move, open, traps if any) are added I will throw in ideas and look again at how they gel. I nearly always do deathmatch maps in this 'freeform' way. Detail can then be added as a last touch when the playability is locked down.
+<br><br>In a single player situation the process is very different, your considerations are different and there are other factors to consider. There may well be a need for consistency from adjoining levels, both in layout and look of lighting and texturing. On paper rough work is very much an essential part of the design. A few sketches can save you many hours of lost time when planning a puzzle or designing the interconnection of an area. A paper reference also helps a great deal in conveying ideas to other members of the design team more effectively.
+<br><br>Almost every map included in SoF was worked on by more than one person. Certainly each map was largely designed initially by one person but others were involved throughout the process.
+<br><br>
+
+<b>Rust: </b>Did you work on maps for any of the in-game cut scenes, and if so, were there any challenges specific to those maps?
+<br><br>
+<b>Greg: </b>Although I didn't work on the maps we made specifically for cutscenes a larger portion of the cutscenes in the game took place without changing levels. When adding a cutscene to a level your goals are to portray all the content in the most appropriate manner, preserve continuity and stay within the resource budget for the level. Balancing these three factors is the tricky part. For instance some scenes required the building of a 'stunt double', part of the map which has been duplicated and yet the player can never enter that section, it is only seen through the eyes of the cutscene camera. If you need to use a trick like this, for example the Big Gun exploding in the Kosovo mission, can you afford to duplicate that part of the map and still stay within file size and entity count limits? You can help yourself by trimming all sorts out of the scene, removing backfacing objects and simplifying distant objects. This is all well and good but continuity should still be preserved if at all possible.
+<br><br>
+
+<b>Rust: </b>What kinds of changes do you expect to see in game design over the next few years?  Do you see the need for more people working on one level in order to create more detail?
+<br><br>
+<b>Greg: </b>As far a the design of the environments in which games are set I am sure we will see more detail, prettier effects, higher polycounts and all that technical stuff increasing as time goes on. There comes a point where you have to examine how long the person playing your game is spending in one particular area.  At that point if is wise to asses if the time and effort required to make that spot look the absolute best it could can be justified when perhaps that time could be spent adding other content. If you are playing a fast action game is it worth adding that fifth spoke to the wheel of that burnt out car you just ran past at 30 miles an hour when 99 percent of players never even glance that way? Again it is about balance, if environmental detail should be balanced with pace. In a slow game or area it pays to spend longer refining, in a high-speed tunnel chase time is better spent elsewhere.
+<br><br>As for the fundamentals of the game design itself rather than the subset that is world building. The recipe is the same as it ever was and is likely to remain that way. Introduce your player to exciting situations, test their reactions, get friends to play and see how they react. Does a particular puzzle or combat situation frustrate them? Are they breezing through too easily with no challenge? Look again and adjust what you have until most folk are having fun. This is a tried and tested method that works well. That said, innovation is an unpredictable as it is interesting. You never know what is coming next.
+<br><br>
+
+<b>Rust: </b>What do you think is the most difficult aspect of level design?  
+<br><br>
+<b>Greg: </b>The most difficult thing is knowing when it's finished. There is always that one thing you would like to add or improve.
+<br><br>
+
+<b>Rust: </b>If were giving advice to an amateur game designer, who wanted to work for a game company, what would it be?
+<br><br>
+<b>Greg: </b>Learn a little of everything and learn a lot about the area you like the best. Having an understanding of how each part of a game fits together will go a long way in your day to day work.
+<br><br>
+
+<b>Rust: </b>Any final thoughts?
+<br><br>
+<b>Greg: </b>Thanks for the tutorials when I was starting to learn QuakeEd.</ul><h1 id="94" name="94" class="book-h1">James Parkman, Unreal 2, Legend Entertainment</h1><ul><h3>Interview -  James Parkman, Unreal 2 Level Designer, Legend Entertainment</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+<b>Rust: </b>First of all, tell us a little about yourself and how you made it to Legend.
+<br><br>
+<b>James: </b>Well, I made several Quake 2 single player maps which people seemed to enjoy, and was hired by a small company in Texas called Revenant. That project was in the midst of financial difficulties after I worked on it for about 6 months, so I started talking with Glen Dahlgren, designer of Wheel of Time, and I took a position at Legend working on WoT. That was about eighteen months ago.
+<br><br>
+
+<b>Rust: </b>What are the differences between making a map for Unreal 2 and the Wheel of Time?  
+<br><br>
+<b>James: </b>We have new technology and capabilities constantly being added to the engine, but this was also the case with WoT. We just have to adapt to new features as they become available, but it’s an ongoing process. Essentially, we started Unreal 2 with the capabilities we ended with on WoT, and have advanced from there.
+<br><br>
+
+<b>Rust: </b>Are there any difficulties in creating the sequel to Unreal?  Do you find there to be any limitations on the types of things you can do because of the original, and does Epic have a lot of influence on your designs?
+<br><br>
+<b>James: </b>I don’t find any difficulties specific to the Unreal universe. Epic has seen most of our designs to this point, and has been happy with them. Epic is really easy to work with and very laid back. They put a lot of trust in Legend’s design capabilities. We value that confidence, and work hard to maintain it by doing the Unreal Universe justice.
+<br><br>
+
+<b>Rust: </b>Describe your design process, from the general idea of the map to the finished product.  Do you draw the map out first, or just fire up the editor?  Does only one person work on a map, or does it get passed around?
+<br><br>
+<b>James: </b>Personally, I sketch a lot of ideas for a map, and try to sketch out a layout of the level’s flow. These are simply a framework though, and the final map will tend to differ from these initial ideas. It definitely helps, though, to focus my efforts when I use this approach, and I try to minimize wasted time this way. I’ll start actual editing with these concepts in mind, and refine both the map itself and my concept sketches as the level solidifies. This is a sort of ongoing process that never really ends until the map is complete.
+<br><br>
+On Wheel of Time, we tended to pass maps around as schedules change and people are needed on other tasks, although every level had a primary owner who did the majority of the work on that map. I expect the process to continue this way, although so far we’ve all had total ownership of the maps we’re working on.
+<br><br>
+
+<b>Rust: </b>What feature(s) of U2Ed do you think the Unreal mod community will like the most?
+<br><br>
+<b>James: </b>I think mappers will really appreciate the clipping tool, and the little touches that you will notice, such as drag-box selection, proper cursor marks, and windows customizable to personal preference. The new editor is much more a tool that level designers had a strong hand in designing than the first iteration of Ued.
+<br><br>
+
+<b>Rust: </b>What are the biggest challenges for you in making maps in general, or specifically for Unreal 2?
+<br><br>
+<b>James: </b>I find the biggest challenge when making a level to be planning, as in “what will this encounter become, 6 months from now?.
+<br><br>
+To me that’s the true challenge of simultaneously developing the levels while code, art, and assets are also underway. It’s a tight juggling act keeping these various aspects progressing smoothly together.
+<br><br>
+
+<b>Rust: </b>What kinds of things will a person who played and enjoyed Unreal be most impressed with in Unreal 2 (either overall or in terms of level design)?  What would you say to a player who was not a big fan of Unreal to influence them into purchasing Unreal 2?
+<br><br>
+<b>James: </b>People who loved the scale and beauty of Unreal I will appreciate these same aspects taken to the next level. We’re creating some environments that should really amaze those looking for a sense of wonder and adventure in a single player game. However, we’re also keeping a strict eye towards fast-paced action, and we’re devoting tons of attention towards making the AI and encounter dynamics very intense.
+<br><br>
+
+<b>Rust: </b>Does Unreal 2 have as much variation in level designs as Unreal did, and if so, what kinds of challenges does that present to you as a level designer?
+<br><br>
+<b>James: </b>Unreal 2 has a lot of variation in environments, but the story is far more developed than in Unreal 1, and the environments reflect this. The locations are all quite large, and fit logically into the story. There are many planets to explore, each with very unique settings. The challenges are many, more so than I can or should expand upon at this point. :)
+<br><br>
+
+<b>Rust: </b>Any final thoughts?
+<br><br>
+<b>James: </b>I hope these answers are what you were looking for. Expect a lot more specific info on Unreal 2 to start popping up soon. Development is fully underway. :)
+<br><br></ul><h1 id="93" name="93" class="book-h1">Jason 'Wolfen' Spencer, Kodiak</h1><ul><h3>Interview -  Jason 'Wolfen' Spencer, Level Designer - Kodiak</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 
+<b>Rust:</b> First of all, tell us a little bit about yourself and your position at Kodiak.
+<br><br>
+<b>Jason:</b> I'm 25 years old and in a crazy thing called the game industry. I was born and raised in Los Angelos CA areas, and moved around quite a bit after about the age of 17. I started with a couple of contract jobs in the business and moved around in a few different positions, from Level designer to producer, to plain old designer.
+<br><br>
+ 
+<b>Rust:</b> Has working as a professional in the gaming industry changed your views of gaming at all?
+<br><br>
+<b>Jason:</b> I don't really think so for me. At least when I got my first computer, I got Doom, and started editing games, I really dont play them much haha. All in all in a deep way though, I do tend to pick more at games then I used to when I was a child. 
+<br><br> 
+
+<b>Rust:</b> What do you feel is the most important part of level design?
+<br><br> 
+<b>Jason:</b> Personally I think it's all the elements we are expected to do these days. Atmoshphere, and gameplay especially. It can be boring running through a plain looking level that has good "gameplay" and vice versa. You need to draw them in with the right feel of the world, and of course, the gameplay can and should do the same thing.
+<br><br> 
+
+<b>Rust:</b> What limitations do you feel hurt you the most when designing game levels?
+<br><br>
+<b>Jason:</b> Time. If most developers had the time they wanted to make the levels they had originally planned, I bet alot of  games would be really cool. I have been on projects where stuff that was really cool, but took to much time just had to be cut out. Of course the compromise has to be made, but definatly it has to be time that takes away alot of the coolness in any game.
+<br><br>
+
+<b>Rust:</b> As professionals in the industry, what is the most common mistake you see in amateur maps?  What’s a common mistake you see other professionals make?
+<br><br>
+<b>Jason:</b> Not that anyone doesn't like to see a rehash of something else, but originality is hard to come by. Even for me. Most gameplay is all ripped from some where else, and then re-worked just a bit with a new touch to it.
+<p>Dont get me wrong though, there are tons of original ideas that even amateur's do. (i hate that word becuase I still consider myself an amateur hehe) 
+<p>But all in all, most professionals and amateurs tend not to make to many mistakes these days if they are serious about what they do.
+<br><br>
+
+<b>Rust:</b> When it comes down to pre-planning your levels, what do you do?
+<br><br> 
+<b>Jason:</b> Now a days, I sit, and I plan on paper, every single thing there is to plan for that level. I go step by step from begining to end. Draw basic 2d over head views, and if I can nag a artist for some concept visuals. 
+<br><br>
+
+<b>Rust:</b> What first sparked your interested in becoming a level designer in the game industry?
+<br><br> 
+<b>Jason:</b> DOOM!!!! It was more of a fact that I just didnt get how some one got into the biz. I mean, I wasnt familiar with the net at the time, and I dont think game companies posted to often on the net back then about work.
+<p>So I kept editing from Doom and on, and realized that a creative job was something for me.
+<br><br>
+
+<b>Rust:</b> What were you doing before you worked at Kodiak? What do you envision yourself doing after your stint at Kodiak?
+<br><br>
+<b>Jason:</b> Well, my official title was "Executive Producer of Content Creation for 3d Marketing" at S3 Inc. Was strictly contract and I was about to go full time and they shut the doors at S3 Inc.
+<p>Where I will be I dont know. If I move out of the game industry, I have recently been considering going into some feild of science. Astronomy or Micro Biology are just a couple that interest me. As crazy as it sounds, even archeology.
+<br><br>
+
+<b>Rust:</b> While you’re not designing games, what are you doing in your spare time?
+<br><br>
+<b>Jason:</b> Making muZaK. Or music in other words. Ranging from using Acid Pro with loops, or playing my guitar. Which actually this is turning into work now to. I have recently been doing some music for one of our games here at work, and it seems its going to continue.
+<p>Or I got out and get plastered with my friends on the weekends. One of the above two apply.
+<br><br>
+
+<b>Rust:</b> What sources do you use for inspiration? 
+<br><br>
+<b>Jason:</b> Still images, from conceptual to photographic. Movies, and just my own twisted mind.
+<p>The list can last a while really if I named every single thing though.
+<br><br></ul><h1 id="88" name="88" class="book-h1">Levelord, Ritual Entertainment</h1><ul><h3>Interview -  Levelord, Level Designer, Ritual Entertainment</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 							
+<B>Rust: </b>First, I have to ask the obligatory &quot;Who are you and what do you do?&quot; question (for future generations, of course.)
+<br><br>  
+<B>Levelord: </b>...I am the Levelord.  For all those that know of the name, there is no introduction needed.  For all those that do not, there is no introduction sufficient!  ...Lo!    ...Seriously?  Okay, I like do levels for first person immersion action games.  I also make sure Tom, Mike, Pat, Charlie, and Matt brush their teeth and wash both sides of their hands.
+<br><br>
+
+<B>Rust: </b>I understand the entire Sin team has a say on what will go into the final game.  Are there any specific bits of the Levelord that we should keep an eye out for, in terms of gameplay? (Wow...that sounded pretty disgusting, huh?)
+<br><br>
+<B>Levelord: </b>..not really.  It's hard to seperate individual ideas and contributions in our tribe.  Here's how it usually goes...  ...someone thinks of a cool but half-baked idea.  Soon after, a second person adds a little twist to make the idea worth considering.  Then, and it usually happens on input #3, a third person adds the final finesse that makes everyone say &quot;Ah, fucking cool!  We gotta do that!&quot;.
+<br><br>
+
+<B>Rust: </b>Is there anything you can tell us about the map-scripting?
+<br><br>  
+<B>Levelord: </b>...yes, ...it's easy, it's powerful, and it's awesome!  Dr. Dose could merit a graduate thesis with this YACC of his!  It really is an incredibly convinient way to manipulate objects and events in a level.  The most beautiful thing is that I don't have to re-compile my level for each and every change.  Let's see... ...I know COBOL, SNOBOL, Lisp, Basic, assembler, RPG, Fortran, C, C++, Awk, Pascal, Korne shell, C shell... ...and now SiN Scripting!  ...awesome!
+<br><br>
+
+<B>Rust: </b>Is there anything specific you've done with the scripting that you're particularly jazzed about?  Don't tell me anything you'll have to kill me for later, please (Well, you could, but you can't kill me.)
+<br><br>
+<B>Levelord: </b>...there really isn't &quot;one&quot; single thing.  We have alot of very cool eye candy and the days of simple linear and radial rotations are gone.  We're talking intricate gadgets and gizmos.  Beyond the pure spectacles, we use scripting to control our ABO (Action-Based Outcomes).  As most of you know, SiN will be an ever-changing game and the player will be able to play it more than once, depending on the reaction to various situations.  At last count, we had 17 some odd permutations to the player's game-wide critical path.  Very cool, yes?
+<br><br>
+
+<B>Rust: </b>Have you had a chance to work with the Uber-Engine at all?  If so, what impresses you the most about it?
+<br><br>
+<B>Levelord: </b>...nothing reported yet, sir.  All's quiet on the Western Front.
+<br><br>
+
+<B>Rust: </b>What is something that you would like to see in a game-engine, in terms of map-editing?
+<br><br>  
+<B>Levelord: </b>..you know that earth imaging system that uses three satellites to create a 3D image of an entire city?  I want to do New York City and I want a machine to flesh out the basic geometry to absolute accuracy for me.  That's what I want ;)
+<br><br>
+
+<B>Rust: </b>What would you say is your strongest area of level-editing?
+<br><br>  
+<B>Levelord: </b>...being able to steal other people's ideas and make them look like mine.  It's hard to sleep at night, but I can handle that cost.  Seriously, although it may not be a &quot;strong&quot; point, I certainly love creating real environments.  Typically I like natural settings as they're not done by anyone else and I don't have to worry about treading on someone else's turf.  I most enjoy current time settings and almost hate sci-fi and fantasy, BTW.
+<br><br>
+
+<B>Rust: </b>What, if anything, would you like to improve?
+<br><br>  
+<B>Levelord: </b>...technology, ...and then make it stop for a bit so we can all catch up and enjoy the view!
+<br><br>
+
+<B>Rust: </b>When planning a level, do you outline it out on paper first, or start in the editor?
+<br><br>
+<B>Levelord: </b>...I fly-by-night and never use a hard copy plan.  I have a War Book and sketch most of my ideas for levels, but I rarely have an entire level drawn out.  I always have a good idea for the level's theme and layout and such, but I like to wing it as I go.  So much changes as any game progresses that it's hard to nail down details in the beginning.
+<br><br>
+
+<B>Rust: </b>Do you have a specific mood in mind before you begin, or do you try to get a feel for where the map is going, and base it on that?
+<br><br>
+<B>Levelord: </b>...again, I have the basics and foundations in mind before I start, and then wing the rest.  I often rent a related movie or cop a few books while I'm casting a level to give me ideas for details.
+<br><br>
+
+<B>Rust: </b>Do you plan lighting and sound along with the layout, or after the basic structure is down?
+<br><br>  
+<B>Levelord: </b>...both, generals are definitely pre-planned, but many things are added later.
+<br><br>
+
+<B>Rust: </b>How much time do you spend &quot;playtesting&quot;? (I love that word)
+<br><br>
+<B>Levelord: </b>..ALOT!  Imagine, as much as you've played any game, playing it till you really do HATE it.  That's how much play testing.  I haven't even seen the Scourge of Armagon since we shrink-wrapped it and I only cranked up Duke a week ago to check some old maps I want to make public.
+<br><br>
+
+<B>Rust: </b>How much time do you spend tweaking? (for framerate, lighting, flow, etc)
+<br><br>
+<B>Levelord: </b>...ALOT!  I'd say that 30% of the game's life cycle is purely &quot;tweaking&quot;.  You always want to &quot;tweak&quot; more and we'd actually never release a game if our publishers allowed us to &quot;tweak&quot; as much as we want ;)
+<br><br>
+
+<B>Rust: </b>Do you ever feel that a level is finished?
+<br><br>
+<B>Levelord: </b>...never!  ...and I hate that!  The worst feeling is walking down the aisles of Quake Con or some industry festival and seeing them play your level.  You see an aweful lot of mistakes during these times.
+<br><br>
+
+<B>Rust: </b>Have you had a chance to look at any user-made levels since Quake 2 was released? What do you think of them?
+<br><br>
+<B>Levelord: </b>...none, unfortunately.  I'd love to see if the Qmunity is getting better or worse.  I would guess that experience is making them alot more polished.  Then again, the ever-increasing need for cutting edge macinery has got to be limiting alot of talent out there.
+<br><Br>
+
+<B>Rust: </b>Based on what you've seen of them (even if it's only since Quake) what is the most overlooked area or frequent mistake?
+<br><br>
+<B>Levelord: </b>...framerate and details.  Either the designer added way too many details and the level simply will not run fast enough to be playable, or the level is merely a collection of box rooms and straight hallways.
+<br><br>
+
+<B>Rust: </b>Any words of wisdom?
+<br><br>  
+<B>Levelord: </b>...yes, but I don't know them.
+<br><br>  
+
+<B>Rust: </b>Pick one: Akira Kurosawa, John Woo, Jackie Chan. Why?
+<br><br>
+<B>Levelord: </b>...wrong, wrong, wrong!  There was, is, and will never be anyone better than Clint.  Dirty Harry is still one of my super hereos!  ...what a great game that would be! <I>(ARGH...foiled! -ed)</I>
+<br><br>
+
+<B>Rust: </b>Thanks a bunch for answering, your Lo-ness.
+<br><br>  
+<B>Levelord: </b>...Lo indeed!  `Twas a pleasure, sir!
+<BR><BR>
+Levelord.</ul><h1 id="91" name="91" class="book-h1">Mike Bastien, Digital Extremes</h1><ul><h3>Interview -  Mike Bastien, Level Designer, Digital Extremes</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+<b>Rust:</b> First of all, tell us a little bit about yourself and your position at Digital Extremes.
+<br><br>
+<b>Mike:</b> I've been on the Level Design team at DE now for just over a year and a half.  Along with building levels, I tend to like working with the 'latest stuff'.  As a result I'm ususally the one working with the programmers to iron out the new features for the editor and such.  Also, with the latest offerings of Warfare and all the cool stuff our programmers have been implementing, it's been a sweet challenge coming up with new ideas and uses for all of the tech.
+<br><br>
+ 
+<b>Rust:</b> Has working as a professional in the gaming industry changed your views of gaming at all?
+<br><br>
+<b>Mike:</b> Not really.
+<br><br> 
+
+<b>Rust:</b> What do you feel is the most important part of level design?
+<br><br> 
+<b>Mike:</b> For me it would be the visuals and the depth of the atmosphere.  One thing I felt lacking in some of the earlier multi-player games was the ambience.  Items that were normally only found in single-player games, were for the most part omitted.  Things like ambient sounds, creatures, particles, etc., should all be part of any gaming experience.  I think UC will make a large step towards a more interactive environment.
+<br><br> 
+
+<b>Rust:</b> What limitations do you feel hurt you the most when designing game levels?
+<br><br>
+<b>Mike:</b> Numbers.  Whether it be in the time department, the poly sector, or texture thrashing... they're all pain.  Time is something it takes a lot more of now to design, lay-out, model, play through, place & tweak particles and effects in any one level.  Polys are now on a higher budget, but even given this, it doesn't take very long to over spend there.  Then with texture support climbing well beyond the usual 256 * 256, it can also quickly eat up your memory.  Finally, all of the additional elements like particles, sounds, dynamic lights and players, rapidly erode your level plans.
+<br><br>
+
+<b>Rust:</b> As professionals in the industry, what is the most common mistake you see in amateur maps?  What’s a common mistake you see other professionals make?
+<br><br>
+<b>Mike:</b> I don't play too many amateur maps, but even those I do, I honestly don't see too many glaring mistakes.  The communities have come to the point where all of the tutorials, forums, reviews and advice columns have come together and made it easy for a beginner or novice, to avoid many of the pitfalls or problems associated with amateur map making a couple years ago.  The same holds true for the most part on the professional end of things.
+<br><br>
+
+<b>Rust:</b> When it comes down to pre-planning your levels, what do you do?
+<br><br>
+<b>Mike:</b> Lately I've been doing some more sketches before hopping right into the level.  I'll talk to a couple of the other LD's and then to a couple of our modellers for their ideas and input.  I will sometimes sketch out a few of the fixtures or models myself as well.
+<br><br>
+
+<b>Rust:</b> What first sparked your interested in becoming a level designer in the game industry?
+<br><br> 
+<b>Mike:</b> The notion of doing what I loved and being paid for it.
+<br><br>
+
+<b>Rust:</b> What were you doing before you worked at Digital Extremes? What do you envision yourself doing after your stint at Digital Extremes?
+<br><br>
+<b>Mike:</b> I was assembling aircraft before DE.  I'm a 'DE-lifer', there can be no existence after DE... :p
+<br><br>
+
+<b>Rust:</b> While you’re not designing games, what are you doing in your spare time?
+<br><br>
+<b>Mike:</b> Well I just came back from an excellent camping and fishing trip.  In the past I was into skydiving and some rock climbing.  More recently I've been mountain biking, hiking and reading.
+<br><br>
+
+<b>Rust:</b> What sources do you use for inspiration? 
+<br><br>
+<b>Mike:</b> Things I see daily or cool places I've visited, movies, books, art work and other games.  Sometimes I'll have weird dreams and draw ideas from them too.
+<br><br></ul><h1 id="82" name="82" class="book-h1">Paradox, Sin, Ritual Entertainment</h1><ul><h3>Interview -  Paradox, Sin Level Designer, Ritual Entertainment</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 							
+<b>Rust: </b>Who are you and what do you do?
+<br><Br>
+<b>Paradox: </b>Hi, I'm Tom.  I do levels.  I do gameplay.  I do it all.  Oh yeah.
+<br><Br>
+
+<b>Rust: </b>Besides getting paid, what are the lesser known advantages of full-time, in-house, game design?
+<br><Br>
+<b>Paradox: </b>Being able to do what you love for a living.  After shooting high in the current world of career's and realizing what kind of REALLY boring jobs are out there, this is a  dream come true.  Not to mention free drinks, cool hardware, working with badass people and all the other little things.
+<br><Br>
+
+<b>Rust: </b>How closely to you work with the art team?  How much input do you have on the look of certain units (texture sets, item/creature skins, etc?)
+<br><Br>
+<b>Paradox: </b>We all work very closely here, everybody has input on what goes in the game, how things look, and how things play.  I try to keep my  hands on most of the aspects in the game, although most of my non level-design time is spent working on level continuity related issues, gameplay, and design ideas.
+<br><Br>
+
+<b>Rust: </b>How about the programmers? Do you have any significant input on how specific entities will function?
+<br><Br>
+<b>Paradox: </b>Like I said before, we all work really close.  I would think that the level designer/programmer communication is definitely some of the most active in the communication lines.  We are constantly in there asking for new stuff to be implemented and old stuff to be fixed or changed.  Its one of the many changing things around here, everything from the tools that make the levels, to the implementation of entities in the world.<BR>Always movin.
+<br><Br>
+
+<b>Rust: </b>What is the biggest difference, from a level designers perspective, between a mission pack/add-on and fully licensed engine?
+<br><Br>
+<b>Paradox: </b>Mission packs are more of a copying job than a originality thing.  A new game is completely yours from day one. Despite the coolness of the mission packs, your working with somebody else's vision, so its not as much of a original feeling in the end.  It feels a lot cooler and more inspiring to work on your own stuff.  
+<br><Br>
+
+<b>Rust: </b>Compared to Quake2, how much more control can amateur editors expect when they get their grubby little mice on the Sin tools?
+<br><Br>
+<b>Paradox: </b>Well, Sin is going to ship with SinED, which runs both in NT and 95.  Plus, the amount of control that we have given to people is incredible.  The level/entity scripting language allows for _COMPLETE_ control of everything in the game, and is setup in just a text file.  This allows for the us as well as the end user to create something, compile the map once, and tweak the entities until they are right without having to recompile.  Not to mention the new character system, no more having to write out scriptfiles for characters in order to get them to step correctly.  With Sin, you just export it directly to the game and there ya go, new monster.  Plus, each characters actions are determined and defined by how they are exported automatically by the game, so you can literally create a new weapon/monster without having to write any custom code, just animate the dude and off you go.  This doesn't mean that you Can't write custom stuff for the characters, it just makes it easier to do stuff and get it in there without looking borked from step one.  Needless to say, we have gone out of our way to make sure that Sin was setup in ways that were much more efficient and less time consuming that it was to do other projects, and by doing that, we have inadvertently created a incredibly easy game to add on to.  whew.
+<br><Br>
+
+<b>Rust: </b>How much steeper will the learning curve be?
+<br><Br>
+<b>Paradox: </b>Not much steeper than normal.  Each time a new game comes out, there is more to learn of course.  Sin will be really easy for most people I would think.  We have made efforts to take out all the extra complex and overly time consuming steps.
+<br><Br>
+
+<b>Rust: </b>Will the scripting be incorporated into map editing, or is it just for the modelers and coders to play with?
+<br><Br
+<b>Paradox: </b>The scripting language was developed specifically for entity control, and game logic in the maps, but it has grown to encompass other parts of the game.
+<br><Br>
+
+<b>Rust: </b>Have you had a chance to look at/play any of the user-created levels?
+<br><Br>
+<b>Paradox: </b>I had a period of time where I looked at user created levels a lot.  I haven't as much recently, but I love looking at what people are doing.  Its incredible to see what somebody coming from a completely different angle can end up doing with these games.  I have seen some really wacky stuff done with our mission pack entities, stuff I just didn't think was possible.
+<br><Br>
+
+<b>Rust: </b>From what you've seen, what are some of the more common mistakes?
+<br><Br>
+<b>Paradox: </b>The most common mistake I see in levels is people trying to make it look cool and skipping over the most important thing, the flow. First make the level gameplay and flow work, then, go back and make it look cool.
+<br><Br>
+
+<b>Rust: </b>When creating a level, which aspect is the most time consuming for you?
+<br><Br>
+<b>Paradox: </b>Well, its kind of a tossup.  The fleshing out stages, and the tweaking both take a long time.  When fleshing out a level,  trying to figure out what goes past this room and where this door will go, takes me a while.  It usually goes a lot faster when I draw out the level on paper.  With tweaking, trying to get an area down to the right FPS, or better r_speeds, that can take forever as well.
+<br><Br>
+
+<b>Rust: </b>Which comes easiest?
+<br><Br>
+<b>Paradox: </b>Making the stuff that goes in each area.  Its easy to fill a room full of cool stuff, its the flow and the tweaking thats the hardest to get down.
+<br><Br>
+
+<b>Rust: </b>On the average, how long does it take for you to build one map for Sin, from the first brush to the final compile?
+<br><Br>
+<b>Paradox: </b>Its averaged to about one month.  With tweaking, mabye add a week each map.  A little more than double the average map making time for Scourge.  Triple from Doom.  
+<br><Br>
+
+<b>Rust: </b>Do you ever feel that a map is really 'finished?'
+<br><Br>
+<b>Paradox: </b>Nope, never.  All of my maps from day one have things that I could go back and make better.
+<br><Br>
+
+<b>Rust: </b>Before we're finished, any words of wisdom?
+<br><Br>
+<b>Paradox: </b>Follow your dreams, you can reach your goals, I'm living proof.  beefcake! BEEFCAKE!
+<br><Br>
+
+<b>Rust: </b>Any words of outright lunacy?
+<br><Br>
+<b>Paradox: </b>Good.  Bad.  I'm the guy with the gun.
+<br><Br>
+
+<b>Rust: </b>Any questions you want to ask yourself?  (I may have missed some important stuff.)
+<br><Br>
+<b>Paradox: </b>Q: What do I do with my freetime  A: Spend lots of time with my badass Girlfriend, Stevie &quot;KillCreeky&quot; Case.
+<br><br>
+Q: Current Favorite/Least favorite movies A: Favorites are still Titanic and now The big lebowski. Least favorite, Dark Flippin wasted my damned 7 bucks City.
+<br><Br>
+
+<b>Rust: </b>Well then, I think that's about it.  Thanks a lot Paradox!
+<br><Br>
+<b>Paradox: </b>No prob, anytime.  I guess I should start updating my plan again..hmmm</ul><h1 id="203" name="203" class="book-h1">Realdespair Interview</h1><ul><p>Taking time from his very busy schedule, up and comming mapper RD (RealDespair), answered some questions from RUST, on the art of mapping and being a good mapper.</p>
+
+<p align="center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/rambohulk/hulk2.JPG"></br>Fy_Rambohulk</p>
+
+<p><b>RUST:</b> You are probably one of the most well known Mapper's here on RUST and on the Gamedesign.Net forums. Your work has been widely excepted by the Mapping Community as great mapping, recieving some great reviews. How did you come into mapping, what inspired you download an map editor?</p>
+
+<p><font color=red><b>RD:</b> I forget how I began mapping becuz that was very very long ago and I have a bad memory. I think it was becuz of the movie scarface</font></p> 
+
+<p><b>RUST:</b> Your work covers many different styles and games, and have produced many different levels including: <a href="http://www.pitrd.com/pit/website/maps/maps.html">fy_iceworld, cs_korean_spyship, cs_horsewhisperer, r6_arena, fy_neighbours, de_omg, ex_iban, de_torabora, de_tuberaider, fy_rambohulk, fy_satanchrist.</a> Where do you get the ideas for your levels? And how do you stay motivated to finish what you start? Most people can’t finish one level let alone 11!</p> 
+
+<p><font color=red><b>RD:</b> I get ideas from current events , like wars, or movies that were released. Somtimes from other games.</font></p> 
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/tora/tora4.JPG"></br>EX_IBAN</p>
+
+<p><b>RUST:</b> The presentation of your work is exceptional, I’m impressed by you texture choices, placement and lighting. Do you see the level in your head before you start, or do you agonize over every addition to the level?</p> 
+
+<p><font color=red><b>RD:</b> I agonize</font></p> 
+
+<p><b>RUST:</b> How important is atmosphere to a good level, such as the story, the look and the use of sound to making a perfect level?</p> 
+
+<p><font color=red><b>RD:</b> The story is irrelevant but i noticed if you use religious symbols that ppl will get obsessed about it. My map fy_satanchrist was banned from the internet and almost every mapping forum becuz I used the name jesus in the story. Those religious freaks need to get laid.</font></p> 
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/neighbours/cs_neighbours4.jpg"></br>Fy_Neighbours</p>
+
+<p><font color=red><b>RD:</b> Yes sounds are important becuz ppl arent deaf. The perfect level also has sound just like it has grafix!!!</font></p>
+
+<p><b>RUST:</b> It is obvious that you are an extremely good Mapper, but what would your weakness be, and what would you like to learn more about if given the opportunity?</p> 
+
+<p><font color=red><b>RD:</b> I have no weaknesses and i want to learn to become more powerful in the future.</font></p>  
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/iban/iban1.JPG"></br>Ex_Iban</p>
+
+<p><b>RUST:</b> What are you currently working on?</font></p> 
+
+<p><font color=red><b>RD:</b> On several maps. I will finish if I have time. Pit is also working on maps and i will help him finish them or make some special effects.</font></p> 
+
+<p><b>RUST:</b> How long does it take to make a great level, do you do sketches, write a story … etc?</font></p> 
+
+<p><font color=red><b>RD:</b> I dont sketch or plan anything, I add the story at the end in 5 minutes. In total it can take from 1 week to 6 months to make a map. Sometimes it takes 6 months becuz then I dont have time.</font></p> 
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/horsewhisperer/cs_horsewhisperer7.jpg"></br>CS_Horsewhisperer</p>
+
+<p><b>RUST:</b> Have you ever joined a mod team, and what are the benefits of joining a Mod?</p> 
+
+<p><font color=red><b>RD:</b> Yes I have and it died. I've learned from death.</font></p> 
+
+<p><b>RUST:</b> You have developed a new website with Pit, <a href="http://www.pitrd.com">http://www.pitrd.com</a> This is a very interesting combination of Mapper and Cartoonist. How did you meet Pit and decide to merge your talents?</p> 
+
+<p><font color=red><b>RD:</b> Pit is my twinbrother I met him inside my creator. He doesn't only do toons, he made many of the maps with me and some of them alone.</font></p> 
+
+<p><b>RUST:</b>  <a href="http://www.pitrd.com/pit/website/maps/iceworld.html">fy_iceworld</a> is probably your most well known map, is there plans for a sequel. The simplist of the design, the boldness of the texture placement, will require some very good mapping to improve on perfect?</p>
+
+<p><font color=red><b>RD:</b> What are u speeking of?iceworld sux.</font></p> 
+
+<p><b>RUST:</b> LOL! Yes, it is a joke map. But a lot of people like the show of the web pages. Sulsa first pointed out your great marketing skills for Iceworld on the <a href="http://forums.gamedesign.net/viewtopic.php?t=5166">Rust Halflife Forums</a></p>
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/iceworld/iceworld2.JPG"></br>Fy_Iceworld</p>
+
+<p><b>RUST:</b> If I was to turn up on your doorstep on a weekend what would I find RD doing, do you have other interests outside of Mapping?</p>
+
+<p><font color=red><b>RD:</b> It depends on when u drop by, I could be sleeping or typing an email. This is a difficult question, I have other interests but i dont like them.</font></p> 
+
+<p><b>RUST:</b> As a Mapper, you have a rather unique RD-style, in that you always push the Engine you map in to the limit. With effects and layouts, and I must say you have the real looking cliffs I have ever seen in a game? What would you say defines the RD-style of mapping?</p> 
+
+<p><font color=red><b>RD:</b> Lots of explosions and sounds</font></p> 
+
+<p><b>RUST:</b> You have been active in the HalfLife Mapping and RUST forums for over four-five years now, how do think the HalfLife mapping community has changed over that time, and what do you think will happen in the future with the release of HalfLife 2?</p> 
+
+<p><font color=red><b>RD:</b> I think most of the really skilled mappers have left by now, but there are still some left. And when HL2 is released then ofcorse most of em will switch to HL2.</font></p> 
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/arena/arena3.JPG"></br>R6_Arena</p>
+
+<p><b>RUST:</b> Have you ever thought about or dreamed about a full time job with a gaming company (actually I don’t know if this is a good question, for all I know you could be on the board of Epic!!!)</p> 
+
+<p><font color=red><b>RD:</b> I havent dreamt about it ever. Usually i dream about weird stuff such as clowns scratching at my window or spiders walking into my mouth.</font></p>
+
+<p><b>RUST:</b> Why did you choose map under the name of RD?</p> 
+
+<p><font color=red><b>RD:</b> I took Realdespair becuz my twinbro took PIT, and there was a map called PIT of DESPAIR in doom1. But despair was a very common nick. I made it realdespair.</font></p> 
+
+<p align = "center"><Img  border="0" width="250" src = "http://www.pitrd.com/pit/website/maps/screenshots/omg/omg2.JPG"></br>De_OMG</p>
+
+<p><b>RUST:</b> Do you have any words of advice for and new or up and coming mappers?</p> 
+
+<p><font color=red><b>RD:</b> Yes dont give up and dont listen to anybody except yourself. Only map what u want to play urself. Put religious symbols and touchy political subjects in the story and map then pimp ur map very aggressively and use the hype to get hits to ur site.</font></p>
+
+<p><b>RUST:</b> Thank for your time RD</p> 
+
+<p><font color=red><b>RD:</b> Cya</font></p>
+
+Visit <a href="http://www.pitrd.com">WWW.PITRD.COM</a> to meet this mapper.</ul><h1 id="73" name="73" class="book-h1">Rob Heironimus, Opposing Force, Gearbox Software</h1><ul><h3>Interview -  Rob Heironimus, Opposing Force Level Designer for Gearbox Software</h3>
+
+<p><hr width=75% color=black noshade>
+<br>
+<b>Rust: </b>Both Prax War and OpFor are military based.  Will we be able to see any influence of Prax War (based on screenshots, etc) in Opposing Force?  Were any ideas planned for Prax War implemented in OpFor instead?
+<br><br>
+<b>Rob: </b>Anyone with a sharp eye will probably be able to see similarities in style between the two games, mostly in the models and some level design.  However, everythingin the design for OpFor has been drawn up from scratch to keep in line with the Half-Life universe
+<br><br>
+
+<b>Rust: </b>What challenges has the Half-Life technology presented in the development of OpFor? Is there anything that you found that just wasn't possible at this point in time?
+<br><br>
+<b>Rob: </b>I think the most challenging aspect so far has been designing around the base system requirements.  One of our main goals is to let everyone who played the original game have the same experience without having to upgrade their machine.  There are some very cool things we'd like to implement, but due to certain constraints with the engine (e.g. the software renderer), they just aren't feasible.
+<br><br>
+
+<b>Rust: </b>Friendly scientists were a large part of Half-Life, and friendly soldier's seem to play the same part in OpFor.  What kind of control will you have over the soldiers in-game (as opposed to the simple use/un-use for scientists)?  Also, what kind of control will the mapper have over soldiers and can the soldiers be made un-friendly?
+<br><br>
+<b>Rob: </b>The control for the friendly soldiers will be the same as for previous friendly characters (i.e. simple use/unuse commands).  We're not trying to turn Half-Life into a squad-based combat/strategy game, so we chose to stick with the original interface.  However, being that they are soldiers, they will have a broader range of behavior and skills, so they will inherently do more with you without the need for a more complicated interface.  
+<br><br>
+From an editing standpoint, the friendly soldiers will be a new entity class that works just like the other friendly characters.  To make soldiers who are enemies to the character, you can simply use the original soldier entities, whose behavior will remain unmodified.
+<br><br>
+
+<b>Rust: </b>What kind of new entities will be introduced in OpFor, aside from the new weapons and monsters?
+<br><br>
+<b>Rob: </b>Surprisingly very few new entities are needing to be created.  Most of what we need to make the pack is already implemented, although there may be a few new env_ or special class ents for new effects.
+<br><br>
+
+<b>Rust: </b>Has the vehicle system been modified in any way (for example, to allow for a vehicle with a dynamic path)?
+<br><br>
+<b>Rob: </b>As of right now, we have no plans to make any modifications to the vehicle system.
+<br><br>
+
+<b>Rust: </b>Have any other previous Half-Life entities been modified or enhanced?
+<br><br>
+<b>Rob: </b>All of the original Half-Life entities will remain untouched.  This will allow anyone currently doing Half-Life editing to easily implement any maps/models/mods into the OpFor game set if they want to.
+<br><br>
+
+<b>Rust: </b>Will the editing support for OpFor be on the CD?  Will it be released before OpFor is out (so other editors could implement OpFor support, etc)?
+<br><br>
+<b>Rob: </b>The only editing support that should be necessary will be an updated .fgd for Worldcraft.  We'll probably release the game source and the .fgd shortly after the game hits store shelves.
+<br><br>
+
+<b>Rust: </b>Which game engine have you had the most fun mapping for?
+<br><br>
+<b>Rob: </b>Definitely the Half-Life engine.  Valve did a great job in creating a solid system with a high level of flexibility and control.</ul><h1 id="85" name="85" class="book-h1">Scott McGregor, Digital Extremes</h1><ul><h3>Interview -  Scott 'Goose' McGregor, Level Designer - Digital Extremes</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+<b>Rust:</b> First of all, tell us a little bit about yourself and your position at Digital Extremes.
+<br><br>
+<b>Scott:</b> My name is Scott McGregor and I have been a level designer at DE for the last 7 months.
+<br><br>
+ 
+<b>Rust:</b> Has working as a professional in the gaming industry changed your views of gaming at all?
+<br><br>
+<b>Scott:</b> I find my self analyzing games more trying to figure out what makes them tick and why they are fun.
+<br><br> 
+
+<b>Rust:</b> What do you feel is the most important part of level design?
+<br><br> 
+<b>Scott:</b> Making it believable. If the player does feel like he belongs in the environment then I haven't done my job. This includes all aspects I guess, lighting texturing effects. Its all becoming more and more important.
+<br><br> 
+
+<b>Rust:</b> What limitations do you feel hurt you the most when designing game levels?
+<br><br>
+<b>Scott:</b> I guess the limits of the engine is the biggest limitation. I have worked with the entire quake series along with Unreal Championship. I find I am always fighting with the engine to get what I envisioned.
+<br><br>
+
+<b>Rust:</b> As professionals in the industry, what is the most common mistake you see in amateur maps?  What’s a common mistake you see other professionals make?
+<br><br>
+<b>Scott:</b> Probably the importance of lighting. I find alot of amatuer maps don't pay enough attention to lighting.
+<br><br>
+
+<b>Rust:</b> When it comes down to pre-planning your levels, what do you do?
+<br><br>
+<b>Scott:</b> Draw, dream, stare a blank grid.
+<br><br>
+
+<b>Rust:</b> What first sparked your interested in becoming a level designer in the game industry?
+<br><br> 
+<b>Scott:</b> Level design is has been a hobby of mine for a while now. About three years ago I visited DE with a buddy. We came up to test unreal. Well ever since that visit I have been working on my skills and here I am.
+<br><br>
+
+<b>Rust:</b> What were you doing before you worked at Digital Extremes? What do you envision yourself doing after your stint at Digital Extremes?
+<br><br>
+<b>Scott:</b> You mean there life beyond DE?...
+<br><br>
+
+<b>Rust:</b> While you’re not designing games, what are you doing in your spare time?
+<br><br>
+<b>Scott:</b> Spending time with my Girlfriend, relaxing and not looking at a computer.
+<br><br>
+
+<b>Rust:</b> What sources do you use for inspiration? 
+<br><br>
+<b>Scott:</b> Everything......... eventually you walk around and all you think about is your next or current map.
+<br><br></ul><h1 id="84" name="84" class="book-h1">Sten "ztn" Uusvali, Quake 1, 2 and 3 Level Designer, Id Software #1</h1><ul><h3>Interview -  Sten "ztn" Uusvali, Quake 1, 2 and 3 Level Designer, <a href="http://www.idsoftware.com" target="_top">id</a> Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+<b>Rust: </b>For those that don't know, tell a little about yourself...who are you, what do you do, etc.
+<br><br>
+<b>Sten: </b>Hell0, my name is Sten &quot;ztn&quot; Uusvali, I'm the guy who makes those always the same looking maps.
+<br><br>
+
+<b>Rust: </b>Out of all the levels you made, which is your favorite and why?
+<br><br>
+<b>Sten: </b>That would be ztndm3 - &quot;Blood Run&quot;. I can't put my finger on any specific detail, the whole map just appeals for me somehow. 
+<br><br>
+
+<b>Rust: </b>Typically how long does it take you to make a completed level?
+<br><br>
+<b>Sten: </b>Uh, that really depends on various factors. I don't &quot;map&quot; every day, only when I feel like. For example, I finished Painkiller's layout in one night, as opposed to my latest piece which has taken more than a month and I'm not even near completion. Probably the most inspiring factor is a good set of textures, not too many of them and not too few either.
+<br><br>
+
+<b>Rust: </b>Do you design out anything on paper first or have a general idea of what you want? Or do you just open an editor and 'go to work'
+<br><br>
+<b>Sten: </b>I have tried pre-design my maps but that took me nowhere. When I start, I usually have a pretty clear vision of what I want, though, the result *always* turns out to be quite a different. It is just much more fun  to start laying brushes and trying different combinations...something which can't be accomplished on the paper.
+<br><br>
+
+<b>Rust: </b>What are your thoughts on the FPS games that are nearing completion like Sin, Half-Life, Daikatana? Do you see yourself doing any level editing with these games?
+<br><br>
+<b>Sten: </b>I am, of course, looking forward to playing those games and if any of them will provide a good deathmatch, I most certainly will try to make a dm map for that game. At the moment, it's pretty sure that I'll be making dm maps for SiN.
+<br><br>
+
+<b>Rust: </b>What are some of the most common mistakes you see other amateur level designers make?
+<br><br>
+<b>Sten: </b>Bad scale and poor connectivity. There ain't nothing more boring, not even Hansons, than those maps with a pair of huge-ass rooms and long tunnels between them. On the strong second comes the bad connectivity. I mean, the map shouldn't look a Swiss-cheese either, but the player should have multiple choices to gain access to various items. 
+<br><br>
+
+<b>Rust: </b>What would you consider the most difficult aspect of level design? Easiest?
+<br><br>
+<b>Sten: </b>Easiest...making a cool looking architecture. Most difficult...making it run fast.
+<br><br>
+
+<b>Rust: </b>Where do you get your inspiration?
+<br><br>
+<b>Sten: </b>From Headshot's maps of course =) No...well...from everywhere...movies, books (see, I can read), buildings...everywhere. However, believe it or not, the main source of inspiration for me still is the classic Quake's DM4 - &quot;The Bad Place&quot; [ztn visits the Volcano God] =)
+<br><br>
+
+<b>Rust: </b>You’re one of the best around at making good-looking maps while keeping the number of textures and faces down. Any tips on how you do so much with so little?
+<br><br>
+<b>Sten: </b>Uh, that's a difficult question. Can I skip it? No? Ok...I first build a very detailed and slow-ass map. Then, after the main layout is hammered out and I have a clear view of what I have, I start optimizing. That means I sometimes have to scrap a great deal of cool looking details, rooms, even areas in order to bring the r_speeds down to the playable level. Sometimes if that won't be enough, I have to rely on some perverted tricks to restrain the r_speeds. To see what I'm talking about, load up my &quot;Fury&quot; and look around the main atrium with the gl_showtris turned on (you'll have to have an OpenGL card, 3dfx as it is won't do the trick). The other not-very-widely-used-but-effective technique is using special textures. Say what? Well, take a look at the custom textures included with my dapak12 (or ztndm6) and you'll understand.
+<br><br>
+
+<b>Rust: </b>How much of that is done with lighting?  Any tips?
+<br><br>
+<b>Sten: </b>Lighting is a powerful tool adding depth and atmosphere without increasing the face count. Way too many potentially good maps look &quot;flat&quot; just because of the poor usage of light. And contrary to the popular belief, maps don't have to be &quot;dark&quot; to look good. (Well, look who's talking ;) Ok, I admit, lower light level adds a lot of feel and atmosphere...but try to avoid pitch black areas, especially on the floor. As for any tips...try not to use completely white light. Make the light a very little beige or warm yellow, that way it looks more natural. Also, two words: spotlights. It's easy to overuse them, but when used properly, they'll add a great deal of feeling to the map.
+<br><br>
+
+<b>Rust: </b>Are there any things you try to keep in mind while designing the flow layout?  Any things you deliberately put in or stay away from?
+<br><br>
+<b>Sten: </b>There are buttloads of things to keep in mind when designing deathmatch maps. One of the rule I always try to follow is that you should try to keep the player on a constant fear. Whatever technique you might use to accomplishing that, the main rule is that it should add the fun, not take it away. What I always try to avoid is providing the ability for one player to control the map. The weapons and items must be spread out evenly, everyone should be able to get an &quot;iron&quot; and/or armor without running to a great distance. 
+<br><br>
+
+<b>Rust: </b>Seen any good movies lately?
+<br><br>
+<b>Sten: </b>Yup. Scourge Done Slick and Debbie Does Dallas.
+<br><br>
+
+<b>Rust: </b>Any closing comments?
+<br><br>
+<b>Sten: </b>Umm...nah...you won't print that anyway.</ul><h1 id="83" name="83" class="book-h1">Sten "ztn" Uusvali, Quake 1, 2 and 3 Level Designer, Id Software #2</h1><ul><h3>Interview -  Sten "ztn" Uusvali, Quake 1, 2 and 3 Level Designer, <a href="http://www.idsoftware.com" target="_top">id</a> Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 							
+<b>Rust: </b>whats your best or favorite way to begin a map?
+<br><br>
+<b>Sten: </b>I just start laying brushes around...however, I usually have a pretty clear vision of what kind of a map I want. The Crucible was an exception, though :) So I just start creating rooms, adding details as I go, scrapping, resizing and so on.
+<br><br>
+
+<b>Rust: </b> To follow this up, about how long do you spend on a level? average hours & weeks.
+<br><br>
+<b>Sten: </b>When I'm on the roll, I can sit behind the screen 24hrs a day, and sometimes I don't feel like to touch the damned editor for weeks. It really depends. I usually spend a month or so until I'm really confident this is the map (read: layout, lighting, item placement, flow) I can release without later regretting my move :)
+<br><br>
+
+<b>Rust: </b> I see that the key to the overall style and design of your maps is detailing. Duh. But more specifically, there's rarely a surface that's left long-and-flat, or static. What kinda of time do you spend on these details? How many different versions of these details do you go thru before you decide "I like this one"?
+<br><br>
+<b>Sten: </b>I can't answer straight to that question, since every detail goes through various phases before it gets its final form. Sometimes 2-3 versions, sometimes...god knows how many... :)
+<br><br>
+
+<b>Rust: </b> Arghrad has a lot of features that most mappers don't use. Lately, you've used a lot of cascading light which not only looks BAD as HELL. . . (translated: really nice) but bounces in nice ways to actively light the surrounding area. Do you consider lighting and using Arghrad's extended features, like focusing surface lights, critical to the overall effect?
+<br><br>
+<b>Sten: </b>Not critical, all the neat lighting effects can be created without using Aghrad as well. However, Argh provides easy ways to create such effects without messing with targeted entities and ambient lighting. The lighting itself is a critical part for creating an atmosphere...just load up Headshot's Wasted and run around. Beautiful, eh? Now turn on the fullbright lighting ("r_fullbright 1" from console) and see...not as impressive anymore. You can literally make bread out of shit with proper usage of lights... ztn2dm3 - The Rage would be a good example ;)
+<br><br>
+
+<b>Rust: </b>How are you on 'prefabs'? I'm not talkin about structures that you'd getfrom the Prefab Park. I mean things that you've created for yourself that you use from map to map. Your item-markers are pretty signature (IMO).
+<br><br>
+<b>Sten: </b>The only prefabs I use are weapon pads...I have only 4 of them: base style red and blue, and waste style red'n'blue.
+<br><br>
+
+<b>Rust: </b>I see you use a different texture theme each time...base, installation, waste, etc. . . Whats your favorite or best texture set?
+<br><br>
+<b>Sten: </b>Hmm...though question...probably Iikkabase textures for Q1 (Painkiller) and the "Upper mines" set (The Crucible).
+<br><br>
+
+<b>Rust: </b>How difficult of a time do you have with leaks and the "miscellaneous" type errors? Has any of this ever resulted in redesign, overhaul, or even replacement of an entire area?
+<br><br>
+<b>Sten: </b>Sometimes. HOM is pain in the ass when it occurs, and usually I'm forced to redesign that area. As for other errors...there are several ways to nail down leaks, so that's not a problem...I'd have to say that I've been lucky when it comes to having nasty errors :)
+<br><br>
+
+<b>Rust: </b>As a closer, what SPECIFICALLY could you recommend... NOT to the newbie, but to the average mapper? You know. . . the guy (like me) that's released generally AVERAGE work?
+<br><br>
+<b>Sten: </b>Uh, um...try to make every next map in some way better than the previous one. But there's this thing I'd like to recommend to *every* mapper out there:  don't make maps just for getting "famous." And I'm dead serious about that, it'll lead you nowhere.</ul></body></html>

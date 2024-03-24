@@ -1,0 +1,1756 @@
+<html><head><title>Miscellaneous</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="263" name="263" class="book-h1">Miscellaneous</h1><h1 id="279" name="279" class="book-h1">Compiling Errors</h1><ul><H2>Compiling Errors</H2>
+
+<P>When I first started RUST I didnt want to cover errors because it would be so much work but I've recieved so many emails I decided to do it anyways. This is far from complete and I haven't even tried to explain any of the errors that I know how to fix or what causes them. I just don't have time.</P>
+
+<P>But...I will cut and paste the emails I get from people who know what these error messages mean and how to fix them.</P>
+
+<P>This page is very nasty and I am sure I am missing some errors or made mistakes on a lot of them. All I did was extract them from the source. So if you have any answers to these errors or have errors to add then please tell us.</P>
+
+<B>Shane 'Fishman' Sherman</B>
+<BR><BR>
+<I>(Note: The error list has been added to considerably since Fishman wrote the above)</I>
+<UL>
+<LI>
+    QBSP3 Errors
+<LI>
+    QVIS3 Errors
+<LI>
+    Qrad3 Errors 
+</UL>
+
+</ul><h1 id="280" name="280" class="book-h2">QBSP3 Errors</h1><ul><H2>QBSP3 Errors</H2>
+
+If you have any answers to these errors or have errors to add then please tell us. Use CTRL+F to search this page for a specific error.
+<BR><BR><HR><BR><BR>
+
+<H3># SubdivideFace didnt split the polygons</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+
+<H3># Mixed Face Contents</H3>
+
+<UL>Content properties all have to be the same for a brush...you cant have 2 different ones on one brush...this is different for surface properties.</UL>
+
+
+
+<H3># numvertexes == MAX_MAP_VERTS</H3>
+
+<UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL>
+
+
+
+  <H3># Leak***</H3>
+
+          <UL>you have a hole in your map. Your map must be completely closed. Most editors come with leaking finding tools.</UL>
+
+
+
+  <H3># bad planenum</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up. Quake 2 has a limit of 65536 planes it can support and a brush has a face that excedes that limit.</UL>
+
+
+
+  <H3># Tried parent</H3>
+
+          <UL>A brush has a surface that is in the same plane as a parent entity. This is checked when splitting brushes up and building the partitions for later processing. The most likely source of the problem is that a brush is malformed and needs to be fixed up or removed.</UL> 
+
+
+
+  <H3># PSIDE_FACING with splits</H3>
+
+          <UL>This error should never occur due to the way that the conditions required to cause it. The source is checking a surface property and the number of splits for a brush that are necessary. However the routine that would generate the conditions for this error has an #if 0 / #endif around the part that would set the second condition for this error code (s&PSIDE_FACING) so noone should ever see this error. If they do, Id love to see the .MAP and find out how!</UL> 
+
+
+
+  <H3># Can't write mapname</H3>
+
+          <UL>There is a problem with your HD, it might be full. Is your map file opened in another program?</UL>
+
+
+
+  <H3># HashVec: point outside valid range</H3>
+
+          <UL>There's a vertex outside the valid range. The maximum extents of a Quake 2 level is (in all dimensions) -4096 to +4096.</UL>
+
+
+
+  <H3># GetVertexnum: outside +/- 4096</H3>
+
+          <UL>These are "map is too damn big" errors. Somewhere the map is out of the +/- 4096 bounds. Make your map smaller or make sure its in the middle and not way off to the side of the bounds.</UL> 
+
+
+
+  <H3># MAX_SUPERVERTS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># numedges == MAX_MAP_EDGES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># SubdivideFace: didn't split the polygon</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+
+  <H3># Winsock initialization failed</H3>
+
+          <UL>When the -draw flag is specified, then QBSP3 will attempt to open a WinSOCK connection to the GLServer port of 25001. However since noone ever inits the drawflag in the C code, it is up to the compiler to decide if it is set to NULL or if it not init'd. The latter case means that some compilers may cause drawflag to be accidentally set due to memory garbage. In any case, this problem should only really appear when the user specifies '-draw' on the QBSP3 command line and they do not have WinSOCK (TCP/IP) installed on their system. Two simple workarounds for this are:<BR><BR>
+<UL>
+
+
+         <LI>Do not set the -draw flag on the QBSP3 command line. This should be something that most users dont do anyways!<BR><BR>
+         <LI>Install the Netscape "fake" WinSOCK.dll file (called Mosock.dll or something funky like that). It is essentially a WinSOCK.dll that contains NULL WinSOCK routines so that a client does not really have to install and configure TCP/IP on their clients but they can use it when viewing local web pages.<BR><BR>
+         <LI>A third workaround is something that more advanced users can do: simply rename qbsp3\gldraw.c to qbsp3\ogldraw.c and rename qbsp3\nodraw.c to qbsp3\gldraw.c. This effectively stubs out all of the Draw_* routines that come from processing the tree nodes.</UL></UL>
+
+
+
+  <H3># draw_socket failed</H3>
+
+          <UL>Related to the Winsock error above. The reason for the failure is that WinSOCK coudl not create a socket for steaming the data to later on. The same answers for dealing with this apply from the error above.</UL> 
+
+
+
+  <H3># Couldn't open</H3>
+
+          <UL>This error occurs 2 times. One time is when QBSP3 attempts to create and open the .GL file (if the user put -glview on the command line). If QBSP3 gets ANY error doing this, it stops w/o indicating what the error may be. The second time is when QBSP3 attempts to create and open the .LIN file to save the leak information. The most common reasons for either failing is probably lack of disk space or if you are attempting to save to a network file server, no rights to create new files (although why QBSP3 doesnt give the same error when generating the .PRT or .BSP files is something Id have to look at later).</UL> 
+
+
+
+  <H3># Can't write expanded.map</H3>
+
+          <UL>You did not list this error but it is in the code. This is the error that QBSP3 generates when it cannot create the file named expanded.map. This file is generated if QBSP3 is unable to create the file that would contain all the new brush info. This file is generated in TestExpandBrushes() just before QBSP3 gives the can't proceed after expanding brushes error message. However upon diggin into the code more I noticed that the routine TestExpandBrushes() is never called (its call in LoadMapFile() is commented out). As a result, no one should EVER see this error message.</UL> 
+
+
+
+  <H3># FloatPlane: bad normal</H3>
+
+          <UL>Happens with vertex editing when the geometry is invalid, for example when you alter the number of faces (ie: take a block [6 sides], take two vertices from the top and bring them over the lower 2 vertices to transform the block brush in a wedge [5 sides]. The face isn't a plane anymore (now an edge) so the normal can't be calculated).</UL> 
+
+
+
+  <H3># MAX_MAP_PLANES</H3>
+
+         <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_BRUSHSIDES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># nummapbrushes == MAX_MAP_BRUSHES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># parsing brush</H3>
+
+          <UL>Your map file contains an error, so qbsp3 couldn't parse it. You'll probably need to fix it with a text editor.</UL> 
+
+
+
+  <H3># Entity %i, Brush %i: origin brushes not allowed in world</H3>
+
+          <UL>Caused by having the origin (center) of the Origin brush outside the bursh it is meant to rotate (func_rotating error). It occurs when you apply the "origin" surface property to a brush that is not a func_rotate(door) entity. In other words it happens when you give an origin surface property to a world brush.</UL> 
+
+
+
+  <H3># ParseEntity: { not found</H3>
+
+          <UL>Your map file contains an error, so qbsp3 couldn't parse it. You'll probably need to fix it with a text editor.</UL> 
+
+
+
+  <H3># num_entities == MAX_MAP_ENTITIES</H3>
+
+          <UL>too many entities...delete some or divide your map into 2 maps</UL>
+
+
+
+  <H3># ParseEntity: EOF without closing brace</H3>
+
+          <UL>Your map file contains an error, so qbsp3 couldn't parse it. You'll probably need to fix it with a text editor.</UL> 
+
+
+
+  <H3># Entity %i: func_areaportal can only be a single brush</H3>
+
+          <UL>A func_areaportal can only have one brush attached.</UL> 
+
+
+
+  <H3># can't proceed after expanding brushes</H3>
+
+          <UL>No one should ever see this error message</UL>
+
+
+
+  <H3># Portal_EntityFlood: not a leaf</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># AddPortalToNode: allready included</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># RemovePortalFromNode: portal not in leaf</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># RemovePortalFromNode: portal not bounding leaf</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># CutNodePortals_r: mislinked portal</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># MAX_MAP_AREAS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+  <H3># Unknown option</H3>
+
+          <UL>you ran qbsp3 with an unknown option. Look here for a list of all the options</UL>
+
+  <H3># Tried to invoke command line that wasnt valid</H3>
+
+          <UL>you ran qbsp3 with an unknown option. Look here for a list of all the options</UL>
+
+  <H3># usage: qbsp3 [options] mapfile</H3>
+
+          <UL>you need to specify the map file to compile. Check here for all your options</UL>
+
+  <H3># MAX_MAP_TEXTURES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+  <H3># node->faces seperating CONTENTS_SOLID</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># !node->faces with children</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># PruneNodes: node->brushlist</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># Bad leafface</H3>
+
+          <UL>When writing out the information about the faces to the BSP file, one had a face number larger than the largest one QBSP3 knows about. This should typically be due to some memory overwrite problems or some internal flow problems rather than anything the user did. I dont have any suggestions on how to fix the problem w/o actually debugging on a .MAP that could generate this error...</UL> 
+
+
+
+  <H3># MAX_MAP_LEAFFACES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_LEAFS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_LEAFBRUSHES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_FACES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_SURFEDGES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up. </UL>
+
+
+
+  <H3># MAX_MAP_NODES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up. 
+</UL>
+
+
+  <H3># WriteDrawNodes_r: odd planenum</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># stylenum == MAX_SWITCHED_LIGHTS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/QBSP3 internal maximums. You can only have a maxium of 32 switched (ie: targetname light1) lights in Quake2. It is not clear if a light w/a targetname but is not really targeted counts towards this tally or not. To be safe, lights that are not switched should not have a targetname (until someone can verify that this does not matter). Remove some switched lights until you have less than 32.</UL>
+
+
+
+  <H3># MAX_MAP_BRUSHSIDES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_MODELS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+    </ul><h1 id="281" name="281" class="book-h1">Maximum Values Allowed In Quake 2</h1><ul><H2>Maximum Values Allowed In Quake 2</H2>
+<table border="1" width="100%">
+  
+<tr valign="top">
+    <td align="left">MAX_MAP_AREAS</td>
+    <td align="left">256</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_BRUSHES</td>
+    <td align="left">8192</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_BRUSHSIDES</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_EDGES</td>
+    <td align="left">128000</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_ENTITIES</td>
+    <td align="left">2048</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_FACES</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_LEAFS</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_LEAFBRUSHES</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_LEAFFACES</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_MODELS</td>
+    <td align="left">1024</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_NODES</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_PLANES</td>
+    <td align="left">65536</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_SURFEDGES</td>
+    <td align="left">256000</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_SUPERVERTS</td>
+    <td align="left">512</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_SWITCHED_LIGHTS</td>
+    <td align="left">32</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_TEXTURES</td>
+    <td align="left">1024</td>
+</tr>
+
+<tr valign="top">
+    <td align="left">MAX_MAP_VERTS</td>
+    <td align="left">65536</td>
+</tr>
+</table>
+
+<BR><BR></ul><h1 id="264" name="264" class="book-h1">Quake 2 Sounds - Complete List</h1><ul><h2>Quake2 Sounds</H2>
+
+The world/ sounds are the most commonly used with the target_speaker entity but you can use any sound on this page. When using them with a target_speaker don't forget to include the directory path.
+
+For a better description of the world/ sounds please check out <A HREF="http://www.gamedesign.net/book/view/265"><b>this list.</B></A>
+
+<H3>Monster_berserk Sounds</H3>
+beserk/attack.wav<BR>
+beserk/Berdeth2.wav<BR>
+beserk/Beridle1.wav<BR>
+beserk/Berpain2.wav<BR>
+beserk/Bersrch1.wav<BR>
+beserk/death.wav<BR>
+beserk/idle.wav<BR>
+beserk/sight.wav<BR>
+beserk/xfire.wav<BR>
+
+<H3>Monster_boss3 Sounds</H3>
+boss3/Bs3atck1.wav<BR>
+boss3/Bs3atck2.wav<BR>
+boss3/Bs3deth1.wav<BR>
+boss3/Bs3idle1.wav<BR>
+boss3/Bs3pain1.wav<BR>
+boss3/Bs3pain2.wav<BR>
+boss3/Bs3pain3.wav<BR>
+boss3/Bsp3srch1.wav<BR>
+boss3/Bsp3srch2.wav<BR>
+boss3/Bsp3srch3.wav<BR>
+boss3/d_hit.wav<BR>
+boss3/step1.wav<BR>
+boss3/step2.wav<BR>
+boss3/w_loop.wav<BR>
+boss3/xfire.wav<BR>
+
+<H3>Monster_boss2 Sounds</H3>
+bosshovr/Bhvdeth1.wav<BR>
+bosshovr/Bhvengn1.wav<BR>
+bosshovr/Bhvpain1.wav<BR>
+bosshovr/Bhvpain2.wav<BR>
+bosshovr/Bhvpain3.wav<BR>
+bosshovr/Bhvunqv1.wav<BR>
+
+<H3>Monster_boss1 Sounds</H3>
+bosstank/Btkdeth1.wav<BR>
+bosstank/Btkengn1.wav<BR>
+bosstank/Btkpain1.wav<BR>
+bosstank/Btkpain2.wav<BR>
+bosstank/Btkpain3.wav<BR>
+bosstank/Btkunqv1.wav<BR>
+bosstank/Btkunqv2.wav<BR>
+
+<H3>Monster_brain Sounds</H3>
+brain/Brnatck1.wav<BR>
+brain/Brnatck2.wav<BR>
+brain/Brnatck3.wav<BR>
+brain/Brndeth1.wav<BR>
+brain/Brnidle1.wav<BR>
+brain/Brnidle2.wav<BR>
+brain/Brnlens1.wav<BR>
+brain/Brnpain1.wav<BR>
+brain/Brnpain2.wav<BR>
+brain/Brnsght1.wav<BR>
+brain/Brnsrch1.wav<BR>
+brain/melee1.wav<BR>
+brain/melee2.wav<BR>
+brain/melee3.wav<BR>
+
+<H3>Monster_chick Sounds</H3>
+chick/Chkatck1.wav<BR>
+chick/Chkatck2.wav<BR>
+chick/Chkatck3.wav<BR>
+chick/Chkatck4.wav<BR>
+chick/Chkatck5.wav<BR>
+chick/Chkdeth1.wav<BR>
+chick/Chkdeth2.wav<BR>
+chick/Chkfall1.wav<BR>
+chick/Chkidle1.wav<BR>
+chick/Chkidle2.wav<BR>
+chick/Chkpain1.wav<BR>
+chick/Chkpain2.wav<BR>
+chick/Chkpain3.wav<BR>
+chick/Chksght1.wav<BR>
+chick/Chksrch1.wav<BR>
+
+<H3>Door Sounds</H3>
+doors/dr1_end.wav<BR>
+doors/dr1_mid.wav<BR>
+doors/dr1.strt.wav<BR>
+
+<H3>Monster_flipper Sounds</H3>
+flipper/Flpatck1.wav<BR>
+flipper/Flpatck2.wav<BR>
+flipper/Flpdeth1.wav<BR>
+flipper/Flpidle1.wav<BR>
+flipper/Flppain1.wav<BR>
+flipper/Flppain2.wav<BR>
+flipper/Flpsght1.wav<BR>
+flipper/Flpsrch1.wav<BR>
+
+<H3>Monster_floater Sounds</H3>
+floater/Fltatck1.wav<BR>
+floater/Fltatck2.wav<BR>
+floater/Fltatck3.wav<BR>
+floater/Fltdeth1.wav<BR>
+floater/Fltidle1.wav<BR>
+floater/Fltpain1.wav<BR>
+floater/Fltpain2.wav<BR>
+floater/Fltsght1.wav<BR>
+floater/Fltsrch1.wav<BR>
+
+<H3>Monster_flyer Sounds</H3>
+flyer/Flyatck1.wav<BR>
+flyer/Flyatck2.wav<BR>
+flyer/Flyatck3.wav<BR>
+flyer/Flydeth1.wav<BR>
+flyer/Flyidle1.wav<BR>
+flyer/Flypain1.wav<BR>
+flyer/Flypain2.wav<BR>
+flyer/Flysght1.wav<BR>
+flyer/Flysrch1.wav<BR>
+
+<H3>Monster_gladiator Sounds</H3>
+gladiator/death.wav<BR>
+gladiator/Glddeth2.wav<BR>
+gladiator/Gldidle1.wav<BR>
+gladiator/Gldpain2.wav<BR>
+gladiator/Gldsrch1.wav<BR>
+gladiator/melee1.wav<BR>
+gladiator/melee2.wav<BR>
+gladiator/melee3.wav<BR>
+gladiator/pain.wav<BR>
+gladiator/railgun.wav<BR>
+gladiator/sight.wav<BR>
+
+<H3>Monster_gunner Sounds</H3>
+gunner/death1.wav<BR>
+gunner/Gunatck1.wav<BR>
+gunner/Gunatck2.wav<BR>
+gunner/Gunatck3.wav<BR>
+gunner/Gunidle1.wav<BR>
+gunner/gunpain1.wav<BR>
+gunner/Gunpain2.wav<BR>
+gunner/Gunsrch1.wav<BR>
+gunner/sight1.wav<BR>
+
+<H3>Monster_hover Sounds</H3>
+hover/Hovatck1.wav<BR>
+hover/Hovdeth1.wav<BR>
+hover/Hovdeth2.wav<BR>
+hover/Hovidle1.wav<BR>
+hover/Hovpain1.wav<BR>
+hover/Hovpain2.wav<BR>
+hover/Hovsght1.wav<BR>
+hover/Hovsrch1.wav<BR>
+hover/Hovsrch2.wav<BR>
+
+<H3>Monster_infantry Sounds</H3>
+infantry/Infatck1.wav<BR>
+infantry/Infatck2.wav<BR>
+infantry/Infatck3.wav<BR>
+infantry/INFDETH1.wav<BR>
+infantry/INFDETH2.wav<BR>
+infantry/INFIDLE1.wav<BR>
+infantry/Inflies1.wav<BR>
+infantry/INFPAIN1.wav<BR>
+infantry/Infpain2.wav<BR>
+infantry/INFSGHT1.wav<BR>
+infantry/INFSRCH1.wav<BR>
+infantry/melee2.wav<BR>
+
+<H3>Misc_insane Sounds</H3>
+insane/insane1.wav<BR>
+insane/insane2.wav<BR>
+insane/insane3.wav<BR>
+insane/insane4.wav<BR>
+insane/insane5.wav<BR>
+insane/insane6.wav<BR>
+insane/insane7.wav<BR>
+insane/insane8.wav<BR>
+insane/insane9.wav<BR>
+insane/insane10.wav<BR>
+insane/insane11.wav<BR>
+
+<H3>Item Sounds</H3>
+items/airout.wav<BR>
+items/damage.wav<BR>
+items/damage2.wav<BR>
+items/damage3.wav<BR>
+items/l_health.wav<BR>
+items/m_health.wav<BR>
+items/n_health.wav<BR>
+items/pkup.wav<BR>
+items/protect.wav<BR>
+items/protect2.wav<BR>
+items/protect3.wav<BR>
+items/protect4.wav<BR>
+items/respawn1.wav<BR>
+items/s_health.wav<BR>
+
+<H3>Monster_makron Sounds</H3>
+makron/bfg_fire.wav<BR>
+makron/bfg_hum.wav<BR>
+makron/bhit.wav<BR>
+makron/blaster.wav<BR>
+makron/brain1.wav<BR>
+makron/death.wav<BR>
+makron/head1.wav<BR>
+makron/head2.wav<BR>
+makron/laf1.wav<BR>
+makron/laf2.wav<BR>
+makron/laf3.wav<BR>
+makron/laf4.wav<BR>
+makron/pain1.wav<BR>
+makron/pain2.wav<BR>
+makron/pain3.wav<BR>
+makron/popup.wav<BR>
+makron/rail_up.wav<BR>
+makron/roar1.wav<BR>
+makron/roar2.wav<BR>
+makron/spine.wav<BR>
+makron/step1.wav<BR>
+makron/step2.wav<BR>
+makron/voice.wav<BR>
+makron/voice1.wav<BR>
+makron/voice2.wav<BR>
+makron/voice3.wav<BR>
+makron/voice4.wav<BR>
+
+<H3>Monster Medic Sounds</H3>
+medic/idle.wav<BR>
+medic/Medatck1.wav<BR>
+medic/Medatck2.wav<BR>
+medic/Medatck3.wav<BR>
+medic/Medatck4.wav<BR>
+medic/Medatck5.wav<BR>
+medic/Meddeth1.wav<BR>
+medic/Medpain1.wav<BR>
+medic/Medpain2.wav<BR>
+medic/Medsght1.wav<BR>
+medic/Medsrch1.wav<BR>
+
+<H3>Miscellaneous Sounds</H3>
+misc/am_pkup.wav<BR>
+misc/ar1_pkup.wav<BR>
+misc/ar2_pkup.wav<BR>
+misc/ar3_pkup.wav<BR>
+misc/bigtele.wav<BR>
+misc/comp_up.wav<BR>
+misc/fhit3.wav<BR>
+misc/h2ohit1.wav<BR>
+misc/keytry.wav<BR>
+misc/keyuse.wav<BR>
+misc/lasfly.wav<BR>
+misc/menu1.wav<BR>
+misc/menu2.wav<BR>
+misc/menu3.wav<BR>
+misc/pc_up.wav<BR>
+misc/power1.wav<BR>
+misc/power2.wav<BR>
+misc/secret.wav<BR>
+misc/spawn1.wav<BR>
+misc/talk.wav<BR>
+misc/talk1.wav<BR>
+misc/tele_up.wav<BR>
+misc/tele1.wav<BR>
+misc/udeath.wav<BR>
+misc/w_pkup.wav<BR>
+misc/windfly.wav<BR>
+
+<H3>Monster_mutant Sounds</H3>
+mutant/Mutatck1.wav<BR>
+mutant/Mutatck2.wav<BR>
+mutant/mutatck3.wav<BR>
+mutant/Mutdeth1.wav<BR>
+mutant/Mutidle1.wav<BR>
+mutant/Mutpain1.wav<BR>
+mutant/Mutpain2.wav<BR>
+mutant/Mutsght1.wav<BR>
+mutant/Mutsrch1.wav<BR>
+mutant/step1.wav<BR>
+mutant/step2.wav<BR>
+mutant/step3.wav<BR>
+mutant/thud1.wav<BR>
+
+<H3>Monster_parasite Sounds</H3>
+parasite/Paratck1.wav<BR>
+parasite/Paratck2.wav<BR>
+parasite/Paratck3.wav<BR>
+parasite/Paratck4.wav<BR>
+parasite/Pardeth1.wav<BR>
+parasite/Paridle1.wav<BR>
+parasite/Paridle2.wav<BR>
+parasite/Parpain1.wav<BR>
+parasite/Parpain2.wav<BR>
+parasite/Parsght1.wav<BR>
+parasite/Parsrch1.wav<BR>
+
+<H3>Platform Sounds</H3>
+plats/pt1_end.wav<BR>
+plats/pt1_mid.wav<BR>
+plats/pt1_strt.wav<BR>
+
+<H3>Female Player Sounds</H3>
+player/female/death1.wav<BR>
+player/female/death2.wav<BR>
+player/female/death3.wav<BR>
+player/female/death4.wav<BR>
+player/female/drown.wav<BR>
+player/female/fall1.wav<BR>
+player/female/fall2.wav<BR>
+player/female/gurp1.wav<BR>
+player/female/gurp2.wav<BR>
+player/female/jump1.wav<BR>
+player/female/pain100_1.wav<BR>
+player/female/pain100_2.wav<BR>
+player/female/pain25_1.wav<BR>
+player/female/pain25_2.wav<BR>
+player/female/pain50_1.wav<BR>
+player/female/pain50_2.wav<BR>
+player/female/pain75_1.wav<BR>
+player/female/pain75_2.wav<BR>
+
+<H3>Male Player Sounds</H3>
+player/male/bump1.wav<BR>
+player/male/death1.wav<BR>
+player/male/death2.wav<BR>
+player/male/death3.wav<BR>
+player/male/death4.wav<BR>
+player/male/drown1.wav<BR>
+player/male/fall1.wav<BR>
+player/male/fall2.wav<BR>
+player/male/gurp1.wav<BR>
+player/male/gurp2.wav<BR>
+player/male/jump1.wav<BR>
+player/male/pain100_1.wav<BR>
+player/male/pain100_2.wav<BR>
+player/male/pain25_1.wav<BR>
+player/male/pain25_2.wav<BR>
+player/male/pain50_1.wav<BR>
+player/male/pain50_2.wav<BR>
+player/male/pain75_1.wav<BR>
+player/male/pain75_2.wav<BR>
+
+<H3>Player Sounds</H3>
+player/burn1.wav<BR>
+player/burn2.wav<BR>
+player/death4.wav<BR>
+player/drown1.wav<BR>
+player/fall1.wav<BR>
+player/fall2.wav<BR>
+player/fry.wav<BR>
+player/gasp1.wav<BR>
+player/gasp2.wav<BR>
+player/jump1.wav<BR>
+player/land1.wav<BR>
+player/lava_in.wav<BR>
+player/lava1.wav<BR>
+player/lava2.wav<BR>
+player/step1.wav<BR>
+player/step2.wav<BR>
+player/step3.wav<BR>
+player/step4.wav<BR>
+player/u_breath1.wav<BR>
+player/u_breath2.wav<BR>
+player/wade1.wav<BR>
+player/wade2.wav<BR>
+player/wade3.wav<BR>
+player/watr_in.wav<BR>
+player/watr_out.wav<BR>
+player/watr_un.wav<BR>
+
+<H3>Rotation Sounds</H3>
+rotate/h_rot1.wav<BR>
+rotate/h_rot2.wav<BR>
+
+<H3>Monster_soldier Sounds</H3>
+soldier/Solatck1.wav<BR>
+soldier/Solatck2.wav<BR>
+soldier/Solatck3.wav<BR>
+soldier/SOLDETH1.wav<BR>
+soldier/SOLDETH2.wav<BR>
+soldier/SOLDETH3.wav<BR>
+soldier/SOLIDLE1.wav<BR>
+soldier/SOLPAIN1.wav<BR>
+soldier/SOLPAIN2.wav<BR>
+soldier/SOLPAIN3.wav<BR>
+soldier/SOLSGHT1.wav<BR>
+soldier/SOLSRCH1.wav<BR>
+
+<H3>Button Sounds</H3>
+switches/butn2.wav<BR>
+
+<H3>Moster_tank Sounds</H3>
+tank/death.wav<BR>
+tank/pain.wav<BR>
+tank/rocket.wav<BR>
+tank/sight1.wav<BR>
+tank/step.wav<BR>
+tank/thud.wav<BR>
+tank/Tnkatck1.wav<BR>
+tank/Tnkatck3.wav<BR>
+tank/Tnkatck4.wav<BR>
+tank/Tnkatck5.wav<BR>
+tank/Tnkatk2a.wav<BR>
+tank/Tnkatk2b.wav<BR>
+tank/Tnkatk2c.wav<BR>
+tank/Tnkatk2d.wav<BR>
+tank/Tnkatk2e.wav<BR>
+tank/Tnkdeth2.wav<BR>
+tank/Tnkidle1.wav<BR>
+tank/Tnkpain2.wav<BR>
+
+<H3>Weapon Sounds</H3>
+weapons/Bfg__f1y.wav<BR>
+weapons/Bfg__1a.wav<BR>
+weapons/Bfg__x1b.wav<BR>
+weapons/bfg_hum.wav<BR>
+weapons/Blastf1a.wav<BR>
+weapons/Chngnd1a.wav<BR>
+weapons/Chngnl1a.wav<BR>
+weapons/Chngnu1a.wav<BR>
+weapons/Grenlb1b.wav<BR>
+weapons/Grenlf1a.wav<BR>
+weapons/Grenlr1b.wav<BR>
+weapons/Grenlx1a.wav<BR>
+weapons/Hgrena1b.wav<BR>
+weapons/Hgrenb1a.wav<BR>
+weapons/Hgrenb2a.wav<BR>
+weapons/Hgrenc1b.wav<BR>
+weapons/Hgrent1a.wav<BR>
+weapons/Hyprbd1a.wav<BR>
+weapons/Hyprbf1a.wav<BR>
+weapons/Hyprbl1a.wav<BR>
+weapons/Hyprbu1a.wav<BR>
+weapons/laser2.wav<BR>
+weapons/lashit.wav<BR>
+weapons/Machgf1b.wav<BR>
+weapons/Machgf2b.wav<BR>
+weapons/Machgf3b.wav<BR>
+weapons/Machgf4b.wav<BR>
+weapons/Machgf5b.wav<BR>
+weapons/noammo.wav<BR>
+weapons/Railgf1a.wav<BR>
+weapons/Railgr1a.wav<BR>
+weapons/rg_hum.wav<BR>
+weapons/rockfly.wav<BR>
+weapons/Rocklf1a.wav<BR>
+weapons/Rocklr1b.wav<BR>
+weapons/Rocklx1a.wav<BR>
+weapons/Shotgf1b.wav<BR>
+weapons/Shotgr1b.wav<BR>
+weapons/Sshotf1b.wav<BR>
+weapons/Sshotr1b.wav<BR>
+weapons/xpld_wat.wav<BR>
+
+<H3>World Sounds</H3>
+world/10_0.wav<BR>
+world/airhiss1.wav<BR>
+world/airhiss2.wav<BR>
+world/amb1.wav<BR>
+world/amb2.wav<BR>
+world/amb3.wav<BR>
+world/amb4.wav<BR>
+world/amb5.wav<BR>
+world/amb6.wav<BR>
+world/amb7.wav<BR>
+world/amb8.wav<BR>
+world/amb9.wav<BR>
+world/amb10.wav<BR>
+world/amb11.wav<BR>
+world/amb12.wav<BR>
+world/amb13.wav<BR>
+world/amb14.wav<BR>
+world/amb15.wav<BR>
+world/amb16.wav<BR>
+world/amb17.wav<BR>
+world/amb18.wav<BR>
+world/amb19.wav<BR>
+world/amb20.wav<BR>
+world/amb21.wav<BR>
+world/amb22.wav<BR>
+world/amb23.wav<BR>
+world/amb24.wav<BR>
+world/battle1.wav<BR>
+world/battle2.wav<BR>
+world/battle3.wav<BR>
+world/battle4.wav<BR>
+world/battle5.wav<BR>
+world/bigpump.wav<BR>
+world/bigpump2.wav<BR>
+world/blackhole.wav<BR>
+world/brkglas.wav<BR>
+world/bubbl4.wav<BR>
+world/bubl1.wav<BR>
+world/bubl2.wav<BR>
+world/bubl3.wav<BR>
+world/comlas1.wav<BR>
+world/comp_hum1.wav<BR>
+world/comp_hum2.wav<BR>
+world/comp_hum3.wav<BR>
+world/curnt1.wav<BR>
+world/curnt2.wav<BR>
+world/curnt3.wav<BR>
+world/dataspin.wav<BR>
+world/deactivated.wav<BR>
+world/dish1.wav<BR>
+world/dr_long.wav<BR>
+world/dr_short.wav<BR>
+world/drill1.wav<BR>
+world/drill2a.wav<BR>
+world/driller1.wav<BR>
+world/drip_amb.wav<BR>
+world/drip1.wav<BR>
+world/drip2.wav<BR>
+world/drip3.wav<BR>
+world/electro.wav<BR>
+world/explod1.wav<BR>
+world/explod2.wav<BR>
+world/fan1.wab<BR>
+world/flesh1.wav<BR>
+world/flesh2.wav<BR>
+world/flyby.wav<BR>
+world/flyby1.wav<BR>
+world/flyby2.wav<BR>
+world/flyby3.wav<BR>
+world/force1.wav<BR>
+world/force2.wav<BR>
+world/force3.wav<BR>
+world/fusein.wav<BR>
+world/fuseout.wav<BR>
+world/incoming.wav<BR>
+world/klaxon1.wav<BR>
+world/klaxon2.wav<BR>
+world/l_hum1.wav<BR>
+world/l_hum2.wav<BR>
+world/land.wav<BR>
+world/laser.wav<BR>
+world/lashum1.wav<BR>
+world/lasoff1.wav<BR>
+world/lava1.wav<BR>
+world/lite_on1.wav<BR>
+world/lite_on2.wav<BR>
+world/lite_on3.wav<BR>
+world/lite_out.wav<BR>
+world/mach1.wav<BR>
+world/mach2.wav<BR>
+world/mach3.wav<BR>
+world/mov_watr.wav<BR>
+world/pilot1.wav<BR>
+world/pilot2.wav<BR>
+world/pilot3.wav<BR>
+world/pump1.wav<BR>
+world/pump2.wav<BR>
+world/pump3.wav<BR>
+world/pumping.wav<BR>
+world/pyramid.wav<BR>
+world/quake.wav<BR>
+world/radio2.wav<BR>
+world/radio3.wav<BR>
+world/reactor.wav<BR>
+world/redforce.wav<BR>
+world/ric1.wav<BR>
+world/ric2.wav<BR>
+world/ric3.wav<BR>
+world/rocks1.wav<BR>
+world/scan1.wav<BR>
+world/short1.wav<BR>
+world/spark2.wav<BR>
+world/spark3.wav<BR>
+world/spark4.wav<BR>
+world/spark5.wav<BR>
+world/spark6.wav<BR>
+world/spark7.wav<BR>
+world/steam1.wav<BR>
+world/steam2.wav<BR>
+world/steam3.wav<BR>
+world/stp_watr.wav<BR>
+world/tele1.wav<BR>
+world/train1.wav<BR>
+world/train2.wav<BR>
+world/turbine1.wav<BR>
+world/uplink2.wav<BR>
+world/v_bas1.wav<BR>
+world/v_bas2.wav<BR>
+world/v_bas3.wav<BR>
+world/v_bas4.wav<BR>
+world/v_bas5.wav<BR>
+world/v_bas6.wav<BR>
+world/v_cit1.wav<BR>
+world/v_cit2.wav<BR>
+world/v_cmd1.wav<BR>
+world/v_cmd2.wav<BR>
+world/v_fac2.wav<BR>
+world/v_fac3.wav<BR>
+world/v_gun1.wav<BR>
+world/v_gun2.wav<BR>
+world/v_war1.wav<BR>
+world/ventsys.wav<BR>
+world/voice1.wav<BR>
+world/voice3.wav<BR>
+world/voice4.wav<BR>
+world/voice5.wav<BR>
+world/voice6.wav<BR>
+world/voice7.wav<BR>
+world/voice10.wav<BR>
+world/voice11.wav<BR>
+world/vater1.wav<BR>
+world/wind2.wav<BR>
+world/x_alarm.wav<BR>
+world/x_light.wav<BR>
+world/xian1.wav<BR>
+world/xianbeats.wav<BR>
+world/yelforce.wav<BR></ul><h1 id="265" name="265" class="book-h1">Quake 2 World Sounds In Detail</h1><ul><h2 align="left">Quake2 Ambient Sounds</h2>
+
+<p align="left">By Zedek<br>
+</p>
+
+<table border="1">
+  <tr valign="top">
+    <td align="left">10_0.WAV</td>
+    <td align="left">Computer: &quot;10..9..8..7..6..5..4..3..2..1..&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AIRHISS1.WAV</td>
+    <td align="left">Air hiss (short, soft)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AIRHISS2.WAV</td>
+    <td align="left">Air hiss (short, louder)</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB1.WAV</td>
+    <td align="left">Soft energy whistle</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB10.WAV</td>
+
+    <td align="left">Alien computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB11.WAV</td>
+    <td align="left">Rattling sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">AMB12.WAV</td>
+    <td align="left">Air pumping sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB13.WAV</td>
+    <td align="left">Machinery</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AMB14.WAV</td>
+    <td align="left">Air whistle</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB15.WAV</td>
+    <td align="left">Deep computer hum</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB16.WAV</td>
+    <td align="left">Air/computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB17.WAV</td>
+
+    <td align="left">Machines rattling/cranking</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB18.WAV</td>
+    <td align="left">Very soft drone sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">AMB19.WAV</td>
+    <td align="left">Air/computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB2.WAV</td>
+    <td align="left">Fluorescent light hum</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AMB20.WAV</td>
+    <td align="left">Fireball sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB21.WAV</td>
+    <td align="left">Air at intervals</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB22.WAV</td>
+    <td align="left">Very soft computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB23.WAV</td>
+
+    <td align="left">Computer hum, shorter</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB24.WAV</td>
+    <td align="left">Funny alien humming</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">AMB3.WAV</td>
+    <td align="left">Soft rattle, machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB4.WAV</td>
+    <td align="left">Alien machines</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AMB5.WAV</td>
+    <td align="left">Sounds like a helicopter</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB6.WAV</td>
+    <td align="left">Helicopter, higher pitched</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB7.WAV</td>
+    <td align="left">Fluorescent lights</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB8.WAV</td>
+
+    <td align="left">Water or steam rushing</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB9.WAV</td>
+    <td align="left">Rattling machines</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">BATTLE1.WAV</td>
+    <td align="left">Distant explosion</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BATTLE2.WAV</td>
+    <td align="left">Distant explosion</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">BATTLE3.WAV</td>
+    <td align="left">Three explosions</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BATTLE4.WAV</td>
+    <td align="left">Loud explosion + soft explosion</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">BATTLE5.WAV</td>
+    <td align="left">Loud explosion</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BIGPUMP.WAV</td>
+
+    <td align="left">A water pump</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BIGPUMP2.WAV</td>
+    <td align="left">A pump machine</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">BLACKHOLE.WAV</td>
+    <td align="left">A blackhole generator sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BRKGLAS.WAV</td>
+    <td align="left">Loud glass shattering sound</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">BUBBL4.WAV</td>
+    <td align="left">Water glurp</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BUBL1.WAV</td>
+    <td align="left">Underwater bubbles</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">BUBL2.WAV</td>
+    <td align="left">Underwater bubbles</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BUBL3.WAV</td>
+
+    <td align="left">Underwater bubbles</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">COMLAS1.WAV</td>
+    <td align="left">Computer: &quot;Communication laser neutralized.&quot;</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">COMP_HUM1.WAV </td>
+    <td align="left">Soft computer hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">COMP_HUM2.WAV</td>
+    <td align="left">Sounds like computer talk</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">COMP_HUM3.WAV</td>
+    <td align="left">Computer beeps</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">CURNT1.WAV</td>
+    <td align="left">Moving water (fast stream, small waterfall)</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">CURNT2.WAV</td>
+    <td align="left">Small stream (trickle)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">CURNT3.WAV</td>
+
+    <td align="left">Stream with a little echo</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DATASPIN.WAV</td>
+    <td align="left">Computer: &quot;Data spinner reprogrammed.&quot;</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">DEACTIVATED.WAV</td>
+    <td align="left">Computer: &quot;Deactivated.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DISH1.WAV</td>
+    <td align="left">Satellite Dish moving</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">DRILL1.WAV</td>
+    <td align="left">Drill hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRILL2A.WAV</td>
+
+    <td align="left">Vehicle moving</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRILLER1.WAV</td>
+    <td align="left">Drill engine</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">DRIP1.WAV</td>
+    <td align="left">Water drip</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRIP2.WAV</td>
+    <td align="left">Water drip</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">DRIP3.WAV </td>
+    <td align="left">Water drip</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRIP_AMB.WAV</td>
+    <td align="left">A few drips</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">DR_LONG.WAV</td>
+    <td align="left">A crane moving (long)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DR_SHORT.WAV</td>
+
+    <td align="left">Crane (short)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">ELECTRO.WAV</td>
+    <td align="left">Sizzling</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">EXPLOD1.WAV</td>
+    <td align="left">Explosion</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">EXPLOD2.WAV</td>
+    <td align="left">Short explosion</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">FAN1.WAV</td>
+    <td align="left">Soft fan hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLESH1.WAV</td>
+    <td align="left">Guts sound</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">FLESH2.WAV</td>
+    <td align="left">Guts sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLYBY.WAV</td>
+
+    <td align="left">Flyby sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLYBY1.WAV</td>
+    <td align="left">Flyby sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">FLYBY2.WAV</td>
+    <td align="left">Flyby sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLYBY3.WAV</td>
+    <td align="left">Flyby sound</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">FORCE1.WAV</td>
+    <td align="left">Deep forcefield hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FORCE2.WAV</td>
+    <td align="left">Force field shutting off</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">FORCE3.WAV</td>
+    <td align="left">Spark sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FUSEIN.WAV</td>
+
+    <td align="left">Plugin sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FUSEOUT.WAV</td>
+    <td align="left">Unplug sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">INCOMING.WAV</td>
+    <td align="left">Computer: &quot;Incoming air strike.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">KLAXON1.WAV</td>
+    <td align="left">Warning klaxon</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">KLAXON2.WAV</td>
+    <td align="left">High pitched klaxon</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LAND.WAV</td>
+
+    <td align="left">Hit the ground</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LASER.WAV</td>
+    <td align="left">Laser hum</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">LASHUM1.WAV</td>
+    <td align="left">Few second delay, then &quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LASOFF1.WAV</td>
+    <td align="left">Laser hum, fades away</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">LAVA1.WAV</td>
+    <td align="left">Lava fizzling</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_ON1.WAV</td>
+    <td align="left">Lights on</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_ON2.WAV</td>
+    <td align="left">Lights on</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_ON3.WAV</td>
+
+    <td align="left">Lights fade on</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_OUT.WAV</td>
+    <td align="left">Lights out</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">L_HUM1.WAV</td>
+    <td align="left">Light fizzling sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">L_HUM2.WAV</td>
+    <td align="left">Deep light hum</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">MACH1.WAV</td>
+    <td align="left">Rackety machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">MACH2.WAV</td>
+    <td align="left">Longer rackety machines</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">MACH3.WAV</td>
+    <td align="left">Slower rackety machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">MOV_WATR.WAV</td>
+
+    <td align="left">Moving water</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PILOT1.WAV</td>
+    <td align="left">Pilot: &quot;We had a fix on target but no lock.
+    Re-establish contact with ground unit and paint us a clean target.&quot;</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">PILOT2.WAV</td>
+    <td align="left">Pilot: &quot;Mother goose, target is painted and green
+    for fox 3. ECM is active and I'm going &lt;something&gt; for payload delivery.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PILOT3.WAV</td>
+
+    <td align="left">Pilot: &quot;Red leader, this is papa sierra 3-3. We
+    need some paint on the ground for payload.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PUMP1.WAV</td>
+    <td align="left">Pump machines</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">PUMP2.WAV</td>
+    <td align="left">Pump machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PUMP3.WAV</td>
+    <td align="left">Pumping hum</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">PUMPING.WAV</td>
+    <td align="left">Computer: &quot;Pumping system activated.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PYRAMID.WAV</td>
+    <td align="left">Alien pyramid moving</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">QUAKE.WAV</td>
+    <td align="left">Earthquake sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RADIO2.WAV</td>
+
+    <td align="left">Radio fizzling sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RADIO3.WAV</td>
+    <td align="left">Radio fizzling sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">REACTOR.WAV</td>
+    <td align="left">Computer: &quot;Reactor core exposed.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">REDFORCE.WAV</td>
+    <td align="left">Computer: &quot;Red force fields deactivated.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">RIC1.WAV</td>
+    <td align="left">Bullet ricocheting</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RIC2.WAV</td>
+
+    <td align="left">Bullet ricocheting</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RIC3.WAV</td>
+    <td align="left">Bullet ricocheting</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">ROCKS1.WAV</td>
+    <td align="left">Rocks tumbling</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SCAN1.WAV</td>
+    <td align="left">Alien scanner sound</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">SHORT1.WAV</td>
+    <td align="left">Electrical short</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK1.WAV</td>
+    <td align="left">Sparks</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK2.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK3.WAV</td>
+
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK5.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">SPARK6.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK7.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">STEAM1.WAV</td>
+    <td align="left">Steam puff</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">STEAM2.WAV</td>
+    <td align="left">Steam puff, longer</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">STEAM3.WAV</td>
+    <td align="left">Four steam puffs</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">STP_WATR.WAV</td>
+
+    <td align="left">Water swish</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">TELE1.WAV</td>
+    <td align="left">Teleporter hum</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">TRAIN1.WAV</td>
+    <td align="left">Train racketing</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">TRAIN2.WAV</td>
+    <td align="left">Train stopping</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">TURBINE1.WAV</td>
+    <td align="left">Turbine hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">UPLINK2.WAV</td>
+    <td align="left">Computer: &quot;Communication uplink
+    established.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">VENTSYS.WAV</td>
+    <td align="left">Computer: &quot;Ventilation systems activated.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE1.WAV</td>
+
+    <td align="left">Radio: &quot;All pods launched.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE10.WAV</td>
+    <td align="left">Radio: &quot;All personnel copying this transmission
+    rendezvous at designated points alpha, bravo, charlie.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">VOICE11.WAV</td>
+    <td align="left">Radio: &quot;Establish communications, priority
+    alpha.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE3.WAV</td>
+    <td align="left">Radio: &quot;Remaining fire teams engage in primary
+    and secondary objectives</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE4.WAV</td>
+    <td align="left">Radio: &quot;Reporting 80%, failing vital sign
+    track.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE5.WAV</td>
+
+    <td align="left">Radio: &quot;All squad leaders coordinate with sister
+    tapes.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE6.WAV</td>
+    <td align="left">Radio: &quot;Any squad leaders this freq. fall back to
+    primary L-Z.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">VOICE7.WAV</td>
+    <td align="left">Radio: &quot;Reporting 95%, failing vital sign
+    track.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS1.WAV</td>
+    <td align="left">Radio: &quot;EOD confirms bridge is down.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS2.WAV</td>
+    <td align="left">Radio: &quot;Last recon beta indicates access through
+    sewers.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS3.WAV</td>
+
+    <td align="left">Radio: &quot;&lt;something&gt; indicate possible
+    camouflaged access in wet sector 432.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS4.WAV</td>
+    <td align="left">Radio: &quot;Recon established and confirm heavy
+    fortification near enemy comm facility.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS5.WAV</td>
+    <td align="left">Radio: &quot;Copy that recon 1 charlie. Scan for
+    keycode pass now.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS6.WAV</td>
+
+    <td align="left">Radio: &quot;Marines we're at %5 ground force
+    operational status.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_CIT1.WAV</td>
+    <td align="left">Radio: &quot;All units locate and acquire working
+    enemy data device.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">V_CIT2.WAV</td>
+    <td align="left">Radio: &quot;We have a disable and destroy order on
+    communication link.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_CMD1.WAV</td>
+    <td align="left">Radio: &quot;All units, we have a disable and destroy
+    order on enemy central computer.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_CMD2.WAV</td>
+    <td align="left">Radio: &quot;All units, we have target confirmation
+    for EOD on enemy launch computers and black hole generator.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_FAC2.WAV</td>
+
+    <td align="left">Radio: &quot;We have confirmed visual on troops
+    being....being disassembled.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_FAC3.WAV</td>
+    <td align="left">Radio: &quot;Somebody shut that place down.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">V_GUN1.WAV</td>
+    <td align="left">Radio: &quot;Disable and destroy orders are green for
+    big gun and primary area.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_GUN2.WAV</td>
+    <td align="left">Radio: &quot;IR just spiked in big gun area. Explosion
+    imminent.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_WAR1.WAV</td>
+    <td align="left">Radio: &quot;Tactical has given a disable and destroy
+    order on enemy supply train.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">WATER1.WAV</td>
+
+    <td align="left">Water leaking</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">WIND2.WAV</td>
+    <td align="left">Wind rushing</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">XIAN1.WAV</td>
+    <td align="left">Groovy beat</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">XIANBEATS.WAV</td>
+    <td align="left">Another shorter groovy beat</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">X_ALARM.WAV</td>
+    <td align="left">A klaxon, almost identical to KLAXON2.WAV</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">X_LIGHT.WAV</td>
+    <td align="left">Alien light</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">YELFORCE.WAV</td>
+    <td align="left">Computer: &quot;Yellow force fields deactivated.&quot;</td>
+  </tr>
+</table>
+</ul></body></html>

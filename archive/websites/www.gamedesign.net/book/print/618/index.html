@@ -1,0 +1,799 @@
+<html><head><title>Env</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="618" name="618" class="book-h1">Env</h1><!-- Submitted by Andy Sep 2004 -->
+<a name="Top"><h3>Half-Life Env Entities</H3></a>
+Originally written for <a href="http://www.cariad.co.za/twhl/">TWHL</a>
+<!--Start Description-->
+<p><b><ul>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_beam">Env_beam</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_beverage">Env_beverage</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_blood">Env_blood</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_bubbles">Env_bubbles</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_explosion">Env_explosion</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_fade">Env_fade</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_funnel">Env_funnel</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_global">Env_global</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_glow">Env_glow</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_laser">Env_laser</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_message">Env_message</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_render">Env_render</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_shake">Env_shake</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_shooter">Env_shooter</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_sound">Env_sound</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_spark">Env_spark</a></li>
+	<li><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_sprite">Env_sprite</a></li>
+<br></ul></b></p>
+<hr noshade color="black">
+<!--break-->
+<br>
+
+<!--Next Entity-->
+
+<a name="env_beam"><h3>env_beam</h3></a>
+<p>Creates a laser or 'beam' effect between two points. </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - The Name of the entity.</p>
+  <p><b>Start Entity</b> -  The name of the entity at which the beam will 
+  begin.</p>
+  <p><b>Ending Entity</b> - The name of the entity at which the beam will 
+  end.</p>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Brightness</b> - The value of the Render Mode, between 0 and 255. 
+  'Solid' mode simply needs a non-0 value to work, while in other modes 
+  translucency is controlled by this value.</p>
+ <p><b> Beam Color</b> - An RGB value that controls the colour of the object 
+  rendering. Only Color and Glow Render Modes use the Render Color property, but 
+  other entities also use it under different SmartEdit names. </p>
+ <p><b>Radius</b> - Noise radius or the amount of 'radial static movement' in the beam.</p>
+ <p><b>Life</b> - Time for beam to stay on, in seconds. <font color=red>0</font> is infinite.</p> 
+ <p><b>Width of beam </b> - Width of beam in (pixels*0.1). Range: 0-255.</p>
+ <p><b>Amount of noise</b> - 'Static' or beam movement. Range: 0-255.</p>
+ <p><b>Sprite Name</b> - Name of sprite to use as beam's texture.</p>
+ <p><b>Texture Scroll Rate</b> - How fast the texture should scroll along the beam. Range: 0-100.</p>
+ <p><b>Frames per 10 seconds</b> - Framerate for sprite texture animation. (<font color=red>0</font> is none)</p>
+ <p><b>Starting Frame</b> - Sprite animation frame at which to begin.</p>
+ <p><b>Strike again time</b> - How long to wait after the beam has turned itself off before it should start again, in 10ths of a second. Range: 0-255.</p>
+ <p><b>Damage / second</b> - Damage done to monsters or the player when beam hits them.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Start On</font> - Entity will start on (or active). This usually only has effect if the entity is given a name (most entities that aren't given names start on anyway), or has its Toggle flag set on.<br>
+ <font color=red>(2) Toggle</font> - With this flag set on, an entity can be turned on and off, either by the player, or by being triggered.<br>
+ <font color=red>(4) Random Strike</font> - The beam will strike at randon points along a defined path.<br>
+ <font color=red>(8) Ring</font> - Forms a ring between the two targets.<br>
+ <font color=red>(16) StartSparks</font> - Generates a Spark Sprite at the beam start.<br>
+ <font color=red>(32) EndSparks</font> - As above, but at the beam end.<br>
+ <font color=red>(64) Decal End</font> - Decals (bullet holes) may appear where the beam hits objects. Good for laser trace lines.<br>
+ <font color=red>(128) Shade Start</font> - Start of beam fades away.<br>
+ <font color=red>(256) Shade End</font> -  End of beam fades away.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b>:<br>
+None<br><br>
+
+<b>Notes:</b><br>
+  Info_target entities can be used as the beam start and end points.<br>
+  You can create moving beams by using func_trains as the targets, but they need an origin brush for the beam to aim at.<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity-->
+
+<a name="env_beverage"><h3>env_beverage</h3></a><br>
+
+  <p>Creates a Monstermaker for beverage cans .. </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+   <p><b>Name</b> - The Name of the entity, so it can be triggered.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Capacity</b> - The number of times the entity can be triggered. Once this number has been spawned, further triggering will result in nothing (vending machines run out, you know).</p>
+  <p><b>Beverage Type</b> - The texture of the cans. Values:</p>
+<blockquote>
+  0 = Coca-Cola<br>
+  1 = Sprite<br>
+  2 = Diet Coke<br>
+  3 = Orange<br>
+  4 = Surge<br>
+  5 = Moxie<br>
+  6 = Random<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+
+<b>Notes:</b><br>
+  Each can gives the player 1 health.
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity-->
+
+<a name="env_blood"><h3>env_blood</h3></a>
+  <p>Creates a Blood Spurting entity. </p>
+ <hr color=gray noshade width=75%>
+ <!--break-->
+<h3>Properties</h3>
+   <p><b>Name</b> - The Name of the entity, so it can be triggered.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Blood color</b> - <font color=red>0</font> for red, <font color=red>1</font> for yellow.
+  <p><b>Amount of blood</b> - The higher the value, the more gruesome.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Random Direction</font> - Blood sprays randomly, ignoring Yaw value.<br>
+  <font color=red>(2) Blood Stream</font> - Shoots a stream of particles instead of just a splash.<br>
+  <font color=red>(4) On Player</font> - The blood emanates from the player that triggered it.<br>
+  <font color=red>(8) Spray decals</font> - Creates blood decals on any surface in the direction the 
+  blood shoots.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+ <b>Notes:</b><br>
+  Dripping water? What has that got to do with env_blood? Good Question, Jeff 'Yesukai' Pritchard wrote a tutorial on Collective called: <a href="http://collective.valve-erc.com/index.php?doc=1037633927-89598500"> Cool looking Dripping Water</a> showing how to turn the humble env_blood into a drip making machine.
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity-->
+
+<a name="env_bubbles"><h3>env_bubbles</h3></a>
+   <p>Creates a stream of rising bubbles. </p>
+  <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+    <p><b>Name</b> - The Name of the entity, so it can be triggered.</p>
+    <p><b>Bubble density</b> - The number of bubbles produced.</p>
+    <p><b>Bubble frequency</b> - The higher the value, the shorter the delay between each set of bubbles being produced.</p>
+    <p><b>Speed of Current</b> - The speed the bubbles move in the direction specified by the angle.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1)Start Off</font> -  With this flag set, the entity will need to be triggered before 
+  becoming active.
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+ 
+<b>Notes:</b><br>
+  This is the only brush-based env entity.<br>
+  Horizontal streams of bubbles cannot be produced with this entity. Use a cycler entity instead, with the 'pipe_bubbles.mdl' model.<br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+
+
+<a name="env_explosion"><h3>env_explosion</h3></a>
+<p>This entity creates any combination of fireball, smoke, sparks, decals and 
+sound, also known as an explosion. </p> 
+  <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+    <p><b>Name</b> - The Name of the entity.</p>
+    <p><b>Magnitude</b> - The size of the explosion. 100 is average.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) No Damage</font> - Explosion won't cause any damage.<br>
+  <font color=red>(2) Repeatable</font> - Entity can be triggered more than once.<br>
+  <font color=red>(4) No Fireball</font> - There is no orange fireball. It won't look much like an explosion...<br>
+  <font color=red>(8) No Smoke</font> - Creates a pollution-free explosion.<br>
+  <font color=red>(16) No Decals</font> - No scorch marks are left behind.<br>
+  <font color=red> (32) No Sparks</font> - No sparks fly out.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+ 
+<b>Notes:</b><br>
+  It's possible to create a similar effect with a combination of other entities, but it wouldn't be much fun, so this quick and easy one is here instead!<br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+
+<a name="env_fade"><h3>env_fade</h3></a>
+   <p>Creates a screen fade effect. </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+ <p><b>Name</b> - The Name of the entity.</p>
+ <p><b>Duration</b> - Duration of effect in seconds.</p>
+ <p><b>Hold Fade</b> - Time to hold fade, in seconds.</p>
+ <p><b>Fade Alpha</b> - The value of the Render Mode, between 0 and 255. 
+  'Solid' mode simply needs a non-0 value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>Fade Color</b> - An RGB value that controls the colour of the object 
+  rendering. Only Color and Glow Render Modes use the Render Color property, but 
+  other entities also use it under different SmartEdit names. </p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Fade From</font> - Normal fade is from the 'Normal Colour' of the screen to the 'Fade Colour'. If you check this flag the process is reversed.<br>
+  <font color=red>(2) Modulate</font> - Attenuates the 'Screen Colours' in RBG with the "Fade Colours'.<br>
+</blockquote>
+ <hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+
+<b>Notes:</b><br>
+  This is normally used when switching from 'Player' to 'Camera' View to avoid jerky cut scene starts.<br>
+Also used in conjunction with 'Special Game' enties to finish levels when the player dies.<br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+
+<a name="env_funnel"><h3>env_funnel</h3></a>
+  <p>Produces a funnel of little sprites, as seen in the Half-Life disaster sequence.. </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+ <p><b>Name</b> - The Name of the entity for triggering.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>Reverse</font> - Use this to reverse the effect.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+None.<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+
+<a name="env_global"><h3>env_global</h3></a>
+  <p>This entity stores 'global' variables across levels, so you can set a state in 
+one level, and retrieve it in another. </p>
+  <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+   <p><b>Name</b> -  Trigger the env_global to set its Initial State. You can 
+  alternatively set the Set Initial State flag on to do this automatically when 
+  the level loads.</p>
+  <p><b>Global State to Set</b> - The name of the global variable you want to set. This name must be the Global State to Read value of entities such as the multisource, that read the global state.</p>
+  <p><b>Trigger Mode</b> - Values:</p>
+<blockquote>
+ 0 = Off<br>
+ 1 = On<br>
+ 2 = Dead<br>
+ 3 = Toggle<br>
+</blockquote>
+ <p>This is the state that the global variable is set to when the env_global is triggered. If it is set to Toggle, the state will be toggled between on and off whenever the env_global is triggered, starting on the Initial State value.</p>
+ <p><b>Initial State</b> - This is the state the global variable is given when the level loads, if the Set Initial State flag is enabled. Also, it is the first state given to the variable if Trigger Mode is toggle. Values are:</p>
+<blockquote>
+ 0 =  Off<br>
+ 1 = On<br>
+ 2 = Dead<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+<font color=red>Set Initial State</font> - If enabled, the global variable is set to its Inital State when the level loads, rather than when the entity is triggered.
+</blockquote>
+ <hr noshade color="gray">
+<b>Related Entities</b><br>
+Almost every Entity that requires a Global.<br><br>
+ 
+<b>Notes:</b><br>
+None.<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="env_glow"><h3>env_glow</h3></a>
+   <p>Based on the env_sprite, this entity was specifically designed to create light 
+halo effects.  </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+   <p><b>Name</b> - This entity cannot be toggled on and off, although the 
+  env_sprite can.</p>
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>path/filename.spr of sprite</b> - The sprite to be used by the entity. The default is 'sprites/flare1.spr', but you can see them all by browsing the 'sprites' folder in the 'pak0.pak' file.</p>
+  <p><b>Scale</b> - The scale that the sprite should be drawn at.</p>
+<h3>Flags:</h3>
+<blockquote>
+None
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+<a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_sprite">Env_sprite</a><br><br>
+
+<b>Notes:</b><br>
+Normally used to produce a Halo effect around lights, to give it more ambience. The ability to match the colour of the light with the colour of the Glow, makes it more realistic. Just be careful of the size...<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+
+<a name=:env_laser"><h3>env_laser</h3></a>
+   <p>Creates a damaging beam. Based on the env_beam, so everything it does can be 
+done by an env_beam.  </p>
+<hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+<p><b>Name</b> - If given a name, the beam will start off, unless the Start On flag is set.</p>
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target of laser</b> - The beam will be emitted from the entity and will end at this target.</p>
+ <p><b>Brightness</b> - The higher this number, the less transparent the beam. 
+  <p><b>Beam Color</b> - An RGB value that controls the colour of the object rendering. You can pick the colour from the Smart button.</p>
+  <p><b>Width of beam</b> - The beam width. It will be rendered in-game as the number multiplied by 0.1 to produce the width in pixels. Range: 0-255.</p>
+  <p><b>Amount of noise</b> - The higher this value, the more the beam jumps around. <font color=red>0</font> is stationary. Range: 0-255.</p>
+ <p><b>Sprite Name</b> - The name of the sprite used as a texture. Default is 
+  'sprites/laserbeam.spr'.</p>
+  <p><b>End Sprite</b> - This sprite is placed where the laser beam ends.</p>
+  <p><b>Texture Scroll Rate</b> - The speed at which the texture sprite 
+  scrolls across the beam. Range: 0-100.</p>
+ <p><b>Starting Frame</b> - Set the frame on which to begin animating. 
+  Allows you to select different-looking beams from a multi-frame (animated) 
+  sprite.</p>
+  <p><b>Damage / second</b> - Specify the amount of damage to be done per second 
+  by the beam.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Start On</font> - Entity will start on (or active). This usually only has effect 
+  if the entity is given a name (most entities that aren't given names start on anyway), or has its Toggle flag set on.<br>
+  <font color=red>(16) Start Sparks</font> - Makes sparks shoot out of the env_laser's point.<br>
+ <font color=red>(32) End Sparks</font> - Sparks are emitted from the target (end) point.<br>
+  <font color=red>(64) Decal End</font> - Creates scorch marks at the end of the beam.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+<a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_beam">Env_beam</a><br><br>
+
+<b>Notes:</b><br>
+  env_laser differs from env_beam in that instead of the beam being created between two points, the env_laser entity acts as the start point, with the beam extending to a target.<br>
+ The simplest target to use is the info_node entity, but anything with a name can be used, including brush-based entities (such as func_wall).<br>
+ In this case, the brush needs to be grouped with an origin brush that defines the targetted point. An origin brush is any brush with the texture called 'origin' on all faces.<br>
+  If you have multiple entities with the same name as the laser target, the beam will jump from point to point randomly, originating always from the  env_laser's location.<br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- by Next Entity -->
+	 	 
+<a name="env_message"><h3>env_message</h3></a>
+  <p>This entity allows you to display text messages with  sound for the player. </p>
+<hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - Give the entity a name so that it can be triggered. </p>
+  <p><b>Target</b> - When an entity is activated, it triggers the entity with the name specified by Target.</p>
+  <p><b>Message Name</b> - The text of the message (see note below)</p>
+  <p><b>path/filename.wav of WAV</b> - This will be the path to a WAV file from the sounds folder</p>
+  <p><b>Volume 0-10</b> - Loud or not.</p>
+  <p><b>Sound Radius</b>- Values:</p>
+<blockquote>
+  0 = Small Radius<br>
+  1 = Medium Radius<br>
+  2 = Large Radius<br>
+  3 = Play Everywhere<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(1) Play Once</font> - The text will only be triggered once.<br>
+<font color=red>(2) All Clients</font> - Everyone will see the message<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+
+<b>Notes:</b><br>
+ This entity only allows the use of predefined text messages. These are found in the 'titles.txt' file in the root of 'pak0.pak', in your 'Half-Life\valve\' folder. Browse the PAK with a PAK viewer (like PakExplorer), and open the 'titles.txt' file. The format is:<br><br>
+NAME<br>
+{<br>
+Message<br>
+}<br><br>
+This entity is only really useful for mods, where a custom 'titles.txt' file is distributed, either in the PAK, or in the mod's root folder. To see how to construct your own file, read through Valve's comments in their one.
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+
+<a name="env_render">	<h3>env_render</h3></a>
+   <p>This entity allows you to change the rendering properties of most of the visible 
+entities in the game (monsters, func_walls etc.), while the map is running. The 
+four render properties of the env_render will be copied to its target. </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - Entity must be triggered to activate. </p>
+  <p><b>Target</b> - The name of the entity whose properties are to be changed. </p>
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+<b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+<p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) No Renderfx</font> - Render FX will not be copied.<br>
+  <font color=red>(2) No Renderamt</font> - Render Amount will not be copied.<br>
+  <font color=red>(4) No Rendermode</font> - Render Mode will not be copied.<br>
+  <font color=red>(8) No Rendercolor</font> - Render Color will not be copied.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+
+<b>Notes:</b><br>
+  Use this entity to fake situations that would be impossible for the game engine, such as apparently binding multiple entities together (e.g. a moving doorhandle on a rotating door). With a bit of careful setup, it is possible to let the the doorhandle move first, then become invisible, then let the door move (with a static doorhandle attached).<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="env_shake"><h3>env_shake</h3></a>
+  <p>This entity produces a shake effect that is useful for big explosions, large guns and the 
+like. </p>
+<hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - Give the entity a name so that it can be triggered. </p>
+  <p><b>Amplitude 0-16</b> - The power of the shake.</p>
+  <p><b>Effect Radius</b> - The radius around the entity in which the effect is 
+  'felt'.</p>
+  <p><b>Duration</b> - Time the effect lasts in seconds.</p>
+  <p><b>0.1 = jerk, 255.0 = rumble</b> - The frequency of the vibration. The 
+  higher the number, the lower the frequency.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1)  GlobalShake</font> - Shake occurs everywhere.
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+
+<b>Notes:</b><br>
+  There used to be two other flags, In Air and Disrupt Control, that sound interesting, but were obviously not implemented.<br><br>
+  <hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+
+<a name="env_shooter"><h3>env_shooter</h3></a>
+   <p>The env_shooter shoots out models or sprites or Gibs.</p>
+<hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - Provide a name so that the entity can be triggered. </p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Number of Gibs</b> - The number of gibs that will be spawned on 
+  activation.</p>
+  <p><b>Delay between shots</b> - The time in seconds between each gib being shotout. <font color=red>0</font> means they are all expelled at once.</p>
+  <p><b>Gib Velocity</b> - The speed that gibs are shot out.</p>
+  <p><b>Course Variance</b> - How much each gib's direction will vary from the normal.</p>
+  <p><b>Gib Life</b> - Time in seconds that gibs are visible.</p>
+<p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+<b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+<p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Model or Sprite name</b> - The path and name of the model or sprite to be shot. e.g. 'models/model.mdl' or 'sprites/sprite.mdl'.</p>
+  <p><b>Material Sound</b> - The sound that is produced when gibs hit the ground. Values:</p>
+<blockquote>
+  -1 = None<br>
+  0 = Glass<br>
+  1 = Wood<br>
+  2 = Metal<br>
+  3 = Flesh<br>
+  4 = Concrete<br>
+</blockquote>
+  <p><b>Gib Sprite Scale</b> - Applies to sprites only. Sets their scale.</p>
+  <p><b>Gib Skin</b> - Applies to models only. Sets the skin if more than one is available.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Repeatable</font> - Allows the entity to be triggered more than once.
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  You will need a model viewer such as HLMV to browse the models that are available. To see sprites, use the model viewer to extract the .spr files, then open them with a sprite viewer.<br>
+A full Gib list is available at <a href="http://collective.valve-erc.com/index.php?doc=1083484325-81541000">Collective</a>.<br>
+If you do decide for some reason to shoot heaps of Barneys all over the joint, just remember that the models center will not have been initialised. Which means they will sink into the floor up to their waste.<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	  
+
+<a name="env_sound">	<h3>env_sound</h3></a>
+   <p>This entity controls how the ambient sounds are processed. Use it to enhance the atmosphere of a particular area.</p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Radius</b> - When the player passes through an part of this area around 
+  the entity, the sound style is triggered on.</p>
+ <p><b>Room Type</b> - The sound setting to use. Types are:</p>
+<blockquote>
+        0 = Normal (off)<br>
+        1 = Generic<br>
+        2 = Metal Small<br>
+        3 = Metal Medium<br>
+        4 = Metal Large<br>
+        5 = Tunnel Small<br>
+        6 = Tunnel Medium<br>
+        7 = Tunnel Large<br>
+        8 = Chamber Small<br>
+        9 = Chamber Medium<br>
+   10 = Chamber Large<br>
+        11 = Bright Small<br>
+        12 = Bright Medium<br>
+        13 = Bright Large<br>
+        14 = Water 1<br>
+        15 = Water 2<br>
+        16 = Water 3<br>
+        17 = Concrete Small<br>
+        18 = Concrete Medium<br>
+        19 = Concrete Large<br>
+   20 = Big 1<br>
+        21 = Big 2<br>
+        22 = Big 3<br>
+        23 = Cavern Small<br>
+        24 = Cavern Medium<br>
+        25 = Cavern Large<br>
+        26 = Weirdo 1<br>
+        27 = Weirdo 2<br>
+        28 = Weirdo 3 <br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  Once the player has had a particular sound style applied, it stays with the player until it is changed by another env_sound. The setting can be returned to normal by forcing the player to pass through an env_sound with a Room Type of 0 (Normal).<br><br>
+Typically these entities are placed above doorways and set the sound for the room. As the player passes into the room, the 'Room Type' is initiated, it effects footsteps, and anything else that makes a sound in that room. Another env_sound at the exit of the same type and setting will cancel the effect.<br><br>
+<hr noshade color="gray">
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity  -->
+	 
+
+<a name="env_spark"><h3>env_spark</h3></a>
+   <p>Produces an electrical spark effect.</p>
+<hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - When given a name, and with the Toggle flag set on, you 
+  can turn the entity on and off.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Max Delay</b> - Maximum delay between sparks.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(32) Toggle</font> - With this flag set on, an entity can be turned on and off, either by the player, or by being triggered.<br>
+  <font color=red>(64)Start On</font> - Entity will start on (or active). This usually only has effect if the entity is given a name (most entities that aren't given names start on anyway), or has its Toggle flag set on.<br>
+</blockquote>
+<hr noshade color="gray">
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+None<br><br><hr noshade color="gray">
+
+</a><p align=center><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+
+<!-- by Next Entity -->
+	 
+
+<a name="env_sprite"><h3>env_sprite</h3></a>
+  <p>Places a sprite (small 2D image) in your map. </p>
+ <hr color=gray noshade width=75%>
+<!--break-->
+<h3>Properties</h3>
+  <p><b>Name</b> - Giving the env_sprite a name will allow it to be triggered 
+  on and off.</p>
+<p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+<b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+<p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>Framerate</b> - For animated sprites, controls the framerate.</p>
+  <p><b>Sprite Name</b> - The path and name of the sprite as found in the PAK 
+  (default is 'sprites/glow01.spr').</p>
+  <p><b>Scale</b> - Sets the scale. Default is 1:1. If you leave this setting blank, the sprite will be set at it's optimum initial scale. Sometimes this is NOT 1:1. Entering a value of <font color=red>1</font> here may increase the size of a standard sprite.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Start On</font> - Entity will start on (or active). This usually only has effect if the entity is given a name (most entities that aren't given names start on anyway), or has its Toggle flag set on.<br>
+ <font color=red>(2) Play Once</font> - With animated sprites, makes the sprite play through its frames only once before it needs to be re-triggered to work.<br>
+</blockquote>
+<b>Related Entities</b><br>
+<a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#env_glow">Env_glow</a><br><br>
+
+<b>Notes:</b><br>
+  To see all the sprites you can use, browse through the 'pak0.pak' file found in your 'Half-Life\valve\' folder with a PAK viewer (such as HLMV). Extract the .spr files and open them with SprView.<br><br>
+<hr noshade color="gray">
+<p align="center"><a href="book/view/618?PHPSESSID=0f3aa51df30c0ed0b107e9a983df2bb6#Top">Top Of Page</a>
+<hr noshade color="black">
+<br></body></html>

@@ -1,0 +1,1741 @@
+<html><head><title>Day of Defeat Tutorials</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="1084" name="1084" class="book-h1">Day of Defeat Tutorials</h1><!--Submitted by Andy on behalf of Nick Robins-->
+<h1>Day of Defeat</h1>
+<blockquote>Mapping Day of Defeat - by Nick Robins<br />
+The information in this series of tutorials is compatible with DoD v1.3 and I am hoping to provide all the functionality of Nick's original site, while adding some of my own information.<br /> Happy DoD mapping - Andy
+</blockquote>
+<h1>DoD mapping tutorials</h1>
+<p>Below are direct links to all the tutorials and guides for DoD. If you are a first time DoD level designer without Half-Life level design experience, it is suggested that you get the hang of making simple levels for Half-Life first, as that will give you excellent grounding and a better understanding of the information provided.</p>
+<p>If you are a long time HL level designer, and thought you would give DoD a try :-) then the most important tutorial in this lot is <b><a href="/node/1090">Required Entities</a></b> which outlines the basic Entity setup and provides instructions on how to get the map running in Steam.</p>
+<p>Also listed under the References is a simple <a href="../content/dod/dodtest.zip">Example Map</a> showing the basic setup for a three flag system. This map also provides examples of clipping using special textures, creating sandbags walls with a dod_trigger_sandbag and using dod_object for non scoring objectives (Blowing a wall).</P>
+			<h3>Creating Objective Systems</h3>
+			<ul>
+				<li><a href="/node/1085">Using DoD's flag capture system</a></li>
+				<li><a href="/node/1086">Using DoD's object system</a></li>
+			</ul>
+			<h3>Player Spawns</h3>
+			<ul>
+				<li><a href="/node/1087">Moving spawns</a></li>
+				<li><a href="/node/1088">Protecting spawns</a></li>
+			</ul>
+			<h3>Design Tutorials</h3>
+			<ul>
+				<li><a href="/node/1090">Required entitys</a></li>
+				<li><a href="/node/1091">Using masters in DoD maps</a></li>
+				<li><a href="/node/1092">Placing models in DoD maps</a></li>
+				<li><a href="/node/1093">Class limits</a></li>
+				<li><a href="/node/1094">Packaging maps for release</a></li>
+			</ul>
+				<h3>References</h3>
+		<p><a href="/node/1089">DoD Entity Reference</a></p>
+		<p>A link to: <a href="http://www.mardymouse.co.uk/modules.php?name=Downloads&d_op=viewdownloaddetails&lid=5&ttitle=Haircut's_Hammer_fgd_file">Haircut's fgd file</a></p>
+		<p>Direct download  <a href="../content/dod/dodv4mod.zip">Andy's modified fgd file</a>
+		<p>Download the <a href="../content/dod/dodtest.zip">Example Map</a></p>
+	<br />
+	<hr /><h1 id="1101" name="1101" class="book-h1">Objective Systems</h1><ul><h1>Objective Systems</h1>
+<p><b>Flag Systems</b> - covers the requirements for creating a level based on the Capture The Flag principles. It covers setup of entities, flags and scoring.</p>
+
+<p><b>Object Systems</b> -  covers levels requiring the player to obtain an 'Object' to complete the map. It also deals with the use of 'TnT' to blow walls.</p></ul><h1 id="1085" name="1085" class="book-h2">Flag System</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>DoD Flag Objectives</h1>
+<p>Most DoD maps use CTF or <span style="font-weight: bold;">C</span>ontrol <span style="font-weight: bold;">T</span>he <span style="font-weight: bold;">F</span>lags as the primary mission objective. This example will consist of five flags, the central flag will require two players five seconds to cap.</p>
+	<p>Entitys used:</p>
+	<ul>
+		<li><a href="/node/1096#flag">dod_control_point</a></li>
+		<li><a href="/node/1096#area">dod_capture_area</a></li>
+		<li><a href="/node/1097#master">dod_control_point_master</a></li>
+		<li><a href="/node/1097#score">dod_score_ent</a></li>
+	</ul>
+<hr />
+<p><span style="font-weight: bold;">Step one</span>: Set up the scoring.</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1097#score">dod_score_ent</a> from the drop down menu in the sidebar on the right. Place two of these entitys somewhere suitable (this entity has no visible presence in game so place them somewhere convenient for you, such as near where the central flag will be).</p>
+<center>
+<img src="content/dod/tables/flag1.jpg" width="379" height="164" alt="Scoring Setup" title="Scoring Setup" />
+</center>	
+<p><span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;tweaking</span>:<br />
+<span style="font-style: italic;">points</span> - this specifys points awarded for mission completion (in this example a map capture).</p>
+	<hr />
+<p><span style="font-weight: bold;">Step two</span>: Adding the master.</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1097#master">dod_control_point_master</a> from the drop down menu in the sidebar on the right. Place the entity somewhere suitable (this entity has no visible presence in game so place it somewhere convenient for you, such as near where the central flag will be).</p>
+<center>
+<img src="content/dod/tables/cpmaster.jpg" width="335" height="164" alt="CP master setting" title="CP master setting" />
+</center>		
+<p><span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;tweaking</span>:<br />
+<span style="font-style: italic;">time between point gives</span> - one of the functions of the <b>dod_control_point_master</b> is to award points to the teams for each of the flags they hold. The interval is set here.</p>
+	<hr />
+<p><span style="font-weight: bold;">Step three</span>: Adding the flags</p>
+<center>
+<a href="content/dod/reference/flaglocation.jpg"><img src="content/dod/reference/flaglocation_small.jpg" width="123" height="108" alt="placing flags" /></a><br />
+click to enlarge
+</center>
+<p>Select the point entity tool (ctrl-e) and select <a href="/node/1096#flag">dod_control_point</a> from the drop down menu in the right-hand sidebar. Place five of these. One where you want each of the flags to appear.</p>
+<p><span style="font-weight: bold; color: #FF0000">Note</span>: to prevent the flag from &quot;levitating&quot; make sure that the brush face forming the ground bisects the entity box of the dod_control_point (see picture above).</p>
+<center>
+<img src="content/dod/tables/dcp.jpg" width="218" height="101" alt="dod_control_point" title="dod_control_point" />
+</center>	
+<p>Group name is the only field required for the flag(s) to function, however the central flag (which is to be captured via an area) needs more fields adjusting).</p>
+<center>
+<img src="content/dod/tables/dcp2.jpg" width="264" height="166" alt="dod_control_point" title="dod_control_point" />
+</center>	
+	<p>This flag will still require the &quot;can [team] touch?&quot; fields setting even if it is to be inaccesible (like the central flag in dod_thunder) in order to make the capture area progress display correctly.</p>
+<p><span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;tweaking</span>:</p>
+	<ul>
+		<li><span style="font-style: italic;">control point name</span> - the name that the players will see in-game eg; &quot;Church&quot;</li>
+		<li><span style="font-style: italic;">time based points value</span> - how many points the team holding the flag will receive for each time period specified in the <span style="font-weight: bold;">dod_control_point_master</span></li>
+		<li><span style="font-style: italic;">points to capturer</span> - how many points the player who caps the flag is awarded</li>
+		<li><span style="font-style: italic;">control point index</span> - the location of the control point tell-tale in the players HUD. 1 is the far left, counting up to n which is the right hand end, -1 (default) is random placement. </li>
+	</ul>
+		<hr />
+<p><span style="font-weight: bold;">Step four</span>: Adding the capture area</p>
+<p>Create a brush completely covered with the &quot;aaatrigger&quot; texture. place this brush where you want the capture area to be. To make the brush into a capture area select it then click &quot;tools - tie to entity&quot; (ctrl+t) then select <a href="/node/1096#area">dod_capture_area</a> from the drop down list in object properties (alt+enter).</p>
+<center>
+<img src="content/dod/tables/dcp3.jpg" width="317" height="199" alt="dod_control_point" title="dod_control_point" />
+</center>	
+<p>For testing purposes it might be convenient to change the &quot;number required to cap&quot; fields to 1.</p>
+</ul><h1 id="1086" name="1086" class="book-h2">Object System</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Object Objectives</h1>
+<p><a href="/node/1096#object">dod_object</a> and <a href="/node/1096#goal">dod_object_goal</a> combinations can be used for both primary and secondary objectives.</p>
+<h1>DoD v1.X</h1>
+<p>In DoD v1.X a <span style="font-weight: bold">dod_object_goal</span> is no longer required to make a simple wall that can be demolished with TnT (<span style="font-weight: bold">dod_object</span>) as all the settings required such as &quot;objective group&quot;, &quot;time delay&quot;, &quot;trigger when tnt is set&quot; can all be made directly on the <a href="/node/1099#break">func_breakable</a> representing the wall. My original &quot;object objective&quot; tutorial on setting up demolishable walls can be found <a href="/node/1100">here</a>. This tutorial will create a simple &quot;Capture the Documents&quot; <span style="font-weight: bold">primary</span> objective for the allied team.</p>
+<p>The difference between a primary and a secondary objective is the final target entity for the completion of the objective. For a primary objective the target entity will be a <a href="/node/1097#score">dod_score_ent</a> (possibly via another entity such as a <span style="font-weight: bold">multi_manager</span>) which will end the round when the objective is completed. For a secondary objective the target entity can be virtually anything depending on the desired result of completion.</p>
+<p>Entitys to trigger on completion can be specified in the properties of either the object or the goal. For a primary objective (such as &quot;capture the documents&quot;) the entity to trigger on completion should probably be named in the properties of the <span style="font-weight: bold">dod_object</span> since this is the key item, this also allows you to specify mutiple &quot;delivery sites&quot;.</p>
+<p><span style="font-weight: bold">dod_object_goal</span> has no team specific function, if you wish to make team specific object objectives then the objects / goals should be separated into two objective groups (one for each team), and the team specific options set on the <span style="font-weight: bold">dod_object</span>.</p>
+<p>It is possible to have a mixture of team specific objects and non team specific objects in a single group, it is also possible to have some of the objects in a group specific to one team and others specific to the other team. Caution is advised when mixing teams in this way, especially in regard to how objective completion is triggered.</p>
+<p>Entitys used:</p>
+	<ul>
+		<li><a href="/node/1096#object">dod_object</a></li>
+		<li><a href="/node/1096#goal">dod_object_goal</a></li>
+		<li>multi_manager</li>
+		<li><a href="/node/1097#score">dod_score_ent</a></li>
+	</ul>
+<p>Optional</p>
+	<ul>
+		<li>ambient_generic</li>
+	</ul>
+<p>See <a href="/node/1086#docs">related documents</a> for non DoD entity references</p>
+<hr />
+<p><span style="font-weight: bold">Step one</span>: Place the <span style="font-weight: bold">dod_score_ent</span></p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1097#score">dod_score_ent</a> from the drop down menu in the sidebar on the right. Place the entity somewhere suitable (this entity has no visible presence in game so place it somewhere convenient for you). Select the dod_score_ent and open object properties (alt+enter) and give it a suitable name such as <i>allies_win</i>. </p>
+<center>
+<img src="content/dod/tables/dscer.jpg" width="195" height="165" alt="Dod Score Ent" title="Dod Score Ent" />&nbsp;&nbsp;
+<img src="content/dod/tables/dsceo.jpg" width="205" height="165" alt="Dod Score Ent" title="Dod Score Ent" />
+</center>	
+<p>dod_score_ent (with the standard FGD) will automatically assign 10 points as the winners award. The &quot;message&quot; feild is the text that appears in large letters in the center of the screen when the objective is completed.</p>
+<p>The &quot;reset X&quot; feilds are not usually used, they may be needed if you have a complex setup with multiple missions using masters, in order to make sure that things are correctly reset before they are disabled.</p>
+<p><span style="font-weight: bold; font-style: italic">DO NOT</span> set &quot;end game&quot; to yes</span>, doing so will cause the server to exit when the entity is triggered.</p>
+<hr />
+<p><span style="font-weight: bold">Step two</span>: Add a &quot;controler&quot;</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1086#docs">multi_manager</a> from the drop down menu in the sidebar on the right. Place the entity somewhere suitable (this entity has no visible presence in game so place it somewhere convenient for you, next to the dod_score_ent is good). Select the multi_manager and open object properties (alt+enter) and give it a suitable name such as <span style="font-style: italic">allies_capture</span>. Next click the button in the object properties window labled <span style="font-weight: bold">smartedit</span>, this enables you to add keys to the entity. Click <span style="font-weight: bold">new key</span> and enter these values:</p>
+<center>
+<img src="content/dod/tables/mm1.jpg" width="162" height="101" alt="Controller" title="Controller" />
+</center>	
+<p>this means that &quot;allies_win&quot; (the dod_score_env) will be immediately the multi_manager is fired. This function could be carried out by a trigger_relay but using a multi_manager allows other effects to be triggered as well, such as extra text (in addtion to the text provided by the dod_score_ent) and victory music.</p>
+<hr />
+<p><span style="font-weight: bold">Step three</span>: Adding the target zone</p>
+<p>Create a brush completely covered with the &quot;aatrigger&quot; texture. Place this brush covering the volume where you want the documents to be delivered</p>
+<p>To make the brush into a target select it then click &quot;tools - tie to entity&quot; (ctrl+t) then select <a href="/node/1096#goal">dod_object_goal</a> from the drop down list in object properties (alt+enter). Other properties to be modified are:</p>
+<center>
+<img src="content/dod/tables/dogr.jpg" width="258" height="267" alt="Dod Object Goal" title="Dod Object Goal" />&nbsp;&nbsp;
+<img src="content/dod/tables/dogo.jpg" width="257" height="153" alt="Dod Object Goal" title="Dod Object Goal" />
+</center>	
+<p>By default dod_object_goal displays a TNT sprite if you are in the zone without the required object, a simple &quot;allies target&quot; sprite could be substituted if there is no &quot;documents&quot; sprite avaliable.</p>
+<hr />
+<p><span style="font-weight: bold">Step four</span>: Adding the documents</p>
+<p>Select the point entity tool (shift-e) and select <a href="1096#object">dod_object</a> from the drop down menu in the sidebar on the right. place the entity where you want it to appear.<br /> <span style="font-weight: bold">Note</span>: dod_object(s) are affected by gravity so if placed above the desired point, it will drop to the ground when the map starts.</p>
+<p>Select the dod_object and open object properties (alt+enter).</p>
+<center>
+<img src="content/dod/tables/do.jpg" width="370" height="197" alt="Dod Object" title="Dod Object" />
+</center>	
+<p>This is now a functional mission, to create a similar mission for the axis all you have to do is replace &quot;allies&quot; with &quot;axis&quot; in all the entitys.</p>
+<hr />
+<h3>Optional</h3>
+<p>Adding victory music</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1086#docs">ambient_generic</a> from the drop down menu in the sidebar on the right. The music will apear to be coming from the location where you place the entity so putting it somewhere near the center of the map is probably best.</p>
+<center>
+<img src="content/dod/tables/ambient.jpg" width="326" height="262" alt="Ambient Generic" title="Ambient Generic" />
+</center>
+<p>Next select the multi_manager and add a new key.</p>
+<center>
+<img src="content/dod/tables/mm2.jpg" width="183" height="103" alt="Multi Manager" title="Multi Manager" />
+</center>
+<hr />
+<h4>Related documents</h4>
+<a name="docs"></a>
+<p>Half-Life entity references:</p>
+<p><span style="font-weight: bold"><a href="/node/959#multimanager">multi_manager</a></span></p>
+<p><span style="font-weight: bold"><a href="/node/959#ambient_generic">ambient_generic</a></span></p>
+<p>Many of the standard Half-Life entitys have additional functionality added from <a href="http://spirit.valve-erc.com">Spirit of Half Life</a>. Check the SoHL entity guide for details of these, but bear in mind that the entity guide is for the latest version of Spirit whereas DoD incorporates version 0.4 (SoHL version 0.4 is still avaliable for download at the Spirit homepage and will include the relevant entity guide).</p>
+<p><a href="http://spirit.valve-erc.com/guide/EntityGuide.html">http://spirit.valve-erc.com/guide/EntityGuide.html</a></p>
+</ul><h1 id="1100" name="1100" class="book-h3">Old Objects</h1><ul><blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Old Object Objectives</h1>
+<p><a href="/node/1096#object">dod_object</a> and <a href="/node/1096#goal">dod_object_goal</a> combinations can be used for both primary and secondary objectives.</p>
+<h4>DoD v1.0</h4>
+<p>In DoD v1.0 the process outlined here is no longer required to make a simple wall that can be demolished with TnT (<span style="font-weight: bold;">dod_object</span>) as all the settings required such as &quot;objective group&quot;, &quot;time delay&quot;, &quot;trigger when tnt is set&quot; can all be made directly on the <a href="/node/1099#break">func_breakable</a>. This process will still work but requires more entitys.</p>
+<p>The difference between a primary and a secondary objective is the final target entity for the completion of the objective. For a primary objective the target entity will be a <a href="1097#score">dod_score_ent</a> (possibly via another entity such as a <span style="font-weight: bold;">multi_manager</span>) which will end the round when the objective is completed. For a secondary objective the target entity can be virtually anything depending on the desired result of completion.</p>
+	<p>Entitys to trigger on completion can be specified in the properties of either the object or the goal. in this example the objective is to blow a wall up as a secondary objective. Since there can be multiple walls and bombs the completion target is specified in the properties of the <span style="font-weight: bold;">dod_object_goal</span>. For a primary objective (such as &quot;capture the documents&quot;) the entity to trigger on completion should probably be named in the properties of the <span style="font-weight: bold;">dod_object</span>.</p>
+	<p><span style="font-weight: bold;">dod_object_goal</span> has no team specific function, if you wish to make team specific object objectives then the objects / goals should be separated into two objective groups (one for each team), and the team specific options set on the <span style="font-weight: bold;">dod_object</span>.</p>
+	<p>It is possible to have a mixture of team specific objects and non team specific objects in a single group, it is also possible to have some of the objects in a group specific to one team and others specific to the other team. Caution is advised when mixing teams in this way, especially in regard to how objective completion is triggered.</p>
+	<p>entitys used:</p>
+	<ul>
+		<li><a href="/node/1096#object">dod_object</a></li>
+		<li><a href="/node/1096#goal">dod_object_goal</a></li>
+		<li>multi_manager</li>
+		<li><a href="/node/1099#break">func_breakable</a></li>
+	</ul>
+	<p>optional:</p>
+	<ul>
+		<li>env_sprite</li>
+	</ul>
+<p>see <a href="/node/1100#docs">related documents</a> for non DoD entity references</p>
+<hr />
+<p><span style="font-weight: bold">Step one</span>: Making the wall</p>
+<p>Place the wall that is going to be blown up, this may consist of more than one brush depending on situation but for now make a single brush and select it. To make the brush breakable select &quot;tools - tie to entity&quot; (ctrl+t) then select <a href="/node/1099#break">func_breakable</a> from the drop down list in object properties (alt+enter), then modify the properties of the entity as follows:</p>
+<center>
+<img src="content/dod/tables/funcbreak.jpg" width="200" height="198" alt="Func breakable required" title="Func breakable required" />&nbsp;&nbsp;
+<img src="content/dod/tables/funcbreak2.jpg" width="256" height="185" alt="Func breakable optional" title="Func breakable optional" />
+</center>
+<p>If multiple brushes are used they can either all be tied to the same entity or all the entitys making up a wall should have the same name.</p>
+<p><span style="font-weight: bold;">Note</span>: subsequent walls (in the same system) would be called wall_2, wall_3, etc.</p>
+<p>The value of between 150 to 200 for <span style="font-weight: bold;">explode magnitude</span> is the size of the explosion that will accompany the wall breaking. This explosion is not required to remove the wall, it is the result of the wall breaking and will happen as long as the <span style="font-weight: bold;">explode magnitude</span> is greater than zero. Somewhere in the range 150 to 200 is large enough to be convincing for a demolition charge but not large enough to kill at unreasonable distances.</p>
+<p>Selecting <span style="font-weight: bold;">material type</span> <i>cinderblock</i> will tell half-life to use the cinderblock gib model for the pieces of wall.</p>
+<hr />
+<p><span style="font-weight: bold;">Step two</span>: Add a &quot;detonator&quot;</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1100#docs">multi_manager</a> from the drop down menu in the sidebar on the right. Place the entity somewhere suitable (this entity has no visible presence in game so place it somewhere convenient for you, next to the wall is good). Select the multi_manager and open object properties (alt+enter) and give it a suitable name such as <span style="font-style: italic;">wall_1_det</span>. Next click the button in the object properties window labelled <span style="font-weight: bold;">smartedit</span>, this enables you to add keys to the entity. Click <span style="font-weight: bold;">new key</span> and enter these values:</p>
+<center>
+<img src="content/dod/tables/mm3.jpg" width="163" height="104" alt="multimanager" title="multimanager" />
+</center>	
+<p>This means that &quot;wall_1&quot; (the func_breakable) will be triggered five seconds after the multi_manager is fired. This function could be carried out by a trigger_relay but using a multi_manager allows other effects to be triggered as well, such as text, sound or a visual count-down.</p>
+<hr />
+<p><span style="font-weight: bold;">Step three</span>: Adding the target zone</p>
+<center>
+<a href="content/dod/reference/objectgoal.jpg"><img src="content/dod/reference/objectgoal_small.jpg" width="128" height="108" alt="trigger brush" title="trigger brush" /></a><br />
+		click to enlarge
+</center>
+	<p>Create a brush completely covered with the &quot;aaatrigger&quot; texture. Place this brush next to the func_breakable wall, usually the best method is to make this brush the same size as the wall but protruding about 16 grid units out from it</p>
+	<p>To make the brush into a target select it then click &quot;tools - tie to entity&quot; (ctrl+t) then select <a href="1096#goal">dod_object_goal</a> from the drop down list in object properties (alt+enter). Other properties to be modified are:</p>
+	<center>
+<img src="content/dod/tables/dodobjectgoal.jpg" width="305" height="230" alt="Dod_object_goal" title="Dod_object_goal" />
+</center>
+<hr />
+	<p><span style="font-weight: bold;">Step four</span>: Adding the TNT</p>
+	<p>Select the point entity tool (shift-e) and select <a href="1096#object">dod_object</a> from the drop down menu in the sidebar on the right. Place the entity where you want it to appear. <span style="font-weight: bold;">Note</span>: dod_object(s) are affected by gravity so if placed above the desired point, it will drop to the ground when the map starts.</p>
+	<p>Select the dod_object and open object properties (alt+enter). the only field here that <span class="under">must</span> be completed is the <span style="font-weight: bold;">group</span> field. the other properties, such as restricting to a team are usually used in a &quot;proper&quot; map but are not required here.</p>
+<center>
+<img src="content/dod/tables/dodobject.jpg" width="195" height="102" alt="Dod_object" title="Dod_object" />
+</center>
+<p>Once you have one tnt set up, you can create as many as you like by shift-dragging it.</p>
+<h3>Optional</h3>
+	<p>Adding more walls</p>
+	<p>Each wall consists of:</p>
+		<ul>
+			<li>dod_object_goal</li>
+			<li>multi_manager</li>
+			<li>func_breakable</li>
+		</ul>
+<p>In order to add more walls just repeat the process outlined in steps one to three above, renaming entitys (wall_1 => wall_2, wall_1_det => wall_2_det, etc) as appropriate. You can have more bombs (<a href="1096#object">dod_object</a>) than walls (<a href="1096#goal">dod_object_goal</a>) or more walls than bombs, this is one of the advantages of the DoD objective group system.</p>
+<h3>Optional</h3>
+	<p>Adding a visual (numeric) countdown</p>
+	<center>
+<a href="content/dod/reference/placesprite.jpg"><img src="content/dod/reference/placesprite_small.jpg" width="128" height="108" alt="sprite placement" title="sprite placement" /></a><br />
+		click to enlarge
+		</center>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1100#docs">env_sprite</a> from the drop down menu in the sidebar on the right. Place the entity where you want it to appear (see picture).</p>
+	<p>Don't worry too much about precise placement at first as the entity box size will change when you specify the sprite.</p>
+<center>
+<img src="content/dod/tables/env_sprite.jpg" width="433" height="230" alt="Env_sprite" title="Env_sprite" />
+</center>
+<p>This sprite counts down from 5 to 1 in red. So it looks best with a five second delay on the explosion.</p>
+<p>Next select the multi_manager for this wall and add a new key.</p>
+<center>
+<img src="content/dod/tables/mm4.jpg" width="189" height="101" alt="multimanager" title="multimanager" />
+</center>	
+<hr /><a id="docs">&nbsp;</a>
+<h3>Related documents</h3>
+	<p>Half-Life entity references:</p>
+	<p><span style="font-weight: bold;"><a href="/node/959#multimanager">multi_manager</a></span></p>
+	<p><span style="font-weight: bold;"><a href="/node/954#env_sprite">env_sprite</span></a></p>
+	<p>Many of the standard Half-Life entitys have additional functionality added from <a href="http://spirit.valve-erc.com">Spirit of Half Life</a>. Check the SoHL entity guide for details of these, but bear in mind that the entity guide is for the latest version of Spirit whereas DoD incorporates version 0.4 (SoHL version 0.4 is still avaliable for download at the Spirit homepage and will include the relevant entity guide).</p>
+<p><a href="http://spirit.valve-erc.com/guide/EntityGuide.html">Spirit Entity Guide</a></p>
+</ul><h1 id="1102" name="1102" class="book-h1">Player Spawns</h1><ul><h1>Player Spawn info</h1>
+<p><b>Spawn Advance</b> -  details the methods used to advance player spawn points based on completed objectives.</p>
+<p><b>Protect Spawns</b> -  details methods used to make sure that 'enemy' players do not have access to your teams spawn points.</p></ul><h1 id="1087" name="1087" class="book-h2">Spawn Advance</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Advancing Spawns</h1>
+<p>DoD spawns do not actually move, the SoHL &quot;movewith&quot; feature does not work with the player start entitys. The spawns are &quot;moved&quot; by turning one set off and another set on, creating the illusion of movement.</p>
+<p>Spawn activity is controlled by using <a href="/node/1091">masters</a>. There are two mastering methods available to a mapper for controlling whether a spawn point is active at a given point.</p>
+<h3><a href="/node/1087#halflife">Using a Half-Life master</a></h3>
+<p>A single half-life master can control two sets of spawns for each team by using the &quot;invert master&quot; SoHL function (more spawn stages can be set up but the entity set-up will be quite complex). This method also makes setting up spawn protection (using the modified <a href="/node/1099#hurt">trigger_hurt</a> or <a href="/node/1099#teleport">trigger_teleport</a> entitys) relativly simple as these can be set up to use the same master as the player spawn points.</p>
+<h3><a href="/node/1087#dod">Using a DoD master</a></h3>
+<p>DoD's &quot;spawn cp master&quot; function using a single &quot;master flag&quot; can control three sets of spawns for each team. This method is simpler to set up (for a basic system there are no extra entitys required other than the extra spawns), but spawn protection can be harder to set up.</p>
+<p>It is possible to have more than three spawn stages using either method but this would require an entity set-up that could get quite complex. In addition to problems with complexity, each spawn set (for a single team) should consist of 20 info_player_[team]'s, thus for three spawn stages per side would mean a total of 120 (20 spawns x3 stages x2 teams) entitys are required for the player starts alone. This could cause the entity limit to be hit quite quickly.</p><hr /><a id="halflife">&nbsp;</a>
+<h1>Half-Life master</h1>
+	<p>Using an <span style="font-weight: bold;">env_state</span> as the master</p>
+	<p>Entitys used:</p>
+		<ul>
+			<li><a href="/node/1095#dod">info_player_allies</a></li>
+			<li><a href="/node/1095#dod">info_player_axis</a></li>
+			<li>Env_state</li>
+			<li>Trigger_relay</li>
+			<li>Func_button</li>
+		</ul>
+	<p>See <a href="/node/1087#docs">related documents</a> for non DoD entity references</p>
+	<hr />
+<p><span style="font-weight: bold;">Step one</span>: Add the master</p>
+<p>Select the point entity tool (shift-e) and select <span style="font-weight: bold;">env_state</span> from the drop down menu in the sidebar on the right. Place the entity somewhere suitable (this entity has no visible presence in game so place it somewhere convenient for you. Press alt+enter to bring up the properties.</p>
+<center>
+<img src="content/dod/tables/envstate.jpg" width="233" height="102" alt="Env_state" title="Env_state" />
+</center>	
+<hr />
+<p><span style="font-weight: bold;">Step two</span>: Master controls</p>
+<p>Select the point entity tool (shift-e) and select <span style="font-weight: bold;">trigger_relay</span> from the drop down menu in the sidebar on the right. Place two of these entitys somewhere suitable (this entity has no visible presence in game so place them somewhere convenient for you, such as either side of the master).</p>
+<center>
+<img src="content/dod/tables/triggerrelay.jpg" width="255" height="165" alt="Trigger Relay" title="Trigger Relay" />&nbsp;&nbsp;
+<img src="content/dod/tables/triggerrelay2.jpg" width="257" height="167" alt="Trigger Relay" title="Trigger Relay" />
+</center>
+<hr />
+<p><span style="font-weight: bold;">Step three</span>: Adding the spawns</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1095#dod">info_player_allies</a> from the drop down menu in the sidebar on the right. Place one of these entitys at one end of your map, place an <a href="/node/1095#dod">info_player_axis</a> next to it.</p>
+<center>
+<img src="content/dod/tables/ipa.jpg" width="232" height="101" alt="Info_player_allies" title="Info_player_allies" />&nbsp;&nbsp;
+<img src="content/dod/tables/ipax.jpg" width="245" height="101" alt="Info_player_axis" title="Info_player_axis" />
+</center>
+<p>Note the tilde <span style="font-size: large; font-weight: bold;">~</span> in the master field for the <span style="font-weight: bold;">info_player_axis</span>, this inverts the master.</p>
+<p>Add another <span style="font-weight: bold;">info_player_allies</span> and another <span style="font-weight: bold;">info_player_axis</span> at the other end of the map. These will need their masters set to the opposite state.</p>
+<center>
+<img src="content/dod/tables/ipa2.jpg" width="245" height="101" alt="Info_player_allies2" title="Info_player_allies2" />&nbsp;&nbsp;
+<img src="content/dod/tables/ipax2.jpg" width="233" height="101" alt="Info_player_axis2" title="Info_player_axis2" />
+</center>
+<p>Once these four are in place the remaining desired player starts can be placed by copying.</p>
+<hr />
+<p><span style="font-weight: bold;">Step four</span>: Adding switches for testing</p>
+<p>Normally in a playable map the spawns will be switched or moved by an event ocouring, usually the completion of an objective (major or minor) by one or other team. For testing purposes <span style="font-weight: bold;">func_buttons</span> can be used to alter the spawns.</p>
+<p>Create two func_buttons, place the brushes and select <span style="font-style: italic;">tools</span> - <span style="font-style: italic;">tie to entity</span> (ctrl-t) change the entity type to func_button</p>
+<center>
+<img src="content/dod/tables/func_button.jpg" width="200" height="101" alt="Info_player_allies2" title="Info_player_allies2" />&nbsp;&nbsp;
+<img src="content/dod/tables/func_button2.jpg" width="202" height="101" alt="Info_player_axis2" title="Info_player_axis2" />
+</center>
+<p>Testing moving spawn entity set-ups can be a pain as you have to operate the entitys, then kill yourself in order to make sure you respawn at the correct place, this process may have to be repeated over and over.</p><a id="dod">&nbsp;</a>
+<hr />
+
+<h1>DoD master</h1>
+<p>Using a <span style="font-weight: bold;">dod_control_point</span> as the master.</p>
+<p>Entitys used:</p>
+<ul>
+			<li><a href="/node/1095#dod">info_player_allies</a></li>
+			<li><a href="/node/1095#dod">info_player_axis</a></li>
+			<li><a href="/node/1096#flag">dod_control_point</a></li>
+</ul>
+<p><span style="font-weight: bold;">Step one</span>: Build a flag map.</p>
+<p>See the <a href="/node/1085">DoD Flag Objectives</a> tutorial if required.</p>
+<hr />
+<p><span style="font-weight: bold;">Step two</span>: Name the control flag</p>
+<p>Select the <span style="font-weight: bold;">dod_control_point</span> you want to use as the master, often this will be the central flag.</p>
+<center>
+<img src="content/dod/tables/dodcp.jpg" width="231" height="101" alt="Dod Control point" title="Dod Control point" />&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="content/dod/reference/flag_props.jpg"><img src="content/dod/reference/flag_props_small.jpg" width="130" height="77" alt="flag properties"  /></a>&nbsp;&nbsp;Click to enlarge
+</center>
+<p><span style="font-weight: bold;">Note</span>: This is the <span style="font-style: italic;">name</span> field and not <span style="font-style: italic;">control point name</span> (see picture above)</p>
+<hr />
+<p><span style="font-weight: bold;">Step three</span>: Add more player starts</p>
+<p>Select the point entity tool (shift-e) and select <a href="/node/1095#dod">info_player_allies</a> from the drop down menu in the sidebar on the right. Place three of these entitys around your map, make sure that you have some way of telling where you have spawned when the points are active. Place three <a href="/node/1095#dod">info_player_axis</a> likewise. All the spawns need the <span style="font-weight: bold;">master control point</span> field specified (see image below).</p>
+<center>
+<img src="content/dod/tables/mcipa.jpg" width="255" height="119" alt="IPA Master" title="IPA MAster" />&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="content/dod/tables/mcipax.jpg" width="255" height="119" alt="IPAX Master" title="IPAX MAster" />
+</center>
+<p>For each state that the controlling flag can be in, the player start has a yes/no choice box to select whether or not this player start will be active for that flag state. These need to be set up as follows.</p>
+<center>
+<img src="content/dod/tables/flagstate.jpg" width="292" height="184" alt="Spawn flag state" title="Spawn flag state" />&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="content/dod/reference/spawn_props.jpg"><img src="content/dod/reference/spawn_props_small.jpg" width="130" height="77" alt="flag properties"  /></a>&nbsp;&nbsp;Click to enlarge
+</center>
+<p>This is now a functioning system very similar to the ones in dod_zafod and dod_heutau. Furthur spawns can be created by copying.</p>
+<hr />
+<h3>Optional</h3>
+<p>Hiding the master control point</p>
+<p>The <span style="font-weight: bold;">dod_control_point</span> that is controlling the spawns does not have to be one of those required for a mission objective. The master dod_control_point can be put into a separate objective group, and hidden (both visually and on a players HUD). The state of the dod_control_point can be controlled using <a href="/node/1097#flagrelay">dod_point_relay</a>(s).</p>
+<p>A hidden master flag group should consist of one <a href="/node/1097#master">dod_control_point_master</a> and two hidden <a href="/node/1096#flag">dod_control_point</a>(s). The second <span style="font-weight: bold;">dod_control_point</span> should be set to be neutral. Its purpose is to prevent the groups (required) <span style="font-weight: bold;">dod_control_point_master</span> from constantly triggering when the master flag is &quot;held&quot; by a team.</p>
+<p>These are the properties to change in order to hide a control point</p>
+<center>
+<img src="content/dod/tables/dodcphidden.jpg" width="497" height="325" alt="Hidden Control point" title="Hidden Control point" />
+</center>
+<p>It shouldn't be nessasary to set the &quot;can [TEAM] cap&quot; fields, just place the hidden control point(s) well out of the reach of the players.</p><a id="docs">&nbsp;</a><hr />
+<h3>Related documents</h3>
+<p>Half-Life Entity References:</p>
+<p><span style="font-weight: bold;"><a href="/node/961#trigger_relay">trigger_relay</a></span></p>
+<p><span style="font-weight: bold;"><a href="/node/959#func_button">func_button</a></span></p>
+<p>Many of the standard Half-Life entitys have additional functionality added from <a href="http://spirit.valve-erc.com">Spirit of Half Life</a>. Check the SoHL entity guide for details of these, but bear in mind that the entity guide is for the latest version of Spirit whereas DoD incorporates version 0.4 (SoHL version 0.4 is still avaliable for download at the Spirit homepage and will include the relevant entity guide).</p>
+<p><span style="font-weight: bold;"><a href="/node/954#env_state">env_state</a></span>&nbsp;</p></ul><h1 id="1088" name="1088" class="book-h2">Protect Spawns</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Spawn Protection</h1>
+<p>There are several methods and entitys that can be used to protect spawn areas in DoD. These fall into two broad categories.</p>
+	<ul>
+		<li>Physical - players cannot enter the spawn area from the outside without help.</li>
+		<li>Punishment - punitive action is applied to players in a forbidden area.</li>
+	</ul>
+<p>Usually a combination of methods will be used. A normal set up is to attempt to exclude players physically and to have punishment as a back up for those people who succeed in geting past.</p>
+<hr />
+<h3>Physical protection</h3>
+<h4>Ramps</h4>
+<p>This is the simplest method and requires no entitys, simply arrange your spawn exits with ramps shaped such that a player can run up and over the ramp from the spawn side but not from the  map side. It may still be possible to access the spawn area via player boosting. This method also requires no extra work for maps where the teams change ends.</p>
+<p style="font-style: italic;">Just a note from Andy..<br />
+Too many DoD maps suffer from spawn areas that are easily attacked and the spawn area covered by direct fire of the opposite team. I have always thought that the best spawn area, was one that allowed spawning players the ability to exit several areas.</span></p>
+<h4>Team only doors</h4>
+<p><a href="/node/1099#doors">func_door</a> and <a href="/node/1099#doors">func_door_rotating</a> both have options to make the door team specific. This is relativly easy to set up. The team specific nature of the doors only prevents enemy players from opening the doors, it does not prevent enemy players from running in when the door is open (this can sometimes be solved by using double doors (similar to an airlock).</p>
+<h4>Switching doors</h4>
+<p>In order to protect a spawn that can be used by both sides (eg dod_schwetz) with team specific doors, it will be nessasary to set up the doors to only open when triggered, usually using a <a href="/node/1099#multi">trigger_multiple</a>. If the trigger is inside then the spawn will be mostly secure. Two team specific trigger_multiple(s) can also be used (the one that is not desired can be disabled using a master).</p>
+<h4>Pushing players</h4>
+<p>A <span style="font-weight: bold;"><a href="/node/961#trigger_push">trigger_push</a></span> placed in the spawn exit can prevent anybody from entering the spawn area from the map.</p>
+<hr />
+<h3>Punishment</h3>
+<h4>Hurting offenders</h4>
+<p>The entity <a href="/node/1099#hurt">trigger_hurt</a> in DoD has two flags added (&quot;don't hurt allies&quot; and &quot;don't hurt axis&quot;) enabling mappers to world kill (quickly or slowly) any enemy player who enters a spawn area. This entity can also be enabled and disabled using masters, allowing the spawn area to be used by either team if required.</p>
+<h4>Teleporting offenders away</h4>
+<p><a href="/node/1099#teleport">trigger_teleport</a> has two flags added (&quot;no allies&quot; and &quot;no axis&quot;) to make it team specific, enabling the rapid removal of a player from a spawn area (usually to a prison or somewhere very dangerous). Trigger_teleport can also have a master.</p>
+<h4>Removing an offenders weapons</h4>
+<p><a href="/node/959#player_weaponstrip">Player_weaponstrip</a> is a standard half-life entity which removes all of the triggering players weapons. Since players can pick up weapons in DoD 1.X this may not be a very effective method of punishment on it's own.</p>
+<h4>Reducing an offenders score</h4>
+<p><a href="/node/959#game_score">Game_score</a> is a standard half-life entity which alters the triggering players score. By specifiying a negative number in the &quot;points to add&quot; field then the players score will be reduced. there is also an &quot;allow negative&quot; flag.</p>
+<h4>Blowing offenders away</h4>
+<p>The various <a href="node/1099#tank">func_tank</a> entitys have been modified to allow them to be friendly to either allies or axis, this allows you to make &quot;autocannons&quot; that will attack any &quot;enemy&quot; that they see.</p>
+<hr />
+<h4>Punishment notes</h4>
+<p><span style="font-weight: bold;">trigger_hurt</span> and <span style="font-weight: bold;">trigger_teleport</span> will affect a player as soon as they enter the trigger volume.</p>
+<p><span style="font-weight: bold;">player_weaponstrip</span> and <span style="font-weight: bold;">game_score</span> require the player to trigger them. This is best acomplished using a team specific <a href="/node/1099#multi">trigger_multiple</a> if the map requires the teams to change ends then multiple triggers should be used with masters to control which trigger is active.</p></ul><h1 id="1103" name="1103" class="book-h1">Design Tutorials</h1><ul><h1>Design Tutorials</h1>
+<p>This is a general series of tutorials designed to give the level designer some insight to using entities to get the most out of their levels.</p>
+<p><b>Required Entities</b> lists the entities that are required to get your DoD level up and running. Without these entities, a DoD level will not be recognised.</p>
+<p><b>Using Masters</b> enhances your level design and introduces master usage in DoD</p>
+<p><b>Placing Models</b> discusses common ways of including Models in your level.</p>
+<p><b>Class Limits</b> allows the designer to limit the number of players with access to Player classes.</p>
+<p><b>Map Release notes</b> is a generic style tutorial covering the things you need to know before releasing your brilliant level on the world.</p></ul><h1 id="1090" name="1090" class="book-h2">Required Entities</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Required Entitys</h1>
+	<p>A DoD map must contain the required entitys in order for the map to load and play.</p>
+	<p><a href="/node/1095#player">info_player_start</a></p>
+	<p><a href="/node/1095#observer">info_player_observer</a></p>
+	<p>Prior to DoD beta 3.0 these entitys were required for HLTV (and possibly for the in game cut-scenes). Since DoD beta 3.0 these entities are provided by the DoD library (dll or so) and it is not necessarily required to include them any longer. However if you wish to play your map using a beta version of dod you will probably require them.</p>
+<p>Note: Since Hammer 3.4 was designed for DoD 3.0, you will constantly receive error warnings when you check the map for problems is you don't include an info_player_start. These warnings are insignificant and do not effect the level you are designing.</p>
+<p>&nbsp;</p>
+	<p><a href="/node/1095#dod">info_player_allies</a></p>
+	<p>This is the entity looked for by a server to see if the map is a valid DoD map.</p>
+<p>&nbsp;</p>
+	<p><a href="/node/1095#dod">info_player_allies</a></p>
+	<p><a href="/node/1095#dod">info_player_axis</a></p>
+	<p>These entitys are required to allow the player to spawn. To prevent telefragging the dod spawn system hunts for an empty spawn location, if the are no vacant spawns available in the map the player may not be able to spawn, or may spawn at an odd location, (often the world grid origin).</p>
+	<p>For a map large enough to hold 32 players you should ensure that there are always 20 active player starts for each team.</p></ul><h1 id="1091" name="1091" class="book-h2">Using Masters</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Masters</h1>
+	<p>The Half-Life master system is a method of enabling and disabling entities based on the status (on or off) of another entity. Generally this will mean that if the master is in state <span class="font-style: italic;">off</span> then the entity will be disabled (but see below on using Spirit of Half Life <a href="/node/1091#prefix">prefixes</a>). An entity which is disabled will not fire if triggered but will complete a sequence if it was triggered before its master was disabled.</p>
+	<h3>Master entities</h3>
+	<p>A master in half life will usually be a <span style="font-weight: bold;">multisource</span>, in DoD multisources can be used and in some cases will be the only way of achieving the desired effect.</p>
+	<h1>Multisource</h1>
+	<p>As its name implies a multisource can have a number of inputs. These are tested using logical <span style="font-weight: bold;">AND</span>, that is the multisource will only be active if all of its inputs are active. in this respect the multisource has been made obsolete by the SoHL entity <span style="font-weight: bold;">multi_watcher</span> which allows a choice of logic tests to be applied.</p>
+	<p><span style="font-weight: bold;">Note</span> problems with <span class="font-style: italic;">multisource</span> and <span class="font-style: italic;">multi_watcher</span>: Neither of these entities appears to unset (for re-triggering) at the start of a new round. This is possibly due to them being implemented for a single player game.</p>
+	<p>A multisource can also have its state set by a <span style="font-weight: bold;">global variable</span> set by an <span style="font-weight: bold;">env_global</span>, the important point here is that a global variable does not reset when a new round is started. This means that if you wish to have different spawn locations or mission objectives in different rounds you must use an env_global/multisource combination somewhere in the control sequence.</p>
+	<p><span style="font-weight: bold;">Note</span>: The global variable does not reset when a new map loads, as long as the server remains running the global variable will remain. If the &quot;set initial state &quot; flag is not set then the global variable can affect the map when (or if) the server rotates back to the map where it was set.</p>
+	<h4>RUST references</h4>
+	<p><a href="/node/959#multisource">multisource</a><br />
+	<a href="/node/954#env_global">env_global</a><br /></p>
+<hr />
+	<h1>Env_state</h1>
+	<p><a href="http://spirit.valve-erc.com">Spirit of Half Life</a></p>
+	<p>Env_state is an entity included in DoD from SoHL. It is designed to be used as a master. At the simplest level the job of an env_state is to be either off or on and to toggle between these two states, although there are additional features available, eg an env_state can fire another entity on state changes.</p>
+	<p>A useful trick with an env_state is explicitly setting its state. By creating a trigger_relay (or other entity) targeting the env_state, with "trigger to send" set correctly ("on" or "off") you can create an entity which will force the env_state into the state you desire (if the env_state is already in the desired state, the trigger will still fire the env_state but will have no effect). This can also be achieved by using a <a href="/node/1091#prefix">prefix</a></p>
+<hr />
+	<h1>Other entitys</h1>
+	<p><a href="http://spirit.valve-erc.com">Spirit of Half Life</a></p>
+	<p>Using Spirit <span style="font-weight: bold;">ANY</span> entity can be a master.</p>
+	<p>The majority of the time either a <span class="font-style: italic;">multisource</span> or an <span class="font-style: italic;">env_state</span> will be the preferred option as a master. However in some circumstances this SoHL feature can allow a significant reduction in the number of entities required for an effect and/or be much more convenient.</p>
+<h4>SoHL prefixes</h4>
+	<p><a id="prefix">&nbsp;</a><a href="http://spirit.valve-erc.com">Spirit of Half Life</a></p>
+<ul>
+	<li>Prefixing the name of a target entity with <span style="font-size: large; font-weight: bold;">+</span> produces a 'turn on' trigger, eg <span style="font-weight: bold;">+light1</span> will only set light1 into state &quot;on&quot;.</li>
+	<li>Prefixing the name of a target entity with <span style="font-size: large; font-weight: bold;">-</span> produces a 'turn off' trigger, eg <span style="font-weight: bold;">-light1</span> will only set light1 into state &quot;off&quot;.</li></ul>
+	<p><span style="font-weight: bold;">Note</span>: I have had some problems using this feature; it does not always seem to work</p>
+	<p>If the entity is already in the required state then the trigger request will still go through but will have no effect.</p>
+<ul>
+	<li>Using tilde <span style="font-size: large; font-weight: bold;">~</span> as a prefix to an entity named as a <span style="font-weight: bold;">master</span> will invert the master relationship, the entity will only be active when the master is <span class="font-style: italic;">inactive</span>. For example an entity with a master named as follows:</li>
+</ul>
+	<p>Master: ~group_master</p>
+	<p>Will only trigger if 'group_master' is in state &quot;off&quot;.</p>
+	<p>This is a imensely useful feature. Often it is the case that you want to have two systems, only one of which can be active at a time, previously this would require two masters and extra entities to keep them in sync and opposed in state, now just the one master entity is required and much simpler control gear which just has to toggle the master on and off.</p>
+<hr />
+<h1>Masters in DoD</h1>
+	<p><a id="dod">&nbsp;</a>DoD also has two areas of interest when using masters.</p>
+<ol>
+<li>Using a master with a <a href="/node/1097#master">dod_control_point_master</a></li>
+</ol>
+	<p>The master named for a <span style="font-weight: bold;">dod_control_point_master</span> applies to <span class="font-style: italic;">all</span> the <a href="/node/1096#flag">dod_control_point</a>(s) in the objective group that the dod_control_point_master acts for.</p>
+	<p>If the master of the dod_control_point_master disables the entity then the whole objective group is disabled (and will have no visual presence in the game).</p>
+	<p><span style="font-weight: bold;">Note</span>: A <span style="font-weight: bold;">dod_control_point</span> does not have a 'master' field, using the dod_control_point_master is the only way to disable this entity. Also this effect does not work with dod_object and dod_object_goal</p>
+<ol start="2">
+	<li>Using a <a href="/node/1096#flag">dod_control_point</a> as a master</li>
+</ol>
+	<p>This is only applicable to DoD player starts (<a href="/node/1095#dod">info_player_allies</a> and <a href="/node/1095#dod">info_player_axis</a>) and allows you to use a <span style="font-weight: bold;">dod_control_point</span> as a tri-state master (spawncpmaster or &quot;Master Control Point&quot;). Enter the name of the dod_control_point you wish to use as a master in the &quot;Master Control Point&quot; field. You can then select whether or not the spawn should be active for each of the three possible flag states.</p>
+	<p><span style="font-weight: bold;">Note</span>: The name required is the <span style="font-weight: bold;">targetname</span> of the dod_control_point NOT the &quot;control point name&quot;.</p></ul><h1 id="1092" name="1092" class="book-h2">Placing Models</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Placing Models</h1>
+	<p>There are several entities that can be employed to place a model in your map.</p>
+<ul>
+		<li><a href="/node/1096#object">dod_object</a></li>
+		<li><a href="/node/1096#flag">dod_control_point</a></li>
+		<li>env_model - from <a href="http://spirit.valve-erc.com">Spirit of Half Life</a> (new in beta 3.0)</li>
+	</ul>
+	<p>Each entity has advantages and disadvantages.</p>
+	<hr />
+	<h1>dod_object</h1>
+	<h4>Pros</h4>
+<ul>
+		<li>Simple</li>
+		<li>Automatically drops to ground</li>
+</ul>
+	<h4>Cons</h4>
+<ul>
+		<li>Requires clipping to prevent players from picking up object</li>
+		<li>Automatically drops to ground</li>
+		<li>Default animation only</li>
+</ul>
+	<p><span style="font-weight: bold;">dod_object</span> is the simplest option for placing a model. A dod_object will always drop to the ground automatically which means that vertical placement need not always be 100% accurate but the object may require a &quot;platform&quot; to sit on (this can often be accomplished using clipping brushes).</p>
+	<p>If a dod_object can be reached by players it <span style="font-style: italic;">must</span> be clipped or a player can pick up the object which could look rather odd.</p>
+<hr />
+	<h1>dod_control_point</h1>
+	<h4>Pros</h4>
+<ul>
+		<li>Supports multiple models</li>
+		<li>Configurable body</li>
+		<li>Easily toggled to change model</li>
+		<li>Unaffected by gravity</li>
+		<li>Properties can prevent players from toggling the model</li>
+</ul>
+	<h4>Cons</h4>
+<ul>
+		<li>Can be difficult to place correctly</li>
+		<li>Default animation only</li>
+</ul>
+	<p>A <span style="font-weight: bold;">dod_control_point</span> can have up to three models specified (one for each of the three states the flag can be in). <a href="/node/1097#flagrelay">dod_point_relay</a>(s) can be used to toggle the flag between states (which will change the displayed model).</p>
+	<p>A dod_control_point can be hidden using either an <span style="font-weight: bold;">env_render</span> or by disabling the master of the relevant <a href="/node/1097#master">dod_control_point_master</a></p>
+	<p>dod_control_point is not affected by gravity so to ensure the model is not levitating or submerged you may need to tweak the precise placement of the entity.</p>
+	<p>Clipping is only required to prevent players from running through the model as by setting &quot;can allies cap&quot; and &quot;can axis cap&quot; to 'NO' players will be prevented from toggling the point (and therefore the model).</p>
+<hr />
+<h1>env_model</h1>
+<h4>Pros</h4>
+<ul>
+		<li>Multiple animations</li>
+		<li>Easily toggled to change animation</li>
+		<li>Can be affected by gravity (mapper's choice)</li>
+		<li>Configurable skin</li>
+		<li>Configurable body</li>
+</ul>
+<h4>Cons</h4>
+<ul>
+		<li>None really</li>
+</ul>
+	<p><span style="font-weight: bold;">env_model</span> is an entity specifically designed for placing models and has options for configuring animations, skin and body.</p>
+	<p>env_model can be either &quot;on&quot; or &quot;off&quot;, this does not mean present or not present. The on and off states are used to control the animation, env_model will play one animation while &quot;on&quot; and a second while &quot;off&quot;.</p>
+	<p>Clipping is only required to prevent players from running through the model.</p>
+<h3>Notes on positioning models.</h3>
+<a href="content/dod/reference/hlmv.png"><img src="content/dod/reference/hlmv_small.png" width="128" height="108" alt="Half-Life Model Viewer" /></a>&nbsp;&nbsp;
+<a href="content/dod/reference/flaglocation.jpg">	<img src="content/dod/reference/flaglocation_small.jpg" width="123" height="108" alt="placing flags" /></a><br />
+		click to enlarge
+		<p>If the entity you are using to display the model is unaffected by gravity (dod_control_point and env_state) then you need to make sure the model is not &quot;levitating&quot;.</p>
+	<p>Load the model in HL model viewer and set the option to display &quot;bones&quot;, you will see a small red dot (see left picture). This is the models origin and will be at the &quot;point&quot; where the entity is. Usually (with a standard FGD) this is the center of the visible entity  box (the &quot;box&quot; you see in hammer is purely a visual aid).</p>
+	<p>With most models this means you just make sure that the brush face forming the ground bisects the entity box (see right picture).</p>
+<hr />
+<h1>Clipping models</h1>
+	<p>Models require clipping to prevent players running through them (and in the case of a dod_object to prevent the player picking the object up), if the model is located in an inaccessible place and is not required to be bullet proof then clipping can be omitted.</p>
+<h4>Clipping with clip brushes</h4>
+<p><img src="content/dod/reference/cliptex.jpg" width="32" height="32" alt="clip texture" />
+A clip brush is a brush completely covered with the &quot;clip&quot; texture (found in valve/halflife.wad). This will prevent the player from running through the model but weapons (both bullets and grenades) will penetrate.</p>
+<h4>Special Clipping Textures</h4>
+<p>This is currently the best method of model clipping available. It involes the use of a func_wall.</p>
+<p>Special textures are available in <b>hlbasics.wad</b> that make the use of func_buttons and ambient_generic's pretty much redundant.</p>
+<ul>
+		<li>&nbsp;&nbsp;cr_mathvymetal</li>
+		<li>&nbsp;&nbsp;cr_matleaf</li>
+		<li>&nbsp;&nbsp;cr_matmetal</li>
+		<li>&nbsp;&nbsp;r_matsand</li>
+		<li>&nbsp;&nbsp;cr_matwood</li>
+	</ul>
+	<p>This is not an exhaustive list as <b>all</b> textures listed in the materials.txt (found in your sound folder) can be used to produce a suitable clip type brush. The materials .txt also gives you the effect the texture will provide when used.</p>
+<p>Build your brush textured with any of the textures above, to cover the object you want clipped. Assign the brush to func_wall and set the Render Mode to 'Texture' and the FX Amount to '0'. <br />
+What this does is assign the brush a sound defined in the 'materials.txt' and also give the brush clipping properties aligned with the material type. If you chose 'cr_matmetal' then when that brush is shot it will produce a spark and a richochet sound. The brush textured with 'cr_matmetal' will not be penertrated by bullets.</p>
+<hr />
+<h4>Clipping with func_button entities</h4>
+<p>To make a model bullet proof, it must be covered with a brush entity. Place a brush or brushes covered with a suitable texture over the model. In DoD v1.0 hit effects (bullet puffs, impact sounds etc) are controlled by the name of the texture being hit (even if rendered invisible) so for example to clip a tank model you would want to use a &quot;metal&quot; texture.<br />
+Select the brush and go to <span style="font-style: italic;">tools</span> - <span style="font-style: italic;">tie to entity</span> (ctrl-t). Change the entity to <span style="font-weight: bold;">func_button</span> and alter the properties as follows.</p>
+<center>
+<img src="content/dod/tables/models_func_button.jpg" width="256" height="262" alt="Func_button" title="Func_button" />
+</center>		
+		<p>This means that any bullet hitting the func_button will be absorbed to trigger the button (this is one of the effects of the &quot;health&quot; value) effectively making the button bullet-proof. if you want a ricochet noise to sound when the model is shot, then place an ambient_generic in a suitable location and set the func_button's target to trigger it.</p>
+<hr />
+<h4>Notes:</h4>
+	<p>If the model is going to change shape significantly, either from toggling a <span style="font-weight: bold;">dod_control_point</span> or by applying <span style="font-weight: bold;">env_render</span>(s) to multiple <span style="font-weight: bold;">dod_object</span> or <span style="font-weight: bold;">env_model</span> entities then <span style="font-weight: bold;">func_wall_toggle</span> may be required to ensure that the clipping always matches the shape of the model.</p>
+	<p>Getting the clip(s) to coincide with the model is mostly down to trial and error as Hammer does not display the model (NB, <a href="http://collective.valve-erc.com/index.php?go=hammer_beta">Hammer 3.5 beta</a> can display models in the 3d veiw). the number of brushes to use to clip a model is also tricky. The more you use the closer the model will be clipped, however this will make your <span style="font-weight: bold;">clip node</span> count higher.</p>
+<h3>Related documents</h3>
+	<p><a id="docs">&nbsp;</a>Other entity references:</p>
+	<p><a href="/node/955#func_button">func_button</a></p>
+	<p><a href="/node/955#func_wall_toggle">func_wall_toggle</a></p>
+	<p><a href="/node/954#env_render">env_render</a></p>
+	<p><span style="font-weight: bold;">env_model</span> from the&nbsp;<a href="http://spirit.valve-erc.com/guide/EntityGuide.html">Spirit Entity Guide</a></p>
+
+</ul><h1 id="1093" name="1093" class="book-h2">Class Limits</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Class &amp; Weapon Limits</h1>
+<p>Class limits are usually defined in a file named <span style="font-weight: bold;">&#60;mapname&#62;.cfg</span> in the servers DoD folder. This will be automatically executed by the server when the map is loaded (<span style="font-weight: bold;">note</span>: the map cfg file is exec'd <span style="font-style: italic;">before</span>the config file specified in the server cvar <span style="font-weight: bold;">mapchangecfgfile</span>). The map config file can be used to adjust any server cvar, but is most often used to provide map specific class limits. The file is also exec'd (if it exists) on the clients so it can be used to set client side behavior as well, such as the fog parameters set in the dod_dog1 config file.</p>
+	<p>While you can set most cvars for your map on both the client and server using this file, some discretion is advised. Many clients and nearly all servers have quite finely tuned configs, if you change these you could make yourself unpopular.</p>
+	<p>Setting a limit of <span style="font-weight: bold;">-1</span> makes the weapon unlimited. Setting a limit of <span style="font-weight: bold;">0</span> (zero) disables the class from being selected, with DoD v1.2 you can <a href="/node/1093#mapinfo">remove classes</a> from the selection screen altogether.</p>
+	<p>You cannot have both the US and the UK in a map at the same time but it dosn't matter if a map's config file has cvars for limiting the unused team, so if you want to create a generic config and copy it to all the various map configs it will work fine. However if you are using the cvars to remove classes from the selection menu, you should make sure that you have the team selection correct.</p>
+<hr />
+<h1>Setting limits for Allied (US) weapons.</h1>
+	<p>CVARS</p>
+		<ul>
+			<li>mp_limitalliesgarand</li>
+			<li>mp_limitalliescarbine</li>
+			<li>mp_limitalliesthompson</li>
+			<li>mp_limitalliesgreasegun</li>
+			<li>mp_limitalliesspring</li>
+			<li>mp_limitalliesbar</li>
+			<li>mp_limitallies30cal</li>
+			<li>mp_limitalliesbazooka</li>
+		</ul>
+	<h1>Setting limits for Allied (UK) weapons.</h1>
+	<p>CVARS</p>
+		<ul>
+			<li>mp_limitbritlight - Limits the LE No.4</li>
+			<li>mp_limitbritassault - Limits the Sten</li>
+			<li>mp_limitbritsniper - Limits the LE No.4(T)</li>
+			<li>mp_limitbritmg - Limits the Bren</li>
+			<li>mp_limitbritpiat - Limits the PIAT</li>
+		</ul>
+	<h1>Setting limits for Axis weapons.</h1>
+	<p>CVARS</p>
+		<ul>
+			<li>mp_limitaxiskar - Limits the K98</li>
+			<li>mp_limitaxisk43</li>
+			<li>mp_limitaxismp40</li>
+			<li>mp_limitaxismp44</li>
+			<li>mp_limitaxisfg42 - Limits the Fg42 (Bipod)</li>
+			<li>mp_limitaxisfg42s - Limits the Fg42 (Scope)</li>
+			<li>mp_limitaxisscopedkar</li>
+			<li>mp_limitaxismg34</li>
+			<li>mp_limitaxismg42</li>
+			<li>mp_limitaxispschreck</li>
+		</ul>
+<hr />
+	<p>In addition to setting limits on weapons, with DoD v1.2 there are two additional cvars you can apply:</p>
+<ul>
+	<li>mp_combinemglimits (zero or one)</li>
+</ul>
+	<p>This has the effect of combining the limits for all MG classes (at the moment this only applies to the Axis as the only team with 2 mg's, the Mg 34 and the Mg 42), it creates a new limit by adding the individual class limits together, this is then applied to the team's Mg's as a whole.</p>
+	<p>For example:</p>
+	<p><span style="font-weight: bold;">mp_limitaxismg34 1<br />
+	mp_limitaxismg42 1<br />
+	mp_combinemglimits 1</span></p>
+	<p>would allow either two Mg 42's <span style="font-style: italic;"> or</span>two Mg 34's <span style="font-style: italic;">or </span>one of each.</p>
+<ul>
+	<li>mp_spawnbazookas (zero or one)</li>
+</ul>
+	<p>This controls whether the bazookas on the ground in spawn areas will be present or not.</p>
+	<p>Example:<br />
+	This is a generic limit set up that could be applied to any map, It dosn't matter which &quot;sub-team&quot; the Allies are, you can apply limits to both.</p>
+	<table>
+		<tr>
+			<td colspan="2">//Allies (US)</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesgarand</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliescarbine</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesthompson</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesgreasegun</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesspring</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesbar</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitallies30cal</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesbazooka</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td colspan="2">//Allies (UK)</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritlight</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritassault</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritsniper</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritmg</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritpiat</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td colspan="2">//Axis</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxiskar</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisk43</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismp40</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismp44</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisfg42</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisfg42s</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisscopedkar</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismg34</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismg42</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxispschreck</td>
+			<td>1</td>
+		</tr>
+	</table>
+<hr />
+<h1>Disabling Classes Completely</h1>
+	<p><a id="mapinfo">&nbsp;</a>There are two extra cvars you can set in a cfg file to enable you to totaly disable classes (they will not even appear on the class selection menu)</p>
+<ul>
+	<li>mp_alliesclasses - a bitsum controling the avaliablity of classes for allies</li>
+	<li>mp_axisclasses - a bitsum controling the avaliablity of classes for axis</li>
+</ul>
+<table cellspacing="0">
+			<tr>
+				<th colspan="2">Bitfield values for Allies (US)</th>
+			</tr>
+			<tr>
+				<td>M1 Garand</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>M1 Carbine</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Thompson</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Grease Gun</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>Springfield</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td>B.A.R.</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>30 cal MG</td>
+				<td>64</td>
+			</tr>
+			<tr>
+				<td>Bazooka</td>
+				<td>128</td>
+			</tr>
+			<tr>
+				<td style="color: #808080">Mortar</td>
+				<td style="color: #808080">256</td>
+			</tr>
+			<tr>
+				<td>Random</td>
+				<td>512</td>
+			</tr>
+		</table>
+<table cellspacing="0">
+			<tr>
+				<th colspan="2">Bitfield values for Allies (UK)</th>
+			</tr>
+			<tr>
+				<td>Lee Enfield</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Sten</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Lee Enfield Sniper</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Bren</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>P.I.A.T.</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td style="color: #808080">Mortar</td>
+				<td style="color: #808080">32</td>
+			</tr>
+			<tr>
+				<td>Random</td>
+				<td>64</td>
+			</tr>
+		</table>
+<table cellspacing="0">
+			<tr>
+				<th colspan="2">Bitfield values for Axis</th>
+			</tr>
+			<tr>
+				<td>Kar 98</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Kar 43</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Mp 40</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Mp 44</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>Kar 98 Sniper</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td>Fg 42 (Bipod)</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>Fg 42 (Scope)</td>
+				<td>64</td>
+			</tr>
+			<tr>
+				<td>Mg 34</td>
+				<td>128</td>
+			</tr>
+			<tr>
+				<td>Mg 42</td>
+				<td>256</td>
+			</tr>
+			<tr>
+				<td>Panzerschreck</td>
+				<td>512</td>
+			</tr>
+			<tr>
+				<td style="color: #808080">Mortar</td>
+				<td style="color: #808080">1024</td>
+			</tr>
+			<tr>
+				<td>Random</td>
+				<td>2048</td>
+			</tr>
+		</table>
+<h3>Notes:</h3>
+<ul>
+		<li>The &quot;Mortar&quot; classes have not been implemented yet (as of DoD v1.3).</li>
+		<li>Both Varients of the Fg 42 are only avaliable on maps where the Axis are Paras.</li>
+		<li>Both US allies and UK allies are controlled by the same cvar: <span style="font-weight: bold;">mp_alliesclasses</span> , make sure that the values in your config file are correct for the allies team on that map.</li>
+</ul>
+	<p>To calculate the value for the config file, add together the values for the classes that you want to <span style="font-weight: bold;">allow</span>, putting in a value of zero would not allow <span style="font-style: italic;">any</span>classes. Putting a value of -1 allows all classes.</p>
+<p>For example:<br />
+mp_alliesclasses 53<br />
+mp_axisclasses 154</p>
+<p>Would:</p>
+<ul>
+		<li>Only allow the (US) Allies to use: M1 Garand, Thompson, Springfield and BAR (1 + 4 + 16 + 32)</li>
+		<li>Only allow the Axis to use: Kar 43, Mp 44, Kar 98 Sniper, Mg 34 (2 + 8 + 16 + 128)</li>
+	</ul></ul><h1 id="1094" name="1094" class="book-h2">Map Release notes</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Map Release Packaging</h1>
+	<ul>
+		<li><a href="/node/1094#compat">Server compatability issues</a></li>
+		<li><a href="/node/1094#files">Which files to include</a></li>
+		<li><a href="/node/1094#pack">Packaging files</a></li>
+	</ul>
+	<p>This information is correct up to DoD Version 1.0b (WON  and STEAM version).</p>
+<hr />
+	<h1>STEAM</h1>
+	<p>STEAM clients can have custom content installed very easily. The directory structure to use is identical to the WON version, the only difference is the location of the &quot;<span style="font-weight: bold;">dod</span>&quot; folder.</p>
+	<p>The dod folder in a default STEAM install is:</p>
+	<p><span style="font-weight: bold;">C:\Program Files\Steam\SteamApps\&#60;email address&#62;\day of defeat\dod</span></p>
+	<p>&#60;email address&#62; is the email address used to create the steam account.</p>
+	<p>Custom content should be unpacked to this folder the same as the WON version's <span style="font-weight: bold;">C:\SIERRA\Half-Life\dod</span>.</p>
+	<p><span style="font-weight: bold;">Note</span>: by default the steam &quot;<span style="font-weight: bold;">dod</span>&quot; folder dosn't contain all the subfolders you would find in a WON install of DoD. This is not an issue since they will be created as required by the installer / archive tool.</p><a id="compat">&nbsp;</a>
+<hr />
+	<h1>Server Compatability issues</h1>
+<p><img src="content/dod/reference/tux.png" width="80" height="96" alt="Tuxedo T. Penguin" />	&#8592; This guy is your friend.</p>
+	<p>More than half of the dedicated DoD servers (about 60% last time I checked) out there are classified as &quot;Linux&quot; servers (note that these are not all actually running GNU/Linux, many will be running one of the BSD distributions).</p>
+	<p>When a server loads a map, it also loads all the required resource files (sound .wav, texture .wad, model .mdl etc) needed for the map. If the server cannot find one of these files, it dies.</p>
+	<p>Microsoft&#174; Windows&#174; is not case sensitve with filenames. Unix (whether it be GNU/Linux, *BSD or a comercial UNIX) IS case sensitive with filenames. This means that if a filename in your map has a case error in it, a &quot;Linux&quot; server will be unable to find the file and therefore unable to run the map.</p>
+	<p>A classic case (which I have found a fair few custom maps suffer from) is this:</p>
+	<p>map requires: <span style="font-weight: bold;">dod/models/<span class="high">T</span>nt.mdl</span><br />
+	actual filename: <span style="font-weight: bold;">dod/models/<span class="high">t</span>nt.mdl</span></p>
+	<p>Most servers running custom maps have probably already implemented work-arounds to the more common examples (such as the TnT model mentioned above) but there can always be new ones. DoD v1.0 has re-shuffled most of the resource locations, which will likely remove most of the work-arounds implemented during the DoD beta's by the server operators.</p>
+	<p>Pay particular attention to the capitialisation of resource filenames where they are specified in your map. Windows&#174; makes this slightly harder due to the fact that it auto-capitalises filenames when they are displayed (but doesn't actually change the filename itself).</p><a id="files">&nbsp;</a>
+<hr />
+	<h1>Which files to include</h1>
+	<p>Chances are your map uses some resources which are not part of the standard fileset of DoD. Since Half-Life can't run the map without the required resources, you need to make sure that all resources your map requires will be present.</p>
+	<p>An easy way to find out all the files your map requires is to use <a href="http://www.unitedadmins.com/resgen.php">RESGEN</a> (from <a href="http://www.unitedadmins.com/">United Admins</a>). When this is run on a BSP file it produces a RES file (plain text) listing all the required files. RES files (which should be located in the <span style="font-weight: bold;">maps</span> folder) are also used to tell the server which files a client needs to download from the server (if downloads are enabled) so it's a handy file to include with your map anyway.</p>
+	<p>Make sure that you only include those files which are <span style="font-weight: bold;">NOT</span> part of a standard DoD install, otherwise your map installation may overwrite peoples customisations (such as regional flags and/or victory music).</p>
+	<h1>Map specific files</h1>
+	<p>(None of these files are required but form part of a &quot;complete&quot; distribution)</p>
+	<p><span style="font-weight: bold;">dod/maps/&#60;mapname&#62;.txt</span></p>
+	<p>This is the &quot;Mission Instructions&quot; that will be shown to the player when the map loads. Usually also used to credit people who's work is included in the map (such as textures, models, sounds etc).</p>
+	<p><span style="font-weight: bold;">dod/&#60;mapname&#62;.cfg</span></p>
+	<p>The config file for the map, usually used to set the <a href="/node/1093">class limits</a></p>
+	<p><span style="font-weight: bold;">dod/overviews/&#60;mapname&#62;.bmp<br />
+	dod/overviews/&#60;mapname&#62;.txt</span></p>
+	<p>The HLTV overview files (graphic and configuration)</p>
+	<p><span style="font-weight: bold;">dod/maps/&#60;mapname&#62;.res</span></p>
+	<p>The resource file for the map.</p><a id="pack"></a>
+<hr />
+<h1>Packaging files</h1>
+	<p>I use the following convention for distribution (these are merely my preferences, not the law):</p>
+	<ul>
+	<li>The archive is a ZIP file.</li>
+	</ul>
+<p>ZIP files are supported by default in the current generation of Windows&#174;, they also present few problems to Linux. Personally I dislike executable installers (unless they can be opened with an archive tool) due to the fact that it's a pain to then get all the files onto a Linux system.</p>
+	<ul>
+	<li>The &quot;root&quot; of the installation is the level above the &quot;dod&quot; folder.</li>
+	</ul>
+	<p>A ZIP file can (and in this case should) contain the folder information for each file. I prefer to make the archive so that the file locations are stored thus:</p>
+	<p>dod/maps/&#60;mapname&#62;.bsp<br />
+	dod/maps/&#60;mapname&#62;.txt<br />
+	dod/&#60;mapname&#62;.cfg<br />
+	etc</p>
+	<p>This makes it clear, when opening the archive, which Half-Life Mod the map is intended for, and also allows equally easy installation to Half-Life or either of the &quot;retail&quot; (Counter-Strike and DoD) versions.</p>
+</ul><h1 id="1089" name="1089" class="book-h1">Entity Reference</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>DoD Entities</h1>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;Player Starts</h3>
+<ul>
+		<li><a href="/node/1095#dod">info_player_allies</a></li>
+		<li><a href="/node/1095#dod">info_player_axis</a></li>
+		<li><a href="/node/1095#observer">info_player_observer</a></li>
+		<li><a href="/node/1095#player">info_player_start</a></li>
+</ul>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;Flag Objectives</h3>
+<ul>		
+		<li><a href="/node/1096#flag">dod_control_point</a></li>
+		<li><a href="/node/1096#area">dod_capture_area</a></li>
+</ul>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;Object Objectives</h3>
+<ul>
+		<li><a href="/node/1096#object">dod_object</a></li>
+		<li><a href="/node/1096#goal">dod_object_goal</a></li>
+		<li><a href="/node/1096#area">dod_capture_area</a></li>
+</ul>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;Control / Scoring</h3>
+<ul>
+		<li><a href="/node/1097#dodinfo">info_doddetect</a></li>
+		<li><a href="/node/1097#master">dod_control_point_master</a></li>
+		<li><a href="/node/1097#score">dod_score_ent</a></li>
+		<li><a href="/node/1097#flagrelay">dod_point_relay</a></li>
+		<li><a href="/node/1097#timer">dod_round_timer</a></li>
+</ul>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;Miscellaneous</h3>
+<ul>
+		<li><a href="/node/1098#sandbag">dod_trigger_sandbag</a></li>
+		<li><a href="/node/1098#camera">dod_camera</a></li>
+		<li><a href="/node/1098#corner">path_corner</a></li>
+		<li><a href="/node/1098#location">dod_location</a></li>
+		<li><a href="/node/1098#particle">particle_shooter</a></li>
+		<li><a href="/node/1098#preround">dod_preround</a></li>
+</ul>
+		<h3>Half-Life Entities - modified in DoD</h3>
+<ul>
+		<li><a href="/node/1099#text">game_text</a></li>
+		<li><a href="/node/1099#hurt">trigger_hurt</a></li>
+		<li><a href="/node/1099#teleport">trigger_teleport</a></li>
+		<li><a href="/node/1099#doors">func_door</a></li>
+		<li><a href="/node/1099#doors">func_door_rotating</a></li>
+		<li><a href="/node/1099#button">func_button</a></li>
+		<li><a href="/node/1099#once">trigger_once</a></li>
+		<li><a href="/node/1099#multi">trigger_multiple</a></li>
+		<li><a href="/node/1099#auto">trigger_auto</a></li>
+		<li><a href="/node/1099#break">func_breakable</a></li>
+		<li><a href="/node/1099#tank">func_tank*</a></li>
+		<li><a href="/node/1099#zone">game_zone_player</a></li>
+	</ul>
+</ul><h1 id="1095" name="1095" class="book-h2">Player_start</h1><ul><!--Submitted by Andy on behalf of Nick Robins--><a id="dod"></a>
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Player Start Entites</h1>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;Spawn related Entities</h4>
+<h1>info_player_allies - info_player_axis</h1>
+<p><span class="font-style: italic;">Point entities:</span><br />
+These are the spawn entities for the two teams. They perform identical duties and have identical properties.</p>
+<h3>Properties</h3>
+<p><span style="font-weight: bold">Master</span> - This is the Standard Half-Life <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">Master control point</span> -  This is the <a href="/node/1091#dod">DoD master</a> using a <a href="/node/1096#flag">dod_control_point</a></p>
+<p><span style="font-weight: bold">Active if neutral</span> - Specify spawn activity for each state of the dod_control_point</p>
+<p><span style="font-weight: bold">Active if in control</span> -  </p>
+<p><span style="font-weight: bold">Active if not in control</span> - Yes - No</p>
+<p><span style="font-weight: bold">PYR (angles)</span> - Set the angle that the player will spawn facing.</p>
+<h3>Flags</h3>
+<blockquote>
+None
+</blockquote><a id="observer"></a>
+<hr />
+<h1>info_player_observer</h1>
+<p><span class="font-style: italic;">Point entity:</span><br />
+The point where observers spawn, normally when a player has just connected. This entity is required since DoD beta 3.0.</p>
+	<p>While this entity includes the &quot;spawncpmaster&quot; (using a <a href="/node/1096#flag">dod_control_point</a>) field for controlling activity, I am unsure which team an observer is a member of, possibly it will be &quot;neutral&quot;.</p>
+<h3>Properties</h3>
+<p><span style="font-weight: bold">Master</span> - This is the Standard Half-Life <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">Master control point</span> -  This is the <a href="/node/1091#dod">DoD master</a> using a <a href="/node/1096#flag">dod_control_point</a></p>
+<p><span style="font-weight: bold">Active if neutral</span> - Specify spawn activity for each state of the dod_control_point</p>
+<p><span style="font-weight: bold">Active if in control</span> -  </p>
+<p><span style="font-weight: bold">Active if not in control</span> - Yes - No</p>
+<p><span style="font-weight: bold">PYR (angles)</span> - Set the angle that the player will spawn facing.</p>
+<h3>Flags</h3>
+<blockquote>
+None
+</blockquote><a id="player"></a>
+<hr />
+<h1>info_player_start</h1>
+<p><span class="font-style: italic;">Point entity:</span><br />
+This is the Half-Life entity to mark the spawn point for single player games. It is required in DoD maps for HLTV purposes since DoD beta 2.1. If this entity is not present then any client attempting to connect to a server running the map will crash to desktop (CTD). The entity currently has no other function in a multiplayer DoD game.<br /><br />
+<b>Note</b>: In DoD beta 3.0 and beyond this appears to longer be the case, the entity will be &quot;provided&quot; by the DoD library (dll or so) if it is not present. However you will get a 'missing info_player_start' error when using Hammer's check for problems option.</p>
+<p>If you don't have an info_player_start listed in the WC / Hammer entity list then you have two options:</p>
+<ol>
+<li>Add this to your dod .fgd file, and restart Hammer. info_player_start will be in the entity list.</li>
+</ol>
+<pre>
+//
+//  Half-Life Player start (for HLTV)
+//
+@PointClass base(PlayerClass) = info_player_start : "Player 1 start" [ ]
+//
+</pre>
+<ol start="2">
+		<li>place an info_player_observer entity and rename it info_player_start.</li>
+</ol>
+
+		</ul><h1 id="1096" name="1096" class="book-h2">Objectives</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>DoD Objectives</h1>	
+<h3>&nbsp;&nbsp;&nbsp;&nbsp; Flag Objectives</h3>
+	<ul>
+		<li><a href="/node/1096#flag">dod_control_point</a></li>
+		<li><a href="/node/1096#area">dod_capture_area</a></li>
+	</ul>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp; Object Objectives</h3>
+	<ul>
+		<li><a href="/node/1096#object">dod_object</a></li>
+		<li><a href="/node/1096#goal">dod_object_goal</a></li>
+		<li><a href="/node/1096#area">dod_capture_area</a></li>
+	</ul>
+<a id="flag"></a>
+<hr />
+<h1>dod_control_point</h1>
+		<p><span style="font-style: italic;">Point entity:<br /></span> Normally used to place and specify DoD's territorial control flags, but can be used to achieve other effects.</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name (targetname)</span> - This is the name that Half-Life uses to identify the entity</p>
+<p><span style="font-weight: bold">Target</span> - </p>
+			<p><span style="font-weight: bold">PYR (angles)</span> - Set the angle(s) for the displayed model (not included in official FGD)</p>
+<p><span style="font-weight: bold">Control point name</span> - This is the name that Players see eg &quot;Church&quot;</p>
+<p><span style="font-weight: bold">Can Allies touch this point?</span> - Can [TEAM] touch this point to capture. Note that if  set to NO, [TEAM] can still capture this point via other means such as a <a href="/node/1096#area">dod_capture_area</a></p>
+<p><span style="font-weight: bold">Can Axis touch this point?</span> - </p>
+<p><span style="font-weight: bold">Time based points value</span> - Number of points given per scoring interval (see <a href="/node/1097#master">dod_control_point_master</a>)</p>
+<p><span style="font-weight: bold">Points to capturer</span> - Points given to player who captures</p>
+<p><span style="font-weight: bold">Points given to Team</span> - Points given to capturers team</p>
+<p><span style="font-weight: bold">Default owner of the control point</span> - Which team holds the point at the start of a round</p>
+<p><span style="font-weight: bold">Sound made when axis capture</span> - Pathname of an appropriate wav file</p>
+<p><span style="font-weight: bold">Sound made when allies capture</span> - </p>
+<p><span style="font-weight: bold">Sound made when point resets</span> - </p>
+<p><span style="font-weight: bold">Model when allies capture</span> - Pathname of an appropriate mdl file</p>
+<p><span style="font-weight: bold">Model when axis capture</span> - </p>
+<p><span style="font-weight: bold">Model when point reset</span> - </p>
+<p><span style="font-weight: bold">Allies model bodygroup</span> - Choose which model body to use</p>
+<p><span style="font-weight: bold">Axis model bodygroup</span> - </p>
+<p><span style="font-weight: bold">Reset model bodygroup</span> - </p>
+<p><span style="font-weight: bold">HUD icon when noone owns point</span> - These allow you to specify which HUD icon to use for the point, including flag, artillery, radio, custom etc.</p>
+<p><span style="font-weight: bold">HUD icon when axis own point</span> - </p>
+<p><span style="font-weight: bold">HUD icon when allies own point</span> - </p>
+<p><span style="font-weight: bold">Target when allies capture</span> - Entitys to trigger when the point is captured</p>
+<p><span style="font-weight: bold">Target when axis capture</span> - </p>
+<p><span style="font-weight: bold">Target when point reset</span> - </p>
+<p><span style="font-weight: bold">String to show when capped</span> - Can include vars, these include:</p>
+<pre>
+%p - player name
+%n - "control point name"
+%t - players team name
+</pre>
+<p><span style="font-weight: bold">Group name</span> - Name of the objective group this point is a member of (see <a href="/node/1097#master">dod_control_point_master</a>)</p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">Index of this point (unique)</span> - Specifies HUD tell-tale position for this point, 1 is far left (counting up to the right), -1 is random</p>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Hide control point on HUD</span> - Hide the HUD tell-tale for this flag</p>
+<h3>Notes:</h3>
+<p>A <b>dod_control_point</b> is usually used to place a flag in a map. The only field that <i>must</i> be filled in is the &quot;group name&quot; (see <a href="/node/1097#master">dod_control_point_master</a>) for the rest the defaults will serve to get things working.</p>
+<p>This entity can be used for other purposes though, since it can have team ownership explicitly set via a <a href="/node/1097#flagrelay">dod_point_relay</a> and it will change it's displayed model when this happens, it can be used to switch models on the fly, this capability has been increased with the addtion of the &quot;bodygroup&quot; options in DoD v1.0. It would also be possible to use it as a multifunction game_text or ambient_generic using the &quot;string to show when captured&quot; or &quot;sound made&quot; functions.</p><a id="area"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_capture_area</h1>
+<p><span style="font-style: italic;">Brush entity:</span><br /> Defines a volume to be captured</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - Usually (but not always) set to point to a <a href="/node/1096#flag">dod_control_point</a></p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">Can allies cap?</span></p>
+<pre>
+yes
+no
+</pre>
+<p><span style="font-weight: bold">Can axis cap?</span> - </p>
+<p><span style="font-weight: bold">Number of allies to cap</span> - Number of players on each team required to cap </p>
+<p><span style="font-weight: bold">Number of axis to cap</span> - </p>
+<p><span style="font-weight: bold">Time to cap</span> - The capture time in seconds</p>
+<p><span style="font-weight: bold">Target when allies start capture</span> - These options allow you to trigger effects, for example text prompts or sounds, for all the possible outcomes of an attempted capture</p>
+<p><span style="font-weight: bold">Target when allies capture broken</span> - </p>
+<p><span style="font-weight: bold">Target when allies capture complete</span> - </p>
+<p><span style="font-weight: bold">Target when axis start capture</span> - </p>
+<p><span style="font-weight: bold">Target when axis capture broken</span> - </p>
+<p><span style="font-weight: bold">Target when axis capture complete</span> - </p>
+<p><span style="font-weight: bold">Sprite to show on HUD</span> - The sprite that will be displayed on a players HUD while in the capture area</p>
+<p><span style="font-weight: bold">Requires object from this group</span> - Player must be carrying an object from this group in order to trigger the capture</p>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Last man can cap</span> - Mainly used for Para maps, allows a single player to cap a multiplayer cap point if they are the only player alive on their team</p>
+<h3>Notes:</h3>
+<p>A <b>dod_capture_area</b> is usually used to provide a timed capture of a flag but can be used to trigger any event based on it's status. In dod_strand (Fakedawg) it is used to provide access up the side of a cliff, If the Allies stay in an area at the bottom for a few seconds, a scaleing ladder will appear.</p>
+<p>The new feature should allow a <b>dod_capture_area</b> to function similarly to a <a href="/node/1096#goal">dod_object_goal</a> but with a capture time before triggering. I am unsure whether every player attempting to capture the area will be required to carry a relevant object or only one of them.</p>
+<a id="object"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_object</h1>
+<p><span style="font-style: italic;">Point entity:</span><br /> An objective object that can be picked up and carried by players</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - Usually left bank</p>
+<p><span style="font-weight: bold">PYR (angles)</span> - Set the angle(s) for the displayed model (not included in official FGD)</p>
+<p><span style="font-weight: bold">Model</span> - Pathname of a suitable .mdl file</p>
+<p><span style="font-weight: bold">Object name</span> - This is the name that the players see</p>
+<p><span style="font-weight: bold">Team that can pick up</span> - Choose a team:</p>
+	<pre>
+both
+axis
+allies
+</pre>
+<p><span style="font-weight: bold">Group name</span> - Name of the objective group this object is a member of (see <a href="/node/1097#master">dod_control_point_master</a>)</p>
+<p><span style="font-weight: bold">Sound when taken</span> -  These point to wav files which will play when the conditions occur. Note &quot;captured&quot; means delivered to a valid goal</p>
+<p><span style="font-weight: bold">Sound when captured</span> - </p>
+<p><span style="font-weight: bold">Sound when dropped</span> - </p>
+<p><span style="font-weight: bold">Sound when returned</span> - </p>
+<p><span style="font-weight: bold">Carry speed</span> - This is a multiplier, to make people move at half speed enter 0.5, 1 is normal movement rate</p>
+<p><span style="font-weight: bold">Reset on touch</span> - </p>
+<pre>
+yes
+no
+</pre>
+<p><span style="font-weight: bold">Reset time</span> - How long the object will stay on the map after being dropped</p>
+<p><span style="font-weight: bold">Points to capturer</span> - Points awarded to player delivering the object</p>
+<p><span style="font-weight: bold">Points for teammates</span> - Points awarded to capturers team</p>
+<p><span style="font-weight: bold">Target when complete</span> - For using tnt to blow walls, this can be ignored, it is only used when you want an event to occur for this specific object</p>
+<p><span style="font-weight: bold">Sprite to show above player when carried</span> - Can make the player very easy to see</p>
+<p><span style="font-weight: bold">Sprite to show on HUD when carried</span> - </p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a> (see note)</p>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Report pickups and drops</span> - Allow or supress &quot;(1)Private picked up / lost the TnT&quot;</p>
+<h3>Notes:</h3>
+<p>A <b>dod_object</b> can be used to perform a variety of tasks, in addition to any object based objective (capturing docs or enigma machine, blowing things up, delivering dispatches etc) it can also be used to place models in maps (the model will have to be clipped to prevent a player picking the object up).</p>
+<p>Masters for dod_object and dod_object_goal. While these two entitys have a &quot;master&quot; field (specified from the FGD) they do not appear to be affected by the state of the master if one is named.</p><a id="goal"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_object_goal</h1>
+<p><span style="font-style: italic;">Brush entity:</span><br /> A target volume for a <a href="#object">dod_object</a></p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - Usually left blank</p>
+<p><span style="font-weight: bold">Group name</span> - Name of the objective group this goal area is a member of (see <a href="/node/1097#master">dod_control_point_master</a>)</p>
+<p><span style="font-weight: bold">Target when complete</span> - Trigger objective completion events</p>
+<p><span style="font-weight: bold">Sprite to show on HUD if in zone without object</span> - Lets players know there is a trigger present</p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a> (see note)</p>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Don't multicap</span> - If this flag is unchecked the dod_object_goal will only trigger when <i>ALL</i> of the dod_object(s) in the appropriate objective group have been delivered</p>
+<p><span style="font-weight: bold">Cap once per round</span> - </p>
+<h3>Note:</h3> 
+<p>Masters for dod_object and dod_object_goal. While these two entitys have a &quot;master&quot; field (specified from the FGD) they do not appear to be affected by the state of the master if one is named.</p>
+</ul><h1 id="1097" name="1097" class="book-h2">Scoring</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>DoD Entities</h1>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;Control / Scoring</h3>
+<ul>
+		<li><a href="/node/1097#dodinfo">info_doddetect</a></li>
+		<li><a href="/node/1097#master">dod_control_point_master</a></li>
+		<li><a href="/node/1097#score">dod_score_ent</a></li>
+		<li><a href="/node/1097#flagrelay">dod_point_relay</a></li>
+		<li><a href="/node/1097#timer">dod_round_timer</a></li>
+</ul>	
+<a id="dodinfo"></a>
+<hr />
+<h1>info_doddetect</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+DoD &quot;game rules&quot; - sets team spawn status and troop type</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a> - </p>
+<p><span style="font-weight: bold">Give allied team infinite respawns</span> - </p>
+<pre>
+yes
+no
+</pre>
+<p><span style="font-weight: bold">Give axis team infinite respawns</span> - </p>
+<p><span style="font-weight: bold">Make allied team paratroopers</span> - </p>
+<pre>
+yes
+no
+</pre>
+<p><span style="font-weight: bold">Make axis team paratroopers</span> - </p>
+<p><span style="font-weight: bold">Country for allied team</span> - </p>
+<pre> 
+United States
+British
+</pre>
+<p><span style="font-weight: bold">Points for wiping out allied team</span> - points awarded to the surviving team </p>
+<p><span style="font-weight: bold">Points for wiping out axis team</span> - </p>
+<p><span style="font-weight: bold">Target when allies are eliminated</span> - Trigger events when a team is eliminated</p>
+<p><span style="font-weight: bold">Target when axis are eliminated</span> - </p>
+<p><span style="font-weight: bold">Use built in timer</span> - </p>
+<pre>
+yes
+no
+</pre>
+<p><span style="font-weight: bold">Target when timer expires</span> - </p>
+<p><span style="font-weight: bold">Team that wins when timer expires</span> - </p>
+<pre>
+neither
+allies
+axis
+</pre>
+<p><span style="font-weight: bold">Points given when timer expires</span> - </p>
+<p><span style="font-weight: bold">Allies Respawn delay factor</span> - Adjust the spawning rates for the teams, defaults to 1.0</p>
+<p><span style="font-weight: bold">Axis Respawn delay factor</span> - </p>
+			<p><span style="font-weight: bold">Wind X velocity</span> - Adjust wind direction and speed, presumably affects weather (see below) and smoke FX</p>
+<p><span style="font-weight: bold">Wind Y velocity</span> - </p>
+<p><span style="font-weight: bold">Weather Type</span> - </p>
+<pre>
+none
+rain
+snow
+</pre>
+<h3>Flags:</h3>
+<p>None - </p>
+<h3>Notes:</h3>
+<p><b>info_doddetect</b> defines the &quot;game rules&quot; and enviroment for the map. Notably this entity has a <a href="/node/1091">master</a> field, implying that the &quot;game rules&quot; can be changed mid-mission. In DoD beta 3.x this required a round re-start to take effect.</p><a id="master"></a>
+<hr />
+<!--next entity-->
+<h1>dod_control_point_master</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Objective / scoring group controller</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Will usually be left blank  </p>
+<p><span style="font-weight: bold">Target</span> - Usually left blank </p>
+<p><span style="font-weight: bold">Time between point gives</span> - Time interval in seconds between points awards for holding flags </p>
+<p><span style="font-weight: bold">Target when allies capture</span> Entity to fire when team captures, usually a <a href="#score">dod_score_ent</a> </p>
+<p><span style="font-weight: bold">Target when axis capture</span> - </p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a> (see below)</p>
+<p><span style="font-weight: bold">Group name</span> - Name of objective group that this dod_control_point _master acts for </p>
+<h3>Flags:</h3>
+<p> None -</p>
+<h3>Notes:</h3>		
+<p><b>dod_control_point_master and objective groups</b><br />
+Since beta 2.0 DoD has had the facility to have objective groups which allows much easier control of mission objectives and sub-objectives. The two most important points about groups and the <b>dod_control_point_master</b> are:</p>
+<ol><li>Each flag (<a href=" /node/1096#flag">dod_control_point</a>) objective group <i>must</i> have a <b>dod_control_point_master</b>.</li>
+<li>Disabling a groups <b>dod_control_point_master</b> (by switching it's <a href="/node/1091">master</a> off) will disable the whole group.</li>
+</ol>
+<p>A flag groups <b>dod_control_point_master</b> dosn't necessarily need to perform any function for the group but the flag group needs it to be there. Normally the only time this is a problem is when using hidden flags to control spawns or events.</p>
+<p>Disabling the group means that none of the groups entitys will trigger and all signs of them (such as models) will be hidden. This allows a map to have several objective systems, which can be switched on and off on the fly. Pre DoD v1.0 this was the only way to disable a <b>dod_control_point</b> as this entity did not have a 'master' field (added DoD v1.0).</p>
+<p>A group consisting of <a href=" /node/1096#object">dod_object</a>(s) and <a href=" /node/1096#goal">dod_object_goal</a>(s) does <i>not</i> require a dod_control_point_master.</p><a id="score"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_score_ent</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Awards mission completion points and restarts round</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - Usually left blank</p>
+<p><span style="font-weight: bold">for team</span> - Choose a team:</p>
+<pre>
+both
+allies
+axis
+</pre> 
+<p><span style="font-weight: bold">Points</span> - For mission completion </p>
+<p><span style="font-weight: bold">Reset items time</span> - Time in seconds </p>
+<p><span style="font-weight: bold">Reset players time</span> - Time in seconds</p>
+<p><span style="font-weight: bold">Reset group</span> - Leave blank to reset all objective groups </p>
+<p><span style="font-weight: bold">End game?</span> - <b>DO NOT SET THIS TO &quot;YES&quot;</b></p>
+<p><span style="font-weight: bold">Message</span> - Text message </p>
+<p><span style="font-weight: bold">Move to next map</span> - Change to another map. This allows a campaign map structure to be built</p>
+<p><span style="font-weight: bold">Change level delay</span> - Time in seconds</p>
+<h3>Flags:</h3>
+<p>None - </p>
+<h3>Notes:</h3>				
+<p>A <b>dod_score_ent</b> is triggered to end a round and reset everything for the next round, it can also award points for mission completion.</p><a id="flagrelay"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_point_relay</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Used to explicitly set which team holds a <a href=" /node/1096#flag">dod_control_point</a></p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - The targetname of the relay</p>
+<p><span style="font-weight: bold">Target</span> - The targetname of the <a href=" /node/1096#flag">dod_control_point</a></p>
+<p><span style="font-weight: bold">Relay trigger point with team?</span> - choose a team:</p>
+<pre>
+Allies
+Axis
+Reset
+</pre>
+<h3>Flags:</h3>
+<p>None - </p>
+<h3>Notes:</h3>			
+<p>The <b>dod_point_relay</b> can be useful in a variety of situations, such as where the target flag cannot be touch-capped (either due to position or configuration). It is also useful for setting the status of a hidden flag in order to control scoring or spawn positions.</p><a id="timer"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_round_timer</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Mission timer</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - Entity to trigger when timer reaches zero</p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">Timer length</span> - Time in seconds</p>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Shown on HUD</span> - Defaults to yes</p>
+<p><span style="font-weight: bold">Start off</span> - Trigger the timer by name later on</p>
+<h3>Notes:</h3>		
+<p>A <b>dod_round_timer</b> is a useful clock usually displayed on the players HUD to let them know exactly how long they have left to complete their objective. Note that once a timer is running it cannot be stopped, in order to prevent effects from triggering when the timer expires you will have to disable the effects.</p>
+</ul><h1 id="1098" name="1098" class="book-h2">Misc</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>DoD Entities</h1>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;Miscellaneous</h3>
+<ul>
+<li><a href="misc.html#sandbag">dod_trigger_sandbag</a></li>
+<li><a href="misc.html#camera">dod_camera</a></li>
+<li><a href="misc.html#corner">path_corner</a></li>
+<li><a href="misc.html#location">dod_location</a></li>
+<li><a href="misc.html#particle">particle_shooter</a></li>
+<li><a href="misc.html#preround">dod_preround</a></li>
+</ul>
+		<a name="sandbag"></a>
+<hr />
+		<h1>dod_trigger_sandbag</h1>
+<p><span style="font-style: italic;">Brush entity:</span><br />
+Allows machine gunners to deploy their bipod while standing</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - Usually left blank</p>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">PYR</span> - Note: the default DoD FGD may not include this</p>
+<p><span style="font-weight: bold">Degrees in either direction</span> - Arc of fire either side of the set centreline</p>
+<h3>Flags:</h3>
+<p>None -</p>
+<h3>Notes:</h3>
+<p>Set the centreline of the arc that the player must face in to deploy, using the dial in object properties, note that this may cause VHE to report that &quot;<b>dod_trigger_sandbag</b> has unused keyvalues&quot;. However if you change this line in your DoD FGD:</p>
+<pre>
+@SolidClass base(Targetname,Target,Master) = dod_trigger_sandbag : "Sandbag Trigger"
+</pre>
+		<p>to this:</p>
+<pre>
+@SolidClass base(Targetname,Target,Master,Angles) = dod_trigger_sandbag : "Sandbag Trigger"
+</pre>
+<p>Then the error (which is not really an error) will no longer be reported.</p><a name="camera"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_camera</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+<p>This is a modified trigger_camera</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Target</span> - Name of the entity the camera will look at</p>
+<p><span style="font-weight: bold">Delay before target</span> - </p>
+<p><span style="font-weight: bold">Killtarget</span> - </p>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Zoom FOV</span> - Set camera zoom</p>
+<p><span style="font-weight: bold">dod_camera View</span> - </p>
+<pre>
+normal
+scope
+binoculars
+widescreen
+</pre>
+<p><span style="font-weight: bold">Dod_camera Fade:</span></p>
+<pre>
+normal
+black (instant)
+fast fade out (2 seconds)
+fast fade in (2 seconds)
+slow fade out (4 seconds)
+slow fade in (4 seconds)
+</pre>
+<p><span style="font-weight: bold">Subtitle</span> - </p>
+<p><span style="font-weight: bold">Hold time</span> - Length of time of the camera view</p>
+<p><span style="font-weight: bold">Trigger on Start</span> - </p>
+<p><span style="font-weight: bold">Trigger on End</span> - </p>
+<p><span style="font-weight: bold">Path corner</span> - Name of the first path_corner for moving cameras</p>
+<p><span style="font-weight: bold">Initial speed</span> - For moving cameras</p>
+<p><span style="font-weight: bold">Acceleration</span> - </p>
+<p><span style="font-weight: bold">Stop Deceleration</span> - </p>
+<p><span style="font-weight: bold">Team that is bound to</span> - choose a team:</p>
+<pre>
+allies
+axis
+both
+</pre>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Start at player</span> - Camera starts at players eye position</p>
+<p><span style="font-weight: bold">Follow player</span> - Camera uses the player as target</p>
+<p><span style="font-weight: bold">Freeze player</span> - Prevent player actions during camera scene</p>
+<h3>Notes:</h3>
+<p><b>dod_camera</b> like <b>trigger_camera</b> is / will be used for cut scenes, which are usually only found in single player games, however DoD beta 3.0 will include them as a method of telling the player(s) about their mission objectives.</p>
+<p>DoDv1.X doesn't use the DoD camera although it is still functional.</p><a name="corner"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>path_corner</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+This is a modified Entity</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Pitch,Roll,Yaw (XYZ)</span> - PYR settings </p>
+<p><span style="font-weight: bold">Zoom FOV</span> - Change zoom at this point</p>
+<p><span style="font-weight: bold">dod_camera View</span> - </p>
+<pre>
+normal
+scope
+binoculars
+widescreen
+</pre>
+<p><span style="font-weight: bold">Dod_camera Fade:</span></p>
+<pre>
+normal
+black (instant)
+fast fade out (2 seconds)
+fast fade in (2 seconds)
+slow fade out (4 seconds)
+slow fade in (4 seconds)
+</pre>
+<p><span style="font-weight: bold">Subtitle</span> - </p>
+<p><span style="font-weight: bold">Next stop target</span> - </p>
+<p><span style="font-weight: bold">New train speed</span> - </p>
+<p><span style="font-weight: bold">New train rot speed</span> - </p>
+<p><span style="font-weight: bold">Fire on pass</span> - </p>
+<p><span style="font-weight: bold">Wait here(secs) </span> - </p>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Wait for retrigger</span> - </p>
+<p><span style="font-weight: bold">Teleport</span> - </p>
+<p><span style="font-weight: bold">Fire once</span> - </p>
+<h3>Notes:</h3>
+<p><b>path_corner</b> has been modified to allow mappers to change the properties of a <b>dod_camera</b></p>
+<a name="location"></a>
+<hr />
+<!--BEXT ENTITY-->
+<h1>dod_location</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Specify a named location in your map</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Master</span> - Entity to use as <a href="/node/1091">master</a></p>
+<p><span style="font-weight: bold">Name of this location</span> -</p>
+<h3>Flags:</h3>
+<p>None -</p>
+<h3>Notes:</h3>
+<p>A <b>dod_location</b> placed in a map will allow players to bind a key to say &quot;i'm near %l&quot; (for example) and the &quot;%l&quot; will be substituted for the relevant dod_location.</p><a name="particle"></a>
+<hr />
+<h1>particle_shooter</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Used to place particle effects in a map</p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Target</span> - </p>
+<p><span style="font-weight: bold">Angles</span> - PYR (will probably control direction particles are &quot;shot&quot; in).</p>
+<p><span style="font-weight: bold">Group Id</span> - ?</p>
+<p><span style="font-weight: bold">Number of Particles ( -1 = infinite )</span> - Number of particles per trigger?</p>
+<p><span style="font-weight: bold">Delay between shots</span> - </p>
+<p><span style="font-weight: bold">Particle life</span> - How long a particle persists for</p>
+<p><span style="font-weight: bold">Particle velocity</span> - </p>
+<p><span style="font-weight: bold">Velocity variance</span> - </p>
+<p><span style="font-weight: bold">Spin ( degrees per sec )</span> - Spin applied to particles?</p>
+<p><span style="font-weight: bold">Gravity</span> - Gravity level on particles? (ie; set this low to create snowflakes etc)</p>
+<p><span style="font-weight: bold">Damping time</span> - ?</p>
+<p><span style="font-weight: bold">Damping velocity</span> - ?</p>
+<p><span style="font-weight: bold">Sprite</span> - Filename of the sprite to use for the particles</p>
+<p><span style="font-weight: bold">Particle size</span> - Scaling factor applied to sprites?</p>
+<p><span style="font-weight: bold">Color: red ( 0 - 255 ) - </span>Adjust the color balance of the particles</p>
+<p><span style="font-weight: bold">Colour: green ( 0 - 255 )</span> - </p>
+<p><span style="font-weight: bold">Colour: blue ( 0 - 255 )</span> - </p>
+<p><span style="font-weight: bold">Brightness</span> - </p>
+<p><span style="font-weight: bold">Fade speed</span> - ?</p>
+<p><span style="font-weight: bold">Scale speed</span> - ?</p>
+<p><span style="font-weight: bold">Framerate</span> - For aninmated sprites?</p>
+<p><span style="font-weight: bold">Render mode</span> - Select sprite rendermode:</p>
+<pre>
+Normal
+Trans color
+Trans texture
+Glow
+Indexed alpha
+Additive
+</pre>
+<h3>Flags:</h3>
+<p><span style="font-weight: bold">Repeatable</span> - </p>
+<p><span style="font-weight: bold">Spiral</span> - ?</p>
+<p><span style="font-weight: bold">Collide with world</span> - PParticle collisions with walls / roofs / floors ?</p>
+<p><span style="font-weight: bold">Affected by force</span> - Wind (see <a href="/node/1097#dodinfo">info_doddetect</a>) and gravity effects on particles?</p>
+<p><span style="font-weight: bold">Animate</span> - Animate particles</p>
+<p><span style="font-weight: bold">Start on</span> - Shooter active initialy or requires trigger</p>
+<p><span style="font-weight: bold">Kill on collide</span> -Particle removed on collsion with world?</p>
+<p><span style="font-weight: bold">Ripple when hitting water</span> - Water ripples? sprite ripples?</p>
+<h3>Notes:</h3>	
+<p>None -</p><a name="preround"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>dod_preround</h1>
+<p><span style="font-style: italic;">Point entity:</span><br />
+Triggers at the start of each round based on the previous rounds ending</p>
+<p><b>EXPERIMENTAL</b></p>
+<h3>Properties:</h3>
+<p><span style="font-weight: bold">Name</span> - Targetname</p>
+<p><span style="font-weight: bold">Trigger if allies won last round - </span>Entitys to trigger</p>
+<p><span style="font-weight: bold">Trigger if allies lost last round</span> -</p>
+<p><span style="font-weight: bold">Trigger if axis won last round</span> -</p>
+<p><span style="font-weight: bold">Trigger if axis lost last round</span> -</p>
+<p><span style="font-weight: bold">Trigger if last round was draw</span> -</p>
+<h3>Flags:</h3>
+<p>None -</p>
+<h3> Notes:</h3>
+<p>None -</p></ul><h1 id="1099" name="1099" class="book-h2">Half-Life common</h1><ul><!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>DoD Entities</h1>
+<h3>Half-Life Entities - Modified in DoD</h3>
+<p>The entitys here are standard Half-Life entitys which behave differently or have extra functions in Day of Defeat. Most of these extra functions are to apply restrictions on which teams can and cannot trigger or be affected by the entity.</p>
+<p>All entity properties have <b>not</b> been listed, but a link to the Half-Life original entity has been provided.</p>
+<p>Other entitys (not listed here) may have properties modified by the <a href="http://spirit.valve-erc.com">Spirit of Half-Life</a> mod codebase as a version of SoHL (0.42)  was included into DoD beta 2.0. for more information on these see the SoHL entity guide. <a href="http://spirit.valve-erc.com/guide/EntityGuide.html">Spirit Entity Guide</a> (this will be for the latest version of SoHL and will include some entitys and functionality not included in DoD).</p>
+<ul>
+<li><a href="/node/1099#text">game_text</a></li>
+<li><a href="/node/1099#hurt">trigger_hurt</a></li>
+<li><a href="/node/1099#teleport">trigger_teleport</a></li>
+<li><a href="/node/1099#doors">func_door</a></li>
+<li><a href="/node/1099#doors">func_door_rotating</a></li>
+<li><a href="/node/1099#button">func_button</a></li>
+<li><a href="/node/1099#once">trigger_once</a></li>
+<li><a href="/node/1099#multi">trigger_multiple</a></li>
+<li><a href="/node/1099#auto">trigger_auto</a></li>
+<li><a href="/node/1099#break">func_breakable</a></li>
+<li><a href="/node/1099#tank">func_tank</a></li>
+<li><a href="/node/1099#zone">game_zone_player</a></li>
+</ul><a id="text"></a>
+<hr />
+<h1>game_text</h1>
+<p><span style="font-style: italic;">Point entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/956#game_text">game_text</a></p>
+<h3>Properties added:</h3>
+<p>None - </p>
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Allies only</span> - Only allow allies to see this message</p>
+<p><span style="font-weight: bold">Axis only</span> - Only allow axis to see this message</p>
+<p><span style="font-weight: bold">Allies player only</span> - Allied triggering player only</p>
+<p><span style="font-weight: bold">Axis player only</span> - Axis triggering player only</p>
+<a id="hurt"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>trigger_hurt</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/961#trigger_hurt">trigger_hurt</a></p>
+<h3>Properties added:</h3>
+<p>None -</p>
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Don't hurt allies</span> -</p>
+<p><span style="font-weight: bold">Don't hurt axis</span> -</p>
+<h3>Notes:</h3>
+<p>Team specific <b>trigger_hurt</b>(s) is primarily used for spawn protection.</p>
+<a id="teleport"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>trigger_teleport</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/961#trigger_teleport">trigger_teleport</a></p>
+<h3>Properties added:</h3>
+<p>None -</p>
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">No allies</span> - Don't teleport allies</p>
+<p><span style="font-weight: bold">No axis</span> - Don't teleport axis</p>
+<h3>Notes:</h3>	
+<p>Team specific <b>trigger_teleport</b>(s) are also very useful for protecting areas (such as spawns).</p>
+<a id="doors"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>func_door and func_door_rotating</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity references:<br />
+<a href="/node/955#func_door">func_door</a><br />
+<a href="/node/955func_door_rotating">func_door_rotating</a></p>
+<h3>Properties added:</h3>
+<p><span style="font-weight: bold">Team specific door</span> - Choose a team:</p>
+<pre>
+both
+allies only
+axis only
+</pre>
+<h3>Flags added:</h3>
+<p>None - </p>
+<h3>Notes:</h3>			
+		<p>Also useful for protecting areas</p>
+<a id="button"></a>
+<hr />
+<!--NEXT ENTITY-->
+		<h1>func_button</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/955#func_button">func_button</a></p>
+<h3>Properties added:</h3>
+<p>None -</p>
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Allies can't activate</span></p>
+<p><span style="font-weight: bold">Axis can't activate</span></p>
+<a id="once"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>trigger_once</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/961#trigger_once">trigger_once</a></p>
+<h3>Properties added:</h3>
+<p><span style="font-weight: bold">Team affected</span> - </p>
+<pre>
+both
+allies only
+axis only
+</pre>	
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Reset at round restart</span> - Allows the entity to trigger once each round rather than once per map</p>
+<a id="multi"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>trigger_multiple</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/961#trigger_multiple">trigger_multiple</a></p>
+<h3>Properties added:</h3>
+<p><span style="font-weight: bold">Team affected</span> - </p>
+<pre>
+both
+allies only
+axis only
+</pre>		
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Reset at round restart</span> - Will reset the trigger delay timer a the start of each round</p>
+<a id="auto"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>trigger_auto</h1>
+<p><span style="font-style: italic;">Point entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/961#trigger_auto">trigger_auto</a></p>
+<h3>Properties added:</h3>
+<p>None -</p>
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Trigger at every round start</span> - Entity will trigger it's target at each round start rather than just on map load</p>
+<a id="break"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>func_breakable</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/955#func_breakable">func_breakable</a></p>
+<h3>Properties added:</h3>
+<p><span style="font-weight: bold">TnT group name (if used)</span> - These options imply that is is no longer nescasary to set up a <a href="/node/1096#goal">dod_object_goal</a> to make a wall that can be removed with TnT (<a href="/node/1096#object">dod_object</a>).</p>
+<p><span style="font-weight: bold">Trigger when TnT set (if used)</span> - </p>
+<p><span style="font-weight: bold">Delay before breaking with TnT</span> - </p>
+<p><span style="font-weight: bold">Sprite to show on HuD if in zone without object</span> - </p>
+<h3>Flags added:</h3>
+<p>These options allow you to control how the breakable can be broken, combinations of team and/or weapon/object restriction can be set up.</p>
+<p><span style="font-weight: bold">Only grenades</span> - </p>
+<p><span style="font-weight: bold">Allies only</span> - </p>
+<p><span style="font-weight: bold">Axis only</span> - </p>
+<p><span style="font-weight: bold">Object cap only</span> - </p>
+<p><span style="font-weight: bold">Bazooka or grenades</span> - </p>
+<p><span style="font-weight: bold">Bazooka only</span> -</p>
+<a id="tank"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>func_tank, func_tankmortar, func_tankrocket</h1>
+<p><span style="font-style: italic;">Brush entities:</span></p>
+<p>RUST Entity references:<br />
+<a href="/node/955#func_tank">func_tank</a><br />
+<a href="/node/955#func_tankmortar">func_tankmortar</a><br />
+<a href="/node/955#func_tankrocket">func_tankrocket</a></p>
+<h3>Properties added:</h3>
+<p><span style="font-weight: bold">Behave as</span> - </p>
+<pre>
+normal
+allies friendly
+axis friendly
+</pre>
+<h3>Flags added:</h3>
+<p>None -</p>
+<h3>Notes:</h3>			
+<p>The func_tank entitys can now be used to make &quot;autocannons&quot; for protecting spawn areas.</p>
+<a id="zone"></a>
+<hr />
+<!--NEXT ENTITY-->
+<h1>game_zone_player</h1>
+<p><span style="font-style: italic;">Brush entity:</span></p>
+<p>RUST Entity reference:<br />
+<a href="/node/956#game_zone_player">game_zone_player</a></p>
+<h3>Properties added:</h3>
+<p>None -</p>
+<h3>Flags added:</h3>
+<p><span style="font-weight: bold">Ignore allies</span> - Don't count allies</p>
+<p><span style="font-weight: bold">Ignore axis</span> - Don't count axis</p>
+<h3>Notes:</h3>				
+<p><b>game_zone_player</b> can be used to set a counter to the number of players inside (or outside) the &quot;zone&quot;, alternatively (or also) it can force all players inside (or outside) the &quot;zone&quot; to trigger an entity.<br />There are many ways this could be used, for example by setting a large &quot;zone&quot; triggering a <b>game_score</b> around a <a href="/node/1096#goal">dod_object_goal</a> it could give points to all players who were assisting or escorting the player with the <a href="/node/1096#object">dod_object</a> being captured.</p>
+</ul></body></html>

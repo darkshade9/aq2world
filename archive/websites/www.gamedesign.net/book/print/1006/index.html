@@ -1,0 +1,38 @@
+<html><head><title>Doors in HL2: The prop_door_rotating Entity</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="1006" name="1006" class="book-h1">Doors in HL2: The prop_door_rotating Entity</h1><p style="text-align: justify;"><img src="content/half-life2/tutorials/prop_door_rotating/dev_door.gif" style="float: left; padding: 10px;" width="256" height="249" alt="dev_door" title="dev_door" />Believe it or not, most doors in HL2 are not func_door or even func_door_rotating. They came up with a better way to do the common door, and that is the prop_door_rotating. This is a much more versatile entity then a func_door_rotating, as it provides better physics and generally just acts more like a door.</p>
+<p style="text-align: justify;">In order to make our door, we first need to make our doorway. To do this, we are going to use the <b>/dev/dev_measuredoor01</b> texture. This texture, when properly scaled to .25 for X and Y, shows use the size of a door, and even where the knob will be. Go ahead and make a bush where you want your doorway, 128 units tall and 64 units wide. Fit the texture if you have to, and have a look. The gray area is where you should build the walls around the door, the orange area is what you leave open.</p>
+<p style="text-align: justify;">Now for the door. Using the Entity Tool (Shift-E), place a prop_door_rotating in the doorway. The model to use for doors is <b>models/props_c17/door01_left.mdl</b>. This model is great for doors, its standard size, and has many, many skins (more on that later). After you have the door model in, hit apply. Now you have to position the door in the door way, by rotating and moving it. A little tip: hold down Shift while you rotate if you want the door to rotate in 15 unit increments, which helps keep the door flush with the walls around it.</p>
+<p style="text-align: justify;">After you have your door in place, there are all sorts of keyvalues to play with. Some of the important ones are:<br></p>
+<ul>
+<li><b>World Model:</b> The model you are using for the door. Most of the time, you will be using <b>models/props_c17/door01_left.mdl</b>.<br>
+<li><b>Skin:</b> Changes the appearance of the door. Takes a number from 0-13, giving you 14 different doors to choose from.<Br>
+<li><b>Ajar Angles:</b> Lets you have the door start partway open. Uses Pitch Yaw Roll (YZX), for most doors, you only want to change the middle number, Yaw (Z).<br>
+<li><b>Spawn Position:</b> Paired with the above, lets you choose closed, open forward, open backward, and ajar. The ajar value uses the angle you entered in "ajar angles".<br>
+<li><b>Hinge Axis:</b> tells the door what invisible line to turn on. Takes a value of two YZX numbers. You can either use the Hammer "helper", the purple ball, to define this by dragging it upward, or you can just make the third number of the second YZX triplicate larger then the third number of the first YZX triplicate. Either way, the end result is that the doors rotates around where its hinges would be.<br>
+<li><b>Rotation Distance:</b> How for the door should swing either way. Default is 90, which means the door can open 90 degrees to the back, or 90 degrees to the front.<br>
+<li><b>Speed:</b> how fast the door swings. Higher number means a more well oiled door, while lower numbers make for rusty hinges. :)<br>
+<li><b>Fully Open Sound:</b> The sound you want to play when the door opens all the way. Like a "clang" or something.<br>
+<li><b>Fully Closed Sound:</b> Same as above, but for closed. Perhaps a nice "slam" sound.<br>
+<li><b>Moving Sound:</b> Here is where you can make the door squeak.<br>
+<li><b>Delay Before Close:</b> How long before the door closes itself. If you are scared of ghosts, set this to -1, that will keep the door open till Gordon decides to close it.<br>
+<li><b>Damage Inflicted When Blocked:</b> The amount of damage any creature unlucky enough to get his fingers caught in the door takes. Set from the low (jump around swearing) to the high (gets gibed). Just like when you were a kid, right?<br>
+<li><b>Health:</b> Leave at 0 for invincible doors. Give it a value to be able to bust the door in S.W.A.T. style.<br>
+<li><b>Locked Sound:</b> Sound to play if you try to open a locked door (see the flags). Something like a rattle sound or "access denied".<br>
+<li><b>Unlock Sound:</b> Sound to play if the door isn't locked, like a door handle sound.<br>
+<li><b>Force Closed:</b> Nothing will stop the door from closing. Similar to setting the "damage when blocked" to 4000, but not as messy.<br>
+</ul>
+<p style="text-align: justify;">And then there are the oh-so-important flags:<br></p>
+<ul>
+<li><b>Starts Open:</b> No brainier here.<br>
+<li><b>Starts Locked:</b> The door will not open. It will play the Locked Sound if one is defined. To unlock the door, have an IO send to the "Unlock" input of the door.<br>
+<li><b>Door Silent:</b> Another no brainier.<br>
+<li><b>Use Closes:</b> When you +use the door, it closes. Assuming its open.<br>
+<li><b>Door Silent to NPCs:</b> You can here the door, and so can they. Check this to make them oblivious to the sound of an opening door, as most minions are.<br>
+<li><b>Ignore Player +USE:</b> When poor little Gordon comes up to use the door, ignore him!<br>
+</ul>
+<p style="text-align: justify;">That about wraps up the prop_door_rotating. At the bottom of the document I have a image of the different skins you can use and the corresponding number to enter into "skin". As usual, if you have any questions or comments regarding this article, post here or email me at jeffca51 <b>at</b> yahoo <b>dot</b> com.</p>
+<p>
+Door skins and thier number to use for the <b>skin</b> atribute:<br></p>
+<p><img src="content/half-life2/tutorials/prop_door_rotating/doors.gif" width="500" height="288" alt="doors" title="doors" />
+</p></body></html>

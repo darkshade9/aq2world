@@ -1,0 +1,28 @@
+<html><head><title>Clip Brush Q&A</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="50" name="50" class="book-h1">Clip Brush Q&A</h1><h3>Quake 2</h3>
+	<blockquote>
+		Clip Brush Q&A - Various
+	</blockquote> 
+	
+<br><br><b>Do I REALLY need to use Clip brushes?  It seems like a lot of tedious work!</b>
+
+<p>The harsh reality is that creating Clip brushes in levels, especially large ones, is a pretty tedious job.  Especially since you'll typically want to add them after doing all of the structural and texture work of your level.  So, it's one thing that is often overlooked by most mappers.
+
+<p>However, if you want your map to be played, or at the very least be enjoyed by many people (which is the reason most people publish maps), then you really should spend the time creating Clip brushes.  Nothing is more frustrating in a deathmatch game than to be running backwards while firing, only to be stuck by a small light fixture!
+
+<br><br><b>Is preventing the player from getting stuck the only practical use for Clip brushes?</b>
+
+<p>No. Clip brushes can be used in a variety of situations.  For example, let's say you created a hole in a wall from an explosion.   In this hole, you had the quad damage.  While everything might be setup by brushes for the player to crawl into that gap, the player might not be able to get out.   In this case, you could create a ramp with the clip brush to make it easier for the player to get back out.
+
+<br><br><b>Can I use Clip brushes TOO much?</b>
+
+<p>Like any tool or technique in Quake 2 editing, it's sometimes easy to go overboard.  Keep in mind you can't ever completely prevent the player from getting stuck.  Likewise, it's also very easy to abuse Clip brushes by putting them in a place where they block the player's movement with no indication as to why.  While this may be a interesting effect for a while, it very quickly becomes frustrating.
+
+<p>As with everything else in Quake 2, be sure to test your level after adding Clip brushes - it's very easy to forget you're working in a 3D world - and that Clip brush which keeps the player from getting snagged on the first floor may end up accidentally blocking a doorway on the second floor!
+
+<br><br><b>I just have some small light fixtures along my wall and using Clip brushes seems a bit too tedious.   Is there another way to handle this?</b>
+
+<p>If you've got a lot of small items sticking out of a wall, you can change their content property to Mist (or AUX) which allows the player to pass through them without the need for Clip brushes.  However, this is really only useful for small items since the player passes completely through the object.  So, if you had some big columns, this technique probably wouldn't be practical.  But, for small light fixtures, this is sometimes quicker and easier than using Clip brushes!
+
+<p></body></html>

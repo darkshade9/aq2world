@@ -1,0 +1,462 @@
+<html><head><title>Doom 3</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="167" name="167" class="book-h1">Doom 3</h1><h3>Doom 3 Design Articles</h3>
+<p>The Doom 3 sections covers the tutorials, Entity descriptions, Frequently Asked Questions (FAQ) stored on the RUST web pages. Further contribution is greatly welcomed.</p>
+<p>If you have any immediate questions check out the <a href="http://forums.gamedesign.net/viewforum.php?f=50">RUST Doom III Forums</a> for fast feedback on any Doom III Questions, Chat, Gossip ... etc. What these guys don't know isn't worth knowing</p>
+      <h1 id="169" name="169" class="book-h1">Info</h1><ul>Here you can find Doom 3 info.</ul><h1 id="511" name="511" class="book-h2">Faq</h1><ul><h3>DOOM 3 FAQ</h3>
+
+By Method<br><br>
+
+<b>Where’s the editor?</b><br>
+Open console and type “editor” to load D3Radiant.<br><br>
+
+<b>How do you open the console?</b><br>
+Console can be accessed with the CTRL – ALT – TILDE (~) key. Or enter Com_allowConsole 1 in your config.<br><br>
+
+<b>I can’t see my mouse when I load the editor.</b><br>
+Make a shortcut for D3 and enter these parameters in the target line:<br><br>
+
+<i>+set r_fullscreen 0 +editor +vid_restart</i><br><br>
+
+<b>How do you fix the “wglMakeCurrent failed” error?</b><br>
+Disable Anti Aliasing or enter this command in your shortcut:<br><br>
+
+<i>+set r_multiSamples 1</i><br><br>
+
+<b>How do you group brushes?</b><br>
+Select the brushes you want to group, right click on the Top View and pick func_static.<br><br>
+
+<b>What are the main files for map to run in D3?</b><br>
+The main map files are .map,  .proc and .cm.<br><br>
+
+<b>What are .map, .proc and .cm files?</b><br>
+.map is the editor file with entity placement, .proc is the precompiled bsp and .cm is the collision map.<br><br>
+
+<b>My weapons don’t respawn in MultiPlayer map.</b><br>
+Make sure that you use prefix _mp for MP weapons. Example: weapon_shotgun_mp.<br><br>
+
+<b>I can’t see some of the windows in D3Radiant.</b><br>
+Load the editor and click on View->Toggle.<br><br>
+
+<b>How do I change the gamma for the editor?</b><br>
+Click on Misc->Gamma… and pick a value between 0 and 1. Example: 0.8.<br><br>
+
+<b>How do you rotate, move and zoom models in D3Radiant Media View?</b><br>
+Rotate - left click on the object and while holding it down move the mouse around.
+Move Up, Down, Left or Right - right click on the object and while holding it down move the mouse to up, down, left or right. Zoom In/Out - press Alt and right click on the object and while holding it down move the mouse around.
+</ul><h1 id="174" name="174" class="book-h2">Links</h1><ul><h3>Links</h3>
+
+<b><a href = "http://www.doom3.com/">Official Doom 3 website</a><br></b>
+Official Doom website, includes news, screenshots, trailers, wallpapers, etc.<br><br>
+
+<b><a href = "http://www.idsoftware.com/">Id Software</a><br></b>
+The home of Doom 3 and all other great games.<br><br>
+
+<b><a href = "http://www.splashdamage.com/">Splash Damage</a><br></b>Guys who designed DOOM 3 MP maps.<br><br>
+
+<b><a href = "http://www.planetdoom.com/">PlanetDoom</a><br></b>
+Includes everything from doom 1 to doom 3.<br><br>
+
+<b><a href = "http://www.doom3world.org/">DOOM 3 World</a><br></b>Forums with a bunch of tutorials on level designing, scripting, modelling, etc.<br><br></ul><h1 id="173" name="173" class="book-h2">Screenshots</h1><ul><!-- (c)2004 [DS]Kingpin_Xatrix -->
+
+<h3>Screenshots</h3>
+
+Here's a bunch of <u>official</u> screenshots.<br><br>
+
+<img src="http://gamedesign.net/content/doom3/1.jpg">
+<img src ="http://gamedesign.net/content/doom3/2.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/24.jpg">
+<img src ="http://gamedesign.net/content/doom3/23.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/5.jpg">
+<img src ="http://gamedesign.net/content/doom3/6.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/7.jpg">
+<img src ="http://gamedesign.net/content/doom3/8.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/9.jpg">
+<img src ="http://gamedesign.net/content/doom3/10.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/25.jpg">
+<img src ="http://gamedesign.net/content/doom3/13.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/14.jpg">
+<img src ="http://gamedesign.net/content/doom3/15.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/16.jpg">
+<img src ="http://gamedesign.net/content/doom3/17.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/18.jpg">
+<img src ="http://gamedesign.net/content/doom3/19.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/20.jpg">
+<img src ="http://gamedesign.net/content/doom3/21.jpg"><br>
+<img src="http://gamedesign.net/content/doom3/22.jpg">
+<img src ="http://gamedesign.net/content/doom3/3.jpg"><br>
+<img src ="http://gamedesign.net/content/doom3/11.jpg"></ul><h1 id="168" name="168" class="book-h1">Tutorials</h1><ul>Here you can find Doom 3 tutorials.</ul><h1 id="877" name="877" class="book-h2">Alphabet Decals</h1><ul><h3><div class = "highlight">Alphabet Decals</div></h3>
+by Method<br><br>
+
+To create words on the walls seeing throughout Doom 3, you need to use patches and alphabet texture. Make a 16 by 16 unit brush and click on the <b>Patch->Simple Patch Mesh...</b> Then apply the alphabet texture, which is located in the decals texture folder, on the patch.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/alphabet1.jpg"></p>
+
+You probably won't have it aligned right, so naturalize the texture by opening the Surface Inspector and clicking <b>Natural</b> button under the Texturing area.<br><br>
+
+<i>Note: You can press Ctrl+N to naturalize the texture.</i>
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/alphabet2.jpg"></p>
+
+Change the grid to <b>0.25</b> by pressing <b>Shift+3</b>. Then move the patch close to the wall so the gap between the wall and the patch will be one unit thick.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/alphabet3.jpg"></p>
+
+Open Surface Inspector and change <b>Shift horizontally</b> and <b>Shift vertically</b> values to <b>0.005</b>. The values are low, but they center the letters perfectly. Move the arrows up or down to find the letter you need. If the letter seems upside down, use <b>Flip X</b> or <b>Flip Y</b> under the Texturing area, to flip it.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/alphabet4.jpg"></p>
+
+After you created the letter you wanted, copy it by pressing Space and move it next to the first letter. Use Surface Inspector to create second letter, third, etc.<br><br>
+
+<i>Note: To scale the letters you can change the size of the patch. It should automatically scale on resize.</i><br><br>
+
+For this tutorial I created a news board.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/alphabet5.jpg"></p></ul><h1 id="688" name="688" class="book-h2">Bending Cylinder Patches</h1><ul><h3><div class = "highlight">Bending Cylinder Patches</div></h3>
+by Method<p>
+
+<b><div class = "highlight">BENDING A PIPE</div></b><p>
+
+Open D3Radiant (DOOM Edit) and make a cylinder patch by creating a small brush and clicking on <b>Patch->Cylinder</b>.
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire1.gif"></p>
+
+Select the patch and go into the vertex mode (press V). You can select vertices by clicking on them. When you select vertices they will turn blue. Now you can move them around. You'll notice how the patch bends.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire2.gif"></p>
+
+To make a simple bend, you need to move right vertices down, so they will look like a mirror reflection of the left vertices. Now it looks like a pipe, but it's a badly shaped pipe.
+<p>
+<i>Note: make sure your patch is snapped to grid (Control + G), otherwise it'll be hard to align it to the other patches.</i>
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire3.gif"></p>
+
+To fix it, you need to move center vertices, so the top center vertex point will intersect top right and top left vertex points. Do the same thing for center middle and center bottom vertices.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire4.gif"></p>
+
+<b><div class = "highlight">BENDING A WIRE</div></b><p>
+
+Start by creating a cylinder patch. Try to see what the wire will look like in your head, that way it'll be easier for you to bend it.
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire5.gif"></p>
+
+When you're done bending the patch, create another one and place it next to the first one. Continue bending and adding patches.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire6.gif"></p>
+
+This is the wire I made for this tutorial. It consists of 4 cylinder patches placed together.
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire7.gif"></p>
+
+Now group the wire by selecting all the patches and right clicking on the Top view. Find func and pick <b>func->finc_static</b>, it’ll make the patches into the func_static. The red dot indicates the origin of the entity.
+<p>
+<i>Note: you can center the origin by pressing Shift + O.</i>
+<p>
+
+<p align = "center">
+<img src = "http://www.gamedesign.net/content/doom3/wire8.gif"></p>
+
+There’re two ways to bend wire. The first method was described above and the second is to create a long cylinder patch and add rows, by clicking on <b>Patch->Insert->Insert (2) Rows</b> and <b>Patch->Insert->Add (2) Rows</b>. If you need to create a short wire, then you can use this method, but for the complex and long wires you should use the first method.
+<p></ul><h1 id="510" name="510" class="book-h2">CFG file</h1><ul><h3>DOOM 3 CONFIG</h3>
+by Method<br><br>
+
+
+<h5>What is a CFG file?</h5>
+
+CFG file is a text file with all the controls, commands and settings. When you run DOOM 3 (D3) for the first time, it creates DoomConfig.cfg file, which is text file with default controls/settings. CFG file stores info like your nick, controls, mouse settings, function keys, etc.<br><br><br>
+
+
+<h5>Why is having your own CFG file handy?</h5>
+
+
+The reason, I'm writing this tutorial is because it's always handy to have your own config file. Say you changed some commands values in the console and you want to undo what you did. All you have to do is to type in console
+<b>exec name.cfg</b>, where name is your config name. The console will overwrite current config with the config you executed. When you play on someone elses pc, all you have to do is to execute your cfg and you ready to play with your controls/settings or if you reinstalled D3 and don't want to manually set all the controls/settings you can also execute your CFG file.<br><br><br>
+
+
+<h5>How do you create one?</h5>
+
+I suggest using Notepad, which comes with almost every Windows OS or any other word editor, but make sure to save CFG file as .cfg. You bind or set commands in this form:<br><br>
+
+<b>bind [key] [command]</b><br><br>
+
+Example:<br><br>
+
+<b>bind UPARROW "_forward"</b><br><br>
+
+Where key is the keyboard button and command is the function that key should perform. You can also create comments by placing <b>//</b> in your CFG file. D3 engine ignores the whole line after <b>//</b>. Example:<br><br>
+
+<b>bind DEL "_impulse19" //pda</b><br><br>
+
+
+When you done with your CFG file, just save it as name.cfg in Doom 3/base folder, where name is the name of your CFG file. If you want to unbind all the controls when you execute your CFG file, add <b>unbindall</b> somewhere in your config. You can also change your name color. Here's the list of the colors:<br><br>
+
+^1 - <font color ="red">red</font><br>
+^2 - <font color ="green">green</font><br>
+^3 - <font color ="yellow">yellow</font><br>
+^4 - <font color ="blue">blue</font><br>
+^5 - <font color ="lightblue">light blue</font><br>
+^6 - <font color ="pink">pink</font><br>
+^7 - <font color ="white">white</font><br>
+^8 - <font color ="gray">gray</font><br>
+^9 - <font color ="black">black</font><br><br>
+
+Example:<br><br>
+
+<b>^8[DS]^7Method</b><br><br>
+
+Which will look like this: <font color ="gray">[DS]</font><font color ="white">Method</font><br><br>
+
+You can set your name right in the config. Example:<br><br>
+
+<b>seta ui_name "^8[DS]^7Method"</b><br><br>
+
+<h5>Is there a way to organize CFG file or make it easier to read?</h5>
+
+You can always use comment lines to organaze your CFG. Here's a snippet from my config:<br><br>
+
+<b>
+//---------------------------------------------<br>
+// USER INFO<br>
+//---------------------------------------------<br><br>
+
+seta ui_name "^8[DS]^7Method"<br>
+seta in_alwaysRun "1"<br>
+seta ui_autoReload "0"<br>
+seta ui_autoSwitch "0"<br>
+seta ui_skin "skins/characters/player/marine_mp"<br>
+seta ui_showGun "1"<br><br>
+
+//---------------------------------------------<br>
+// MOUSE BUTTONS<br>
+//---------------------------------------------<br><br>
+
+bind  MOUSE1		"_attack"<br>
+bind  MOUSE2		"_moveup"<br>
+bind  MOUSE3		"_impulse11" //flashlight<br>
+bind  mwheelup		"_impulse15" //nextweap<br>
+bind  mwheeldown	"_impulse13" //reload</b><br><br>
+
+You can view pk4 files located in Doom 3/base folder. Just open pak000.pk4 with WinZip, it contains all the CFG files which were used by Id Software.<br><br>
+
+If you have any questions or comments, post them on RUST | gamedesign.net <a href = "http://forums.gamedesign.net/viewforum.php?f=50&sid=5391f4867bb1567e37cf434a45b28c03">DOOM 3 Forum</a>.</ul><h1 id="1063" name="1063" class="book-h2">CTF Level Design Tips</h1><ul><h3>CTF Level Design Tips</h3>
+by Method
+<p><p>
+<b>INTRO</b>
+<p>
+I played several CTF games, such as Kingpin's Bagman, Q2 CTF, Q3 CTF and D3 CTF.
+While playing and looking through D3 CTF maps by Threewave, I noticed that their maps have several things in common.
+<p>
+<b>COMMON THINGS</b>
+<p>
+<ul>
+<li>The maps are symmetrical</li>
+<li>Bases have spaces for Flag Carrier to hide</li>
+<li>Security Armor is usually placed near the flag room</li>
+<li>The donut-shaped areas are common throughout the maps</li>
+<li>Machineguns are usually placed near the flag</li>
+<li>The color of the flares and CTF decals indicate the bases</li>
+<li>Bases have 2-4 entry points</li>
+</ul>
+<p>
+<i>Note: Donut-shaped area is a room with a pillar or a column in the middle of it.</i>
+<p>
+<b>PAUL JAQUAYS' TIPS</b>
+<p>
+1. Keep maps symmetrical. Even if you can design an interesting non-symmetrical map, players will always believe that the maps are
+imbalanced and will favor a side. The big terrain map that Xian did for Q2 CTF is a classic example. No question that it was fun,
+but I always felt that Blue had a map advantage. 
+<p>
+2. Mark paths in and out of bases. Nothing is more frustrating than being constantly turned around inside a map and becoming disoriented.
+<p>
+3. Plan out areas for strategic defenses.
+<p>
+4. Strike a balance between defensibility and indefensibility for bases. A base that has to be assaulted by teamwork to succeed is much
+better than one that leaks like a sieve … too easy to get into or out of.
+<p>
+5. Work in variety of play experience in maps. My CTF maps in Q3A and Q3:TA were the only ones with
+swimmable water in them.
+Made them different from everyone elses.
+<p>
+6. Think in terms of memorable play experiences. 
+<p>
+7. Don’t be afraid to include hiding places. The Q2 CTF maps had great hiding places in them. The Q3A maps did not … no place to hide.
+<p>
+8. Keep map size down. Unless BIG is the memorable feature of a map, don’t make the distance between bases overlong.
+Fast games are more fun than interminably long races between bases.
+<p>
+9. Be careful about making a map that is too sniper friendly. If a good sniper can dominate a map, no one on the other side will have fun.
+<p>
+10. The best sniper roosts should also be the most vulnerable positions to maintain.
+<p>
+11. Keep players supplied with ammo, but hungry for armor and health.
+<p>
+12. Assault and return routes should intersect frequently.
+<p>
+<i>Thanks to Paul Jaquays for taking his time and listing these great tips for CTF maps.</i><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/510" title="View the previous page.">previous</a></div><div class="next"><a href="node/556" title="View the next page.">next</a></div><div class="up"><a href="node/168" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">CFG file</div><div class="next">Level Design Tips</div></div></div></div></ul><h1 id="556" name="556" class="book-h2">Level Design Tips</h1><ul><h3>DOOM 3 Level Design Tips</h3>
+by Method<p><p>
+
+<h4>D3Radiant tips</h4>
+
+1. If you can't see the textures or it's too dark in the Cam view, click on <b>Misc->Gamma...</b> to change the brightness in the map.<br><br>
+
+2. If you want to select multiple brushes, create a big brush and place it around the brushes you want to select, then click on <b>Selection->Select->Select Inside</b> or you can click the select icon on the toolbar.<br><br>
+
+3. If you want to see the size of the brush, press "p" to open Preferences and check <b>Paint sizing info</b> in "New Functionality".<br><br>
+
+4. If you have a brush with specific texture which you want other brushes to have, select brush/brushes which you want to have specific texture and click middle (wheel) mouse button on the brush with the texture of your choice.<br><br>
+
+5. When you select entity from the Entity View window or if you right click on the Top View, you'll see alot of entities from SP and MP. You can save time by pressing the first letter of the entity you want and editor will scroll down to it. Example: If I wanted to get to the weapons and they're on the bottom, I would press "w" and the editor will scroll down to the entities which start with "w". If I wanted to be more specific I would press "w" and then "e" and it'll jump right to the weapons.<br><br>
+
+6. Type in console these commands to list specific commands and their usage. List commands:<br><br>
+
+<b>listToolCmds<br>
+listGameCmds<br>
+listSystemCmds<br>
+listCmds<br></font></b><br>
+
+7. In D3Radiant Media View you can pick the textures, models, particles, etc. for you map. To move models and particles in the preview window use these controls:<br><br>
+
+<b>Rotate</b> - left click on the object and while holding it down move the mouse around.<br><br>
+
+<b>Move Up, Down, Left or Right</b> - right click on the object and while holding it down move the mouse to up, down, left or right.<br><br>
+
+<b>Zoom In/Out</b> - press ALT and right click on the object and while holding it down move the mouse around.<br>
+
+<h4>Level Designing tips</h4>
+
+1. Sketch your map before building it, it really saves time. You don't have to sketch the whole level out, but you need to have some early gameflow layout. It's also good idea to sketch some specific areas.<br><br>
+
+2. Study pro maps and try to include the things you like in your map. Read pro LD's interviews, most of the time they give some handy tips from their experience.<br><br>
+
+3. Beta test your maps, give them to your friends and listen to their valuable feedback. Sometimes you don't see the problem because you're too busy with designing, but after player's feedback you'll realize that some things can be changed.<br><br>
+
+4. Plan your map carefully with vis blocking in mind. Like I said above sketch and plan your map, so you won't have to rebuild it. Most of the LD's mistakes can be avoided by sketching and planning your map carefully.<br><br>
+
+5. Learn to "Think in 3D". Imagine what will look good in 3D and what not. Most people find it hard to see the map in their head, but the more you build the easier it gets. It's important to have this skill so you can visually sketch some parts of the level in your head.<br><br>
+
+6. Place weapons and items carefully and make your map balanced. If you have powerful weapon in your map, then there always be players in that area. Don't place weapon and too much ammo in the same place, make the player travel to other areas to pick it up.<br><br>
+
+7. If you're creating Team DM/CTF map make it symmetrical, so each team has a fair chance of winning. If you're building CTF style map, then use different colors for the bases or you can place some team signs in the base so players will know where they are.<br><br>
+
+8. Make maps with different heights, so the player will expect enemy on top or on the bottom. Good maps give the player feeling that enemy could be everywhere.<br><br>
+
+9. Keep you r_speeds (polys count) low for older PC's and so the map won't lag online. Also light in D3 is very crucial for FPS (Frames Per Second). Keep track of how many light sources hit the surface.<br><br>
+
+I will update this handbook page with more info in the future. If you have any questions or comments, post them on RUST | gamedesign.net <a href = "http://forums.gamedesign.net/viewforum.php?f=50&sid=5391f4867bb1567e37cf434a45b28c03">DOOM 3 Forum</a>.</ul><h1 id="659" name="659" class="book-h2">Map DEF File</h1><ul><h3>Map DEF File</h3>
+
+by Method<br><br>
+<i>Special Thanks to Brian Harris of id Software</i><br><br>
+
+<b>INTRO</b><br>
+All maps should have a DEF (definition) file, which will tell the engine what kind of map it is, if it's a MultiPlayer, SinglePlayer, etc. So you should create a def folder in C:\Program Files\Doom 3\base if you don't already have one.<br><br>
+
+<b>SINGLEPLAYER DEF</b><br>
+Here's example of def file for a SP map by id.<br><br>
+<pre style = "background-color: darkgray">
+mapDef game/mars_city1 {
+	"name"		"Mars City"
+	"devname"		"01-Mars City"
+	"singleplayer"	"1"
+	"size0"		"241381796"
+	"size1"		"241381796"
+	"size2"		"360373649"
+	"size3"		"509824838"
+}
+</pre><br>
+First line tells the engine that the file is the map definition and the path to the map. "Name" is the name of the map, "devname" is the development name, "singleplayer" tells the engine that this map is a SinglePlayer map. "Size0" - "size3" is the map size info in 4 quality modes.<br><br>
+
+<b>MULTIPLAYER DEF</b><br>
+Here's example of def file for a MP map by id.<br><br>
+<pre style = "background-color: darkgray">
+mapDef game/mp/d3dm1 {
+	"name"		"Tomiko Reactor"
+	"Deathmatch"	"1"
+	"Team DM"		"1"
+	"Last Man"	"1"
+	"Tourney"		"1"
+	"size0"		"114318720"
+	"size1"		"114318720"
+	"size2"		"196881115"
+	"size3"		"312221073"
+}
+</pre><br>
+First line tells the engine that the file is the map definition and the path to the map. "Name" is the name of the map. "Deathmatch", "Team DM", "Last Man" and "Tourney" tell the engine that this map can be played in those modes. "Size0" - "size3" is the map size info in 4 quality modes.<br><br>
+
+<b>SIZE INFO</b><br>
+The only hard part about writing a DEF for a map is to getting the size info. Cvar "com_udateLoadSize 1" will update the size info automaticly. Thanks to Brian Harris of id Software for explanation and for showing the batch file which they used to get size info's for their maps.
+Here's a snippet of the batch file:<br><br>
+<pre style = "background-color: darkgray">
+doom +com_updateLoadSize 1 +map game\admin.map +quit
+doom +com_updateLoadSize 1 +map game\alphalabs1.map +quit
+doom +com_updateLoadSize 1 +si_map game\mp\d3dm1.map +si_pure 0
++spawnserver +quit
+doom +com_updateLoadSize 1 +si_map game\mp\d3dm2.map +si_pure 0
++spawnserver +quit
+</pre><br>
+During development of D3 the executable file was called doom.exe, but later was renamed to doom3.exe, so for batch file to work you need to change "doom" to "doom3".<br><br>
+
+<b>WRITING BATCH FILE</b><br>
+If I wanted to get size info's for my map, let's call it methd3dm1, I would open a text editor (Notepad) and type this:<br><br>
+<pre style = "background-color: darkgray">
+doom3 +com_updateLoadSize 1 +si_map game\mp\methd3dm1.map 
++si_pure 0 +spawnserver +quit
+</pre><br>
+After I would save it as sizeinfo.bat in C:\Program Files\Doom 3. You can name it whatever you want, but you must include .bat, this tells Windows that it's a batch file. If you can't see the extenions, click on My Computer, then on Tools->Folder Options... click on View tab and uncheck "Hide extensions for known file types".<br><br>
+
+<b>WRITING MAP DEF</b><br>
+Use examples above to write map def file and save it as name.def (where name is the name of your map) in C:\Program Files\Doom 3\base\def. Now laod D3 and change game's quality to lowest, exit and run the batch file. It should automaticly add size info to your def file. Continue changing the quality of the game and running the batch untill you have 4 size info's in your map def. Brian Harris also said that they tend to always have the same number through size0 and size1.</ul><h1 id="634" name="634" class="book-h2">MultiPlayer Guide</h1><ul><h3>DOOM 3 MP Guide</h3>
+
+by Method<br><br>
+
+<b>RUN</b><br>
+It’s important to run in D3, some people say that it’s better to sneak, but most of the time I run around the sneaking people and kill them before they notice me. Make sure that you have “always run” turned on in MP settings.<br><br>
+
+<i>Note: You can always sneak by holding SHIFT key.</i><br><br>
+
+<b>JUMP</b><br>
+You can gain speed by running on the slope surfaces and jumping at the end. Good example of this would be steps. If you hold strafe and use your mouse to aim for the direction, while constantly jumping you’ll gain speed also, but it’s very hard to control your movement.<br><br>
+
+<b>STRAFE</b><br>
+Strafing is a very important technique in MP. The best way to strafe when you’re in firefight is to move randomly, so the player won’t predict your movement. Try to confuse your enemy, jump, strafe and even duck.<br><br>
+
+<b>CONTROL THE ITEMS</b><br>
+All good players control the items. So when you pick up some weapon/item try to run everywhere and pick all the powerful stuff yourself. Even if you already have it, run over it, so your enemy won’t posses it.<br><br>
+
+<i>Note: Professional players count the respawn time and pick up the items before their enemy.</i><br><br>
+
+<b>AIM</b><br>
+This is the skill you gain by practicing and playing a lot of FPS games. If your enemy is moving, always aim ahead. If he walks towards you, then you got to try and shoot him in the head. Headshots cause double damage to an enemy.<br><br>
+
+<b>SPAWN SAFELY</b><br>
+This is not a technique, but you get spawn killed in D3 very often. The best way to stay alive is to spawn and select grenades (you spawn with a pistol and two grenades) and aim at your enemy, while you running backwards for a better weapon. After you run out of grenades, switch to the pistol and shoot while you continue running backwards.<br><br>
+
+<i>Note: It’s important to know the map when you run backwards otherwise you might get stuck.</i><br><br>
+
+<b>KNOW THE MAP</b><br>
+If you know the map, then you know all the shortcuts and item placement. So you can get to place or pick up an item before your enemy. Some maps include a trick jumps and if you know where they are you can get to places faster by jumping.<br><br>
+
+<b>PLAY COMPETITIVE</b><br>
+It’s very important to be confident in yourself. When you play against someone who kills you easily, you’ll be more cautious and play defensibly. This will give a huge advantage to your enemy. When you play defensibly you back off, while your enemy jumps and fires, furthermore getting an easier frag. Even if you know you’re weaker than your enemy, try to attack him, instead of backing off.<br><br>
+
+<b>DROP THE WEAPONS</b><br>
+If you run out of ammo, sometimes it's a good idea to drop that weapon. Drop your weapon by pressing BACKSPACE. So when your enemy will pick it up, he'll have a weapon with an empty clip.<br><br>
+
+<b>THROW GRENADES</b><br>
+Grenades can bounce around and they won't give give away your location. Throw grenades to areas with powerful weapons to kill the campers.<br><br>
+
+<b>CONFIGURE YOUR KEYS</b><br>
+Create your own config file and configure the keys to your preference. You can read my config tutorial <a href = "http://www.gamedesign.net/book/view/510">here</a>.<br><br>
+
+<b>KNOW YOUR ENEMY</b><br>
+D3 supports 5.1 sound, so you can hear whenever the player picked up a weapon or a powerup. You can find your enemy's location by listening to sounds. Also find what weapon your enemy uses the most and try to control it.</ul></body></html>

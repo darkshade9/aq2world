@@ -1,0 +1,84 @@
+<html><head><title>CFG file</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="510" name="510" class="book-h1">CFG file</h1><h3>DOOM 3 CONFIG</h3>
+by Method<br><br>
+
+
+<h5>What is a CFG file?</h5>
+
+CFG file is a text file with all the controls, commands and settings. When you run DOOM 3 (D3) for the first time, it creates DoomConfig.cfg file, which is text file with default controls/settings. CFG file stores info like your nick, controls, mouse settings, function keys, etc.<br><br><br>
+
+
+<h5>Why is having your own CFG file handy?</h5>
+
+
+The reason, I'm writing this tutorial is because it's always handy to have your own config file. Say you changed some commands values in the console and you want to undo what you did. All you have to do is to type in console
+<b>exec name.cfg</b>, where name is your config name. The console will overwrite current config with the config you executed. When you play on someone elses pc, all you have to do is to execute your cfg and you ready to play with your controls/settings or if you reinstalled D3 and don't want to manually set all the controls/settings you can also execute your CFG file.<br><br><br>
+
+
+<h5>How do you create one?</h5>
+
+I suggest using Notepad, which comes with almost every Windows OS or any other word editor, but make sure to save CFG file as .cfg. You bind or set commands in this form:<br><br>
+
+<b>bind [key] [command]</b><br><br>
+
+Example:<br><br>
+
+<b>bind UPARROW "_forward"</b><br><br>
+
+Where key is the keyboard button and command is the function that key should perform. You can also create comments by placing <b>//</b> in your CFG file. D3 engine ignores the whole line after <b>//</b>. Example:<br><br>
+
+<b>bind DEL "_impulse19" //pda</b><br><br>
+
+
+When you done with your CFG file, just save it as name.cfg in Doom 3/base folder, where name is the name of your CFG file. If you want to unbind all the controls when you execute your CFG file, add <b>unbindall</b> somewhere in your config. You can also change your name color. Here's the list of the colors:<br><br>
+
+^1 - <font color ="red">red</font><br>
+^2 - <font color ="green">green</font><br>
+^3 - <font color ="yellow">yellow</font><br>
+^4 - <font color ="blue">blue</font><br>
+^5 - <font color ="lightblue">light blue</font><br>
+^6 - <font color ="pink">pink</font><br>
+^7 - <font color ="white">white</font><br>
+^8 - <font color ="gray">gray</font><br>
+^9 - <font color ="black">black</font><br><br>
+
+Example:<br><br>
+
+<b>^8[DS]^7Method</b><br><br>
+
+Which will look like this: <font color ="gray">[DS]</font><font color ="white">Method</font><br><br>
+
+You can set your name right in the config. Example:<br><br>
+
+<b>seta ui_name "^8[DS]^7Method"</b><br><br>
+
+<h5>Is there a way to organize CFG file or make it easier to read?</h5>
+
+You can always use comment lines to organaze your CFG. Here's a snippet from my config:<br><br>
+
+<b>
+//---------------------------------------------<br>
+// USER INFO<br>
+//---------------------------------------------<br><br>
+
+seta ui_name "^8[DS]^7Method"<br>
+seta in_alwaysRun "1"<br>
+seta ui_autoReload "0"<br>
+seta ui_autoSwitch "0"<br>
+seta ui_skin "skins/characters/player/marine_mp"<br>
+seta ui_showGun "1"<br><br>
+
+//---------------------------------------------<br>
+// MOUSE BUTTONS<br>
+//---------------------------------------------<br><br>
+
+bind  MOUSE1		"_attack"<br>
+bind  MOUSE2		"_moveup"<br>
+bind  MOUSE3		"_impulse11" //flashlight<br>
+bind  mwheelup		"_impulse15" //nextweap<br>
+bind  mwheeldown	"_impulse13" //reload</b><br><br>
+
+You can view pk4 files located in Doom 3/base folder. Just open pak000.pk4 with WinZip, it contains all the CFG files which were used by Id Software.<br><br>
+
+If you have any questions or comments, post them on RUST | gamedesign.net <a href = "http://forums.gamedesign.net/viewforum.php?f=50&sid=5391f4867bb1567e37cf434a45b28c03">DOOM 3 Forum</a>.</body></html>

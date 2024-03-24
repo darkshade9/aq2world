@@ -1,0 +1,115 @@
+<html><head><title>Half-Life Skies</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="558" name="558" class="book-h1">Half-Life Skies</h1><!-- by Andy 17 Nov 2004 -->
+
+<p class="hlbg2">This is a Visual Guide of the different sky textures included in Half-Life and how to add them to your map.</p>
+<hr>
+<!--break-->
+<h4>The Texture</h4>
+The sky texture is included in the <span class="r"><b>halflife.wad</b></span> and represented by a  light blue colour texture named <font color=red>sky</font>. <br>Simply select the brush you want to have as sky and add the sky texture to it. In most editors, the brush will remain blue and you will not be able to see the actual sky in the 3D or texture window of the editor.<br> To define the type of sky you want, you will have to change the <b>Worldspawn</b> properties and add the skyname.<br> Most editors achieve this by adding a Key and a Value, such as:<br>
+<pre>
+	Key:	skyname
+	Value:	The name of the sky you want to use.
+</pre>
+	Hammer allows you to enter the skyname directly into the worldspawn properties, but don't be fooled by the <b>cl_</b> tag, just enter the skies short name.</p>
+
+<p><b>Where the sky comes from</b>:<br>
+The in-game skies are located in the <b><i>Half-Life\valve\gfx\env</i></b> folder. If they are not there then you will have to unpack your <b>Pak0.pak</b> file. They are presented in two formats, <b>.bmp</b> and or <b>.tga</b></p>
+<p><b>Notes for making your own sky</b>:<br>
+If you want to make your own evn sky set you need to follow these guidelines:<br><br>
+The size of the picture files:</p>
+<ul>
+<li>Width&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 256 pixels</li>
+<li>Height&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 256 pixels</li>
+<li>Resolution&nbsp;&nbsp;= 72 DPI</li>
+<li>Format is &nbsp;&nbsp;*.bmp and *.tga</li></ul>
+<p>The Names of the images:</p><ul>
+<li>The ground&nbsp;&nbsp;=&nbsp;&nbsp;<i> name</i><b>dn</b></li>
+<li>The ceiling&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;<i> name</i><b>up</b></li>
+<li>Front side&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;<i> name</i><b>ft</b></li>
+<li>Left side&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;<i> name</i><b>lf</b></li>
+<li>Back side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;<i> name</i><b>bk</b></li>
+<li>Right side&nbsp;&nbsp;&nbsp;&nbsp=&nbsp;&nbsp;&nbsp;<i> name</i><b>rt</b></li></ul>
+
+<p>And they have to be placed in the same folder as all the other skies, <b><i>Half-Life\valve\gfx\env</i></b>. You will find more information on creating custom skies in the tutorial: &nbsp;
+<a href="book/view/9?PHPSESSID=151e5c805c83f84f951e1783c1cf1255">Environment Mapping</a></p>
+
+<h4>A visual reference to Half-Life Skies</h4>
+
+<center>
+    <img  src="content/half-life/tutorials/hlskies/2des_full.jpg" alt="2desert" border="1" width="400" height="100">
+</center>
+<p align="center"><b>2desert</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/morn_full.jpg" alt="morning" border="1" width="400" height="100">
+</center>
+<p align="center"><b>morning</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/desert_full.jpg" alt="desert" border="1" width="400" height="100">
+</center>
+<p align="center"><b>desert</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/dusk_full.jpg" alt="dusk" border="1" width="400" height="100">
+</center>
+<p align="center"><b>dusk</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/night_full.jpg" alt="night" border="1" width="400" height="100">
+</center>
+<p align="center"><b>night</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/cliff_full.jpg" alt="cliff" border="1" width="400" height="100">
+</center>
+<p align="center"><b>cliff</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/city_full.jpg" alt="city" border="1" width="400" height="100">
+</center>
+<p align="center"><b>city</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/space_full.jpg" alt="space" border="1" width="400" height="100">
+</center>
+<p align="center"><b>space</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/black_full.jpg" alt="black" border="1" width="400" height="100">
+</center>
+<p align="center"><b>black</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/alien1_full.jpg" alt="alien1" border="1" width="400" height="100">
+</center>
+<p align="center"><b>alien1</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/alien2_full.jpg" alt="alien2" border="1" width="400" height="100">
+</center>
+<p align="center"><b>alien2</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/alien3_full.jpg" alt="alien3" border="1" width="400" height="100">
+</center>
+<p align="center"><b>alien3</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/neb1_full.jpg" alt="neb1" border="1" width="400" height="100">
+</center>
+<p align="center"><b>neb1</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/neb2b_full.jpg" alt="neb2" border="1" width="400" height="100">
+</center>
+<p align="center"><b>neb2</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/neb6_full.jpg" alt="neb6" border="1" width="400" height="100">
+</center>
+<p align="center"><b>neb6</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/neb7_full.jpg" alt="neb7" border="1" width="400" height="100">
+</center>
+<p align="center"><b>neb7</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/xen8_full.jpg" alt="xeno8" border="1" width="400" height="100">
+</center>
+<p align="center"><b>xeno8</b></p>
+<center>
+    <img src="content/half-life/tutorials/hlskies/xen9_full.jpg" alt="xeno9" border="1" width="400" height="100">
+</center>
+<p align="center"><b>xeno9</b></p>
+  <center>
+<img src="content/half-life/tutorials/hlskies/xen10_full.jpg" alt="xeno10" border="1" width="400" height="100">
+</center>
+<p align="center"><b>xeno10</b></p>
+   <hr></body></html>

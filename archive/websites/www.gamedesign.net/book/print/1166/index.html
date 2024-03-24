@@ -1,0 +1,68 @@
+<html><head><title>Making Cheat Codes</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="1166" name="1166" class="book-h1">Making Cheat Codes</h1><H2><B>Introduction</B></H2>
+Is your map too hard for newbies to beat?  Will, give them an edge with your own custom cheat codes.  Using triggers, you can set up your own custom cheats to do certain things such as give the player who entered the cheat 1,000,000 gold.  How about an army of 500 knights?  Done.  In this tutorial, I will explain how to set up your own cheat codes for your map using basic triggers.  For this tutorial, I will show you how to make a custom cheat code that gives the player 1,000,000 gold and hide the fact the the player even typed anything in at all.  However, you imagination is the limit as to what you cheat code(s) can do.
+<BR>
+<BR>
+<BR>
+<H2><B>How To Do It</B></H2>
+Alright, let's get started.  Boot up the Trigger Editor section of the Warcraft Editor.  Create your new trigger and name it whatever you like.  For this tutorial, I'm just going to name my trigger this:
+<UL>
+<FONT FACE="Courier New">Cheat Codes</FONT>
+</UL>
+Now that we have our trigger, we need to give it some parameters to operate properly.  First, we need to create a new "Event" that will initialize the trigger.  We do this by clicking on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic2.png"> ) or by pressing Ctrl+E to create a new "Event".  A dialog box will appear with 2 drop-down boxes.  
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic1.png">
+<BR>
+<BR>
+Now, click on the smaller drop-down menu and select "Player".  Next, click on the bigger drop-down menu and select "Chat Message".  You should now see this:
+<UL>
+<FONT FACE="Courier New">Player 1 (Red) types a chat message containing Text as An exact match</FONT>
+</UL>
+Okay, all you have to do is click on the word "Text".  Then, in the string field, type in what you want the cheat code to be.  For this example, I'll use "idkfa" (Doom rules!).  Now that part is done.  However, if your map is multiplayer, you'll want to copy and paste that "Event" and then change each new pasted "Event" to correspond to the player colors in your map.  So, if your map has a red, blue, and green player, you'll want your "Events" to look like this:
+<UL>
+<FONT FACE="Courier New">Player 1 (Red) types a chat message containing idkfa as An exact match</FONT>
+<BR>
+<FONT FACE="Courier New">Player 2 (Blue) types a chat message containing idkfa as An exact match</FONT>
+<BR>
+<FONT FACE="Courier New">Player 7 (Green) types a chat message containing idkfa as An exact match</FONT>
+</UL>
+Great!  We're halfway done.  Next thing we need to do is create the "Actions" that will give the player 1,000,000 gold and hide the cheat code so it looks like the play never typed anything at all.
+<BR>
+First, you need to create a new "Action" by either clicking on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic4.png"> ) or pressing Ctrl+R.  Alright, we'll set up our trigger to change the message displayed to hide the cheat code.  A dialog box will appear just like before.  Click on the small drop-down box and select "Cinematic".  From the big down-down menu, select "Clear Text Messages".  You should see this in the dialog box:
+<UL>
+<FONT FACE="Courier New">Clear the screen of text messages for (All players)</FONT>
+</UL>
+That "Action" is fine how it is, so just hit the "OK" button.  Awesome!  Now all we have left to do is create an "Action" to give the player 1,000,000 gold.  Sounds easy enough.
+<BR>
+To start off, create a new "Action".  Select "Player" from the small drop-down menu and "Add Property" from the big drop-down menu.  Here's what you get:
+<UL>
+<FONT FACE="Courier New">Player - Add 1000 to Player 1 (Red) Current gold</FONT>
+</UL>
+Alright, click on the number "1000".  You should see this dialog box:
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic5.png">
+<BR>
+<BR>
+Make sure the "Value" radio button is selected and type "1000000" in the text box.  Click "OK".  Now, click on "Player 1 (Red).  Here's what you get:
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic8.png">
+<BR>
+<BR>
+Make sure the radio button next to "Function" is selected and in the drop-down menu right next to it, select "Event Response - Triggering Player".  Hit "OK".  Here's what you should get:
+<UL>
+<FONT FACE="Courier New">Player - Add 1000000 to (Triggering player) Current gold</FONT>
+</UL>
+Here's what the final product should roughly look like (may differ a little if you have more than 1 player):
+<UL>
+<A HREF="http://www.gamedesign.net/content/warcraft3/btut1/cheat.txt">Cheat Code Trigger</A>
+</UL>
+And that's it.  You've successfully created a cheat code for your map.
+<BR>
+<BR>
+<BR>
+<H2><B>Wrap Up</B></H2>
+This tutorial was fairly basic, however there are many other things you can do to make your cheat codes better.  For example, you could make a cheat code for your tower defense map to give the players more lives.  Or, you could make a cheat code that turns another player's units into sheep.  Or, you could make a goofy cheat code that changes the name of a player to something else such as "Llama" or "Moron".  Once you start to understand better how to use triggers, the possiblities are literally endless.</body></html>

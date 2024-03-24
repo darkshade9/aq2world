@@ -1,0 +1,89 @@
+<html><head><title>Advanced Brushes</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="43" name="43" class="book-h1">Advanced Brushes</h1><h3>Quake 2</h3>
+	<blockquote>
+		Advanced Brushes - Herbert "BONEWOLF" Flower
+	</blockquote>
+
+<br><br>
+
+<p>I started studying the subject of Quake brushes when I was first starting my TC (<a href="http://www.planetquake.com/gunman/">http://www.planetquake.com/gunman/</a>). My aim has always been to push the Quake engine to its fullest potential. I read a quick little description of how the brushes work, and wrote a few programs to allow me to make brushes with my 3D program and convert them to .map format. I spent several weeks discovering, by trial and error, the techniques needed to make practically anything out of brushes. What I know is just the result of alot of hard thinking, and staring at a computer screen. I havent talked to Carmack or anyone that is really educated on the subject of 3d engines, and I'm sure that if I did, I'd have more to say on this subject.
+
+<br><br><b>BRUSH DESCRIPTION</b>
+
+<p>Brushes are of course the building blocks that the level is made from. They are always convex because of the way they are created. Imagine a world made of styro-foam that goes forever in all directions. To make a brush, you make infinitely large slices in the foam, and what is left over from that whole universe of styro-foam is your brush. You can imagine how easy it would be to forget a slice or two and end up with a brush that goes off into infinity. Its also obvious that you cant create a single brush that has a dent or "concave" surface on it, because each slice you make goes forever... you'd always chop-off parts of the brush that would have caused it to have the concave shape in the first place. In the old days of Quake1, brushes had to have 16 or less "slices" to compile, but now you can find QBSPs that have the ability to create brushes with 256 slices, and QBSP3 seems to allow alot of slices too.
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/abrush/abrush_img1.gif"></div>
+
+<br><br><b>THE "KNIFE"</b>
+
+<p>How do you make the slices? Its easy. You define the slicing plane with three points... essentially a triangle. Each point's coordinates are whole numbers with no decimals (this is due to the .map format). In the world of 3D graphics, each triangle that makes up an object either faces IN or OUT depending on whether the triangle was made clockwise or counterclockwise. That "direction" is called the "normal" and it's used to tell which side of the plane to discard. You want your normals to face INWARD, or you will chop-off the interior of the brush, rather than the stuff on the outside. But now it gets complicated. Think of a cube. It would in fact be made up of 6 triangles, rather than 6 squares. To add to the confusion, you could have the points that define each plane appear anywhere on that plane... so-long as the "normal" still points inward. There are a zillion possible ways to make a cube then, but in some respects, each way will result in a cube that will behave differently when you manipulate it (shearing, rotation etc.)
+
+<p><div align="center"><img src="/content/quake2/tutorials/abrush/abrush_img2.gif"></div>
+
+<br><br><b>THE .MAP FORMAT</b>
+
+<p>Here is an example of a cutting plane in the .map format:
+
+<blockquote>
+1.000000 ( -225 -265 -145 ) ( -175 -235 -170 ) ( -225 -215 -170 ) CAVE_3 0 0 0 1.000000
+</blockquote>
+
+<p>The numbers within the parentheses are the X-Y-Z coordinates for the three points of a cutting plane. Notice that all vertices (points that define each "slice" or "plane") end up being integers (no decimals) in the .map format. This is what causes alot of the errors and gaps and mis-alignments in your Quake maps. The problem is that when you rotate a brush to anything but 90 degree angles, it is almost guaranteed that most or all of your cutting planes will contain decimal values, which will be truncated when you save as .map to compile. This causes shapes to change slightly... For example... imagine a small cube that is rotated only a few degrees. You never know how the vertices will be rounded off--some may move, some may round back to where they started. So you could end up with something that was no-longer even a true cube. Now imagine a cube that has its plane-vertices spread far apart... beyond the visible corners of the cube-brush. You could rotate this cube with a greater degree of accuracy. "Big deal!" you say. But it IS a big deal when it comes to brushes that must match up to other brushes perfectly. For instance, a rectangle and a square may match up perfectly until you rotate them as a group. If the rotation is some oddball angle, like 21 degrees, you may end up with the brushes overlapping, or you may have a VERY THIN gap between them. That is BAD. If the overlap is very small, you will get some sort of funny error, and Qbsp will choke on it. If there is a gap, you end up with extra faces to draw, and I'm sure plenty of extra crap for vis to deal with too. You can also get those annoying black spots and shading errors. Of course, the solution to this would be for the smaller cube-shaped brush to have the vertices on the side that meets up with the rectangle be in the same exact place as the rectangle's vertices. This will allow the square brush to fit perfectly against the rectangular brush no matter how you rotated it. Another thing that causes errors would be "duplicate planes". If you have two triangles that define the same plane, you either get a simple warning, or Qbsp will choke. Sometimes if you shrink a brush that has two planes that are very nearly at the same angle, the truncating effect of the .map format will cause them to actually BECOME identical. So small size can cause trouble for fancy brushwork... unless the points that define the planes are placed beyond the edges of the actual brush, resulting in greater accuracy. The same kind of errors can show up when you start "shearing" or otherwise fiddling with a brush in programs like WorldCraft etc. So I guess the moral to the story is this: you have alot more control of brushes than you might imagine. You just have to be able to build them at the most basic level.
+
+<p><div align="center"><img src="/content/quake2/tutorials/abrush/abrush_img3.gif"></div>
+
+<br><br><b>BRUSH SCULPTING</b>
+
+<p>As far as I know, there is no Quake-specific program out there that lets you really get to the guts of a brush. Clipping tools and vertex editing help, but are rather clumsy for any real precision work. I prefer using a 3D modeling program to make special-purpose brush prefabs. You will need a program that allows you to create 3D objects with the ability to manually add and delete faces, and change the normals on the faces individually. It's a simple job to convert .raw or .txt saved files to the .map format so that you can include it into the normal map editors like WorldCraft etc. There is a program that supposedly converts .3ds to .map out there. I have tried it, and it doesnt work well at all on any but the simplest of shapes. 
+
+<br><br><b>SHAPES TO AVOID</b>
+
+<p>Its not so much the shape of a brush you should avoid, but rather the shape of certain FACES on brushes that match-up to other brushes that you should beware of. A sure-fire way to get those nasty little gaps and overlaps is to try to match-up faces that have more than 3 corners AND are not square AND are rotated on more than one axis. This is just the type of thing that causes those strange qbsp compiling problems when you try to use "Subtraction" features in the level-editing programs. You end up with corners on your brush that are not on any of the vertices that form the cutting planes, and these corners very rarely are going to end up with X-Y-Z on even numbers. When I create prefabs of smooth, biological structures, I always try to avoid faces that have more than 3 corners, unless the plane is on a 90 degree angle. This ensures that all the corners of the brushes will match-up flawlessly. However, it can really cause qbsp to chop-up the level. Especially when you use a bunch of these triangular-based brushes to create a concave surface.
+
+<p><div align="center"><a href="/content/quake2/tutorials/abrush/abrush_img4.gif"><img border="0" src="/content/quake2/tutorials/abrush/abrush_img4_s.gif"></a></div>
+
+<br><br><b>SOLUTIONS TO PROBLEMS</b>
+
+<p>If you load a brush that you created into WorldCraft, and it complains "1 brushes were not loaded, due to errors" it probably means you ended up with a duplicate plane. There are a few ways to deal with that. Go into you modeling program and look for 2 very similar planes. Together, they make a square. Delete the two triangles that make-up that square, and replace them with triangles crossing the square in the opposite direction. Sometimes this is all it takes. If that fails, you can try slightly adjusting the size of the whole prefab. This will cause the vertices to be truncated differently for the .map format. Sometimes a slight rescaling makes all the difference and gets rid of your duplicate planes for you. Remember, larger brushes=more accuracy for the cutting planes. The last solution is to find the trouble-making plane, and extend the vertices defining that plane out to a distance where they can gain more accuracy. This is actually pretty difficult for some angles, so I avoid getting in to this situation whenever possible! One thing that I notice is that Worldcraft seems to load brushes and convert them to something that REPRESENTS the brush, but doesnt actually function like a brush. When you have corners on a brush that are the result of the cutting planes and dont actually have any vertices on them, it is legal for them to be on coordinates that have decimal places (figure A). The later versions of WC try to snap vertices to the nearest integer when you rotate or otherwise manipulate a brush... which is fine for most brushes, but will not accurately represent the final product. I find that it works best if you rotate complex brush sculptures in the 3D editing program and export them to WC 
+
+<p><div align="center"><img src="/content/quake2/tutorials/abrush/abrush_img5.gif"></div>
+
+<p><div align="center"><a href="/content/quake2/tutorials/abrush/abrush_img12.jpg"><img border=0 src="/content/quake2/tutorials/abrush/abrush_img6.gif"></a></div>
+
+<br><br><b>R_SPEEDS</b>
+
+<p>I'm sure you're thinking, "Well, I'm sure you can create some really cool things with brushes, but I bet it slows the game WAY down!". Sure, that can happen. But if you use fancy brushwork in combination with more simple forms, your r_speeds will be just fine. Think about it... a few staircases can give you hundreds of triangles for Quake to draw. Stairs have ALOT of different planes, and they cut up the walls next to them. Now, would you rather have an awesome brush model in the room and a simple ramp, or nothing cool in the room and yet-another staircase? 
+
+<br><br><div align="center"><b>EXAMPLES OF WHAT YOU CAN DO IN QUAKE</b></div><br><br>
+
+<table align="center" width="400" cellspacing="0" cellpadding="0" border="0">
+<tr><td>
+	<a href="/content/quake2/tutorials/abrush/abrush_img7.jpg"><img border="0" src="/content/quake2/tutorials/abrush/abrush_img7_s.jpg"></a>
+</td><td width="300">
+	This took about 1 1/2 days to create. Half the work went into bug-fixing. I used about every trick in the book on this one.
+</td></tr>
+<tr><td>
+	<a href="/content/quake2/tutorials/abrush/abrush_img8.jpg"><img border="0" src="/content/quake2/tutorials/abrush/abrush_img8_s.jpg"></a>
+</td><td width="300">
+	This is a stone hand. You can walk around on the palm and shoot out between the fingers. Really a fun item.
+</td></tr>
+<tr><td>
+	<a href="/content/quake2/tutorials/abrush/abrush_img9.jpg"><img border="0" src="/content/quake2/tutorials/abrush/abrush_img9_s.jpg"></a>
+</td><td width="300">
+	It *IS* possible to make smooth looking rolling hills in the Quake engine.
+</td></tr>
+<tr><td>
+	<a href="/content/quake2/tutorials/abrush/abrush_img10.jpg"><img border="0" src="/content/quake2/tutorials/abrush/abrush_img10_s.jpg"></a>
+</td><td width="300">
+	Its difficult to get the sloped disk shape of a flying saucer without cracks and still have empty space inside like this one has.
+</td></tr>
+<tr><td>
+	<a href="/content/quake2/tutorials/abrush/abrush_img11.jpg"><img border="0" src="/content/quake2/tutorials/abrush/abrush_img11_s.jpg"></a>
+</td><td width="300">
+	This is a rather simple sculpture that has a dramatic effect.
+</td></tr>
+</table>
+
+<p>
+</body></html>

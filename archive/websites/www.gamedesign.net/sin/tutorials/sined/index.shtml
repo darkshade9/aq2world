@@ -1,0 +1,924 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="keywords"
+content="Quake2 Tutorials, Quake2, Tutorials, level design, level design tutorials, quake 2, quake 2 tutorials, quake 2 level design, level making, entities, quake2 entities, quake 2 level entities, entity tutorials, editing">
+<meta name="ROBOTS" content="ALL">
+<meta name="DC.Title" content="rust Game Designer Tutorials">
+<meta name="DC.Creator" content="Barracuda">
+<meta name="DC.Subject" content="game editing and design">
+<meta name="DC.Description"
+content="SiN level designing tutorials covering all entities and aspects of Quake2 editing.">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Rust - SiN Level Design Tutorials</title>
+<link rel="Start" title="Main r u s t Page" type="text/html"
+href="http://www.gamedesign.net">
+<link rev="made" href="mailto:fishman@gamedesign.net">
+<link rel="stylesheet" href="../../../stylesheets/main.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="1" cellspacing="0" width="100%">
+    <tr>
+        <td valign="top" colspan="2" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a> <br>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+        
+
+<h1>Sin Tutorials</h1>
+
+<h3>SinED Guide</h3>
+
+<div class="text"><br>
+
+<blockquote>
+
+
+<CENTER><TABLE BORDER="0" WIDTH="80%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD>
+
+<B><FONT SIZE="+1">Introduction</FONT></B><BR><BR>
+
+First off, this SinED USER GUIDE will help you to get used to SinED, the best editor IMO. 
+Hopefully by the time you finish reading this, you'll know what you're doing... if you don't, 
+read it again. SinED is geared toward a 3 Button mouse, so you really should have one if you're 
+going to do some serious mapping. Also, this is a development tool, so not all systems can run 
+SinED. I have a P166 w/24 RAM and it runs pretty decent on it.<BR><BR>
+
+Second, I cannot offer an support for SinED or any of the Sin Tools. I'm busy working on my own stuff and barely have
+any spare time. This tutorial, along with the SinED Readme file, has all the information that you need if you just take
+the time to thoroughly read them.<BR><BR>
+
+Thanks to EutecTic from <A HREF="http://www.ritualistic.com/node/">The Node</A> for a lot of error fixes :)<BR><BR><BR>
+
+<B><FONT SIZE="+1">Getting Started</FONT></B><BR><BR>
+
+Now you're ready to start up SinED. Click 4 times on sined.exe, it will open 2 sessions of SinED.
+One or both will crash. If both crash open SinEd one more time and it will work.<BR><BR><BR>
+
+<B><FONT SIZE="+1">Arranging the Views</FONT></B><BR><BR>
+
+Below is the setup I like to use for my windows, I make my XY view as large as possible, which
+makes editing a lot easier. Keep in mind you only need to see one view at a time, so when you
+need to see the camera or texture picker you can just click on their top bar. Then when you need
+to see the XY again just click anywhere in it.<BR><BR>
+
+<IMG SRC="views.jpg" BORDER="0" WIDTH="582" HEIGHT="436">
+
+<BR><BR>
+
+After you are comfortable with the views now it's time to get aquainted with all the cool features
+of SinED! First we'll go over what all of the buttons actually do. After that we'll be building
+a small map that should get you pointed in the right direction to start your own map.<BR><BR><BR>
+
+<B><FONT SIZE="+1">Quick Buttons</FONT></B><BR><BR>
+
+<IMG SRC="buttons.jpg" BORDER="0" WIDTH="414" HEIGHT="22"><BR><BR>
+
+<B>Flip X</B> - Flip a brush on the X-Axis<BR>
+<B>Flip Y</B> - Flip a brush on the Y-Axis<BR>
+<B>Flip Z</B> - Flip a brush on the Z-Axis<BR>
+<B>Rotate X</B> - Rotate a brush 45 degrees on the X-Axis<BR>
+<B>Rotate Y</B> - Rotate a brush 45 degrees on the Y-Axis<BR>
+<B>Rotate Z</B> - Rotate a brush 45 degrees on the Z-Axis<BR>
+<B>Select complete tall</B> - Make a brush around the brushes you want to select in the XY view<BR>
+<B>Select touching</B> - Make a brush and any brush touching it will be selected<BR>
+<B>Select partial tall</B> - Same as Select complete tall, but it doesn't select the full Z-Axis<BR>
+<B>Select inside</B> - Make a brush and any brushes completely inside it will be selected<BR>
+<B>Make hollow</B> - Make a brush hollow<BR>
+<B>CSG subtract</B> - Subract the subtracted brush from it's surroundings<BR>
+<B>Wireframe</B> - Makes the camera view display wireframes<BR>
+<B>Solid</B> - Makes the camera view display solid colored brushes<BR>
+<B>Textured</B> - Makes the camera view display textured brushes (Trilinear)<BR>
+<B>Tx Flip</B> - Flip a texture on the X-Axis<BR>
+<B>Ty Flip</B> - Flip a texture on the Y-Axis<BR>
+<B>Open SCR</B> - Open the script file, or create one if it doesn't exist<BR><BR><BR>
+
+<B><FONT SIZE="+1">Files Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="40%">
+
+<IMG SRC="files.jpg" BORDER="0" WIDTH="227" HEIGHT="303">
+
+</TD><TD>
+
+<B>New</B> - Creates a new map<BR>
+<B>Open</B> - Open a saved map<BR>
+<B>Save</B> - Save a map<BR>
+<B>Save as</B> - Save map with another name, good for backing up a map<BR>
+<B>Save as Region</B> - Not important<BR>
+<B>Save as Quake1</B> - Save a map in Quake1 format<BR>
+<B>Save as Quake2</B> - Save a map in Quake2 format<BR>
+<B>Pointfile</B> - Toggles a red line, after a compile, drawn to a leak in the map<BR>
+<B>Load project</B> - Load a .sed file to change your SinED settings<BR>
+<B>Map List</B> - A list of recent maps you've been working on<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Edit Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="40%">
+
+<IMG SRC="edit.jpg" BORDER="0" WIDTH="205" HEIGHT="450">
+
+</TD><TD>
+
+<B>Undo</B> - Undo the last operation<BR>
+<B>Drag edges</B> - Allows you to skew faces<BR>
+<B>Drag vertices</B> - Allows you to move the vertices seperately<BR>
+<B>Delete</B> - Delete a brush<BR>
+<B>Clone</B> - Copy a brush<BR>
+<B>Clone exact</B> - Copy a brush in the exact place of it's parent<BR>
+<B>Flip X</B> - Flip a brush on the X-Axis<BR>
+<B>Flip Y</B> - Flip a brush on the Y-Axis<BR>
+<B>Flip Z</B> - Flip a brush on the Z-Axis<BR>
+<B>Rotate X</B> - Rotate a brush 45 degrees on the X-Axis<BR>
+<B>Rotate Y</B> - Rotate a brush 45 degrees on the Y-Axis<BR>
+<B>Rotate Z</B> - Rotate a brush 45 degrees on the Z-Axis<BR>
+<B>Arbitrary rotation</B> - Rotate a brush on any axis with a chosen degree<BR>
+<B>Make hollow</B> - Make a brush hollow<BR>
+<B>CSG subtract</B> - Subract the selected brush(es) from it's surroundings<BR>
+<B>Connect entities</B> -Connects entities like paths or a trigger to a door target-targetname wise<BR>
+<B>Connect kill entities</B> - Automatically creates a killtarget-targetname connection between the first and second selected entities respectively<BR>
+<B>Ungroup entity</B> - Ungroup all brushes from entity<BR>
+<B>Ungroup brush</B> - Ungroups only selected brushes from entity<BR>
+<B>Toggle detail</B> - Turn detail brushes on and off<BR>
+<B>Make detail</B> - Make the selected brushes detail brushes<BR>
+<B>Make structural</B> - Make a brush non-detail<BR>
+<B>Angles from camera</B> - Sets the angles of a selected entity to the orientation of the camera view<BR>
+<B>Camera from entity</B> - Sets the camera view angle to the angle of the selected entity<BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Filters Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="35%">
+
+<IMG SRC="filters.jpg" BORDER="0" WIDTH="177" HEIGHT="466">
+
+</TD><TD>
+
+<B>Show Detail</B> - Show detail brushes<BR>
+<B>Show Entities</B> - Show entities<BR>
+<B>Show Translucent</B> - Show translucent brushes<BR>
+<B>Show Masked</B> - Show brushes with masked textures<BR>
+<B>Show Water</B> - Show water/slime/lava brushes<BR>
+<B>Show Path</B> - Show paths<BR>
+<B>Show Clip Brush</B> - Show clip brushes<BR>
+<B>Show Nonlit</B> - Show Nonlit brushes<BR>
+<B>Show World</B> - Show all the brushes in the world<BR>
+<B>Show Nonselected</B> - Show brushes that are not selected<BR>
+<B>Show Lights</B> - Show light entities<BR>
+<B>Show Hint and Skip</B> - Show hint and skip brushes<BR>
+<B>Show Triggers</B> - Show trigger brushes<BR>
+<B>Show Use Filter</B> - Show use filter<BR>
+<B>Show Arrows</B> - Show arrows on brush faces<BR>
+<B>Show Areaportals</B> - Show func_areaportals<BR>
+<B>Show Models</B> - Show models<BR>
+<B>Show Info Entities</B> - Show entites that start with info_<BR>
+<B>Show Info Paths</B> - Show entites that have path in them<BR>
+<B>Show Connections</B> - Show arrows between target/targetnames<BR>
+<B>Show Deathmatch</B> - Show deathmatch only items<BR>
+<B>Show Non-DM</B> - Show non-deathmatch items<BR>
+<B>Show Names</B> - Show names of entities in the grid<BR>
+<B>Show Coordinates</B> - Display coordinates of brushes and entities<BR>
+<B>Show Blocks</B> - Show large blocks on the grid<BR>
+<B>Set User Filter</B> - Set your own filter<BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Views Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="233">
+
+<IMG SRC="view.jpg" BORDER="0" WIDTH="213" HEIGHT="331">
+
+</TD><TD>
+
+<B>Texture View</B> - Displays the texture browser<BR>
+<B>Console View</B> - Displays the console<BR>
+<B>Entity View</B> - Displays the entity inspector<BR>
+<B>Center</B> - Center the camera view<BR>
+<B>Up Floor</B> - Move up one floor in the camera view<BR>
+<B>Down Floor</B> - Move down one floor in the camera view<BR>
+<B>XY 100%</B> - XY Zoom 100%<BR>
+<B>XY Zoom In</B> - XY Zoom In<BR>
+<B>XY Zoom Out</B> - XY Zoom Out<BR>
+<B>XY Switch Mode</B> - Switch between XY, XZ, and YZ views<BR>
+<B>XY Center on Camera</B> - Center the XY view on your camera location<BR>
+<B>Z 100%</B> - Z Zoom 100%<BR>
+<B>Z Zoom In</B> - Z Zoom In<BR>
+<B>Z Zoom Out</B> - Z Zoom Out<BR>
+<B>Camera Grid Move</B> - Move the camera in increments of the grid size<BR>
+<B>Camera Translucency</B> - Show translucency in the camera view<BR>
+<B>Camera Non-Lit</B> - Show Non-Lit in the camera<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Selection Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="204">
+
+<IMG SRC="selections.jpg" BORDER="0" WIDTH="184" HEIGHT="210">
+
+</TD><TD>
+
+<B>Deselect</B> - Unselects any selected entity or brush<BR>
+<B>Select complete tall</B> - Make a brush and it selects any brush inside it<BR>
+<B>Select touching</B> - Make a brush and any brush touching it<BR>
+<B>Select partial tall</B> - Same as Select complete tall, except it selects the full Z-Axis<BR>
+<B>Select inside</B> - Make any brushes completely inside the selected brush<BR>
+<B>Select complete entity</B> - Selects multiple brushes that make up an entity<BR>
+<B>Select entity merge</B> - Move down one floor in the camera view<BR>
+<B>Select Flip</B> - XY Zoom 100%<BR>
+<B>Select calculate size</B> - XY Zoom In<BR>
+<B>Select Sphere</B> - XY Zoom Out<BR>
+<B>Select by Classname</B> - Select all entities by their partial or complete Classnames<BR>
+<B>Select next target</B> - Selects a selected entities target<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER>
+
+<B><FONT SIZE="+1">BSP Menu</FONT></B><BR><BR>
+
+The Bsp Menu will not work as it was meant to run on a Unix machine. So, what I do is make a .bat file and put it in my "C:\tools\sin\bin" folder. Then
+in the .bat file I put 3 lines like this:<BR><BR>
+
+qbsp3 mapname.map<BR>
+qvis3 mapname.bsp<BR>
+qrad3 mapname.bsp<BR><BR>
+
+You can put whatever command lines you want like "qvis3 -fast mapname.bsp" or whatever you want.<BR><BR>
+If you are just testing your level, run qbsp3 alone. If you want to see what your lights look like you
+can run a full compile but do a "qvis3 -fast". For a final compile do a full compile with "qrad3 -extra".<BR><BR><BR>
+
+<B><FONT SIZE="+1">Grid Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="117">
+
+<IMG SRC="grid.jpg" BORDER="0" WIDTH="97" HEIGHT="125">
+
+</TD><TD>
+
+<B>Grid1</B> - Changes the grid to 1 unit increments<BR>
+<B>Grid2</B> - Changes the grid to 2 unit increments<BR>
+<B>Grid4</B> - Changes the grid to 4 unit increments<BR>
+<B>Grid8</B> - Changes the grid to 8 unit increments<BR>
+<B>Grid16</B> - Changes the grid to 16 unit increments<BR>
+<B>Grid32</B> - Changes the grid to 32 unit increments<BR>
+<B>Grid64</B> - Changes the grid to 64 unit increments<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER>
+
+<B><FONT SIZE="+1">Texture Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="199">
+
+<IMG SRC="textures.jpg" BORDER="0" WIDTH="179" HEIGHT="247">
+
+</TD><TD>
+
+<B>Show in Use</B> - Shows only textures currently in use<BR>
+<B>Mini Surf Inspector</B> - Only allows moving/resizing of textures<BR>
+<B>Wide Surf Inspector</B> - Has all of the surface options<BR>
+<B>Surf Inspector</B> - Compact version of Wide Surf Inspector<BR>
+<B>Find Texture</B> - Selects all brushes with the texture<BR>
+<B>Replace Texture</B> - Takes a texture and replaces the selected texture with it<BR>
+<B>Fit Texture to Face</B> - Makes the texture stretch/shrink to fit a face<BR>
+<B>Texture Mode</B> - All the different rendering modes, I use nearest_mipmap<BR>
+<B>Directory List</B> - Allows you to select a group of textures to use<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Misc Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="210">
+
+<IMG SRC="misc.jpg" BORDER="0" WIDTH="190" HEIGHT="278">
+
+</TD><TD>
+
+<B>Benchmark</B> - Gives you a benchmark for your machine<BR>
+<B>Colors</B> - Change SinED's color scheme<BR>
+<B>Gamma</B> - Adjust the gamma level<BR>
+<B>Find Brush</B> - Find a entity/brush according to it's number<BR>
+<B>Next Leak Spot</B> - Goes to the next spot on the red line drawn from the pointfile<BR>
+<B>Previous Leak Spot</B> - Goes to the previous spot on the red line drawn from the pointfile<BR>
+<B>Print XY View</B> - Doesn't work...<BR>
+<B>Select Entity Color</B> - Choose the color for lights, etc...<BR>
+<B>Clipping Plane</B> - Choose how the clip will be performed<BR>
+<B>Current Surface File</B> - Shows the current surface file<BR>
+<B>Set Surface File</B> - Choose another surface file<BR>
+<B>Set Model Cull Distance</B> - Specify how far away models disappear<BR>
+<B>Toggle Animations</B> - Turns model animation on and off<BR>
+<B>Play Entity Sound</B> - Plays the selected entities sound<BR>
+<B>NAT Toggle</B> - Toggle texture lock<BR>
+<B>Autosave</B> - Autosaves your map every 5 minutes<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER>
+
+<B><FONT SIZE="+1">Region Menu</FONT></B><BR><BR>
+
+Personally, I don't use regions. It's just one of those features that
+you don't need to use if you don't want to. If you're just starting out with mapping, don't
+worry about regions.<BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="170">
+
+<IMG SRC="region.jpg" BORDER="0" WIDTH="150" HEIGHT="91">
+
+</TD><TD>
+
+<B>Off</B> - Turns regions off, I recommend using this<BR>
+<B>Set XY</B> - Defines a region in the XY<BR>
+<B>Set Tall Brush</B> - Makes a region from tallest brush<BR>
+<B>Set Brush</B> - Make a brush and it displays just that region<BR>
+<B>Set Selected Brush</B> - Make a brush and it displays just that region<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER>
+
+<B><FONT SIZE="+1">Brush Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="163">
+
+<IMG SRC="brush.jpg" BORDER="0" WIDTH="143" HEIGHT="142">
+
+</TD><TD>
+
+<B>3 sided</B> - Makes a selected brush 3 sided<BR>
+<B>4 sided</B> - Makes a selected brush 4 sided<BR>
+<B>5 sided</B> - Makes a selected brush 5 sided<BR>
+<B>6 sided</B> - Makes a selected brush 6 sided<BR>
+<B>7 sided</B> - Makes a selected brush 7 sided<BR>
+<B>8 sided</B> - Makes a selected brush 8 sided<BR>
+<B>9 sided</B> - Makes a selected brush 9 sided<BR>
+<B>Arbitrary sided</B> - Makes a selected brush 10+ sided<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER>
+
+<B><FONT SIZE="+1">Help Menu</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="163">
+
+<IMG SRC="help.jpg" BORDER="0" WIDTH="115" HEIGHT="40">
+
+</TD><TD>
+
+<B>View Help File</B> - Opens the help file<BR>
+<B>About</B> - Shows the credits<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Surface Inspector</FONT></B><BR><BR>
+
+This is the surface inspector, which can be accessed by pressing 'S'. It allows you to change all the texture attributes for any
+selected brushes. The Surface Inspector is the same as the Wide Surf Inspector, however the
+Mini Surf Inspector can only Strectch, Shift, Rotate textures.<BR><BR>
+
+Also, take note that anything that is a Surface Flag can be set to any number of faces on a brush, but a Content Flag must be set to entire
+brush.
+
+<BR><BR>
+
+<IMG SRC="surface.jpg" BORDER="0" WIDTH="585" HEIGHT="381"><BR>
+
+<B>Texture</B> - Displays the current texture path/name<BR>
+<B>Surface Type</B> - Select what the surface is made of, affects footstep sounds<BR>
+<B>Next Animation</B> - Next texture to play in the animation<BR>
+<B>Animation Time</B> - Ammount of time for animations<BR>
+<B>Horizontal Shift</B> - Move the texture horizontally<BR>
+<B>Vertical Shift</B> - Move the texture vertically<BR>
+<B>Horizontal Stretch</B> - Stretch the texture horizontally (-1.00 mirrors it)<BR>
+<B>Vertical Stretch</B> - Stretch the texture vertically (-1.00 mirrors it)<BR>
+<B>Rotate</B> - Rotate the texture<BR>
+<B>Radiosity/Nonlit</B> - Radiosity is the ammount of light given off. Nonlit is the ammount (0-1) of light a brush has, it will not emit light however<BR>
+<B>Radiosity Color</B> - Click the color box to set the light color to be given off<BR>
+<B>Direct Value/Angle</B> - Direct Value is the intensity of the light emitted by the brush face.
+You have to set both the 'light' and 'prelit' surf flags plus a value in this field for a
+brush face to emit light at all. Depending on the radiosity color, values between
+1000 and 10000 are common. A darker radiated color needs more intensity.
+Angle sets the "cone" angle of the light emitted by the brush face (0 - 180).<BR><BR>
+<B>Translucent/Group</B> - The group name is simply the brush face's name (like it's "targetname" if you will). If , for example, you set a brushe's face group to "face1", this is useful for 2 things. First, you will be able to refer to it in a script as @face1 to control it's texture translation parameters and wave effects in the case of liquid brushes (water, lava or slime). More on this below. Also, it's used when for example you make a console entity and want the console display to appear
+on this brush face, you set the group field to the same name as the console entity's
+'consolename' key. Please note that your brush HAS to be either the console entity
+itself or a func_scriptobject entity for this to work. Several brush faces can have the
+same group name if you want to control the textures on all those simultaneously
+or if you want the same console display to be shown on several brush faces.
+Please note that for the 'Translucent' value to have any effect, the 'translucent' content
+flag also has to be set.
+<BR><BR>
+<B>Friction/Restitution</B> - Friction sets how fast the player can move across the brushes or in a liquid how high the waves will swell up and down. Restitution will
+make the player bounce on a brush, but with a liquid brush it sets the speed at which those waves move.<BR><BR>
+<B>Translation Magnitude/Angle</B> - 
+
+Magnitude sets the speed in pixels/sec of the translation (scrolling) of the texture on
+a brush face. Angle sets the direction in which the texture will scroll on the brush face.
+Here again, by setting the 'group' field, you can use simple script commands to make
+the translation accelerate, slow down, stop, change direction, restart again, etc.
+Please note that the 'translate' surface flag must be set for this to work.
+
+<BR><BR>
+<B>Width/Height</B> - Current textures size in pixels<BR><BR>
+
+<B><FONT SIZE="+1">Surface Flags</FONT></B><BR>
+<B>Light</B> - Must be checked for the texture to emit light<BR>
+<B>Masked</B> - Allows for full alpha transparency on the surface, which is used for things such as fences and ladders so that you can see through them. Any portion of the texture with the magenta color will be rendered fully see through. If you want to shoot through them set the Fence Content Flag.<BR><BR>
+<B>Sky</B> - Sets the brush to the sky texture<BR>
+<B>Warp</B> - This will warp animate your texture, like water<BR>
+<B>Non-lit</B> - Nonlit is the ammount (0-1) of light a brush has, it will not emit light however<BR>
+<B>Nofilter</B> - Turns off bilinear filtering in the game for that texture on that brush face. It can also be used for
+console display brush faces that you don't want to fade with distance<BR><BR>
+<B>Conveyor</B> - Can be used to make a conveyor.<BR>
+<B>Nodraw</B> - Won't draw the brush in the game, like triggers<BR>
+<B>Hint</B> - Make a hint brush<BR>
+<B>Skip</B> - Set this on all faces of a brush then set one of the faces to hint, that face with the hint flag set will become a portal<BR><BR>
+<B>Wavy</B> - See the explanation above on the 'Friction/Restitution' fields<BR>
+<B>Ricochet</B> - Makes bullets ricochet off the surface<BR>
+<B>Prelit</B> -  See the explanation above on the 'Direct Value/Angle' fields<BR>
+<B>Mirror</B> - Don't think this works...<BR>
+<B>Console</B> - this along with the 'group' field so a console's display will appear on the brushes face<BR><BR>
+<B>Usecolor</B> - If set, non-lit surfaces will be lit as follows: (non-lit value) multiplied by (color of surface).<BR>
+<B>HW-Only</B> - Brush faces with translating textures and this flag set will be rendered in HW acceleration mode only in the game. If the game is set in software mode, the texture will show but won't translate<BR><BR>
+<B>Damage</B> - Not sure this works...<BR>
+<B>Weak</B> - Don't know what this does...<BR>
+<B>Normal</B> - Don't know what this does...<BR>
+<B>Addblend</B> - Don't know what this does...<BR>
+<B>Envmap</B> - Set the texture as an environment map<BR>
+<B>Random</B> - Don't know what this does...<BR>
+<B>Animate</B> - Allows a texture to play it's animation<BR>
+<B>Rndtime</B> - Don't know what this does...<BR>
+<B>Translate</B> - This allows a texture to translate or scroll on a brush face<BR>
+<B>Nomerge</B> - Don't know what this does...<BR><BR>
+
+<B><FONT SIZE="+1">Content Flags</FONT></B><BR>
+<B>Solid</B> - Makes a brush solid, not used<BR>
+<B>Window</B> - Makes a brush a window, just use Translucent<BR>
+<B>Fence</B> - Allows you to shoot through a masked brush, like a fence<BR>
+<B>Lave</B> - Sets the texture to have the attributes of lava<BR>
+<B>Slime</B> - Sets the texture to have the attributes of slime<BR>
+<B>Water</B> - Sets the texture to have the attributes of water<BR>
+<B>Mist</B> - Makes a non solid brush you can walk through<BR>
+<B>Player Clip</B> - Stops the player from walking through it<BR>
+<B>Monster Clip</B> - Stops monsters from walking through it<BR>
+<B>Current 0, 90, 180, 270, up, down</B> - Pushes the player in chosen direction<BR>
+<B>Origin</B> - Used with the origin texture to define an origin.<BR>
+<B>Monster</B> - Don't know what this does...<BR>
+<B>Corpse</B> - Don't know what this does...<BR>
+<B>Detail</B> - Makes the brush a detail brush<BR>
+<B>Translucent</B> - Makes a brush translucent, just use Translucent<BR>
+<B>Ladder</B> - Allows the player to climb up the face<BR>
+<B>40000000</B> - Don't know what this does...<BR>
+<B>80000000</B> - Don't know what this does...<BR><BR><BR>
+
+<B><FONT SIZE="+1">Entity Inspector</FONT></B><BR><BR>
+
+This is the entity inspector, which can be accessed by pressing 'N'. It allows you to change
+the properties of all your entities. I am not going to go into what all the entities do and
+how to set them up. Visit <A HREF="http://www.ritualistic.com/node/">The Node</A> for all your Entity/Scripting needs.<BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="347">
+
+<IMG SRC="entity.jpg" BORDER="0" WIDTH="327" HEIGHT="500">
+
+</TD><TD>
+
+<B>Entity Listing</B> - A listing of all the entities, just right click in the grid or a selected
+brush to drop or create an entity<BR><BR>
+<B>Spawnflags</B> - Spawnflags allow you to set several options<BR>
+<B>Property Listing</B> - The next list shows all the entities custom settings you've chosen<BR><BR>
+<B>Key</B> - Allows you to set things like target or targetname<BR>
+<B>Value</B> - Allows you to specify what the target or targetname are, etc...<BR><BR>
+<B>0, 45, 90, 135, 180, 225, 270, 315, Up, Down</B> - Allows you to change the orientation of the entity<BR><BR>
+<B>Anim</B> - Used to change the animation of a model<BR>
+<B>Skin</B> - Used to change the skin on a model<BR>
+<B>Scale</B> - Used to change the size of a model<BR>
+<B>Del Key/Pair</B> - Deletes a selected Key/Value<BR>
+<B>Set Sound</B> - Set a sound for a entity, must have sounds extracted<BR><BR>
+<B>Play Sound</B> - Play the chosen sound in SinED<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">Texture Picker</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="347">
+
+<IMG SRC="texture.jpg" BORDER="0" WIDTH="327" HEIGHT="500">
+
+</TD><TD>
+
+This is the texture picker, which can be accessed by pressing 'T'. To see any textures you must
+have them extracted from the pak files and be in "C:\tools\sin\base\textures" or wherever your sample.sed file
+points to for textures. Next click the textures menu and load a group by selecting it from the
+menu. Now you can see that all of your textures are there for you to use.<BR><BR>
+
+At the top of the texture picker is the path/name of the texture and it's size in pixels. Also, 
+notice that textures that have been used are outlined in green and the current texture is outlined
+in red. To move up an down just hold down the right mouse button in the texture picker and move
+up and down.<BR><BR>
+
+To apply a texture you must select a face (CRTL+SHIFT+LEFT MOUSE) or a brush (SHIFT+LEFT MOUSE) and click
+on the texture in the texture picker. If you already have used a texture and you have a 3 Button mouse, you
+can select a brush and click on the brush that has the texture you want to use with the middle button.<BR><BR><BR>
+
+</TD></TR></TABLE></CENTER><BR><BR>
+
+<B><FONT SIZE="+1">3D View Key Shortcuts</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="40%">
+
+<B>Left mouse button</B><BR>
+<B>Right mouse button</B><BR>
+<B>Middle mouse button</B><BR>
+<B>Shift+Left Click</B><BR>
+<B>Ctrl+Shift+Left Click</B><BR>
+<B>Ctrl+Right Click</B><BR>
+<B>Arrow Keys</B><BR>
+<B>End</B><BR>
+<B>PageDown/PageUp</B><BR>
+
+</TD>
+
+<TD WIDTH="60%">
+
+Translate a selected entity or brush<BR>
+Move the camera<BR>
+Grab a texture from a brush<BR>
+Select a brush<BR>
+Select a face<BR>
+Move the camera all around<BR>
+Move around in the map like in the game<BR>
+Center the view<BR>
+Move up and down a floor<BR>
+
+</TD>
+</TR>
+</TABLE></CENTER><BR><BR>
+
+
+<B><FONT SIZE="+1">XY View Key Shortcuts</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="40%">
+
+<B>Left mouse button</B><BR>
+<B>Right mouse button</B><BR>
+<B>Middle mouse button</B><BR>
+<B>Shift+Middle Click</B><BR>
+<B>Shift+Left Click</B><BR>
+<B>Ctrl+Right Click</B><BR>
+<B>Up/Down Arrows</B><BR>
+<B>Left/Right Arrows</B><BR>
+
+</TD>
+
+<TD WIDTH="60%">
+
+Create a brush or scale/translate selected<BR>
+Scroll around the XY view<BR>
+Rotate the camera<BR>
+Move Z checker<BR>
+Select a brush<BR>
+Move the camera<BR>
+Moves the camera Up or Down<BR>
+Rotate the camera<BR>
+
+</TD>
+</TR>
+</TABLE></CENTER><BR><BR>
+
+
+<B><FONT SIZE="+1">Most Used Key Shortcuts</FONT></B><BR><BR>
+
+<CENTER><TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR VALIGN="TOP"><TD WIDTH="40%">
+
+<B>S</B><BR>
+<B>N</B><BR>
+<B>O</B><BR>
+<B>T</B><BR>
+<B>Esc</B><BR>
+<B>NumLock</B><BR>
+<B>Insert/Delete</B><BR>
+<B>Ctrl+Instert/Ctrl+Delete</B><BR>
+<B>A and Z</B><BR>
+<B>D and C</B><BR>
+<B>E</B><BR>
+<B>V</B><BR>
+<B>X</B><BR>
+<B>Space Bar</B><BR>
+<B>Backspace</B><BR>
+<B>#Keys 1-7</B><BR>
+<B>Ctrl+O</B><BR>
+<B>Ctrl+S</B><BR>
+<B>Ctrl+R</B><BR>
+<B>Ctrl+X</B><BR>
+<B>Ctrl+Z</B><BR>
+
+</TD>
+
+<TD WIDTH="60%">
+
+Surface Inspector<BR>
+Entity Inspector<BR>
+Console<BR>
+Texture Picker<BR>
+Deselects all selected brushes or entities<BR>
+Change between XY, XZ, and YZ<BR>
+Zoom Out/Zoom In in XY<BR>
+Zoom Out/Zoom In in Z<BR>
+Look Up/Down in 3D View<BR>
+Move Up/Down in the 3D View<BR>
+Drag Edges<BR>
+Drag Vertices<BR>
+Clone Exact<BR>
+Clone brush or entity<BR>
+Delete brush or entity<BR>
+Change grid size<BR>
+Open a map<BR>
+Save current map<BR>
+Save as a region<BR>
+Exit SinED<BR>
+Undo<BR>
+
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<BR><BR>
+
+So by now you should know what everything does. If you don't, you will pretty soon. Click on
+the arrow to go to the next page on which we will build a map!<BR><BR>
+
+<P ALIGN="RIGHT"><A HREF="index2.shtml"><IMG SRC="foward.gif" WIDTH="16" HEIGHT="16" BORDER="0"></A></P>
+<br>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+
+</blockquote>
+
+
+
+	<br>
+	</td>
+        <td align="right" valign="top" rowspan="2" width="15%">
+
+
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+
+        </td>
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+
+</body>
+</html>

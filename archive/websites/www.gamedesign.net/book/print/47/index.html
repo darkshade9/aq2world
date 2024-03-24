@@ -1,0 +1,122 @@
+<html><head><title>Making ENV. Maps with Bryce 2</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="47" name="47" class="book-h1">Making ENV. Maps with Bryce 2</h1><h3>Quake 2</h3>
+<blockquote>
+	Making ENV. Maps with Bryce 2 - <a href="mailto:m.christian@student.murdoch.edu.au">Murray "[PnC]Muzman" Christian</a>
+</blockquote>
+
+<br><br>
+
+<p>Want to make environment maps for Quake2 that don't look cubic? Want to do it without spending ages touching up the corners of the individual sky pics? This tutorial is about how to do exactly that with Bryce 3d.<br><br>
+
+If you don't know anything about Q2 skies/environment maps you should read Fishman's tutorial on the subject to get familiarised with the basics. In particular the different images and the file name system for different angles, the different file formats for different renderers (software and hardware) and how to set the sky into your map (I'm not a mapper, I can't tell you how to do that).<br><br>
+
+The technique described in this tutorial was done using Bryce 3d and Photoshop 4; Bryce 3d for building the scene and Photoshop 4 to convert it into the format used by Quake2. Photoshop 4 isn't essential for this, any graphics program will do so long as it can resize images and convert them to different formats and colour modes  (the shareware version of Paintshop pro for example). This technique should also work with Bryce 2 no problem, but some of the functions I talk about might be in different places. I'm also assuming that people reading this are reasonably familiar with Bryce 2 or 3d; how it works, rendering etc. If you want some more detail on Bryce 2 scene building there's a list of sites at the bottom that will get you started (and  much more). <br><br>
+
+Ok, the first and most important thing to do is create a Bryce 2/3d document for the env map and set up the document, the camera and the sky  for (pretend) spherical rendering.</b><br><br>
+
+Go into the File menu and go into Document setup. Down the right hand side of the box that pops up there is a list of default aspect ratios; pick Square (this makes the aspect ratio 1:1 ie the top/bottom and side resolutions will be the same)<br><br>
+
+Next put in a resolution. Anything will do so long as the aspect ratio stays square. Also, remember that the final pics will have a resolution of 256x256, Photoshop and the like reduce images best when proportions are nice and relative, so multiples of 256 will get the best results. I chose 512x512 because I run windows in 800x600 and it fits nicely on the screen.<br><br>
+
+This is what it should look like (in case I'm making no sense)<br><br>
+
+<p><div align="center"><img src="/content/quake2/tutorials/bryce2/bryce2_img1.jpg"></div>
+
+<p><hr width=75% color=black noshade><p>
+
+<p><b>Next, the camera</b>
+
+<p>Select a view other than the camera's view and select the camera itself. Go into the camera attributes (the little "A" seen right).
+
+<p><div align="center"><img src="/content/quake2/tutorials/bryce2/bryce2_img2.jpg"></div>
+
+<p>Set all the rotation axis' to zero. Set all the position axis' to zero except the y axis. This is the height of the camera  off the "ground". How high you put it is up to you, it depends on the sky you want and how it is meant to fit into the map. For example; I did a suburban sky and I wanted it to look like the ground and the players head/viewing height were in proportion, so setting y to 4 turned out to be the best. Over all there is not much need to go over 10 for this setting. Set the field of view (FOV) to 90 degrees. Set the viewing scale to 72 percent. These two settings are vital to making the finished product blend together, removing any "corners" from the sky.  Once set, do not change them. (In case you're wondering, it means that only 72 percent of the actual FOV is at 90 degrees. The rest is dragged in from 'outside' to fill the view, distorting things slightly. It's similar to increasing the FOV in Quake2; since you can't change the size of your monitor things get distorted. Confusing; hard to explain; but it works.) After all that the camera settings should look like this (with important stuff underlined in red)
+
+<p><div align="center"><img src="/content/quake2/tutorials/bryce2/bryce2_img3.jpg"></div>
+
+<p><hr width=75% color=black noshade><p>
+
+<p><b>Now, the one and only sky setting</b>
+
+<p>Go into the Sky&Fog section and pull down the options, choosing  Edit Sky/Fog
+
+<p><div align="center"><img src="/content/quake2/tutorials/bryce2/bryce2_img4.jpg"></div>
+
+<p>In there, make sure that the option 'Link sun to view' is turned off /not ticked. This is very important as it makes the sun stay put when rotating the camera (which we will be doing later), otherwise, as the name suggests, the sun will re-align in relation to the camera position. This option might be somewhere different in Bryce2, just remember to find it and turn it off or the whole effect will be lost.
+
+<p><hr width=75% color=black noshade><p>
+
+<p><b>Now the document is ready for the render sequence</b>
+
+<p>Go ahead and build the scene, with the camera as the centre. You might want to do something simple to start with, like an infinite water plane and one of the preset cloud and sun arrangements, just to try it out.<br><br>
+
+Once the scene is finished it's time to do the final render of the six images that make up the Q2 sky.  If the camera has been moved while doing the scene make sure it's returned to the position described above before you render using the following instructions.<br><br>
+
+The camera is going to be turning right and up and down; doing this involves changing the x and y rotation axis' in the camera attributes (see the camera settings picture back up the page a bit).<br><br>
+
+First render the scene (through the camera view) with x, y and z rotation at zero.  Then export the image (give it an obvious name with a 1 at the end). Five more to go.  Follow this sequence of camera rotations to get the rest.<br><br>
+
+<blockquote>
+	x= 0 y= 90 z= 0.  Render.  Export the image, named as the second in the series<br>
+	(NOTE: Bryce will replace the rotation angles with negative numbers sometimes. Just delete them and put in the ones given here as you change them.)<br><br>
+
+	x= 90 y= 90 z= 0. Render. Export the image, named as the third in the series.<br>
+	x= 0 y= 180 z= 0. Render. Export the image, named as the fourth in the series<br>
+	x= 0 y= 270 z= 0. Render. Expert the image, named as the fifth in the series.<br>
+	x= 270 y= 270 z= 0. Render. Export image, named  as the sixth in the series.
+</blockquote>
+
+If everything went according to plan the last render should have been the camera pointing straight up.  And now you have six images which make up a cube.
+
+<p><hr width=75% color=black noshade><p>
+
+<p><b>Next up, the six images must be converted to Quake2's formats</b>
+
+<p>Load them all into your graphics program and shrink them all to 256x256 pixels. Then change them to the appropriate file name (remember those little tags on the end for each face) and save them in .tga format. The filenames for the six pictures are as follows:
+
+<blockquote>				
+	image 1: back (bk)<br>	
+	image 2: right (rt)<br>	
+	image 3: down (dn)<br>	
+	image 4: front (ft)<br>	
+	image 5: left (lf)<br>	
+	image 6: up (up)<br>	
+</blockquote>
+
+Then things get tricky, converting to 256 colours for the .pcx versions can have…….questionable results.  It depends on the colours in the original image and how close they are to colours in the Quake2 palette. Techniques on how to convert can be found all over the web, I used the one I found in the "tutorials" section of <a href="http://www.labyrinth.net.au/~jchin/skins/skins.htm" target="_top">this</a> page. This site describes both Paintshop and Photoshop conversion techniques for skins, but works great for skies as well. It gets around the differences that Photoshop and Quake2 have for the pcx format nicely.<br><br>
+
+However, after conversion some serious touching up might be needed to get the most out of the format. (Photoshop dithering can be really bad, depending on the sky. Experiment a bit.)<br><br>
+
+For an example check out the env map from the second of the awesome Falhaven ctf maps by Lance S. Winkel (<a href="http://www.planetquake.com/dl/dl.asp?captured/ctf2review/falhavn2.zip" target="_top">here</a>). The difference between the gl and sofware versions is vast, but necessary to keep the effect.<br><br>
+
+Anyway, by now you should have a sky to try out on your map. For more map specific skies the orientation might have to be changed, just rotate the file names of the side images and rotate the actual up and down images to suit (a tip: the front -ft- image of the sky always joins to the right side of the up and down images). Or better yet, find out which way the sky sits in the map and build the sky to suit it.<br><br>
+
+Good Luck! And mail me with any major questions (or better ways to do it)<br><br>
+
+<p><hr width=75% color=black noshade><p>
+
+<p>Some shots of the sky I did for the forthcoming Action Q2 map "The Crackdown" by Wanderer.
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/bryce2/bryce2_img5.jpg"></div>
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/bryce2/bryce2_img6.jpg"></div>
+
+<p><hr width=75% color=black noshade><p>
+
+<p>For more about the Bryce series and how to get the most out of them visit some of these<br><br>
+
+<a href="http://www.metacreations.com" target="_top">http://www.metacreations.com</a><br>                       
+The makers<br><br>
+
+<a href="http://www.peter-sharpe.com" target="_top">http://www.peter-sharpe.com</a><br>                          
+The home of indepth, advanced Bryce3d <br><br>
+
+<a href="http://www.geocities.com/SoHo/Lofts/9589/bryce_almanak.html" target="_top">http://www.geocities.com/SoHo/Lofts/9589/bryce_almanak.html</a><br>
+Absolutely everything and everywhere Bryce<br><br>
+
+<a href="http://www.geocities.com/SoHo/Lofts/9589/bryce_tutorials.html" target="_top">http://www.geocities.com/SoHo/Lofts/9589/bryce_tutorials.html</a><br> 
+
+How to do absolutely everything in the Bryces, from the ground up
+
+<p></body></html>

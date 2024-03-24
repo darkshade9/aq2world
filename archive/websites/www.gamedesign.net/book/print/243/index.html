@@ -1,0 +1,128 @@
+<html><head><title>Func_areaportal - 3 - Common Problems</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="243" name="243" class="book-h1">Func_areaportal - 3 - Common Problems</h1><h3>Areaportals - Common Problems</h3>
+
+<p>By Joel Caesar</p>
+
+<p>
+Areaportals (or APs) tend to be one of the more problematic elements of Quake2. I've found that time after time, people are reading the previous tutorials and are STILL not able to get them working correctly. I almost couldn't believe it, thinking these other people were doing something wrong. Until I was working on a tower in an outdoor area map, I didn't realize that many of the terms related to APs are understood differently. This addendum is a brief recap of some of the previous tutorials, but is not meant as a replacement for all of them.
+</p>
+
+<p>I will cover the following items:</p>
+
+<p>
+1. A proper AP door (building)
+<br>
+2. What is an area? ( and placing the AP)
+<br>
+3. The Hall of Mirrors (HOM) error
+<br>
+4. The Grey Door Problem. (Updated 4/19/98)
+</p>
+
+<h4>1. A proper AP door.</h4>
+<p>
+A proper AP door is a func_door surrounded on all sides by a frame (required because otherwise the entity touches the void causing a leak--this will be more clear in placement). The func_door then has a target of a func_areaportal. In fig. 1, you can see the frame brushes outlined in white (filled gray). The outline of the func_door is in yellow. The func_areaportal can be seen in fuscia. In my
+working with APs, I've found it actually is OK to allow the areaportal to touch the void.
+</p>
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/ap0.gif" width="297" height="209" alt="ap0.gif (2896 bytes)"></center></p>
+
+<h4>2. What is an area?</h4>
+
+<p>
+An areaportal door needs to be sandwiched between two different areas. Like a slice of cheese between bread. In fig. 2 below, you can see where I've drawn two rooms, and a room and a hallway--I've also drawn the entire AP entity in yellow (func_door and func_areaportal). The door must be BETWEEN, and NOT IN, any of the rooms involved, or hallways (henceforth, areas)--and each area, must be sealed with no leaks or openings, or the area must be terminated by another AP.
+</p>
+<p>
+Sometimes, the two rooms can touch the door entity.  Sometimes it cannot. Why? I can't tell you, suffice it to say, try pushing the two areas together until
+they touch the AP door and its frame. If this causes problems, you might need to extend the frame to meet the two areas. Usually the first way does work, so read on to see if you have other problems before changing this, as changing frame size is usually a minor problem.
+</p>
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/ap1.gif" width="353" height="319" alt="ap1.gif (3115 bytes)"></center></p>
+
+<p>
+Ah hah... there's more. The above fig. 2 is an easy example to see two completely seperate areas. In fig 3. below, there is a room within a room. A common configuration of an outdoor room, or a room within a room. You might think that the two areas here are completely seperate. Quite WRONG. The problem lies in the inner room (red arrow). It's not seperate. It has the same floor and ceiling
+(and if it didn't it wouldn't matter--it's not enough of a difference. The problem
+is actually the walls.</p>
+
+<p>While not entirely incorrect, this configuration may work as is, albeit with some trouble. Seperating the ceiling and floors of the inner room and making them different brushes of the outer room might work, but not if you need another entrance to
+the inner room, other than teleporters.</p>
+
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/ap2.gif" width="420" height="321"
+alt="ap2.gif (3320 bytes)"></center></p>
+
+<p>Here is how to correctly build this type of room for an AP (fig. 4 below). Different walls, different ceilings, and so on (different floors and ceilings, green and blue). Trust me.. If you don't build your rooms like this, you're gonna rebuild them later.</p>
+
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/ap3.gif" width="397" height="363" alt="ap3.gif (4874 bytes)"></center></p>
+
+<p>Okay.. you say.. I get it, I get it.. But do you? Do you know WHY? Here's
+the answer:</p>
+
+<p>1. An area is a completely sealed room (or container if you will) from which, all of
+it's interior faces can ONLY be seen from within that area.</p>
+
+<p>2. An area is a completely sealed room from which all of it's exterior faces, can only
+be seen by the void (or nothing).</p>
+
+<p>This of course doesn't include looking through where doors would be.</p>
+
+<p>Below, you will find two examples, based on my map "Atmospheric Processor" (terraform2.bsp). I discovered in fig.5 below, my APs weren't working, yet I followed all the other tutorials (obviously). It ultimately came down to "What is an area?" The red outlined brushes represent sky, so this is an outdoor area. The above examples of a room in a room, are basically the box at the bottom of
+the figure, with the tower on top. Most of the brushes, more or less were very similar to what you see here. Large, solid brushes. They broke rule 2. above. BSP did not see them as entirely seperate areas (in the tower and outside the tower), even though both ends of the openings (as seen) are terminated with APs.</p>
+
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/apt1.gif" width="442" height="380" alt="apt1.gif (6296 bytes)"></center></p>
+
+<p>What I had to do is add a small room within the opening (actually I wound up rebuilding the entire tower to learn this--so do what you need to do). I basically wound up with an inner-lower room, and inner-tower room (both connected). The large outer room, was made of the "skybox" and floor room, and the outer shell of the tower, and outer shell
+of the lower room (outer shell or lower room not shown below).</p>
+
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/apt2.gif" width="418" height="386" alt="apt2.gif (7594 bytes)"></center></p>
+
+<h4>3. The Hall of Mirrors Effect (HOM)</h4>
+
+<p>The Hall of Mirrors Effect is an error caused by an areaportal, which causes an area of the map to constantly display the contents of the screen without clearing. It's sort of like giant smudging, and sort of cool lookin I suppose, but.. still.. it's an error to be killed. What causes it? I don't know... But usually, it's not a bad areaportal. HOM usually appears after adding two or more APs to your map and usually it's because they connect the same areas... Can I help you fix it? Maybe.. Here's what I recommend. In the figure below, you will see the typical OK-side, and HOM-side. On the HOM-side you need to make the opening smaller (as
+indicated by the red arrows). I'm talking about 2 grid points (pixels) here folks.. If you chose the right textures, you may not even have to realign them.</p>
+
+<p>If you have HOM on BOTH sides of a door, then you have the problem on more than one areaportal. Do the above steps to each areaportal to see if this fixes it. If none of this works for you, I've usually found that having very symmetrical rooms (or groups of rooms) are the cause of this error (but not always), so try repositioning where the door is.</p>
+
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/hom1.gif" width="374" height="253" alt="hom1.gif (5170 bytes)"></center></p>
+
+<h4>4. The Grey Door Problem</h4>
+
+<p><i>NOTE: I knew I'd figure this out after emailing J. Carmack and all the level designers at Id, and before getting a response... ARGH.</i></p>
+<p>I've usually found the grey door problem when testing my level in software mode. Hardware accelerated graphics boards (3Dfx, Permedia2) don't usually show the problem. I have found that this happens under two possible conditions.  Check your areaportals by the numbered list below:</p>
+
+<ol>
+<li>Be sure your areaportal has the <b>Clip</b> texture on <b>ALL</b> sides, or, you can use the <b>trigger</b> texture.<br>
+<b>NOT</b> the Skip, Hint, or other textures. 
+<br>
+</li>
+<li>Make sure the texture properties (again on <b>ALL</b> sides) have<br>
+NoDraw <b>ON</b>, PlayerClip <b>OFF</b>, and MonsterClip <b>OFF</b>!<br><br>
+<i>Try compiling at this point.</i><br><br>
+</li>
+<li>If you still have the grey areaportal, check to see if the frame<br>
+of the door (you do have one right) completely touches the<br>
+outer edges of the door.<br></li>
+</ol>
+<p>If the above doesn't work, then the area opposite the grey side may have too many
+polygons to be drawn for software mode and this is just a result. You may have to remove the AP door, or change it to a regular door, and then perhaps use a U or L shaped hallway, or some other type of vis-blocker to make this part or your level work.</p>
+<br><br>
+
+<h4>Area Portals set for DM and Single Player</h4>
+
+When using Area Portals in both DM and Single Player, you might find some problems.  In the typical single player game, doors are closed.  In DM most, if not all doors, are open.  You'll get the good ol' HOM.  Also, you won't get any errors related to areaportals and the number of areas they touch.
+<br><br>
+Sure you can take the cheap way (read, "easy") and make doors open real fast and close real fast (I personally like this, cause I don't think there is
+any real place where doors are always open).  The hard way, is to have your DM areaportal doors not appear in deathmatch.  Sadly enough, I didn't have
+an answer for the HOM portal problem.  Phil Daniels figured it out though, so he gets the credit for the info., cause I'd never have figured it out.
+<br><br>
+Most entities in most editors have spawnflags for whether they appear in single player, deathmatch, or under a particular difficulty level.  The
+logical thing to do, would be to set the door to have a spawnflag "not in deathmatch" and the same for the areaportal (after all there is no more
+door).  Nope.
+<br><br>
+The areaportals cannot be set this way.  They have to be operated, not flagged out (i.e. they will still be loaded).  Set a trigger_always targeted
+to the ap's name and set it's spawnflags to "not in easy", "not in normal", and "not in hard".  The AP should have NO flags set, the door has "not in
+deathmatch" set.
+<br><br>
+The level loads in DM and at load point, the areaportal is triggered (stays open) so there is no HOM.
+
+
+<p>Copyright © 1998 Joel Caesar<br>
+Permission granted to R U S T to publish this doc.</p></body></html>

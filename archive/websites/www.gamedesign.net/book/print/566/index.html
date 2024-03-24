@@ -1,0 +1,114 @@
+<html><head><title>Basics of Qeradiant</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="566" name="566" class="book-h1">Basics of Qeradiant</h1><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Basics of Qeradiant -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>This tutorial will start from the very beginning stages of Q3Eradiant, plus how to make your first room. I will use a 3-buttoned mouse, as well as the View option:</p><br>
+
+C, Xy, Xz, Yz<br>
+(the third option from the left).<br><br>
+
+<p>When you start up Q3Eradtiant, with my view option, it should look something like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/start.jpg"><br>
+</center>
+<br>
+<p>The blue thing you see in the three white views is the Camera, the position and direction. You have no use of the small Z when you're working with the view layout as we do, so just ignore it. The upper left view is the 3D view. You can take a look how your map will look in Q3A from this view.</p>
+
+<p>Now, we're ready to make our first room. </p>
+<br>
+
+<p>First we need a texture. Pull down the Textures-menu and choose "base_wall". The Q3Eradiant will load for a while, and when the Mouse cursor returns to a normal Arrow, push "T". </p>
+<br>
+
+<p>Now you will have a small window (minimized) in the lower left (in the Qeradiant window). It should have the title "Textures", open that window. (press "T") Choose a Texture, by clicking once with your left mouse button. When you have selected a texture, you can minimize the small "Textures" window again (press "T"). </p>
+<br>
+
+<p>Now, we're ready to make a room. This is really simple, just go to your upper right view, and choose a coordinate to the upper left (in that view, it's the Top view), push your left mouse button (and hold it down), and drag the mouse down to the lower right corner. It should look like this now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/firstblock.jpg"><br>
+</center>
+<br>
+<p>As you can see, the other views are updated too, with the newly created block. Now we need to give the block heightk (most textures are 128 units high, so lets make it 128 units). </p>
+<br>
+
+<p>Go to one of the lower views, and hold the cursor just above the upper red line, push the left mouse button, and move the cursor up (while holding the button). The upper red line will now move up (you get some thickness of your object). If the whole object is moving, then your holding your cursor inside the object, and that's exactly how to move objects =). Now, move the upper line to the 128 unit line. It should look like this now: </p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/tjockare.jpg"><br>
+</center>
+<br>
+<p>The 3D view (the upper left) doesn't show the box now, and that's because the camera is inside of the box. We need to make this box as a room. </p>
+<br>
+
+<p>This is also very easy, but it's one thing we need to know, and that is, when we make the solid box into a room, the room will be 16 units smaller. This means that we have to make our box 16 units higher on all sides. We can do this by increasing the top of the box by 8, and the lower by 8, just as we did before (We have to do this so the textures will align correctly). </p>
+<br>
+
+<p>Now, we can make this cube into a room. If you go up to the small buttons at the top of the Qeradiant window, you will see a button that has the name: "Hollow", it's located here:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/hollowbut.jpg"><br>
+</center>
+<br>
+<p>Push that button. Now you will get 6 rectangles, instead of the first one. Those 6 rectangles make the ceiling, floor, and 4 walls. Everything is red, because everything is selected. </p>
+<br>
+
+<p>Push "ESC" to deselect the objects. Try to move around the camera in the upper right view by holding the middle button of your mouse, observe how the 3D view follows your camera. </p>
+<br>
+
+<p>3d View Movement keys (for those without a 3-button mouse)</p>
+<hr width=300 height=2 align="center" color="#533000"><br>
+<p>
+"Arrow Keys" - Up, Down, Left, Right<br>
+" , " and " . " - Strafe Left/Right<br>
+"d" and "c" - Fly Up/Down<br>
+"a" znd "z" - Look Up/Down<br>
+<p>
+
+<p>Now we need to insert a start location for our room. This is fairly simple as well.. </p>
+<br>
+
+<p>By pushing your right mouse button twice (and not moving the cursor) in any of the three views (except the 3d view), you will get a menu where you can insert different entities. </p>
+<br>
+
+<p>Go down to the name "Info", the menu will be extended with a few new options. There, under "info" you will find different entities like "info_player_start". </p>
+<br>
+
+<p>Choose the "info_player_deathmatch". This is a spawn point for deathmatch play. You have to locate the "deathmatch box" (it's red if you haven't pushed ESC) inside the room, make sure it's really inside. It's better to locate it about 8 units above the floor than 8 units below =) (its not fun to start with your foot stuck in the floor). When you have moved it into position, press ESC. If you now found that you've moved it to the wrong location, you can select it by pressing left mouse button. Sometimes it's hard to select the right item/wall, and then the 3D view is handy, because you can push the left mouse button to select items/walls there too. Your map should look like this now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/done.jpg"><br>
+</center>
+<br>
+<p>The pink object that is in the 3D view is the info_player_deathmatch, and the white arrow shows what direction you will be facing when you are spawned. If you want to change the direction or something else on any other entity, press "N", then you will see this window:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/entety.jpg"><br>
+</center>
+<br>
+<p>Now we're ready to place a light in the map, so it's not completely black. We do this by pressing ESC first, so we don't have anything selected, and then the right mouse button twice (as we did for the info_player_deatmatch item). Now select the item "light", a smaller entity will be shown in the views, move it to the middle of the room. So it looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial1/light.jpg"><br>
+</center>
+<br>
+<p>When you have the light entity selected you can push "N" to bring up the entity list. Read the information, and enter "light" in the key, and a value for how much the light show shine in the "value" box, then press enter, and you're done. </p>
+<br>
+
+<p>Now it's only the compilation of the map left. First save your map, and then push "BSP" in the menu. Go down and choose the option at the very top, called "bsp_FullVis (light -extra)". Look at the compilation, and when it's done close it. Startup Quake3Arena, and pull down the console. Enter "/sv_pure 0" (this makes it possible running your map), and then "/map" where is the name of your map, ex "/map jondm1".</p></body></html>

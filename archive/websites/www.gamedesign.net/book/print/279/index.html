@@ -1,0 +1,299 @@
+<html><head><title>Compiling Errors</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="279" name="279" class="book-h1">Compiling Errors</h1><H2>Compiling Errors</H2>
+
+<P>When I first started RUST I didnt want to cover errors because it would be so much work but I've recieved so many emails I decided to do it anyways. This is far from complete and I havnt even tried to explain any of the errors that I know how to fix or what causes them. I just don't have time.</P>
+
+<P>But...I will cut and paste the emails I get from people who know what these error messages mean and how to fix them.</P>
+
+<P>This page is very nasty and I am sure I am missing some errors or made mistakes on a lot of them. All I did was extract them from the source. So if you have any answers to these errors or have errors to add then please tell us.</P>
+
+<B>Shane 'Fishman' Sherman</B>
+<BR><BR>
+<I>(Note: The error list has been added to considerably since Fishman wrote the above)</I>
+<UL>
+<LI>
+    QBSP3 Errors
+<LI>
+    QVIS3 Errors
+<LI>
+    Qrad3 Errors 
+</UL><h1 id="280" name="280" class="book-h1">QBSP3 Errors</h1><ul><H2>QBSP3 Errors</H2>
+
+If you have any answers to these errors or have errors to add then please tell us. Use CTRL+F to search this page for a specific error.
+<BR><BR><HR><BR><BR>
+
+<H3># SubdivideFace didnt split the polygons</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+
+<H3># Mixed Face Contents</H3>
+
+<UL>Content properties all have to be the same for a brush...you cant have 2 different ones on one brush...this is different for surface properties.</UL>
+
+
+
+<H3># numvertexes == MAX_MAP_VERTS</H3>
+
+<UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL>
+
+
+
+  <H3># Leak***</H3>
+
+          <UL>you have a hole in your map. Your map must be completely closed. Most editors come with leaking finding tools.</UL>
+
+
+
+  <H3># bad planenum</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up. Quake 2 has a limit of 65536 planes it can support and a brush has a face that excedes that limit.</UL>
+
+
+
+  <H3># Tried parent</H3>
+
+          <UL>A brush has a surface that is in the same plane as a parent entity. This is checked when splitting brushes up and building the partitions for later processing. The most likely source of the problem is that a brush is malformed and needs to be fixed up or removed.</UL> 
+
+
+
+  <H3># PSIDE_FACING with splits</H3>
+
+          <UL>This error should never occur due to the way that the conditions required to cause it. The source is checking a surface property and the number of splits for a brush that are necessary. However the routine that would generate the conditions for this error has an #if 0 / #endif around the part that would set the second condition for this error code (s&PSIDE_FACING) so noone should ever see this error. If they do, Id love to see the .MAP and find out how!</UL> 
+
+
+
+  <H3># Can't write mapname</H3>
+
+          <UL>There is a problem with your HD, it might be full. Is your map file opened in another program?</UL>
+
+
+
+  <H3># HashVec: point outside valid range</H3>
+
+          <UL>There's a vertex outside the valid range. The maximum extents of a Quake 2 level is (in all dimensions) -4096 to +4096.</UL>
+
+
+
+  <H3># GetVertexnum: outside +/- 4096</H3>
+
+          <UL>These are "map is too damn big" errors. Somewhere the map is out of the +/- 4096 bounds. Make your map smaller or make sure its in the middle and not way off to the side of the bounds.</UL> 
+
+
+
+  <H3># MAX_SUPERVERTS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># numedges == MAX_MAP_EDGES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># SubdivideFace: didn't split the polygon</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+
+  <H3># Winsock initialization failed</H3>
+
+          <UL>When the -draw flag is specified, then QBSP3 will attempt to open a WinSOCK connection to the GLServer port of 25001. However since noone ever inits the drawflag in the C code, it is up to the compiler to decide if it is set to NULL or if it not init'd. The latter case means that some compilers may cause drawflag to be accidentally set due to memory garbage. In any case, this problem should only really appear when the user specifies '-draw' on the QBSP3 command line and they do not have WinSOCK (TCP/IP) installed on their system. Two simple workarounds for this are:<BR><BR>
+<UL>
+
+
+         <LI>Do not set the -draw flag on the QBSP3 command line. This should be something that most users dont do anyways!<BR><BR>
+         <LI>Install the Netscape "fake" WinSOCK.dll file (called Mosock.dll or something funky like that). It is essentially a WinSOCK.dll that contains NULL WinSOCK routines so that a client does not really have to install and configure TCP/IP on their clients but they can use it when viewing local web pages.<BR><BR>
+         <LI>A third workaround is something that more advanced users can do: simply rename qbsp3\gldraw.c to qbsp3\ogldraw.c and rename qbsp3\nodraw.c to qbsp3\gldraw.c. This effectively stubs out all of the Draw_* routines that come from processing the tree nodes.</UL></UL>
+
+
+
+  <H3># draw_socket failed</H3>
+
+          <UL>Related to the Winsock error above. The reason for the failure is that WinSOCK coudl not create a socket for steaming the data to later on. The same answers for dealing with this apply from the error above.</UL> 
+
+
+
+  <H3># Couldn't open</H3>
+
+          <UL>This error occurs 2 times. One time is when QBSP3 attempts to create and open the .GL file (if the user put -glview on the command line). If QBSP3 gets ANY error doing this, it stops w/o indicating what the error may be. The second time is when QBSP3 attempts to create and open the .LIN file to save the leak information. The most common reasons for either failing is probably lack of disk space or if you are attempting to save to a network file server, no rights to create new files (although why QBSP3 doesnt give the same error when generating the .PRT or .BSP files is something Id have to look at later).</UL> 
+
+
+
+  <H3># Can't write expanded.map</H3>
+
+          <UL>You did not list this error but it is in the code. This is the error that QBSP3 generates when it cannot create the file named expanded.map. This file is generated if QBSP3 is unable to create the file that would contain all the new brush info. This file is generated in TestExpandBrushes() just before QBSP3 gives the can't proceed after expanding brushes error message. However upon diggin into the code more I noticed that the routine TestExpandBrushes() is never called (its call in LoadMapFile() is commented out). As a result, no one should EVER see this error message.</UL> 
+
+
+
+  <H3># FloatPlane: bad normal</H3>
+
+          <UL>Happens with vertex editing when the geometry is invalid, for example when you alter the number of faces (ie: take a block [6 sides], take two vertices from the top and bring them over the lower 2 vertices to transform the block brush in a wedge [5 sides]. The face isn't a plane anymore (now an edge) so the normal can't be calculated).</UL> 
+
+
+
+  <H3># MAX_MAP_PLANES</H3>
+
+         <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_BRUSHSIDES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># nummapbrushes == MAX_MAP_BRUSHES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># parsing brush</H3>
+
+          <UL>Your map file contains an error, so qbsp3 couldn't parse it. You'll probably need to fix it with a text editor.</UL> 
+
+
+
+  <H3># Entity %i, Brush %i: origin brushes not allowed in world</H3>
+
+          <UL>Caused by having the origin (center) of the Origin brush outside the bursh it is meant to rotate (func_rotating error). It occurs when you apply the "origin" surface property to a brush that is not a func_rotate(door) entity. In other words it happens when you give an origin surface property to a world brush.</UL> 
+
+
+
+  <H3># ParseEntity: { not found</H3>
+
+          <UL>Your map file contains an error, so qbsp3 couldn't parse it. You'll probably need to fix it with a text editor.</UL> 
+
+
+
+  <H3># num_entities == MAX_MAP_ENTITIES</H3>
+
+          <UL>too many entities...delete some or divide your map into 2 maps</UL>
+
+
+
+  <H3># ParseEntity: EOF without closing brace</H3>
+
+          <UL>Your map file contains an error, so qbsp3 couldn't parse it. You'll probably need to fix it with a text editor.</UL> 
+
+
+
+  <H3># Entity %i: func_areaportal can only be a single brush</H3>
+
+          <UL>A func_areaportal can only have one brush attached.</UL> 
+
+
+
+  <H3># can't proceed after expanding brushes</H3>
+
+          <UL>No one should ever see this error message</UL>
+
+
+
+  <H3># Portal_EntityFlood: not a leaf</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># AddPortalToNode: allready included</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># RemovePortalFromNode: portal not in leaf</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># RemovePortalFromNode: portal not bounding leaf</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># CutNodePortals_r: mislinked portal</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># MAX_MAP_AREAS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+  <H3># Unknown option</H3>
+
+          <UL>you ran qbsp3 with an unknown option. Look here for a list of all the options</UL>
+
+  <H3># Tried to invoke command line that wasnt valid</H3>
+
+          <UL>you ran qbsp3 with an unknown option. Look here for a list of all the options</UL>
+
+  <H3># usage: qbsp3 [options] mapfile</H3>
+
+          <UL>you need to specify the map file to compile. Check here for all your options</UL>
+
+  <H3># MAX_MAP_TEXTURES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+  <H3># node->faces seperating CONTENTS_SOLID</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># !node->faces with children</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># PruneNodes: node->brushlist</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># Bad leafface</H3>
+
+          <UL>When writing out the information about the faces to the BSP file, one had a face number larger than the largest one QBSP3 knows about. This should typically be due to some memory overwrite problems or some internal flow problems rather than anything the user did. I dont have any suggestions on how to fix the problem w/o actually debugging on a .MAP that could generate this error...</UL> 
+
+
+
+  <H3># MAX_MAP_LEAFFACES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_LEAFS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_LEAFBRUSHES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_FACES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_SURFEDGES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up. </UL>
+
+
+
+  <H3># MAX_MAP_NODES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up. 
+</UL>
+
+
+  <H3># WriteDrawNodes_r: odd planenum</H3>
+<UL><I>[No Information At Present]</I></UL>
+
+  <H3># stylenum == MAX_SWITCHED_LIGHTS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/QBSP3 internal maximums. You can only have a maxium of 32 switched (ie: targetname light1) lights in Quake2. It is not clear if a light w/a targetname but is not really targeted counts towards this tally or not. To be safe, lights that are not switched should not have a targetname (until someone can verify that this does not matter). Remove some switched lights until you have less than 32.</UL>
+
+
+
+  <H3># MAX_MAP_BRUSHSIDES</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL> 
+
+
+
+  <H3># MAX_MAP_MODELS</H3>
+
+          <UL>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's internal maximums. Simplify, make it smaller, or split it up.</UL></ul></body></html>

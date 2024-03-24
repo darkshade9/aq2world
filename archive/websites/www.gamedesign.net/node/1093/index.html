@@ -1,0 +1,481 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Class Limits - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/34">FAQ</a></li><li class="collapsed"><a href="node/36">Updates</a></li><li class="collapsed"><a href="node/929">Half-Life 1 Mod List</a></li><li class="collapsed"><a href="node/33">Entity Properties</a></li><li class="collapsed"><a href="node/35">Half-Life 1 Tutorials</a></li><li class="expanded"><a href="node/1084">Day of Defeat Tutorials</a><ul><li class="collapsed"><a href="node/1101">Objective Systems</a></li><li class="collapsed"><a href="node/1102">Player Spawns</a></li><li class="expanded"><a href="node/1103">Design Tutorials</a><ul><li class="leaf"><a href="node/1090">Required Entities</a></li><li class="leaf"><a href="node/1091">Using Masters</a></li><li class="leaf"><a href="node/1092">Placing Models</a></li><li class="leaf"><a href="node/1093" class="active">Class Limits</a></li><li class="leaf"><a href="node/1094">Map Release notes</a></li></ul></li><li class="collapsed"><a href="node/1089">Entity Reference</a></li></ul></li><li class="leaf"><a href="node/1023">Modelling</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/1093" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">What kind of maps Q4 lacks in?</div><div class="text">Tourney</div><div class="bar"><div style="width: 21%;" class="foreground"></div></div><div class="percent">21%</div><div class="text">Team DM</div><div class="bar"><div style="width: 15%;" class="foreground"></div></div><div class="percent">15%</div><div class="text">CTF</div><div class="bar"><div style="width: 24%;" class="foreground"></div></div><div class="percent">24%</div><div class="text">Deathmatch</div><div class="bar"><div style="width: 39%;" class="foreground"></div></div><div class="percent">39%</div><div class="total">Total votes: 33</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/1403">tsnouqrjog</a></li><li><a href="node/1402">ghwkiqzqdy</a></li><li><a href="node/1401">oosfxcgrnm</a></li><li><a href="node/1400">dgxxmiixpj</a></li><li><a href="node/1399">jvhgqfkxly</a></li><li><a href="node/1398">ujeatphnyu</a></li><li><a href="node/1397">yjrjjaulgo</a></li><li><a href="node/1396">govcccoyol</a></li><li><a href="node/1395">tfzkzrtfgj</a></li><li><a href="node/1394">zdyufnmebp</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/6078" title="View user profile.">prettygirls</a></li><li><a href="user/6077" title="View user profile.">sososildenafil</a></li><li><a href="user/6076" title="View user profile.">jbirb</a></li><li><a href="user/6075" title="View user profile.">bnbnbn</a></li><li><a href="user/6074" title="View user profile.">СаунаКу...</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 43 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Class Limits</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/921" title="">Half-Life</a> &raquo; <a href="node/1084">Day of Defeat Tutorials</a> &raquo; <a href="node/1103">Design Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2198" title="View user profile.">Andy</a> on Fri, 2005-05-13 21:07.</div>
+<!--Submitted by Andy on behalf of Nick Robins-->
+<blockquote>Mapping Day of Defeat - by Nick Robins</blockquote>
+<h1>Class &amp; Weapon Limits</h1>
+<p>Class limits are usually defined in a file named <span style="font-weight: bold;">&#60;mapname&#62;.cfg</span> in the servers DoD folder. This will be automatically executed by the server when the map is loaded (<span style="font-weight: bold;">note</span>: the map cfg file is exec'd <span style="font-style: italic;">before</span>the config file specified in the server cvar <span style="font-weight: bold;">mapchangecfgfile</span>). The map config file can be used to adjust any server cvar, but is most often used to provide map specific class limits. The file is also exec'd (if it exists) on the clients so it can be used to set client side behavior as well, such as the fog parameters set in the dod_dog1 config file.</p>
+	<p>While you can set most cvars for your map on both the client and server using this file, some discretion is advised. Many clients and nearly all servers have quite finely tuned configs, if you change these you could make yourself unpopular.</p>
+	<p>Setting a limit of <span style="font-weight: bold;">-1</span> makes the weapon unlimited. Setting a limit of <span style="font-weight: bold;">0</span> (zero) disables the class from being selected, with DoD v1.2 you can <a href="/node/1093#mapinfo">remove classes</a> from the selection screen altogether.</p>
+	<p>You cannot have both the US and the UK in a map at the same time but it dosn't matter if a map's config file has cvars for limiting the unused team, so if you want to create a generic config and copy it to all the various map configs it will work fine. However if you are using the cvars to remove classes from the selection menu, you should make sure that you have the team selection correct.</p>
+<hr />
+<h1>Setting limits for Allied (US) weapons.</h1>
+	<p>CVARS</p>
+		<ul>
+			<li>mp_limitalliesgarand</li>
+			<li>mp_limitalliescarbine</li>
+			<li>mp_limitalliesthompson</li>
+			<li>mp_limitalliesgreasegun</li>
+			<li>mp_limitalliesspring</li>
+			<li>mp_limitalliesbar</li>
+			<li>mp_limitallies30cal</li>
+			<li>mp_limitalliesbazooka</li>
+		</ul>
+	<h1>Setting limits for Allied (UK) weapons.</h1>
+	<p>CVARS</p>
+		<ul>
+			<li>mp_limitbritlight - Limits the LE No.4</li>
+			<li>mp_limitbritassault - Limits the Sten</li>
+			<li>mp_limitbritsniper - Limits the LE No.4(T)</li>
+			<li>mp_limitbritmg - Limits the Bren</li>
+			<li>mp_limitbritpiat - Limits the PIAT</li>
+		</ul>
+	<h1>Setting limits for Axis weapons.</h1>
+	<p>CVARS</p>
+		<ul>
+			<li>mp_limitaxiskar - Limits the K98</li>
+			<li>mp_limitaxisk43</li>
+			<li>mp_limitaxismp40</li>
+			<li>mp_limitaxismp44</li>
+			<li>mp_limitaxisfg42 - Limits the Fg42 (Bipod)</li>
+			<li>mp_limitaxisfg42s - Limits the Fg42 (Scope)</li>
+			<li>mp_limitaxisscopedkar</li>
+			<li>mp_limitaxismg34</li>
+			<li>mp_limitaxismg42</li>
+			<li>mp_limitaxispschreck</li>
+		</ul>
+<hr />
+	<p>In addition to setting limits on weapons, with DoD v1.2 there are two additional cvars you can apply:</p>
+<ul>
+	<li>mp_combinemglimits (zero or one)</li>
+</ul>
+	<p>This has the effect of combining the limits for all MG classes (at the moment this only applies to the Axis as the only team with 2 mg's, the Mg 34 and the Mg 42), it creates a new limit by adding the individual class limits together, this is then applied to the team's Mg's as a whole.</p>
+	<p>For example:</p>
+	<p><span style="font-weight: bold;">mp_limitaxismg34 1<br />
+	mp_limitaxismg42 1<br />
+	mp_combinemglimits 1</span></p>
+	<p>would allow either two Mg 42's <span style="font-style: italic;"> or</span>two Mg 34's <span style="font-style: italic;">or </span>one of each.</p>
+<ul>
+	<li>mp_spawnbazookas (zero or one)</li>
+</ul>
+	<p>This controls whether the bazookas on the ground in spawn areas will be present or not.</p>
+	<p>Example:<br />
+	This is a generic limit set up that could be applied to any map, It dosn't matter which &quot;sub-team&quot; the Allies are, you can apply limits to both.</p>
+	<table>
+		<tr>
+			<td colspan="2">//Allies (US)</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesgarand</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliescarbine</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesthompson</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesgreasegun</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesspring</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesbar</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitallies30cal</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitalliesbazooka</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td colspan="2">//Allies (UK)</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritlight</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritassault</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritsniper</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritmg</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>mp_limitbritpiat</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td colspan="2">//Axis</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxiskar</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisk43</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismp40</td>
+			<td>-1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismp44</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisfg42</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisfg42s</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxisscopedkar</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismg34</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxismg42</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>mp_limitaxispschreck</td>
+			<td>1</td>
+		</tr>
+	</table>
+<hr />
+<h1>Disabling Classes Completely</h1>
+	<p><a id="mapinfo">&nbsp;</a>There are two extra cvars you can set in a cfg file to enable you to totaly disable classes (they will not even appear on the class selection menu)</p>
+<ul>
+	<li>mp_alliesclasses - a bitsum controling the avaliablity of classes for allies</li>
+	<li>mp_axisclasses - a bitsum controling the avaliablity of classes for axis</li>
+</ul>
+<table cellspacing="0">
+			<tr>
+				<th colspan="2">Bitfield values for Allies (US)</th>
+			</tr>
+			<tr>
+				<td>M1 Garand</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>M1 Carbine</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Thompson</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Grease Gun</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>Springfield</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td>B.A.R.</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>30 cal MG</td>
+				<td>64</td>
+			</tr>
+			<tr>
+				<td>Bazooka</td>
+				<td>128</td>
+			</tr>
+			<tr>
+				<td style="color: #808080">Mortar</td>
+				<td style="color: #808080">256</td>
+			</tr>
+			<tr>
+				<td>Random</td>
+				<td>512</td>
+			</tr>
+		</table>
+<table cellspacing="0">
+			<tr>
+				<th colspan="2">Bitfield values for Allies (UK)</th>
+			</tr>
+			<tr>
+				<td>Lee Enfield</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Sten</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Lee Enfield Sniper</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Bren</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>P.I.A.T.</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td style="color: #808080">Mortar</td>
+				<td style="color: #808080">32</td>
+			</tr>
+			<tr>
+				<td>Random</td>
+				<td>64</td>
+			</tr>
+		</table>
+<table cellspacing="0">
+			<tr>
+				<th colspan="2">Bitfield values for Axis</th>
+			</tr>
+			<tr>
+				<td>Kar 98</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Kar 43</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Mp 40</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>Mp 44</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>Kar 98 Sniper</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td>Fg 42 (Bipod)</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>Fg 42 (Scope)</td>
+				<td>64</td>
+			</tr>
+			<tr>
+				<td>Mg 34</td>
+				<td>128</td>
+			</tr>
+			<tr>
+				<td>Mg 42</td>
+				<td>256</td>
+			</tr>
+			<tr>
+				<td>Panzerschreck</td>
+				<td>512</td>
+			</tr>
+			<tr>
+				<td style="color: #808080">Mortar</td>
+				<td style="color: #808080">1024</td>
+			</tr>
+			<tr>
+				<td>Random</td>
+				<td>2048</td>
+			</tr>
+		</table>
+<h3>Notes:</h3>
+<ul>
+		<li>The &quot;Mortar&quot; classes have not been implemented yet (as of DoD v1.3).</li>
+		<li>Both Varients of the Fg 42 are only avaliable on maps where the Axis are Paras.</li>
+		<li>Both US allies and UK allies are controlled by the same cvar: <span style="font-weight: bold;">mp_alliesclasses</span> , make sure that the values in your config file are correct for the allies team on that map.</li>
+</ul>
+	<p>To calculate the value for the config file, add together the values for the classes that you want to <span style="font-weight: bold;">allow</span>, putting in a value of zero would not allow <span style="font-style: italic;">any</span>classes. Putting a value of -1 allows all classes.</p>
+<p>For example:<br />
+mp_alliesclasses 53<br />
+mp_axisclasses 154</p>
+<p>Would:</p>
+<ul>
+		<li>Only allow the (US) Allies to use: M1 Garand, Thompson, Springfield and BAR (1 + 4 + 16 + 32)</li>
+		<li>Only allow the Axis to use: Kar 43, Mp 44, Kar 98 Sniper, Mg 34 (2 + 8 + 16 + 128)</li>
+	</ul><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/1092" title="View the previous page.">previous</a></div><div class="next"><a href="node/1089" title="View the next page.">next</a></div><div class="up"><a href="node/1103" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Placing Models</div><div class="next">Entity Reference</div></div></div></div></div>
+
+<div class="links"><a href="book/print/1093" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

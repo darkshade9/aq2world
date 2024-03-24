@@ -1,0 +1,407 @@
+<html>
+   <head>
+      <title>
+         The sun is neater than you thought!
+      </title>
+   </head>
+   <body>
+      <h1>
+         Where did that <font color=orange>SUN</font> go?<br>(or what you
+         will)
+      </h1>
+      <h2>
+         CONTENTS
+      </h2>
+      <h3>
+         Introduction
+      </h3>
+         <ol>
+            <li>
+               <a href=#intro>
+                  Just the facts, ma'am.
+               </a>
+            </li>
+         </ol>
+      <h3>
+         You're not the only one staring at the _sun.
+      </h3>
+         <ol>
+            <li>
+               <a href=#what>
+                  What does it do?
+               </a>
+            </li>
+            <li>
+               <a href=#sowhat>
+                  Okay, it's a sun.  So what?
+               </a>
+            </li>
+         <h3>
+            That's neat.  How do I use it?
+         </h3>
+            <ol>
+               <li>
+                  <a href=#_sun>
+                     From the beginning (_sun)
+                  </a>
+               </li>
+               <li>
+                  <a href=#_sun_light>
+                     Shedding a little light on the subject (_sun_light)
+                  </a>
+               </li>
+               <li>
+                  <a href=#_sun_ambient>
+                     How about the shadows? (_sun_ambient)
+                  </a>
+               </li>
+               <li>
+                  <a href=#_sun_color>
+                     What color is the sun, anyway? (_sun_color)
+                  </a>
+               </li>
+               <h3>
+                  No fluff
+               </h3>
+               <ol>
+                  <li>
+                     <a href=#sun>
+                        Explain it non-verbosely
+                     </a>
+                  </li>
+               </ol>
+               <h3>
+                  Summary
+               </h3>
+               <ol>
+                  <li>
+                     <a href=#example>
+                        What should my worldspawn look like?
+                     </a>
+                  </li>
+                  <li>
+                     <a href=#comments>
+                        Conclusion
+                     </a>
+                  </li>
+               </ol>
+            </ol>
+         </ol>
+      <h3>
+         <font color=red>C</font><font color=orange>o</font><font color=yellow>l</font><font color=green>o</font><font color=blue>r</font><font color=purple>e</font><font color=violet>d</font> lights are neat, but...
+      </h3>
+         <ol>
+            <li>
+               <a href=#nocolor>
+                  ...how about we not use it
+               </a>
+            </li>
+         </ol>
+      <h1>
+         <a name=intro>Introduction
+      </h1>
+      <br><br>
+         For those of you who are using Geoffrey DeWan's version of
+         Qrad3 (<a href="ftp://ftp.cdrom.com/.11/idgames2/quake2/utils/level_edit/bsp_builders/gddqrad3_103.zip">gddqrad3</a> version 1.03), this is going to be a real
+         treat.  If you have read the text file included with the
+         executable, you may have noticed the mention of a sun feature.
+         For whatever reason, everyone I have spoken to has been
+         reluctant to try it.
+      </p>
+      <br><br>
+         Not only is the sun feature incredibly easy to use, but it
+         also provides a lot more versatility than straight
+         environmental lighting.  Plus, it looks a whole lot better.
+         This tutorial is dedicated to helping you get started with
+         using the sun (you'll never turn back).  It also mentions in
+         passing another useful feature included, the -nocolor option.
+         <br><br>
+      </p>
+      <h2>
+         <a name=what>What exactly does the _sun feature do?
+      </h2>
+      <br><br>
+         As you may be aware, the ability to use environment maps is a
+         welcome improvement that has accompanied the release of Quake2.
+         The Environment maps are pretty gosh darned cool, but outdoor
+         lighting is only so-so.
+      </p>
+      <br><br>
+         The _sun feature allows you to chose a direction for the sun to
+         shine, and it lets you control diffuse lighting, highlight
+         intensity, and sunlight color.&nbsp; Also, from what I have
+         noticed areas lit by large amounts of sky can qrad much faster
+         when the area is lit by the sun instead of the sky
+         surface.&nbsp; In the test map I created, qrad took 1016
+         seconds when the sun was not used.&nbsp; The same map took 509
+         seconds with the sun activated.
+      </p>
+      <br><br>
+         If everything is properly entered, qrad should recognize your
+         sun without having to use command lines.&nbsp; This was what
+         confused me at first, since you activate your sun in your
+         worldspawn entity, and not at the command line.&nbsp; In
+         actuality, this makes things a lot easier.
+      </p>
+      <h2>
+         <a name=sowhat>So what's the big deal?
+      </h2>
+      <br><br>
+         <a href=nosun_l.jpg><img src=nosun.jpg height=120 width=160
+         align=left></a>As you can see, outside areas look really nice,
+         but the light looks like it is coming from everywhere.&nbsp; 
+         It also has a really ugly orange hue.&nbsp; That's not the
+         most glaring of the things it lacks, there are no
+         shadows!!!&nbsp; Well, okay, there are shadows, but they are
+         not very well defined.&nbsp; The problem is, how do we get our
+         outdoor lighting to look as cool as our indoor lighting without
+         using a gazillion light entities and spending a couple years
+         putting them in place?&nbsp; It's easier than you thought.
+      </p>
+      <br><br>
+         <a name=shot>
+         <a href=sun_l.jpg><img src=sun.jpg height=120 width=160
+         align=right></a>With a few alterations and a couple entities, a
+         drab outdoor scene can take on a whole lot of life and
+         personality.&nbsp; There are now clearly defined shadows AND
+         highlights.&nbsp; With the sun activated, outdoor scenes begin
+         to really look like they are outside.&nbsp; What's better, you
+         have complete control over the color that the sun emits.
+         <br><br><br><br>
+      </p>
+      <h1>
+         How do I do it?
+      </h1>
+      <h2>
+         <a name=_sun>You start with the _sun.
+      </h2>
+      <br><br>
+         The first thing you need to do is to give the sun a
+         vector.&nbsp; The qrad program looks for an entity that is
+         targeted to an info_null.&nbsp; First, place a light anywhere
+         inside your level (don't put it outside the level, or else you
+         will create a leak).&nbsp; Target the light to the info_null
+         that you are about to create.&nbsp; Now create your info_null
+         and give it the appropriate targetname.&nbsp; The position of
+         the info_null relative to the light that targets it will tell
+         qrad the angle that the sun shines.
+      </p>
+      <br><br>
+         Add the _sun key to your worldspawn options (the same place you
+         use to set your map's entering message).&nbsp;  Give it a key 
+         value that is the same as your info_null's targetname.&nbsp;
+         Here's an example from the .map file I used for the screenshots
+         above.
+      </p>
+      <div class="text">
+         <font face="Lucida Console">
+            "classname"&nbsp;&nbsp;"worldspawn"<br>
+            "sky"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unit1_"<br>
+            "message"&nbsp;&nbsp;&nbsp;&nbsp;"Map With Sun"<br>
+            "_sun"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"star"
+         </font>
+      </div>
+      <div class="text">
+         <font face="Lucida Console">
+            "classname"&nbsp;&nbsp;"light"<br>
+            "target"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"star"<br>
+            "origin"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"220 -232 272"
+         </font>
+      </div>
+      <div class="text">
+         <font face="Lucida Console">
+            "classname"&nbsp;&nbsp;"info_null"<br>
+            "targetname"&nbsp;"star"<br>
+            "origin"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"192 -208 224"
+         </font>
+      </div>
+      <h5>
+         For those of you that are confused about the Worldspawn entity.
+         It is the place where you set all of the options such as sky,
+         gravity, and map name.&nbsp; You simply add _sun to the keys.
+      </h5>
+      <br><br>
+         If you have any brush faces that are on the same plane as a lit
+         sky face, AND they faces have an unobstructed line of sight to
+         each other, then you will get unexpected and undesirable
+         effects.&nbsp; Make sure that your sky and non-sky faces are
+         either not on the same plane, or not visible to each
+         other.&nbsp; Failure to do so may cause sunlight to appear
+         where it doesn't belong.
+      </p>
+      <br><br>
+         The final thing you need to do to make sure that your sun is
+         working right is to give all of your sky textures a light
+         value.&nbsp; Apply a light value (any light value) to all of
+         your texture surfaces with the "sky" flag.&nbsp; If you do not
+         do this, your sun may not work right.
+      </p>
+      <h3>
+         <a name=_sun_light>Light me up!
+      </h3>
+      <br><br>
+         Now that your sun is in place, the hard part is done.&nbsp; All
+         that is left is to set the light values.&nbsp; The first thing
+         we shall do is to set the highlight value.&nbsp; This is the
+         value of any surface that has a clear line of sight to the
+         sun.&nbsp; Add the _sun_light key to your worldspawn entity,
+         and give it a value.  I have noticed that lower values tend to
+         be quite dark.&nbsp; The <a href=#shot>screenshot</a> above has
+         a _sun_light value of 800.
+      </p>
+      <br><br>
+         How does this work?&nbsp; Well, qrad calculates the x y and z
+         angles of the sun's direction, then checks all surfaces.&nbsp;
+         From each surface, it checks if the sun is viewable at the
+         opposite angle.&nbsp; In other words, the opposite angle of the
+         sun's direction is calculated, the program checks each surface
+         at that angle.&nbsp; If it encounters a lit sky, then it is not
+         in the shadow.&nbsp; If it encounters a solid without the sky
+         flag, then it is in the shade.
+      </p>
+      <h3>
+         <a name=_sun_ambient>How about the shade?
+      </h3>
+      <br><br>
+         With highlights, there must be shadows.&nbsp; If the shadows were
+         completely unlit, it would be too harsh.&nbsp; After all, the
+         diffuse light of a sky emits some light, even if it is not as
+         bright as the sun.&nbsp; The _sun_ambient option allows you to
+         fill your shadows.&nbsp; A value of 50-200 works best for this.
+      </p>
+      <br><br>
+         For a good example of how diffuse lighting works, take a look
+         at the shadows outside on a sunny day.&nbsp; If you try to
+         emulate this, you can't go wrong.
+      </p>
+      <h3>
+         <a name=_sun_color>Setting the sun's color
+      </h3>
+      <br><br>
+         To give you absolute control over your sunlight, Geoffrey DeWan
+         included the _sun_color option.&nbsp; This allows you to make
+         your sun project any color without doing any screwy texture
+         swapping.&nbsp;
+      </p>
+      <br><br>
+         Simply add the _sun_color key to your worldspawn and give it a
+         color value just like you would to a light entity (I find that
+         1 1 .85 works good for a medium yellow light).  For a review of
+         what your worldspawn entity should look like now, see the <a
+         href=#example>example</a>.
+      </p>
+      <h2>
+         In as few words possible
+      </h2>
+      <h3>
+         <a name=sun>Using the sun feature
+      </h3>
+      <br><br>
+         First, create a light and target it to an info_null.&nbsp; This
+         will be your sun's angle.
+      </p>
+      <br><br>
+         Next, add the _sun key to your worldspawn, and enter the
+         targetname of the info_null.
+      </p>
+      <br><br>
+         Make sure all of your sky textures have the light flag checked
+         and a light value.
+      </p>
+      <br><br>
+         Add the _sun_light value to your worldspawn, and give it a
+         light value.
+      </p>
+      <br><br>
+         Add the _sun_ambient value to your worldspawn, and give it a
+         light value.
+      </p>
+      <br><br>
+         Add a _sun_color value to your worldspawn, and give it a value.
+      </p>
+      <br><br>
+         Run qrad3 as you normally would (make sure it's the one by
+         Geoffry DeWan, version 1.03, or ArghRad 1.0).
+      </p>
+      <h3>
+         <a name=comments>Some closing thoughts
+      </h3>
+      <br><br>
+         Version 1.02 of DeWan's qrad3 used the sun, sun_light,
+         sun_ambient, and sun_color keys.&nbsp; This was annoying,
+         because they would pop up a message "sun is not a valid field"
+         when you would run the game.  Now that he has added an
+         underscore before the keys, the error is gone, and everything
+         is peachy keen.
+      </p>
+      <br><br>
+         The sun feature is incredibly useful.&nbsp; It is a definite
+         improvement over the original qrad3 code.&nbsp; It is by the
+         will of Id software that we have the source code available to
+         improve an already great game, and by the hard work of the fans
+         that the tools are there.&nbsp; Everyone should show their
+         appreciation of the spirit of free information by not
+         plagiarizing or pirating software.
+      </p>
+      
+      <div class="text">
+         <a name=example>Your worldspawn should look something like this now:
+      </div>
+      <div class="text">
+         <font face="Lucida Console">
+            "classname"&nbsp;&nbsp;&nbsp"worldspawn"<br>
+            "sky"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"unit1_"<br>
+            "message"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Map With Sun"<br>
+            "_sun"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"star" <font face="Times New Roman" size=2 color=red>Use the targetname of your info_null</font><br>
+            "_sun_light"&nbsp;&nbsp;"800" <font face="Times New Roman" size=2 color=red>The highlight brightness</font><br>
+            "_sun_ambient""100" <font face="Times New Roman" size=2 color=red>The shadow depth</font><br>
+            "_sun_color"&nbsp;&nbsp;"1 1 .85" <font face="Times New Roman" size=2 color=red>Same as if it were a light</font>
+         </font>
+      </div>
+      <h2>
+         <a name=nocolor>How to qrad without color
+      </h2>
+      <br><br>
+         If you have ever compiled a level with colored or texture
+         lighting only to find out later that it looks a lot better
+         without color, you can easily recompile it without having to
+         change all of your entities and messing with your surface
+         properties.&nbsp; All you have to do is add -nocolor to your
+         qrad command line.&nbsp; For example, if you normally compile
+         with this command line:
+      </p>
+      <div class="text">
+         qrad3 -extra -bounce 40 [filename]
+      </div>
+      <br><br>
+         You just add -noclor to it and you're good to go.
+      </p>
+      <div class="text">
+         qrad3 -extra -bounce 40 -nocolor [filename]
+      </div>
+      <br><br>
+         The light intensities may not be the same as it was when you
+         had color, but it shouldn't change too much.&nbsp; Here's a
+         little clip from the text file included with <a href="ftp://ftp.cdrom.com/.11/idgames2/quake2/utils/level_edit/bsp_builders/gddqrad3_103.zip">gddqrad3</a> version
+         1.03.
+      </p>
+      <h5>
+        Disables colored lighting.  All colored light is computed as normal,
+        but final lighting results are converted to grayscale according to
+        the formula that is used to compute the Y signal of a color television
+        broadcast (which is what a black & white television displays). The
+        colors are not weighted equally (0.299Red + 0.587Green + 0.144Blue).
+        A green of the same intensity as a blue will convert to a brighter
+        lightmap than the blue.  Red falls in the middle.
+      </h5>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <center>
+         This was written by Michael N. Meadows, AKA Ryche.&nbsp My
+         sources were as follows:&nbsp Me, the text file included with
+         <a href="ftp://ftp.cdrom.com/.11/idgames2/quake2/utils/level_edit/bsp_builders/gddqrad3_103.zip">gddqrad3</a> version 1.03, and a lot of hard work.&nbsp Feel free
+         to quote me.&nbsp Feel free to steal my words and claim them as
+         your own.&nbsp Your conscience is all that stands in your
+         way.&nbsp Most important of all, however, is that you have fun.
+      </center>
+   </body>
+</html>

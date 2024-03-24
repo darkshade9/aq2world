@@ -1,0 +1,35 @@
+<html><head><title>Func_areaportal - 1 - Addendum</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="241" name="241" class="book-h1">Func_areaportal - 1 - Addendum</h1><h3>Func_areaportal - Addendum</h3>
+
+<p>
+First off, be warned: this is not a new tutorial on how to make and use a func_areaportal. If you need to know how to make one, check out fishman's tutorial on that very thing.
+</p>
+<p>
+Now, the purpose of this mini-tutorial is to familiarize you with one of the problems you will almost undoubtedly come across when you are using func_areaportals: the dreaded <strong>"func_areaportal [entity number] doesn't touch two areas"</strong> error. Don't worry, it's a pretty simple thing.
+</p>
+<p><strong>A func_areaportal must entirely separate two areas.</strong> That's it; it's that simple. This means that there can be no "leaks" (for lack of a better word) between the areas on either side of the areaportal. 
+<p>
+<strong>Anything that does not completely block vis, such as windows, holes, func_walls, detail brushes, transparent brushes, brushes with the mist flag set, liquid, etcetera, etcetera, will generate the error</strong> if that brush or entity connects the two areas. If, on the other hand, another func_areaportal is used, the error is gone. Makes sense, because the very purpose of the areaportal is to block vis.
+</p>
+<p>
+What it all boils down to is this: If you get this error, <strong>make sure that the only way for you or the engine to get (or see) from one side of an areaportal to the other, is through an areaortal</strong> (doesn't have to be the same one.)
+<HR>
+</p>
+<p>Another little thing, and a bonus for sitting through my feeble attempt at coherency:
+</p>
+<h4>Func_areaportals and multi-part doors.</H4>
+<p>
+(WooHoo! Excited?) There are a few ways to do muti-part doors, and this is just one. One of the doors in the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/func_ap.zip">example map</A> is a two-part door, for reference.
+</p>
+<p>Quick and simple. First, create your door, and place one areaportal inside the doorway, just like the door was one piece. Now, give all of the pieces of the door a matching "team" key. For example,                 "door1". Now all of your door pieces have "team"="door1". Next step: set one of the door pieces to target the areaportal. Thats it. 
+</p>
+<p>There are a few good things about this. First, you won't have to worry about one side of a door triggering the areaportal off, and the other trigering it back on. Second, in the case of an especially wide door, no matter how you approach the door, it will always open all at once.
+</p>
+<p>
+<b>GrrandMaMa</b>
+</P>
+<BR><BR>
+
+You can download the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/func_ap.zip">example map</a> here. Also if you have any problems or need some help please post to the <a
+                href="http://forums.gamedesign.net">forums</a>.</body></html>

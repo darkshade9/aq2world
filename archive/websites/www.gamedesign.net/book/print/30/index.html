@@ -1,0 +1,16 @@
+<html><head><title>Point</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="30" name="30" class="book-h1">Point</h1><h3>Quake 2 Point Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+	
+	<p><a name="#point_combat"><b>point_combat</b></a> - One thing that I mentioned earlier but I would like to go over again is the <B>point_combat</B> entity. Point_combats are used just like path_corners. They are not drawn in the map. Point_combat entites are simply points that the monster will walk to before attacking the player. You can have more then one linked.  Just give each point_combat a target to the next. Remember though that the monster will not attack until it is finished walking it's point_combats. In the <A HREF="rust21.zip?PHPSESSID=b93b5b424b50faee20e0ef2b289c3cd5">example</A> map I made 2 monster_chicks that when they see the player they take cover behind 2 low lying walls. This effect was achieved using point_combats. By default once the monster reaches the last point_combat it will go after the player like a normal monster. If you set the spawnflag <B>hold</B> on the point_combats then the creatures will hold their position once they reach the last point_combat and attack you from there. One thing I did notice though is if you shoot the monster and hurt it then it will quit following its point_combat and just attack the player.<br><br>
+	
+	There are a couple monster entities that don't act like the others. They are <B>monster_makron</B> and <B>monster_commander_body</B>. monster_makron is a broken entity and shouldn't be used and monster_commander_body is just the dead body of a monster_tank_commander that is just used for decoration.<br><br>
+	
+	I hope that this tutorial opened your eyes to many possibilities you can use the monster_ entities for. I thought that writing this tutorial was the one that I learned the most from out of all of the tutorials and I hope that it helped you as much as it helped me. If you find any errors or something new then please email <i>(note: author doesn't exist anymore)</i> me and let me know.<br><br>
+	<!-- End description -->
+
+	</ul></body></html>

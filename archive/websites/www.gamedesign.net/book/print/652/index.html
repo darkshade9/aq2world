@@ -1,0 +1,116 @@
+<html><head><title>Texture and Lighting</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="652" name="652" class="book-h1">Texture and Lighting</h1><!--
+Submitted by Andy Oct 04 
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+ -->
+<h3>Hammer 3.4</h3>
+<blockquote>Texture - by Andy</blockquote>
+Now that you've created a couple of rooms, it's time to think about textures. Open the rmf from the last tutorial. Firstly, what sort of playing area are you constructing? It's important to have a theme or at least know where you are going with this. Once you have a general idea of the type of environment you're creating, choosing textures becomes much easier. 
+</p><!--break-->
+<p>
+For this tutorial I am using some basic room textures. Open the <span style="color: #ff0000">Texture Application</span> tool (unless you have it as part of your Screen Element Views) and click the <span style="color: #ff0000">Browse</span> button to have a look at what is available. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb3_1.jpg" height="227" width="336" alt="Image 1" title="Image 1" />
+</center><br />
+<p>
+The texture browser has some great features. Type <span style="color: #ff0000">floor</span> in the filter line and the browser will only show textures that have 'floor' as part of their name. Size set to <span style="color: #ff0000">1:1</span> will show you the actual size of the texture and what grid space it normally covers (128x128 in this example). If you select <span style="color: #ff0000">Only Used Textures</span>, it will show you all the textures you have used on your map so far. (<span style="font-style: italic">Useful, since using too many textures looks bad and also wastes the limited texture memory.</span>)
+</p>
+<p>
+Textures have different functions based on the prefix in their name:
+</p>
+<blockquote>
+<span style="color: #ff0000">{ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transparent<br />
+<span style="color: #ff0000">! </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Water (a special texture that acts like water)<br />
+<span style="color: #ff0000">~ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Light (Textures begining with this will emit light)<br />
+<span style="color: #ff0000">+ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Animated (Triggering shows the next texture)<br />
+<span style="color: #ff0000">+A </span>&nbsp;&nbsp; Animated Toggle (cycles through Max 10 frames)<br />
+<span style="color: #ff0000">- </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random Tiling (there will be 3 or 4 in a set) 
+</blockquote>
+<p>
+So <span style="color: #ff0000">!WATERBLUE</span> is a functional water texture and <span style="color: #ff0000">+0~ELEV1_PAN</span> is a the first in a sequence of special animated light emitting textures. You will find a mixture of the prefixes through out the <span style="color: #ff0000">.wad</span> files.
+</p>
+<p>
+<span style="font-weight: bold">The Floor</span>:<br />
+I have chosen <span style="color: #ff0000">c1a3floor02</span> for the floor. So in the <span style="color: #ff0000">Texture Browser</span> double click the texture you require and that texture should now be shown in <span style="color: #ff0000">Face Properties</span> box (or on the right hand side of your screen in the <span style="color: #ff0000">Texture Bar</span>.<br />
+I have found that the easiest way to apply textures to entire brushes is to have the Texture Bar as part of your screen view. To select a brush click on the <span style="color: #ff0000">Ignore Group</span> button, as this will stop you from accidentally applying the texture to an entire group, and select the brush you want to apply the texture to, in this case the Floor. <br />
+Use <span style="color: #ff0000">Ctrl + Left Click</span> to highlight the second floor in the map and with both the floors highlighted, just click on the <span style="color: #ff0000">Apply Current Texture</span> button. Both floors should now resemble concrete tiles. 
+</p>
+<p>
+<span style="font-weight: bold">The Walls</span>
+Using the same method as above, find a suitable texture for the walls such as <span style="color: #ff0000">c2a4e_w1c</span> and select all the wall brushes and apply the texture. Just to give you an idea of what can be achieved with textures, click on <span style="color: #ff0000">Browse</span> in either the Texture Bar or the Face Properties box. Check the box for Only Used Textures and type <span style="color: #ff0000">c2a</span> in the Filter line.<br />
+You should have the <span style="color: #ff0000">c2a4e_w1c</span> texture as the only one showing in the Textures box. (If there is more than one texture showing, then all the textures showing will be marked).<br />
+Now click on <span style="color: #ff0000">Mark</span> and this will select all the brushes in your map that have that texture (84 or so). </p>
+<p>
+Move the Face Properties box so that it isn't obstructing the <span style="color: #ff0000">Camera View</span> and move that view so that you have a clear perspective of the corridor, wall, floor and ceiling.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb3_2.jpg" height="281" width="381" alt="Image 2" title="Image 2" />
+</center>
+<p>
+In the Face Properties box adjust the <span style="color: #ff0000">Y Scale</span> to <span style="color: #ff0000">0.60</span> and the <span style="color: #ff0000">Y Shift</span> to <span style="color: #ff0000">70</span> or <span style="color: #ff0000">71</span>. This should leave the walls with a dark line at the top and bottom accentuating the ceiling and floor.<br />
+You can adjust the scale and shift to suit your needs and try the <span style="color: #ff0000">Align: World</span> or <span style="color: #ff0000">Face</span> check boxes. When you have got it looking how you want it, just close the Face Properties box. 
+ </p>
+<p>
+I used the same method to apply <span style="color: #ff0000">fifties_ceil5</span> to the roof and then as with the walls I adjusted the ceiling to fit. Scale <span style="color: #ff0000">X</span>:<span style="color: #ff0000">1.00</span> and <span style="color: #ff0000">Y</span>:<span style="color: #ff0000">1.00</span>, Shift <span style="color: #ff0000">X</span>:<span style="color: #ff0000">16</span> and <span style="color: #ff0000">Y</span>:<span style="color: #ff0000">55</span> and the Align: World box checked. 
+</p>
+<p>
+I have left the corridor as the original texture. You might want to create a border and apply a neutral texture to it. <br />There are heaps of ways to apply texture. Just remember that applying texture to the entire brush can avoid mixed texture errors when compiling.<br /> Try not to use too many textures and spend some time aligning your textures so they look good. For large areas use a large texture (128x128 or larger) and for outdoors or other huge areas make the scale high so that the texture isn't repeated too often. This also improves performance.<br /> Getting it to look right is really important. Experimenting with textures and the tools can produce great results. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb3_3.jpg" height="252" width="336" alt="Image 2" title="Image 2" />
+</center>
+&nbsp;
+<hr />
+<p>
+<span style="font-weight: bold">Part 4: Lighting</span>:<br />
+In this tutorial we will look at the effects of lighting. Good lighting is great for atmosphere. It's also good to have a few dark places but not too many.
+</p>
+<p>
+Before we go any further, when you compiled your Map did the light look as though there was a real light? By that I mean, did the map look as though there was a light where you placed it or did it look like the whole map was floodlit?. If it looked floodlit or really bright, then you might want to compile it again and look at the <span style="color: #ff0000">Error Log</span>. It is normally saved in the same area as your .rmf file. Look for a line that indicates an Error. If there is a LEAK in your map, then the map will be floodlit or "Fullbright". If you do not fix the LEAK, then the rest of this tutorial is pointless, because you will not see the lighting as it is meant to be.  <br />
+Another way to check for a LEAK is to bring up the console with the <span style="color: #ff0000">~</span> tiald key and type in pointfile. If there is a LEAK, the pointfile will be generated and it will tell you the number of points read. If it is <span style="color: #ff0000">0</span> then your map doesn't LEAK..... yet.
+</p>
+<p>
+<span style="color: #ff0000">The Properties</span> dialog (found by right-clicking the <span style="color: #ff0000">light</span> entity) allows you to customize the brightness, colour, appearance (flickering, fading, etc), target, and name of the light.
+</p>
+<center>
+<img  src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_7.jpg" height="217" width="300" alt="Brightness" title="Brightness" />
+</center>
+<p>
+Also, in the <span style="color: #ff0000">Flags</span> section, you have the option of indicating that the light should be <span style="color: #ff0000">Initially Dark</span>. In this case you'd also have to supply a name for the light so it could be "triggered" to turn on. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_1.jpg" height="150" width="200" alt="Image 1" title="Image 1" />&nbsp;<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_2.jpg" height="150" width="200" alt="Image 2" title="Image 2" /> <br />
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_3.jpg" height="150" width="200" alt="Image 3" title="Image 3" />
+</center>
+<p>
+The effect created by just changing the colour is dramatic. The first figure uses the default settings. For the second room I have selected the light's properties and highlighted <span style="color: #ff0000">Brightness</span>. This will bring up an additional setting, <span style="color: #ff0000">Pick Color</span>. <img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_4.jpg" align="left" vspace="8" hspace="8" height="200" width="300" alt="Image 4" title="Image 4" /><br /> 
+Clicking on this option takes you to a colour palette where you can choose what suits you. The colour palette has an Add to <span style="color: #ff0000">Custom Colors</span> button - if you find a colour that suits the theme of your room, just click that bar to save the colour. It will appear under Custom Colors: this will remain set even when you close the map or compile it. Great for large levels that need consistency. You can see from the figure that I have saved the three Colours used above. The default Brightness setting is the yellow hue shown. <br />
+Placement of the lights has a varied effect. The lights in the figures above are <span style="color: #ff0000">8</span> units below the ceiling. Adding a ceiling light fixture will enhance the effect. 
+</p>
+<p>
+<span style="font-weight: bold">Working with Light Textures</span>:<br />
+There are a lot of textures that can be used and the easiest way to find them is to open your texture browser and type <span style="color: #ff0000">+</span> in the filter [or have a look in the file lights.rad in your WorldCraft folder]. Create a brush <span style="color: #ff0000">64 x 80 x 4</span> units to apply your light texture to. In the example map I have used <span style="color: #ff0000">+0~fifts_lght01</span> (because the texture size is the same as the brush) and applied another texture to the border of the light. Place this brush in the centre of the room above the existing light. To add a little realism to the light you might want to change the light entity property Appearance to <span style="color: #ff0000">Flicker A</span>. The Fluorescent Flickersetting actually turns the light off and on, transitioning the room between light and dark. <br />
+Most light textures can be used in conjunction with <span style="color: #ff0000">func_</span> entities, by setting the <span style="color: #ff0000">Minimum Light Level</span> in the entity properties to &gt; <span style="color: #ff0000">1</span>. This gives the appearance of the texture being lit, but adds no light to the actual room. If you add a light texture to the borders of your light brush, they will also light up and sometimes this lessens the effect and reduces the shadow, giving the light an unnatural look. 
+</p>
+<center>
+<img  src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_5.jpg" height="188" width="250" alt="Image 5" title="Image 5" />&nbsp;<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb4_6.jpg" height="188" width="250" alt="Image 6" title="Image 6" />
+</center>
+<p>
+Create a small brush using the <span style="color: #ff0000">exit1</span> texture on the front face and position it above the corridor (makes sense). Select the brush and change it to a func_wall entity with a Minimum Light Level of <span style="color: #ff0000">1</span> (you can make this value 500, but it doesn't make any difference. The range is 0 to 1, so 0.5 is half-lit). The figures above show the enhancement gained by applying an entity to the brush. If you don't have any light in the room, and there is a really inviting "EXIT" sign at the other end, it doesn't take a genius to work out where your player is going to go. Great place for a trap or monster trigger. 
+</p>
+<p>
+<span style="font-weight: bold; font-style: italic">NOTE</span>:<br /> If you give the light a name to use with a trigger or switch, remember that the game engine can only cope with about 4 named lights or animated lights in the same visual area. More than that might produce weird effects and an error (<i>Warning to many direct lights...</i>) in some compiling programs. I am not sure how many unnamed lights the engine can cope with, but less is better. Try making use of texture lighting. The same applies with <span style="color: #ff0000">light_spot</span> entities. 
+</p>
+<p>
+As I said in the first paragraph, if your map does not compile properly or VIS and RAD do not finish, then your map will be lit &quot;Fullbright&quot; and any changes you have made to the lights properties will not show in the final map. Be sure to check for LEAK's as this is the most common cause.
+</p>
+<p>
+Experiment and try new things. The secret to a good level is in the texturing and the lighting. 
+</p>
+<p align="center"><span style="font-style: italic"> Next Part 5: Furniture Prefabs</span>
+</p>
+&nbsp;
+<hr />
+<!--EOF@116--></body></html>

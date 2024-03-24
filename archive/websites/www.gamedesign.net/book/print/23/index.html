@@ -1,0 +1,31 @@
+<html><head><title>Info</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="23" name="23" class="book-h1">Info</h1><h3>Quake 2 Info Entities</h3><p>
+
+	<ul>
+	
+<li><a href="book/view/23?PHPSESSID=895400af69bedf6d1b147267cd7f28db#info_player_intermission">info_player_intermission</a>
+
+
+	<!-- Start description -->
+	
+	<p><a name="#info_notnull"></a><h3>info_notnull</h3><p><hr color=black noshade width=75%><p>see turret_<br><br>
+	
+	<p><a name="#info_null"></a><h3>info_null</h3><p><hr color=black noshade width=75%><p>see light_<br><br>
+	
+	<p><a name="#info_player_coop"></a><h3>info_player_coop</h3><p><hr color=black noshade width=75%><p>Where a player is spawned in a cooperative game.<br><br>
+	
+	<p><a name="#info_player_deathmatch"></a><h3>info_player_deathmatch</h3><p><hr color=black noshade width=75%><p>Where a player is spawned in a deathmatch game.<br><br>
+	
+	<p><a name="#info_player_intermission"></a><b><a href="/content/quake2/entity/samples/info_player_intermission.zip?PHPSESSID=895400af69bedf6d1b147267cd7f28db">Download Sample Map</a></b><br><br><h3>info_player_intermission</h3><p><hr color=black noshade width=75%><p>The <b>info_player_intermission</b> is the camera you see after a level ends in DeathMatch. They are a little hard to get used to, but after you know the basics, you should do fine.<br><br>
+	
+	There is only one key/value pair you need to know with the info_player_intermission, and that is <b>"angles"</b>. Most entities have an <b>"angle"</b> key, but in the case of the <b>info_player_intermission</b>, you need three (hence, the 's'.) Here's the breakdown:<br><br>Create an info_player_intermission where you want your intermission camera to be, and give it a key of "angles". Now, you want to put three numbers in as your value. Each one of these numbers is an angle. The first is the pitch, the second yaw, and the third roll. Chances are you won't be using the third number (roll) much, since it tilts you side to side, but hey, you can do what ever you want. Heres a little picture illustrating <b>pitch</b>, <b>yaw</b>, and <b>roll</b>:<br><br>
+	
+	<center><img src="/content/quake2/entity/images/info_player_intermission.gif"><br>xyz</center><br><br>
+	
+	<p><hr color=black noshade width=75%><p>The <b>pitch</b> angle (first number of the three) controlls the up/down angle of the camera. Lets say you would like your camera to look down about 15 degrees. In this case, you would make the first number a 15.<br><br>The <b>yaw</b> angle (second number) controls how much the camera is turned from the zero angle (pointing east, on a top-down view of your map.) If you want the camera to look to the west (again, we're talking about a top-down view relative to the map in your editor, and not relative to the actual camera view,) you would give it an angle of 180. If you wanted it to look south, you would use 270.<br><br>The <b>roll</b> angle controls the side to side tilt of the camera. Chances are, you will want to leave this at zero, unless you're going for the "just got shot, laying on your side" look, in which case you could give it 90 or 270. If you want the "hanging by your feet" look, then 180.<br><br>So, an info_player_intermission that looks 30 degrees down, southwest, and standing on it's "feet" (or hanging by it's "hair", it's all relative) would have an "angles" key with a value of "30 225 0".<br><br>
+	
+	<p><a name="#info_player_start"></a><h3>info_player_start</h3><p><hr color=black noshade width=75%><p>Where a player is spawned in a Single Player game.<br><br>
+	<!-- End description -->
+
+	</ul></body></html>

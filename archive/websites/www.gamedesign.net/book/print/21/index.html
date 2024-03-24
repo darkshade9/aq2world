@@ -1,0 +1,1491 @@
+<html><head><title>Entity Properties</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="21" name="21" class="book-h1">Entity Properties</h1>Description of the Quake II entities<h1 id="22" name="22" class="book-h1">Ammo</h1><ul><h3>Quake 2 Ammo Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+	<p><a name="#ammo_bullets"><b>ammo_bullets</b></a> - Ammo for the machine gun and chaingun.
+	<p><a name="#ammo_cells"><b>ammo_cells</b></a> - Ammo for the hyperblaster and BFG.
+	<p><a name="#ammo_grenades"><b>ammo_grenades</b></a> - Ammo for the grenade launcher and hand grenades
+	<p><a name="#ammo_rockets"><b>ammo_rockets</b></a> - Ammo for the rocket launcher
+	<p><a name="#ammo_shells"><b>ammo_shells</b></a> - Ammo for the single and double barrel shotguns
+	<p><a name="#ammo_slugs"><b>ammo_slugs</b></a> - Ammo for the railgun
+
+	
+	<!-- End description -->
+
+	</ul>
+
+</ul><h1 id="24" name="24" class="book-h1">Func</h1><ul><h3>Quake 2 Func Entities</h3><p>
+
+
+	
+
+	<!-- Start description -->
+
+<p><b>
+<ul>
+<li><a href="node/24#func_areaportal">func_areaportal</a></li>
+<li><a href="node/24#func_button">func_button</a></li>
+<li><a href="node/24#func_clock">func_clock</a></li>
+<li><a href="node/24#func_conveyor">func_conveyor</a></li>
+<li><a href="node/24#func_door">func_door</a></li>
+<li><a href="node/24#func_door_rotating">func_door_rotating</a></li>
+<li><a href="node/24#func_door_secret">func_door_secret</a></li>
+<li><a href="node/24#func_explosive">func_explosive</a></li>
+<li><a href="node/24#func_object">func_object</a></li>
+<li><a href="node/24#func_group">func_group</a></li>
+<li><a href="node/24#func_killbox">func_killbox</a></li>
+<li><a href="node/24#func_plat">func_plat</a></li>
+<li><a href="node/24#func_rotating">func_rotating</a></li>
+<li><a href="node/24#func_timer">func_timer</a></li>
+<li><a href="node/24#func_train">func_train</a></li>
+<li><a href="node/24#func_wall">func_wall</a></li>
+<li><a href="node/24#func_water">func_water</a></li><br></ul></b>
+</p>
+
+	<p><b><a href="/content/quake2/entity/samples/func_areaportal.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_areaportal"><h3>func_areaportal</h3></a>
+
+<hr color=black noshade width=75%>	
+
+	<p>A <b>func_areaportal</b> is a strange entity but does some bad ass things. If you have done any extensive quake editing then you know that the quake engine can see right through a door and draws all the polys beyond that door. This causes the framerate to increase and cause map makers much havoc. Well in quake2, John Carmack has given us a solution to this problem and it's the func_areaportal entity. What it actually does is when used it will make it so the engine cannot see through the door and keeps the framerate low. I could go into a bunch of tech talk explaining exactly what it does but you don't want to hear all of that and I really don't want to type it all so I will simply tell you how to use it.<br><br>
+	
+	<b>How it works</b><br>A <b>func_areaportal</b> will only work when it <b>is enclosed within a portal such as a door</b>. It is actually very simple to use. First you make the doors of course. Then you create a brush that is enclosed within the door and completely covers the area of the door so engine can't see through it at any areas. What I usually do is make it just a bit taller and wider then the door just to make sure. Next thing you need to do is turn this brush into a <b>func_areaportal</b>.<br><br>
+	
+	<b>Next you need to link the func_areaportal and the door so that when the door is opened the func_areaportal will disappear and when it is closes it will reappear</b>. This is done by giving the func_areaportal a targetname and then targeting the func_areaportal with the door. For example, if the func_areaportal has a targetname of ap1, <b>targetname ap1</b>, then the func_door would have a target of ap1. <b>target ap1</b>. If you don't target the func_areaportal then you will get this weird hall of mirrors effect when the door is opened.<br><br>
+	
+	Here are 2 example shot of that i took to show you the effect of using the func_areaportal does. The shots are from the doors tutorial example map with and without using area_portals. I simply turned on r_speeds right when the player enters the level and is standing in front of a hallway with 4 doors in it. <br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_areaportal1.jpg"><br>
+	
+	with an areaportal<br><br>
+	
+	<img src="/content/quake2/entity/images/func_areaportal2.jpg">
+	
+	<br>without</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>As you can see there is a huge difference with that first number which is the number of polys in the current view. This is from a small simple level. Just think of the improvements that could be made on a huge level.<br><br>
+
+	<p><b><a href="/content/quake2/entity/samples/func_button.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_button"></a><h3>func_button</h3><p><hr color=black noshade width=75%><p>The <b>func_button</b> entity is a very simple entity that is used for for triggering other entities such as doors to open, platforms to rise, etc, etc. In many ways it acts like a regular trigger_ entity but there are a few more options and differences that you may notice.<br><br>
+	
+	<b>Creating the func_button</b><br>First thing you need to do is create the brush/brushes that will be the func_button and then turn it into a func_button. Pretty straight forward and simple.<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Key Value Pairs</b><br>
+	
+	<b>Angle</b> - Angle determines the direction that the button will move when it is pressed. In most cases you will set the angle towards the wall that the func_button is up against to give the impression that it is being pressed into the wall. There are also cases in which you would have the angle set differently then towards the wall that it is up against. For example: You could have a button on the floor that the player would step on to trigger. Another advanced use of the angle key is for creating a lever. This would just be made by creating a thin lever shaped brush that has the angle set parallel to the wall.<br><br>
+	
+	<b>Target</b> - It should be set to the corresponding targetname that the func_button will trigger. A func_button MUST have a target or it would be useless.<br><br>
+	
+	<b>Targetname</b> - A targetname on a func_button is very strange, but it still works fine and can be useful. When a func_button has a targetname and is triggered the button will be set off just like it was pushed by the player, setting off it's own targets in the process.<br><br>
+	
+	<b>Speed</b> - Speed is pretty self explanatory. It determines the speed in which the button moves when it is pushed.<br><br>
+	
+	<b>Wait</b> - Wait is the amount of time that the button will pause before becoming active again. If you don't want the button to return then set the wait to -1.<br><br>
+	
+	<b>Lip</b> - Lip is the length of the button that is offset after being activated. So if you have a large lip value then more of the button will stick out after being pressed in.<br><br>
+	
+	<b>Health</b> - A value for health can be set if you want the button to be activated when shot. The button MUST be killed to be activated. Pushing it won't do anything after a value for health is set. The higher the value for health the more damage is needed to trigger it.<br><br>
+	
+	<b>Sounds</b> - The key value pair sounds works the same way for the func_button entity as it does for func_door and func_door_rotating:<br><br>
+	
+	1. There are no choices for different sounds, only one sound is available.<br><br>
+	
+	2. If you set this key to anything else than 1, you will always get the same standard button sound. If you set it to 1, you will have no sound.<br><br>So the "sound choices" list in the source code comments are outdated and probably just left over from Quake1. You do NOT have to use this key value pair unless you want your button to be silent.
+	
+	<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Spawnflags</b><br>There are no spawnflags that are required or used for the func_button
+	
+	<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Animated Textures</b><br>There are lots of animated textures that can be used for buttons. Animated textures are not something new but in Quake2, they behave a bit differently and this is one of it's coolest features. The best choice for these are 4 frame texture sets: To make a long story short, the button's face will toggle between the first 2 when idle and between the last 2 when pressed. Here's an example:<br><br>
+	
+	Suppose you make a button and apply the <b>e1u1/arrow0</b> texture, when the button is idle, the button face will cycle between the arrow0 and <b>arrow1</b> textures. While the button is pressed, the button face will cycle between the <b>arrow2</b> and <b>arrow3</b> textures.<br><br>
+	
+	This will work with all textures that follow one another in alphanumeric order and which end with the numbers <b>0 to 3</b>. If you use a set which has only 2 textures in a row in the list, the button face will cycle between these 2 textures <b>both</b> in the idle and pressed states. Note that if there are more that 4 textures in the set, the ones after 3 will simply <b>not</b> be used. For instance, there is a <b>e1u1/arrow4</b> in the last example: well, it is not used in the animation sequence. If you apply it to the button face, the texture will <b>not</b> be animated.<br><br>
+	
+	Also note that whether you apply the first, last or any other texture in the set makes no difference, the button face's texture will still be animated. If you use a 4 texture set, changing which one of the 4 you apply to the button face will change the sequence of which pair is displayed in the idle and pressed state. Let's pick up the previous example with a slight modification:<br><br>
+	
+	Also note that whether you apply the first, last or any other texture in the set makes no difference, the button face's texture will still be animated. If you use a 4 texture set, changing which one of the 4 you apply to the button face will change the sequence of which pair is displayed in the idle and pressed state. Let's pick up the previous example with a slight modification:<br><br>
+	
+	Make a button and apply the <b>e1u1/arrow1</b> texture, when the button is idle, the button face will cycle between the <b>arrow1</b> and <b>arrow2</b> textures. While the button is pressed, the button face will cycle between the <b>arrow3</b> and <b>arrow0</b> textures.<br><br>
+	
+	Most animated "4 frame sequence" textures usually look and operate better when you apply the <b>first</b> texture (no. 0) in the set to the button face but that's not a fixed rule. Experiment and see what works best for you.<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Uses of the func_button</b><br>In most cases you are going to use the func_button for easy tasks such as opening a door or triggering a lift of some sort. Which is very simple. Just make the func_door or platform give it a targetname, then target it with the func_button.<br><br>
+	
+	There are also some more advanced uses of a func_button such as a platform or a lever. Remember that although it is called a func_button you can use it for anything that you want to use it for.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_clock.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_clock"><h3>func_clock</h3></a>
+
+<p><hr color=black noshade width=75%>
+
+<p>These entitys are probably the one that gave me the most trouble out of any of them. They are not easy to use(except for the target_explosion). The <b>func_clock</b> acts like a time of day clock and in most instances it will be used with a <b>target_character</b> and <b>target_string</b>. It was used in the biggun level and the last level where you have to escape before in a certain amount of time.<br><br>
+	
+	In this example we will make a button that you press and it will make a counter appear on the wall that will count down from 10 and when it gets to 0 then the room will explode killing you and everything else..<br><br>
+	
+	The <b>first</b> thing you need to do is make a somewhat small room and put a player_start and a light in it.<br><br>
+	
+	Next you need to create a <b>func_clock</b> entity. You can put this entity anywhere you want. It will not show up in the level. This will control the clock. The key value pairs that you can set are <b>count</b>, <b>pathtarget</b>, and <b>style</b>. count determines the amount of time that the func_clock will count. Pathtarget is the target that will be triggered once count runs out. Style is for the actual visual clock that we will explain later. There are 3 styles. 0(xx), 1(xx:xx), and 2(xx:xx:xx). In this example we are going to set <b>count</b> to 10 and we are going to use style 2. We also need to specify the <b>pathtarget which we will set to bang</b>. Pathtarget bang. This will be the targetname of the <b>target_explosion</b> that we will make later that will kill everything. Now set the target to string which will be the <b>target_string</b> that we will make next. Also give the func_clock a <b>targetname of clock</b> so we can use a button that we will make later to trigger it into action.<br><br>
+	
+	There is also a variety of spawnflags for the func_clock. They are <b>timer_up</b>, <b>timer_down</b>, <b>start_off</b>, and <b>multiuse</b>. <b>Timer_up</b> makes it so the counter will count up and <b>timer_down</b> makes it so the counter will count down. This is basically just for looks. It does'nt effect the outcome. <b>Start_off</b> should be set if the clock will be triggered into starting. If this is off then the func_clock will start when the level starts. <b>Multiuse</b> should always be on. I'm not sure what it does but I do know that I have never ran into any problems when I keep it on. For this example we will set the timer_down, start_off, and multiuse spawnflags.<br><br>
+	
+	The next thing we will do is make a <b>target_string</b> entity. It doesn't matter where this entity is placed either. It will not be shown. Give it a <b>targetname of string</b> so that the func_clock will be targeted to it. Also give it a <b>team key value pair of countdown</b>. team countdown. This is all you have to do for the target_string.<br><br>
+	
+	Now we need to make 8 small brushes 8x16 right next to each other. These will represent the 8 characters that will be used from the <b>style</b> key value pair that we set on the func_clock. xx:xx:xx<br><br>You then need to turn all of these 8 brushes into <b>target_strings</b>. There are 2 key value pairs that you can set. They are <b>count</b> and <b>team</b>. The count is the position of the string that this the brush is and the team is the team that the entity is on. So on all 8 of these target_strings the team needs to be countdown. The count must be different for each of the 8. The one on the far left needs to start with 1. count 1. and the one on the far right needs to be set to 8.<br><br>
+	
+	Now the tricky part that I could'nt figure out till EutecTic told me. Y<b>ou must have the texture of all these target_strings set to num_0 that is in the test.wal file</b>. If you don't have this texture set then the countdown will not be printed.<br><br>
+	
+	Now we have to make the func_button that will trigger the func_clock into action. Make a button on the wall and set the target of it to clock and the wait to -1 so you will not be able to press the button again.<br><br>
+	
+	Now we have to make the <b>func_button</b> that will trigger the func_clock into action. Make a button on the wall and set the target of it to clock and the <b>wait to -1</b> so you will not be able to press the button again.<br><br>
+	
+	The final thing we need to do is to make the explosion that will kill everything. For this we will use a <b>target_explosion</b>. What a target_explosion does is when triggered creates a visual explosion that can be set to do any amount of damage. There are 2 key value pairs that you can set. <b>Dmg</b> and <b>delay</b>. Dmg is the amount of damage the explosion will cause and delay is the amount of time after triggered that the explosion will take place. For this example we will put the target_explosion in the middle of the room and give it a targetname of bang and a damage of 10000. This extreme high value will make sure everything is dies when it is triggered. If you have a larger room or a huge level then you will need to use multiple target_explosions all with the same targetname. and we are done. Be sure to check out the example map.<br><br>
+	
+	You can also use a func_clock without the visual countdown, just don't create any target_strings. You still must have a target_character though. As you can see this is a somewhat difficult entity to master but can come in handy for quite a few things<br><br>
+
+	<p><a name="func_conveyor"></a><h3>func_conveyor</h3><p><hr color=black noshade width=75%><p>Useless, If you want a conveyor use a func_train. This entity is NEVER used in quake2<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_door.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_door"><h3>func_door</h3></a>
+
+<p><hr color=black noshade width=75%>
+
+<p>To me I think that doors are one of the hardest entities to master. There are just so many different options and uses for a door. Now doors have even more options since there are rotating doors in Quake2.<br><br>
+	
+	The First thing you need to do is make brushes that are going to make up the door and turn it into a func_door. Then you need to decide which way the door is going to open and <b>set the angle</b>. After you have done this your door will be in working order. As of now the door will open when you touch it. If you want to set it so that you have to set off a trigger to open it then just give your <b>func_door a targetname and target it with a trigger</b>.<br><br>
+	
+	There are a ton of key value pairs and spawnflags for func_doors that do a variety of cool things. We will go over all the spawnflags first. They are: <b>message</b>, <b>angle</b>, <b>health</b>, <b>speed</b>, <b>wait</b>, <b>lip</b>, <b>dmg</b>, and <b>sounds</b>. <b>Message</b> will print a message when the door is touched <b>ONLY</b> when it is triggered open. Message won't do anything if your func_door does'nt have a targetname. <b>Angle</b> is of course the opening direction. If <b>health</b> is set then the door must be shot to open. <b>Speed</b> determines how fast the door moves. <b>Wait</b> is the length of time between opening the door and when the door closes. If you never want the door to close then set wait=-1. <b>Lip</b> is the length remaining after the door opens. I get a lot of question asking for this. <b>dmg</b> is of course the amount of damage the door will give off when blocked by an entity like the player. Damn! I sure made that sound difficult. hehe. Sounds determines the sound the door with put out when opened. Choices are 1)<b>silent</b>, 2)<b>light</b>, 3)<b>medium</b>, 4)<b>heavy</b>.<br><br>
+	
+	The <b>spawnflags</b> that you can set for a func_door are: <b>start_on</b>, <b>crusher</b>, <b>nomonster</b>, and <b>toggle</b>. <b>Start_on</b> will make the door operate in reverse. So the door will be open and then close. By default when a door crushes you again a wall it will take off damage and then go back a bit and then take off damage again. If <b>crusher</b> is on then there won't be that little pause between trying to close again. It will just keep trying to close and crush you. No matter what, if crush is turned on or turned off a door will take off damage and eventually kill you. Crusher will just do it quicker. <b>nomonster</b> makes it so a creature can not open the door. By default a monster can open a door. <b>Toggle</b> will only make a difference when a door has a opened by a trigger. It makes it so it wait until triggered in both the opening position and the closing position.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_door.jpg"><br>amount of lip</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Those are all the different spawnflags and key value pairs that are available for a regular func_door.<br><br>
+
+	<p><a name="func_door_rotating"></a><h3>func_door_rotating</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Now to the amazing <b>func_door_rotating</b>. A func_door_rotating basically works the exact same way a normal door does except for a few minor things. A func_door_rotating <b>must</b> have an <b>origin brush</b> as part of the brush. This is the actual part that the door rotates around. So the first thing you have to do is make the brushes that will make up the func_door_rotating and the brush you want as the origin brush. Then select the brushes for the actual door and the origin brush and make them into func_door_rotating.<br><br>
+	
+	Next thing you have to do is <b>select the brush that is going to be the origin brush and change the surface property of this brush to an origin brush</b>. All the editors have different ways of setting the surface properties. Hit the 'S' key in BSP and Qed4. Alt T will do it for QOOLE. Check your editor documentation if you don't know.<br><br>
+	
+	There are also a few additional key value pairs and spawnflags for a rotating door that I will of course tell you about.<br><br>
+	
+	There is only 1 new key value pair called <b>distance</b>. Distance determines the degrees the rotating door will travel. So a distance of 90 will make the door rotate 90 degrees. There are also 3 new spawnflags. <b>reverse</b>, <b>x-axis</b>, and <b>y-axis</b>. <b>Reverse</b> will make the door rotate in the opposite direction. <b>X-axis</b> will make the door rotate along the x-axis and <b>y-axis</b> will make the door rotate along the y-axis. By default the door will rotate along the <b>z-axis</b> so there isn't a spawnflag for that. Everything else about a func_door_rotating is exactly like a regular door so to save me from typing all that over again like....just go up and read it there. =)<br><br>
+	
+	Now I am going to try to explain how to make a door that must have a key to be opened. This is kind of nasty.<br><br>
+	
+	First you need to make the door. I already explained all that. Next you need to give the door a <b>targetname and a message</b>. The message should be a message that tells what item the player needs to open the door. Now you must place a <b>trigger_key</b> somewhere. It really doesn't matter where. The <b>trigger_key</b> entity only has one key value pair...<b>item</b>. Set this to the name of the entity that is required to open the door. Now you must target the door with the <b>trigger_key</b>. Now here is the trick. The trigger_key entity must be triggered by another trigger to work. So you must make another trigger that will be targeted to the trigger_key. Kind of nasty huh? If you want the door to open only once and stay open then you should use a <b>trigger_once</b> entity and target the <b>trigger_key</b>. So therefore the trigger_key must also have a targetname.<br><br>
+	
+	<p><a name="func_door_secret"></a><h3>func_door_secret</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>The final type of door is a <b>func_door_secret</b>. These of course are the doors that usually look like walls and when you shoot them they slide forward or back and then to the side. I'm sure you've seen them before. They are actually pretty simple to use. First you need to make the door of course then make it into a func_door_secret entity. There are 3 key value pairs. <b>angle</b>, <b>dmg</b>, <b>wait</b>. <b>Angle</b> is the direction the door will slide open. <b>dmg</b> is the amount of damage the door will give off when the player blocks the progress of the door. <b>wait</b> is the duration of time that the door stays open before closing. There is also 4 spawnflags. <b>once_open</b>, <b>1st_left</b>, <b>1st_down</b>, and <b>always_shoot</b>. <b>open_once</b> makes the door open once...duh. <b>1st_left</b> makes the door move a small amount to the left and then go the angle of the door. <b>1st_down</b> does the same thing but it goes down instead of left. <b>Always_shoot</b> makes the door always open when shot even where the door is targeted to open my another trigger.<br><br>
+	
+	<p></a><b><a href="/content/quake2/entity/samples/func_explosive.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_explosive"><h3>func_explosive</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>This is a pretty easy entity to use. func_explosive is an object that when triggered explodes.<br><br>
+	
+	Just make the brush you wish to explode and make it into a func_explosive. Yep, thats it. If you want a visual explosion then you will have to set the <b>dmg=value</b>, value being the amount of radius damage. There are also <b>health</b> and <b>mass</b> key value pairs. Health determines the amount of damage the brush can take before exploding and mass determines the amount of rubble that is produced when the brush explodes. That's all there is to a func_explosive.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_explosive.jpg"><br>settings example</center><br><br>
+
+<p><b><a href="/content/quake2/entity/samples/func_object.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_object"><h3>func_object</h3><p><hr color=black noshade width=75%></a>
+	
+	<p>A <b>func_object</b> is a pretty cool entity plus its easy to use. Its a object that when triggered falls down. There are no key value pairs that need to be set for the func_object except for the targetname. Just create the brush you want to fall, give it a targetname, and set the trigger_spawn spawnflag. To make it easier to understand for you beginners here is a pic of the func_object entity dialog box from BSP.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_object.jpg"><br>sample settings</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>A good way to use a func_object is to team it with a func_explosive. In the example map I made I created a column that when shot the base of it explodes and the top part falls to the ground. So the exploding part of the column would be the func_explosive and the top part that falls to the ground is the func_object. To get this to work all you have to do is give the func_object a target_name and set the target of the func_explosive to the func_object. Be sure to set the trigger_spawn spawnflag of the func_object though.<br><br>
+	
+	Another good example of a func_object and func_explosive is on the level biggun. After you kill the boss and stop the computer or whatever and your trying to escape the ceiling is falling down and explosions are going off, etc. Hope all this helps.<br><br>
+
+	<p><a name="func_group"></a><h3>func_group</h3><p>
+
+<hr color=black noshade width=75%>
+
+<p>Not used in the game. Only used in qed4 for grouping brushes.<br><br>
+	
+	<p><b><a href="/content/quake2/entity/samples/func_killbox.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_killbox"><h3>func_killbox</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>When I first tried to get <b>func_killbox</b> to work I had no success and I got really frustrated but then my friend EutecTic emailed me and told me what I was doing wrong. I had already put on the tutorials page that the func_killbox did nothing, so this tutorial is here all because of him. <b>Thanks EutecTic</b>. This guy is good!<br><br>
+	
+	What the func_killbox does is kill everything inside of it. It is actually a pretty simple entity to use, but there is a trick to it that gave me all my problems.<br><br>
+	
+	The <b>first</b> thing you need to do is decide where you want the func_kill box and create the brush. If you want it to kill everyone in a room then you need to make sure that the box is covering that whole room or it will be at least hitting every entity. Once you get the brush the size you want it then make it into the func_killbox.<br><br>
+	
+	The <b>next</b> thing you need to do is give the <b>func_killbox a targetname</b>. This is the only key value pair that you will need. For this example lets just give it a targetname of die.<br><br>
+	
+	Now you must make the trigger that is going to set off the func_killbox. In this example lets make it a button on the wall. So create the button and make it into a func_button. G<b>ive the func_button a target of the func_killbox. target=die</b>. Now here is the trick that I was I couldn't figure out. <b>You must also give the trigger that will set off the func_kill box a pathtarget of the func_killbox</b>. So in this example we would give the func_button a key value pair pathtarget and set it to die. pathtarget=die.<br><br>
+	
+	Thats it for a func_killbox. Your probably laughing at me right now cause this one was so easy. =) I wouldn't have such a problem if there were more comments in the code.<br><br>
+	
+	<p></a><b><a href="/content/quake2/entity/samples/func_plat.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_plat"><h3>func_plat</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>Introduction to Quake 2 platforms</b><br>
+	
+	Platforms in Quake 2 work pretty much the same as in Quake 1 with a few minor distinctions. Let's first take a look at what is unchanged and clarify a few things at the same time:<ul><li>Platforms can only be made to go up. IOW, their normal idle position is the lowered position unless they are targeted (more on this later).<li>Plats must be drawn in the raised position in the map editor so the lighting can be calculated properly by the compiling utility (Qrad3).<li>BUT, a platform will initially be drawn in the lowered position in the game unless it is targeted.</ul><br><br>
+	
+	Now, let's take a look at what has changed from Quake 1 to Quake 2 about platforms. Unfortunately, these differences are not really an improvement. IMO, it's quite the opposite, here's why:<br>
+	
+	<ul><li>In Quake 1, when you wanted a plat to start in the raised position, you simply set the "Plat Low Trigger" spawnflag (who knows why they called it that?). Once the plat was touched or triggered and brought down the first time, it would thereafter function like a normal platform.<li>In Quake 2, if you want the platform to start in the raised position, you have to target it with a trigger, independently of the state of the "Plat Low Trigger" spawnflag. If you set the spawnflag without targeting the plat, nothing will happen and it will just behave as a normal plat. IOW, the spawnflag is useless by itself. This is the first setback compared to Quake 1.<li>For platforms in Quake 1, you had 2 choices of sounds or no sound at all if you wanted them to be silent.<li>In Quake 2, platforms not only don't have any choice of sounds, but you can't even make them silent either. This is what I call "major setback No. 2" in platforms. Funny, I somehow expected more from Quake 2 plats than Quake 1 plats, not less!... Oh well...</ul><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>Ok, how do I make these work? Do I use height and lip?</b><br>
+	
+	There are 2 basic ways to make and set platforms to operate exactly the way you want (that is within their basic limitations):<br><br>The first and most common way is to use the physical dimension of the brushes that are part of the platform to set it's up-down travel distance. In this particular case, the <b>height</b> key pair is not used but the <b>lip</b> key pair is and can be extremely useful. The basic setup formula in this case is as follows:<br><br>
+	
+	(Total platform height - <b>lip</b> value) = platform travel distance<br><br>
+	
+	<b>Total platform height:</b><br>
+	
+	This is the overall height of all the brushes that are part of the <b>func_plat</b> entity when measured from the <b>lowest</b> point to the <b>highest</b> point. You're probably thinking: hey! This definition is overkill. I could have figured that out for myself long ago! All I have to do is add up all the individual heights of all the brushes that are part of my plat and I'm in business right?... Well, as long as <b>none</b> of your brushes <b>overlap</b> heightwise. Otherwise, you'll have to <b>measure</b> the distance from the highest to the lowest point.<br><br>
+	
+	<b>Lip value:</b><br>
+	
+	The height or amount by which your platform will be raised from the floor when it's in the lowered position.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_plat1.gif"><br>
+	
+	First method of evaluating platform travel</center><br><br>
+
+<p><hr color=black noshade width=75%>
+
+<p>The second and easiest, most predictable way to set your platforms is to use the <b>height</b> key pair. In this case, the <b>physical dimensions</b> of the brushes that are part of the platform have no importance and the <b>lip</b> key pair has no effect and needs not be used. The basic setup formula is as simple as it gets:<br><br>
+	
+	<b>height</b> value = platform travel distance<br><br>
+	
+	I bet you're saying: what?... that's it?... Yep! That's it! That's all there is to it. Just make the platform and turn it into a <b>func_plat</b>. Measure the <b>distance</b> between the <b>start</b> and <b>end</b> position of the <b>top</b> of your platform and transfer that value straight to the <b>height</b> key pair and you're all set. It makes no difference what size or shape the brushes of your platform are or whether they overlap or not when using this method. The only restriction is that the plat has to be drawn in the raised position as always.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_plat2.gif"><br>
+	
+	Second method of evaluating platform travel</center><br><br><p><hr color=black noshade width=75%><p>So in conclusion, both methods work fine. Choosing which one to use at this point depends mainly on design particulars and personal taste.<br><br>
+	
+	You can also specify the speed, acceleration and deceleration of the platform. <b>Speed</b>, <b>acceleration</b> and <b>decelaration</b> are self explanatory.  If you want to have the platform triggered then just give it a targetname and target it with a trigger.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_rotating.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_rotating"><h3>func_rotating</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Rotating brushes were first showcased in hipnotic's quake mission pack and they were <b>extremely</b> difficult to get to work. They required a ton of work to get them to turn out right. Well quake2 fixed all this. Rotating brushes are very easy to use now.<br><br>
+	
+	The first step in making your rotating brush is to make the actually brushes that will be rotating. There are basically 2 parts to a rotating brush. First part is the object that will <b>rotate</b> and the second is the object that part 1 will <b>rotate</b> around. We are going to call this the <b>origin brush</b>. Think of it as the part that won't be moving. For example...picture a fan with 2 blades that are spinning around. The middle part that the blades are connected to would be the origin brush.<br><br><center><img src="/content/quake2/entity/images/func_rotating.jpg"><br>rotation explanation</center><br><br>
+	
+	<p><hr color=black noshade width=75%><p>After creating the brushes that will make up your <b>func_rotating</b> then select all the parts of the object and turn it into a <b>func_rotating</b>. Now <b>select</b> the part of the object that will be the non moving center(<b>origin</b>) of the object and change the surface property of it to an origin brush.<br><br>
+	
+	By default the object will rotate on the z axis. To change this just set the spawnflag to either <b>x_axis</b> or <b>y_axis</b>. <b>Z axis</b> rotation is parallel to the floor. <b>X axis</b> rotation will be parallel to the wall at 90 or 273 degrees. <b>Y axis</b> rotation is parallel to the wall at 0 and 180 degrees.<br><br>
+	
+	There are a few more spawnflags that you can set for a <b>func_rotating</b>. They are <b>start_on</b>, <b>reverse</b>, <b>touch_pain</b>, and <b>stop</b>. <b>Start_on</b> will make the rotating object start rotating when the game begins. Reverse makes the brush rotate in the opposite direction. By default the rotating object will only cause you pain if you are stuck between the object and a wall or something. If <b>touch_pain</b> is turned on then it will cause damage to any entity it touches. <b>Stop</b> makes the rotating object stop completely when the an entity such as the player blocks its way. It will still take your health away though. By default a func_rotating will push you around with it. With stop set it will not push you just give damage.<br><br>
+	
+	You can also specify the <b>speed</b> of the object and <b>damage</b> it will give out. Just set the key value pairs speed and dmg to change these. So if you made a fan and you wanted it to kill the player very quickly when touched then you would set dmg to something like 200. dmg=100. Likewise with speed.<br><br>
+
+	<p><a name="func_timer"></a><h3>func_timer</h3>
+
+<p><hr color=black noshade width=75%>
+
+<p>Information will be added later<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_train.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_train"><h3>func_train</h3></a>
+
+<p><hr color=black noshade width=75%><p>A func_train is moving object that travels along a specified path. For those of you familiar with quake1 editing then your probably familiar with func_trains. They are not the easiest entity to use but they are not extremely difficult.<br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>How do I get the dang thing to work?!</b><br>
+	
+	It takes at least 2 entities to get a func_train in working order. The actual func_train and more then 1 path_corner. The <b>path_corners</b> specify the actual path that the func_train will follow. We will get to that in a little later though.<br><br>
+	
+	<b>First</b> thing you need to do is to build the actual object that will be the func_train. This can be one single brush or multiple brushes, it all depends on what you want the train to be. After you have build the object then you will need to turn the object into a func_train entity. It does not matter where you place the func_train because it will automatically spawn at the first path_corner.<br><br>
+	
+	The <b>second</b> thing that you need to do is to make all your <b>path_corners</b>. These will be the actual path that the func_train will follow as mentioned above. Each path_corner will link to the next. So if I made a lift that would travel around the corners of a square room then I would have 4 path_corners. The first one would have a <b>targetname p1</b>, and a <b>target p2</b>. The second one would have a <b>targetname p2</b> and a <b>target p3</b>. Third one would have a targetname p3 and a target p4. The fourth one would have a targetname p4 and if you wanted the lift to continuously travel around the room then you would give it a <b>target p1</b>, which is the targetname of the first <b>path_corner</b>. Now I am going to go into more detail on all the different key value pairs and spawnflags.<br><br>
+	
+	<p><hr color=black noshade width=75%><p><b>Key Value Pairs of the func_train</b><br><b>speed</b> - speed is simply the speed that the func_train will travel from path_corner to path_corner.<br><br>
+	
+	<b>dmg</b> - dmg is the amount of damage the train will inflict when it crushes you up agaist a object. What I mean is it won't take off damage by just touching you...only when you are like...trapped up against a wall and the func_train.<br><br><b>noise</b> - noise is the sound that will be played when the func_train is moving. Here is a list(<b>please link to list</b>) of sounds that you can use. Don't forget to include the directory along with the sound name. Example: <b>noise</b> world/pump1.wav.<br><br>
+	
+	<b>target</b> - target will be set to the first path_corner. A func_train MUST have a target key and it MUST be a path_corner.<br><br>
+	
+	<b>targetname</b> - If a func_train has a targetname then it will have to be triggered before it will be become active.<br><br>
+	
+	<p><hr color=black noshade width=75%><p><b>spawnflags</b><br>
+	
+	<b>start_on</b> - By default a train will only start moving when triggered by another entity. If you set the start_on spawnflag then the func_train will start moving when the level starts.<br><br>
+	
+	<b>toggle</b> - toggle will allow the func_train to be toggled on and off numerous times. It will only work when a func_train is triggered into action multiple times by another entity such as a func_button. This is useful in making moving elevator type platforms.<br><br>
+	
+	<b>block_stops</b> - When the spawnflag block_stops is set the func_train will stop completely when an entity like the player is blocking its way and it won't take any damage off. EVEN if the dmg key is set.<br><br>
+	
+	<b>Other misc. things you might like to know about the func_train and path_corners</b><br>
+	
+	func_trains are very useful entities and can be used for a variety of cool effects. To get some of these cool effects you need to be familiar with some of the spawnflags of a path_corner like, <b>teleport</b>, <b>pathtarget</b>, and <b>wait</b>.<br><br>
+	
+	<b>teleport</b> will actually teleport the func_train to the next path_corner that is targeted. This was used in the id levels to create the cool conveyor belts in some of the levels. It can also create the effect of moving crates. Just use one func_train that looks like a crate, target it to 2 path_corners, have teleport on for the second one.<br><br>
+	
+	<b>pathtarget</b> corresponds to a targetname of an entity that will be triggered when the func_train arrives at that path_corner. This can be used for a variety of cool effects. I remember seeing this in the id level where a machine is carrying a barrel from the ceiling and it smashing into the wall and blows a hole in it. This effect was created by placing a path_corner very close to a wall that is actually a func_explosive. Then the pathtarget of that path_corner is set to the targetname of the func_explosive. Pretty cool.<br><br>
+	
+	<b>wait</b> will make the func_train wait at that path_corner for the specified amount of time before preceding to the next path_corner.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_wall.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_wall"><h3>func_wall</h3></a>
+
+<p><hr color=black noshade width=75%>
+	
+	<p>A <b>func_wall</b> is a very strange entity. It's basically a wall that can be triggered into or out of existance. id used func_walls on a number of levels to make a wall <b>disappear</b> and let creatures out to surprise you. If you have played single player quake any then you know what I'm talking about. Well they are real easy to use. Func_walls that is.<br><br>
+	
+	First thing you do is make the wall. Then you turn it into a func_wall. Currently this wall will not show up in your level. It must be triggered to work. So give the func_wall a targetname and create some sort of trigger like a func_botton or whatever and set the target of the trigger to the func_wall. So lets say you give your func_wall a targetname of wall1. Then you make a trigger_once to trigger it open. You would give the trigger_one a target of wall1. Now whenever the player comes in contact with this trigger_once then the wall will suddenly blink into existance killing anything blocking it. Cool huh?<br><br>
+	
+	There are a few spawnflags that you can set that will change the actions of the wall. They are <b>trigger_spawn</b>, <b>toggle</b>, and <b>start_on</b>. <b>Trigger_spawn</b> must be set if you have triggered the func_wall. In all the possible uses that I can think of for the wall I can't think of one in which you wouldn't have trigger_spawn set. s<b>tart_on</b> makes the wall work in reverse. Instead of the wall blinking into existance it will blink out of existance. This is how id uses func_wall in a lot of their levels to let monsters out of a secret room to surprise the player. If <b>start_on</b> is set then toggle must be set also. I actually don't think it has to be set but if you don't set it then you will get a error message when entering your level. Probably a bug in the code but it doesn't hurt anything.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_water.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_water"><h3>func_water</h3></a>
+
+<p><hr color=black noshade width=75%>
+
+        <p><b>Func_water</b> is kinda an easy entity to use and its pretty damn cool. What it does is creates a water brush(lava, slime, etc) that can move. Like a pool of water slowly bobbing up and down. You can also use it to make some other cool effects like a trap that when triggered an area fills up with lava. IF you really want to get fancy you can make a func_water brush without a solid non-water brush to make some kick ass effects that i have included in the examples zip file at the bottom of the page.<br><br>
+	
+	First thing you need to do is create the brush you want to be the moving water and make it a <b>func_water</b> entity. One thing to remember is that the water must not be <b>translucent</b>. For some reason only non-translucent water will work with a func_water. A func_water entity must be triggered to work so therefore it must have a <b>targetname</b>. So lets give it a targetname of <b>water1</b>.<br><br>
+	
+	Next you need to specify the <b>angle</b> of the water movement. For most purposes you will only need the water to move up and down but if you can find a purpose to make the water move left or right then go for it. So lets set the angle of the movement to be down. angle=-2.<br><br>Now you need to set the <b>sound</b> of the water brush. You can either have 0)no sound, 1)water, 2)lava. lets make it have a water sound. sounds=1<br><br>
+	
+	You can also specify the <b>speed</b> of the movement, the wait before returning, and the lip remaining at end of the move.<br><br>
+	
+	Okay, the final thing to do to get your <b>func_water</b> to work is to make the <b>trigger</b> that will start the movement of the water. Any kind of trigger will work. If you want the water to bob up and down continuously you will need to use a <b>func_timer</b>. If you want to make a lava trap you will need to use a <b>trigger_once</b>, <b>trigger_multiple</b>, or a <b>func_button</b>.<br><br>
+	
+	so all that is left to do is choose what you are going to use the func_water for and pick the trigger entity that you wish to use and set the target of the trigger entity to the name of the func_water.target=water1<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_water.jpg"><br>water in a tube</center><br><br>
+
+	
+
+	<!-- End description -->
+
+</ul><h1 id="23" name="23" class="book-h1">Info</h1><ul><h3>Quake 2 Info Entities</h3><p>
+
+	<ul>
+	
+<li><a href="node/23#info_player_intermission">info_player_intermission</a>
+
+
+	<!-- Start description -->
+	
+	<p><a name="#info_notnull"></a><h3>info_notnull</h3><p><hr color=black noshade width=75%><p>see turret_<br><br>
+	
+	<p><a name="#info_null"></a><h3>info_null</h3><p><hr color=black noshade width=75%><p>see light_<br><br>
+	
+	<p><a name="#info_player_coop"></a><h3>info_player_coop</h3><p><hr color=black noshade width=75%><p>Where a player is spawned in a cooperative game.<br><br>
+	
+	<p><a name="#info_player_deathmatch"></a><h3>info_player_deathmatch</h3><p><hr color=black noshade width=75%><p>Where a player is spawned in a deathmatch game.<br><br>
+	
+	<p><a name="#info_player_intermission"></a><b><a href="/content/quake2/entity/samples/info_player_intermission.zip">Download Sample Map</a></b><br><br><h3>info_player_intermission</h3><p><hr color=black noshade width=75%><p>The <b>info_player_intermission</b> is the camera you see after a level ends in DeathMatch. They are a little hard to get used to, but after you know the basics, you should do fine.<br><br>
+	
+	There is only one key/value pair you need to know with the info_player_intermission, and that is <b>"angles"</b>. Most entities have an <b>"angle"</b> key, but in the case of the <b>info_player_intermission</b>, you need three (hence, the 's'.) Here's the breakdown:<br><br>Create an info_player_intermission where you want your intermission camera to be, and give it a key of "angles". Now, you want to put three numbers in as your value. Each one of these numbers is an angle. The first is the pitch, the second yaw, and the third roll. Chances are you won't be using the third number (roll) much, since it tilts you side to side, but hey, you can do what ever you want. Heres a little picture illustrating <b>pitch</b>, <b>yaw</b>, and <b>roll</b>:<br><br>
+	
+	<center><img src="/content/quake2/entity/images/info_player_intermission.gif"><br>xyz</center><br><br>
+	
+	<p><hr color=black noshade width=75%><p>The <b>pitch</b> angle (first number of the three) controlls the up/down angle of the camera. Lets say you would like your camera to look down about 15 degrees. In this case, you would make the first number a 15.<br><br>The <b>yaw</b> angle (second number) controls how much the camera is turned from the zero angle (pointing east, on a top-down view of your map.) If you want the camera to look to the west (again, we're talking about a top-down view relative to the map in your editor, and not relative to the actual camera view,) you would give it an angle of 180. If you wanted it to look south, you would use 270.<br><br>The <b>roll</b> angle controls the side to side tilt of the camera. Chances are, you will want to leave this at zero, unless you're going for the "just got shot, laying on your side" look, in which case you could give it 90 or 270. If you want the "hanging by your feet" look, then 180.<br><br>So, an info_player_intermission that looks 30 degrees down, southwest, and standing on it's "feet" (or hanging by it's "hair", it's all relative) would have an "angles" key with a value of "30 225 0".<br><br>
+	
+	<p><a name="#info_player_start"></a><h3>info_player_start</h3><p><hr color=black noshade width=75%><p>Where a player is spawned in a Single Player game.<br><br>
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="26" name="26" class="book-h1">Item</h1><ul><h3>Quake 2 Item Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+	<p><a name="#item_adrenaline"><b>item_adrenaline</b></a> - This slightly increases your health permanently.
+	
+	<p><a name="#item_ancient_head"><b>item_ancient_head</b></a> - John Carmacks head. Adds 2 to max health
+	
+	<p><a name="#item_armor_body"><b>item_armor_body</b></a> - adds 100 to armor
+	
+	<p><a name="#item_armor_combat"><b>item_armor_combat</b></a> - adds 50 to armor
+	
+	<p><a name="#item_armor_jacket"><b>item_armor_jacket</b></a> - adds 25 to armor
+	
+	<p><a name="#item_armor_shard"><b>item_armor_shard</b></a> - adds 2 to your armor
+	
+	<p><a name="#item_bandolier"><b>item_bandolier</b></a> - Increases your carrying capacity for all ammunition except grenades and rockets.
+	
+	<p><a name="#item_breather"><b>item_breather</b></a> - This provides oxygen when submerged in liquids.
+	
+	<p><a name="#item_enviro"><b>item_enviro</b></a> - This provides protection from harmful fluids.
+	
+	<p><a name="#item_health"><b>item_health</b></a> - heals 10 hitpoints
+	
+	<p><a name="#item_health_large"><b>item_health_large</b></a> - heals 25 hitpoints
+	
+	<p><a name="#item_health_mega"><b>item_health_mega</b></a> - heals 100 hitpoints
+	
+	<p><a name="#item_health_small"><b>item_health_small</b></a> - heals 2 hitpoints
+	
+	<p><a name="#item_invulnerability"><b>item_invulnerability</b></a> - renders you temporarily indestructible
+	
+	<p><a name="#item_power_screen"><b>item_power_screen</b></a> - Gives you 200 armor towards energy weapons
+	
+	<p><a name="#item_power_shield"><b>item_power_shield</b></a> - provides improved protection against energy weapons. While it is being used, it drains energy from your cells when damaged.
+	
+	<p><a name="#item_quad"><b>item_quad</b></a> - temporarily multiplies all your weapons' strengths by four
+	
+	<p><a name="#item_silencer"><b>item_silencer</b></a> - silences the discharge of any weapon
+
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="25" name="25" class="book-h1">Key</h1><ul><h3>Quake 2 Key Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+
+	<p><a name="#key_airstrike_target"></a><b><a href="/content/quake2/entity/samples/key.zip">Download Sample Map</a></b><h3>key_airstrike_target</h3>
+
+	<p><a name="#key_blue_key"></a><h3>key_blue_key</h3>
+
+	<p><a name="#key_commander_head"></a><h3>key_commander_head</h3>
+
+	<p><a name="#key_data_cd"></a><h3>key_data_cd</h3>
+
+	<p><a name="#key_data_spinner"></a><h3>key_data_spinner</h3>
+
+	<p><a name="#key_pass"></a><h3>key_pass</h3>
+
+	<p><a name="#key_power_cube"></a><h3>key_power_cube</h3>
+
+	<p><a name="#key_pyramid"></a><h3>key_pyramid</h3>
+	
+	<p><a name="#key_red_key"></a><h3>key_red_key</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>You might be thinking thinking why the hell I did a tutorial over keys cause they are just items that you can place anywhere and they have no spawnflags or key value pairs to mess with. Well you are right. They are very simple to put in your level but getting some use out of them is a different story.<br><br>
+	
+	There are 9 different kinds of keys. They are <b>key_airstrike_target</b>, <b>key_blue_key</b>, <b>key_commander_head</b>, <b>key_data_cd</b>, <b>key_data_spinner</b>, <b>key_pass</b>, <b>key_power_cube</b>, <b>key_pyramid</b>, and <b>key_red_key</b>.<br><br>
+	
+	All of them act in exactly the same way, they just look different. What's cool about the keys is that they can be used to trigger anything you want them to, not just doors. You could have a key stop a turbine or make a computer explode. The possibilities are endless.<br><br>To get the keys to do these kind of things you must use a few different entities. For example:<br><br>
+	
+	Lets make it so that you have to use a <b>key_data_spinner</b> to turn off a big fan. <br><br>
+	
+	<ul><li>First we would make the fan of course and make it into a func_rotating and then make the computer that you will stick the key_data_spinner into that will turn off the fan. If you don't know how to do this then I suggest you check out my tutorial on the func_rotating entity. You also need to give the func_rotating a targetname. Lets give it a targetname of fan. targetname=fan.<li>The next thing we want to do is to place a trigger_key somewhere in the level and target it to the fan. target=fan. You should also give the trigger_key a targetname. Lets give it a targetname of key. targetname key<li>Next we need to specify what item will be needed to trigger the func_rotating and turn it off. You do this by setting the key value pair item to the name of the key. So in this example we would set item=key_data_spinner on the trigger_key entity.<li>There is one more thing to do and that is there must be a trigger where you want the key to be used that will trigger the trigger_key entity. So we would go to the area we made where the key_data_spinner will need to be placed and put a trigger_multiple right in front of the area. The closer and smaller the better. Then target the trigger_key with the trigger_multiple. In this example we would set target=key for the trigger_multiple.</ul><br><br>
+	
+	<center><img src="/content/quake2/entity/images/key.gif"></center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Hope this clears everything up for ya. Now this is just one little example. There are unlimited uses for these keys. Instead of turning off a fan the key to make some computers explode. One of the more noticable uses of the keys that is in the id maps was the airstrike, which is just the key_airstrike_target and a trigger_key that triggers the misc_viper_bomb to fly by and a big explosion. I will definitly explain this in a future tutorial.<br><br>
+
+	
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="27" name="27" class="book-h1">Light</h1><ul><h3>Quake 2 Light Entities</h3><p>
+
+	<ul>
+
+<li><a href="node/27#light">light</a>
+<li><a href="node/27#light_mine1">light_mine1</a>
+<li><a href="node/27#light_mine2">light_mine2</a>
+	
+	<!-- Start description -->
+
+	<p><a name="light"></a><b><a href="/content/quake2/entity/samples/light.zip">Download Sample Map</a></b><h3>light</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Ask any level designer what the most time consuming part of level design is, and they will most likely answer: lighting. The fact is, lighting isn't that difficult in implementation, but rather in choices of lighting, and the amount of options available. We'll try to break down the choices here.<br><br>
+	
+	Lights, since they are just point entities with working defaults, are among the easiest entities to add, but the actual method varies from editor to editor, so check the docs for yours.<br><br>
+	
+	Now, on to the good stuff. Here are the flags and fields, and their uses:<br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>LIGHT</b><br>
+	
+	This is the brightness of the light. Default is 300. The fall-off distance of the light is proportional (the brighter the light, the further it shines.)<br><br>
+	
+	In order to change the light value, simply add a key of "<b>light</b>" with the desired keyvalue.<br><br>One thing worthy of mention. Light entities differ from lit surfaces, in that the amount of light that a surface emits is dependent on the size of the face, whereas two light entities with the same "<b>light</b>" keyvalue will always emit the same amount of light, regardless of color. (which is why software Q2 always looks so bright)<br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>_COLOR</b><br>
+	
+	(Note, a value prefixed with an underscore means that the key will be ignored if the default is not applicable. This is why "color" works here as well. It's good practice to always include the underscore, even if it works without it.)<br><br>
+	
+	This is the color that the light entity will emit. The actual color is determined by a set of three numbers between 0 and 1, representing red, green, and blue, respectively. The _color values are proportional, meaning that a value of "<b>0.1 0.1 0.1</b>" would give you exactly the same thing as "<b>1 1 1</b>", and "<b>0.5 1 1</b>" would give you the same as "<b>0.25 0.5 0.5</b>"<br><br>
+	
+	<b>Example</b><br
+	
+	>"_color" "0 0 1" would emit blue light in gl<br>"_color" "1 1 1" would emit white light in gl<br>"_color" "0.5 0.5 0.5" would emit white in gl<br>"color" "1 0 0" would emit red light in gl, but kick out a "color is not a field" warning in software. (moral: use the underscore)<br><br>
+	
+	<p><hr color=black noshade width=75%><p><b>STYLE</b><br>
+	
+	The style key determines whether or not the light will be a dynamic light, and if so what pattern it will follow. The default is 0 (static).<br><br>Here are the values, and their patterns. 'a' represents total darkness, and 'z' represents double brightness. 'm' is normal brightness (nabbed from the gamex86 source):<br><br>
+	
+	<ul><li>FLICKER (first variety): "mmnmmommommnonmmonqnmmo"<li>SLOW STRONG PULSE: "abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba"<li>CANDLE (first variety): "mmmmmaaaaammmmmaaaaaabcdefgabcdefg" <li>FAST STROBE: "mamamamamama" <li>GENTLE PULSE 1: "jklmnopqrstuvwxyzyxwvutsrqponmlkj" <li>FLICKER (second variety): "nmonqnmomnmomomno" <li>CANDLE (second variety): "mmmaaaabcdefgmmmmaaaammmaamm" <li>CANDLE (third variety): "mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa" <li>SLOW STROBE (fourth variety): "aaaaaaaazzzzzzzz"<li>FLUORESCENT FLICKER: "mmamammmmammamamaaamammma" <li>SLOW PULSE NOT FADE TO BLACK: "abcdefghijklmnopqrrqponmlkjihgfedcba" </ul><p><br><br>
+	
+	12-31 open for modification<br><br>
+	
+	32-62 reserved by QRAD3 for switchable light styles, and 63 is reserved for testing<br><br>
+	
+	In order to make a dynamic light, simply add a key of "style" and the appropriate value. (ex: "style" "5" will make a pulsing light.)<br><br>
+	
+	<p><hr color=black noshade width=75%><p><b>TARGET/INFO_NULL/SPOTLIGHTS</b><br
+	
+	>A light entity can only target one thing: an info_null. What happens when you target an info_null? a spot light happens. (woo) Personally, I dig spotlights, and use them a lot. Here's how you do it.<br><br>
+	
+	Create a light. Give it a "target" key, and a keyvalue (we'll use "spot1".) <b>Create an info_null at the place at which you want the spotlight to point</b>. Give the info_null a "targetname" key, and keyvalue (again, "spot1".)<br><br>
+	
+	Now, what if you want a wider spotlight? Well, that's why we have...<br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>_CONE</b><br>
+	
+	The default _cone value is 10. The higher the value, the wider the spot. To use it, add the "<b>cone</b>" key, and the desired value to the light entity.<br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>Switchable lights</b><br>
+	
+	Let's say we wan't a light to be turned on or off by some other event (be it a button, trigger, etc..) What we need to do in this case, is to set up the triggering event (in this case, a <b>func_button</b>) and give it a "<b>target</b>" (we'll use "<b>lt1</b>".) Now, we need to create a light, and give it a "<b>targetname</b>" of "<b>lt1</b>". We now have a light that turns off when we hit the button. If you would like the light to turn on when you hit the button, set the <b>start_off</b> spawnflag for the light.<br><br>
+	
+	<p><a name="light_mine1"></a><h3>light_mine1</h3>
+	
+	<p><a name="light_mine2"></a><h3>light_mine2</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>The light mines are simply predefined lights that are the lights that were used on the mine levels in quake2. They act like normal lights they just have a predefined shape. Here are pics of them.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/light_mine1.jpg"><br>light_mine1<br><br><img src="/content/quake2/entity/images/light_mine2.jpg"><br>
+	
+	light_mine2</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>NOTE: If you want to rotate a light_mine (1 or 2) you have to give it an "angle" key. <br><br>
+	
+	<p><hr color=black noshade width=75%><p>
+	
+	<b>_minlight</b><br>
+	
+	_minlight is a very strange key value pair that can be used with certain entities like func_door, func_button, func_rotating, etc, etc. Basically any visual entity except the item entities. What it does is makes the object glow. Lets say you have a very dark room and there is a button the player has to press but it is so dark that the player is not going to be able to find it. Well, this is where _minlight can come in very handy. Select the func_button entity and give it a key value pair of _minlight and a value of 1. This will make the func_button glow a faint white so it will be more visible. <br><br>
+	
+	The glow from _minlight does not make the surronding area any brighter, just the object that has the _minlight value. <br><br>
+	
+	The values for _minlight should be between 0 and 2. I have not noticed any difference with exteremly high values. 2 seems to be the max.<br>
+
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="28" name="28" class="book-h1">Misc</h1><ul><h3>Quake 2 Misc Entities</h3>
+<p><a name="#misc_banner"><b>misc_banner</b></a> - misc_banner is the cool wavy flag that is seen on base1. Pretty cool looking. It's uhhhh...very easy. Just place it where ever you want and thats where the flag will appear. <b>Angle</b> determines which side of the flag faces what. In the docs it says it is 128 units high but it seems much bigger to me.<br><br>
+	
+	<p><a name="#misc_bigviper"><b>misc_bigviper</b></a> - The misc_bigviper is the ship model that you can see in the quake2 intro that can be placed in a level but acts very differently then the other ship entities. It does absolutly nothing at all!<br><br>
+	
+	<p><a name="#misc_blackhole"><b>misc_blackhole</b></a> - There are no flags or options for misc_blackhole. It just spins. The only thing worthy of mention is the fact that, while the entity in your editor is about the size of a light, the in-game misc_blackhole is very, very big. Allow at least 256 units in all directions.<br><br>
+	
+	<p><a name="#misc_deadsoldier"><b>misc_deadsoldier</b></a> - Not much to say about these. Pretty self explanatory. There are six varieties, determined by spawnflags: <b>on_back</b>, <b>on_stomach</b>, <b>back_decap</b>, <b>fetal_pos</b>, <b>sit_decap</b>, and <b>impaled</b>. Obviously, only one flag can be set for each <b>misc_deadsoldier</b> (a guy would have to be pretty badly worked over to be on his back and his stomach at the same time.) Insert one in your map, and voila! Instant dead guy! Two things worth of mention, however: 1) <b>misc_deadsoldier</b> entities will not drop to the floor, so if you don't want them to float, align them on the floor. 2)a <b>misc_deadsoldier</b> with the <b>impaled</b> flag just won't look right unless he's suspended or impaled somehow. (in water, on a hook, etc).<br><br>
+	
+	<p><a name="#misc_easterchick"><b>misc_easterchick</b></a> - see below
+	
+	<p><a name="#misc_easterchick2"><b>misc_easterchick2</b></a> - see below
+	
+	<p><a name="#misc_eastertank"><b>misc_eastertank</b></a> - The easter egg entities are easy to use for your own SPQ levels, the difficult part is creating the chair for the misc_eastertank to sit in, but I'll leave that part of it to you :)<br><br>
+	
+	<ol><li>Make sure that your editor is zoomed in pretty close with a grid or maybe 8 or so.  This way you can be sure that you line everything up right.<li>Place the <b>misc_eastertank</b> along the floor.<li>Put the <b>misc_easterchick</b> so that it's bottom side is aligned with the bottom side of the <b>misc_eastertank</b>.<li>Now put the misc_easterchick2 in the same place as the misc_easterchick.  The picture below will give you a pretty good idea of what it will look like in the editor after steps 3 and 4.</ol><br>
+	
+	<center><img src="/content/quake2/tutorials/misc_easter/easter.jpg"></center><br><br>
+	
+	It really doesn't get any easier than that.  Again, don't ask me how you make the chair for the misc_eastertank, that is up to you to design.<br><br>
+	
+	<p><a name="#misc_explobox"><b>misc_explobox</b></a> - Those barrels that are pushable and explode when shot.
+	
+	<p><a name="#misc_gib_arm"><b>misc_gib_arm</b></a> - see target_spawner for use
+	
+	<p><a name="#misc_gib_head"><b>misc_gib_head</b></a> - see target_spawner for use
+	
+	<p><a name="#misc_gib_leg"><b>misc_gib_leg</b></a> - see target_spawner for use
+	
+	<p><a name="#misc_insane"><b>misc_insane</b></a> - The <b>misc_insane</b> are the marines you see wandering around in the game. They're extremely easy to use. They act a bit like monsters, in that if they don't have a specific path, they will follow you around.<br><br>
+	
+	There are a few spawnflags and keys for misc_insane:<br><br>
+	
+	<b>ambush</b>: A misc_insane with this flag set will not react to you until it has a direct line of sight, or until you do damage to it. Then it will follow you around. If the misc_insane is set to follow a path, it will only react when shot.<br><br>
+	
+	<p><a name="#misc_satellite_dish"><b>misc_satellite_dish</b></a> - The <b>misc_sattelite_dish</b> can be either placed in a map on its own, in which case it will just sit there and look...well...like a sattelite dish; or it can be triggered by another event, such as a func_button. If the dish is triggered, it will tilt up, and then rotate to the left. One thing to keep in mind when setting up the triggering event, though: When the dish is triggered, it moves smoothly, but if it is triggered again, it jerks back to it's starting position, with no animation frames. So, it's best to either use a trigger_once, or a button with a "<b>wait</b>" value of "<b>-1</b>" (never return.)<br><br>
+	
+	<p><a name="#misc_strogg_ship"><b>misc_strogg_ship</b></a> - see misc_viper
+	
+	<p><a name="#misc_teleporter"><b>misc_teleporter</b></a> - The <b>misc_teleporter</b> and <b>misc_teleporter_dest</b> are 2 extremely simple entities that must be used together to create the teleporters that you see in the id maps when playing deathmatch. They can be used in single player but I don't seem to remember id using them any time in the game. Getting a teleporter to work is very simple, much easier then in quake1.<br><br>
+	
+	First thing you must do is decide where you want the teleporter of course and then place the misc_teleporter entity. Then you must place the misc_teleporter_dest where you want to be teleported. Then <b>give the misc_teleporter_dest a targetname and target it with the misc_teleporter</b>. It's that simple. For example, lets give the misc_teleporter_dest a <b>targetname</b> of t1. Then we would give the misc_teleporter a target of t1. Thats it.<br><br>
+	
+	In quake2 you cannot change the look of the teleporters or the size. They are solid entities that have their own models.<br><br>
+	
+	<p><a name="#misc_teleporter_dest"><b>misc_teleporter_dest</b></a> - see misc_teleporter above
+	
+	<p><a name="#misc_viper"><b>misc_viper</b></a> - The <b>misc_viper</b>, and <b>misc_strogg_ship</b> are those space ships that you see in some of the id levels that fly through the sky every once in awhile. There are a few of them that you can see on the very first level. They are very simple to use in a level and look real cool.<br><br>
+	
+	<u>How do I make the damn things?</u><br>There is minimum of 4 entities that must be used to get these ships flying. They are some sort of <b>trigger</b> to start the ships movement, the <b>ship</b>, the <b>starting path_corner</b>, and the <b>ending path_corner</b>. There can be more path_corners in between the first and the last one for a more detailed flying path but only 2 are required.<br><br>
+	
+	The <b>misc_viper</b> and <b>misc_strogg_ship</b> are used in a very similar way to a func_train. <br><br>
+	
+	The first thing you must do is pick the ship you wish to use. You can place the ship entity anywhere in the level because it will automatically appear at the first path_corner.<br><br>
+	
+	The second thing you need to do is to make the beginning and ending path_corners and any number of ones in between. This will be the actual path the ships will follow when triggered. Each path_corner must target the next. You should also give the ship a target to the first path_corner. So if the first path_corner has a targetname of p1 then the ship entity will have a target of p1. If you want the ship to keep going forever then you will need to set the <b>teleport spawnflag</b> for the <b>last path_corner</b> and set the target of the last path_corner back to the first path_corner. This will actually teleport the ship back to the area of the first path_corner and create the appearance of multiple ships. Pretty cool.<br><br>
+	
+	The last thing you need to do to get the ship to actually work is to <b>create a trigger</b> of some sort to turn the ship on. If you want it to start when the level starts then you should use a <b>trigger_always</b>. So what this means you have to give the ship a targetname then give the trigger that will be used to turn the ship on a target key value pair equal to the targetname of the ship.<br><br><u>Key Value Pairs</u><br><b>speed</b><br>Speed is the speed that the ship will travel.<br><br>
+	
+	<b>angle</b><br>
+	
+	angle determines the direction the ship will face. This should be set to the direction the ship will travel or it will look strange.<br><br>
+	
+	<p><a name="#misc_viper_bomb"><b>misc_viper_bomb</b></a> - At first I had the misc_viper_bomb in another tutorial with the ship entities because I thought it was one of the ships like the viper but I was wrong. It is actually a bomb that one of the ships can drop. It was used during the game with the airstriker marker. It's a pretty complicated entity to figure out but I will show you how its done. Also thought I should mention that this tutorial is here because of EutecTic. This guy knows everything! He even made the awesome example map.<br><br>
+	
+	First thing you need to do is place the actual ship entity that will drop the bomb. You will have to use the <b>misc_viper</b>. You will also need to know how to get it to work, which I explained in a past tutorial you can check out here.<br><br>
+	
+	So now you should have the ship linked to some <b>path_corners</b>. Now create the misc_viper_bomb and place it at the path_corner where you want the ship to drop the bomb. Not on the ground but up in the air right on the path_corner. Since the bomb falls in an arc trajectory, it has to be released ahead of it's target just like the real thing. It's forward speed is about half of it's falling speed so if you place the bomb at one half the forward distance of its release height, it should fall right where you want it to.<br><br>
+	
+	Now you need to specify the damage that you want the bomb to take off. If you want it to kill everyone in site then set <b>dmg</b> to 10000. <b>You also need to give the misc_viper_bomb a targetname and a pathtarget</b>. These should be the same name. So lets set the targetname to boom and the pathtarget to boom.<br><br>
+	
+	Now select the path_corner where the bomb will be dropped at and give it the key value pair <b>pathtarget</b> and set it to the bomb. pathtarget=boom.<br><br>
+	
+	Things to remember.....The misc_viper <b>must</b> be triggered! If you don't understand how to get the misc_viper working then read the tutorial.<br><br>
+
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="29" name="29" class="book-h1">Monster</h1><ul><h3>Quake 2 Monster Entities</h3><p>
+
+	
+	
+	<!-- Start description -->
+
+Monsters are an essential part of your single-player map, it would be a little boring without them! For maximum effect monsters have to be used in the right place and in the right way.  Here is RUST's advice on the best ways to shred your poor player.<BR><BR>  
+<TABLE WIDTH=100% BORDER=0 CELLPADDING=10 CELLSPACING=0>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_berserk.jpg">
+		</TD>
+
+		<TD WIDTH=80%>
+			<b>monster_berserk</b> - <b>Berserker</b><br><br> Health: Low <br><br> 
+
+Knives.  Hammers.  This is the Strogg equivalent of the handy-man! Useless at a distance, unless you want the player to be distracted, he's better to come from behind, the side, or suddenly in the player's face, forcing them to react!  Good for use on cat-walks, since he can fling you off, to a bloody death, or a sizzle in the lava, or a swim back to the nearest ladder/elevator.  The Berserker is a bit of a dolt tho, and doesn't realize to stop swinging if you've backed off, so you might want to put one in an enclosed room, so the player has little room to dodge around.  This however defeats the purpose of his hyper-fast legs!  So use him is both situations.  The second being in a large room, so he has room to gain on you, but keep the player's arsenal to a low, other-wise, he's not good for much except a place to put all that lead the player carries around in.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_boss2.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_boss2</b> - <b>Hornet</b><br><br> Health: Enormously High <br><br>
+
+It's a Bird! It's a Plane! It's.... oh crap! This guy is about as rutheless as the Tank Boss, but he flies! Did I mention he has TWO chainguns? AND fires 4 rockets AT THE SAME TIME? This bastard is lethal and good at a distance. His rockets are fairly easy to dodge, but can KILL the player if he hits... In theory you could use two, but it could be considered unfair, or an overkill. But these guys work as a team, honestly 4 chainguns, 8 rockets, the player'll never know what hit 'em!<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_boss3</b> - <b>Stupid Jorg</b> Health: Enormously High<br><br>
+
+			This is a version of the final boss that will not do anything.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_brain.jpg">
+		</TD>
+
+		<TD WIDTH=80%>
+			<b>monster_brain</b> - <b>Brain</b><br><br> Health: High + Power Screen <br><br>
+
+Probably the stupidest, yet coolest enemy in Quake II.  The brain is slow as hell, has a stupid method of attack, but if used correctly can be a rather effective enemy.  First, try not to think of the Brain as an attacker, he works better as a computer technician or scientist trying to get you out of his lab, or distract you from the other Strogg soldiers sneaking up on you.  They have a Power-Screen to keep them alive. Brains have a lot of life, and take a pounding, so in swarms they can produce some very gratifying situations, in one map I was stuck on a  table, surrounded by 4 or 5 Brains, very creepy, because they just slowly edge towards you, snapping out the tentacles when they get close enough. Brains are useful in the dark, since their attack has a decent range.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_chick.jpg">
+
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_chick</b> - <b>Iron Maiden</b><br><br> Health: Medium <br><br>
+
+Sugar and spice, and everything not nice.  This is one bad girl, but you probably don't wanna be spanking her titanium ass!  She's a little dull at a distance, since she hasn't quite figured out what the rockets in her launcher are for...<br><br> So use her with a distraction, so she can launch a few of those bad boys up the player's ass, where they belong.  After all, isn't it about killing him/her?<br><br> Her claws are razor sharp, but again, she prefers to slap you with them if you get close enough for a kiss, so keep her above you to have some nice rocket bombardment.  For inexperianced players, her voice can be misleading, so hide her well, and spring her when they least expect her... hehehe...<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_flipper.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_flipper</b> - <b>Barracuda Shark</b><br><br> Health: Low <br><br>
+
+Ever see the movie Jaws?  No relation here!  These sardines don't pose TOO much threat, unless in huge swarms.  Their best attribute is their speed and the fact that they are hard to hit.  Best used to suprise a player, unleash them behind him, and watch the water fill with blood!<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_floater.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_floater</b> - <b>Technician</b> Health: High <br><br> 
+
+These are probably THE most annoying enemy in Quake 2!  They take forever to kill, they fly, their weapons are devastating, and they're rather stealthly. So let's have some fun with them!  Like the Brains, Technicians are NOT soldiers!  They belong in computer places, pipes or just about anywhere that maintenence might be required.  They attack best when from above, in front of the player makes them an easier target, but at the end of a hall can be quite deadly, as their hyper-blaster stings like hell!  The Technicians have a snapping claw, not very useful.  A tazer, not quite as useless, and then they have their blaster.  Technicians are good for dropping items such as key-cards and CD's.... But it's best that they simply hover around and make like they're repairing stuff.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_flyer.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_flyer</b> - <b>Flyer</b><br><br> Health: Low <br><br>
+
+Sorta like vultures with laser cannons, Flyers can be rather annoying, best used in groups of 3, as Id Software showed, these little mutha's can be a pain in the ass if not taken care of.  Good for distraction and as a security measure.  Make these little buggers fly over roof-tops to make them a little more surreal!<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_gladiator.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_gladiator</b> - <b>Gladiator</b><br><br> Health: Medium <br><br>
+
+This is the ugly one.  With a face not even a mother could love, and a pair of legs which make him look like a certain hooved menace with a rocket launcher we all loved to hate, the Gladiator is one of the nasty ones.  Usually I play the game thru, and only death, or a rail-shot to the head can make me quick-load.  He's a little slow, but fast enough to scare you.  Keep him at a distance, so he makes good use of his shoulder mounted railgun.  Up close his melee attack does the most damage, save for the Berserker, but his railgun does far more.  Good for guarding keys, and exits, also useful when below you, or above, and picks you off as you ride the elevator.  On the other end of a bridge is a nice touch since he's not gonna be asking three questions before he launches the player's sorry ass off the bridge.<BR><BR>
+		</TD>
+
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_gunner.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_gunner</b> - <b>Gunner</b><br><br> Health: Medium <br><br>
+
+This is the ultimate Strogg.  He has a gun that takes a while to open a rapid-fire grenade launcher, and an attitude!  If other enemies get in his path of destruction he is indifferent to it, and will keep firing until either you or him is dead.  When placed above the player on cat-walks he is effective at causing a rain of grenades, when in a room full of explosive crates, explosive barrels, or just little room to move, this is probably his most lethal use.  His gun is a little slow, but if put out of sight, not totally, just until the player looks around a bit, he can be rather devastating without the use of armor.<BR><BR>
+
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_hover.jpg"> 
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_hover</b> - <b>Icarus</b><br><br> Health: High <br><br>
+
+His ass must get hot from those two jets mounted on his shoulders.... The Icarus is a rather distinctive enemy, useful for patrol of areas with high ceilings, or the outdoors areas.  The Icarus is a type of enemy that can perch, since he seems to have a standing motion, how to get it used, I have NO idea, but it's there.... maybe the guy's just confused. These guys are a little stealthly, but their jet ambience gives 'em away so use them wisely, for best impact.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_infantry.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_infantry</b> - <b>Enforcer</b><br><br> Health: Low <br><br>
+
+Bald head, beady eyes, a chaingun that's gotta be cocked before firing.  This guy is even trained in martial arts!  What more could you ask for in an enemy?  These guys are my personal favorite enemy; they go down from one double-barreled shotgun blast, at close range of course, and have several deaths, the flip being the most exciting! These boys are useful in waves, and effective as prison guards, they have about the I.Q. of the gun they are carrying, and know how to duck rockets at a distance.  A final note is that up close they always use they karate chop, so keep them at a distance, and let the berserkers do the chopping and mangling!<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_jorg.jpg">
+		</TD>
+
+		<TD WIDTH=80%>
+			<b>monster_jorg</b> - <b>Jorg</b><br><br> Health: Enormously High <br><br> 
+
+This is THE BIG BOSS.  He sports 2 ASS-KICKING CHAIN-CANNONS and a FREAKING BFG 10K!!! Yipes!  The Jorg makes a lot of noise when moving about, and I'm pretty sure he makes this creepy laugh as he goes about his business of mopping the floor with you!  If the player has a Quad or Invulnerability or BOTH then the Jorg is screwed.  Also it's passenger is pretty much eff'd. So try to deny the player these things.  When the Jorg is killed the Makron leaps from it's body and proceeds to kick yer ass with a Railgun, a HYPER-BLASTER and another freaking BFG10K!!  Actually, it's the same one as the Jorg had, since the Jorg would raise its torso and let's the Makron fire it.  When knocked down Makron says stuff like "Not Good Enough!" or "Weakling!" Needless to say, he's a pretty creepy character.  I don't recommend using this thing UNLESS it is a Return of the Makron MOD!  Makron got killed at the end of the game, so try and keep faithful to that.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			
+
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_makron</b> - <b>Makron</b><br><br> Health: Enormously High <br><br> See monster_jorg for details.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_medic.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_medic</b> - <b>Medic</b><br><br> Health: High <br><br>
+
+Stroggs have this amazing talent of coming back from the dead! Their secret had been revealed, the Medic. Not too useful as a stand-alone warrior, but beautiful as a mortician.  Hehehe... He doesn't get around in a hearse tho, instead, two metal, goat-like legs, which flop nicely when he's killed.  The Medic pumps life, literally, into dead Stroggs, and is pretty efficient at it.<br><br> If sent into the fray the Medic can be somewhat useful, but is better sent in after a huge battle, to pick up the pieces, so to speak...<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_mutant.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_mutant</b> - <b>Mutant</b><br><br> Health: High <br><br>
+
+These bastards are EVIL!  They move faster, and farther than the Demon in Quake 1, and have this eerie sound they make when they stalk around!  Great for hiding behind walls and such, or in hidden cages, to be released when the player gets to a certain area.  The Mutants have plenty of life, but a hyper-blaster or chaingun will take them out fairly efficiently.  Mutants work well in sewers and mines, but not in base areas, unless they came from the sewers, in which case it's best to show where they came from.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_parasite.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_parasite</b> - <b>Parasite</b><br><br> Health: Medium <br><br>
+
+Here poochy-poochy-poochy!  PLAY DEAD!  This is probably the most foul enemy in the game, he literally sucks the life out of you, and he sniffs other Strogg's butts!  (j/k)  But seriously, with the personality of a dog, what could you expect, he's even got fleas. Useful around corners, such as crates, or pipes.  He works well from the hidden cubby-hole in the wall to your left/right.  Takes a bit of a pounding, and moves pretty fast.  His clicking sounds can be mistaken for mechanical ambience.  Again, useless at a distance, works well in narrow halls, with little room to dodge, but gives the player a straight line-of-sight.  Works well with the distraction technique, but gives his presence away with that un-Godly bark.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+		<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_soldier.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_soldier</b> - <b>Shotgun Guard</b><br><br> Health: Very Low <br><br>
+
+Bigger gun, bigger life, same size brain.  Having the same smarts as the light guard the shotgun guard can be applied in the same manner as his weaker cousin.  However, his weapon is twice as big as he is, so he can tear you up!  Without the protection of armor shotgun guards will kill you in a matter of moments, if they are given the advantage of height, or cover, or simply in large numbers. As stated, he's not to bright, so give him room to maneuver, and a friend or two.<BR><BR>
+
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_soldier.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_soldier_light</b> - <b>Light Guard</b><br><br> Health: Very Low <br><br>
+
+This bad-boy just ain't so bad, he's got a puny laser, and not a lot of life.  He's noisy, and not too bright. But oh, the possibilities!<br><br>If you place light guards above the player, in packs, they can amount to something, at first the player might shrug it off as tho it were just a mosquito bite, but as each blaster bolt fries his skin, it starts to wear on him.  This can also be used to distract him from hidden or approaching enemies, that are elsewhere.  <br><br>Add a barrel, or explosive crate near the light guards for an easy, and dazzling kill, or to save playing time.  Or you could just leave them there, for the player to have to pick off.<BR><BR>
+		</TD>
+
+	</TR>
+	<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_soldier_ss.jpg"> 
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_soldier_ss</b> - <b>Machine Gun Guard</b><br><br> Health: Very Low <br><br>
+
+Even bigger gun, even smaller intellect.  But what a nasty, this guy is the "king of sting."  Nothing hurts more than having a machinegun guard behind you whittling away at your armor, and all that time you thought it was the gunner dishing out twice the damage!  These guys are a pain in the butt, so use them sparingly or in groups for a challenge, they go splat with explosives, so to add to the tension equip player with a shotgun, or machinegun and watch the cursing start!<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_supertank.jpg">
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_supertank</b> - <b>Super Tank</b><br><br> Health: Enormously High <br><br>
+
+Did I say the Tank was the BIG mother?  This guy is HUGE!!  Taller than Gunners, taller than Tanks and 3 times as lethal!  This guy sports the MOTHER-OF-ALL-CHAINGUNS and will mow you down in a second with it, his rockets are similar to the Tank's, but I think they move faster, or do  more damage or something.  He has lasers, but rarely uses them.  The Tank Boss is a little slow however, and with the proper armament can be taken down rather easily.  For best challenge, don't give the player a Quad or any HEAVY weaponry, then use him as a doorblock. Give this guy room to maneuver, or he'll be useless.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_tank.jpg">
+		</TD>
+
+		<TD WIDTH=80%>
+			<b>monster_tank</b> - <b>Tank</b><br><br> Health: Very High <br><br>
+
+The BIG mother, this guy is huge, taller than the Gunners, and twice as lethal.  The tank utilizes 3 weapons, a hyper-blaster, a chaingun and a rocket launcher.  The Tank is slow as hell, so be careful where you place him.  In confined areas he is useful, but only if the player has no room to maneuver.  At a distance is good, but again, makes him an easy target.  The Tank is a hard enemy to get good placement with.  His menacing walk is enough to strike fear into a poorly armed player, so keep them on their toes by throwing one of these bastards near the beginning, and there's no way around except to find a bigger gun.<BR><BR>
+		</TD>
+	</TR>
+<TR VALIGN=TOP>
+		<TD bgcolor=#000000 WIDTH=20%>
+		</TD>
+		<TD bgcolor=#000000 WIDTH=80%>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=20%>
+			<img src="http://www.gamedesign.net/miniwood/tutorials/images/monster_tank_commander.jpg">
+
+		</TD>
+		<TD WIDTH=80%>
+			<b>monster_tank_commander</b> - <b>Tank Commander</b><br><br> Health: Very High <br><br>
+
+Just a fancied up Tank, I have found no differences, perhaps a little more aggressive?  This guy can be used as a leader of several tanks, or just in a palace level, since he is kinda like a Tank with ROYAL armor, instead of chamo-combat armor.<BR><BR>
+		</TD>
+	</TR>
+</TABLE>
+
+	<!-- End description -->
+</ul><h1 id="31" name="31" class="book-h1">Path</h1><ul><h3>Quake 2 Path Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+	<p><a name="#path_corner"><b>path_corner</b></a> - see misc viper.<br><br>
+	
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="30" name="30" class="book-h1">Point</h1><ul><h3>Quake 2 Point Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+	
+	<p><a name="#point_combat"><b>point_combat</b></a> - One thing that I mentioned earlier but I would like to go over again is the <B>point_combat</B> entity. Point_combats are used just like path_corners. They are not drawn in the map. Point_combat entites are simply points that the monster will walk to before attacking the player. You can have more then one linked.  Just give each point_combat a target to the next. Remember though that the monster will not attack until it is finished walking it's point_combats. In the <A HREF="rust21.zip">example</A> map I made 2 monster_chicks that when they see the player they take cover behind 2 low lying walls. This effect was achieved using point_combats. By default once the monster reaches the last point_combat it will go after the player like a normal monster. If you set the spawnflag <B>hold</B> on the point_combats then the creatures will hold their position once they reach the last point_combat and attack you from there. One thing I did notice though is if you shoot the monster and hurt it then it will quit following its point_combat and just attack the player.<br><br>
+	
+	There are a couple monster entities that don't act like the others. They are <B>monster_makron</B> and <B>monster_commander_body</B>. monster_makron is a broken entity and shouldn't be used and monster_commander_body is just the dead body of a monster_tank_commander that is just used for decoration.<br><br>
+	
+	I hope that this tutorial opened your eyes to many possibilities you can use the monster_ entities for. I thought that writing this tutorial was the one that I learned the most from out of all of the tutorials and I hope that it helped you as much as it helped me. If you find any errors or something new then please email <i>(note: author doesn't exist anymore)</i> me and let me know.<br><br>
+	<!-- End description -->
+
+	</ul></ul><h1 id="32" name="32" class="book-h1">Target</h1><ul><h3>Quake 2 Target Entities</h3>
+
+<p>
+<ul>
+<li>
+<a href="node/32#target_actor">target_actor</a>
+<li>
+<a href="node/32#target_blaster">target_blaster</a>
+<li>
+<a href="node/32#target_changelevel">target_changelevel</a>
+<li>
+<a href="node/32#target_character">target_character</a>
+<li>
+<a href="node/32#target_crosslevel_target">target_crosslevel_target</a>
+<li>
+<a href="node/32#target_crosslevel_trigger">target_crosslevel_trigger</a>
+<li>
+<a href="node/32#target_earthquake">target_earthquake</a>
+<li>
+<a href="node/32#target_explosion">target_explosion</a>
+<li>
+<a href="node/32#target_goal">target_goal</a>
+<li>
+<a href="node/32#target_help">target_help</a>
+<li>
+<a href="node/32#target_laser">target_laser</a>
+<li>
+<a href="node/32#target_lightramp">target_lightramp</a>
+<li>
+<a href="node/32#target_secret">target_secret</a>
+<li>
+<a href="node/32#target_spawner">target_spawner</a>
+<li>
+<a href="node/32#target_speaker">target_speaker</a>
+<li>
+<a href="node/32#target_splash">target_splash</a>
+<li>
+<a href="node/32#target_string">target_string</a>
+<li>
+<a href="node/32#target_temp_entity">target_temp_entity</a>
+<li>
+<a href="node/32#target_actor">target_actor</a>
+</ul>
+</P>
+<br><br>
+<hr>
+
+<p>
+<a name="target_actor"><b>target_actor</b></a>
+<BR><BR>
+ - Not implemented. The code is incomplete. (The code for target_actor has been completed and enhanced in the <A HREF="http://www.planetquake.com/lazarus">Lazarus Mod</A>
+</P>
+<p>
+<a name="target_blaster"><b>target_blaster</b></a> 
+<BR><BR>
+- The <b>target_blaster</b> entity is simply blaster fire that can be triggered. What I mean by blaster fire is like when you shoot the your blaster(1st weapon) or your hyperblaster. I didn't really notice many times in the id levels where these were used. The only level I remember seeing this entity is the first secret level. Anyhow, it's very simple and there are numerous uses for it.<br><br>The <b>first</b> thing you need to do is create the gun or whatever that is going to shoot the blaster fire. You don't really need to make it if you don't want to if though.<br><br>Next thing you do is place the <b>target_blaster</b> entity where you want the blaster fire to originate from.<br><br> There are a few key value pairs and spawnflags that you can set to make the <b>target_blaster</b> act in different ways. The  key value pairs are <b>angle</b>, <b>damage</b>, and <b>speed</b>. <b>angle</b> determines the direction the target_blaster will fire. <b>damage</b> is of course the amount of damage the blast will take off when it hits another entity. <b>speed</b> is how fast the blaster fire will travel.<br><br>
+</P>
+<p>
+<a name="target_changelevel"><b>target_changelevel</b></a>
+<BR><BR>
+ - The <b>target_crosslevel_*</b> entities are used to trigger unit-wide events. Press a button (or series of buttons) in one level of a unit, and a door opens in another. They aren't all that hard to use, if you're comfortable with triggers and targets, but before we get started, there are a few things you should know about the <strong>target_crosslevel_trigger</strong>, and <strong>target_crosslevel_target</strong> entities: <br><br>1.) The <strong>target_crosslevel_</strong> entities work by setting one or more of eight spawnflags, which are retained throughout a unit, which simply means <strong>you only get eight cross-level events per unit</strong>.   <br><br>2.) <strong>Make sure you have a unit exit at the end of the last level of the unit</strong>, as not resetting the spawnflags results in fewer available spawnflags for the next unit. A unit exit is just a target_changelevel with an asterisk (*) in front of the actual map$startpoint keyvalue. 
+<BR><BR>
+Here are a few examples: 
+<ul><br><br>To go to e1u2 of the id levels (skipping the cinematic,) you would have a target_changelevel with the key 'map', which would have the keyvalue '*bunk1$start' <br><br>To go to e1u2 (including the cinematic,) you would have a target_changelevel with the key 'map', which would have the keyvalue 'eou1_.cin+*bunk1$start'  <br><br>To go to e1u1 you would have 'map'='*base1' (because the start for base1 doesn't have a targetname)</ul>
+<br><br>3.) The crosslevel spawnflags are read when Q2 initializes the map, which means <strong>any crosslevel triggers will not have any effect until a level change. </strong> <br><br>With all of that in mind, let's start.  <br><br>First off, let's create a room with an <strong>info_player_start</strong>. Decide where you want your exit to be. Make a brush with the 'trig' texture at the area you've chosen as the exit, and make it into a trigger. It doesn't matter if it's multiple or once, because we'll be using it to exit anyway. Make a <strong>target_changelevel</strong>, and give it a key of '<strong>map</strong>' with a keyvalue of '<strong>tcex2$from1</strong>'. In this case, the '<strong>tcex2</strong>' is the next example map we'll be making; '<strong>$</strong>' means we'll be going to a specific <strong>info_player_start</strong> in tcex2; and '<strong>from1</strong>' will be the targetname of that <strong>info_player_start</strong>. <br><br>Now create another <strong>info_player_start</strong>, and put it near, <strong>but not touching</strong>, the exit (preferably facing away from it, but that's up to you.) Give it a targetname of '<strong>from2</strong>'. This is where you'll spawn if you come back to this map. <br><br>The next thing you need to do is set something up to trigger your <strong>target_crosslevel_trigger</strong>. This can be a button, item pickup, or anything that can trigger another event. Give it a target (we'll use <strong>tc1</strong> for this example.) Now, create your <strong>target_crosslevel_trigger</strong>, and give it a matching targetname (again, <strong>tc1</strong>.) Set the flag for <strong>trigger1</strong> in the entity window for your editor. Now, when you trigger it, the <strong>trigger1</strong> spawnflag will be set for the next map. <br><br>Save the map as '<strong>tcex1.map</strong>' <br><br>Now we need another level to go to. Create a room similar to the last, but with two exits this time. Set the keys for one <strong>target_changelevel</strong> to '<strong>map</strong>'='<strong>tcex1$from2</strong>' and the other to '<strong>map</strong>'='*<strong>base1</strong>'. Place an <strong>info_player_start</strong> near the exit that goes back to <strong>tcex1</strong>, and give it a targetname of '<strong>from1</strong>'. <br><br>Now, create a <strong>target_crosslevel_target</strong> and set the <strong>trigger1</strong> flag. Give it a '<strong>target</strong>' of '<strong>boom</strong>', and a '<strong>delay</strong>' of '<strong>2</strong>'. Make a <B>func_explosive</B>, and give it a '<strong>targetname</strong> 'of '<strong>boom</strong>'. <br><br>Compile and run the map. If everything worked properly (cross your fingers, it helps) then you should be able to trigger in the first level, and then go into the second level, wait a second, and *<strong>boom</strong>*. Just to make sure, try not to trigger the <strong>target_crosslevel_trigger</strong> before you go into the second map. <br><br>For further experimentation, you can set up more than one <strong>target_crosslevel_trigger</strong>, each with a different trigger flag checked (1, 2, 3...), and then set up one target_crosslevel_target with those flags checked. <strong>Only after you've triggered all events</strong> will the target be fired.<br><br>In the example maps, the first <strong>target_changelevel_trigger</strong> is a button, and the second, Carmack's head (I just <i>had</i> to throw it in.) When you come to the third level, a wall explodes, and you exit to the intro cinematic, followed by base1. I hope you find this helpful, as it helped me to make it. <br><br>
+<B>-GrrandMaMa</B><br><br> You can download the <A HREF="http://www.gamedesign.net/miniwood/tutorials/maps/tarchlvl_maps.zip">example map</A> here. Also if you have any problems or need some help please post to the <a href="http://forums.gamedesign.net">RUST Forums</a>.
+</P>
+<p>
+<a name="target_character"><b>target_character</b></a>
+<BR><BR>
+ - See func_clock
+</P>
+<p><a name="target_crosslevel_target"><b>target_crosslevel_target</b></a>
+<BR><BR>
+ - See <a href="node/32#target_changelevel">target_changelevel</a>
+</P>	
+<p>
+<a name="target_crosslevel_trigger"><b>target_crosslevel_trigger</b></a>
+<BR><BR>
+ - See <a href="node/32#target_changelevel">target_changelevel</a>
+</P>
+<p>
+<a name="target_earthquake"><b>target_earthquake</b></a>
+<BR><BR>
+What this does is......create an earthquake!! Pretty difficult huh? There are a few options and other rules that you should know about though
+
+The target_earthquake does NOT start on and must be triggered into working. There are 2 key value pairs that you can set. They are speed and count. Speed is the magnitude of the quake. Count is the length of time the quake will last. Some other things to know is that the earthquake does not give off damage and it is not viewed in the level so size of the entity does not matter.
+</P>
+<p>
+<a name="target_explosion"><b>target_explosion</b></a> 
+<BR><BR>
+What a target_explosion does is when triggered creates a visual explosion that can be set to do any amount of damage. There are 2 key value pairs that you can set. Dmg and delay. Dmg is the amount of damage the explosion will cause and delay is the amount of time after triggered that the explosion will take place.
+</P>
+<p>
+<a name="target_goal"><b>target_goal</b></a> 
+<BR><BR>
+The <strong>target_goal</strong> is used in exactly the same way as the target secret. However, since you will most likely have set up a <a href="node/32#target_help">target_help</a> to tell the player just what the goal is, you will most likely want to set up a new one at or near the <strong>target_goal</strong>. You don't want people wandering around with nothing to do. <br><br>
+</P>
+<p><a name="target_help"><b>target_help</b></a>
+<BR><BR>
+ - <b>target_help</b></font> is the entity that makes those messages appear on your computer. It also makes the computer blink. They used it in quake2 to tell you about your primary and secondary missions on each level. 
+<BR><BR>This entity must be triggered so therefore it <b>must have a targetname.</b> Set the key value pair <b>message</b> to whatever you want it to print. If you want it to come on right when the level is started then use a trigger_always. To specify primary or secondary objectives just set the spawnflag help1 and the message will appear in the primary objective space otherwise it will appear in the secondary. If you are having problems with the message being too long for the space provided on the computer then simple put a <b>\n</b> where you want the line to end.
+<p>
+</P>
+<p><a name="target_laser"><b>target_laser</b></a>
+<BR><BR>
+ - This is another somewhat easy entity to use. i'm sure if you've played through quake2 then you've seen many examples of lasers and the cool effects that id used with the lasers. The cool effects like the moving spiraling lasers are a bit more difficult to implement but i'll try to show you how.<br><br> <br><br><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/laserpic1.JPG" width=250 height=188 border=0 alt="pic of target_laser"></center> <br><br>First thing you need to do is decide where you want the laser and what you want to use it for. The laser can either be <b>triggered</b> or <b>start on</b>. If you want it to be turned on then you need to <b>give the target_laser a targetname</b> and make some kind of trigger to start the laser. If you want  the laser to start on the just <b>set the start_on spawnflag</b>. The laser can either shoot in a direction or shoot at a target. If you want the laser to shoot in a direction other then anything horizontal or up and down then your going to have to have it shoot at a target. This target must be an <b>info_notnull</b>.<br><br> <center><img src="http://www.gamedesign.net/miniwood/tutorials/images/6pic1.GIF" width=125 height=318 border=0 alt="pic1"></center> <br><br> There are 5 colors you can choose from: <b>red, green, blue, yellow, and orange</b>. Just set the spawnflag of the color you want. You can also have larger lasers by setting the <b>spawnflag big</b>. If you want the laser to take off more damage then set the key value pair <b>dmg <i>n</i></b> where <i>n</i> is the amount of damage the laser takes off. <br><br>Moving lasers work just like the example above except the <b>target_laser must be targeted to a func_train.</b> And of course the func_train must be connected to multiple path_corners so it will move. The laser will follow the func_train. <br><br> There are some very cool things you can use lasers for. You can use them for doors, for traps, etc. On the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/t_laser.zip">example map</a> I have made examples of 4 kinds of uses of a target_laser. One as a door opened with a button, another using info_notnulls to create diagonal lasers, another with a func_timer to make a laser that blinks off and on, and one using a func_train to make a moving laser. If you have any other questions on a target_laser then please post them on the <a href="http://forums.gamedesign.net">RUST Forums</a><br><br>
+</P>
+<p>
+<a name="target_lightramp"><b>target_lightramp</b></a>
+<BR><BR>
+ - The <B>target_lightramp</B> entity is another easy entity to use. What it does is makes a light fade in or fade out. I actually don't really remember seeing this used in quake2 but it is such a sutle effect that I just probably didn't notice. <br><br> The <B>first</B> thing you need to do is do create the light that you want to fade in or fade out. Give it a <B>light</B> value. This light value will be the maximum the brightness of the light will be when it is all the way faded in. <br><br> The <B>second</B> thing you need to do is decide if you want the light to start dark and become bright or start bright and become dark. If you want to the light to start dark then you need to set the spawnflag <B>start_off</B> on the light entity. If you want the light to start light and become dark then you need to have the start_off spawnflag off. You must also <B>give the light a targetname</B>. Lets just give it a targetname of light. <B>targetname light</B>. <br><br> Next you need to make the actual <B>target_lightramp</B> entity. It doesn't matter where it goes because it will not be visible. The first thing you need to do to the target_lightramp is to <B>give it a target to the light</B>. target light. While your at do also <B>give the target_lightramp a targetname</B>. Lets give it a targetname of ramp. This is because the lightramp doesnt start on and must be triggered by another entity, but we will get to that in just a minute. There are two key value pairs that you can set for the target_lightramp. They are <B>speed</B> and <B>message</B>. <B>Speed</B> determines how many seconds it will take for the light to fade in or fade out. So if you have speed set to 20 then the light will gradually fade in  or fade out within 20 seconds. The message key value pair <B>must have 2 letters and only 2 letters</B>. These 2 letters determine the starting light level and the ending light level. The range of these letters is <B>a</B> to <B>z</B>. So if you want the light to fade in from dark to light then the message would be az. message az. if you want it to fade out from light to dark them the message would be za. message za. Just think of it as A getting brighter and brighter as it goes towards z, with z being the brightest. <br><br> There is also one spawnflag called <B>toggle</B> for the target_lightramp. If this is on and you have the target_lightramp triggered with a func_button or a trigger_multiple then if you trigger it again with the button or trigger_multiple it will turn on and turn off as many times as you trigger it. So in other words you can use it more then once.(turn the light on then turn it off) <br><br> The <B>last</B> thing you need to do is create the entity that will turn on the target_lightramp. This can be any kind of trigger you want. It all depends on the effect that you are looking for. You could use a <B>func_button</B> if you wanted it to be like a light switch that you could turn off and on. You could use a <B>trigger_once</B>, <B>trigger_multiple</B>, <B>trigger_always</B>, etc. You could even use a <B>func_timer</B> which would make the light fade in and fade out multiple times in row. So make the trigger entity that you wish to use and set the <B>target to the target_lightramp</B>. For this example it would be target=ramp. <br><br> That's all there is to a target_lightramp. Pretty cool little entity which can provide you with some very interesting effects. In the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/t_lightramp.zip">example</a> map I included a target_lightramp that is triggered with a func_button. So the lightramp can be turned on or off. Any other questions please post them in the <a href="http://forums.gamedesign.net">RUST Forums</a><br><br>
+</P>
+<p>
+<a name="target_secret"><b>target_secret</b></a>
+<BR><BR>
+When a map is loaded, Quake II counts up all of the <strong>target_secret</strong> entites in the map. When one of them is triggered, it adds 1 to the total secrets found. That's it. <br><br>
+	
+Anything that can trigger another event can trigger a target_secret. Since the entity is removed as it's used, you can even use a <strong>trigger_multiple</strong>, in which case it will trigger the secret on the first firing. Simply add a <strong>&quot;target&quot;</strong> key and value (let's use <strong>&quot;sec1&quot;</strong>) to the triggering event, and a <strong>&quot;targetname&quot;</strong>  and value (<strong>&quot;sec1&quot;</strong>) to the <strong>target_secret</strong>. You're done. 
+<br>
+You can also add a <strong>&quot;message&quot;</strong> key to a <strong>target_secret</strong>, and the message value will be displayed in the center of the screen upon discovery of the secret.
+</P>
+<p>
+<a name="target_spawner"><b>target_spawner</b></a> <BR><BR>
+- A <b>target_spawner</b> can be used for a number of things. What it actually does is makes an item of your choice appear at the location of the target_spawner. Any single item can be spawned. Even weapons and health. id didn't ever use the target_spawner for things like that though. They mainly used it to spawn gibs, insane people, and creatures. This entity is pretty simple once you figure out a few things. <br><br> There are <b>two</b> entities that must be used to get the target_spawner to work properly. There must be the actual <b>target_spawner</b> and <b>some kind of entity</b> that will actually trigger the target_spawner into working like a func_timer or a trigger_once. <br><br> Now for an example:<br> Lets make a trap that will drop soldiers into a pool of lava.<br><br> The <b>first</b> thing we need to make is the tube coming from the ceiling that will drop the soldiers into the lava and the actual pool of lava. Now we need to put a <b>target_spawner</b> inside of the tube coming from the ceiling. Now we need to specify what the target_spawner will spawn. This is the part that most people get stuck on. Instead of actually targeting a misc_insane entity <b>you must set the target of the target_spawner to the name of the entity that you want to spawn.</b> So therefore in this example we would set <b>target=misc_insane</b>. <br><br> Next you need to create a entity that will start the target_spawner. Lets <b>give the target_spawner a targetname of lavapool</b>. targetname=lavapool. Now let's use a <b>func_timer</b> to actually spawn the misc_insane. <b>Set the target of the func_timer to the target_spawner</b>. target=lavapool. Also be sure that you set the <b>turn_on</b> spawnflag for the func_timer. Unless you want to make it so you can turn it on with another trigger like a <b>func_button</b>. If you were to do this then you would just give the func_timer a targetname and target it with the func_button. <br><br> There are some key value pairs that you can set for a target_spawner to get some different effects. They are <b>speed</b> and <b>angle</b>. <b>Speed</b> is the speed that the item will come out of the target_spawner. <b>If speed is not set then the item will be dropped</b>. <b>Angle</b> is the direction that the item will be spawned and if speed is set then it is the direction the item will be thrown.<br><br> One of the most common uses of a target_spawner is to spawn gibs and those insane soliders. There are 3 types of gibs. <b>misc_gib_arm</b>, <b>misc_gib_leg</b>, and <b>misc_gib_head</b>. The names are pretty much self explanatory. Another entity that is commonly spawned on a few of the id levels is the <b>misc_insane</b> entity which is an insane solider.<br><br> There are many uses for a target_spawner. A trigger on one side of the level will spawn a creature on the other side of the level to surprise the player when he/she returns. You can even spawn health, weapons, and armor. Don't know what the use of that would be but I'm sure there are a few good ideas you guys can come up with.<br><br> As you can see target_spawner is a pretty simple entity to use. Just remember that you must have some sort of trigger to set off the target_spawner. Anything can be used...such as a trigger_once, func_timer, trigger_multiple, etc. It all depends on how you plan on using the target_spawner.<br><br> To understand the target_spawner more you can download the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/t_spawner.zip">example</a> map. Anymore questions then please post to the <a href="http://forums.gamedesign.net">RUST Forums</a><br><br>
+</P>
+<p>
+<a name="target_speaker"><b>target_speaker</b></a> <BR><BR>
+- The <b>target_speaker</b> entity is another one that will be used VERY often by a map designer and should be known very well. What it does is spawns all those crazy sounds you here in quake2. Like the humming of a generator, breaking of glass, water flowing, ships flying overhead, etc. I will attempt to show you how to use this entity...hopefully. <br><br>Creating the target_speaker - <br><br> A target_speaker should be placed where you want the sound to originate from. By default a target_speaker will not start on and will have to be triggered by another entity such as a trigger_once, trigger_multiple, func_button, or whatever you want the sound to be triggered by. If you want a window to set off the sound then you would create the func_explosive that would be the breaking window and add a target key and set it to the the target_speaker. There is a way to make the target_speaker to start on that I will explain in the spawnflags section. <br><br>Key Value Pairs - <br><br><b>Noise</b><br><br>Noise is the name and path of the actual sound that will be played. The trick to it, if you want to call it a trick, is that you must specify the directory path and the name of the sound. Here is a <b><a href="sounds.shtml">list</a></b> of all the sounds that you can use and their directory paths. A common thought is that you can only use the sounds in the world/ directory but this is simply not true. You can use <b>ANY</b> sound at <b>ANY</b> time. You will soon find out though that the sounds in the world directory will be used much more often. So for an example if we want the target_speaker to produce a pump sound then we would set noise=world/bigpump.wav.<br><br> <b>Things to remember:</b> <li>Every target_speaker <b>MUST</b> have a noise key.</li> <li>Case does not matter. xian.wav and XIAN.WAV will both work.</li> <br><br> <br> <b>attenuation</b> <br><br> attenuation is the distance the sound will travel before fading out. There are 4 different levels of attenuation: <li><b>-1</b> : No fade off, the whole level will hear the sound</li> <li><b>1</b> : Normal fighting sounds. This is also the default attenuation for normal sounds.</li> <li><b>2</b> : idle sound level. </li> <li><b>3</b> : ambient sound level. Default attenuation for target_speaker entities that have the spawnflag looped-on set.</li> a value of 0 for attenuation will default to 1. <br><br><b>volume</b><br><br>Volume is pretty self explanatory. Volume levels can be values of 0.0 to 1.0. 1.0 being the loudest. If volume is left blank then the default volume is set to 1. A volume of .1 will barely  be audible. If there are multiple target_speaker entities with the same sound playing at the same time then the volume will increase beyond normal but excessive target_speakers will do nothing beyond a certain point. <br><br>Spawnflags - <br><br><b>looped-on</b><br><br>When looped-on is set then the sound will start on when the level is started and stay on until triggered. Thus the sound will loop over and over again until triggered and turned off. Sounds that are looped-on <b>always</b> have an attenuation of 3 and a volume of 1 and can <b>not</b> be changed. <br><br><br><b>looped-off</b><br><br>Looped-off is the opposite of looped-on naturally. The sound will start off and then when trigger will start and stay on. As with a looped_on sound they always will have an attenuation of 3 and a volume of 1 and can <b>not</b> be changed. <br><br><b>reliable</b><br><br>reliable is used when you have a very important sound that player must hear, like for crucial voiceovers. It makes the sound that is marked as reliable to override all the other sounds that are playing at the same time. <br><br>Uses of the Target_Speaker - There are virtually unlimited uses of the target_speaker entity. Of course you are going to want to use a lot of the world/ sounds with breaking glass, moving trains, computers humming, etc. But there are also uses of the non world/ sounds. Like some of the monster sounds at random areas to create a freaky feel of the level. There is an example of this on the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/t_speaker.zip">example</a> map.<br><br> Well anyways if you still don't understand please post your questions to the <a href="http://forums.gamedesign.net">RUST Forums</a><br><br>
+</P>
+<p>
+<a name="target_splash"><b>target_splash</b></a>
+<BR><BR>
+ - first thing you need to do is open your favorite editor and make a small room with nothing in it. Decide where you want the splash of particles and create a <B>trigger_splash</B> entity. <br><br> Now you need to give the <B>trigger_splash</B> a targetname. For this example lets give the entity a <B>target_name of splash1</B><br><br>Now we must specify what kind of spark you want. There are 6 different kinds. 1) sparks<br>2) blue water<br>3) brown water<br>4) slime<br>5) lava<br>6) blood<br><br>To set this use the keyname sounds and set it to whichever you want from above. For this example we are going to set <B>sounds=4</B> for slime. <br><br> The next step is to set the number of sparks you want. For this example we are going to make it 2. so set <B>count=2</B> for the trigger_splash entity. <br><br> We arent done yet though. To get the sparks to actually appear and work right you must create a <B>func_timer</B>. This is what actually spawns the sparks. It doesnt matter where you make this entity so just make it anywhere on the level and <B>set the target of this func_timer to the trigger_splash</B>. So in this example we would set <B>target=splash1</B>. If you want the sparks to start on then be sure to set the spawnflag <B>start_on</B>. Below is my some shots from my example using multiple trigger_splashes to make the acid look like it is bubbling, etc. first 2 shots are from the editor(bsp), last one is from the game. You can download the map file <A HREF="http://www.gamedesign.net/miniwood/tutorials/maps/t_splash.zip">here</A>. <BR><BR> <CENTER><IMG SRC="http://www.gamedesign.net/miniwood/tutorials/images/t_splash1.gif" WIDTH=300 HEIGHT=218 BORDER=0 alt="image 1"><br><br><IMG SRC="http://www.gamedesign.net/miniwood/tutorials/images/t_splash2.gif" WIDTH=300 HEIGHT=177 BORDER=0 alt="image 2"><br><br><IMG SRC="http://www.gamedesign.net/miniwood/tutorials/images/t_splash.JPG" WIDTH=400 HEIGHT=300 BORDER=0 alt="image 3"> </CENTER><br><br>
+</P>
+<p>
+<a name="target_string"><b>target_string</b></a>
+<BR><BR>
+ - See func_clock
+</P>
+<p>
+<a name="target_temp_entity"><b>target_temp_entity</b></a> <BR><BR>
+- The <b>target_temp_entity</b> is one of the strangest entities available to level designers for quake2 but very very <b>cool</b>. In the game it was only used once in the level boss1. What it does is spawns some sort of sprite. You have <b>3</b> of them to choose from(that i know of). First is a green electrical type fire that gives off dynamic green light. Second is a pixel explosion that looks similar to fireworks. Third one is a badass cloud of particles that shoots up and then encaves on itself. My descriptions don't do them justice though, download the <a href="http://www.gamedesign.net/miniwood/tutorials/maps/t_tempent
+.zip">example</a> map and check them out for yourself. I'll show you how you can use these cool effects in your levels below. <br><br>Creating the target_temp_entity<br><br> - First you have to decide where you want the sprite to spawn at. Place the <b>target_temp_entity</b> at this location.<br><br>Since it is a target_ entity it must be triggered by something else. So therefore you must trigger it with an entity such as a trigger_once, trigger_multiple, trigger_relay, trigger_always, func_button, func_timer etc.<br><br> Key Value Pairs - <br><br><b>style</b>There is only one key value pair that can be set for the target_temp_entity. It's called <b>style</b>. What is does is specifies the sprite that will be displayed. <b>These values MUST range from 17,18,20-22 or there will be an error and the game will crash.</b> I am not sure if there are any other values other then these, these were the only  ones I found to work. <br><br> Another thing you should know is that style 22 is the only one used in the id levels and is the only one that has a sound that is played when it is triggered. Style 20 and 21 <b>MUST</b> have a target_speaker used to get sound(if you want sound). Here are some screenshots of 3 of the different styles: <br><br> <center><img src="http://www.gamedesign.net/miniwood/tutorials/images/t_tempent1.JPG" width=300 height=225 border=0 alt="style 20"><br>style 20<br><br><img src="http://www.gamedesign.net/miniwood/tutorials/images/ttemp_ent2.JPG" width=300 height=225 border=0 alt="style 21"><br>style 21<br><br><img src="http://www.gamedesign.net/miniwood/tutorials/images/ttemp_ent3.JPG" width=300 height=225 border=0 alt="style 22"><br>style 22</center> <br><br><b>17</b> is the rocket explosion, <b>18</b> is the grenade explosion.(thanks obama) Uses of the target_temp_entity - <br><br> This entities uses are visual and just for looks but very very cool. You could have big generators that give off the electrical cloud of style 22. You could have a trap that would set off a target_temp_entity under the feet of the player and disintegrate him. There are numerous cool and unique uses for this entity that all of you guys/gals can up with.</blockquote> There is an example of the 3 different styles on the <http://www.gamedesign.net/miniwood/tutorials/maps/t_tempent.zip">example map.</a> <br><br> if you still don't understand please post your questions to the <a href="http://forums.gamedesign.net">RUST Forums</a> <br><br>
+</ul><h1 id="38" name="38" class="book-h1">Trigger</h1><ul><h3>Quake 2 Trigger Entities</h3><p>
+
+<blockquote>
+	<h3>Trigger Entites</h3>
+</blockquote>
+	
+<!-- Start description -->
+<p><a name="#trigger_always"><b>trigger_always</b></a> - <br>
+	
+This is just a trigger that is always on and starts on when the level begins. The other keys you can set are <b>target</b>, <b>killtarget</b> and <b>delay</b> (default 0.2).<br><br>
+	
+<p><a name="#trigger_counter"><b>trigger_counter</b></a> - <br>
+	
+	This is a trigger that allows for multiple inputs. What this means is that you can have a door that only opens when 2 or more buttons are pushed. This is just once example though. The trigger_counter could trigger anything. You could set it up so the player would have to use 2 [insert you favorite item here] with a computer or something which in turn destroys a bunch of walls.<br><br>
+	
+	There are only 3 keys that you have to set. <b>Count</b>, <b>target</b>, and <b>targetname</b>.<br><br></p>
+	
+	<blockquote>
+	  <p>
+	  <b>1. Count</b> is the amount of actions that is required before the trigger_counter triggers its target. So if you have a door that must have 2 buttons pressed to open then you would give the trigger_counter a count of <br>
+        <br>
+	    
+	  <b>2. Target</b> is the target of the entity that will be triggered when the specific amount of actions is performed on the trigger_counter.	  </p>
+	  <p><b>3. Targetname</b> is self explanatory, but I just wanted to stress that the trigger_counter <b>MUST</b> have a targetname. For example, Lets say you want a door that will be opened by pressing 2 buttons. First you would make the door and give it a targetname of door1. Next make the trigger_counter and set the target to door1, the count to 2, and targetname to count1. Now create the 2 buttons and give each of them a target to count1. That's it! Pretty simple huh?<br>
+        <br>
+      </p>
+	</blockquote>
+    There is one spawnflag that can be used with the trigger_counter which is <b>nomessage</b>. By default, when the buttons in the example above are pressed, the messages, "1 more", "2 more", and "sequence complete" would be printed. nomessage disables these messages.<br>
+    <br>
+	
+	
+	<p><a name="#trigger_elevator"><b>trigger_elevator</b></a> - 
+	
+	<br>This a very difficult entity to master and I would only recommend going through this tutorial if you are a pretty experienced level designer. What it is basically an elevator. That's the easiest way I can explain it. Lets say there are 4 floors. You hit a button on the 4th floor and the platform will come to the forth floor. Hit a button on the 3rd floor and the platform will come to the third floor or however you want to set it to do. There are other easier ways to implement an elevator by using a <a href="../func_train/func_train.shtml" target="_top">func_train</a> but the trigger_elevator is more functional as working like a true elevator but again I stress that it is a very difficult entity to master.<br><br>
+	
+	Entities that can be used with the trigger_elevator:
+	
+	<blockquote>
+		<p><li><a href="../func_train/func_train.shtml" target="_top">see func_train</a>    
+	  	<li><a href="../misc/misc.shtml">path_corner</a>    
+	  	<li><a href="../func_button/func_button.shtml">func_button</a><br><br></p>
+    </blockquote>	
+	
+	Make sure you are familiar how all these entities work before attempting the trigger_elevator<br><br>
+	
+	 <ol>
+	   <li>The first thing you need to do is to place the trigger_elevator entity somewhere in the level. This is not the actual elevator. In fact...this entity is <b>not</b> visual in the map, so it does not matter where you put this entity.</li><br>
+	   
+       <li>Now you need to <b>give the trigger_elevator a targetname and a target</b>. For this example lets give it a <b>targetname of elevator</b> and a <b>target of train</b> which will be the actual elevator. We havnt made the actual elevator object yet though. we will get to that next.</li><br>
+	   
+       <li>Now we will create the object that will be the actual elevator. Now you need to decide how you want your elevator to look. It could be simply a 1 brush platform or you could go all out and it could be a full blown 200 brush detailed elevator. Does not matter. When you are finished designing the elevator select it and turn it into a <b>func_train</b>. Yep, you heard it right...a func_train....I'll explain in a minute.</li><br>
+	   
+	   <li>Now give the func_train you just made a targetname and a target. The targetname for this example will be train. The target will be to the first <b>path_corner</b>. Lets call this p1. So lets recall what we have done so far: We have a <b>trigger_elevator</b> entity that is linked to a <a href="../func_train/func_train.shtml" target="_top">func_train</a> entity which is linked to a <a href="../misc/misc.shtml">path_corner</a> entity that we have <b>not</b> made yet.</li><br>
+	   
+	   <li>Now we need to create the actual path the elevator will follow. These will be <b>path_corner</b> entities. We will place one at each area the elevator will stop. So if there are 4 floors then we will have to make 4 path_corners. So place path_corners at each floor the elevator will be stoping on <b>INCLUDING</b> the bottom floor. It will take awhile to get the placing of the path_corners just right so that the elevator will look right.You can get them precisely placed by positioning the exact origin of the path_corner at the exact lower left corner (both top and front views) of any func_train's *bounding box*.  In the case of s nice rectangular train, this is incredibly easy to be absolutely precise.(thanks <a href="mailto:jloftus@sprintmail.com">Freznor</a>)</li><br>
+	   
+	   <li> Now we are going to give each path_corner a targetname and a pathtarget. Give the first one a targetname of p1, second one of p2, all the way to p4 if you will be having a 4 floor elevator. Each path_corner will also <b>HAVE</b> to have the key value pair <b>pathtarget</b>. What this is is a unique name of the elevator stop that the path_corner represents. So on this example lets say there are 4 floors. The first path_corner on the bottom floor will have a <b>pathtarget of stop1</b>. The second floor path_corner will have a <b>pathtarget of stop2</b>, third will have a <b>pathtarget of stop3</b>, and the fourth floor will have a <b>pathtarget of stop4</b>.</li><br>
+	   
+	   <li>Now we are going to create the <b>func_buttons</b> that will trigger the elevator. So this means that <b>each floor will have a func_button</b>. So we will create 4 func_buttons for an elevator that will be stoping on 4 floors.</li><br>
+	   
+	   <li> Now you must target each func_button to the trigger_elevator entity. So every func_button will have the key value pair <b>target elevator</b>, because we gave our trigger_elevator a targetname of elevator.</li><br>
+	   
+	   <li>The final thing we have to do is give each func_button a key value pair of <b>pathtarget</b>. This should be set to the cooresponding <b>targetname</b> of the <b>path_corner</b> that you want the elevator to stop on when the button is pressed. Recall that we have 4 path_corners each with a targetname of p1, p2, p3, and p4 respectfully. So if we wanted the elevator to take us from the top floor to the bottom floor we would set the pathtarget of the func_button on the fourth floor to p1, which is the targetname of the path_corner that is on the bottom floor. Pretty simple huh? yeah right.<br><br>
+       </li>
+	 </ol>
+	 As you can see this is a very difficult entity to use but it is very useful and very cool. It was also very hard for me to figure out since there is no comments or anything in the code. I had to decompile a bsp file and see how id did it in one of the mine levels. Not fun. =) Here is a diagram that I might help you out a bit<br><br>
+	
+	<center><img src="/tutorials/quake2/tutorials/trigger_elevator/elevator.gif" width=300 height=385 border=0 alt="trigger_elevator"></center><br><br>
+	
+	I definitly suggest you check out the <a href="/tutorials/quake2/tutorials/trigger_elevator/trigger_elevator/elevator.zip">example</a> map and see how I got mine to work. Any other questions please post them in the <a href="http://forums.gamedesign.net/forums">discussion</a> board.<br><br>
+
+	<p><a name="#trigger_gravity"><b>trigger_gravity</b></a> - <br>
+	
+	This entity at first I didn't think it worked because it was <b>NEVER</b> used in any of the id levels.(whole level gravity is set with the <a href="../worldspawn_and_more/worldspawn_and_more.shtml">worldspawn</a> entity.) It was not until I saw over at <a href="http://spq2.telefragged.com/" target="_top">Akuma's SPQ</a> that it worked. The bad thing about it is that <b>it only effects spawned entities, gernades, and gibs</b>.It has NO effect on the player. Its very simple though.<br>
+      <br>
+      <b>Creating the trigger_gravity</b><br>
+      <br>
+      First thing you need to do is just create a brush that will cover the entire area that you want to have a different gravity. It would also be a good practice to give it the trigger texture. Now turn it into the trigger_gravity entity. Pretty simple huh?<br>
+      <br>
+      Key Value Pairs<br>
+      <br>
+      <b>gravity</b> - <br>
+      There is only 1 key value pair and it is pretty self explanatory. <b>gravity</b> will be the value you want the gravity to change to. Default gravity is 1, so if you want a room with low gravity set it to something like .5 or .3. If you want a room with no gravity, in which a grenade will just keep going and going, then set the gravity to 0. A negative value will make the grenades and the gibs go towards the ceiling. A real positive value will make the grenades and gibs immediately shoot towards the ground. But remember though, <b>this ONLY effects spawned entities, grenades, and gibs.</b> Nothing else is effected.<br>
+      <br>
+      Uses of the trigger_gravity - <br>
+      <br>
+      <br>
+      Since the trigger_gravity entity is so limited there are not many uses for it but to confuse the player. You could have a creature that is spawned and falls from the ceiling and it would fall very slow if the gravity was low. You could have spawned gibs fly across the room very slowly. Pretty strange huh?<br>
+      <br>
+      Be sure to check out the <a href="../trigger_gravity/trigger_gravity.zip">example</a> map.<br>
+      <br>
+      If you still don't understand please post your questions to the <a href="../../quake2/discussion/quake2discussion.shtml">discussion</a> board.<br>
+      <br>
+	</p>
+	<li><p><a name="#trigger_hurt"><b>trigger_hurt</b></a> - Another pretty easy entity to use. Its an area that you specify that when the player comes in contact with it he/she will take damage. You can specify the damage by setting the key value pair <b>dmg</b>. There are a number of spawnflags for a trigger_hurt. They are <b>start_off, toggle, silent, no_protection, and slow.</b> start_off and toggle are for trigger_hurt entities that are triggered. So you could have an area where the player wasn't taking damage but then one of their actions triggers something that causes the player to take constant damage until he/she is out of the area of the trigger_hurt. There are a lot of uses for this. <b>Slow</b> simply decreases the frequency of the damage taken. trigger_hurt can also be used for setting traps..like the floor opens and the player falls into a pit of spikes. just draw a brush covering the tips of the spikes and make it into a trigger_hurt.<br><br>
+	        
+	<p><a name="#trigger_key"><b>trigger_key</b></a> 
+	    
+	- See key_
+	        
+	<p><a name="#trigger_monsterjump"><b>trigger_monsterjump</b></a> - <br>
+	    
+	See monster_
+        
+	<p><a name="#trigger_multiple"><b>trigger_multiple</b></a> - <br>
+	    
+	The <b>trigger_multiple</b> works in basically the same exact way the trigger_once does except for a few minor details.<br><br>First of all, it can be triggered multiple times instead of just once. It also has 1 more key value pair and 1 other spawnflag.<br><br>The new key value pair is <b>wait</b>, which determines the amount of time to wait before the trigger will trigger its target again when touched by the player. An interesting thing to note is that if you assign a value of -1 to this, you will effectively have transformed your trigger_multiple into a trigger_once. Not much point in doing that but anyway... :-)<br><br>The new spawnflags is <b>monster</b>. What monster does when enabled is allows a monster or the player to use the trigger. This is opposed to not_player which allows only monsters to use the trigger. For some reason the spawnflag monster does not work for trigger_once. Strange.<br><br>As for all the other keys and spawnflags, just look at the trigger_once. They behave in the same way except for the 3 differences I mentioned above.<br><br>
+        
+	<p><a name="#trigger_once"><b>trigger_once</b></a> - <br>
+	    
+	If you have any editing experience at all then you probably know how to use this entity. What it does is triggers an event when another entity such as the player or a monster(we will go over this in a minute) touches it, but only 1 time. One thing you should know when making the brush that will be the trigger_once is that all the trigger entities that we are going to go over in this tutorial are not visable in the level so it doesn't matter where you place them. Also it is good editing practice to give the trigger_once or any other non visable brush the trigger texture. This makes it easier to see and organize in your level editor. The key value pairs for trigger_once are <b>target</b>, <b>targetname</b>, <b>killtarget</b>, <b>sounds</b>, <b>message</b>, and <b>delay</b>.<br><br><b>Target</b> is the name of the corresponding targetname that will be triggered when the trigger_once is touched by the player or a monster(see below). So if you want the trigger_once to open a door then you need to give the door a targetname of something like door1 and then set the target of the trigger_once to door1.<br><br><b>Sounds</b> is the sound that the trigger will play when the trigger_once is touched. This can be set to 0,1,2 or 3. Each corresponding to a different sound. 0 is the default "beep beep" sound and 3 is no sound. If you use 3, you will get an annoying but harmless error message in the game saying "couldn't load sound/misc/trigger1.wav" but the trigger will still work and won't make any sound. This is due to a bug in the entity code. If you open the PAK file, you will see that sound/misc/trigger1.wav doesn't exist and that's the reason why the game complains.<br><br><b>Message</b> will print to the screen whatever it is set to when the trigger_once is triggered. So if  you want the trigger_once to print "door was opened" then you would set message to "door was opened". Pretty simple. Remember to use \n to break to the next like or you will run out of space.<br><br><b>Delay</b> is the amount of time between the touching of the trigger and the actual triggering taking place. So if you have a trigger_once targeted to a target_explosion, setting delay=2 will create a 2 second delay between the touching and the explosion.<br><br><br><br><b>Targetname</b> is used along with the <b>triggered</b> spawnflag (see below).<br><br><br><br><b>Killtarget</b> will remove any entity that has a matching targetname. You can target pretty much any entity you want with this, including monsters. If you target a monster with killtarget, it won't gib or anything, it will just disappear.<br><br>The 2 spawnflags that can be turned on for a trigger_once are <b>not_player</b> and <b>triggered</b>.<br><br><b>not_player</b> is not listed on any of the entity references but it is there. Just set the <b>spawnflag 2</b> and not_player will be turned on. What not_player does is makes it so the player has no effect on this trigger_once. Something like a monster must touch it and trigger it. This can be used for a variety of cool things. A monster could trigger a trap on the player or could spawn more monsters that would actually come to the place of the trigger. This could give the effect of the monster calling for reinforcements. Very cool.<br><br>The <b>triggered</b> spawnflag makes it so the trigger_once must be triggered itself to be turned on. So therefore, if this spawnflag is on then the trigger_once must have a <b>targetname</b>. What you should remember though is that the trigger_once that is triggered by another entity will NOT actually trigger its own targets when it is triggered. The trigger_once will only become "live" or "enabled" if you will. So after it is triggered, the player will have to touch it for it to trigger its targets. That sure was a mouthful. =) That's about as easy as I can explain it though. An example of a way to use this is the following:<br><br>Lets say that you have a huge level in which the player walks across a bridge to get into the strogg base. Later near the end of the level after he defeats the boss alien he unknowingly walks across a trigger_once that in turn makes another trigger_once near the bridge live. The player now has to exit the base and walk back across the same bridge. Well..the trigger_once that was just made live triggers the bridge to explode as the player is walking over it and he falls into the river getting into more trouble. Hope this kind of helped. I know it's kind of stupid though. hehe.<br><br>
+	        
+	<p><a name="#trigger_push"><b>trigger_push</b></a> - <br>
+	    
+	This is the same as it was in quake1. Use it to push the player in a given direction. You can specify the speed by setting the the key value pair <b>speed</b>. You can also make the push only work once by setting the <b>spawn_flag push_once</b>.<br><br>
+	        
+	<p><a name="#trigger_relay"><b>trigger_relay</b></a> - <br>
+	    
+	This is used to relay actions. This can be used for a variety of effects and is used very often in the id levels. a trigger_relay is not triggered when touched so therefore it must have a targetname and must be triggered by something else to work. It must also have a target. The other keys that can be set is <b>delay</b>, which determines the amount of time to pause before triggering it's target, <b>killtarget</b> and <b>message</b>. There are <b>NO</b> spawnflags. An example use of this would be to have a crate that when shot explodes, but when it explodes it triggers more explosions in the surrounding areas. What you would do is create the func_explosive crate and give it a target to a trigger_relay which in turn would target multiple target_explosions that would all have the same targetname. Or you could target several trigger_relay's all with different delay values that each in turn target their own func_explosive crates so you can have a sequence of timed explosions for cool effects. Hope this explains it a bit.<br><br>
+        
+	<!-- End description -->
+        
+	</ul>
+    </ul><h1 id="39" name="39" class="book-h1">Turret</h1><ul><h3>Quake 2 Turret Entities</h3><p>
+
+	<!-- Start description -->
+
+	<p><a name="#turret_base"><b>turret_base</b></a> - This enitity along with <b>turret_breach</b> and <b>turret_driver</b> all must be used together to create those cool gun turrets that are in 2 of the quake2 levels. These entities are by far the hardest I have come across to use in a level and only advanced level editors should attempt this. I would of never of figured it out if it wasn't for steve at the <a href="http://www.planetquake.com/QuakeLab/QuakeLab2/" target="_top"><b>quakelab</b></a> telling me to specify an origin for the turret_breach and turret_base. We will get to that though in due time.<br><br>
+	
+	The first thing you need to do is to <b>create the gun</b>. This might take awhile to make it look good. Here is a shot of the id one:<br>
+	
+	<br><center><img src="/content/quake2/tutorials/turret/gunpic1.JPG" width=250 height=143 border=0 alt="gunpic"></center><br><br>
+	
+	You must also make everything <b>orientated towards angle 0</b>(straight right from a top view), The trick is to kind of <b>make it into 2 parts. The barrel and the base.</b> the barrel is the part that is going to be the turret_breach and the base is going to be the turret_base. Also take into consideration that the creature driving the gun will be standing on the turret_breach so actually <b>the turret_breach will include the barrel and the platform that the turret_driver will be standing on.</b> Here is another visual example to show you what the hell I am talking about:<br><br><center>here is the barrel which includes the barrel and the platform for the driver to stand on(<b>turret_breach</b>)<br>
+	
+	<img src="/content/quake2/tutorials/turret/barrel.jpg" width=250 height=52 border=0 alt="barrel"><br><br>
+	
+	Here is the base(<b>turret_base</b>)<br>
+	
+	<img src="/content/quake2/tutorials/turret/base.JPG" width=250 height=146 border=0 alt="turret_base"><br><br>
+	
+	Here is the barrel(<b>turret_breach</b>) and the base(<b>turret_base</b>) together<br>
+	
+	<img src="/content/quake2/tutorials/turret/both.jpg" width=250 height=70 border=0 alt="turret_breach and turret_base"></center><br><br>
+	
+	Once you get these 2 parts made then you must <b>select the barrel and make it a turret_breach, and select the base and make it a turret_base.</b> Now you must <b>give the turret_breach a targetname</b>. So for this example lets give it a targetname of breach. <b>targetname=breach</b>. The turret_breach and the turret_base go together so <b>they must be teamed</b>. To do this give each of these entities the key value pair <b>team</b> with the same value. For this example lets give them a team name of gun. So on <b>both</b> the turret_breach and the turret_base there should be a key value pair of <b>team gun</b> Now you must decide which direction you want your gun to point in the game and <b>set the key value pair angle to what ever direction you want the gun to point.</b> <b>BOTH</b> the turret_breach and the turret_base should have the same angle. For this example we will set the angle to be 180. <b>angle 180</b>.<br><br>
+	
+	Next thing you must do is create the target that the gun will shoot at. To do this you must <b>create an info_notnull entity and place it at the tip of the barrel and give it a targetname.</b> For this example our info_notnull will have a targetname of tip. <b>targetname tip</b>. Then <b>set the target of the turret_breach to the info_notnull</b>. <b>target=tip</b>.<br><br>
+	
+	Next thing you need to do is to <b>create the turret_driver and target it to the turret_breach.</b> target=breach. Place the turret_drive where you want him to be standing(on the platform you made him on the turret_breach)<br><br>
+	
+	Now to the part that I couldn't figure out but steve at the <a href="http://www.planetquake.com/quakelab/quakelab2/" target="_top">quakelab</a> helped me out on. For the turret_breach and the turret_base <b>you must have a brush set as an origin brush</b>. These will keep gun from rotating all around the room and looking really messed up. So the turret_breach <b>must</b> have an origin brush and the turret_base <b>must</b> have an origin brush. To make a brush an origin brush you must <b>change the surface property</b> of that brush and set the origin flag. This is done differently for each editor. Check your manual. It is better to select origin brushes that for breach and the base that are near each other. Here is a diagram of what brushes i made into origin brushes.<br><br>
+	
+	<center><img src="/content/quake2/tutorials/turret/complete.JPG" width=400 height=168 border=0 alt="complete"></center><br><br>
+	
+	Thats about all there is too it. As you can see this is a <b>very</b> difficult entity to use. Not very fun at all. I urge you to download my <a href="/content/quake2/tutorials/turret/rust7.zip">example</a> map if you are going to try do this. If you still have problems post your question in the <a href="http://forums.gamedesign.net/forums">discussion</a> board and I will try to help you out.<br><br>
+	
+	<p><a name="#turret_breach"><b>turret_breach</b></a> - See turret_base
+	
+	<p><a name="#turret_driver"><b>turret_driver</b></a> - See turret_base
+	<!-- End description -->
+
+	</ul>
+</ul><h1 id="40" name="40" class="book-h1">Weapons</h1><ul><h3>Quake 2 Entities</h3><p>
+
+
+	
+	<!-- Start description -->
+	<p><a name="#weapon_bfg"><b>weapon_bfg</b></a> - Most powerful weapon. Takes ammo_cells
+	
+	<p><a name="#weapon_chaingun"><b>weapon_chaingun</b></a> - Wastes lots of ammo_bullets
+	
+	<p><a name="#weapon_grenadelauncher"><b>weapon_grenadelauncher</b></a> - Takes ammo_grenades
+	
+	<p><a name="#weapon_hyperblaster"><b>weapon_hyperblasters</b></a> - Very good weapon that takes ammo_cells
+	
+	<p><a name="#weapon_machinegun"><b>weapon_machinegun</b></a> - Takes ammo_bullets
+	
+	<p><a name="#weapon_railgun"><b>weapon_railgun</b></a> - Slow firing powerful gun that takes ammo_slugs
+	
+	<p><a name="#weapon_rocketlauncher"><b>weapon_rocketlauncher</b></a> - Takes ammo_rockets
+	
+	<p><a name="#weapon_shotgun"><b>weapon_shotgun</b></a> - 2nd gun that takes ammo_shells
+	
+	<p><a name="#weapon_supershotgun"><b>weapon_supershotgun</b></a> - Awesome weapon that takes ammo_shells. shoots 2 at a time
+	
+	<!-- End description -->
+</ul><h1 id="41" name="41" class="book-h1">Worldspawn</h1><ul><h3>Quake 2 Worldspawn Entities</h3><p>
+
+<p><a name="worldspawn"><b>worldspawn</b></a> - This entity has got to be one of the easiest entities to use, (hence one of the easiest tutorials to write, heh) but it adds immensely to the completeness of a level.<br><br>
+
+If you've compiled and run a map, you've already used worldspawn. There are, however, a few keys that you can add to it, that change the environment throughout the map. These are: <br><br>
+
+<blockquote>		
+	<strong>sky -</strong> 
+	
+<blockquote>
+	This key changes the environment map for the level. In order to use it, add the <strong>&quot;sky&quot;</strong> key, and give it the value of the sky you wish to use. The environment maps included in Quake II are <strong>unit1_</strong> through<strong> unit9_</strong> and <strong>space1</strong>. 
+</blockquote>
+	
+	<strong>skyaxis -</strong> <blockquote>
+	
+	If you would like to have a rotating sky, like in the final boss level, you'll need to define an axis for the sky to rotate around. Simply add a key of <strong>&quot;skyaxis&quot;</strong> and give it a vector using three numbers (vectors are the same values that define projectile paths, and line of sight for monsters.) If you don't quite know vectors, just play around with the numbers until you find one you like. Don't use 0 0 0 however, as this will give you a hall of mirrors effect. (doesn't define a vector, so it doesn't draw the sky) 0 0 1 will give a flat rotation.</blockquote><br><br>
+	
+	<strong>skyrotate -</strong>
+	
+<blockquote>
+	This controls the speed of rotation for the sky. Add the <strong>&quot;skyrotate&quot;</strong> key, and give it a value in degrees per second.
+</blockquote>
+	
+	<strong>sounds -</strong>
+	
+<blockquote>
+		This is the CD track that will play during the level. Add the <strong>&quot;sounds&quot;</strong> key, and give it a track number.
+</blockquote>
+	
+	<strong>gravity -</strong> 
+
+<blockquote>
+	This controls the gravity level. Default is 800. The gravity in the <strong>Comm Sattelite</strong> level is set at 100. 
+</blockquote>
+	
+	<strong>message -</strong> 
+	
+<blockquote>
+	This is the text that will appear at the console when you begin the level, and in the computer. Anything more than 32 characters, and you'll get a warning at the beginning of the level. Add a key of <strong>&quot;message&quot;</strong> and give it a value of whatever the title of 			the level is. 
+</blockquote> <br>
+</blockquote>
+
+
+
+-GrrandMaMa<BR><BR>
+	
+	
+</ul></body></html>

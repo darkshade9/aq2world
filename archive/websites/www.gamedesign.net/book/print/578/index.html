@@ -1,0 +1,72 @@
+<html><head><title>Transparency</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="578" name="578" class="book-h1">Transparency</h1><!-- by old Q3Lab Tutorial -->
+	 
+<h3>Quake 3</h3>
+<blockquote>
+		<b>Transparency</b> - Created by <b>Alvar Jansson</b><br>
+</blockquote>
+<br><br>
+
+ <p><b>Preface:</b></p>
+
+<p>This tutorial illustrates how to make transparent shaders.</p>
+
+<hr noshade color="black">
+
+<h3>Step 1</h3>
+
+<p>Perhaps you've tried to make something that looks like this:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut3/picture1.jpg"><br></center>
+
+<p>But you haven't found the right texture for it? Well, why not make your own. First, we need to do the texture, i'll use Photoshop. Here's what my texture looks like:</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut3/picture2.jpg"><br></center>
+
+<p>Now, save this file as a 24- or 32bit TGA file. While we are in Photoshop, do a selection at the areas that should be visable. In this case you should select the "Brown" areas.</p>
+
+<center>
+<img src="content/quake3/tutorials/shadertut3/picture3.jpg"><br>(Note: this image is enlarged)
+</center>
+
+<p>Now, save the selection (under the "Select" menu in Photoshop), and save the picture. You have just made the base for your transparent Texture, now it's just the Shader writing left.</p>
+
+
+<hr noshade color="black">
+
+<h3>Step 2</h3>
+
+<p>Now, open Notepad and type in this:</p>
+
+<font color="red"><blockquote>
+textures/mytextures/transparenttexture<br>
+{	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surfaceparm trans<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surfaceparm alphashadow<br>
+&nbsp;&nbsp;&nbsp;&nbsp;surfaceparm nomarks	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cull none<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nopicmip<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textures/mytextures/transparenttexture.tga<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blendFunc GL_ONE GL_ZERO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alphaFunc GE128<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depthWrite<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbGen identity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map $lightmap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rgbGen identity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;blendFunc GL_DST_COLOR GL_ZERO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depthFunc equal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br><br>
+</blockquote></font>
+
+<p><b>Note:</b> I've called my texture "transparenttexture.tga", and it's located in textures/mytextures.</p> 
+
+<p>There will be no bullet marks on this texture, cause we have the "surfaceparm nomarks" on it. Also, it will not give any shadows. The rest fixes so the texture will look right compared to the lightning and so on. Now, save this file in the scripts directory, i'll save mine as "my.shader" (remember to save it as *.shader), then add it to the shaderlist.txt file.</p>
+
+<p>Here we go, load up qeradiant, and start using your new texture!</p></body></html>

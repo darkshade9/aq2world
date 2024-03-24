@@ -1,0 +1,31 @@
+<html><head><title>Import Custom Textures</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="780" name="780" class="book-h1">Import Custom Textures</h1><p>The following tutorial has been republished with consent:<br>
+- By  <a href="http://www.adamowen.com/"> Adam "Phatsniper" Owen</a></p>
+<p>It seems the new material system has caused some confusion within the community, so here's a basic guide to get your custom textures working.</p><!--break-->
+<p>I'm going to be using Adobe Photoshop 7, but any image editing program with the ability to export to Targa (.tga) will suffice. <br><i>Please note, in order to save .tgas with alpha channels in Photoshop 7 you will need <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=1544" target="_blank">this bug fix</a>.</i></p>
+<p>Open your image in Photoshop and go to File > Save As and save it to a sub directory inside your SDK's materialsrc directory.</p>
+<p> For example :</p>
+<code> "Steam\SteamApps\USERNAME\sourcesdk\cstrike_sample_content\materialsrc\test"</code>
+<p>You can choose any folder name you like, I just called mine test. In the window that pops up select "24 bits/pixel", turn off "Compress (RLE)" and hit Ok.</p>
+<center><img src="http://www.gamedesign.net/content/half-life2/tutorials/textureimport/cmat01.jpg" width="233" height="154" vspace="6" hspace="6" border="0" alt="Targa options"></center>
+<p>Open up Windows Explorer and browse to the materialsrc directory, copy the new folder you made containing your texture, and paste it in your: </p>
+<code> "sourcesdk\cstrike_sample_content\materials" directory".</code>
+<p> Finally, browse back into your<code> "materialsrc\test</code> (or whatever you called it) directory and move it out the way / minimize it for now.
+<p> Ok now we've got the folders set up we can go ahead and create the .vtf file. We do this by running the "vtex.exe" program that resides in your "sourcesdk\bin" directory.</p>
+<p>Open a <b>new</b> Windows Explorer and browse to:</p><code>"Steam\SteamApps\USERNAME\sourcesdk\bin"</code><p> Now re-open your sub folder and drag your .tga file across to the other window and drop it onto the file "vtex.exe". A Command Prompt window will pop up and create a .vtf file of your texture. Don't worry when the message about a missing file appears, it will create the empty .txt file you need. Just hit spacebar when it's finished to get rid of the window.</p>
+<p>We're nearly there now, just a couple more things left to do.</p>
+<p>Close the "sourcesdk\bin" window and browse to </p><code> "sourcesdk\cstrike_sample_content\materials\test"</code>.
+<p>  Right click and select New > Text Document. This is going to be our .vmt file that you use to set which shaders will be applied to the .vtf texture.</p>
+<p>To keep things simple just paste this into the document :</p>
+<code>
+<font color="#ff0000">"LightmappedGeneric"<br>
+{<br>
+ "$basetexture" "test/test01"<br>
+}</font>
+</code><br><br>
+<p>This tells the engine to render the texture with lightmapping.</p>
+<p>Save the file, close it and then rename it to "test01.vmt". Last thing to do is copy your</p><code> "sourcesdk\cstrike_sample_content\materials\test"</code><p>folder and paste it in:</p> <code>"Steam\SteamApps\USERNAME\counter-strike source\cstrike\materials"</code>
+<p>We're done! Load up Hammer and your texture will be in the texture browser.</p>
+<p>Of course, this is just scratching the surface on what you can do with materials. You can change surface types, sounds, shaders and even physics properties. I know the new system is a bit fiddly but I do find it helpful to have all your textures imported and sorted automatically as folders.</p>
+<p>Thanks for reading and good luck!<br> As usual don't hesitate to <a href="http://www.adamowen.com/contact.htm">contact me</a> with any questions or comments!</p></body></html>

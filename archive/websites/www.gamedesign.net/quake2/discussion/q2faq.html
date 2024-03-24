@@ -1,0 +1,477 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link REV="made" href="mailto:fishman@gamedesign.net">
+<meta NAME="keywords"
+CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making">
+<meta NAME="description"
+CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+<link rel="stylesheet" href="../stylesheets/main.css">
+<title>rust - quake2 frequently asked questions</title>
+</head>
+
+<body bgcolor="White">
+
+<h1>frequently asked questions</h1>
+
+<h2>q&nbsp;u&nbsp;a&nbsp;k&nbsp;e&nbsp;2</h2>
+<div class="bodytext">
+
+<p align="center"><font face="Tahoma" size="-1"><font face="Verdana" size="-2">originally
+created by <a href="mailto:dmm2editor@aol.com">Richard Neff</a></font> </font></p>
+
+<p>This is an attempt to answer the most frequently asked questions on the q2 map editing
+list and the discussion board, as well as any email we get. If you have a question to add
+to it then email us the question and the answer. Thanks</p>
+</div>
+
+<table width="75%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td><strong><font color="White">Entities and Effects</font></strong></td>
+  </tr>
+</table>
+
+<ul>
+  <li><!-- footer starts here --><em><strong>Why don't my explosions, switchable lights, etc. show up in DM or CTF mode? </strong></em><br>
+    Certain entities or effects don't work in Deathmatch or CTF play that exist in single play
+    mode. They are:<br>
+    -func_explosive <br>
+    -func_object <br>
+    -turrets <br>
+    -named/switched lights (these lights will be constantly on) </li>
+</ul>
+
+<ul>
+  <li><em><strong>How can I create user-controlled turrets?<br>
+    </strong></em>You can't with the default turret entities in Quake 2.&nbsp; You have to use
+    the Jailbreak TC to have a player controlled turret or code your own entity.</li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I get double doors or other multi-part doors to open at the same
+    time? </strong></em><br>
+    You can use the Team attribute to accomplish this. In the Team attribute, put the same
+    name for all the components of the door. When a section of the door opens, all the other
+    sections with the same Team attribute also open. </li>
+</ul>
+
+<ul>
+  <li><em><strong>What is the maximum distance from the&nbsp;0,0,0 origin that a map can be? </strong></em><br>
+    The maxium size of a map is +4048 or&nbsp; -4048 on any axis from the 0,0,0 orign.</li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I get multiple items to spawn in DeathMatch Mode, like in some of the
+    Id levels where the BFG and Rocket Launcher interchangeably spawn? </strong></em><br>
+    Once again, use the Team attribute for the two entities. Place the two items (for example,
+    the RL and BFG) and give each the same team name (for example, &quot;weaponspawn&quot;).
+    Then, one of them will be spawned, after that item it taken, the next item with the same
+    Team attribute will spawn the next time. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How to I make &quot;wind tunnels&quot; like the stuff that pushes players
+    along? </strong></em><br>
+    See the Tutorials page here at Rust and look for the trigger_push entity. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I make doors that &quot;swing out&quot; on hinges like my doors at
+    home?</strong></em> <br>
+    Now we're getting into the rather obvious. Read the tutorial on the func_rotating_door
+    entity on the Tutorials page here at Rust. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I get rid of the teleporter's base and &quot;sparkles&quot; in Quake
+    2? </strong></em><br>
+    Unlike Quake 1, which had no visible signs of teleporters, Quake 2 teleporters have a base
+    and &quot;sparkles&quot; in the later releases of the Quake2 engine. There is a quick
+    &quot;trick&quot; to get around this if you have a deep enough floor.&nbsp; You can simply
+    move the entity down a few Quake units into the floor and both the base and the
+    &quot;sparkles&quot; will disappear. Unfortunately, there is no way to get rid of this if
+    you can't embed the entity into the floor except via coding a new entity or using a mod
+    that has such an entity. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I get that cool looking &quot;space&quot; sky in my maps? Or, how to
+    I get a sky to appear at all? </strong></em><br>
+    Skies in Quake 2 are slightly different. They need to be defined using the Sky attribute
+    in the Worldspawn entity. (And to keep all you Qoole users from asking, you modify the
+    Worldspawn entity in Qoole by not having anything else selected and choosing the entity
+    properties). The valid skies are unit1_ through unit9_ and space1. Then, any texture with
+    a surface property of sky will use the sky defined. (See the tutorial page for information
+    about Surface and Content Properties) </li>
+</ul>
+
+<ul>
+  <li><em><strong>I want to make a complex brush with a 90 degree turn in it, how do I do
+    this? </strong></em><br>
+    Unfortunately, you cannot make just one big brush with a 90 degree bend in it. It must be
+    made of smaller seperate brushes (you can later group them in you editor). This is because
+    the Quake engine cannot handle concave brushes. You can check if a brush is concave in
+    your head like this: Think of one of the vertices in the brush, and see if you can make an
+    imaginary line to another one, where the line goes outside the brush.</li>
+</ul>
+
+<ul>
+  <li><em><strong>Can I mix entities for the same object? For example, can I make a func_train
+    also a func_explosive? </strong></em><br>
+    No. Quake 2 entities can only be assigned to a single entity. You can NOT make the same
+    object two different entities. </li>
+</ul>
+
+<ul>
+  <li><em><strong>Can I have moving lights in my Quake 2 level? </strong></em><br>
+    Not without coding or using a mod that supports it. The original Quake 2 engine doesn't
+    allow the default light entities to move. The Quake 2 Mission Pack: The Reckoning,
+    however, has a rotating_light entity. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I make the func_train entity rotate? </strong></em><br>
+    You can't. The func_train entity in Quake 2 can't rotate around an axis. Like the rotating
+    light question however, it all depends on how an entity is coded. Hexen II, for example,
+    has such an entity. So, you'll either have to do coding of your own entity to do this or
+    find a mod that has one. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I make glass that can be shot? </strong></em><br>
+    Apply a texture that has the trans_33 or trans_66 property applied (see the Surface and
+    Content Properties tutorial) and make the object a func_explosive. You may want to also
+    target a target_speaker entity to create the breaking glass sound. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I create those fancy &quot;sparks,&quot; like the ones found in
+    base1.bsp? </strong></em><br>
+    The &quot;sparks&quot; themselves are actually the target_splash entity. However, as the
+    entity name implies, this entity needs to be targeted in order to work. Typically, the
+    target_splash entity is targeted by a func_timer entity, with the random property set. See
+    the target_splash and func_timer tutorials on the tutorials page for more information. </li>
+</ul>
+
+<ul>
+  <li><em><strong>I created a transparent window on my train/door/moving entity, but it won't
+    move with the rest of the entity...why? </strong></em><br>
+    The Quake 2 engine doesn't allow transparent items to move. This means that you can't have
+    windows or other transparent surfaces on trains, doors, etc. </li>
+</ul>
+
+<ul>
+  <li><em><strong>I've heard someone mention &quot;point entity&quot; and &quot;solid
+    entity.&quot; What's the difference between the two? </strong></em><br>
+    A point entity is an entity that doesn't require a user-defined model to work. For
+    example, a monster is an example of a point entity since it has a pre-defined model
+    associated with it. A solid entity, however, requires the editor to manually define a
+    brush to be associated with the entity. For example, a door entity is an example of a
+    solid entity. The editor has to define what brush (or brushes) make up the physical door.
+    If a solid entity is not associated with a brush, a PF:SetModel = None error or something
+    similar when the level is started. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I create the F1 computer messages and increment the Goals count? </strong></em><br>
+    Use a target_help to create the message. If you need a multi-lined message put
+    &quot;/n&quot; without the quotes or spaces between the words where you want the break to
+    occur. The target_goal is used to increment the Goals count. Typically, you'll want to
+    have both entities named with the same targetname and triggered by an event. See the
+    tutorials page for more information. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I create multi-line text in the F1 computer message, trigger message,
+    level start message, etc.?</strong></em><br>
+    Simply use \n (forward slash + n) to create a Q2 line break.&nbsp; Additionally, you
+    should <strong>not</strong> have any spaces before or after the \n.&nbsp; For example, if
+    you wanted to have:<br>
+    My Level<br>
+    By Me<br>
+    as the level title, you'd put &quot;My Level\nBy Me&quot; (without quotes) in the
+    Worldspawn entity.</li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I create the cool force field doors that were in the prison levels of
+    Q2? </strong></em><br>
+    Use a func_wall, with one of the force field textures (redfield or yelfield) and make it
+    transparent using the surface properties. Then, give the func_wall a targetname and have
+    it activated by a trigger or button. </li>
+</ul>
+
+<ul>
+  <li><em><strong>I applied the func_water to create a pool of water and it's not transparent.
+    Why? </strong></em><br>
+    The func_water entity isn't required for static pools of water or water with currents.
+    It's a specialized entity used for rising/falling water that's activated by a trigger or
+    button. However, the water texture used for func_water can not be transparent! See the
+    func_water tutorial for details.<br>
+    To create other types of water, make sure the same water texture is applied to all sides
+    of the brush. </li>
+</ul>
+
+<ul>
+  <li><em><strong>I tried to make a rotating door. I even put the Origin brush in by giving a
+    brush the Origin texture on all sides, but now I'm getting an error like &quot;Origin not
+    allowed in world&quot; Why doesn't this work?</strong></em> <br>
+    This occurs when the Origin brush hasn't been properly grouped with the rest of the
+    brushes before making it a rotating door or object. Different editors may require their
+    own method of grouping or use the func_group entity, so check the documentation or
+    editor-specific boards for grouping information. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<table width="75%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td><strong><font color="White">Textures and Surface Properties</font></strong></td>
+  </tr>
+</table>
+
+<ul>
+  <li><em><strong>How do I create ladders? Are they some sort of entity type or something? </strong></em><br>
+    Ladders aren't a separate entity, rather they are created by applying the ladder surface
+    property to ALL sides of a brush to create the ladder. See the Surface Properties tutorial
+    on the tutorials page for more information. </li>
+</ul>
+
+<ul>
+  <li><em><strong>What about currents...how are they created? </strong></em><br>
+    Like ladders, currents are created by applying the appropriate current surface property to
+    liquid textures. See the Surface Properties tutorial on the tutorials page for more
+    information. </li>
+</ul>
+
+<ul>
+  <li><em><strong>I've got a texture with text on it, but the text is backwards. How do I
+    'flip' the texture so the text is readable? </strong></em><br>
+    Textures can be 'flipped' by putting a -1 value in the X-axis Scale attribute for that
+    texture surface. This is most useful for textures that have some sort of readable text. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How can I make mirrors in Quake 2? I've seen other games do this (like
+    GLQuake 1) if you've got a 3DFx card. </strong></em><br>
+    Unfortunately, Quake 2 doesn't support mirrors or 'reflecting' textures. </li>
+</ul>
+
+<ul>
+  <li><font face="Courier New"></font><em><strong>How do you make animated textures in Q2?</strong></em><br>
+    1) Download <a HREF="http://www.telefragged.com/wally/">Wally</a><br>
+    2) Make the frames of your animated sequence as <b>separate</b> wal files.<br>
+    3) Go into the texture properties box in Wally, and, in the box labelled 'Next animation
+    texture' fill in the filename of the next frame.<br>
+  </li>
+</ul>
+
+<table width="75%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td><strong><font color="White">Compiling, Leaks, and Errors</font></strong></td>
+  </tr>
+</table>
+
+<ul>
+  <li><em><strong>After compiling my level, I notice that I can see &quot;through&quot; the
+    sky into another room in my level.&nbsp; How can I keep this from happening?<br>
+    </strong></em>First, make sure that you've done a full VIS which sometimes helps clear up
+    this problem.&nbsp; Also, you can use a Hint brush between the player and the sky. &nbsp;
+    However, sometimes these methods won't clear up the problem, so you have to always
+    consider this when designing your maps.&nbsp; Plan ahead and if need be, use blocker walls
+    and the like to help obstruct the view into these areas.</li>
+</ul>
+
+<ul>
+  <li><em><strong>My level takes ### hours/days/weeks to compile. Am I doing something wrong? </strong></em><br>
+    This is a next-to-impossible question to answer. The fact is that how complex your level
+    is determines how long it will compile. And this means how complex your level is to the
+    Quake engine, not your perception of complex. If your level is taking longer than you
+    think it should, you need to understand WHY it's taking so long. Things like texture
+    lighting, large open spaces, etc. can all dramatically increase the time it takes to
+    compile a level. See the Tutorials and Style pages here at Rust for a better idea of how
+    to create good levels. </li>
+</ul>
+
+<ul>
+  <li><em><strong>My map has gotten bigger, and all of a sudden, some of the items or doors in
+    my level disappear at certain angles...what causes this and how can I fix it? </strong></em><br>
+    In most instances, a full VIS compile on the level will correct this. Typically, this
+    solves the problems. However, if it occurs after a full -level 4 VIS compile, you've
+    probably got an area that's far too complex or big for the Quake2 engine to handle. In
+    which case, you'll have to simplify your level. </li>
+</ul>
+
+<ul>
+  <li><em><strong>Why is my map always/never lighted, even though I place entities? (I have a
+    leak, btw) </strong></em><br>
+    Check your maps for leaks during the BSP compile. If you see the message
+    &quot;***Leaked***&quot; any time during that compile, then the VIS and Radiosity
+    compilers will not take effect. Hence, the level will either be completely dark or
+    fullbright </li>
+</ul>
+
+<ul>
+  <li><em><strong>Ok, I checked and my map doesn't leak, yet it's still not lighted, even
+    though I place entities? </strong></em><br>
+    Be sure you're running the compilers in order. The proper order is QBSP, then the VIS
+    compiler, finally the Radiosity compiler (which handles lighting). Additionally, make sure
+    ambient light is set to zero or a decimal value. </li>
+</ul>
+
+<ul>
+  <li><em><strong>How do I convert a .bsp file to a .map file? </strong></em><br>
+    In simple words, you can't. While Quake 1 had a bsp to map converter, there are a lot of
+    problems with trying to do this. Because the .bsp file is a compiled file, the conversion
+    to a .map file is hardly trivial. The QBSP compiler breaks up the large brushes that make
+    up items into many smaller ones. Additionally, the QBSP compiler removes those brushes
+    that make up the outer walls and aren't visible to the player. All of these things prevent
+    a useful .map file from being created from a .bsp file. If you REALLY want to see inside
+    the .bsp files, Quark (see the Links page) will allow you to view them, however, you won't
+    be able to modify them. </li>
+</ul>
+
+<ul>
+  <li><em><strong>My level compiles fine, without errors, but when I start the Quake level, I
+    get the message &quot;com_sprintf: overflow.&quot; What's wrong with my level? </strong></em><br>
+    Typically, this means you have a level name in the Worldspawn entity that's greater than
+    24 characters. This error typically refers to a string that is too long. So, if this error
+    appears elsewhere, check the size of your messages. </li>
+</ul>
+
+<ul>
+  <li><em><strong>After doing a full compile with all 3 compilers, I notice light
+    &quot;leaks&quot; under doors and the like.&nbsp; What's going on here?</strong></em><br>
+    Entities are not calculated during the radiosity compile, so they can't block light.
+    &nbsp; So, you get a &quot;leaking&quot; effect since the Q2 engine and light compiler
+    pretty much act as if the door isn't there.&nbsp; Unfortunately, there is no way to
+    actually prevent this from happening, so you have 2 options: either move the light far
+    enough away (or decrease its intensity) from the door or put an offsetting light on the
+    other side of the door for a more gradual lighting effect.</li>
+</ul>
+
+<table width="75%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td><strong><font color="White">CTF &amp; Xatrix Entities</font></strong></td>
+  </tr>
+</table>
+
+<ul>
+  <li><em><strong>What entities are needed for CTF to work? </strong></em><br>
+    CTF requires both player starts (info_player_team1 and info_player_team2) and flags
+    (item_flag_team1 and item_flag_team2). However, other player starts are added using the
+    deathmatch player starts. Additionally, you don't need to place the 4 CTF powerups, since
+    they are automatically placed into CTF maps. See the tutorials page for more information. </li>
+</ul>
+
+<ul>
+  <li><em><strong>What new entities are in the Xatrix Mission Pack 1: The Reckoning?</strong></em><br>
+    <strong><br>
+    Monsters</strong><br>
+    - <em>Monster_chick_heat</em> - Chick Heat - Same as the Quake2 Chick but her missiles
+    follow you.<br>
+    - <em>Monster_gladb</em> - Phalanx Gladiator - Same as the QuakeII Gladiator but he fires
+    a Phallanx Cannon instead of a Rail Gun. Also has a power shield.<br>
+    - <em>Monster_boss5</em> - Super Tank - Same as the Boss Tank in Quake2 but with a power
+    shield.<br>
+    - <em>Monster_gekk </em>- Gekk - Man sized lizard. Humanoid in shape. Jumps real high,
+    swims, runs, moves fast, and spits acid.<br>
+    - <em>Monster_fixbot</em> - Fixer Bot - Roams around and repairs things and reanimates
+    monsters.<br>
+    - <em>Func_object_repair</em> - Object to be repaired - Creates small sparks that the
+    Fixer Bot will move towards and start to weld (it doesn't actually fix anything it's a
+    visual effect)<br>
+    - <em>Brain</em> - Not a Xatrix entity but when used with the Reckoning Mission Pack has
+    beefed up abilities. Now has a laser and a parasite like tongue that grabs you from a
+    distance and drags you within slashing range.<br>
+    - <em>Monster_soldier_hypergun</em> - HyperBlaster Soldier - Same as the Light Gaurd in
+    Quake2 except he carries a hyperblaster.<br>
+    - <em>Monster_soldier_lasergun</em> - Lasergun Soldier - Same as the Light Gaurd in Quake2
+    except he carries a laser rifle.<br>
+    - <em>Monster_soldier_ripper</em> - Ripper Soldier - Same as the Light Gaurd in Quake2
+    except he carries an ion ripper rifle.<br>
+    <br>
+    <strong>Weapons and Ammo</strong><br>
+    - <em>Weapon_boomer</em> - Ion Ripper - Shoots an energy boomerang that ricochets around
+    corners.<br>
+    - <em>Weapon_phalanx</em> - Phalanx - High powered enrgy weapon.<br>
+    - <em>Ammo_magslug</em> - Ammunition for the Phalanx Cannon<br>
+    - <em>Ammo_trap</em> - Creates a vortex that sucks enemies in and turns them into power
+    cubes that you can use.<br>
+    <br>
+    <strong>Items</strong><br>
+    - <em>Item_quadfire</em> - Increases the firing rate of all your weapons.<br>
+    - <em>Rotating_light</em> - Like a red police dome.<br>
+    - <em>Target_mal_laser</em> - Same as the Quake2 laser entity but it flashes on and off.<br>
+    <br>
+    <strong>Misc. Items</strong><br>
+    - <em>Misc_amb4</em> - Ambient sound effect<br>
+    - <em>Misc_nuke</em> - Kills everything on a level (including yourself). Good when you
+    know you're going to die and want to take everyone with you or as used in the Mission Pack
+    a self destruct device where you have to get out quick.<br>
+    - <em>Misc_transport</em> - This is the HUGE transport ship at the end of the Mission
+    Pack. It has to be triggered and targeted to a path corner to be visible.<br>
+    - <em>Misc_crash_viper</em> - Works the same as the Big Viper in Quake2<br>
+    - <em>Misc_viper_missle</em> - Supposed work like the viper bomb but instead it acts like
+    a missile.</li>
+</ul>
+
+<table width="75%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td><strong><font color="White">Misc Questions</font></strong></td>
+  </tr>
+</table>
+
+<ul>
+  <li><em><strong>What's the best editor? </strong></em><br>
+    Simply put...there is <strong>no</strong> best editor! While all of the editors have their
+    own advantages/disadvantages, they all pretty much do the same thing. Check out the links
+    page here to get a listing of the editors available and simply start playing with them.
+    You're going to probably spend many hours in front of an editor, so it pays to compare
+    them on your own and see which one fits your editing needs and abilities. </li>
+</ul>
+
+<ul>
+  <li><em><strong>Since I've started Quake2 editing, I've lost every second of the day to
+    editing. My wife left me, the dog has run away, and I no longer have any friends
+    (although, I think the QBSP compiler is starting to like me). What should I do? </strong></em><br>
+    Be aware that to really make good maps, you're probably going to have to put in some
+    serious time! Of course, it's only a game and you <strong>CAN</strong> have a life if you
+    work at it...otherwise, buy a cat or goldfish since they tend to be less dependent on you
+    for survival. </li>
+</ul>
+
+<table width="75%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td><strong><font color="White">Copyright Crap</font></strong></td>
+  </tr>
+</table>
+
+<table width="75%" border="1" cellspacing="0" cellpadding="0" bgcolor="#DDDDDD"
+bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+  <tr>
+    <td class="footer">HTML Design, original concept of rust by <a
+    href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> rust is © 1998 by <a
+    href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a
+    href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake and Quake2
+    are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>.
+    Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. All
+    rights reserved. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>.
+    The comments contained in this document are not representative of rust or anyone who
+    affiliated with rust unless specifically stated.<br>
+    <br>
+    </td>
+  </tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>
+<!--webbot bot="HTMLMarkup" startspan TAG="XBOT" --></SCRIPT><!--webbot bot="HTMLMarkup" endspan
+-->

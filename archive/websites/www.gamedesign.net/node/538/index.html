@@ -1,0 +1,896 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Sentry Tutorial - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/34">FAQ</a></li><li class="collapsed"><a href="node/36">Updates</a></li><li class="collapsed"><a href="node/929">Half-Life 1 Mod List</a></li><li class="collapsed"><a href="node/33">Entity Properties</a></li><li class="expanded"><a href="node/35">Half-Life 1 Tutorials</a><ul><li class="leaf"><a href="node/194">Big Block Method of Error Finding</a></li><li class="leaf"><a href="node/3">Chairs, Scientists and Barneys</a></li><li class="leaf"><a href="node/290">Code Locks</a></li><li class="leaf"><a href="node/831">Creating an Overview</a></li><li class="leaf"><a href="node/9">Creating Environment Maps With Terragen</a></li><li class="leaf"><a href="node/6">Creating Proximity Doors</a></li><li class="leaf"><a href="node/5">Customizing the lights.rad File</a></li><li class="leaf"><a href="node/596">Dimensions</a></li><li class="leaf"><a href="node/8">How to Make a Sphere in Worldcraft</a></li><li class="leaf"><a href="node/196">How to make respawnable glass</a></li><li class="leaf"><a href="node/4">Making a Custom Console Background</a></li><li class="leaf"><a href="node/539">Making New Buttons for Your MOD</a></li><li class="leaf"><a href="node/1046">R_speeds</a></li><li class="leaf"><a href="node/541">Sentry continued: adding Sentry-parts box and hud-icon</a></li><li class="leaf"><a href="node/538" class="active">Sentry Tutorial</a></li><li class="leaf"><a href="node/558">Skies</a></li><li class="leaf"><a href="node/613">Skies (2)</a></li><li class="leaf"><a href="node/687">Sprites</a></li><li class="leaf"><a href="node/7">Taming the Speaker Entity</a></li><li class="leaf"><a href="node/267">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/303">Ways to Prevent Leaks</a></li><li class="collapsed"><a href="node/628">WorldCraft/Hammer 3.4 Editing</a></li></ul></li><li class="collapsed"><a href="node/1084">Day of Defeat Tutorials</a></li><li class="leaf"><a href="node/1023">Modelling</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/538" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 50%;" class="foreground"></div></div><div class="percent">50%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 25%;" class="foreground"></div></div><div class="percent">25%</div><div class="total">Total votes: 8</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2385">mekiboz.cn</a></li><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8457" title="View user profile.">x465735</a></li><li><a href="user/8456" title="View user profile.">Fordghjk</a></li><li><a href="user/8455" title="View user profile.">x0ef4b1</a></li><li><a href="user/8454" title="View user profile.">ttsyu</a></li><li><a href="user/8453" title="View user profile.">x759eb7</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 18 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Sentry Tutorial</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/921" title="">Half-Life</a> &raquo; <a href="node/35">Half-Life 1 Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/95" title="View user profile.">Cheesemonster</a> on Mon, 2004-08-09 22:50.</div>
+<!-- by Cheesemonster (http://rcbot.bots-united.com/emailuser.php?u=1) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>Sentry Tutorial</b> by <a href="http://rcbot.bots-united.com/emailuser.php?u=1">Cheesemonster</a> .
+</blockquote>
+
+<h3>Introduction</h3>
+
+<p>This is a simple "Make you own sentry" tutorial, at the moment I haven't bothered about animations (it's just a CBaseEntity at the moment, not a CBaseMonster) so It looks quite simplistic, but you'll get the idea on how to set their animations once you get your own model for your own sentry.</p>
+
+<p>There isn't MUCH explanation here, so just remember the Sentry is pretty basic, so you will be okay!</p>
+
+<p>This tutorial is for a team multiplayer game, where the sentry will have its own Team name and will shoot players whose team doesn't match it's own (Hopefully!). I haven't tested all of this because I made my own sentry with a different name and fought different enemies so I had to change that, and don't know if everything will work okay.</p>
+
+<p>The final sentry will look and work something like the sentries in TFC that the engineers build, we are going to have a phase when a player builds the sentry and can give it ammo and rockets.</p>
+
+<p>Another addition to this is another tutorial that I done, which will allow you only to build a sentry when you pick up "sentry parts", when you have the sentry parts a Hud icon will show aswell. The sentry-parts tutorial is a follow-up from this one.
+
+<hr noshade color="black">
+
+<h3>Setting up UTIL functions</h3>
+
+<p>I've made my own UTIL functions to help with this, these are useful functions that will be used later. To make them, you will need to go into "UTIL.H" file and add these lines first for the function prototypes...</p>
+
+<font color="red"><pre>
+Vector UTIL_RelationToWorld(edict_t *player, Vector relation);
+Vector UTIL_LengthFromVector(Vector relation, float length);
+Vector UTIL_FixAngles( Vector vec );
+float UTIL_FixFloatAngle(float vec);
+</pre></font>
+
+<p>Now open "UTIL.CPP" and add these functions...</p>
+
+<font color="red"><pre>
+Vector UTIL_FixAngles( Vector vec )
+{
+	vec.x = UTIL_FixFloatAngle(vec.x);
+	vec.y = UTIL_FixFloatAngle(vec.y);
+	vec.z = UTIL_FixFloatAngle(vec.z);
+
+	return vec;
+}
+
+float UTIL_FixFloatAngle(float vec)
+{
+	if (vec > 180.0) vec -= 360.0;	
+	if (vec < -180.0) vec += 360.0;
+
+	return vec;
+}
+
+Vector UTIL_RelationToWorld(edict_t *player, Vector relation)
+{
+	if( !player )
+		return Vector(0,0,0);
+
+	Vector v_src,v_dest,v_forward,v_viewpoint,v_origin;
+	
+	v_origin = player->v.origin;	
+	v_src = v_origin + player->v.view_ofs;
+	
+	v_viewpoint = player->v.v_angle + player->v.punchangle;	
+	UTIL_MakeVectors(v_viewpoint);	
+	v_forward = v_viewpoint + (relation * 8192.0);	
+	v_dest = v_src + v_forward;
+
+	return v_dest;
+}
+
+Vector UTIL_LengthFromVector(Vector relation, float length)
+{
+	return ( (relation / relation.Length()) * length );
+}
+</pre></font>
+
+<h3>Setting up the sentry code</h3>
+
+<p>For the sentry, make a new file called "MySentry.cpp" or whatever you want and add it to your project.</p>
+
+<p>Note: All of this code is in order from start of the file to the end of the file.</p>
+
+<p>Okay for the start of the sentry code we need some included files to use, these are the ones we need below:</p>
+
+<font color="red"><pre>
+#include "extdll.h"
+#include "util.h"
+#include "cbase.h"
+#include "weapons.h"
+#include "player.h"
+#include "gamerules.h"
+#include "explode.h" // for effects
+#include "teamplay_gamerules.h" // for knowing teams
+</pre></font>
+
+<h4>Constants</h4>
+
+<p>Next, we want to set some constants that might come in useful...</p>
+
+<font color="red"><pre>
+#define SENTRY_MAX_PITCH 10.0
+</pre></font>
+
+<p>This is the maximum angle the sentry will look up and down, you can change this totally if you want, because I've just been using pev->angle to make it easier but when you change the pev->angle.x to a high value, the sentry looks weird!</p>
+
+<p>Now we need some more constants, such as fire rates and maximum amount of shells/rockets this Sentry can have...</p>
+
+<font color="red"><pre>
+#define SHOOT_ROCKET_TIME 2.0
+#define SHOOT_SHELL_TIME 0.1
+
+#define SENTRY_MAX_SHELLS  400
+#define SENTRY_MAX_ROCKETS 50
+</pre></font>
+
+<p>Okay that's nearly all of the constants, we just need one more. I've added "build" functions to my sentry so this means it will take SENTRY_BUILD_TIME seconds for it to finish being built and start working. This is defined like this below:</p>
+
+<font color="red"><pre>
+#define SENTRY_BUILD_TIME  4.0 // 4 Seconds to build sentry
+</pre></font>
+
+<h4>Sentry Class</h4>
+
+<p>Right now that's all the constants we need, let's get into the grips of the sentry class. As you'd probably know, we need our own Precache() and Spawn() function. I've also added my own Think functions for different events such as Build, Aim/Shoot, and when Killed, remember that your own Think/Touch/Use functions (etc.) should be set if you want to use them (By using SetThink(FUNCTION) for example).</p>
+
+<font color="red"><pre>
+class CMySentry : public CBaseEntity
+{
+public:
+	void Spawn		( void );
+	void Precache	( void );
+
+	int AddShells  ( int l_iNewShells );  // Returns the amount of shells USED...
+	int AddRockets ( int l_iNewRockets ); // Returns the amount of rockets USED...
+
+	void EXPORT SentryThink	( void );
+	void EXPORT SentryBuildThink( void );
+
+	void EXPORT MySentryDeath ( void );
+
+	void Dismantle ( void );
+
+	virtual int TakeDamage(entvars_t *pevInflictor, entvars_t *pevAttacker, float flDamage, int bitsDamageType);
+
+private:
+
+	void Aim		( void );
+	void Shoot		( void );
+	void FireShell	( void );
+	void FireRocket	( void );
+
+	void RemoveFromPlayer ( void );
+
+	CBaseEntity *GetBestEnemy ( void );
+
+	int m_iRockets;
+	int m_iShells;
+
+	float m_fLastShootRocket;
+	float m_fLastShootShell;
+
+	float m_fLastAimTime;
+
+	float m_fShellPercentFull;
+	float m_fRocketPercentFull;
+
+	float m_fBuildTime; // Time the sentry was BUILT...
+
+	float m_fLastCheckVisibleEnemy; // Last checked to see if enemy was visible
+
+	char m_szTeamName[MAX_TEAMNAME_LENGTH];
+
+	CBaseEntity *m_pEnemy; // Current enemy
+
+	Vector m_vBarrel; // Barrel position (gun point) NOT USED!
+};
+</pre></font>
+
+<h4>Classname link</h4>
+
+<p>Don't forget this bit below!</p>
+
+<font color="red"><pre>
+LINK_ENTITY_TO_CLASS( MySentry, CMySentry );
+</pre></font>
+
+<p>This makes the class (CMySentry) link to the classname of "MySentry" you can change this to whatever you want.</p>
+
+<h4>Sentry Class Methods</h4>
+
+<p>Now here comes the BuildThink() function, this is continously called while the Sentry is being built. All this function will do is wait until the SENTRY_BUILD_TIME is up, and make the sentry visible (as it was invisible whilst building because we set that in ::Spawn() )</p>
+
+<font color="red"><pre>
+void CMySentry :: SentryBuildThink( void )
+{
+	pev->nextthink = gpGlobals->time + 0.1;
+
+	if( (m_fBuildTime + SENTRY_BUILD_TIME) <= gpGlobals->time )
+	{
+		EMIT_SOUND(ENT(pev), CHAN_BODY, "turret/tu_spinup.wav", 1.0, ATTN_NORM); // Spin up sound (when built)
+
+		pev->effects &= ~EF_NODRAW; // Make visible again
+
+		SetThink(SentryThink); // Change think function to normal sentry think function
+	}
+}
+</pre></font>
+
+<p>This is the main think function below. What this does is basically checks if the current enemy is still visible, if yes, aim and shoot at it, if not remove the enemy.</p>
+
+<font color="red"><pre>
+void CMySentry :: SentryThink ( void )
+{
+	pev->nextthink = gpGlobals->time + 0.1;
+	
+// BEGIN -- UPDATE BARREL POSITION (NOT USED!!)
+
+	UTIL_MakeVectors(pev->angles);
+
+	Vector v_End = UTIL_RelationToWorld(ENT(pev),gpGlobals->v_forward);
+	m_vBarrel = UTIL_LengthFromVector((v_End - pev->origin),4);
+	m_vBarrel.z += 32;
+
+// END -- UPDATE BARREL POSITION (NOT USED!!)
+
+	if( m_pEnemy && (m_fLastCheckVisibleEnemy <= gpGlobals->time) )
+	{
+		TraceResult tr;
+
+		UTIL_TraceLine(pev->origin,m_pEnemy->pev->origin + m_pEnemy->pev->view_ofs,ignore_monsters,ENT(pev),&tr);
+
+		if( tr.flFraction < 1.0 )
+			m_pEnemy = NULL;
+
+		m_fLastCheckVisibleEnemy = gpGlobals->time + 0.5; // Re-check visible enemy again in 0.5 seconds
+	}
+
+	if( (m_fLastAimTime + 0.2) <= gpGlobals->time ) // re-Aim every  0.2 seconds
+	{
+		m_fLastAimTime = gpGlobals->time;
+		Aim(); // Aim at Nearest Enemy
+	}
+
+	if ( m_pEnemy ) // if got an enemy
+	{
+		if( m_pEnemy->IsAlive() )
+			Shoot(); // Shoot Enemy (Should be facing enemy from Aim() )
+		else
+			m_pEnemy = NULL;
+	}	
+}
+</pre></font>
+
+<p>Next should be the spawn function, this is where we initialise stuff and call ONLY call Precache() here. Also the sentry is set to invisible (using EF_NODRAW bitset) and the Think function is set to the BuildThink function so it will wait SENTRY_BUILD_TIME before functioning and returining visible to the player. (See the BuildThink function explanation)</p>
+
+<font color="red"><pre>
+void CMySentry :: Spawn ( void )
+{
+	Precache( );
+
+	pev->movetype = MOVETYPE_FLY;
+	pev->health = 100;
+	pev->max_health = pev->health;
+	pev->armorvalue = 100;
+
+	m_iRockets = SENTRY_MAX_ROCKETS / 2; // 
+	m_iShells = SENTRY_MAX_SHELLS / 2;
+
+	pev->gravity = 1;
+
+	SET_MODEL(ENT(pev), "models/MySentry.mdl"); // the name of the model YOU want to use.
+
+	UTIL_SetOrigin( pev, pev->origin );
+	
+	UTIL_SetSize(pev, Vector(-24, -24, -20), Vector(24, 24, 20));
+
+	pev->nextthink		= gpGlobals->time + 0.1;
+	pev->movetype		= MOVETYPE_FLY;
+	pev->sequence		= 0;
+	pev->frame			= 0;
+	pev->solid			= SOLID_SLIDEBOX;
+	pev->takedamage		= DAMAGE_AIM;
+
+	SetBits (pev->flags, FL_MONSTER);
+
+	m_fBuildTime = gpGlobals->time + 0.1;
+	
+	pev->effects |= EF_NODRAW;
+
+	if( pev->owner )
+      {
+		if( pev->owner->v.flags & FL_CLIENT )
+			strcpy(m_szTeamName,GetClassPtr((CBasePlayer*)pev)->m_szTeamName); // Initialise the team ID of the sentry
+      }
+	else
+		strcpy(m_szTeamName,""); // Initialise the team ID of the sentry
+
+	EMIT_SOUND(ENT(pev), CHAN_BODY, "sentry/building.wav", 1.0, ATTN_NORM);	
+
+	SetThink(SentryBuildThink);
+}
+</pre></font>
+
+<p>The m_szTeamName string is the TeamName of the player who built it. Once the player builds the sentry, set the TeamName to the pev->owner's</p>
+
+<font color="red"><pre>
+void CMySentry :: Precache ( void )
+{
+	PRECACHE_MODEL("models/MySentry.mdl"); // The name of the model YOU want to use (NOTE: this MUST be the same as the model you set the sentry to)
+
+	PRECACHE_SOUND("turret/tu_fire1.wav");
+	
+	PRECACHE_SOUND("turret/tu_die.wav");
+	PRECACHE_SOUND("turret/tu_die2.wav");
+	PRECACHE_SOUND("turret/tu_die3.wav");
+
+	PRECACHE_SOUND("turret/tu_spinup.wav");
+
+	PRECACHE_SOUND("sentry/building.wav"); // Building sound
+}
+</pre></font>
+
+<p>We need the aim function to aim at its enemy so the rockets etc wikll face in the correct direction.</p>
+
+<font color="red"><pre>
+void CMySentry :: Aim ( void )
+{
+	if( m_pEnemy )
+	{
+		Vector v_Comp = (m_pEnemy->pev->origin + pev->view_ofs) - (pev->origin + pev->view_ofs);
+		Vector v_IdealAngles = UTIL_VecToAngles(v_Comp);
+
+		pev->angles = UTIL_FixAngles(v_IdealAngles);
+
+		pev->angles.x = -pev->angles.x; // Must invert pitch
+
+		pev->angles.z = 0;
+
+		if (pev->angles.x > SENTRY_MAX_PITCH) 
+			pev->angles.x = SENTRY_MAX_PITCH;
+
+		if( pev->angles.x < -SENTRY_MAX_PITCH)
+			pev->angles.x = -SENTRY_MAX_PITCH;		
+	}
+	else // Focus on one enemy at a time
+	{
+		m_pEnemy = GetBestEnemy();
+	}
+}
+</pre></font>
+
+<p>Simple function below is to get the best enemy. If The TeamNames don't match with a found enemy, it will set it as its enemy. This function is called by ::Aim()</p>
+
+<font color="red"><pre>
+CBaseEntity *CMySentry :: GetBestEnemy (void)
+{
+	CBaseEntity *l_pFoundEnemy = NULL;
+	CBaseEntity *l_pBestEnemy = NULL;
+	CBasePlayer *l_pFoundPlayer = NULL;
+
+	TraceResult tr;
+
+	float min_distance = 9999.0;
+	float distance = 0.0;
+
+	while ( (l_pFoundEnemy = UTIL_FindEntityByClassname( l_pFoundEnemy, "player")) != NULL )
+	{
+		if( !l_pFoundEnemy->IsAlive() )
+			continue;
+
+		if( l_pFoundEnemy->pev->flags & FL_CLIENT )
+		{
+			l_pFoundPlayer = GetClassPtr((CBasePlayer *)l_pFoundEnemy->pev);
+
+			if( strcmp(l_pFoundPlayer->m_szTeamName,m_szTeamName) ) // If this is an enemy
+			{
+				UTIL_TraceLine((pev->origin + pev->view_ofs),l_pFoundEnemy->pev->origin,ignore_monsters,dont_ignore_glass,pev->pContainingEntity,&tr);
+
+				if( tr.flFraction >= 1.0 )
+				{
+					distance = (l_pFoundPlayer->pev->origin - pev->origin).Length();
+
+					if( distance < min_distance )
+					{
+						min_distance = distance;
+
+						l_pBestEnemy = l_pFoundEnemy;
+					}
+				}
+			}
+		}		
+	}
+
+	return l_pBestEnemy;
+}
+</pre></font>
+
+<p>Now, The shoot function. This will check if it's time to fire another shell/rocket, and check if there is enough ammo, and then shoot a shell or rocket using FireRocket() and/or FireShell().</p>
+
+<font color="red"><pre>
+void CMySentry :: Shoot ( void )
+{
+	if( m_iRockets > 0 )
+	{
+		if( (m_fLastShootRocket + SHOOT_ROCKET_TIME) <= gpGlobals->time )
+		{				
+			m_fLastShootRocket = gpGlobals->time;
+
+			FireRocket();
+		}
+	}
+	
+	if( m_iShells > 0 )
+	{
+		if( (m_fLastShootShell + SHOOT_SHELL_TIME) <= gpGlobals->time )
+		{
+			m_fLastShootShell = gpGlobals->time;
+
+			FireShell();
+		}
+	}	
+}
+</pre></font>
+
+<p>The fire rocket and fire shell functions (below) should be pretty similar except a rocket or shell is fired in the facing direction.</p>
+
+<font color="red"><pre>
+void CMySentry :: FireRocket ( void )
+{
+	UTIL_MakeVectors(pev->angles);
+
+	CBaseEntity *m_Rocket = CBaseEntity::Create( "rpg_rocket", pev->origin, pev->angles, edict() );
+	
+	UTIL_SetOrigin(m_Rocket->pev,(pev->origin + m_vBarrel));
+	
+	UTIL_MakeVectors(m_Rocket->pev->angles);
+	m_Rocket->pev->angles = pev->angles;
+	
+	Vector v_Forward = UTIL_RelationToWorld(pev->pContainingEntity,gpGlobals->v_forward);
+	
+	m_Rocket->pev->velocity = ( (v_Forward - pev->origin) / (( v_Forward - pev->origin ).Length()) ) * 200.0;
+	
+	m_iRockets --;
+}
+
+void CMySentry :: FireShell ( void )
+{
+	TraceResult tr;
+
+	UTIL_MakeVectors( pev->angles );
+	Vector vecSrc = pev->origin + pev->view_ofs;
+	Vector vecDir = gpGlobals->v_forward * 8192.0;
+
+	UTIL_TraceLine(vecSrc, vecSrc + vecDir, dont_ignore_monsters, ENT(pev), &tr);
+
+	//if( tr.pHit )
+	//	ALERT(at_console,"%s\n",STRING(tr.pHit->v.classname));
+
+	FireBullets(1,vecSrc,vecSrc + vecDir,VECTOR_CONE_3DEGREES,4096.0,BULLET_MONSTER_12MM,4,5,pev);
+
+	EMIT_SOUND(ENT(pev),CHAN_BODY,"turret/tu_fire1.wav",1.0,ATTN_NORM); // Emit turret shoot sound
+
+	m_iShells --; // reduce shells
+}
+</pre></font>
+
+<p>Your own Take Damage function. You'll need this to add shells/rockets to it at a later time.</p>
+
+<font color="red"><pre>
+int CMySentry::TakeDamage(entvars_t *pevInflictor, entvars_t *pevAttacker, float flDamage, int bitsDamageType)
+{
+	if ( !pev->takedamage )
+		return 0;
+
+	if ( pev->owner && (pev->Attacker == &pev->owner->v))
+      {
+          // Do stuff in here to add shells/rockets from the player perhaps...
+
+         if( CVAR_GET_FLOAT("mp_friendlyfire") < 1.0 )
+           return;
+      }
+
+	pev->health -= flDamage; // Remove this damage
+
+	if (pev->health <= 0)
+	{
+		pev->health = 0; 
+		pev->takedamage = DAMAGE_NO; // Don't take anymore damage
+		pev->dmgtime = gpGlobals->time; // Set damage time
+
+		ClearBits (pev->flags, FL_MONSTER);
+
+		SetThink(MySentryDeath); // Change think funtion so I don't try to shoot etc.
+
+		pev->nextthink = gpGlobals->time + 0.1; // Think again in 0.1 seconds
+
+		return 0;
+	}
+	else
+	{
+		if (RANDOM_FLOAT( 0, 10 ) > 5)
+
+		UTIL_Sparks( pev->origin );   // Some Sparks
+	}
+
+	return 1;
+}
+</pre></font>
+
+<p>This death function is continously called while the sentry is "dying", give it a funky death! I took some code from the turret.cpp file and made the turret look as tho it malfunctions by setting the avelocity (angle velocity)/yaw angles to +/- randomly and the speed of the angle velocity will slow down after time. Also sparks and smoke will appear!</p>
+
+<font color="red"><pre>
+void CMySentry :: MySentryDeath ( void )
+{
+
+	pev->nextthink = gpGlobals->time + 0.1;
+
+	if (pev->deadflag != DEAD_DEAD)
+	{
+		pev->deadflag = DEAD_DEAD;
+
+		float flRndSound = RANDOM_FLOAT ( 0 , 1 );
+
+		if ( flRndSound <= 0.33 )
+			EMIT_SOUND(ENT(pev), CHAN_BODY, "turret/tu_die.wav", 1.0, ATTN_NORM);
+		else if ( flRndSound <= 0.66 )
+			EMIT_SOUND(ENT(pev), CHAN_BODY, "turret/tu_die2.wav", 1.0, ATTN_NORM);
+		else 
+			EMIT_SOUND(ENT(pev), CHAN_BODY, "turret/tu_die3.wav", 1.0, ATTN_NORM);
+
+		//EMIT_SOUND_DYN(ENT(pev), CHAN_STATIC, "turret/tu_active2.wav", 0, 0, SND_STOP, 100);
+
+
+		pev->solid = SOLID_NOT;
+
+	}
+
+	float f_time = (pev->dmgtime + 5) - gpGlobals->time;
+
+	if( f_time > 0.0 )
+	{
+		if( RANDOM_LONG( 0, 100 ) <= 50 )
+			pev->avelocity.y = f_time * 100;
+		else
+			pev->avelocity.y = -f_time * 100;
+	}
+	else
+		pev->avelocity.y = 0;
+
+	Vector vecSrc, vecAng;
+
+	vecSrc = pev->origin;
+
+	if (pev->dmgtime + RANDOM_FLOAT( 0, 2 ) > gpGlobals->time)
+	{
+		// lots of smoke
+		MESSAGE_BEGIN( MSG_BROADCAST, SVC_TEMPENTITY );
+			WRITE_BYTE( TE_SMOKE );
+			WRITE_COORD( vecSrc.x + RANDOM_FLOAT( -16, 16 ) );
+			WRITE_COORD( vecSrc.y + RANDOM_FLOAT( -16, 16 ) );
+			WRITE_COORD( vecSrc.z - 32 );
+			WRITE_SHORT( g_sModelIndexSmoke );
+			WRITE_BYTE( 15 ); // scale * 10
+			WRITE_BYTE( 8 ); // framerate
+		MESSAGE_END();
+	}
+	
+	if (pev->dmgtime + RANDOM_FLOAT( 0, 8 ) > gpGlobals->time)
+	{
+		UTIL_Sparks( vecSrc );
+	}
+
+	if ( (pev->dmgtime + 5) < gpGlobals->time)
+	{
+		ExplosionCreate(pev->origin,pev->angles,NULL,50,0);
+
+		RemoveFromPlayer();
+
+		Killed(pev,GIB_NEVER);
+
+		SetThink( NULL );
+	}
+}
+</pre></font>
+
+<p>I've made a dismantle function which just kills the sentry, and remove from player function which will set the m_Sentry in CBasePlayer to NULL.</p>
+
+<font color="red"><pre>
+void CMySentry :: Dismantle ( void )
+{
+	RemoveFromPlayer();
+
+	Killed(pev,GIB_NEVER);
+}
+
+void CMySentry :: RemoveFromPlayer ( void )
+{
+	if( pev->owner )
+	{
+		if( pev->owner->v.flags & FL_CLIENT )
+		{
+			CBasePlayer *pPlayer = GetClassPtr((CBasePlayer*)&pev->owner->v);
+			
+			pPlayer->m_Sentry = NULL;
+		}
+	}
+}
+</pre></font>
+
+<p>Now the adding shells and rockets...</p>
+
+<font color="red"><pre>
+//------------------------------
+// ADD ROCKETS / SHELLS
+//-----------------------------
+// Adds rockets/shells to the sentry and returns the difference from the new rockets/shells for use when taking rockets/shells from a player into the sentry
+
+int CMySentry :: AddShells  ( int l_iNewShells )
+{
+	int l_iOldShells = 0;
+
+	if( m_iShells == SENTRY_MAX_SHELLS )
+	{
+		return l_iOldShells;
+	}
+	else if ( (m_iShells + l_iNewShells) >= SENTRY_MAX_SHELLS )
+	{
+		l_iOldShells = SENTRY_MAX_SHELLS - m_iShells;
+
+		m_iShells = SENTRY_MAX_SHELLS;
+
+		return l_iOldShells;
+	}
+	else
+	{
+		m_iShells += l_iNewShells;
+
+		return l_iNewShells;
+	}
+
+	return 0;
+}
+
+int CMySentry :: AddRockets ( int l_iNewRockets )
+{
+	int l_iOldRockets = 0;
+
+	if( m_iRockets == SENTRY_MAX_ROCKETS )
+	{
+		return l_iOldRockets;
+	}
+	else if ( (m_iRockets + l_iNewRockets) >= SENTRY_MAX_ROCKETS )
+	{
+		l_iOldRockets = SENTRY_MAX_ROCKETS - m_iRockets;
+
+		m_iRockets = SENTRY_MAX_ROCKETS;
+
+		return l_iOldRockets;
+	}
+	else
+	{
+		m_iRockets += l_iNewRockets;
+
+		return l_iNewRockets;
+	}
+
+	return 0;
+}
+</pre></font>
+
+<p>Now that's all the sentry code. To build a sentry, open up CLIENT.CPP and look in the ClientCommand Function. You'll need to add your own command to build a sentry.</p>
+
+<p>Stick this code in between some client commands, You will also need to add a "CBaseEntity *m_Sentry" in Player.h in CBasePlayer, and set it to NULL when you spawn.</p>
+
+<font color="red"><pre>
+else if ( FStrEq(pcmd, "build_sentry" ) )
+{							
+	if( m_pPlayer->m_Sentry )
+	{
+		ClientPrint( &pEntity->v, HUD_PRINTCENTER, "Sentry Already Built!\n");
+	}
+	else
+	{
+		Vector origin = UTIL_ForwardPosition(pEntity,64.0);
+				
+		origin.z = m_pPlayer->pev->absmin.z + 24;
+				
+		CBaseEntity *Sentry = CBaseEntity::Create( "avp_sentry", origin, pev->angles, pEntity );
+				
+				
+		if( !FNullEnt(Sentry->edict()) )
+		{					
+			m_pPlayer->m_Sentry = Sentry;
+			Sentry->pev->owner = pEntity;
+					
+			ClientPrint( pev, HUD_PRINTCENTER, "Building Sentry...\n");
+					
+		}
+		else
+			ALERT(at_console,"Error allocating new edict for sentry!\n");	
+	}
+}
+</pre></font>
+
+<hr noshade color="black">
+
+<h3>Known Problems:</h3>
+
+<p>For some reason when the Sentry is built by the player, you can walk through the sentry and the shells don't seems to hit anything (The trace line doesn't seem to work) But it works okay when spawned by the map for some reason... although the rockets work okay.</p>
+
+<hr noshade color="black">
+
+<h3>Follow-ups</h3>
+
+      <font color=red>
+      <blockquote>
+      1. <a href="http://www.gamedesign.net/node/view/541">Adding Sentry Parts + Hud icon</a></br>
+      </blockquote>
+      </font>
+
+
+
+ <h3>Interesting Sentry Discussion on the RUST Forums:</h3>
+
+      <font color=red>
+      <blockquote>
+      1. <a href="http://forums.gamedesign.net/viewtopic.php?t=3702&start=0">Sentry Tutorial?</a></br>
+      </blockquote>
+      </font>
+     
+<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/541" title="View the previous page.">previous</a></div><div class="next"><a href="node/1084" title="View the next page.">next</a></div><div class="up"><a href="node/35" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Sentry continued: adding Sentry-parts box and hud-icon</div><div class="next">Day of Defeat Tutorials</div></div></div></div></div>
+
+<div class="links"><a href="book/print/538" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

@@ -1,0 +1,86 @@
+<html><head><title>Rope, Water and Waterfalls</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="875" name="875" class="book-h1">Rope, Water and Waterfalls</h1><!--
+Submitted by Andy 2004
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Rope, Water and Waterfalls - by Andy<br />
+Dripping water info, special thanks to 'yesukai'</blockquote>
+<p>
+<span style="font-weight: bold">ROPE</span><br />
+There are a few ways to make ROPE, but I have found the easiest way is to create a brush <span style="color: #ff0000">1</span> unit by <span style="color: #ff0000">1</span> unit in the 2D top (x/y) view. No need to do anything special to it just yet, but stretch it out to the desired length.
+</p><!--break-->
+<p>
+If you want to be able to walk up to the rope and begin to climb it, then it will have to be about <span style="color: #ff0000">66</span> units from floor level. Not much fun there, let's make it difficult and set it at about <span style="color: #ff0000">75</span> units from the floor, two things happen here. Firstly, your player will be able to walk under it, and secondly, they will have to jump to get on it.<br />
+Back to the rope. You should have a perfectly formed square block. Let's texture it.
+</p>
+<p>
+There are some textures that lend themselves to being ROPE, the main one I use is actually called that! <span style="color: #ff0000">ROPE</span> but the fun doesn't end there. If you apply the ROPE texture to your newly formed brush, then you will get what looks like a strange catapillar.<br />
+To make the ROPE more realistic, reduce the <span style="font-weight: bold">Y</span> Scale to about <span style="color: #ff0000">0.30</span> and it should start looking more ropey, if there is such a thing.
+</p>
+<p>
+Adjust the <span style="font-weight: bold">Rotation:</span> to around <span style="color: #ff0000">30</span> and that will make the ROPE spiral slightly. Just a few other things while we are at this, Click on the <span style="font-weight: bold">Justify:</span> buttons Left or Right, Bottom or Top, but whatever you do, don't click <span style="font-weight: bold">Fit:</span>, that makes the texture fit the brush, and might be Ok for doors, but is disasterous for ROPE.</p>
+<p>
+To make your ROPE climbable, you need to create another brush and assign it to the entity <span style="color: #ff0000">func_ladder</span> (If you turn the rope brush into a func_ladder, it wont show up when you compile, because there are no Render Modes with the ladder entity). The easiest way to do this is to copy the rope brush and extend it so that it is about a unit either side of the original textured rope brush. Select your new brush and move it away from the original rope brush and select <span style="font-weight: bold">To Entity</span>, choose func_ladder. Move your ladder brush back over the top of the rope brush. You now have a really good looking ROPE, with a ladder brush covering it. </p>
+<p>
+You might be wondering what the smallest unit is in Half-Life. Well it is half of one unit, because you can take your ROPE from the above example and use Vertex Manipulation to merge the corner verticies to create a little triangle that is half a unit in size. This shouldn't effect your texture, but you might like to tweak the rotation angle, or Scale again.<br />
+Side by side, there really isn't much difference.<br />
+</p>
+<p>
+<span style="font-weight: bold">What about swinging rope?</span><br />
+We know that you can't have two entities assigned to the same brush, so how are we going to get a rope to swing, and be climbable at the same time? Your guess is as good as mine.... They did it in OpFor so it should be easy? Well after hours of testing the <span style="color: #ff0000">func_pendulum</span> and reading everything to do with rope in HL, I couldn't do it. <span style="font-weight: bold">KingNic</span> came good and provided the answer:<br />
+<span style="font-style: italic">The ropes in Opposing force were a specially coded entity which used models to make the rope and had simple physics applied. You can't recreate the same effect in normal HL without coding.</span>
+</p>
+<p>
+<span style="font-weight: bold">WATER</span><br />
+Water type textures in HL begin with the <span style="color: #ff0000">!</span> symbol. To have a look at all the available water textures just open the texture browser and type <span style="color: #ff0000">!</span> in the <span style="font-weight: bold">Filter</span> box. You should be presented with about 40 different textures. While we are on the subject, here are the basic meanings behind the preface symbols for textures:
+</p>
+<blockquote>
+<span style="color: #ff0000">{ </span>&nbsp;&nbsp;&nbsp;&nbsp; Transparent<br />
+<span style="color: #ff0000">! </span>&nbsp;&nbsp;&nbsp;&nbsp; Water<br />
+<span style="color: #ff0000">~ </span>&nbsp;&nbsp;&nbsp;&nbsp; Light<br />
+<span style="color: #ff0000">+ </span>&nbsp;&nbsp;&nbsp;&nbsp; Animated<br />
+<span style="color: #ff0000">+A </span>&nbsp; Animated Toggle (Max 10 frames)<br />
+<span style="color: #ff0000">- </span>&nbsp;&nbsp;&nbsp;&nbsp; Random Tiling
+</blockquote>
+<p>
+To make water, just add water! sorry couldn't help myself. Build a brush the size and shape you want, and assign a water texture to the whole brush. That is the most basic way of acheiving water. But it wont do things that the water in Half-Life normally does. For instance, it wont react correctly to light, it won't have any animated wave height and it wont be very realistic. To fix this we need to tie the water brush to an entity.
+</p>
+<p>
+Get your brush the size and shape you want, and then assign it to the func_water entity. Select <span style="font-weight: bold">To Entity</span> and choose func_water.<br />
+Remember that when you add a water texture to a brush, after compiling, only the top face of the brush will actually show the texture, so make sure that the visable part of your brush is the top face, any sides that show will be opaque and look a little weird. Great, now we have a water brush. You will also find that if you have a large block of water, and a large wave height that you will have to stretch the <span style="color: #ff0000">X : Y</span> Scale of the texture otherwise it will look as though it is breaking up. <br />Let's have a look at the entity properties of func_water.
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/rope/rope_water.jpg" width="350" height="276" vspace="10" alt="Water 1" title="Water 1" />
+</center>
+<p>
+The most useful attribute of func_water is the <span style="font-weight: bold">Wave Height</span> propety. This is set by default to <span style="color: #ff0000">3.2</span> This is the same default as assigned by the <span style="font-weight: bold">Worldspawn, Map Properties</span> function. But the good thing about using the func_water properties, is that you can assign different wave heights to seperate brushes. There is no need to change any of the other properties, as the defaults will give you acceptable water.
+</p>
+<p>
+<span style="font-weight: bold">A Waterfall</span><br />
+Moving water is a different story. If you assign a water texture to a vertical func_water brush, it wont flow. Even if you assign a Scrolling texture to the brush it still wont flow. The only way I have found to make the water flow is to assign the brush to a <span style="color: #ff0000">func_conveyor</span> entity. The default speed on a func_conveyor is 100, and that might be a bit quick, I find that 50 to 70 seems Ok. The added bonus in using the func_conveyour is that you can set it's Flag Property to Not Solid and that will allow you to walk through your waterfall.
+</p>
+<p>
+To make it more realistic change the Render Mode to <span style="color: #ff0000">Texture</span> and the FX Amount to <span style="color: #ff0000">255</span>. It will still look a bit block like, so you can then select all the func_conveyor brushes and give them the { Blue texture. This will make them transpearent with the Render Mode settings mentioned above. Now for the water texture, select only the front faces of the water and assign the scrolling texture to them. In the example map I used the Xen Scrolling water texture <span style="color: #ff0000">SCROLLXEN1</span>.
+</p>
+<p>
+I have also done a bit of the good 'ol Vertex Manipulation to to top brush so that it looks a bit more realistic. I added an Ambient_Generic and assigned the <span style="color: #ff0000">ambience/waterfall3.wav</span> sound to it. OK, so it doesn't look like real water, but it is as close as you are going to get in HL.<br /> 
+If your water isn't flowing the way you want it to, adjust your textures rotation. Best advice I can give on this is to highlight the face of the texture with the Texure tool open. Notice that on the face of the texture (3D view) in the center there are three arms of an indicator Yellow, Blue and Red. If you change the Rotation of the texture until the Yellow arm is facing the direction you want the texture to scroll then it will scroll that way after compiling.
+</p>
+<p>
+<span style="font-weight: bold">Dripping Water</span><br />
+Dripping water is really easy to create, the main idea I follow comes from <span style="font-style: italic">Jeff 'Yesukai' Pritchard</span> who suggests using an <span style="color: #ff0000">evn_blood</span> to create the effect. Place an env_blood in your map and change it's attributes: <span style="font-weight: bold">Name</span>, I creatively called mine Drip.<br /> 
+Pitch Roll Yaw (Y Z X) to <span style="color: #ff0000">90 0 0</span> or Down, and the <span style="font-weight: bold">Amount of blood (damage to simulate)</span> to <span style="color: #ff0000">1</span>. In the Flag Properties, Check Blood Stream
+</p>
+<p> 
+Next we need a multi_manager. Assign the multi_manager a <span style="font-weight: bold">Name</span> and enter new Key value for Drip and the Name of your multi_manager (so that it reactivates itself), set the values of these to something like <span style="color: #ff0000">0.8</span>. Don't forget to check the Multithreaded Flag. Now a trigger, I just used a trigger_auto to target the multi_manager as I figured that the drips might as well start with the map.
+</p>
+<center>
+<img src="content/half-life/tutorials/wchbasic/rope/rope_water2.jpg" width="450" height="337" alt="Rope 1" title="Rope 1" />
+</center>
+<hr />
+<center>I have added a small RMF to help you out:<br />
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/rope/rope.zip">Rope.zip</a>
+</center>
+<!--EOF@82--></body></html>

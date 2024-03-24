@@ -1,0 +1,299 @@
+<html><head><title>Info</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="621" name="621" class="book-h1">Info</h1><!-- Submitted by Andy  -->
+	 
+<A NAME="Top"><H3>Half-Life Info Entities</H3></A><BR> Originally written for <A HREF="http://www.cariad.co.za/twhl">TWHL</A> .
+
+<!--Start Description-->
+<B>
+<UL>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_bigmomma">Info_bigmomma</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_intermission">Info_intermission</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_landmark">Info_landmark</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_node">Info_node</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_node_air">Info_node_air</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_null">Info_null</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_coop">Info_player_coop</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_deathmatch">Info_player_deathmatch</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_start">Info_player_start</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_target">Info_target</A></li><BR>
+<LI><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_teleport_destination">Info_teleport_destination</A></li><BR>
+</UL></B>
+<hr noshade color="black">
+<!--Entity Description Start-->
+
+<a name="infor_bigmomma"><H3>info_bigmomma</H3></a>
+  <p>This entity allows you to setup a path for monster_bigmomma and get it to do specific sequences (a bit like a scripted_sequence) that relate to how the player interacts with the monster.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - Name of the info entity</p>
+   <p><b>Next node</b> - Next node in path.</p>
+   <p><b>Radius</b> - Deviation from the node or the amount that the Gonarch is allowed to stray.</p>
+   <p><b>Wait after approach</b> - Time spent at node.</p>
+  <p><b> Kill Target</b> - When the node is reached, this target will be removed from the game.</p>
+   <p><b>Fire on approach</b> - Target to activate on reaching the node.</p>
+   <p><b>Sequence on approach</b> - The name of a scripted_sequence to use after the Gonarch reaches this node.</p>
+   <p><b>Health on approach</b> - The amount of damage that that she must take before moving to this node.</p>
+   <p><b>Sequence before approach</b> - The name of a scripted_sequence to use before she approaches this node.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(1) Run to Node</font> - Determines whether the monster runs to the node.<br>
+  <font color=red>(2) Wait Indefinitely </font> - Causes the Gonarch to stay at this node. Also makes her invincible. 
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/624?PHPSESSID=b76518e91987df033f487c4c450db70b#monster_bigmomma">Monster_bigmomma</a><br><br>
+<b>Notes</b>:<br>
+None<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!--Next Entity-->
+
+<a name="info_intermission"><h3>info_intermission</h3></a>
+  <p>This acts as a camera view after the player has been killed in a deathmatch game. Instead of fading out, the dead player views an area assigned by you.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+ <p><b> Target</b> - Name of info_target to point camera at.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_target">Info_target</a><br><br>
+<b>Notes</b>:<br>
+  If, after death, nothing is done for 6 seconds, the players view will shift randomly to one of the info_intermission cameras placed in the level.<br>
+Several info_intermission's around the map targeting info_targets at High Combat likely areas will give 'Dead people' something to look at.<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!--Next Entity-->
+
+<a name="info_landmark"><H3>info_landmark</h3></a>
+  <p>In a level transition, this entity defines the same point in both maps, so that 
+the transition appears seamless.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The landmarks in both levels involved in the transition 
+  need the same name.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/625?PHPSESSID=b76518e91987df033f487c4c450db70b#trigger_changelevel">Trigger_changelevel</a><br>
+<a href="book/view/625?PHPSESSID=b76518e91987df033f487c4c450db70b#trigger_transition">Triger_transition</a><br><br>
+<b>Notes</b>:<br>
+None <br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+<!--Next Entity-->
+<a name="info_node">	<h3>info_node</h3></a>
+  <p>Info_nodes are essential for monsters who need to move under AI control. The engine draws a 'node graph' based on the positions of info_nodes in a map, and 
+monsters can then find the quickest route from point A to point B via the nodes..</p>
+<hr noshade color="gray" width=75%>
+<!--break-->
+<h3>Properties</h3>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_node_air">Info_node_air	</a><br><br>
+<b>Notes</b>:<br>
+  To check your info_node placement, compile the map and run it. From the console type <font color=red>impulse 197</font> and you should now see a glowing path of node tracks. This will show up any weak points in your placement and areas that may need more nodes.<br><br>
+General rule of thumb for info_node placement is to use lot's and keep them 24 to 48 units away from any brush.<br>
+ Place them in the middle of hallways, rather than at the edges.<br>
+Info_nodes can also be used to help monsters perform scripted_sequences.<br><br> To help monsters navigate to and from scripted_sequences, use info nodes. IE: If you want Barney to go through a door, place an info_node in the center of the doorway and then a trail of info_node's from Barney to the scripted_sequence.<br>
+There is a hard limit of 128 info_node's per map.<br>
+Monster_human_assasins require MORE info_nodes than other monsters.<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+
+<!-- Next Entity -->
+	 
+<a name="info_node_air"><h3>info_node_air</h3></a>
+  <p>Similar to info_node, this entity is specifically for flying monsters (such as 
+the monster_alien_controller).</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  None<br>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_node"">Info_node</a><br>
+<a href="book/view/624?PHPSESSID=b76518e91987df033f487c4c450db70b#monster_alien_controller">Monster_alien_controller</a><br><br>
+<b>Notes</b>:<br>
+None<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+
+<!-- Next Entity -->
+	 
+<a name="info_null"><h3>info_null</h3></a>
+  <p>The info_null entity was specifically designed to be the target of a spotlight.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+<p><b>Name</b> - Name to be targetted by the light_spot. </p>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/623?PHPSESSID=b76518e91987df033f487c4c450db70b#light_spot">Light_spot</a><br><br>
+<b>Notes</b>:<br>
+None <br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!-- Next Entity -->
+	 
+	<a name="info_player_coop"><h3>info_player_coop</h3></a>
+  <p>Sets spawn points for co-operative multiplayer maps.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Pitch Yaw Roll</b> - Sets the pitch (up / down), yaw (left / right) and 
+  roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to 
+  Yaw. The settings are not always (or not all) used.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2084) Not in Deathmatch</font> - If this flag is set on, the entity will not appear 
+  in deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_start">Info_player_start</a><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_deathmatch">Info_player_deathmatch</a><br><br>
+<b>Notes</b>:<br>
+None<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!-- Next Entity -->
+	 
+
+<a name="info_player_deathmatch">	<h3>info_player_deathmatch</h3></a>
+  <p>Defines player spawn positions for deathmatch games. If you want to run your map through the custom game menu, it must contain an info_player_deathmatch entity.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+<p><b>Pitch Yaw Roll</b> - Sets the pitch (up / down), yaw (left / right) and 
+  roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to 
+  Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is activated, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Master</b> - The name of a  multisource (or game_team_master) entity. A master must usually be active in 
+  order for the entity to work. Thus they act almost like an on/off switch, in   their simplest form, and like an AND gate in the case of the multisource.</p>
+<p><b>Animation Sequence</b> - Hammer 3.5 specific animation for viewing in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_coop">Info_player_coop</a><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_start">Info_player_start</a><br><br>
+<b>Notes</b>:<br>
+None<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!-- Next Entity -->
+	 
+<a name="info_player_start"><h3>info_player_start</h3></a>
+  <p>This entity defines the player starting point in single-player maps.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Pitch Yaw Roll</b> - Sets the pitch (up / down), yaw (left / right) and 
+  roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to 
+  Yaw. The settings are not always (or not all) used.</p>
+<p><b>Animation Sequence</b> - Hammer 3.5 specific animation for viewing in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2084) Not in Deathmatch</font> - If this flag is set on, the entity will not appear 
+  in deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_coop">Info_player_coop</a><br>
+<a href="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#info_player_deathmatch">Info_player_deathmatch</a><br><br>
+<b>Notes</b>:<br>
+  Try to place near the ground, as the player will drop from the entity origin to the floor. Also, make sure the info_player_start is clear of any obstacles,   or the player may be stuck at the start.<br>
+Maps without info_player_starts will still run, however the player will spawn at the center of the map as defimned by the "blue red yellow" axis arms in the 3D view.<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!-- Next Entity -->
+	 
+
+<a name="info_target">	<h3>info_target</h3></a>
+  <p>An info_target is used to provide static (non-moving) targets for entities like 
+trigger_camera and env_beam.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - Give this entity a name so it can do its job.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/618?PHPSESSID=b76518e91987df033f487c4c450db70b#env_beam">Env_beam</a><br>
+<a href="book/view/625?PHPSESSID=b76518e91987df033f487c4c450db70b#trigger_camera">Trigger_camera</a><br><br>
+<b>Notes</b>:<br>
+  For moving targets, use a func_train with Render Mode set to Texture, Render 
+  Amount set to 0, and the Not Solid flag enabled. Then target the func_train as 
+  you would the info_target.<br>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top</A>
+<hr noshade COLOR="black">
+<BR>
+
+<!-- Next Entity -->
+	 
+<a name="info_teleport_destination"><h3>info_teleport_destination</h3></a>
+  <p>Works in conjunction with trigger_teleport. This entity provides the 
+destination.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  None
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear 
+  in deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<B>Related Entities</B><br>
+<a href="book/view/625?PHPSESSID=b76518e91987df033f487c4c450db70b#trigger_teleport">Trigger_teleport</a><br><br>
+<b>Notes</b>:<br>
+None<br>
+<hr noshade COLOR="black">
+<p ALIGN=center><A HREF="book/view/621?PHPSESSID=b76518e91987df033f487c4c450db70b#Top">Top of Page</A>
+<hr noshade COLOR="black">
+<BR></body></html>

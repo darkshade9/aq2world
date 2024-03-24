@@ -1,0 +1,23 @@
+<html><head><title>Func_areaportal - 2 - Problems</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="242" name="242" class="book-h1">Func_areaportal - 2 - Problems</h1><H3>Func_areaportal - Problems</H3>
+<P>
+This tutorial was sent to rust by Joel Caesar. We'd like to thank him for helping us out.
+</P>
+<p>
+Some people have problems with the Areaportal entity in Quake 2. Usually, they can get an areaportal setup, and compiling correctly (no errors of the "doesn't touch two areas", or "touches more than two areas" variety). Still, the
+infamous hall of mirrors effect will appear. Sometimes it even appears on a previously working Areaportal, after you've added another.
+</p>
+<p>
+Here is a tip to put into your arsenal, to make more or less perfect areaportals. Actually, it's also a door design technique. You need to isolate the door. Completely. Take a look at the accomanying graphic. Here you see a door between two rooms. This could be a door between a room and a hallyway, or between two <b>DIFFERENT</b> hallways. Many people when creating an Areaportal,
+actually wind up putting the Areaportal touching two areas, say 1 and 2, but frequently put the areaportal within one of these areas. Therein lies the problem.
+</p>
+<p>
+An Areaportal, I find, has to be <b>BETWEEN</b> two areas, not part of either. Sometimes the HOM effect won't appear with just two portals, but when you have 6 or 7 (like on my map) it eventually happens. Create a box to contain your door. Cut out the hole for the door, being sure to leave some brush on all sides (except the walkway of course). When you create the door, be sure it won't touch the adjacent rooms, and is inset a little. Put the areaportal within the door. You can let it extend into the surrounding brush, but don't let it touch the void.
+</p>
+<p>
+That's it. I have yet to create a door using this technique, with an areaportal, and get the hall of mirrors effect. This works for anykind of door, even rotating ones, and multisegmented doors too. There may be those who say you don't need to do this exactly like this, and sometimes I think that's true, but I find this one so far, has worked 100% of the time for me.
+</p>
+<center><img src="http://www.gamedesign.net/miniwood/tutorials/images/ap.gif" width=214 height=522 border=0 alt=""></center>
+<P>
+Well anyways if you still don't understand please post your questions to the <a href="http://forums.gamedesign.net">Forums</a>.</P></body></html>

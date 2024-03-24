@@ -1,0 +1,107 @@
+<html><head><title>Prefabs and Monsters</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="653" name="653" class="book-h1">Prefabs and Monsters</h1><!--
+Submitted by Andy Oct 04 
+Updated Nov 04 
+Updated Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Prefabs and Monsters - by Andy</blockquote>
+<p>Now you should have a couple of rooms connected by a corridor with walls that look good and a little mood lighting. Remember the first level of Half-Life? Where you got to walk around and interact with the items in the rooms. Each of the areas was pretty much defined by what sort of additions were in the rooms such as desks, lamps or lab tables. Furniture is just as important as good lighting and texture, to give your level realism. <br /><!--break-->
+Most of the work in this tutorial will be done using the <span style="color: #ff0000">Object Bar</span> and inserting items that are already available.
+</p>
+<p>
+<span style="font-weight: bold">Prefab Objects</span>:<br />
+One of the simplest ways to add details is through the use of prefabs. Prefabs are prefabricated objects that are stored in libraries. Let's add a number of prefabs to this level from the prefab library.
+</p>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb5_1.jpg" align="right" height="337" width="154" vspace="20" hspace="8" alt="Image 1" title="Image 1"  /> 
+<ol>
+<li>Select <span style="color: #ff0000">Usable Objects</span> from the categories list, and <span style="color: #ff0000">File Cabinet,west</span> from the objects list (the use of entities in prefabs is a bit dated and sometimes pretty useless, as with this usable filing cabinet. If you want the draw to open, then all well and good, but you can't fit anything in it. One way around this is to change its properties to <span style="color: #ff0000">func_breakable</span> and set the properties to spawn something on break.)</li>
+<li>On the lower part of the <span style="color: #ff0000">Objects</span> dialog is the <span style="color: #ff0000">Insert original   prefab</span> button. Press this now.</li>
+<li>The prefab is now inserted in your room. Move it around the 2D views until you have it in a position you like. I have placed it in the first room, up against the wall. If you look at the example map you will see that the cabinet is about two units away from each wall but sitting on the floor. This will give it a more realistic lighting profile [and is good practice in cases where the object is not an entity - this way it won't split up the wall]. Move the cabinet hard up against the wall and look at the difference in shadow when you compile the map.</li>
+<li>I have inserted another filing cabinet, a trash can, a black chair and an old desk, north from the random objects category. Note that the trashcan needs to be transformed by <span style="color: #ff0000">270</span> on the <span style="color: #ff0000">Z</span> axis so that the push sign aligns with the room and I have also scaled it to<span style="color: #ff0000"> 0.7</span> on all axes. </li>
+</ol>
+<p>
+So now we have some things in our office, here are a few tips. The black chair created by the Prefab factory is a <span style="color: #ff0000">func_pushable</span> entity. If you leave it free in the room it can be pushed around. If you don't want it to move, then it's a good idea to select it and click <span style="color: #ff0000">to World</span>. By doing this you won't be able to push it and it won't make a moving sound every time you brush against it.
+</p>
+<img  src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb5_2.jpg" height="208" width="274" hspace="6" align="left" alt="Image 2" title="Image 2" />
+<p>
+In the second room I have added <span style="color: #ff0000">Modern shelves, south</span> and <span style="color: #ff0000">Metal shelves</span> (transformed <span style="color: #ff0000">180 Z</span> axis) from the random objects category. (The 'south' modern shelves are bound to a <span style="color: #ff0000">func_door</span> for some reason, so click <span style="color: #ff0000">to World</span> unless you actually want the shelves to act as a door.) The metal shelves have four boxes on them.<br />
+You can adjust the <span style="color: #ff0000">Spawn on Break</span> properties with the Map -&gt; <span style="color: #ff0000">Entity Report</span> by selecting the properties of each box. If you choose to spawn any item other than a weapon, ammo for instance, then you will find that if you break the box the ammo will fall through the shelf (<span style="font-style: italic">this is because there is no world entity below the box - it doesn't happen when you build the prefab yourself</span>).
+</p>
+<p>
+Have fun inserting prefabs. Just remember to check their properties as most of them are designed to function in one way or another. Practice transforming and scaling prefabs, so that they look right. What you're trying to achieve is playability balanced with good looks. There are numerous resource sites that have downloadable prefabs, but use caution and check them before putting them into your maps.
+</p>
+&nbsp;
+<hr />
+<!--Submitted by Andy Oct 04-->
+<p>
+<span style="font-weight: bold">Part 6: Monsters</span>:<br />
+If you take a look at the entity list you will see that there are lots of 'monster' entities. Now that you have created a simple map you probably want to know how to get it to interact with the player (or in other words, put in something to blow away). While it can be fun running around looking at great scenery and impressive detail, it becomes boring after a while. So this tutorial is a really basic guide to placing monster entities.
+</p>
+<p>
+First up, we are going to look at how a <span style="color: #ff0000">monster_barney</span> can make a map interesting. Use your entity tool to place a monster_barney in the second room. Leave all of his properties as default. Run the map, pick up the crowbar and go to Barney. First up try getting him to follow you into the other room with the <span style="color: #ff0000">Use</span> key. If that isn't successful give him whack on the forehead with the crowbar. Now run back into the other room. 
+</p>
+<p>
+A couple of things you have probably noticed already:<br />
+Getting him to follow you was like pulling teeth and then once you had banged him on the head, he pulled out his gun but didn't chase you. Main reason for this is that poor old Barney didn't know where to go.
+</p>
+<p>
+<span style="font-weight: bold">Info_node Placement</span><br />
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_infonodes.jpg" height="202" width="242" hspace="6" align="right" alt="Info Nodes" title="Info Nodes" /> Barney is one of the monster entities that will follow <span style="color: #ff0000">info_nodes</span> as well as <span style="color: #ff0000">path_corners</span>. To get Barney to chase you into the next room, he needs a map. Info_nodes provide Barney with a path to follow. Same as you would place a normal entity, place an info_node at the entrance to the corridor, one in the middle and one at the other end. Info_nodes are shown here as yellow squares.
+</p>
+<p>
+It doesn't matter how high of the ground you put them as the game engine always drops them down to 8 units off the floor; what does matter is where you put them. I have placed these nodes just 3 units from each corridor wall. This really isn't a good thing as it is better to place them a minimum of 24 units from walls or any other brush in your map. Included in the download is a small text file that was part of the original Wordcraft tutorials, which includes good information about placement. 
+</p>
+<p>
+If you compile the map now and talk to Barney with the Use key and move into the other room he should follow you down the corridor. If you hit him with the crowbar, he will draw his gun and come looking for you.<br /> (<span style="font-style: italic">Note: that info_nodes and path_corners are not interchangable: the former are used by all monsters that need to act on AI, and move dynamically, while the latter are used to specify movements - Barney will follow the path_corners until you bash him, and then he will rely on the info_nodes to hunt you down.</span>)
+</p>
+<span style="color: #ff0000">Info_air_nodes</span> work with flying monsters ie; <span style="color: #ff0000">monster_alien_controller</span>. 
+<p>
+<span style="font-weight: bold">Path_corners</span>:<br />
+You can get Barney to follow path_corner entities as though he was checking security. Just place one at each end of the corridor (In their properties name them <span style="color: #ff0000">p1</span> and <span style="color: #ff0000">p2</span> and set their <span style="color: #ff0000">next stop targets</span>. In this case p1 with a next stop of p2 and p2 with a next stop of p1). In Barney's properties, change his <span style="color: #ff0000">Target</span> to p1. If you compile the map now and don't move, Barney will be walking up and down the corridor. If you approach him, he will stop following the path_corners. All monsters do this to some extent.
+</p> 
+<p>
+<span style="color: #ff0000">Monster_scientists</span> behave in pretty much the same way and you can make them follow path_corners or info_nodes.
+</p>
+<p>
+<span style="color: #ff0000">Monster_human_grunts</span> behave slightly differently. First of all you don't really interact with them, you try to kill them. So the main thing is to decide if you want them to chase after the player. If so, info_node placement is important (<span style="font-style: italic">and reading the file included with the example map for this tutorial will save time</span>). A good coverage of info_nodes (maximum 128 visible at any point) within a room will make it impossible for the player to hide. The grunts will attack until killed, or you get capped, whichever is first. 
+</p>
+<p>
+<b>Monster Properties</b>:<br />
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_flags.jpg" height="141" width="235" hspace="8" vspace="8" align="left" alt="Flags" title="Flags" /> In the Flag properties, checking <span style="color: #ff0000"> WaitTillSeen</span> will make the monster stand there until the player sees him, then he will revert to his normal AI (This will not work if the monster is following path_corners). Checking <span style="color: #ff0000">Gag</span> will shut them up. This means that the player will not know they are around the corner.
+</p> 
+<p>
+Checking <span style="color: #ff0000">Prisoner</span> for any monster entity will stop the monster from attacking the player.
+</p> 
+&nbsp;
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_properties.jpg" height="167" width="235" hspace="8" vspace="8" align="left" alt="Properties" title="Properties" />
+<p>
+You can use monsters to activate or deactivate things by entering the name of the target you want to trigger in <span style="color: #ff0000">Trigger Target</span>. There are <span style="color: #ff0000">Trigger Conditions</span> that can be set and are pretty much self-explanatory (<span style="font-style: italic">Ok, well maybe not, it seems that some of the conditions are redundant. So test each one.</span>)
+</p>
+<p>
+One of the things that can be done is to trigger a <span style="color: #ff0000">monstermaker</span> entity. By using this trigger, the new monsters don't appear until the Trigger Condition is met. Monstermakers are a tutorial in their own right, there is so much you can do with them. If you try them out, just remember to change the <span style="color: #ff0000">Angle</span> of the entity so that the monsters it produces face the player or the info_node path when they appear. If you don't they will appear and end up looking at the walls, not doing much until the player attacks.
+</p>
+<p>
+I have included a test room map to show how info nodes, Trigger Conditions and monstermaker entities work. Kill the first <span style="color: #ff0000">monster_houndeye</span> and watch the fun start. 
+</p>
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6_houndeye.jpg" height="209" width="279" alt="Houndeye" title="Houndeye" />
+</center>
+<p>
+One last note: There are so many things you can do with monsters. Some of them can be used in conjunction with <span style="color: #ff0000">scripted_sequences</span> and <span style="color: #ff0000">aiscripted_sequences</span> which is outside the scope of this tutorial, but set up a test map, and check out what the different flags and properties of monsters do. It pays to be in God Mode when working with monsters. Remember that monsters that wait to get shot at are boring so get them to do something! And also, too many monsters can ruin the pace of play.
+</p>
+&nbsp;
+<hr />
+<center>
+Downloads :
+</center><br />
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb5.zip"><span style="text-decoration: none">Getting Started Final Map</span></a>
+</center><br />
+<center>
+<a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/itb6.zip"><span style="text-decoration: none">The Monster Map</span></a>
+</center>
+<br />
+<hr />
+<!--EOF@107--></body></html>

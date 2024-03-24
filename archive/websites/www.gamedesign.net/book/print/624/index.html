@@ -1,0 +1,3175 @@
+<html><head><title>Monster</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="624" name="624" class="book-h1">Monster</h1><!-- Submitted by Andy 2004 -->
+<a name="Top"><h3>Half-Life Monster Entities</h3></a>
+<!-- Start description -->
+<p><b>
+<ul>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_alien_controller">Monster_alien_controller</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_alien_grunt">Monster_alien_grunt</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_alien_slave">Monster_alien_slave</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_apache">Monster_apache</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_babycrab">Monster_babycrab</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_barnacle">Monster_barnacle</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_barney">Monster_barney</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_barney_dead">Monster_barney_dead</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_bigmomma">Monster_bigmomma</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_bloater">Monster_bloater</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_bullchicken">Monster_bullchicken</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_cockroach">Monster_cockroach</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_flyer_flock">Monster_flyer_flock</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_furniture">Monster_furniture</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_gargantua">Monster_gargantua</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_generic">Monster_generic</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_gman">Monster_gman</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_grunt_repel">Monster_grunt_repel</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_handgrenade">Monster_handgrenade</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_headcrab">Monster_headcrab</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_hevsuit_dead">Monster_hevsuit_dead</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_hgrunt_dead">Monster_hgrunt_dead</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_human_assassin">Monster_human_assassin</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_human_grunt">Monster_human_grunt</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_ichthyosaur">Monster_ichthyosaur</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_leech">Monster_leech</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_miniturret">Monster_miniturret</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_nihlanth">Monster_nihlanth</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_osprey">Monster_osprey</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_rat">Monster_rat</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_satchelcharge">Monster_satchelcharge</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_scientist">Monster_scientist</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_scientist_dead">Monster_scientist_dead</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_sentry">Monster_sentry</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_sitting_scientist">Monster_sitting_scientist</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_snark">Monster_snark</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_tentacle">Monster_tentacle</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_tripmine">Monster_tripmine</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_turret">Monster_turret</a></li>
+<li><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#monster_zombie">Monster_zombie</a></li>
+<br></ul></b>
+</p>
+<hr noshade color="black">
+<!--Next Entity-->
+<br><br> 
+<a name="monster_alien_controller"><h3>monster_alien_controller</h3></a>
+  <p>Spawns a flying fire-throwing thing with a big head. These crafty little blighters hover using info_node_air.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/alien_controller.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a seperate Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+ <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>:  When checked, the monster won't say anything, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/621?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#info_node_air">Info_node_air</a><br><br>
+<b>Notes:</b><br>
+  To get these little critters flying, you will need a lot of info_node_air placed in the map. <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_alien_grunt"><h3>monster_alien_grunt</h3></a>
+  <p>Spawns a solid hornet shooting monster.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/alien_grunt.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> - Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+ <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Squad Name</b> - Not sure if this is enabled? but you should be able to select a Squad Leader</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+<font color=red>(32) Squad Leader</font>: Enables this monster as the Squad leader.<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  Incredible fire power when deployed in packs. Difficult to kill and the 'Hornets' they fire are very annoying.<BR>
+Not sure, but since it has a Squad Leader Flag, it might pay to try it out.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_alien_slave"><h3>monster_alien_slave</h3></a>
+  <p>Spawns one of those pesky electric slaves.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/alien_slave.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+ <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Squad Name</b> - Allows you to choose a Squad name for use with the Squad leader Flag.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(32) Squad Leader</font>: Appoint a Squad leader for a 'Named' squad.<br>
+ <font color=red>(64) Ignore Player</font>: Not sure if this is implemented.<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  The FGD calls this thing a Vortigaunt. Very powerful in packs.<BR>
+Give the Squad Leader Falg a try.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_apache"><h3>monster_apache</h3></a>
+  <p>Spawns the Apache attack helicopter</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/apache.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, this Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+ <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>:  When checked, the monster won't say anything, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+  <font color=red>(8) No Wreckage</font>: When the Apache is shot down, No wreckage gibs are shown.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red> (64) Start Inactive</font>: Places the apache in hover mode and requires triggering<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+The apache folows path_corners, The flight path between the corners is predetermined by their placement, unlike the Osprey. Pitch, Roll and Yaw settings of the path_corners is limited, but does enhance flight.. <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_babycrab"><h3>monster_babycrab</h3></a>
+  <p>This has to be one of the most annoying creatures in the game. It's the offspring of a Big Momma.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/babycrab.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for targeting.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+ <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>:  When checked, the monster won't say anything, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>:  Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  Everytime Bigmomma is around, you can expect these little nasties. Add a bit of suspense by nesting them somewhere. <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_barnacle"><h3>monster_barnacle</h3></a>
+  <p>Spawns one of those red things that sits on the ceiling, dangle's it's sticky rope and eats brains.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/barnacle.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+<p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+   None listed
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+When the map loads, the barnacle will extend it's 'tongue' until it hits another brush (floor, table etc,).  This takes a while so It isn't a good idea to place barnacles at the entrance of a map. Leave them sufficient time to extend.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_barney"><h3>monster_barney</h3></a>
+  <p>Spawns Barney our loveable character in Blue.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/barney.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>Use Sentence</b> - When the Player "uses" Barney to follow, he will speak this sentence.</p>
+  <p><b>Un-Use Sentence</b> - If the Player "uses" Barney a second time, indicating "Don't Follow" he will speak this sentence.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font> When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Barney is very useful, Not only will he attack a massive force of opponents without fear, he seems to fair well in the battle. Get the most from your Barney's  by understanding scripted_sentences and scripted_sequences.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_barney_dead"><h3>monster_barney_dead</h3></a>
+  <p>Spawns a dead Barney in one of 3 poses.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/barney_dead.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Pose</b> - Options</p>
+<blockquote>
+<font color=red>- 0</font> = On back<br>
+<font color=red>  1</font> = On side<br>
+<font color=red>  2</font> = On stomach<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font>:  If this flag is set on, the entity will not appear  in deathmatch games.
+</blockquote>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Nothing like having a few Dead Barney's about to liven up a scene.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_bigmomma"><h3>monster_bigmomma</h3></a>
+  <p>Spawns the Mother Of All Headcrabs.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/bigmomma.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> - Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>First node</b> - This is the name of the first info_bigmomma. It is important that you understand the relationship between info_bigmomma's and Bigmomma itself. Unlike other info_nodes, the info_bigmomma allows you to control the battle.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/352?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c">Info_bigmomma</a><br><br>
+<b>Notes:</b><br>
+  Personal Profile:   From <a href="http://members.cox.net/slayera/">Minimicus</a><br>
+  "Extremely anti-social, your temper is prevalent in nearly every situation.
+  This results in fierce battles where you and your adversary eventually fight  to the death.<br> 'Anger management' is NOT part of your vocabulary or life-style.
+  Your prolific reproduction rivals the growth of any bacteria. In the space of  minutes you have spawned several hundered offspring. Your tiny progeny immediately  displays the aggressive nature that is so ingrained in your own psyche. You  are prone to having microwave accidents."<br> -SlayerA<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_bloater"><h3>monster_bloater</h3></a>
+  <p>This wasn't used in the game, and it has no AI. In fact it doesn't even move.</p>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+<p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+The model is called a floater, if your interested in having a look.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_bullchicken"><h3>monster_bullchicken</h3></a>
+  <p>Spawns a... a... er... thing that spits yellow globby stuff.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/bullchicken.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+ Also known as the Bullsquid.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_cockroach"><h3>monster_cockroach</h3></a>
+  <p>An inoffensive little critter that makes a great squishing sound when you tread on them. Always nice for those dark hallways...</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/cockroach.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Add a little ambience with a few 'cockies'.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_flyer_flock"><h3>monster_flyer_flock</h3></a>
+  <p>Spawns a flock of flying creatures.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/flyer_flock.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>Flock Size</b> - Number of Flyers in the flock</p>
+  <p><b>Flock Radius</b> - Effects the spread of the flock</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+  Great big bat like things that can be made to  follow path_corners.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_furniture"><h3>monster_furniture</h3></a>
+<p>Used in scripted sequences involving furniture models. And can be used to place other models.</p>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+   <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+   <p><b>model </b> - Choose the model you want to display</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+You can use verious entities to 'place Models', this is one of them. Any entity with the "Model" (model) string will allow you to insert Models into your map.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_gargantua"><h3>monster_gargantua</h3></a>
+  <p>Spawns an evil Spark Shootin' Stomp'n Nasty Beasty.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/gargantua.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+  <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Garg's are great fun. I am probably wrong, but I only remember 2 in Half-Life. One was in the underground carpark and the other was in a tunnel somewhere. The best thing about this is that they were not overdone. <i>Hint..Hint</i><br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_generic"><h3>monster_generic</h3></a>
+  <p>Used to place Models in your map.</p>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+<p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b>Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>model</b> - The Model you want placed in the map.</p>
+  <p><b> body</b>- Applies to models that have Body options.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+ This entity is more versitile than the monster_furniture as it allows you to place Monster entities with Body properties.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_gman"><h3>monster_gman</h3></a>
+  <p>Spawns the naughty Sierra man who started the whole thing....</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/gman.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+There really isn't a lot you can do with the Gman. He was there to add consistancy to the game, an unobtainable goal.<br><br>
+<!-- Next Entity -->
+<a name="monster_grunt_repel"><h3>monster_grunt_repel</h3></a>
+  <p>Spawns a human grunt that drops down a rope to the nearest surface.</p>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+The most common occurence of these guy's is included in the monster_osprey. But they are equally good value dropping from ceilings and cliffs. Place the monster entity at the point you want them to drop from, Their rope does not extend past their start point as the animation starts, so careful placement is necessary so that they don't look 'odd'.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_handgrenade"><h3>monster_handgrenade</h3></a>
+  <p>Spawns a handgrenade.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/grenade.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Name</b> - The Name of the entity for triggering.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+ <p><b>Delay before trigger</b> - Usually the time in seconds before an entity should trigger its target (after being triggered itself). Under other SmartEdit names, delay might also be the time to wait before performing some 
+  other action.</p>
+ <p><b>KillTarget</b> - When an entity is triggered, it will remove from the  game the entity specified by this property.</p>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font>: - If this flag is set on, the entity will not appear in deathmatch games.<br>
+           </blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_headcrab"><h3>monster_headcrab</h3></a>
+  <p>Spawns a brain-eating crab.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/headcrab.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+<p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Remember the <b>first</b> time you had one of these jump on your face in a vent?<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_hevsuit_dead"><h3>monster_hevsuit_dead</h3></a>
+  <p>This is not a HEV Suit ! If you want a HEV suit for your player, you need to add an item_suit. <BR>
+What this does produce is a dead version of the player. I think there was one of these guy's in Gonarchs lair.</p>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Pose</b>- Options</p>
+<blockquote>
+ - 0 = On back<br>
+ 1 = Seated<br>
+ 2 = On stomach<br>
+ 3 = On Table<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font>: If this flag is set on, the entity will not appear in deathmatch games.
+</blockquote>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+These guy's added "story" to the original game, As the player you came across them just to remind you that someone had tried this path before. They didn't always signify the wrong path, but warned of danger ahead.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_hgrunt_dead"><h3>monster_hgrunt_dead</h3></a>
+  <p>This will allow you to strategically place dead guy's (marines) around the map.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/hgrunt_dead.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Pose</b> - Options:</p>
+<blockquote>
+ - 0 = On stomach<br>
+1 = On side<br>
+2 = Seated<br>
+</blockquote>
+  <p><b>Body</b> - Options:</p>
+<blockquote>
+- 0 = Grunt with Gun<br>
+ 1 = Commander with Gun<br>
+ 2 = Grunt no Gun<br>
+ 3  = Commander no Gun.<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Dead grunts around the map add ambience, hints or generally warn of danger.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_houndeye"><h3>monster_houndeye</h3></a>
+  <p>Spawns the sonic creature. These guy's work great in packs. The more there are, the more the damage when they power up and discharge.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/houndeye.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>Squad Name</b> - Squads of Houndeye's!! Set this to the name of the Squad and appoint a leader.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font> Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+<font color=red>(32) Squad Leader</font>: Identify this entity as the Squad Leader.<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+As I mentioned in the intro, these guy's work best in packs. Originally intended to be "friendly" to the player, the Beta testing changed all that. Seems that the testers blew these little critters away as soon as they saw them. So in true Valve style, they modified the original dog like creature and made it nasty.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_human_assassin"><h3>monster_human_assassin</h3></a>
+  <p>The second-most annoying enemy in the game.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/human_assassin.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+The second-most annoying enemy in the game.
+  <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/621?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#info_node">Info_node</a><br><br>
+<b>Notes:</b><br>
+To get the most out of your assassin's you need to use a lot of info_nodes. You will get the best "play" out of your assassin's if you use about three times as many nodes as you would with a normal monster. <BR>
+Interesting to see that assassin's don't have Squad capabilities.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_human_grunt"><h3>monster_human_grunt</h3></a>
+  <p>Spawns one of the game's greatest attractions. Grunts, Marines... call 'em what you like, but these guy's will really kick your ass if they are supported well with info_nodes.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/human_grunt.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>Squad Name</b> - The name of the Squad that the leader controls.</p>
+  <p><b>Weapons</b>-  Available:</p>
+<blockquote>
+ - 1 = 9mmAR<br>
+ 3 = 9mmAR + Hand Grenade<br>
+ 5 = 9mmAR + Grenade Launcher<br>
+ 8 = Shotgun<br>
+ 10  = Shotgun + Hand Grenade<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+<font color=red>(32) Squad Leader</font>: - Identify this entity as the Squad Leader.<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Select a commander (Using the Squad leader Flag) and set the grunts up in Squads, this provides a more realistic AI.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_ichthyosaur"><h3>monster_ichthyosaur</h3></a>
+  <p>Spawns an over-sized fish (maybe the leech after radiation exposure)</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/ichthyosaur.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Once these guy's start firing at the player, they don't seem to stop.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_leech"><h3>monster_leech</h3></a>
+  <p>Kind of like a cockaroach underwater, and they do damage.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/leech.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Normally found in water, they inflict an annoyance bite of one health unit.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_miniturret"><h3>monster_miniturret</h3></a>
+  <p>Spawns the small floor or ceiling mounted mini turret.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/miniturret.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+ <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Orientation</b>- Options:</p>
+<blockquote>
+ - 0 = Floor Mount<br>
+ 1 = Ceiling Mount<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+   <font color=red>(32) Autostart</font>: Does not require triggering.<br>
+   <font color=red>(64) Start Inactive</font>: Does require triggering<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+A smaller version of the monster_turret, and nearly as effective.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_nihlanth"><h3>monster_nihlanth</h3></a>
+  <p>The end is near, you can feel it... and then you run up against this guy.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/nihilanth.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+  <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+You need a lot of room to place the Nihilanth and make it look right.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_osprey"><h3>monster_osprey</h3></a>
+  <p>Spawns the Osprey half-helicopter half-aeroplane troop transporter.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/osprey.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+<p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+<font color=red>(64) Start Inactive </font>: - Must be triggered to follow it's path corners..<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Careful placement of the path_corners ensures a smooth looking flight path. The path_corners will need to be tweaked to adjust pitch, roll and speed.<br> This entity needs a lot of room to fly in. It also drops monster_grunt_repel based on the number of grunt_repels added initially.<br> The resupply occurs when the grunt's are killed, based on where they were initially placed in the map.<br> Make sure you have a path_corner over the grunts!! as this is where the Osprey will head to drop new ones when they die. <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_rat"><h3>monster_rat</h3></a>
+  <p>Spawns a rat, which I don't remember ever having seen in the game.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/rat.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+    <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+ Can be used to trigger an event when it see's the player. They also follow path_corners (<i>Slowly..</i>), but beware, their 
+  behaviour can be a bit weird and unpredictable.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_satchelcharge"><h3>monster_satchelcharge</h3></a>
+  <p>Spawns a satchel full of explosives.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/satchel.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+<!--break-->
+  <h3>Properties</h3>
+  <p><b>Name</b> - The Name of the entity for triggering.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+ <p><b>Delay before trigger</b> - Usually the time in seconds before an entity should trigger its target (after being triggered itself). Under other SmartEdit names, delay might also be the time to wait before performing some 
+  other action.</p>
+ <p><b>KillTarget</b> - When an entity is triggered, it will remove from the  game the entity specified by this property.</p>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.<br>
+           </blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Shrike initiator included...no batteries required!<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_scientist"><h3>monster_scientist</h3></a>
+  <p>Spawns a man in a lab coat.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/scientist.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+ <h3>Properties</h3>
+  <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Use Sentence</b> - When the Player "uses" Barney to follow, he will speak this sentence.</p>
+  <p><b>Un-Use Sentence</b> - If the Player "uses" Barney a second time, indicating "Don't Follow" he will speak this sentence.</p>
+<p><b>Body</b> - Which Sci do you want?</p>
+<blockquote>
+-1 = Random<br>
+ 0 = Glasses<br>
+ 1 = Einstein<br>
+ 2 = Luther<br>
+ 3 = Slick<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>:  After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Exceptionally useful chappies, great for making Black Mesa look like a research facility.<br><br>
+</blockquote>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+<a name="monster_scientist_dead"><h3>monster_scientist_dead</h3></a>
+  <p>Spawns a dead man in a lab coat.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/scientist_dead.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+    <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<p><b>Body</b> - Which dead Sci do you want?</p>
+<blockquote>
+-1 = Random<br>
+ 0 = Glasses<br>
+ 1 = Einstein<br>
+ 2 = Luther<br>
+ 3 = Slick<br>
+</blockquote>
+<p><b>Pose</b> - Options:</p>
+<blockquote>
+ - 0 = On back<br>
+ 1 = On Stomach<br>
+ 2 = Sitting<br>
+ 3 = Hanging<br>
+ 4 = Table1<br>
+ 5 = Table2<br>
+ 6 = Table3<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Post disaster fun... drape a few of these guy's around.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 <a name="monster_sentry"><h3>monster_sentry</h3></a>
+  <p>Spawns a floor mounted tripod gun.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/sentry.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+ <h3>Properties</h3>
+    <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+   <font color=red>(32) Autostart</font>: Does not require triggering.<br>
+   <font color=red>(64) Start Inactive</font>: Does require triggering<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+A small tripod mounted auto activated gun. Used mainly in the game with a laser trigger.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	<a name="monster_sitting_scientist"> <h3>monster_sitting_scientist</h3></a>
+  <p>Spawns a man in a lab coat in the sitting position. Check out venomous's tutorial on Chair's, Barney's and Sitting Scientists for uses.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/sitting_scientist.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+ <h3>Properties</h3>
+<p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Body</b> - Which Sci do you want?</p>
+<blockquote>
+-1 = Random<br>
+ 0 = Glasses<br>
+ 1 = Einstein<br>
+ 2 = Luther<br>
+ 3 = Slick<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Related Tutorials</b><br>
+<a href="book/view/3?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c">Chairs, Scientists and Barneys</a><br><br>
+<b>Notes:</b><br>
+Exceptionally useful chappies, great for making Black Mesa look like a research facility. And sometimes difficult to get looking right. Just follow the tutorial (Chairs, Scientists and Barneys) and they will look great.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	<a name="monster_snark"> <h3>monster_snark</h3></a>
+  <p>Spawns a Snark. This thing is like a headcrab on speed.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/snark.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+  <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+These little guy's are less than friendly, but the good thing is that if you find the nest, you can use them as a weapon.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_tentacle"><h3>monster_tentacle</h3></a>
+  <p>Spawns a one armed tentacle creature. Most probably fondly remembered from the Blast pit.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/tentacle.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+  <p><b>Sweep Arc</b> - The arc in degrees that you want the tentacle to sweep.</p>
+  <p><b>Tap Sound</b> Options:</p>
+<blockquote>
+-1 = None<br>
+ 0 = Silo<br>
+ 1 = Dirt<br>
+ 2 = Water<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+This critter reacts to noise. It will strike at any sound.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	<a name="monster_tripmine"> <h3>monster_tripmine</h3></a>
+  <p>Spawns a tripmine.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/tripmine.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+   <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+  <p><b>Name</b> - The Name of the entity for triggering.</p>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+   <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+  <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Instant On</font>: The mine is automatically 'ON' at the map start.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Tripmine complete with Green laser trigger.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	<a name="monster_turret"> <h3>monster_turret</h3></a>
+  <p>Spawns a Large ceiling or floor mounted turret.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/turret.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+ <h3>Properties</h3>
+ <p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+ <p><b>Orientation</b>- Options:</p>
+<blockquote>
+ - 0 = Floor Mount<br>
+ 1 = Ceiling Mount<br>
+</blockquote>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+   <font color=red>(32) Autostart</font>: Does not require triggering.<br>
+   <font color=red>(64) Start Inactive</font>: Does require triggering<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+A larger version of the monster_miniturret, and twice as effective.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="monster_zombie"><h3>monster_zombie</h3></a>
+  <p>The result of an interaction between a headcrab and a man in a lab coat.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/monster/zombie.jpg">
+</center>
+ <hr noshade color="gray" width=75%>
+  <h3>Properties</h3>
+<p><b>Target</b> -  When the entity is activated, the Target named here is triggered.</p>
+   <p><b>Name</b> - The Name of the entity for triggering.</p>
+   <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+  <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+  <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+  <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>TriggerTarget</b> Used to trigger a Target in conjunction with the Trigger Condition.</p>
+  <p><b>Trigger Condition</b> - This controls the condition under which  a monster will trigger its TriggerTarget.<br> The options are:</p>
+<blockquote>
+         0 = No Trigger<br>
+        1 = See Player, Mad at Player<br>
+        2 = Take Damage<br>
+        3 = 50% Health Remaining<br>
+        4 = Death<br>
+        7 = Hear World<br>
+        8 = Hear Player<br>
+        9 = Hear Combat<br>
+        10 = See Player Unconditional<br>
+        11 = See Player, Not In Combat <br>
+ </blockquote>
+   <p><b> Animation Sequence</b> - The animation sequence to play. If you are using Hammer 3.5, this will also be displayed in the 3D window.</p>
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) WaitTillSeen</font>: Monster will wait till seen, however it doesn't always work that way.<br>
+  <font color=red>(2) Gag</font>: When checked, the monster won't say anything or make noise, great for shutting Grunts up.<br>
+  <font color=red>(4) MonsterClip</font>: Prevents the monster from moving through func_monsterclip brushes.<br>
+ <font color=red>(16) Prisoner</font>: When enabled, the monster won't  attack the player (normal AI is disabled).<br>
+ <font color=red>(128) WaitForScript</font>: Does not appear to have been  implemented.<br>
+ <font color=red>(256) Pre-Disaster</font>: Only used by Scientists and Barneys. Gives them pre-disaster speech, and prevents them  from following the player.<br>
+ <font color=red>(512) Fade Corpse</font>: After being killed, the monster's corpse will fade out after a while, instead of lying there forever.<br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes:</b><br>
+Pretty useless monsters, but don't forget that they have arms, and will be able to navigate through button triggered doors.<br><br>
+<hr noshade color="black">
+<p align=center><a href="book/view/624?PHPSESSID=c0c580f0b14f2f1d901a38eb9a454b3c#Top">Top of Page</a></p>
+<hr noshade color="black">
+<br></body></html>

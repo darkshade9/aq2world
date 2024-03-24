@@ -1,0 +1,125 @@
+<html><head><title>Trigger</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="38" name="38" class="book-h1">Trigger</h1><h3>Quake 2 Trigger Entities</h3><p>
+
+<blockquote>
+	<h3>Trigger Entites</h3>
+</blockquote>
+	
+<!-- Start description -->
+<p><a name="#trigger_always"><b>trigger_always</b></a> - <br>
+	
+This is just a trigger that is always on and starts on when the level begins. The other keys you can set are <b>target</b>, <b>killtarget</b> and <b>delay</b> (default 0.2).<br><br>
+	
+<p><a name="#trigger_counter"><b>trigger_counter</b></a> - <br>
+	
+	This is a trigger that allows for multiple inputs. What this means is that you can have a door that only opens when 2 or more buttons are pushed. This is just once example though. The trigger_counter could trigger anything. You could set it up so the player would have to use 2 [insert you favorite item here] with a computer or something which in turn destroys a bunch of walls.<br><br>
+	
+	There are only 3 keys that you have to set. <b>Count</b>, <b>target</b>, and <b>targetname</b>.<br><br></p>
+	
+	<blockquote>
+	  <p>
+	  <b>1. Count</b> is the amount of actions that is required before the trigger_counter triggers its target. So if you have a door that must have 2 buttons pressed to open then you would give the trigger_counter a count of <br>
+        <br>
+	    
+	  <b>2. Target</b> is the target of the entity that will be triggered when the specific amount of actions is performed on the trigger_counter.	  </p>
+	  <p><b>3. Targetname</b> is self explanatory, but I just wanted to stress that the trigger_counter <b>MUST</b> have a targetname. For example, Lets say you want a door that will be opened by pressing 2 buttons. First you would make the door and give it a targetname of door1. Next make the trigger_counter and set the target to door1, the count to 2, and targetname to count1. Now create the 2 buttons and give each of them a target to count1. That's it! Pretty simple huh?<br>
+        <br>
+      </p>
+	</blockquote>
+    There is one spawnflag that can be used with the trigger_counter which is <b>nomessage</b>. By default, when the buttons in the example above are pressed, the messages, "1 more", "2 more", and "sequence complete" would be printed. nomessage disables these messages.<br>
+    <br>
+	
+	
+	<p><a name="#trigger_elevator"><b>trigger_elevator</b></a> - 
+	
+	<br>This a very difficult entity to master and I would only recommend going through this tutorial if you are a pretty experienced level designer. What it is basically an elevator. That's the easiest way I can explain it. Lets say there are 4 floors. You hit a button on the 4th floor and the platform will come to the forth floor. Hit a button on the 3rd floor and the platform will come to the third floor or however you want to set it to do. There are other easier ways to implement an elevator by using a <a href="../func_train/func_train.shtml?PHPSESSID=60915107af1b818ec83a716894947abd" target="_top">func_train</a> but the trigger_elevator is more functional as working like a true elevator but again I stress that it is a very difficult entity to master.<br><br>
+	
+	Entities that can be used with the trigger_elevator:
+	
+	<blockquote>
+		<p><li><a href="../func_train/func_train.shtml?PHPSESSID=60915107af1b818ec83a716894947abd" target="_top">see func_train</a>    
+	  	<li><a href="../misc/misc.shtml?PHPSESSID=60915107af1b818ec83a716894947abd">path_corner</a>    
+	  	<li><a href="../func_button/func_button.shtml?PHPSESSID=60915107af1b818ec83a716894947abd">func_button</a><br><br></p>
+    </blockquote>	
+	
+	Make sure you are familiar how all these entities work before attempting the trigger_elevator<br><br>
+	
+	 <ol>
+	   <li>The first thing you need to do is to place the trigger_elevator entity somewhere in the level. This is not the actual elevator. In fact...this entity is <b>not</b> visual in the map, so it does not matter where you put this entity.</li><br>
+	   
+       <li>Now you need to <b>give the trigger_elevator a targetname and a target</b>. For this example lets give it a <b>targetname of elevator</b> and a <b>target of train</b> which will be the actual elevator. We havnt made the actual elevator object yet though. we will get to that next.</li><br>
+	   
+       <li>Now we will create the object that will be the actual elevator. Now you need to decide how you want your elevator to look. It could be simply a 1 brush platform or you could go all out and it could be a full blown 200 brush detailed elevator. Does not matter. When you are finished designing the elevator select it and turn it into a <b>func_train</b>. Yep, you heard it right...a func_train....I'll explain in a minute.</li><br>
+	   
+	   <li>Now give the func_train you just made a targetname and a target. The targetname for this example will be train. The target will be to the first <b>path_corner</b>. Lets call this p1. So lets recall what we have done so far: We have a <b>trigger_elevator</b> entity that is linked to a <a href="../func_train/func_train.shtml?PHPSESSID=60915107af1b818ec83a716894947abd" target="_top">func_train</a> entity which is linked to a <a href="../misc/misc.shtml?PHPSESSID=60915107af1b818ec83a716894947abd">path_corner</a> entity that we have <b>not</b> made yet.</li><br>
+	   
+	   <li>Now we need to create the actual path the elevator will follow. These will be <b>path_corner</b> entities. We will place one at each area the elevator will stop. So if there are 4 floors then we will have to make 4 path_corners. So place path_corners at each floor the elevator will be stoping on <b>INCLUDING</b> the bottom floor. It will take awhile to get the placing of the path_corners just right so that the elevator will look right.You can get them precisely placed by positioning the exact origin of the path_corner at the exact lower left corner (both top and front views) of any func_train's *bounding box*.  In the case of s nice rectangular train, this is incredibly easy to be absolutely precise.(thanks <a href="mailto:jloftus@sprintmail.com">Freznor</a>)</li><br>
+	   
+	   <li> Now we are going to give each path_corner a targetname and a pathtarget. Give the first one a targetname of p1, second one of p2, all the way to p4 if you will be having a 4 floor elevator. Each path_corner will also <b>HAVE</b> to have the key value pair <b>pathtarget</b>. What this is is a unique name of the elevator stop that the path_corner represents. So on this example lets say there are 4 floors. The first path_corner on the bottom floor will have a <b>pathtarget of stop1</b>. The second floor path_corner will have a <b>pathtarget of stop2</b>, third will have a <b>pathtarget of stop3</b>, and the fourth floor will have a <b>pathtarget of stop4</b>.</li><br>
+	   
+	   <li>Now we are going to create the <b>func_buttons</b> that will trigger the elevator. So this means that <b>each floor will have a func_button</b>. So we will create 4 func_buttons for an elevator that will be stoping on 4 floors.</li><br>
+	   
+	   <li> Now you must target each func_button to the trigger_elevator entity. So every func_button will have the key value pair <b>target elevator</b>, because we gave our trigger_elevator a targetname of elevator.</li><br>
+	   
+	   <li>The final thing we have to do is give each func_button a key value pair of <b>pathtarget</b>. This should be set to the cooresponding <b>targetname</b> of the <b>path_corner</b> that you want the elevator to stop on when the button is pressed. Recall that we have 4 path_corners each with a targetname of p1, p2, p3, and p4 respectfully. So if we wanted the elevator to take us from the top floor to the bottom floor we would set the pathtarget of the func_button on the fourth floor to p1, which is the targetname of the path_corner that is on the bottom floor. Pretty simple huh? yeah right.<br><br>
+       </li>
+	 </ol>
+	 As you can see this is a very difficult entity to use but it is very useful and very cool. It was also very hard for me to figure out since there is no comments or anything in the code. I had to decompile a bsp file and see how id did it in one of the mine levels. Not fun. =) Here is a diagram that I might help you out a bit<br><br>
+	
+	<center><img src="/tutorials/quake2/tutorials/trigger_elevator/elevator.gif" width=300 height=385 border=0 alt="trigger_elevator"></center><br><br>
+	
+	I definitly suggest you check out the <a href="/tutorials/quake2/tutorials/trigger_elevator/trigger_elevator/elevator.zip?PHPSESSID=60915107af1b818ec83a716894947abd">example</a> map and see how I got mine to work. Any other questions please post them in the <a href="http://forums.gamedesign.net/forums">discussion</a> board.<br><br>
+
+	<p><a name="#trigger_gravity"><b>trigger_gravity</b></a> - <br>
+	
+	This entity at first I didn't think it worked because it was <b>NEVER</b> used in any of the id levels.(whole level gravity is set with the <a href="../worldspawn_and_more/worldspawn_and_more.shtml?PHPSESSID=60915107af1b818ec83a716894947abd">worldspawn</a> entity.) It was not until I saw over at <a href="http://spq2.telefragged.com/" target="_top">Akuma's SPQ</a> that it worked. The bad thing about it is that <b>it only effects spawned entities, gernades, and gibs</b>.It has NO effect on the player. Its very simple though.<br>
+      <br>
+      <b>Creating the trigger_gravity</b><br>
+      <br>
+      First thing you need to do is just create a brush that will cover the entire area that you want to have a different gravity. It would also be a good practice to give it the trigger texture. Now turn it into the trigger_gravity entity. Pretty simple huh?<br>
+      <br>
+      Key Value Pairs<br>
+      <br>
+      <b>gravity</b> - <br>
+      There is only 1 key value pair and it is pretty self explanatory. <b>gravity</b> will be the value you want the gravity to change to. Default gravity is 1, so if you want a room with low gravity set it to something like .5 or .3. If you want a room with no gravity, in which a grenade will just keep going and going, then set the gravity to 0. A negative value will make the grenades and the gibs go towards the ceiling. A real positive value will make the grenades and gibs immediately shoot towards the ground. But remember though, <b>this ONLY effects spawned entities, grenades, and gibs.</b> Nothing else is effected.<br>
+      <br>
+      Uses of the trigger_gravity - <br>
+      <br>
+      <br>
+      Since the trigger_gravity entity is so limited there are not many uses for it but to confuse the player. You could have a creature that is spawned and falls from the ceiling and it would fall very slow if the gravity was low. You could have spawned gibs fly across the room very slowly. Pretty strange huh?<br>
+      <br>
+      Be sure to check out the <a href="../trigger_gravity/trigger_gravity.zip?PHPSESSID=60915107af1b818ec83a716894947abd">example</a> map.<br>
+      <br>
+      If you still don't understand please post your questions to the <a href="../../quake2/discussion/quake2discussion.shtml?PHPSESSID=60915107af1b818ec83a716894947abd">discussion</a> board.<br>
+      <br>
+	</p>
+	<li><p><a name="#trigger_hurt"><b>trigger_hurt</b></a> - Another pretty easy entity to use. Its an area that you specify that when the player comes in contact with it he/she will take damage. You can specify the damage by setting the key value pair <b>dmg</b>. There are a number of spawnflags for a trigger_hurt. They are <b>start_off, toggle, silent, no_protection, and slow.</b> start_off and toggle are for trigger_hurt entities that are triggered. So you could have an area where the player wasn't taking damage but then one of their actions triggers something that causes the player to take constant damage until he/she is out of the area of the trigger_hurt. There are a lot of uses for this. <b>Slow</b> simply decreases the frequency of the damage taken. trigger_hurt can also be used for setting traps..like the floor opens and the player falls into a pit of spikes. just draw a brush covering the tips of the spikes and make it into a trigger_hurt.<br><br>
+	        
+	<p><a name="#trigger_key"><b>trigger_key</b></a> 
+	    
+	- See key_
+	        
+	<p><a name="#trigger_monsterjump"><b>trigger_monsterjump</b></a> - <br>
+	    
+	See monster_
+        
+	<p><a name="#trigger_multiple"><b>trigger_multiple</b></a> - <br>
+	    
+	The <b>trigger_multiple</b> works in basically the same exact way the trigger_once does except for a few minor details.<br><br>First of all, it can be triggered multiple times instead of just once. It also has 1 more key value pair and 1 other spawnflag.<br><br>The new key value pair is <b>wait</b>, which determines the amount of time to wait before the trigger will trigger its target again when touched by the player. An interesting thing to note is that if you assign a value of -1 to this, you will effectively have transformed your trigger_multiple into a trigger_once. Not much point in doing that but anyway... :-)<br><br>The new spawnflags is <b>monster</b>. What monster does when enabled is allows a monster or the player to use the trigger. This is opposed to not_player which allows only monsters to use the trigger. For some reason the spawnflag monster does not work for trigger_once. Strange.<br><br>As for all the other keys and spawnflags, just look at the trigger_once. They behave in the same way except for the 3 differences I mentioned above.<br><br>
+        
+	<p><a name="#trigger_once"><b>trigger_once</b></a> - <br>
+	    
+	If you have any editing experience at all then you probably know how to use this entity. What it does is triggers an event when another entity such as the player or a monster(we will go over this in a minute) touches it, but only 1 time. One thing you should know when making the brush that will be the trigger_once is that all the trigger entities that we are going to go over in this tutorial are not visable in the level so it doesn't matter where you place them. Also it is good editing practice to give the trigger_once or any other non visable brush the trigger texture. This makes it easier to see and organize in your level editor. The key value pairs for trigger_once are <b>target</b>, <b>targetname</b>, <b>killtarget</b>, <b>sounds</b>, <b>message</b>, and <b>delay</b>.<br><br><b>Target</b> is the name of the corresponding targetname that will be triggered when the trigger_once is touched by the player or a monster(see below). So if you want the trigger_once to open a door then you need to give the door a targetname of something like door1 and then set the target of the trigger_once to door1.<br><br><b>Sounds</b> is the sound that the trigger will play when the trigger_once is touched. This can be set to 0,1,2 or 3. Each corresponding to a different sound. 0 is the default "beep beep" sound and 3 is no sound. If you use 3, you will get an annoying but harmless error message in the game saying "couldn't load sound/misc/trigger1.wav" but the trigger will still work and won't make any sound. This is due to a bug in the entity code. If you open the PAK file, you will see that sound/misc/trigger1.wav doesn't exist and that's the reason why the game complains.<br><br><b>Message</b> will print to the screen whatever it is set to when the trigger_once is triggered. So if  you want the trigger_once to print "door was opened" then you would set message to "door was opened". Pretty simple. Remember to use \n to break to the next like or you will run out of space.<br><br><b>Delay</b> is the amount of time between the touching of the trigger and the actual triggering taking place. So if you have a trigger_once targeted to a target_explosion, setting delay=2 will create a 2 second delay between the touching and the explosion.<br><br><br><br><b>Targetname</b> is used along with the <b>triggered</b> spawnflag (see below).<br><br><br><br><b>Killtarget</b> will remove any entity that has a matching targetname. You can target pretty much any entity you want with this, including monsters. If you target a monster with killtarget, it won't gib or anything, it will just disappear.<br><br>The 2 spawnflags that can be turned on for a trigger_once are <b>not_player</b> and <b>triggered</b>.<br><br><b>not_player</b> is not listed on any of the entity references but it is there. Just set the <b>spawnflag 2</b> and not_player will be turned on. What not_player does is makes it so the player has no effect on this trigger_once. Something like a monster must touch it and trigger it. This can be used for a variety of cool things. A monster could trigger a trap on the player or could spawn more monsters that would actually come to the place of the trigger. This could give the effect of the monster calling for reinforcements. Very cool.<br><br>The <b>triggered</b> spawnflag makes it so the trigger_once must be triggered itself to be turned on. So therefore, if this spawnflag is on then the trigger_once must have a <b>targetname</b>. What you should remember though is that the trigger_once that is triggered by another entity will NOT actually trigger its own targets when it is triggered. The trigger_once will only become "live" or "enabled" if you will. So after it is triggered, the player will have to touch it for it to trigger its targets. That sure was a mouthful. =) That's about as easy as I can explain it though. An example of a way to use this is the following:<br><br>Lets say that you have a huge level in which the player walks across a bridge to get into the strogg base. Later near the end of the level after he defeats the boss alien he unknowingly walks across a trigger_once that in turn makes another trigger_once near the bridge live. The player now has to exit the base and walk back across the same bridge. Well..the trigger_once that was just made live triggers the bridge to explode as the player is walking over it and he falls into the river getting into more trouble. Hope this kind of helped. I know it's kind of stupid though. hehe.<br><br>
+	        
+	<p><a name="#trigger_push"><b>trigger_push</b></a> - <br>
+	    
+	This is the same as it was in quake1. Use it to push the player in a given direction. You can specify the speed by setting the the key value pair <b>speed</b>. You can also make the push only work once by setting the <b>spawn_flag push_once</b>.<br><br>
+	        
+	<p><a name="#trigger_relay"><b>trigger_relay</b></a> - <br>
+	    
+	This is used to relay actions. This can be used for a variety of effects and is used very often in the id levels. a trigger_relay is not triggered when touched so therefore it must have a targetname and must be triggered by something else to work. It must also have a target. The other keys that can be set is <b>delay</b>, which determines the amount of time to pause before triggering it's target, <b>killtarget</b> and <b>message</b>. There are <b>NO</b> spawnflags. An example use of this would be to have a crate that when shot explodes, but when it explodes it triggers more explosions in the surrounding areas. What you would do is create the func_explosive crate and give it a target to a trigger_relay which in turn would target multiple target_explosions that would all have the same targetname. Or you could target several trigger_relay's all with different delay values that each in turn target their own func_explosive crates so you can have a sequence of timed explosions for cool effects. Hope this explains it a bit.<br><br>
+        
+	<!-- End description -->
+        
+	</ul></body></html>
