@@ -1,0 +1,696 @@
+<html><head><title>GTKRadiant Tutorials (Level Editing)</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="576" name="576" class="book-h1">GTKRadiant Tutorials (Level Editing)</h1><p class="q3bg1">Quake III Arena Tutorials<br><br>
+Here you'll find an assorted and growing collection of tutorials for Quake III Arena and the editro GTKradiant or QERadiant. These tutorials cover modelling, texturing, entities, advanced entities, sounds and much more.<br><br>
+If you have a tutorial you'd like to submit to the collection, or if you have suggestions for revisions to existing tutorials, jump into the <a href="http://forums.gamedesign.net/viewforum.php?f=15">Quake III Arena Game Design Forums!</a></p><h1 id="570" name="570" class="book-h1">Making a mirror</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making a mirror -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>First I thought I should make a tutorial how the Curved faces works, but I changed my mind, and made this Mirror tutorial instead. I made this choice basically because the curved faces is tricky to understand, and I think I will make a tutorial about it in Tutorial #5 or #6. So, how do you make a mirror? Just read the stuff below. First, the mirror has one bad thing with it, it will not reflect light, but you wouldn't see it if you don't think about it =). Here comes the tutorial. </p>
+
+<p>Let's open our map, the map I have added upon since tutorial 1. I want to place a mirror at one of the sides in the room where I have my lamp (from tutorial #3). First, do as we always do, load a texture, but this time, you have to load the "common" textures, because that's where the mirror is located. Choose the left of the "Mirror" textures, and make a new object, it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial4/mirrortextur.jpg"><br>
+</center>
+<br>
+<p>Now, many of you think you're done, but it's not that simple =). </p>
+<ul>
+<p><li><i>Now, we're done with the new cube, so push ESC to deselect it. Now we need to put a new entity in front of the mirror. Press your right mouse button in any of the views (except for the 3dview) until you get the small menu, popping up where the mouse cursor is.</i></p>
+
+<p><li><i>Go down on that menu, and choose "misc", and then "misc_portal_surface". A new entity will be shown, place the new entity in front of the mirror. (the entity must be closer than 64 units from the mirror texture). </i></p>
+</ul>
+<br>
+
+<p>If you compile your map, the mirror will work, but act really strange. It wouldn't work from all angles, and that's because the mirror can only have 1 viewable surface. This mean that we have to cover all surfaces except the one we want as a mirror. I will do this by adding new boxes, that I put around the mirror. So it looks like this: </p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial4/done.jpg"><br>
+</center>
+<br>
+<p>Now you can compile your map, and you got yourself a nice mirror =). One thing to know is that if you use mirrors, the clients FPS will be completely killed! But I agree that it is a nice effect. Another note is that
+the mirror will not effect lights.</p></ul><h1 id="667" name="667" class="book-h1">Making a Spiral Stairway</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making a Spiral Stairway -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+
+<p>I was asked how to make a wall around a spiral stairway, and since I wasn't able to explain it without pictures (thats definitely hard :) I wrote this tutorial. Enjoy :)</p>
+					
+<p><hr width=75% color=black noshade><p>
+   
+<p><b>STEP 1:</b> Lets say weve got a map like this. You should be able to recognize that the wall around the stair consists of brushes. brushes? yeah right. and im gonna tell u how to replace them with a curved patch (that sounds better, looks better and even IS better ;)</p>
+
+<center><img src="content/quake3/tutorials/tutorial28/joe1.jpg"></center>
+
+<p><b>STEP 2:</b> Now delete those ugly boxes and put in a brush into an empty space. Why? Its less chaotic as you will see in the next step.</p>
+
+<center><img src="content/quake3/tutorials/tutorial28/joe2.jpg"></center>
+
+<p><b>STEP 3:</b> We need a patch not a brush, right? Now select "Curve|Simple Patch Mesh". 3x3? no thats not enough...Choose 3x9 and confirm.</p>
+
+<center><img src="content/quake3/tutorials/tutorial28/joe3.jpg"></center>
+
+<p><b>STEP 4:</b> Put the curve onto the place where the wall is gonna begin. You must be absolutely sure that *all* vectors of the patch mesh lay on the grid, or else you cannot edit it.</p>
+
+<p>Now...lets go to the texturing: First make something like this :</p>
+
+<center><img src="content/quake3/tutorials/tutorial28/joe4.jpg"></center>
+
+<p><b>STEP 5:</b> Now press [V] to enter the vector edit mode. build something like this but make **absolute** sure that the vectors are on the grid b4 u start!</p>
+
+<p>You will notice the white mark in this pic. I think its easier for you not to put the starting points of the patch at the same place as the ending points as you will have to seperate them again and thats kinda tricky.</p>
+
+<center><img src="content/quake3/tutorials/tutorial28/joe5.jpg"></center>
+
+<p><b>STEP 6:</b> Now its easy... goto the top view and select 3 points (in the topview u only see a single 1 of course!) and pull them down in one of the other 2D views. Now take another 3 till uve done all of them.</p>
+
+<p>In this pic you see the curved brush as ive done it :] Its not finished yet (just a draft for this tut). but you can align your vectors a bit better (stay on the grid!) and make the wall higher so that it fits this stair.</p>
+
+<center><img src="content/quake3/tutorials/tutorial28/joe6.jpg"></center>
+
+<p>Have fun making spiral stairways =)</p>
+
+</ul><h1 id="665" name="665" class="book-h1">Making Complex Doors</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Complex Doors-
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+<p>Now it's time to try to get more out of the func_door! Maybe you have tried to make two door halves, that should open at the same time, and haven't got it work? Then this is the tutorial for you! Read on...</p>
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<p><b>STEP 1:</b> Make the door.<p> 
+
+<p>Do this by simply add some objects with a nice texture. Maybe you have it look like this:</p>
+
+<center><img src="content/quake3/tutorials/tutorial30/editor1.jpg"></center>
+
+<p>Okay, as you can see I have two door halves.</p>
+
+<p><b>STEP 2:</b> Make the door A "func_door".<p>
+ 
+<p>Now I select one of them, and make it to a "func_door" by pushing the right-mouse-button. I set the Angle of the door (The direction it should open). <i>Note: that each halves should have different angles (first door half + 180 degrees = second door half).</i></p> 
+
+<p><b>STEP 3:</b> Compile the MAP.<p>
+
+<p>Compiling the map will let you see what you have just created, and it is good mapping practise to examine you map -in the game- at regular intervals. <i>Note: that the two door halves will not open at the same time, when you're in game. To get the two door halves to open at the same time, we have to add some more stuff to it.</i></p>
+
+<p><b>STEP 4:</b> Synchronize the doors.<p>
+
+<p>Now we want the doors to be syncronized. Now add a new box about 8 units infront of the door, and apply the "common/nodraw" texture on it. It should now look like this:</p>
+
+<center><img src="content/quake3/tutorials/tutorial30/editor2.jpg"></center>
+
+<p><b>STEP 5:</b> Apply the "trigger_multiple".<p>
+
+<p>Now, apply the "trigger_multiple" on this box. The Trigger_multiple is an entity that will trigger it's targets when you walk-on/touch it. We use the multiple_trigger, also because that it should be possible to open the door many times =). Do this by:</p> 
+
+<list><p>1. Now select one the door halfs, and push "N". Write in the "Key" area "targetname", and then in the value "door1" (push Enter).</p> 
+
+<p>2. Now select the other door half (deselect the first door), and do the same here "targetname" .. "door1". </p>
+
+<p>3. Now, deselect the door half, and select the "trigger_multiple" box that we just created. Push "N", and type in the Key area "Target" and the value "door1". 
+
+<p>4. Now, try to run the map. If you have done this right, the door half should open at the same time when you walk close up to them. <i>Note: that you have to add a brush like this on the other side of the doors too, otherwise you will only be able to open the doors from one way. (You can also make the "Trigger_multiple" object big, so you use the same object on both sides of the door, this will also prevent the door to hurt you when you stand right in the middle of them).</i></p></list>
+
+<p><hr width=75% color=black noshade><p>
+
+<p>Hope this will help some. Note that you can ofcourse use however many door parts as you want. You can make many VERY cool doors with the "trigger_multiple" and the "func_train". Maybe i should do a tutorial on that too?</p>
+</ul><h1 id="666" name="666" class="book-h1">Making Custom Textures</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Custom Textures -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>If you have ever wanted to make and used custom textures for Quake III with Q3radiant, this tutorial will help you. Read on.</p>
+
+<p><hr width=75% color=black noshade><p>
+
+<p>First you need a program that can handle TGA pictures, there's a free program called <a href="http://home.telefragged.com/wally/">Wally</a>, that you can use, but i rather use Photoshop or Paint Shop Pro. Make a Texture, maby it looks like this:</p>
+
+<center><img src="content/quake3/tutorials/tutorial29/pic1.jpg"></center>
+
+<p>Save this texture/picture as a 24bit (or 32bit, depends on what quality you want on it, and also note that the 32bit picture is bigger than the 24bit picture, so use 24bit pictures more often to save on memory in the game.</p>
+
+<p>Now we want the picture to work in Q3radiant. This is very easy. Put the texture in the <b>"quake3dir/baseq3/textures/newtextures"</b><p> 
+
+<p><b>For example:</b> Now load Q3radiant, and push "Textures". Woah, there it is! A new line with the "Newtextures".<p>
+
+<center><img src="content/quake3/tutorials/tutorial29/pic2.jpg"></center>
+
+<p>Yes it is that easy!</p>
+
+<p><i>Note: that the name in Q3radiant is the same as the one in the folder. Now you can use your new texture as much as you want. Don't forgett to include it in the .pk3 file when you give away the maps using the new textures =)</p>
+</ul><h1 id="598" name="598" class="book-h1">Making Doors</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Doors -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<B><U>Making a door</B></U><br>
+
+<p>It's easier than you may think to make a door. I have two rooms, a small corridor between them, and I want a door right in the corridor.</p>
+
+<p>First, load a nice texture for a door. There is nice Wall textures for a door, but there is also specific textures for doors. I will load the Gothic_door textures, for my map. Most of the Door textures are hard to make a good door with, so I will take a more Wall-like texture.</p>
+
+<p>Once I've chosen a texture I make a new box, and this is the box that will be my door, so I form the box so it fits the corridor. To make it even more complicated, I want a door that is 2 parts, one left part, and one right part. The right part should move right, and the left should move left when the door opens. Actually, it's pretty easy =). </p>
+
+<p>The thing is that those doors are actually two doors. One door moves left, and the other right. This makes an illusion that it's one door that moves apart when you run thru it. </p>
+
+<p>Okay, the texture is set, and everything is set to go. Let's select the door (or one half of the door). Now, push the right mousebutton, so the menu appears. Choose "func", and then "func_door". This will set the box to be a door. Push "n" to bring up the "entity list", and here you can enter a few new keys, with values, but we want a simple door, so we don't have to change anything (the keys is listed in the text in the Entety window). </p>
+
+<p>The only thing we have to do here is to push one of the direction buttons. The "Direction buttons" are the buttons that are located in the lower left in the entity window. It says "135", "90", "45" ... This tells the game what direction the door should move to get opened. If you don't know for sure, look in the Top view (upper left in the Q3radiant window). For my door, i had to push the "270" button to get my door right. Now, that door is finished. If you only have one door, you're done. But if you have a two parted door, you have to select the other door-half, and makes the same step as with the first one, except that the direction should be the opposite. That makes my other door half to be in the direction of "90". Now, this is how my door looks like:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/door.jpg"><br>
+</center>
+<br>
+<p>I've written a tutoruial about more complexed doors in another tutorial.</p></ul><h1 id="597" name="597" class="book-h1">Making Jumppads</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Jumppads -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<B><U>Jump pads</b></u><br>
+
+<p>Let's start with how to make a Jump pad. We'll start by making a room that looks something like this (I have finally used the Gothic textures here =):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/jumpstart.jpg"><br>
+</center>
+<br>
+<p>If you don't have time to make a room, or just don't understand, download the room (It's the same room as from the screenshot, open up the room, and continue to read =). </p>
+
+<p>Now, we need a new block with the Jump pad in the floor. Open the Textures menu, and choose "sfx". When the loading is finished, push "T" and open up the Textures window. If you scroll in the Textures window you will see that there are many jumppad-textures. This is because the texture should match your floor texture, choose the one that seems to have the same floor texture as in your map. </p>
+
+<p>Then make a new box that is 128x128 units large (and maybe 8 units high). Place the new box with the jumppad texture at the same level as the floor and push the "CSG Subtract" button, as we did when we made a corridor. Now, push "S", and fix the texture so it's located at the right position. Now it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/padplace.jpg"><br>
+</center>
+<br>
+<p>Okay, now you can deselect the pad, with ESC. Now load a new texture. Load the "Common" textures. Now choose the very small texture called "trigger", it's tricky to find, but it should look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/trig.jpg"><br>
+</center>
+<br>
+<p>Now, make a new cube, that is the same size as the pad (128x128 units), but make it 16 units high. Place this new cube right on top of the Jumppad cube. It should look like this if you've done it right:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/trigger.jpg"><br>
+</center>
+<br>
+<p>Now push right mouse button, then a small menu will be visible. Go down to "Trigger", and then Choose "Trigger_push". The box with the "trigger" texture will now be a "Trigger_push". </p>
+
+<p>Push ESC to unselect it. <br>
+
+<p>Then click the right mouse button again, go down to "Target", and choose "Target_position". </p>
+
+<p>Push "n" to bring up the Entity window. In the "Key" box, type "targetname". The "Targetname" means the name of the entity, now enter a name for this entity in the value box. I choose the name "jump1", then I just enter "jump1" in the value box, and push <Enter>. It should look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/position.jpg"><br>
+</center>
+<br>
+<p>(Ignore the Origin, that's the position of the entity). This entity (the target_position) tells the "trigger box" what direction, and how high the jump should be. It tells the trigger box this, by it's position. But, not yet. First we need to "bind" the "trigger box" to the "target_position" entity. That's why we put a targetname on the entity, because now, you push ESC to unselsect the target_position entity, and select the box with the "trigger" texture. </p>
+
+<p>Once you've selected it, push "N", to bring up the entity list. Now, simply type in the "Key" box "target" and in the value "jump1" (if you had the targetname "testjump1" on the entity, then you simply put the value "testjump1" here). Now, there should be a line from the trigger-box, to the entity This line simply shows the direction of the jump, and the player will reaches the highest point where the "trigger_position" is. To get the player up to the right place, simply move around the "trigger_position" entity Hope you can get it work now. If not, give me a note.</p>
+</ul><h1 id="571" name="571" class="book-h1">Making Stairs</h1><ul><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Jumppads, Doors and Stairs -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<B><U>Stairs</B></U><br>
+
+<p>Since Quake3Arena doesn't support Ladders, we have to make stairs or Jumppads. I'm going to show how to make very easy stairs. We have our map, as before. It should look something like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/jumpstart.jpg"><br>
+</center>
+<br>
+<p>Now we want to reach the upper level, by making a stair. The first thing I do is to select the floor texture by pushing the middle mouse button on the floor in the 3D view. Then I make a new box that is 128 units long, 16 units wide, and 8 units tall. I copy this new box, by pushing <Ctrl> + C, and then paste a copy of it by pressing <Ctrl> + V (the new copy will be on the same place as the original one, so I move it a little bit. After doing this twice, so I have three boxes, my stairs have started (you don't follow what I mean, do you =), probably not), It should look like this now :</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/stairstart.jpg"><br>
+</center>
+<br>
+<p>Now, lets continue, by making more steps. Copy the objects till you reach the floor. It should look like this when you have done this :</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/stairdone.jpg"><br>
+</center>
+<br>
+<p>Tada, the first really basic stairs are done. Now you can change the texture on the top of each step to make it look really good, place two boxes on the side of the stair and so on. If you didn't get what I meant, give me a note.</p>
+</ul><h1 id="835" name="835" class="book-h1">Patches 101</h1><ul><link href="themes/rusted/rusted.css" rel="stylesheet" type="text/css"> 
+<h3 align="center">GTKRadiant Patches 101 for Rusties</h3>
+<h5 align="center">Greg (skinmaster) Crockatt</h5>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-patches.jpg" border="5"></center>
+<p align="left" class="rustbg4">(<a href="/content/quake3/tutorials/gtk-patches-101/patches-101.zip">MAP FILE HERE</a>) 
+  For this tutorial I'll be dealing only with the menu items show in the above 
+  image. Thicken and cap are useful in their own ways but are not dealt with here 
+  as my methods don't apply them often.</p>
+<!--break-->
+<p align="left" class="rustbg1">1st you should understand the concept of rows 
+  and columns. A row runs horizontally on a patch, even if the orientation of 
+  the patch changes a row will always stay a row based on its initial location. 
+  A column runs vertically and will also always be a column based on its original 
+  location. There's a means to convert rows to columns, reversing the control 
+  orientation on a patch but it's unpredictable..<br><br>
+<small class="r">NOTE - Using bobtoolz merge patches and split patches(pictured above) can somehow 
+  force a row/column orientation change depending on if you've inverted one of 
+  the merged patches and which direction the inversion was done on. It's often 
+  best to make both sides seperately and distinguish betweeen them for future 
+  use, texture application can be really screwed up if you merge a flipped patch 
+  with its parent.</small>
+<p align="left" class="rustbg1">Second you should know that every square or rectangle 
+  surface on a patch will generate 2 triangles, 5 edges, 4 verts. The more faces 
+  on a patch surface, the more edges and verts the engine must calculate and thus 
+  you must be certain to optimize all your patch shapes down to their least row/column 
+  counts.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-tris.jpg" border="5"></center>
+<p align="left" class="rustbg1">Lets just start with something like a bent arch for use is a corridor or some such area..</p><br>
+
+<p align="left" class="rustbg3">1. Make a brush and convert it into an endcap and make it like so.. #1 is top view, then a side insert to show height. 2 and 3 are top view also.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-1-2-3.jpg" border="5"></center>
+<p align="left" class="rustbg3">2. Copy the endcap and rotate it z once, then  use the patch menu to delete the last two columns.<br>3. Duplicate and flip-x and put the dupe on the left side. You'll arrive at 3 (pictured above)</p><br>
+
+<p align="left" class="rustbg3">4. Duplicate the three patches at once and place it above the originals. (the pics below are all grid 6)<br><br>5. Hit v to enter vertex editing mode while the patches are selected. 
+Be sure you are editing all 3 patches at once.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-4-8.jpg" border="5"></center>
+<p align="left" class="rustbg3">6. Drag a selection area around the top row of verts and select them. Hit the rotate x button on the toolbar (pictured above) and the verts will end up where 6 shows them to be.<br><br>
+7. Drag the verts all together to the position show above, the top of our arch.<br><br>
+8. Drag the remaining row verts to their right angle center points. Just hit v twice to turn off vertex editing and turn it back on, then drag a new selection box around the verts on all three patches at once.</p><br>
+
+<p align="left" class="rustbg3">9. Deselect everything, select all the patches at once, duplicate 
+and flip-y and move to the other side.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-9.jpg" border="5"></center></p>
+<p align="left" class="rustbg4">Now that we've got our basic arch, lets see how we can improve it. This will involve working on one side, deleting the unedited side and replacing it with an updated mirror. I'm going to double arch it.</p>
+<p align="left" class="rustbg3">10. Hide the right half, select the top three patches and insert two rows. This will create new vertexes which will of course.. be off the grid. Select all the verts and hit ctrl-g, this will snap them to the grid, then align them the following way.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-10-11.jpg" border="5"></center>
+<p align="left" class="rustbg3">11. Delete the first two rows, this is where we can see that our earlier duplication and flip-x of out half endcap led to the inversion of its first and last rows. So we end up with most of what we need anyway.. we'll just compensate for it and work with what we've got.</p><br>
+<p align="left" class="rustbg3">12. Duplicate and flip the pieces you need to fill in the holes, then vert edit the top two patches so that they are risen up a bit like so, keeping the right angle position of the middle verts. This ensures better texture application.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-12-13.jpg" border="5"></center>
+<p align="left" class="rustbg3">13. Make a brush where i've made it and convert it to a 3x3 simple 
+patch mesh.</p><br>
+<p align="left" class="rustbg3">14. Move the bottom left vert right one square, then select all the bottom verts.<br><br>
+15. Change to front view and move those three verts to the center, one unit left.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-14-16.jpg" border="5"></center>
+<p align="left" class="rustbg3">16. Change back to side view and move the left middle vert down to the location of the previous left bottom one.</p><br>
+<p align="left" class="rustbg3">17. Move the top left vert down to the bottom.<br><br>
+18. Move the top middle vert over to the 90 degree point.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-17-19.jpg" border="5"></center>
+<p align="left" class="rustbg3">19. Move the two remaining middle verts down to the bottom, you'll notice in camera view that because we move the other bottom verts to the side, we've created a nice bend on the bottom of this.</p><br>
+<p align="left" class="rustbg3">20. Duplicate everything that needs it until you get the following geometry.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-20.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">21. The floor could be one brush but i want to trim the frame and this les me save on the overlap. Using three brushes in this manner give us no more or less tris, but it does remove a smll bit of overdraw that we'd get using only one brush. Using patches to avoid overlap completely is possible but it creates more tris than this method.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-21.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">22. Making the walls seam up to this door frame is less a problem than you might think, it's going to involve 2 simple patch meshes to do it, but they must meet the same point on the wall. That where the ceiling joins   it, so in order to do this properly, you must first decide how much more wall exists above the frame if any.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-22.jpg" border="5"></center><br><br>
+<p align="left" class="rustbg3">23. Next you make a fan like so. Then insert it into the proper place described in the next image. <br><br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/fan.gif"><br>
+<br>
+<p align="left" class="rustbg3">24. Duplicate the fan, move the associated vertexes to fit it into the remaining hole.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-23-24.jpg" border="5"></center><br>
+<p align="left" class="rustbg1">You ought to have something like this now.. I've been making both 
+sides of the door at once, since I'm working with the pieces.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-door.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">25. This and the next step are merely to fill in the structural holes left by this type of modelling. Press ctrl-p to hide patches and fill in the three selected brushes in #25.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-25-26.jpg" border="5"></center>
+<p align="left" class="rustbg3">26. To make the doorframe allow less visibility through it, I've taken steps in 26 to narrow it as close to the confines of its patches as possible. I did this procedure with patches visible, I've hidden them in this illustration so brushwork is clear.</p><br>
+<p align="left" class="rustbg3">27. This step is just to show that the patches are moldable still 
+if you grab them in the right places you wont create gaps. This step changes the look of the doorframe on one side only.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-27.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">28. I now make the surrounding geometry a little more complex. 
+This has overlapping brushes for a very good reason. The larger brushes would have a large piece of overlap on the back side if I textured that face, so I leave it caulked and place another caulked brush in the correct areas with texture where the other brush has caulk. This uses two brushes to texture one volume, and does so at a savings.<br>
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-28.jpg" border="5"></center><br>
+<p align="left" class="rustbg3">29. Lets make a couple of posts now for these patches that stick out. We'll make a top and a base (from cylinders) since they can be textured seperately, and we'll redisperse the columns of both so that we have the lowest possible number of tris.
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-29.jpg" border="5"></center>
+<p align="left" class="rustbg3">Optimize. Finally we add AND insert two rows and two columns before redispersing them to get this geometry. You can see the difference between the optimized left patchwork and unoptimized right.
+<center><img src="/content/quake3/tutorials/gtk-patches-101/gtkradiant-optimize.jpg" border="5"></center>
+<p align="left" class="rustbg3">Here's how it looks after optimization and some random texturing..
+<center><img src="/content/quake3/tutorials/gtk-patches-101/final.jpg" border="5"></center></ul><h1 id="101" name="101" class="book-h1">Perfect Arch Tutorial - Part 1</h1><ul><!-- q3Arch_1.html - converted 27/08/01 from old rust documents -->
+
+<h3>Quake III: Arena</h3>
+<blockquote class="title">Perfect Arch Tutorial - Part 1 <script language="JavaScript" type="text/javascript"> <!--
+document.write('<a href="&#32;&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#97;&#116;&#116;&#111;&#111;&#64;&#101;&#110;&#116;&#101;&#114;&#97;&#99;&#116;&#46;&#99;&#111;&#109">tattoo</a>');
+// --> </script></blockquote>
+ <p>Please note: this resource among other resources here at the new rust are no longer updated and maintained by the original author any more. If you need to contactsomeone in regards to this, please contact the moderators of the Quake III Arena Forum on the RUST website.
+<hr width=75% color=black noshade>
+<h3>Part One</h3>
+This tutorial will demonstrate the procedures that need be taken to make a perfect a arch. Ok, first you'll need to be in the <font color="#ff6600">XY TOP</font> view in the editor.<br><br>
+Now make a brush and size it to the length of the arch you want. I went <font color="#ff6600">312 x 64.</font>
+<br><br>
+Go to the <font color="#ff6600">Curve</font> menu and select <font color="#ff6600">More Cylinders/Square Cylinder</font>.
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC01.jpg"></div> Next, <b>WITHOUT</b> 
+unselecting the Square Cylinder, change to the <font color="#ff6600">YZ SIDE</font> 
+view so you can see the rows of the Cylinder. <br>
+<br>
+You'll notice that there are <font color="#ff6600">6 Rows</font> from top to bottom.
+<br><br>
+You'll want to add another set of Rows to this Square Cylinder - You'll see why in a minute.
+<br><br>
+Now go to the <font color="#ff6600">Curve</font> menu again and select <font color="#ff6600">Insert/Insert (2) Rows</font>.
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC02.jpg"></div>
+<br><br>
+A little explanation of Rows &amp; Columns is that <i>Rows</i> go the length of the brush and <i>Columns</i> go around the brush, so you'll have <font color="#ff6600">6 Rows</font> and <font color="#ff6600">24 Columns</font> in a default Square Cylinder. You'll see here that there are now <font color="#ff6600">12 Rows</font> now.
+<br><br>
+Again, without deselecting the Square Cylinder,	go to the <font color="#ff6600">Curve</font> menu and select <font color="#ff6600">Matrix/Re-disperse/Rows</font>.<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC03.jpg"></div>
+<br><br>
+This is what the Square Cylinder looks like after you select the <font color="#ff6600">Matrix/Re-disperse/Rows</font> from the <font color="#ff6600">Curve</font> menu.
+<br><br>
+This makes the Square Cylinder have the proper shape when bending.
+<br><br>
+Now save your map so you don't lose any of this. I've messed up many of these and had to start all over again.
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC04.jpg"></div>
+<br><br>
+What I do is after I get this far, before trying to bend it, I'll make a copy of the Square Cylinder so I don't have to redo it all again.<br>
+After you get this down, though, you won't have to be so worried about messing up.  Now, stretch the Square Cylinder to make it longer.
+<br><br>
+Figure out about how long you'll be needing it to make the curve.<br>It doesn't matter a whole lot what length it is right now, it's just easier to use this way.
+<br><br>
+You can resize it to the correct size later.
+<br><br>
+Now, from the Button Bar, with the Square Cylinder still highlighted,  select the <font color="#ff6600">Patch Bend Mode</font> button. <font color="Red">The Red Arrow</font>.<br>
+After selecting it the Information window will pop up. This tells you what to do.
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC05.jpg"></div><br><br>
+Ok, this is where this gets tricky. Bare with me. This is where you will choose what point the Square Cylinder is bent from. I circled the <font color="#ff6600">Bend Axis</font> dots, this is where the Square Cylinder bends.
+<br><br>
+You use the Tab button on your keyboard to cycle thru the available <font color="#ff6600">Bend Axis</font>. When you get to the point where you want to bend it from, hit enter to select that point.
+<br><br>
+You shouldn't have to 'Tab' thru them. The first point should look like the picture with the <font color="#ff6600">Bend Axis</font> at the correct point. If they are not like the picture, 'Tab' thru and get them at the first point that looks like the picture.
+<br><br>
+When you get the <font color="#ff6600">Bend Axis</font> at the point in the picture, hit enter 'Only once', then change back to the <font color="#ff6600">XY TOP</font> view.Now you should see a blue dot as one of the Bend Axis points.<br>
+the picture to the left of the top two shows what you should be looking at.
+<br><br>
+This blue dot is the another bending point for the Square Cylinder.
+<br><br>
+From here, you'll use the 'Tab' button again to move the blue dot around to the center dot of the side that will be bent. The picture to the right of the top two shows how it should look.
+<br><br>
+Now switch to the <font color="#ff6600">XZ FRONT</font> view and change the grid to <font color="#ff6600">Grid1</font>.<br>
+Take your mouse and bend the Square Cylinder until the end of it is perfectly squared with the grid lines. This is VERY important.<br>
+You'll probably have to zoom in to see this. I have to any ways.
+<br><br>
+The bottom picture shows what it should look like.
+<br><br>
+Now, save your work!!
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC06a.jpg">&nbsp;<img src="/content/quake3/tutorials/arch/q3Arch_PIC06b.jpg"></div><br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC06c.jpg"></div><br><br>
+Next, hit ESCAPE to unselect the Square Cylinder.<br>
+We'll have to go thru the steps to select the Bend Axis again.
+<br><br>
+Hit the Bend Axis button again and 'Tab' to the next point in the SquareCylinder. The top picture shows what you should be looking at. Hit enter, only once, to lock it in and move the blue dot around again to the same point as in the previous bend.
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC07.jpg"></div>
+<br><br>
+<div align=center><img src="/content/quake3/tutorials/arch/q3Arch_PIC08.jpg"></div>
+<br><br>
+Make certain that your grid is set to <font color="#ff6600">Grid1</font> again.
+<br><br>
+Now bend this other end until the end of it is perfectly squared with the grid lines. Again this is 'VERY' important.
+<br><br>
+Your Square Cylinder should look like the bottom picture. Both ends of the Square Cylinder should be perfectly in line on 'ONE' grid line. If it is not, you've done something wrong and will have to correct it before proceeding.<br><br>
+Right now, your Square Cylinder should be an arch. Upside down, but this is ok for now. If everything is correct, we can proceed after you save your work, of coarse.
+<br><br>
+Now on to <a href="/book/view/102">Part Two</a>!
+<!-- eof @ 203 --></ul><h1 id="102" name="102" class="book-h1">Perfect Arch Tutorial - Part 2</h1><ul><!-- q3Arch_1.html - converted 27/08/01 from old rust documents -->
+
+<h3>Quake III: Arena</h3>
+<blockquote class="title">Perfect Arch Tutorial - Part 2 - <script language="JavaScript" type="text/javascript"> <!--
+document.write('<a href="&#32;&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#97;&#116;&#116;&#111;&#111;&#64;&#101;&#110;&#116;&#101;&#114;&#97;&#99;&#116;&#46;&#99;&#111;&#109">tattoo</a>');
+// --> </script></blockquote>
+
+Please note: this resource among other resources here at the new rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<hr width=75% color=black noshade>
+
+ This tutorial will demonstrate the procedures that need be taken to make a perfect a arch. Ok, now, you'll probably want to turn your arch around the proper way. You don't have to right now. It's just the way I've done it. The way it looks now would work, but it's not the way to go if you want perfection.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC09.jpg"></div>
+<br><br>
+You'll notice from the picture that the shape of this isn't correct. The 
+			ends and the very top are are not sized correctly with the grid. It 
+			doesn't hit both sides of the major grid to make a 64 unit square. It's 
+			more like 58 or 59. And in between that it is squeezed a little. This is
+			what we're going to fix.
+<br><br>
+From here, we're going to drag the vertices to get the correct shape.
+<br><br>
+First you'll need to resize this to a descent grid size. I like to use 
+			<font color="#FF6600">Grid16</font>, but you may use what ya like. You'll 
+			want to resize it to the size you want it to be when finished. The only
+			important thing here is that only the 
+			<font color="#FF6600">outer edges</font> of this should be hitting the 
+			major grid. This makes it easier on you to get it to where it needs to be 
+			with the way I do this. You'll find out later on what I mean by this as 
+			you make more of these. Also, I don't know if this is the way the guys at 
+			ID Software does their arches, it's just the way I found to do it to look 
+			correct.
+
+			Ok, from here, you'll need to make an <font color="#FF6600">End cap</font>. 
+			I use the End cap because it the correct shape already and does not need
+			to be reshaped. It is the standard shape of all the curves in Quake III 
+			Arena.
+<br><br>
+First draw another brush, any size, and go to the 
+			<font color="#FF6600">Curve</font> menu and select
+			<font color="#FF6600">End cap</font>. Now turn it and position it by your 
+			arch to look like the picture.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC10.jpg"></div>
+<br><br>
+From this you can see where the 
+			imperfections are. Make CERTAIN that the End cap is positioned correctly 
+			on the major grid lines, as shown. After you've done that, unselect the 
+			<font color="#FF6600">End cap</font> and select the arch. you may have to 
+			move these around a little so you can select each one when you like. By 
+			that, I mean, the <font color="Yellow">End cap</font> should be in front 
+			of the arch.
+<br><br>
+After you have everything in position and the arch selected, go to the 
+			<font color="#FF6600">Selection</font> menu and select 
+			<font color="#FF6600">Drag/Drag Vertices</font>.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC11.jpg"></div>
+<br><br>
+Here you should see the <font color="#FF6600">Vertices</font> around the 
+			arch. These are what we move to reposition the arch so it is the correct 
+			shape. Now, this can get a little tricky too. First, save your work. You 
+			don't have to unselect anything to so.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC12.jpg"></div>
+<br><br>
+First you'll need to set your grid again to <font color="#FF6600">Grid1</font> 
+			and zoom in to see the grid lines. Now, go to the bottom left end of the arch 
+			and position your mouse over the right <font color="#FF6600">Vertice</font>.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC13.jpg"></div>
+<br><br>
+Now press and hold the left button and drag the corner right 
+			<font color="#FF6600">Vertice</font> to the right so that the corners of 
+			both the arch and the <font color="#FF6600">End cap</font> are perfectly 
+			in line.
+<br><br>
+One thing you'll have to be careful about is if you click on a 
+			<font color="#FF6600">Vertice</font> and let off and go right back to it 
+			and drag it again, you'll notice that there are more 
+			<font color="#FF6600">Vertices</font> under the one and/or ones you moved. 
+			This can get aggravating. Not to worry though. Just hit escape and move 
+			the <font color="#FF6600">Vertice</font> back to where ya started.
+<br><br>
+There are 5 <font color="#FF6600">Vertices</font> that need to be moved 
+			for the bottom. Then 5 for the top and 5 for the middle. There are 15 
+			<font color="#FF6600">Vertices</font> all together that need to be 
+			moved.
+<br><br>
+Ok, now go onto the middle bottom <font color="#FF6600">Vertice</font>.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC14.jpg"></div>
+<br><br>
+Now align that to the very top of the 
+			<font color="#FF6600">End cap</font>. Now go on to the right end of the 
+			arch.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC15.jpg"></div>
+<br><br>
+Align this one up with the corners. Now just move up to the 
+			<font color="#FF6600">Vertice</font> between the right end and the middle 
+			one.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC16.jpg"></div>
+<br><br>
+This one is a little tricky. The <font color="#FF6600">Vertice</font> 
+			isn't at the corner or where the lines meet but up into the arch a 
+			little. You can see it in the picture. Just move it down and to the left
+			and align the line of both the Arch and the 
+			<font color="#FF6600">End cap</font>. Now one more at the other end.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC17.jpg"></div>
+<br><br>
+Same as the last. Line it up the same way. Now zoom out and the next picture is what it should look like all lined up.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC18.jpg"></div>
+<br><br>
+This is the way it looks with the correct shape at the bottom.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch2/q3Arch_PIC19.jpg" width="450"></div>
+<br><br>
+Now save your work and we'll move onto the top <font color="#FF6600">Vertices</font>.<br>
+Which is <a href="/book/view/103">Part Three</a></ul><h1 id="103" name="103" class="book-h1">Perfect Arch Tutorial - Part 3</h1><ul><!-- q3Arch_1.html - converted 27/08/01 from old rust documents -->
+<h3>Quake III: Arena</h3>
+<blockquote class="title">Perfect Arch Tutorial Part 3 - 
+<script language="JavaScript" type="text/javascript"> <!--
+document.write('<a href="&#32;&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#97;&#116;&#116;&#111;&#111;&#64;&#101;&#110;&#116;&#101;&#114;&#97;&#99;&#116;&#46;&#99;&#111;&#109">tattoo</a>');
+// --> </script></blockquote>
+Please note: this resource among other resources here at the new rust are no longer updated and maintained by the original author any more. If you need to contactsomeone in regards to this, please contact the moderators of the Quake III Arena Forum on the RUST website.
+<hr width=75% color=black noshade>
+<h3>Part Three</h3>
+ This tutorial will demonstrate the procedures that need be taken to make a perfect a arch. Ok, this should be easy for you now and I probably don't need to write the rest of this but I'm going to just for the people that might need it.
+<br><br>
+What you need to do here is unselect the Arch and select the <font color="#ff6600">End&nbsp;cap</font>. You'll need to resize it to the outer edges of the Arch and you'll see how the top of the Arch is out of shape. After you resize it, you'll have to reposition the <font color="#ff6600">End&nbsp;cap</font> so that you can select the Arch. Now select the Arch again and we'll start.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC20.jpg"></div>
+<br><br>
+As you can see here there are only two <font color="#ff6600">Vertices</font> that need moving. The two corners and middle are already in line. Now go to the <font color="#ff6600">Selection</font> menu and select <font color="#ff6600">Drag/Drag&nbsp;Vertices</font>. The top left <font color="#ff6600">Vertice</font> is the one that we'll be moving.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC21.jpg"></div>
+<br><br>
+After you have selected <font color="#ff6600">Drag/Drag&nbsp;Vertices</font>, change your Grid again to <font color="#ff6600">Grid1</font> and zoom in and move the <font color="#ff6600">Vertice</font> to the upper left corner as shown in the picture.
+<br><br>
+Now for the right side.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC22.jpg" ></div>
+<br><br>
+Here, you'll do the same thing as the left side. After this one isaligned, unselect it and zoom out and you'll how it looks all lined upped as in the next picture.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC23.jpg" ></div>
+<br><br>
+Don't forget to save your work.
+<br><br>
+Now there's only one more thing to do. That's resize the <font color="#ff6600">End&nbsp;cap</font> so that it is aligned with the center of the arch like in the next picture.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC24.jpg" ></div>
+<br><br>
+You really can't see if it is out of line or not and probably wouldn't even matter but if you zoom in and look closer like in the next picture, you'll see that it isn't correct.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC25.jpg" ></div>
+<br><br>
+Here you'll see that it 'is' off a little. This probably wouldn't make adifference, but, just for the correct alignment I'm going to go ahead andalign this too.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC26.jpg" ></div>
+<br><br>
+The <font color="Red">red circle</font> is the <font color="#ff6600">Vertice</font> we will be moving.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC27.jpg" ></div>
+<br><br>
+This is where it ended up and is aligned. Now go to the right side and move that one.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC28.jpg" ></div>
+<br><br>
+This is where this one is aligned. Now we'll check the middle to see if it needs to be aligned.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC29.jpg" ></div>
+<br><br>
+This needed to be aligned as well. Now we'll go to the left end and align that one.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC30.jpg" ></div>
+<br><br>
+This one needed aligning. Now go to the right end.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC31.jpg"></div>
+<br><br>
+This needed aligning as well. Ok, now zoom out and you'll see how it looks.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC32.jpg"></div>
+<br><br>
+Here is the finished arch. I've taken and made three <font color="#ff6600">End&nbsp;caps</font> and put them in, as you can seeof coarse just so you would see how it looks all lined up.
+<br><br>
+And there ya have it,<br> 
+<font color=#6699CC><b>'The&nbsp;Perfect&nbsp;Arch'</b></font>.
+<br><br>
+<div align="center"><img src="/content/quake3/tutorials/arch3/q3Arch_PIC33.jpg"></div>
+<br><br>
+Well, that was my good deed for today. I sure hope this helps someone out. I don't want anyone to think that I'm a Q3Radient guru or anything. This is just something I figured out since it's release and wanted to share what I have learned with everyone else that is wanting to make	killer maps for Quake III Arena. I might write another tutorial on other things as I learn them. Just right now, I need to concentrate on the making of my own map.
+<br><br>
+All the credit I can give for my knowledge 	would be to raYGunn and the rest of the crew at <a href="http://www.gamedesign.net/">RUST</a>.<br> 
+They are who I turn to when in need of an answer. Thanks guys...
+<br><br>
+<script language="JavaScript" type="text/javascript"> <!--
+document.write('<a href="&#32;&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#97;&#116;&#116;&#111;&#111;&#64;&#101;&#110;&#116;&#101;&#114;&#97;&#99;&#116;&#46;&#99;&#111;&#109">tattoo</a>');
+// --> </script><br><br>
+[Ed. Note: Example map can be found <a href="/content/quake3/tutorials/arch3/Perfect_arch.map">here</a>.]</ul><h1 id="664" name="664" class="book-h1">Prefabricated Prefabs in GTKradiant</h1><ul><h3>Prefabs? Easy.</h3><p class="q3bg3"><b>What's a prefab?</b><br>Answer: It's a collection of brushes and patches that together make some sort of prefabricated object that's something you'd like to use over and over throughout an area in the creation phase of a current and/or future map. A prefab can be a column, an arch, a room, a cabin, a sign, virtually anything.</p><!--break-->
+<p class="q3bg3"><b>How do prefabs work?</b><br>Answer: There's two ways to make a prefab:<br><br><i>1.</i> Select the associated brushes and patches, and save them as a map file in a folder like baseq3/prefabs.<br>
+<i>2.</i>Or you can possibly (depending on your version) export the selected brushes as .pfb files which is basically the same thing.<br><br>Once you're ready to use the prefab, just import it and place it, then dupe and re-use throughout.</p><span class="r">Pretty simple huh? - skinmaster</span></ul></body></html>

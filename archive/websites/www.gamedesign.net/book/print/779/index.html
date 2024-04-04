@@ -1,0 +1,32 @@
+<html><head><title>Using the Nodraw Texture</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="779" name="779" class="book-h1">Using the Nodraw Texture</h1><p>The following tutorial has been republished with consent:<br>
+- By  <a href="http://www.adamowen.com/"> Adam "Phatsniper" Owen</a></p>
+<p>One of the great features of Half-Life 2 is the ability to import highly detailed models from software such as XSI and 3D Studio Max to use in your levels. <br>
+Using these models is much more efficient than creating the detail with normal brushes, and because models don't split BSP geometry, you can intersect walls / floors etc. with them.<br> <!--break-->
+Unfortunately, the brush faces behind the model are still being drawn by the engine despite the player not seeing them. </p>
+<p>This is where the nodraw texture comes into play.</p>
+<p>If a face is textured with the "tools/toolsnodraw" texture the Source engine will not render them, thus lowering the face count and speeding up gameplay. You apply this texture just like any normal material, using the texture application tool and applying the nodraw texture to the faces you don't want the engine to draw.</p>
+<p>The nodraw texture :</p>
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw01.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw01_small.jpg" width="300" height="217" border="0" alt="Nodraw 1"></a></center>
+<p>So, when will you want to use the nodraw texture?</p>
+<p>There are many possible situations for this tool and I'll show you a couple of examples here.</p>
+<p>The first use is on faces the player should never see, especially the roofs of buildings.</p>
+
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw02.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw02_small.jpg" width="300" height="217" border="0" alt="Nodraw 2"></a></center>
+<p>As you can see in the above image, there are a few faces that the player can't see during normal gameplay so we'll apply the nodraw texture to them.</p>
+
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw03.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw03_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 3"></a></center>
+<p>We've saved the engine from drawing 14 faces here, and while that might not seem such a major difference, complex maps will highly benefit from not drawing roofs and other high objects.</p>
+<p>One thing I must mention is balancing the nodraw texture. This example would be great for a single player level if there are no high windows to look out of. The main problem comes from multiplayer games, especially team based mods which make heavy use of the freelook spectator camera. Of course, when you are spectating graphics aren't a major issue, but it can look strange if lower faces such as the top of the bottom walls aren't there (you'll see straight through those faces). I leave this to your own discretion, but it's something to keep in mind.</p>
+<p>The other example I mentioned earlier is applying the nodraw texture to faces hidden by models. Here is a doorway with the model prop, and without :</p>
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw04.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw04_small.jpg" width="300" height="217" vspace="10" hspace="10" border="0" alt="Nodraw 4"></a><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw05.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw05_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 5"></a></center>
+<p>The brush geometry roughs out the basic shape of the door, while the model contains the detail. After carefully placing the model and checking it from all angles to make sure there are no gaps you can apply the nodraw texture to the obstructed faces.</p>
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw06.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw06_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 6"></a></center>
+<p>That's 4 faces saved for one doorway which otherwise would have just been sitting there eating up resources.</p>
+<p>It doesn't stop at doorways, any face that is hidden by a model should have the nodraw texture applied to it.</p>
+
+<center><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw07.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw07_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 7"></a><a href="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw08.jpg" target="_blank"><img src="http://www.gamedesign.net/content/half-life2/tutorials/nodraw/nodraw08_small.jpg" width="300" height="217" vspace="10" hspace="10"  border="0" alt="Nodraw 8"></a></center>
+<p>Finally, type <font color="#ff0000">+showbudget</font> into the console while testing your map.<b><br> This is the new r_speeds command</b>.<br> Use the on screen information to narrow down problem areas and find out what is draining resources.</p>
+<p>As you can see, the nodraw texture is an invaluable tool to combat the everlasting battle against low frame rates.</p>
+<p>Thanks for reading and good luck! Don't hesitate to <a href="http://www.adamowen.com/contact.htm">contact me</a> with any questions or comments!</p></body></html>

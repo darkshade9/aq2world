@@ -1,0 +1,54 @@
+<html><head><title>Falling leaves!</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="546" name="546" class="book-h1">Falling leaves!</h1><!-- by Jon Eriksson -->
+
+<h3>Half-Life</h3>
+<blockquote>
+       <b>Falling Leaves</b> - by Jon Eriksson
+</blockquote>
+<br><br>	
+
+<p>This is a nice effect that Quake3Arena allows you to have, Falling leaves.<p> 
+
+<p><hr color=black noshade width=75%><p>
+
+<p>First, you need a texture that looks something like this:<p> 
+
+<center>
+    <img src="content/quake3/tutorials/shadertut4/picture1.jpg">
+</center>
+
+
+<p>Now select the "leaves", and save it. I saved mine as mytextures/le.tga. Now, over to the Scripting part.</p>
+
+<p>Open notepad and type this:</p>
+
+<font color="red"><<pre>
+textures/mytextres/leav
+{
+    qer_editorimage textures/mytextures/le.tga
+    surfaceparm nonsolid
+    surfaceparm trans
+    cull none
+    deformVertexes wave 30 sin 0 10 0 .2
+    nopicmip
+    {
+        map textures/mytextures/le.tga
+        tcMod scale 2 2
+        blendFunc GL_ONE GL_ZERO
+        alphaFunc GE128
+        depthWrite
+        rgbGen identity
+        tcmod scroll 0 .25
+    }
+    {
+        map $lightmap
+        rgbGen identity
+        blendFunc GL_DST_COLOR GL_ZERO
+        depthFunc equal
+    }
+}
+</pre></font>
+
+<p>Now save it under your baseq3/scripts directory. I saved mine as "my.shader", remember to call it *.shader.
+Load up Qeradiant, and apply the texture "mytextures/leav" to an object, and compile.</p></body></html>

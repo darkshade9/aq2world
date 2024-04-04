@@ -1,0 +1,55 @@
+<html><head><title>Taming the Speaker Entity</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="7" name="7" class="book-h1">Taming the Speaker Entity</h1><!-- 
+by Merl (merlinis@bigpond.net.au) 2001
+by Gard (stephen@geol.uwa.edu.au) 2003 
+Updated XHTML FEB 05 Andy
+-->
+<h3>Half-Life</h3>
+<blockquote>
+Taming the Speaker Entity - <a href="mailto:mithodiel@softhome.net">Mithodiel</a>
+</blockquote>
+<p>
+The &quot;speaker&quot; entity creates the effect of having a public-address system in your  level. It is designed to make random announcements every 3 to 10 minutes while it is active.  What many Half-Life level editors fail to realize is that this entity is completely customizable!
+</p>
+<p>
+There is a file in your half-life\sounds directory called <span style="font-style: italic">sentences.txt</span>. This is the file that Half-Life reads in order to play sentences (named strings of wave files).  The <span style="font-style: italic">sentences.txt</span> file defines the sentences spoken by the PA announcer and the monsters in the game. If this file is not located in your half-life\sounds directory, then you will need to extract it from the <span style="font-style: italic">pak0.pak</span> file using a utility such as <a href="ftp://ftp.gamedesign.net/halflife/Tools_and_Utilities/Pak_Utilities/pakexplr.zip">PakExplorer</a>  or <a href="http://home.telefragged.com/wally">Wally</a> (a texture editor that also features the ability to handle Windows long file names in PAK files). You will need to edit the <span style="font-style: italic">sentences.txt</span> file in order to add your own custom annoucements.  Once extracted, your custom <span style="font-style: italic">sentences.txt</span> file will now override the version in the PAK file.
+</p>
+<p>
+Once you have extracted <span style="font-style: italic">sentences.txt</span> from the PAK file, open it up in a text editor, such as Notepad.  Scroll down to where the lines begin with one of the Valve single-player map names (such as <span style="font-style: italic">C1A1</span>).  Notice that the sentences are <b>grouped</b>.  In each group, the sentences all have the same name, except that they are numbered sequentially from 0 to 9.  The name of the sentences without the number is called the <span style="font-style: italic">sentence group name</span>, and you will need that information when you create your custom announcements.
+</p>
+<p>
+Scroll all the way down to the end of the file.  It is a good idea to add any custom sentences to the end of the file, so that you do not mess up established sentences (unless you are into that sort of thing).
+</p>
+<p>
+Now add your custom sentences. First, come up with a name for the sentence group. The speaker entity will play sentences randomly from this group. For the purposes of this tutorial, use <code>TUTOR</code>. Then create the sentences in the group.  They will be sequentially named <code>&lt;group name&gt;0</code> through <code>&lt;group name&gt;9</code>.  You can make up to 10 custom sentences per sentence group, as long as they are numbered in order.
+</p>
+<p>
+<span style="text-decoration: underline">Example:</span><br />
+<code>
+TUTOR0 vox/buzwarn buzwarn unauthorized access detected in sector thirty two<br />
+TUTOR1 vox/buzwarn buzwarn warning freeman is armed and danger us<br />
+(yadda yadda yadda)<br />
+TUTOR9 vox/deeoo doctor freeman please report topside for questioning
+</code>
+</p>
+<p>
+Note that all sentences in <span style="font-style: italic">sentences.txt</span> must appear on one line each -- don't be fooled by the example formatting above!
+</p>
+<p>
+Next, open your level up in your favorite editor and create a &quot;speaker&quot; entity. Set the <span style="font-style: italic">preset</span> (WorldCraft: <span style="font-style: italic">Announcement Presets</span>) field to 0 (WC: &quot;None&quot;) -- any other setting will play hard-coded announcements (I found this out the hard way!).  Enter the name of your custom sentence group (in this case, <code>TUTOR</code>) under the <span style="font-style: italic">message</span> (WC: <span style="font-style: italic">Sentence Group Name</span>) field.  Then set an appropriate volume level in the <span style="font-style: italic">health</span> (WorldCraft: <span style="font-style: italic">Volume</span>) field.
+</p>
+<p>
+Now compile your map and load it into Half-Life.  The speaker should start spewing your custom sentences as soon as the level loads.
+</p>
+<p>
+If you want more control over the speaker, note that it can be triggered on and off.  Give the speaker a name in the <span style="font-style: italic">targetname</span> (WC: &quot;Name&quot;) field, and then you can use external triggers to turn the speaker on and off.  If you want the speaker to be quiet at first, set its <span style="font-style: italic">spawnflags</span> to 1 (in WC, Check the &quot;Start Silent&quot; flag).
+</p>
+<p>
+You can force the speaker to make a single announcement by making it reference a single-sentence sentence group.  Otherwise, you would need a scripted_sentence and an associated &quot;dummy&quot; monster to accomplish the same thing; the custom speaker thus ends up saving you an entity.
+</p>
+<p>
+<span style="font-weight: bold">NOTE:</span><br />
+This method is not particularly well suited to multi-player maps, unless they are part of a Half-Life mod that has its own <span style="font-style: italic">sentences.txt</span> file.  Many players are uncomfortable with others mucking around with their <span style="font-style: italic">sentences.txt</span> file (myself included).  Thus, for multi-player maps, a better choice would be to string a series of ambient_generic entities together using a multi_manager, since you do not have to distribute any files other than the map itself if you do this.
+</p>
+<!--EOF@53--></body></html>

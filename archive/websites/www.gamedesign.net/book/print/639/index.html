@@ -1,0 +1,52 @@
+<html><head><title>Common Mapping Terms</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="639" name="639" class="book-h1">Common Mapping Terms</h1><!--submitted by Andy Sep 04-->
+<p><b>Common Compiling terms:</b><br>
+This information was sourced from Mithodical Construction. <br>
+It provides a good brief background on common mapping terms. While the heading say's compiling terms, the terms themselves are generic to most mapping applications and editors.<br> There are more comprehensive lists out there, but the reason I like this one, is that it deals with complex terms in a simple fashion.</p>
+<!--break-->
+<center><hr noshade color="gray" width="75%"></center>
+<p><b>Compiling Terms You Should Know</b>:<br>
+Compiling a map is a technical process. Like any technical process, there are particular terms associated with it that you should have some understanding of before you begin. </p>
+<p><b>Brush</b>:<br>
+Any three-dimensional convex solid, containing at least four faces. Brushes are used to construct the geometry of the map, as well as define the "air" space that the player can move in. Brushes in Quake, Doom and Half-Life must be convex. </p>
+<p><b>Concave</b>:<br>
+Describes a three-dimensional figure (such as a collection of brushes) in which some of its faces point toward each other. A figure is concave if it is possible to draw a line segment from one face to another while going outside of the figure. In many engines, concave brushes are invalid. </p>
+<p><b>Convex </b>:<br> 
+Describes a three-dimensional figure (such as a brush) in which all of its faces point away from each other. A figure is convex if it is not possible to draw a line segment from one face to another while going outside of the figure. 
+In most engines, all brushes must be convex. </p>
+<p><b>Coplanar </b>:<br> 
+Describes two or more faces) that lie in the same plane in three-dimensional space. Coplanar faces appear to be one unbroken surface to the human eye, but are actually separate surfaces. These coplanar surfaces have normals (vectors that indicate the facing of the surfaces) pointing in the same direction. <br>
+In the Half-Life engine, two faces may be coplanar only if they lie on separate brushes. Coplanar are faces on the same brush are invalid in the HL engine because of the requirement that every brush must be convex. </p>
+<p><b>Edge </b>:<br> 
+The line segment connecting two vertices, this is also the bounding line where two faces of a brush meet. </p>
+<p><b>Entity </b>:<br> 
+An item in your map that has a specific function, other than to define the world that the player moves in. Entities define the items in the map that the player can interact with, and the items that have special properties, such as transparency. Entities can also be used for lighting purposes. <br>
+Entities fall into two main categories: point-based entities and brush-based entities. Point-based entities define objects in your map that either have no visible representation in your map (like info_player_start, for example) or that take their appearance from a finite set of possibilities (such as monster_generic, whose appearance is limited to the number of models stored on your computer). brush-based entities define objects in your map that have potentially infinite shapes and sizes, but similar behavior (such as func_door and func_train). Any entity that defines an area of activation is also brush-based (such as trigger_multiple). </p>
+<p><b>Face </b>:<br> 
+A side of a brush. In the Half-Life engine, each face must represent a flat plane in three-dimensional space. Each brush face is painted with an associated texture. </p>
+<p><b>Hull </b>:<br> 
+A three-dimensional figure formed by a set of points in three-dimensional space. The shape of a hull is determined by the method of determining which figure it forms. In the Half-Life engine, the vertices of the brushes determine the points in the hull. The compile tools then calculate four different hulls; one of them is the visual hull, which represents what the player can see within the map, and the other three are collision hulls, which represent the areas of the map that the player can move through. </p>
+<p><b>Leaf (plural leaves)</b>:<br> 
+A section of "air" space inside of your map. The compile tools break up the brushes in your map into polygons, and also subdivide the internal player space into sections called leaves. Leaves are used by the engine to determine which polygons to draw based on where the player is located in the map (not on which way the player is facing!) </p>
+<p><b>Leak </b>:<br>
+A section of your map where the inside of the map (the player space) is visible to the space outside of the map (the "void"). Think of your map as a space station. If the "air" space inside the map is exposed to the space outside of the map, the air will escape. That is a leak. This is a serious problem, since it stops visibility calculations (the compile tools cannot comprehend an infinitely large section of "air" space), and prevents realistic lighting (which relies on the visibility calculations). </p>
+<p><b>Patch</b>:<br> 
+(1) A software update that succeeds in fixing parts of the software that were broken, and in breaking parts of the software that were already fixed.  <br>
+(2) A plane area in your map used for lighting purposes. The radiosity (lighting) tool splits your map into patches and then calculates the color and intensity of the light falling on each patch. </p>
+<p><b>Plane </b>:<br> 
+A flat surface in three-dimensional space that extends forever into infinity. This term is also an adjective that describes a figure that is flat in three-dimensional space (otherwise known as a polygon). 
+In the Half-Life engine, planes are used for many purposes, including rendering and lighting. All brushes in your map must have faces that are planes. Faces are planes if all of their vertices lie in the same plane. The compile tools will choke on any brush that does not have planar faces. </p>
+<p><b>Polygon </b>:<br> 
+A two-dimensional plane figure existing in three-dimensional space. In the Half-Life engine (and most others), the term "polygon" more specifically means "triangle", since the triangle is the simplest polygon to render in a three-dimensional game engine (it always forms a flat surface in three-dimensional space). The compile tools subdivide the engine-visible portions of your map brushes into triangles for rendering purposes. The engine itself uses polygons to render other items in your map, such as monsters, players, items, and weapons. <br>
+Polygons fall into two classes in the Half-Life engine: world polygons (abbreviated "wpolys"), which define the map geometry; and entity polygons (abbreviated "epolys"), which form the various and sundry things populating your map. </p>
+<p><b>Portal </b>:<br> 
+The boundary plane between two leaves of "air" space. Portals are used by the compile tools to determine which leaves are visible from one another. </p>
+<p><b>Texture </b>:<br> 
+A two-dimensional bitmap applied to a face of a brush. Textures are used to give brush faces the appearance of a real surface, such as a concrete slab or a metal plate. The skilled use of textures can give a surface a three-dimensional appearance without the need for polygon-intensive map geometry. </p>
+<p><b>Vertex (plural vertices)</b>:<br> 
+The point where two edges of a face meet. By moving the vertices of a brush, you can change its shape, although you must make sure that the vertices form faces that are flat planes. </p>
+<center><hr noshade color="gray" width=75%></center><br>
+<p align=center>Thanks to Dave<i>"Mithodiel"</i>Askew for the information.</p>
+<hr noshade color="black">
+</body></html>

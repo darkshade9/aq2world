@@ -1,0 +1,70 @@
+<html><head><title> Paul Jaquays, Quake 2 and Quake 3: Arena, Id Software</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="90" name="90" class="book-h1"> Paul Jaquays, Quake 2 and Quake 3: Arena, Id Software</h1><h3>Interview -  Paul Jaquays, Quake 2 and Quake 3: Arena Level Designer, Id Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 			
+<b>Rust: </b>I recently heard that Q3 had a few lighting changes like a 'sun' feature, what exactly is this and how does it work?
+<br><br>
+<b>Paul: </b>The "sun" feature is a shader command applied to the sky texture in a map.  What is happening is that the game is overbrightening the texture areas touched by the light. This makes for some extremely cool light/shadow contrasts. Parameters define the color of the emitted light (in RGB values), intensity of the direct light (this is the "sun" light), intensity of the ambient or diffused light (essentially a glow off the sky), the sun's height relative to the horizon (expressed as an angle value) and the direction of the sunlight (using the same directional coordinates as found for entity facings for the light source).
+<br><br>
+
+<b>Rust: </b>How are the poly counts different from Quake II?
+<br><br>
+<b>Paul: </b>While there may be some argument about what defines a polygon in Quake 2 as opposed to the definition of a polygon in Quake 3, it really boils down to a number to use as a benchmark.  In Quake 2, the preferred number of polies was 500 or less (and after 800, they started dropping out in software) but it only counted rectilinear geometry (normal brushes). The counts in Quake 3 take into account the geometry, but also add in the multipass texture rendering and dynamic level of detail on curves.
+<br><br>
+
+<b>Rust: </b>How much does the multipass stuff like fog, etc. affect the poly count?
+<br><br>
+<b>Paul: </b>Significantly. Generally speaking, all textures drawn in the world require a minimum of two redraw passes.  Every time you add a stage of manipulation to a texture, you must redraw the world (or at least that part of it), essentially adding the number the polies containing that texture to the total poly count.  If you can see a polygon through another polygon, as is the case with many of the alpha channel functions (transparencies, translucencies, cutouts, decals) and special cases like water and fog, you add the count for the texture that you are seeing through to the textures you can see. Think of it as stacking up layers. Each pass on a texture is a layer.  Each pass on a texture you are looking through is a layer added to the stack.  Each layer requires a redraw pass of the world.
+<br><br>
+
+<b>Rust: </b>What are your target poly counts for a map?
+<br><br>
+<b>Paul: </b>In Quake 3, the goal is to keep the total environmental polies (including curves and entities) in your worst view under 12,000.  Generally speaking, this means trying to keep geometry polies under 7 - 8000.
+<br><br>
+
+<b>Rust: </b>Are there still hint brushes and area portals, or something similar?
+<br><br>
+<b>Paul: </b>Yes.  We still use hint brushes, perhaps even more than in Q2, but their companion skip brushes are gone.  Area portals are still with us, but are far simpler to implement than in Quake 2 (they are no longer classed as entities).
+<br><br>
+
+<b>Rust: </b>Are some of the detailed brushes in q3 alias models? The gargoyles for example.
+<br><br>
+<b>Paul: </b>The gargoyles, the skull torch sconces, the corpse, and the pylon lamps in Q3Test2 are all misc_model .md3 models made by either Paul Steed or Kenneth Scott.  In essence, they are the same type of model as is currently used for the Quake 3 player models.
+<br><br>
+
+<b>Rust: </b>If so, how are they skinned or textured compared to regular models. Do the level designers do this?
+<br><br>
+<b>Paul: </b>Our artists made the models using a modeling program.  They textured the models the same way they would texture a player model.  They are placed in the maps like entities.  The graphic engine lights them as if they were world geometry.
+<br><br>
+
+<b>Rust: </b>How bad do curved surfaces hurt poly counts?
+<br><br>
+<b>Paul: </b>The more complex the curve, the more triangles are needed to define it.  A simple beveled edge (in carpentry terms, that would be a quarter-round moulding) is probably the cheapest. Bending curves into complex configurations adds up polies fast. Close up, they are triangle intensive.  At distances, the dynamic LOD brings the counts down some (which doesn't occur with rectilinear geometry).
+<br><br>
+
+<b>Rust: </b>Are the way the entities work basically the same? with spawnflags, etc.
+<br><br>
+<b>Paul: </b>Yes.  The only distinctions right now are between CTF and DM
+<br><br>
+
+<b>Rust: </b>Any new entities that are really cool you can mention?
+<br><br>
+<b>Paul: </b>I think the misc_models (like the gargoyles) are pretty darn cool (and easy to use).  The func_bobbing entity (think of a box floating it water for the effect) is neat.  Xian's got an entire level built around that single feature.  Trains, doors and other movers can be built out of misc_models.
+<br><br>
+
+<b>Rust: </b>What do you think will be the toughest thing with Q3 editing compared to Q2/Q1 Editing for newbies to learn?
+<br><br>
+<b>Paul: </b>Shader manipulation of textures and efficient use of shaders. Second, I think curve manipulation in any editor without a real-time 3D view window will be difficult.
+<br><br>
+
+<b>Rust: </b>
+<b>Seen any good movies lately?</b>
+<br><br>
+<b>Paul: </b>Just this really obscure road trip movie about a bipedal amphibian stand up comic and his two straight man sidekicks.  
+
+
+<br><br>I would like to thank the Paul Jaquays for taking the time to answer my questions and the guys from #gamedesign(on <a href="http://www.3dnet.net">3dnet</a> for helping me with the questions.</body></html>

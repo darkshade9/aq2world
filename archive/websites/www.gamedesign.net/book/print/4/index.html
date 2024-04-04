@@ -1,0 +1,129 @@
+<html><head><title>Making a Custom Console Background</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="4" name="4" class="book-h1">Making a Custom Console Background</h1><!-- by Merl (merlinis@bigpond.net.au) 2001
+     by Gard (stephen@geol.uwa.edu.au) 2003 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		Making a Custom Console Background - Created by Merl<br>
+		<a href="stephen@geol.uwa.edu.au?PHPSESSID=d9fc2f34f6fcd2f4da05b1b32d337229">Updates contact RUST</a>
+</blockquote>
+<br><br>
+
+ <p><b>Preface:</b><br>
+    This tutorial will show you how to make your own console background and loading 
+	images for your mod.</p>
+	
+ <ul><b>You will need:</b>
+	<li> Valve's modified version of ID Software's Qlumpy.exe executable (available 
+		 in the Half-Life SDK or <a href="content/half-life/tutorials/conback/qlumpy.zip?PHPSESSID=d9fc2f34f6fcd2f4da05b1b32d337229">here</a> if you dont have the SDK)
+	<li> A competent image editing program (I myself use Adobe PhotoShop for all my 
+	     image editing needs. However, If you need a shareware editor fast, may I 
+		 suggest Jasc Software's Paint Shop Pro- Available here: <a href="http://www.jasc.com/">http://www.jasc.com/</a> )
+    <li> Notepad
+ </ul>
+
+ <UL><b>Just a few notes:</b>
+	<li> The console background and loading image are stored in a wad file in the 
+		 mod's root directory called cached.wad. 
+	<li> I would advise that you make your own mod before you do this. Don't worry, 
+	     making a new mod will only take about 30 seconds, and only requires the 
+		 creation of 1 file. For more on this, go <a href="http://hlpp.valveworld.com/tuts/liblist.htm">here.</a>
+	<li> If you don't want to bother with that, then at least back up your current 
+	     cached.wad file in your valve directory before changing it. You never know 
+		 what may happen.
+ </ul>
+
+ <p><b>Making the images</b><br>
+    First of all, were going to have to make the images themselves. </p>
+
+ <ol>
+	<li> Fire up your image editor. Create a new image by going to File -> New.
+		 <br>&nbsp;
+	<li> You should now specify the dimensions for the new image. For the purposes of 
+	     this tutorial, make the dimensions 320 x 200 pixels. You may choose to 
+		 experiment with this size later.
+		 <br>&nbsp;
+	<li> Make it! Draw something, import an image relevant to your mod, whatever.
+		 <br>&nbsp;
+		<ul>
+			<i><b>NOTE:</b> It would be illogical to make a console background that makes 
+			the text of the console unreadable. So, when designing the console background, 
+			be sure to keep in mind the colour of the console text.</i>
+		</ul>
+		 <br>
+	<li> When your finished, save your image as <b>conback.bmp</b> (note: the 
+		 image must be a normal 8-bit 256 colour bitmap). You can actually name it 
+		 whatever you want, but I'll use this for this tutorial.
+		 <br>&nbsp;
+	<li> Repeat steps 1-3 for the Loading image, and save it as <b>loadback.bmp</b>. 
+		 Again, make sure it is saved as an apropriate bitmap.
+ </ol>
+
+ <p>Now that we have our images, we will compile them both into the cached.wad file 
+	using the Qlumpy.exe  tool. But, a few things need to be taken care of:</p>
+
+ <UL>
+	<li> Make a new temporary folder on your hard drive. Something like <i>c:\temp\qlumpy\ </i>
+		 will work best and cause you less hassles later on.
+	<li> Take qlumpy.exe out of the SDK (look in the Texture Wad Tools folder) and 
+		 put it in the temp directory you just made. Also, put both your images in there.
+ </ul>
+
+ <p><b>Compiling your Cached.wad</b><br>
+	OK, Now were ready to compile your cached.wad file.</p>
+
+ <ol>
+	<li> Fire up Notepad. Enter the following lines exactly as they appear:
+		<br>&nbsp;
+		<hr><font face="courier" size="2">
+			$DEST "cached.wad"<br>
+			<br>
+			$loadbmp "<font color="#6699CC">c:\temp\qlumpy\conback.bmp</font>"<br>
+			conback qpic 0 0 <font color="#59BC3D">320 200</font><br>
+			<br>
+			$loadbmp "<font color="#6699CC">c:\temp\qlumpy\loadback.bmp</font>"<br>
+			loading qpic 0 0 <font color="#59BC3D">320 200</font><br>
+		<hr></font>
+		<UL>
+			<i><b>NOTE:</b> You will need to replace the <font color="#6699CC">blue</font> lines above with the 
+			actual path to the images on your Hard Drive. If you have been using the 
+			exact paths and names I have been using in this tutorial, then you wont 
+			need to change anything.</i>
+			<br>&nbsp;<br>
+			<i><b>Advanced users note:</b> IF you are experimenting with different image 
+			sizes, then I suggest you modify the last two numbers in <font color="#59BC3D">green</font> to reflect 
+			the dimensions of your two images. </i>
+		</ul>
+		<br>
+	<li> Save the file in your temporary directory (<i>c:\temp\qlumpy</i> in this 
+		 tutorial) as <i>console.ls</i><br>
+		<ul>
+			<i><b>NOTE:</b> the extension you should save under must be <i>.ls,</i> NOT <i>.txt,</i> as 
+			Notepad will save by default. Make sure you check after you have saved 
+			this file that the extension is correct before proceeding. To do this, 
+			make sure Windows is not hiding your file extensions.</i>
+		</ul>
+		<br>
+	<li> In Notepad, goto File -> New. This time, enter the following:
+		<br>&nbsp;
+		<hr><font face="courier" size="2">
+			qlumpy console.ls
+		<hr></font>
+		<br>
+	<li> Save the file in your temporary directory as consolewad.bat.
+		<br>&nbsp;
+		<ul>
+			<i><b>NOTE:</b> As above, make sure the extension is .bat, and not .txt.
+			Also, you can actually name this file anything you want.</i>
+		</ul>
+ </ol>
+
+ <p>Now all that remains is to simply double-click on consolewad.bat, and a dos 
+	window should appear, think about all of this and eventually spit out a cached.wad 
+	file.<br>
+	<br>
+	All you need to do is put this cached.wad file in your mod's root directory, and 
+	the changes *should* take effect.</p>
+	
+<!-- eof @ 128 --></body></html>

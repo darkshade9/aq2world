@@ -1,0 +1,190 @@
+<html><head><title>Creating Proximity Doors</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="6" name="6" class="book-h1">Creating Proximity Doors</h1><!-- by Merl (merlinis@bigpond.net.au) 2001
+     by Gard (stephen@geol.uwa.edu.au) 2003 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		Creating Proximity Doors - <a href="mailto:mithodiel@softhome.net">Mithodiel</a>
+</blockquote>
+<br> <br>
+
+<h3>How do I create a proximity door (a door that stays open as long as the player
+    remains in a certain area near the door)?</h3>
+    
+ <p>You've most likely seen the doors in the Half-Life single-player campaign
+    that opened only as long as you turned a wheel, but which started to close
+    after you let go of the wheel. Remember the underwater grates in "Surface
+    Tension"? Those are the type of doors I am referring to. They are <I>momentary_door</I> 
+    entities, and the controlling wheel is a <I>momentary_rot_button</I> entity.</P>
+      
+ <p>The <I>momentary_rot_button</I> entity, though, has an interesting property.
+    Repeatedly triggering the entity has the exact same effect as if you hold
+    down the +use key while standing near it! We will use this property to activate
+    our proximity door.</P>
+    
+ <p>Creating a proximity door requires the use of three entities:
+    <ul type="square">
+        <LI><I><B>momentary_door</B></I>, for the door itself;
+	    <LI><I><B>momentary_rot_button</B></I>, to control the up and down motion of
+	        the door; and
+	    <LI><I><B>trigger_multiple</B></I>, to define the proximity area and repeatedly
+	        trigger the <I>momentary_rot_button</I> in order to keep the door open
+    </ul>
+    </P>
+    
+ <p>We will discuss each entity in turn.</P>
+
+<hr noshade color="black">
+
+<h3>Step 1: Creating the <I>momentary_door</I> entity</h3>
+
+ <p>If you are in any way familiar with creating normal <I>func_door</I> entities,
+    then this will be easy for you to understand. Create your door in the usual
+    way, except that instead of making it a <I>func_door</I>, make it into a
+    <I>momentary_door</I>. Set the door's angle, speed, lip, etc., to the values
+    you want.</P>
+    
+ <p>Now we need to give the door a name, so that we can use a
+    <I>momentary_rot_button</I> to activate it. The example map uses the name
+    <CODE>proxim_door</CODE>.</P>
+    
+ <p>Finally, we want the <I>momentary_door</I> to close automatically once we
+    stop triggering the <I>momentary_rot_button</I>. To do this, set the door's
+    <CODE>spawnflags</CODE> value to <CODE>32</CODE>. (In Worldcraft, this means
+    to check only the "Toggle" spawnflag). Enabling this spawnflag allows the
+    door to close automatically once the <I>momentary_rot_button</I> stops activating
+    it.</P>
+    
+<center>
+    <A HREF="content/half-life/tutorials/proxdoor/prox_snap1.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">
+    <IMG SRC="content/half-life/tutorials/proxdoor/prox_thmb1.jpg" WIDTH="100" HEIGHT="70" BORDER="0"><br>
+    Screen shot of the <I>momentary_door </I>in Worldcraft</A> [94K]
+    <br>&nbsp;
+</center>
+
+<hr noshade color="black">
+
+<h3>Step 2: Creating the <I>momentary_rot_button</I> entity</h3>
+
+ <p>If you've created a <I>func_rot_button</I> entity before, then this will
+    be easy, too. Create your rotating button as usual (complete with origin
+    brush!), but turn it instead into a <I>momentary_rot_button</I> entity. Set
+    its speed, auto-return speed (<CODE>returnspeed</CODE>), and rotation distance
+    (<CODE>distance</CODE>) as desired.</P>
+
+ <p>For this tutorial, since the player doesn't have to +use the button to activate
+    it, the button does not have to be set up in a visible part of the level.
+    Since the <I>momentary_rot_button</I> entity is brush-based, it can even be
+    placed in the "void" outside of the map. The <A HREF="content/half-life/tutorials/proxdoor/proxdoor.zip?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">example map</A> 
+    places the button in full view of the player so that you can see that the button 
+    turns when triggered repeatedly.</P>
+    
+ <p>Now, set the <CODE>target</CODE> key (WC: "Targetted object") to the name
+    of your <I>momentary_door</I>. The example map sets it to
+    <CODE>proxim_door</CODE>. This allows the button to open and shut the door.</P>
+    
+ <p>Now, set the spawnflags of the <I>momentary_rot_button</I>. The base value
+    that you need to enter in the <CODE>spawnflags</CODE> key is <CODE>18</CODE>.
+    (In WC, this is equivalent to checking only the "Not useable" and "Auto Return"
+    spawnflags). Enabling Auto Return allows the door to close itself automatically
+    once the button is no longer being activated. Add 64 to this value (WC: check
+    "X Axis") if the button rotates around the X-axis, or 128 to this value (WC:
+    check "Y Axis") if the button rotates around the Y-axis.</P>
+    
+ <p>Finally, give the button a name, so that we can activate it via triggers.
+    The example map uses the name <CODE>proxim_btn</CODE>.</P>
+
+<center>
+    <A HREF="content/half-life/tutorials/proxdoor/prox_snap2.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">
+    <IMG SRC="content/half-life/tutorials/proxdoor/prox_thmb2.jpg" WIDTH="100" HEIGHT="70" BORDER="0"><br>
+    Screen shot of the <I>momentary_rot_button </I>in Worldcraft</A> [90K]
+    <br>&nbsp;
+</center>
+
+<hr noshade color="black">
+
+<h3>Step 3: Creating the <I>trigger_multiple</I> entity</h3>
+
+ <p>This is the most straightforward step, provided that you have created triggers
+    before. Create a brush to define your proximity area and cover it in the
+    AAATRIGGER texture. Then select it and turn it into a <I>trigger_multiple</I>
+    entity.</P>
+    
+ <p>Set the trigger's <CODE>target</CODE> key (WC: "Target") to the name of the
+    <I>momentary_rot_button</I>. (For the example map, this is
+    <CODE>proxim_btn</CODE>.)</P>
+    
+ <p>Then set the trigger's <CODE>delay</CODE> key (WC: "Delay before reset")
+    to <CODE>0.1</CODE>. This causes the trigger to fire every tenth of a second
+    while the player remains in the trigger area [unless you enable the "No Clients"
+    (2) spawnflag -- see below]. Since the trigger targets the button, which
+    in turn controls the door, the door will open and stay open as long as the
+    player remains in the trigger area.</P>
+    
+ <p>The different spawnflags of the <I>trigger_multiple</I> allow you to customize
+    which beings in the map get to use the proximity door:
+    <UL type="square">
+	    <LI>"Monsters" (1): If this spawnflag is enabled, then any monster which wanders
+	        into the trigger area will activate the door.
+	    <LI>"No Clients" (2): If this spawnflag is enabled, then the player cannot activate
+	        the trigger. He/she would need to turn the button manually. If the button
+	        is hidden from the player, then the door is off-limits to him/her. Too bad.
+	    <LI>"Pushables" (4): If this spawnflag is enabled, then pushing a pushable object
+	        into the trigger area will activate the door and cause it to stay open.
+    </UL>
+    </P>
+
+<center>
+    <A HREF="content/half-life/tutorials/proxdoor/prox_snap3.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">
+    <IMG SRC="content/half-life/tutorials/proxdoor/prox_thmb3.jpg" WIDTH="100" HEIGHT="69" BORDER="0"><br>
+    Screen shot of the <I>trigger_multiple </I>in Worldcraft</A> [99K] 
+    <br>&nbsp;
+</center>
+
+<hr noshade color="black">
+
+<h3>Step 4: Compile and run</h3>
+
+ <p>Compile and run your map. The door should begin to open when the player steps
+    into the trigger area, and should stay open as long as he/she stays in the
+    trigger area.</p>
+
+ <P>I've created a small example map that illustrates the concept. The first
+    door you come to is a normal sliding <I>func_door</I> -- ignore this one.
+    The second door is the proximity door. There is a wheel along the wall here
+    -- this is the <I>momentary_rot_button</I> that controls the door. I decided
+    not to hide it so that you can see the button rotate when it is triggered,
+    and to allow you to +use the wheel yourself to open the door. The proximity
+    area for the door is the area covered in the red and white stripes.
+    </p>
+
+<center>
+    <A HREF="content/half-life/tutorials/proxdoor/prox_snap4.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">
+    <IMG SRC="content/half-life/tutorials/proxdoor/prox_thmb4.jpg" WIDTH="100" HEIGHT="75" ALT=" " BORDER="0"></A>
+    
+    <A HREF="content/half-life/tutorials/proxdoor/prox_snap5.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">
+    <IMG SRC="content/half-life/tutorials/proxdoor/prox_thmb5.jpg" WIDTH="100" HEIGHT="75" ALT=" " BORDER="0"></A>
+
+    <br>
+    <I><A HREF="content/half-life/tutorials/proxdoor/prox_snap4.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">Door opening</A> (21K) and 
+    <A HREF="content/half-life/tutorials/proxdoor/prox_snap5.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">door closing</A> (22K) shots from the example map</I><BR>
+    <I>Click on thumbnails to view larger versions of the images</I>
+    <br>&nbsp;
+</center>
+
+<hr noshade color="black">
+
+<h3>Tutorial Files</h3>
+
+ <p><UL type="square">
+	    <LI><A HREF="content/half-life/tutorials/proxdoor/proxdoor.zip?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6">Example map (proxdoor.zip)</A> [8K]
+	    <LI><A HREF="content/half-life/tutorials/proxdoor/prox_snap4.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6" TARGET="_blank">Screen shot of the proximity door opening</A> [21K]
+	    <LI><A HREF="content/half-life/tutorials/proxdoor/prox_snap5.jpg?PHPSESSID=8f8c8174f2f6310c13434ca0722e94a6" TARGET="_blank">Screen shot of the proximity door closing</A> [22K]
+    </UL>
+    </p>
+
+ <P><B>NOTE:</B> Special thanks to
+    <A HREF="http://www.geocities.com/TimesSquare/Alley/7579/members/oddsock.html">[RPS]Odd
+    Sock</A>, who came up with the basic mechanism for creating such a door, at least as far as I know.
+    </p></body></html>

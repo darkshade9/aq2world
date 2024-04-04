@@ -1,0 +1,339 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Rust - Quake2 Tutorials - target_speaker</title>
+<LINK rel="Start" title="Main r u s t Page" type="text/html" href="http://www.gamedesign.net">
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Title" CONTENT="rust Game Designer Interviews">
+<META NAME="DC.Creator" CONTENT="Shane Sherman(fishman)">
+<META NAME="DC.Subject" CONTENT="game editing and design">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+
+<link rel=stylesheet href="../../../stylesheets/main.css">
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+<tr>
+	<td colspan="2" valign="TOP" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a><br>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<h1>Quake2 Tutorials</h1>
+
+
+<Br></td>
+
+
+	<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+	
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+	</td>
+<!--menu ends here-->
+</tr>
+<tr>
+	<td width="100%" valign="TOP">
+<div class="text"><br>
+<blockquote>
+<h3>target_speaker</h3>
+<blockquote>
+
+The <b>target_speaker</b> entity is another one that will be used VERY often by a map designer and should be known very well. What it does is spawns all those crazy sounds you here in quake2. Like the humming of a generator, breaking of glass, water flowing, ships flying overhead, etc. I will attempt to show you how to use this entity...hopefully.
+<br><br>
+<h3>Creating the target_speaker</h3>
+<blockquote>
+A target_speaker should be placed where you want the sound to originate from. By default a target_speaker will not start on and will have to be triggered by another entity such as a trigger_once, trigger_multiple, func_button, or whatever you want the sound to be triggered by. If you want a window to set off the sound then you would create the func_explosive that would be the breaking window and add a target key and set it to the the target_speaker. There is a way to make the target_speaker to start on that I will explain in the spawnflags section.
+</blockquote>
+ <h3>Key Value Pairs</h3>
+<blockquote>
+<b>Noise</b>
+<br><br>
+Noise is the name and path of the actual sound that will be played. The trick to it, if you want to call it a trick, is that you must specify the directory path and the name of the sound. Here is a <b><a href="sounds.shtml">list</a></b> of all the sounds that you can use and their directory paths. A common thought is that you can only use the sounds in the world/ directory but this is simply not true. You can use <b>ANY</b> sound at <b>ANY</b> time. You will soon find out though that the sounds in the world directory will be used much more often. So for an example if we want the target_speaker to produce a pump sound then we would set noise=world/bigpump.wav.
+<br><br>
+<b>Things to remember:</b>
+<blockquote>
+<li>Every target_speaker <b>MUST</b> have a noise key.</li>
+<li>Case does not matter. xian.wav and XIAN.WAV will both work.</li>
+</blockquote>
+<br><br>
+<br>
+<b>attenuation</b>
+<br><br>
+attenuation is the distance the sound will travel before fading out. There are 4 different levels of attenuation:
+<blockquote>
+<li><b>-1</b> : No fade off, the whole level will hear the sound</li>
+<li><b>1</b> : Normal fighting sounds. This is also the default attenuation for normal sounds.</li>
+<li><b>2</b> : idle sound level. </li>
+<li><b>3</b> : ambient sound level. Default attenuation for target_speaker entities that have the spawnflag looped-on set.</li>
+a value of 0 for attenuation will default to 1.
+</blockquote>
+<br><br>
+<b>volume</b>
+<br><br>
+Volume is pretty self explanatory. Volume levels can be values of 0.0 to 1.0. 1.0 being the loudest. If volume is left blank then the default volume is set to 1. A volume of .1 will barely  be audible. If there are multiple target_speaker entities with the same sound playing at the same time then the volume will increase beyond normal but excessive target_speakers will do nothing beyond a certain point.
+ <br><br>
+ </blockquote>
+ <h3>Spawnflags</h3>
+ <blockquote>
+<b>looped-on</b>
+<br><br>
+When looped-on is set then the sound will start on when the level is started and stay on until triggered. Thus the sound will loop over and over again until triggered and turned off. Sounds that are looped-on <b>always</b> have an attenuation of 3 and a volume of 1 and can <b>not</b> be changed.
+<br><br>
+<br>
+<b>looped-off</b>
+<br><br>
+Looped-off is the opposite of looped-on naturally. The sound will start off and then when trigger will start and stay on. As with a looped_on sound they always will have an attenuation of 3 and a volume of 1 and can <b>not</b> be changed.
+<br><br>
+
+<b>reliable</b>
+<br>
+<br>
+reliable is used when you have a very important sound that player must hear, like for crucial voiceovers. It makes the sound that is marked as reliable to override all the other sounds that are playing at the same time.
+<br><br>
+</blockquote>
+<h3>Uses of the Target_Speaker</h3>
+<blockquote>
+There are virtually unlimited uses of the target_speaker entity. Of course you are going to want to use a lot of the world/ sounds with breaking glass, moving trains, computers humming, etc. But there are also uses of the non world/ sounds. Like some of the monster sounds at random areas to create a freaky feel of the level. There is an example of this on the <a href="sound.zip">example</a> map.<br><br></blockquote>
+ Well anyways if you still don't understand please post your questions to the <a href="../../quake2/discussion/quake2discussion.shtml">discussion</a> board.
+<br><br>
+</blockquote>
+<h3><a href="../../quake2tutorials.shtml" target="_top">Return to Tutorials Page...</a></h3><br><br>
+
+
+</blockquote>
+</div>
+<br><br><br><br>
+
+</td></tr></table>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>

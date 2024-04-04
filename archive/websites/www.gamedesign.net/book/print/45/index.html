@@ -1,0 +1,54 @@
+<html><head><title>Area Light</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="45" name="45" class="book-h1">Area Light</h1><h3>Quake 2</h3>
+	<blockquote>
+		Area Light - <a href="mailto:granny@gamedesign.net">GrrandMaMa</a>
+	</blockquote>
+<br><br>
+
+<p>One of the things I've always dreaded doing when building is area lighting. I can have all of my sourced lighting up and going, all my spot lighting and texture lighting set and done, but there are always dark spots (usually in the center of a fairly large room with a high ceiling.) So, the next step (for me) was to put a whole bunch of low-brightness lights close to the floor (usually 150 brighness, about 64 units off the floor) and space them out to put a dim cover. Just enough to put light where I need it, but not enough to overpower the sourced lights. And then there is the matter of coloring them. 
+
+<p>All in all, it works well, but it takes a long time to get it just right, and it's just a general pain in the ass. There is however, another way that gives nearly perfect coverage, and is (most importantly) fast and easy to adjust to get it looking just right.
+
+<p>Let's look at a particular area.
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/alight/alight_img1.jpg"></div>
+
+<p>Notice how the center of the room is dark. Now, if we were to put a light, bright enough to cover the dark area, in the center of the dark spot, it would flood out the sourced lighting from the lights in the wals near the floor. So, now we have a problem just like the one I described above, but instead of using cover lighting using point lighting like I described above, we'll do something different -- texture lighting. I know, that would look pretty bad to light up the floor. Don't worry, we're not going to use the floor. 
+
+<p><b>First thing we need to do</b> is find a texture that will give us the color we need when we light it. In this case, we'll use the texture for the wall-mounted lights.
+
+<p><b>Next, create a brush </b>that covers the general area, a bit off the floor (no, I'm not going to tell you exactly how far, because it's something you have to play with.) 
+
+<p>You should have something like this:
+
+<p><div align="center"><img src="/content/quake2/tutorials/alight/alight_img2.jpg"></div>
+
+<p>Now we set the properties for the brush. Set the following flags <b>on all faces</b> of the brush:
+
+<br><br>
+
+<blockquote>
+	<li><b>light:</b> Well, why else would we be doing this?<br>
+    <li><b>sky:</b> This way it will still emit light, even though it won't be drawn<br>
+	<li><b>nodraw:</b> A big light brush probably wouldn't look too good in the middle of a room<br>
+	<li><b>detail:</b> Since it is a sky brush, it will be a     factor in your PVS unless this is checked, which means you'll be having sky pop up in all kinds of wierd places. Trust me... check this<br>
+	<li><b>mist:</b> If you don't check mist, people will be wondering who stuck a big clip brush in the middle of the room<br>
+</blockquote>
+
+<p>Keep the light value <b>very</b> low.
+
+<p><b>NOTE</b>: This will <b>dramatically</b> increase your QRAD3 times. Just thought I'd let you know.
+
+<p>Now compile it, and you should come up with something like this:
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/alight/alight_img3.jpg"></div>
+
+<p>It's a subtle difference, but every little bit counts (and it looks pretty good too)
+
+<p><hr width=75% color=black noshade><p>
+
+<p> You can download the example <a href="/content/quake2/tutorials/alight/alight_ex.zip">here</a>.
+
+<p>
+</body></html>

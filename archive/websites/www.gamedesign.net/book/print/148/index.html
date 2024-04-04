@@ -1,0 +1,128 @@
+<html><head><title>How to create cutscene?</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="148" name="148" class="book-h1">How to create cutscene?</h1><!-- (c) 2004, [DS]Kingpin_Xatrix -->
+
+<h3>Kingpin</h3>
+<blockquote>
+       <b>How to create cutscene?</b> - by Method
+</blockquote>	
+
+<p>This is an example of how to use a camera to be targeted from a misc_cutscene_trigger.<p> 
+
+<p><hr color=black noshade width=75%><p>
+
+<h3>Misc_cutscene_trigger Options:</h3>
+
+<b>targetname</b> - camera target ID.<br><br>
+<b>cameraorigin</b> - X Y Z camera start position.<br><br>
+<b>cameraangle</b> - X Y Z start angles.<br><br>
+<b>rotate</b> - X Y Z rotational velocity during cut scene.<br><br>
+<b>cameravel</b> - [forward] [right] [up] speed to move from initial angle.<br><br>
+<b>cameravelrel</b> - [forward] [right] [up] speed to move relative to current frame angle.<br><br>
+<b>wait</b> - cut scene length in seconds (default 5).<br><br>
+<b>target</b> - next camera to target.<br><br>
+<b>target2</b> - [NOT WORKING!!] camera angle points to this entity (overides other angle commands).<br><br>
+<b>deadticks</b> - fov for this camera.<br><br>
+<b>duration</b> - fade out time.<br><br>
+<b>reactdelay</b> - time into camera to start fading out.<br><br>
+
+<p><hr color=black noshade width=75%><p>
+
+<h3>Example:</h3>
+
+Create misc_cutscene_trigger and open Entity inspector.<br><br>
+
+<font color = "red">
+Key	duration<br>
+Value	1<br><br>
+</font>
+Value is the fade out time.<br><br>
+<font color = "red">
+Key	target<br>
+Value	cam_1<br><br>
+</font>
+Value is the targetname of misc_cutscene_camera.<br><br>
+
+Create misc_cutscene_camera and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	cam_1<br><br>
+</font>
+Value is the camera target ID.<br><br>
+<font color = "red">
+Key	name<br>
+Value	cut_scene/cut1.wav<br><br>
+</font>
+Value is the sound name to play.<br><br>
+<font color = "red">
+Key	cameraangle<br>
+Value	52 35 0<br><br>
+</font>
+Value is the X Y Z start angles.<br><br>
+<font color = "red">
+Key	cameraorigin<br>
+Value	-2071 2534 263<br><br>
+</font>
+Value is the X Y Z camera start position.<br><br>
+<font color = "red">
+Key	cameravel<br>
+Value	7 50 -48<br><br>
+</font>
+Value is the [forward] [right] [up] speed to move from <br>initial angle.<br><br>
+<font color = "red">
+Key	cameravelrel<br>
+Value	0 10 0<br><br>
+</font>
+Value is the [forward] [right] [up] speed to move relative <br>to current frame angle.<br><br>
+<font color = "red">
+Key	reactdelay<br>
+Value	5<br><br>
+</font>
+Value is the time into camera to start fading out.<br><br>
+<font color = "red">
+Key	wait<br>
+Value	15<br><br>
+</font>
+Value is the cut scene length in seconds (default 5).<br>
+<font color = "red">
+Key	target<br>
+Value	cam_2<br><br>
+</font>
+Value is the next camera to target.<br><br>
+<font color = "red">
+Key	target2<br>
+Value	cam_1_viewtarget<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+<font color = "red">
+Key	delay<br>
+Value	5<br><br>
+</font>
+Value is the time into camera to start fading out.<br><br>
+<font color = "red">
+Key	accel<br>
+Value	0.3<br><br>
+</font>
+Value is the camera acceleration.<br><br>
+<font color = "red">
+Key	decel<br>
+Value	0.3<br><br>
+</font>
+Value is the camera deceleration.<br><br>
+
+Create info_player_start and open Entity inspector.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	225<br><br>
+</font>
+Value is the opening direction.<br><br>
+Place info_player_start inside misc_cutscene_trigger.<br><br>
+
+Create path_corner_cast and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	cam_1_viewtarget<br><br>
+</font>
+Value is the path_corner_cast target ID.<br><br>
+
+I used sr1.map cutscene as an example.</body></html>

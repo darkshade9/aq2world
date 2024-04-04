@@ -1,0 +1,84 @@
+<html><head><title>Misc</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="28" name="28" class="book-h1">Misc</h1><h3>Quake 2 Misc Entities</h3><p>
+
+	<ul>
+	
+	<!-- Start description -->
+	<p><a name="#misc_banner"><b>misc_banner</b></a> - misc_banner is the cool wavy flag that is seen on base1. Pretty cool looking. It's uhhhh...very easy. Just place it where ever you want and thats where the flag will appear. <b>Angle</b> determines which side of the flag faces what. In the docs it says it is 128 units high but it seems much bigger to me.<br><br>
+	
+	<p><a name="#misc_bigviper"><b>misc_bigviper</b></a> - The misc_bigviper is the ship model that you can see in the quake2 intro that can be placed in a level but acts very differently then the other ship entities. It does absolutly nothing at all!<br><br>
+	
+	<p><a name="#misc_blackhole"><b>misc_blackhole</b></a> - There are no flags or options for misc_blackhole. It just spins. The only thing worthy of mention is the fact that, while the entity in your editor is about the size of a light, the in-game misc_blackhole is very, very big. Allow at least 256 units in all directions.<br><br>
+	
+	<p><a name="#misc_deadsoldier"><b>misc_deadsoldier</b></a> - Not much to say about these. Pretty self explanatory. There are six varieties, determined by spawnflags: <b>on_back</b>, <b>on_stomach</b>, <b>back_decap</b>, <b>fetal_pos</b>, <b>sit_decap</b>, and <b>impaled</b>. Obviously, only one flag can be set for each <b>misc_deadsoldier</b> (a guy would have to be pretty badly worked over to be on his back and his stomach at the same time.) Insert one in your map, and voila! Instant dead guy! Two things worth of mention, however: 1) <b>misc_deadsoldier</b> entities will not drop to the floor, so if you don't want them to float, align them on the floor. 2)a <b>misc_deadsoldier</b> with the <b>impaled</b> flag just won't look right unless he's suspended or impaled somehow. (in water, on a hook, etc).<br><br>
+	
+	<p><a name="#misc_easterchick"><b>misc_easterchick</b></a> - see below
+	
+	<p><a name="#misc_easterchick2"><b>misc_easterchick2</b></a> - see below
+	
+	<p><a name="#misc_eastertank"><b>misc_eastertank</b></a> - The easter egg entities are easy to use for your own SPQ levels, the difficult part is creating the chair for the misc_eastertank to sit in, but I'll leave that part of it to you :)<br><br>
+	
+	<ol><li>Make sure that your editor is zoomed in pretty close with a grid or maybe 8 or so.  This way you can be sure that you line everything up right.<li>Place the <b>misc_eastertank</b> along the floor.<li>Put the <b>misc_easterchick</b> so that it's bottom side is aligned with the bottom side of the <b>misc_eastertank</b>.<li>Now put the misc_easterchick2 in the same place as the misc_easterchick.  The picture below will give you a pretty good idea of what it will look like in the editor after steps 3 and 4.</ol><br>
+	
+	<center><img src="/content/quake2/tutorials/misc_easter/easter.jpg"><br><br>
+	
+	It really doesn't get any easier than that.  Again, don't ask me how you make the chair for the misc_eastertank, that is up to you to design.<br><br>
+	
+	<p><a name="#misc_explobox"><b>misc_explobox</b></a> - Those barrels that are pushable and explode when shot.
+	
+	<p><a name="#misc_gib_arm"><b>misc_gib_arm</b></a> - see target_spawner for use
+	
+	<p><a name="#misc_gib_head"><b>misc_gib_head</b></a> - see target_spawner for use
+	
+	<p><a name="#misc_gib_leg"><b>misc_gib_leg</b></a> - see target_spawner for use
+	
+	<p><a name="#misc_insane"><b>misc_insane</b></a> - The <b>misc_insane</b> are the marines you see wandering around in the game. They're extremely easy to use. They act a bit like monsters, in that if they don't have a specific path, they will follow you around.<br><br>
+	
+	There are a few spawnflags and keys for misc_insane:<br><br>
+	
+	<b>ambush</b>: A misc_insane with this flag set will not react to you until it has a direct line of sight, or until you do damage to it. Then it will follow you around. If the misc_insane is set to follow a path, it will only react when shot.<br><br>
+	
+	<p><a name="#misc_satellite_dish"><b>misc_satellite_dish</b></a> - The <b>misc_sattelite_dish</b> can be either placed in a map on its own, in which case it will just sit there and look...well...like a sattelite dish; or it can be triggered by another event, such as a func_button. If the dish is triggered, it will tilt up, and then rotate to the left. One thing to keep in mind when setting up the triggering event, though: When the dish is triggered, it moves smoothly, but if it is triggered again, it jerks back to it's starting position, with no animation frames. So, it's best to either use a trigger_once, or a button with a "<b>wait</b>" value of "<b>-1</b>" (never return.)<br><br>
+	
+	<p><a name="#misc_strogg_ship"><b>misc_strogg_ship</b></a> - see misc_viper
+	
+	<p><a name="#misc_teleporter"><b>misc_teleporter</b></a> - The <b>misc_teleporter</b> and <b>misc_teleporter_dest</b> are 2 extremely simple entities that must be used together to create the teleporters that you see in the id maps when playing deathmatch. They can be used in single player but I don't seem to remember id using them any time in the game. Getting a teleporter to work is very simple, much easier then in quake1.<br><br>
+	
+	First thing you must do is decide where you want the teleporter of course and then place the misc_teleporter entity. Then you must place the misc_teleporter_dest where you want to be teleported. Then <b>give the misc_teleporter_dest a targetname and target it with the misc_teleporter</b>. It's that simple. For example, lets give the misc_teleporter_dest a <b>targetname</b> of t1. Then we would give the misc_teleporter a target of t1. Thats it.<br><br>
+	
+	In quake2 you cannot change the look of the teleporters or the size. They are solid entities that have their own models.<br><br>
+	
+	<p><a name="#misc_teleporter_dest"><b>misc_teleporter_dest</b></a> - see misc_teleporter above
+	
+	<p><a name="#misc_viper"><b>misc_viper</b></a> - The <b>misc_viper</b>, and <b>misc_strogg_ship</b> are those space ships that you see in some of the id levels that fly through the sky every once in awhile. There are a few of them that you can see on the very first level. They are very simple to use in a level and look real cool.<br><br>
+	
+	<u>How do I make the damn things?</u><br>There is minimum of 4 entities that must be used to get these ships flying. They are some sort of <b>trigger</b> to start the ships movement, the <b>ship</b>, the <b>starting path_corner</b>, and the <b>ending path_corner</b>. There can be more path_corners in between the first and the last one for a more detailed flying path but only 2 are required.<br><br>
+	
+	The <b>misc_viper</b> and <b>misc_strogg_ship</b> are used in a very similar way to a func_train. <br><br>
+	
+	The first thing you must do is pick the ship you wish to use. You can place the ship entity anywhere in the level because it will automatically appear at the first path_corner.<br><br>
+	
+	The second thing you need to do is to make the beginning and ending path_corners and any number of ones in between. This will be the actual path the ships will follow when triggered. Each path_corner must target the next. You should also give the ship a target to the first path_corner. So if the first path_corner has a targetname of p1 then the ship entity will have a target of p1. If you want the ship to keep going forever then you will need to set the <b>teleport spawnflag</b> for the <b>last path_corner</b> and set the target of the last path_corner back to the first path_corner. This will actually teleport the ship back to the area of the first path_corner and create the appearance of multiple ships. Pretty cool.<br><br>
+	
+	The last thing you need to do to get the ship to actually work is to <b>create a trigger</b> of some sort to turn the ship on. If you want it to start when the level starts then you should use a <b>trigger_always</b>. So what this means you have to give the ship a targetname then give the trigger that will be used to turn the ship on a target key value pair equal to the targetname of the ship.<br><br><u>Key Value Pairs</u><br><b>speed</b><br>Speed is the speed that the ship will travel.<br><br>
+	
+	<b>angle</b><br>
+	
+	angle determines the direction the ship will face. This should be set to the direction the ship will travel or it will look strange.<br><br>
+	
+	<p><a name="#misc_viper_bomb"><b>misc_viper_bomb</b></a> - At first I had the misc_viper_bomb in another tutorial with the ship entities because I thought it was one of the ships like the viper but I was wrong. It is actually a bomb that one of the ships can drop. It was used during the game with the airstriker marker. It's a pretty complicated entity to figure out but I will show you how its done. Also thought I should mention that this tutorial is here because of EutecTic. This guy knows everything! He even made the awesome example map.<br><br>
+	
+	First thing you need to do is place the actual ship entity that will drop the bomb. You will have to use the <b>misc_viper</b>. You will also need to know how to get it to work, which I explained in a past tutorial you can check out here.<br><br>
+	
+	So now you should have the ship linked to some <b>path_corners</b>. Now create the misc_viper_bomb and place it at the path_corner where you want the ship to drop the bomb. Not on the ground but up in the air right on the path_corner. Since the bomb falls in an arc trajectory, it has to be released ahead of it's target just like the real thing. It's forward speed is about half of it's falling speed so if you place the bomb at one half the forward distance of its release height, it should fall right where you want it to.<br><br>
+	
+	Now you need to specify the damage that you want the bomb to take off. If you want it to kill everyone in site then set <b>dmg</b> to 10000. <b>You also need to give the misc_viper_bomb a targetname and a pathtarget</b>. These should be the same name. So lets set the targetname to boom and the pathtarget to boom.<br><br>
+	
+	Now select the path_corner where the bomb will be dropped at and give it the key value pair <b>pathtarget</b> and set it to the bomb. pathtarget=boom.<br><br>
+	
+	Things to remember.....The misc_viper <b>must</b> be triggered! If you don't understand how to get the misc_viper working then read the tutorial.<br><br>
+
+	<!-- End description -->
+
+	</ul></body></html>

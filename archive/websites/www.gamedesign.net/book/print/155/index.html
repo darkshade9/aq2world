@@ -1,0 +1,50 @@
+<html><head><title>How to unlock a targeted door?</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="155" name="155" class="book-h1">How to unlock a targeted door?</h1><!-- (c) 2004, [DS]Kingpin_Xatrix -->
+
+<h3>TRIGGER_UNLOCK</h3>
+
+<b>
+Player will unlock a targeted door when this brush is <br>touched<br><br>
+
+Can be triggered also!<br>
+door's "key" should equal -1<br>
+"target" target ID to match door<br><br>
+</b>
+Example use: create func_door and open Entity inspector.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	-1<br><br>
+</font>
+Value determines the opening direction.<br>
+-1 opens up, -2 opens down.<br><br>
+<font color = "red">
+Key	key<br>
+Value	-1<br><br>
+</font>
+Value is the key number.<br>
+If key is -1, that means door is closed.<br><br>
+<font color = "red">
+Key	sounds<br>
+Value	6<br><br>
+</font>
+Value is sound number.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t120<br><br>
+</font>
+Value is the func_door target ID.<br><br>
+<font color = "red">
+Key	wait<br>
+Value	6<br><br>
+</font>
+Value is the time to wait before returning (3 default, -1 =<br> never return)<br><br>
+
+Create trigger_unlock and open Eintity inspector.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t120<br><br>
+</font>
+Value is the targetname of func_door.<br><br>
+
+Place trigger_unlock behind a func_door.</body></html>

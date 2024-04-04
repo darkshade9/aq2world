@@ -1,0 +1,603 @@
+<html><head><title>Tutorials</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="819" name="819" class="book-h1">Tutorials</h1><CENTER>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wclogo3.png">
+<BR>
+<FONT SIZE="5"><B>Tutorials</B></FONT>
+</CENTER>
+<BR>
+<BR>
+Welcome to the tutorials section.  Here you will find many different articles on how to create special effects you might have seen in other maps, as well as how to do pretty much anything else with the World Editor.
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3n1.png" ALIGN="left" HSPACE="5" VSPACE="0">If you have a tutorial you would like to submit, then head on over to the <A HREF="http://forums.gamedesign.net/viewforum.php?f=79">Warcraft III Forums</A> or just click on the <A HREF="http://www.gamedesign.net/node/view/419">Contribute your content to RUST!</A> link to the right.
+<BR>
+<BR>
+<BR>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"I'm here to give you helpful tips throughout all the tutorials."
+</TD>
+</TR>
+</TABLE>
+<HR><h1 id="823" name="823" class="book-h1">Advanced Tutorials</h1><ul>This is the Advanced Tutorials area. All of the tutorials featured here are for experienced users and require a fair amount of knowledge with using the World Editor.
+<BR>
+<BR>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"Please note that all of the tutorials here are designed to work with the Frozen Throne expansion pack version of the Warcraft III World Editor."
+</TD>
+</TR>
+</TABLE>
+<HR></ul><h1 id="821" name="821" class="book-h2">Save/Load System Tutorial</h1><ul><CENTER>Submitted By <A HREF="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=1241">Koga73</A></CENTER>
+<BR>
+<BR>
+<BR>
+<H2><B>Introduction</B></H2>
+Okay, so you want make a save/load system?  Well, I'm going to try to explain it in a way even a newbie can understand! 
+<BR>
+<BR>
+First of all, you must understand how one works; this is the most important part!
+<BR>
+So, how does a save/load system save data?  It doesn't!  Here's what a save/load system actually does; it first bunches data together, then encrypts it.  Next, the load decrypts it and extracts the data from the correct positions. For this tutorial, I will you use the following as an example:  let's say I want to save the player's name and gold.
+<BR>
+<BR>
+<BR>
+<H2><B>How To Do It</B></H2>
+First, I would have the save/load system bunch the data together into a string; for this example, I'll use: 
+<UL>
+<FONT FACE="Courier New">01Koga73-3-999xxx</FONT>
+</UL>
+Now, to break it down.  The "01" tells what codeset will be used to encrypt the data (which I will explain later), the "koga73" is the player's name, and the "3" is how many digits of the ammount of gold to read.  So, if the player doesn't have 6 digits of gold, it'll only read the first 3, and the last 6 digits is the ammount of gold.  The "xxx" represent blank characters that are unused and just hold place so the code is always the same length.
+<BR>
+Right, so what's a code set you ask? Well, a code set is a dedicated character to character encryption process, so:
+<UL>
+<FONT FACE="Courier New">a = g 
+<BR>
+b = t
+<BR>
+c = y
+<BR>
+d = 6
+<BR>
+e = 8</FONT>
+</UL>
+and so on.  So, first you would need to assemble a string containing all the basic letters in order such as:
+<UL>
+<FONT FACE="Courier New">abcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()-_=+[{]}\|;:'",<.>/?</FONT>
+</UL>
+Then, assemble your code sets into arrays:
+<UL>
+<FONT FACE="Courier New">ArraySlotString[1] = badcfehgjilknmporqtsvuxwzy0987654321`~!@#$%^&*()-_=+[{]}\|;:'",<.>/?
+<BR>
+ArraySlotString[2] = qwertyuiopasdfghjklzxcvbnm2143658709`~!@#$%^&*()-_=+[{]}\|;:'",<.>/?</FONT>
+</UL>
+And so on, for up to 99 code sets as long as your only using 2 digit numbers for the code set to use within the code.  Simple!
+<BR>
+<BR>
+Now, how do we encode it? 
+<BR>
+Well, here's the coding part for my trigger:
+<UL>
+<FONT FACE="Courier New">-------- xxxENCRYPTxxx --------
+<BR>
+For each (Integer A) from 1 to 13, do (Actions)
+<UL>
+Loop - Actions
+<UL>
+Set Koga73sInputCode[(Integer A)] = (Substring(Koga73sFullCode, (Integer A), (Integer A)))
+</UL>
+</UL>
+For each (Integer A) from 1 to 13, do (Actions)
+<UL>
+Loop - Actions
+<UL>
+For each (Integer B) from 1 to 68, do (Actions)
+<UL>
+Loop - Actions
+<UL>
+If (All Conditions are True) then do (Then Actions) else do (Else Actions)
+<UL>
+If - Conditions
+<UL>
+Koga73sInputCode[(Integer A)] Equal to (Substring(Koga73sUnEncryptedCodeSet, (Integer B), (Integer B)))
+</UL>
+Then - Actions
+<UL>
+Set Koga73sOutputCode[(Integer A)] = (Substring(Koga73sEncryptedCodeSets[Koga73sRandomCodeSetsToUse], (Integer B), (Integer B)))
+</UL>
+Else - Actions
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+For each (Integer A) from 3 to 13, do (Actions)
+<UL>
+Loop - Actions
+<UL>
+Set Koga73sFullCode = (Koga73sFullCode + Koga73sOutputCode[(Integer A)])</FONT>
+</UL>
+</UL>
+</UL>
+If you dont understand this, here's what it's doing:
+<BR>
+First, it takes each character within our completed bunched string, and puts it into an array. 
+<UL>
+<FONT FACE="Courier New">Array[1] = "k"
+<BR>
+Array[2] = "o"
+<BR>
+Array[3] = "g"
+<BR>
+Array[4] = "a"</FONT>
+</UL>
+And so on.  Then, after it selects a code set to use, it takes that number, and uses a loop to do a check where  the character it's currently on is equal to "A", then it would set it equal to the first character in the first code set.  It's all done by letter positions.  So, lets say the first array slot equals "A", then it would use code set 1 (or the selected code set) and use its first character (since this is corresponding to a).  If the character in array slot 1 equals "Z", then its going to use the 26th letter/number in the selected code set. After it selects which corresponding character to use, it sets it into a string slot called "Output".  If array slot 1 equals "A" and the matching character equals "G", then it would set this: 
+<UL>
+<FONT FACE="Courier New">ArrayOutputString[1] = "g"</FONT>
+</UL>
+Simple.  Next, after it has done this to every letter in the code (excluding the first 2, we dont want to encrypt the first 2 characters in our bunched code, otherwise when it loads it wont know what number code set to read).  It then just sets a string to itself and arrayslot.  For this example:
+<UL>
+<FONT FACE="Courier New">output[1] = "h"
+<BR>
+output[2] = "g"
+<BR>
+output[3] = "q"</FONT>
+</UL>
+Then it would just set this:
+<UL>
+<FONT FACE="Courier New">TOTAL = "hgq"</FONT>
+</UL>
+Now that it's all encrypted, show the encryted text to the player, so it would look like: 
+<UL>
+<FONT FACE="Courier New">01wuqp38-9-usjyyy</FONT>
+</UL>
+<BR>
+<BR>
+Now for loading!
+<BR>
+Loading does the same exact thing, except backwards.  It first takes the entered code, and checks the first 2 characters and sets that to a variable so it knows what code set to use.  The next thing it does is it uses a loop to do the same thing:  compare the code sets character with the normal sets characters, replaces them, and sets the completed code back into:
+<UL>
+<FONT FACE="Courier New">01koga73-3-999xxx </FONT>
+</UL>
+Now, we need to get the correct information, so we're going to want to use substrings.  A substring is just a part of a string, so: 
+<UL>
+<FONT FACE="Courier New">the example string = summer
+<BR>
+substring(summer, 2, 4) = "umm"</FONT>
+</UL>
+This is how we divide it up!  So, first get the player's name, so we would do a substring and set it to a variable. Then compare that variable to the name of the player who typed the load code; if they are different, they can't load and it stops.  Otherwise, it then goes and looks at the "3" and decides to then read 3 digits of the gold amount, which equals "999".  Finally, it takes the "999" and sets that to the player's gold amount.  Simple!
+<BR>
+<BR>
+It takes a few hours to make a system like this, but it's worth it! And you can then get more complicated by replacing the unused variables "xxx" with randomly selected characters to just confuse people and such.
+<BR>
+<BR>
+If you want to see the actual triggers, here they are (I didn't show the code sets to keep the code on the map uncrackable).
+<UL>
+<A HREF="http://www.gamedesign.net/content/warcraft3/atut1/save.txt">Save Triggers</A>
+<BR>
+<A HREF="http://www.gamedesign.net/content/warcraft3/atut1/load.txt">Load Triggers</A>
+</UL>
+<BR>
+<BR>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"As good practice, always use lowercase letters on all of your strings.  <I>Koga73</I> and <I>koga73</I> are two different variables."
+</TD>
+</TR>
+</TABLE></ul><h1 id="822" name="822" class="book-h1">Beginner Tutorials</h1><ul>This is the Beginner Tutorials area.  All of the tutorials featured here are for beginners and are pretty easy to understand.  Little or no prior knowledge is required to use these tutorials.
+<BR>
+<BR>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"Please note that all of the tutorials here are designed to work with the Frozen Throne expansion pack version of the Warcraft III World Editor."
+</TD>
+</TR>
+</TABLE>
+<HR></ul><h1 id="1166" name="1166" class="book-h2">Making Cheat Codes</h1><ul><H2><B>Introduction</B></H2>
+Is your map too hard for newbies to beat?  Will, give them an edge with your own custom cheat codes.  Using triggers, you can set up your own custom cheats to do certain things such as give the player who entered the cheat 1,000,000 gold.  How about an army of 500 knights?  Done.  In this tutorial, I will explain how to set up your own cheat codes for your map using basic triggers.  For this tutorial, I will show you how to make a custom cheat code that gives the player 1,000,000 gold and hide the fact the the player even typed anything in at all.  However, you imagination is the limit as to what you cheat code(s) can do.
+<BR>
+<BR>
+<BR>
+<H2><B>How To Do It</B></H2>
+Alright, let's get started.  Boot up the Trigger Editor section of the Warcraft Editor.  Create your new trigger and name it whatever you like.  For this tutorial, I'm just going to name my trigger this:
+<UL>
+<FONT FACE="Courier New">Cheat Codes</FONT>
+</UL>
+Now that we have our trigger, we need to give it some parameters to operate properly.  First, we need to create a new "Event" that will initialize the trigger.  We do this by clicking on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic2.png"> ) or by pressing Ctrl+E to create a new "Event".  A dialog box will appear with 2 drop-down boxes.  
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic1.png">
+<BR>
+<BR>
+Now, click on the smaller drop-down menu and select "Player".  Next, click on the bigger drop-down menu and select "Chat Message".  You should now see this:
+<UL>
+<FONT FACE="Courier New">Player 1 (Red) types a chat message containing Text as An exact match</FONT>
+</UL>
+Okay, all you have to do is click on the word "Text".  Then, in the string field, type in what you want the cheat code to be.  For this example, I'll use "idkfa" (Doom rules!).  Now that part is done.  However, if your map is multiplayer, you'll want to copy and paste that "Event" and then change each new pasted "Event" to correspond to the player colors in your map.  So, if your map has a red, blue, and green player, you'll want your "Events" to look like this:
+<UL>
+<FONT FACE="Courier New">Player 1 (Red) types a chat message containing idkfa as An exact match</FONT>
+<BR>
+<FONT FACE="Courier New">Player 2 (Blue) types a chat message containing idkfa as An exact match</FONT>
+<BR>
+<FONT FACE="Courier New">Player 7 (Green) types a chat message containing idkfa as An exact match</FONT>
+</UL>
+Great!  We're halfway done.  Next thing we need to do is create the "Actions" that will give the player 1,000,000 gold and hide the cheat code so it looks like the play never typed anything at all.
+<BR>
+First, you need to create a new "Action" by either clicking on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic4.png"> ) or pressing Ctrl+R.  Alright, we'll set up our trigger to change the message displayed to hide the cheat code.  A dialog box will appear just like before.  Click on the small drop-down box and select "Cinematic".  From the big down-down menu, select "Clear Text Messages".  You should see this in the dialog box:
+<UL>
+<FONT FACE="Courier New">Clear the screen of text messages for (All players)</FONT>
+</UL>
+That "Action" is fine how it is, so just hit the "OK" button.  Awesome!  Now all we have left to do is create an "Action" to give the player 1,000,000 gold.  Sounds easy enough.
+<BR>
+To start off, create a new "Action".  Select "Player" from the small drop-down menu and "Add Property" from the big drop-down menu.  Here's what you get:
+<UL>
+<FONT FACE="Courier New">Player - Add 1000 to Player 1 (Red) Current gold</FONT>
+</UL>
+Alright, click on the number "1000".  You should see this dialog box:
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic5.png">
+<BR>
+<BR>
+Make sure the "Value" radio button is selected and type "1000000" in the text box.  Click "OK".  Now, click on "Player 1 (Red).  Here's what you get:
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic8.png">
+<BR>
+<BR>
+Make sure the radio button next to "Function" is selected and in the drop-down menu right next to it, select "Event Response - Triggering Player".  Hit "OK".  Here's what you should get:
+<UL>
+<FONT FACE="Courier New">Player - Add 1000000 to (Triggering player) Current gold</FONT>
+</UL>
+Here's what the final product should roughly look like (may differ a little if you have more than 1 player):
+<UL>
+<A HREF="http://www.gamedesign.net/content/warcraft3/btut1/cheat.txt">Cheat Code Trigger</A>
+</UL>
+And that's it.  You've successfully created a cheat code for your map.
+<BR>
+<BR>
+<BR>
+<H2><B>Wrap Up</B></H2>
+This tutorial was fairly basic, however there are many other things you can do to make your cheat codes better.  For example, you could make a cheat code for your tower defense map to give the players more lives.  Or, you could make a cheat code that turns another player's units into sheep.  Or, you could make a goofy cheat code that changes the name of a player to something else such as "Llama" or "Moron".  Once you start to understand better how to use triggers, the possiblities are literally endless.</ul><h1 id="826" name="826" class="book-h2">Morphing A Hero (Or Learning To Use Triggers)</h1><ul><H2><B>Introduction</B></H2>
+The Metamorphosis skill is one way you can morph a hero into something else.  However, you're stuck with having to use the same stats and primary attribute, as well as the same skills (else the spell won't work and Warcraft III will error out).
+<BR>
+In this tutorial, I will show you how to create a skill similiar to Metamorphosis that will use triggers to do exactly what we want the ability to do; using a different model, stats, and skills.  Plus, not only will the ability transform the hero into a different unit, but it will do so in a cinematic fashion by playing animations.  Also, as you read through this tutorial and follow along, you will gain a better understanding as to how triggers work as well as how to set up triggers.
+<BR>
+<BR>
+<BR>
+<H2><B>How To Do It</B></H2>
+The first thing you must do is set up a hero.  I'll leave that part up to you.  For this tutorial, I will use 
+<UL>
+<FONT FACE="Courier New">Hero1</FONT>
+</UL>
+as the name.
+<BR>
+Next, create a new spell (doesn't matter what it is based off of).  Set the spell up so that it does nothing when clicked; only has text that tells you that this skill will morph the hero (and set it to however many levels you want; for this tutorial, I'm going to make the skill 3 levels).  I'll name the new skill:
+<UL>
+<FONT FACE="Courier New">Morph</FONT>
+</UL>
+Now, I'll give my hero the new ability.
+<BR>
+Finally, create a new unit that you want the hero to morph into (a sheep, a human, a princess, whatever).  Since I am making my skill 3 levels, I will copy and paste this new unit 2 times so that I have a total of 3 units (you can make them heroes or not; if they are not heroes, then they will not get the items from the original hero, but they will get them if they are heroes).  Then, I'll make each one a bit stronger than the last.  I'll use 
+<UL>
+<FONT FACE="Courier New">Morph1
+<BR>
+Morph2
+<BR>
+Morph3</FONT>
+</UL>
+for the names.
+<BR>
+<BR>
+Now, to put together all the triggers that will make this spell work properly.
+<BR>
+In the Trigger Editor, create a new trigger.  Mine will be called
+<UL>
+<FONT FACE="Courier New">Morph</FONT>
+</UL>
+just like the skill.  Now, select your new trigger, and click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic2.png"> ) or press Ctrl+E to create a new "Event".  A dialog box will appear with 2 drop-down boxes.  
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic1.png">
+<BR>
+<BR>
+Click on the smaller box and select "Unit".  Next, click on the bigger box and select "Player-Owned Unit Event".  It should say this in the dialog box:
+<UL>
+<FONT FACE=Courier New">A unit owned by Player 1 (Red) Dies</FONT>
+</UL>
+Now, you should be able to click on "Player 1 (Red)" and "Dies".  Click on "Dies" and select "Begins casting an ability".  You should now see this:
+<UL>
+<FONT FACE="Courier New">A unit owned by Player 1 (Red) Begins casting an ability</FONT>
+</UL>
+Now click the "OK" button.
+<BR>
+Now we have set up the trigger to function whenever a unit owned by Player 1 casts an ability; however, this could be any ability, but we want only the "Morph" ability to turn on this trigger.
+<BR>
+<BR>
+So, now we need to set up some conditions.  First, click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic3.png"> ) or just press Ctrl+D.  A diablog box will appear that looks just like the last one we saw.  Select the bigger drop-down box and click on "And, Multiple Conditions", then click "OK".  Once that is done, click on the text that says "Conditions" underneath the "And - All (Conditions) are true" text.  Right-click and select "New event" or click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic3.png"> ) or press Ctrl+D.  The same dialog box appears.  Select "Integer Comparison" from the big drop-down box.  You should now see this in the dialog box:
+<UL>
+<FONT FACE="Courier New">(Number of units in (Units in (Playable map area))) Equal to 0</FONT>
+</UL>
+First, click on the number 0.  Set the new value to 1 and press "OK".  Now click on "(Number of units in (Units in (Playable map Area)))".  This dialog box will pop up:
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic5.png">
+<BR>
+<BR>
+From the currently selected drop-down box, click on "Unit - Level Of Ability For Unit".  You should see this:
+<UL>
+<FONT FACE="Courier New">Level of Ability for (Triggering Unit)</FONT>
+</UL>
+Click on "Ability".  Now, in the middle section of the new dialog box, click on the radio button next to the word "Function" and press "OK".  Then, hit "OK" again.  Here's what you should have:
+<UL>
+<FONT FACE="Courier New">(Level of (Ability being cast) for (Triggering unit)) Equal to 1</FONT>
+</UL>
+Click "OK" one last time.
+<BR>
+Now, create a second condition under our multiple conditions box by doing what I described earlier.  Once you have done that, select "Ability Comparison".  You should see this:
+<UL>
+<FONT FACE="Courier New">(Ability being cast) Equal to Animate Dead</FONT>
+</UL>
+Click on "Animate Dead".  In the bottom section of the new dialog box, you'll see a list of skills.  First, select "Custom" from the second drop-down menu.  Then click on your custom ability (in this case, "Morph").  Click "OK".  Here's what you get:
+<UL>
+<FONT FACE="Courier New">(Ability being cast) Equal to Morph</FONT>
+</UL>
+Now that our trigger is set up so that it will only operate when our custom spell is cast, it's time to set up the trigger to do what we want it to; that is, morph the hero into a different unit.
+<BR>
+At this point all the dialog boxes will still look like the ones we have seen earlier.
+<BR>
+Alright... To start off, first we need to set up some variables.  Click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic6.png"> ) or just press Ctrl+b.
+In the following window, click on the circled button to create a new variable.
+<BR>
+<BR>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic7.png">
+<BR>
+<BR>
+Now, name the new variable
+<UL>
+<FONT FACE="Courier New">HeroMorph</FONT>
+</UL>
+and in the drop-down box, select "Unit".  Do the same thing to create 2 more variables named 
+<UL>
+<FONT FACE="Courier New">HeroCache1
+<BR>
+HeroCache2</FONT>
+</UL>
+and make both of them "Unit" variable types as well.  Hit "OK" and you should be back at the main trigger editing window.
+<BR>
+<BR>
+The next thing to do is start creating your "Action" commands.  To do this, simply right-click and select "New Action" or click on this button ( <IMG SRC="http://www.gamedesign.net/content/warcraft3/btut1/pic4.png"> ) or press Ctrl+R.  The same window you should already be familiar with will pop up.  From the small drop-down menu select "-General", and then from the large drop-down menu select "Set Variable".  First click on the red text labeled "Variable".  Select this variable:
+<UL>
+<FONT FACE="Courier New">HeroCache1</FONT>
+</UL>
+and hit "OK".  Now click on value and set it to "Event Response - Triggering Unit" from the drop-down menu that is currently selected.  Hit "OK" and then hit "OK" again.
+<BR>
+What we have just done is set a variable equal to the original hero unit; that way we can save the unit (with all of its abilities, items, and stats) and reload it again later.
+<BR>
+Now, create another "Action".  This time, in the small drop-down menu, select "Game Cache".  After that, just click on the blue text labeled "MapName.w3v" and set the name to whatever you like.  For this tutorial, I used the name "map01.w3v" (which is also the name of the map itself).  Now click "OK" twice.
+<BR>
+Create another "Action".  From the small drop-down box, click on "Game Cache" again.  In the big drop-down menu, click on "Store Unit".  Now, click on the red text labeled "Unit".  In the new window, click on the middle radio button next to the "Variable" text.  The variable we want to use is already selected for us, so hit "OK".  Now click on "Label".  Give it a value of whatever; for this tutorial, I just used "Hero", but you can use the hero's name or classification or whatever you like.  Now hit "OK" twice and we're done setting that up.
+<BR>
+<BR>
+Now, to make the spell look cool, we'll use a special effect while the unit is morphing.  I just used the "Feral Spirit" special effect (it's the cloud that you see when feral spirits are summoned using the "Feral Spirit" skill).  You can use whichever effect you like though.
+<BR>
+Alright, first thing is, of course, create a new "Action".  From the small menu, select "Special Effect", and from the larger menu select "Create Special Effect on Unit".
+<BR>
+First, let's decide where we want the special effect to appear at on the unit.  Click on the blue text labeled "overhead".
+<BR>
+<BR>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"Here is a list of all the attachment points and modifiers:  <A HREF="http://www.gamedesign.net/node/1165">Attachment Points And Modifiers</A>."
+</TD>
+</TR>
+</TABLE>
+<BR>
+Once you've entered in the value you want, hit "OK" (for this tutorial, I used the "chest" value).
+<BR>
+Next click on the blue text labeled "Abilities\Spells\Other\TalkToMe\TalkToMe.mdl".  In the new window, click on the "Choose Model" button.  Once you've chosen the effect (Feral Spirit for this tutorial), click "OK" 3 times.
+<BR>
+To make sure that the special effect plays at the same time that the unit morphs, create a new "Action" and in the large drop-down menu, select "Wait".  Click on the "2.00" and enter the number "0.50"; that is the number I found that causes the trigger to wait long enough so that the unit morphs and the special effect plays at the same.
+<BR>
+<BR>
+Now that that is done, let's make the unit actually morph.
+<BR>
+At this point, you should be pretty familiar with how the trigger system works.  So, to make things simpler, I will just tell you what you need to change or set certain things to.
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "Unit"
+<BR>
+Large drop-down menu:  "Replace"
+<BR>
+Click on the blue text labeled "Footman".  In the new window, find your custom unit (for this tutorial, that would be "Morph1").  Click "OK" twice.  Now our hero with "morph" into the unit "Morph1".
+<BR>
+Now we need to set a variable to the morphed unit so that we can have the unit selected.
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "-General"
+<BR>
+Large drop-down menu:  "Set Variable"
+<BR>
+Now, set the variable "HeroMorph" equal to "Last Replaced Unit".
+<BR>
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "Selection"
+<BR>
+Large drop-down menu:  "Select Unit For Player:
+<BR>
+Click on the blue text labeled "(Triggering Unit)".  In the new window, select the "Variable" radio button and click on "HeroMorph" from the drop-down menu next to it.  Click "OK" twice.
+<BR>
+<BR>
+Alright.  So far, we have a trigger set up so that is will morph the unit and play a special effect at the same time and it will also select the morphed unit for the player.  Now it's time to set the time limit that the unit is morphed for and the "Actions" that will morph the unit back to its original state.
+<BR>
+<BR>
+Create a new "Action".
+<BR>
+Small drop-down menu:  "-General"
+<BR>
+Large drop-down menu:  "Wait"
+<BR>
+Click on the number "2.00" and change it to a number value that you would like the duration of the morph to be (for this tutorial, I set the value to 45, which means that after 45 seconds, the nhero will return to normal).
+<BR>
+<BR>
+Now, click on the first special effects "Action" and press Ctrl+C (to copy it).  Now, paste it.  Make sure the "Action" you just pasted is at the bottom (you can move it by clicking and holding and then dragging it down with the mouse).  Do the same thing and copy and paste the "Wait - 0.50 seconds" "Action" (again making sure it is at the bottom).
+<BR>
+<BR>
+Now, it's time to make the "Action" that will restore the hero back to their original form.  Create a new "Action".
+<BR>
+Small drop-down menu:  "Game Cache"
+<BR>
+Large drop-down menu:  "Restore Unit Facing Angle"
+<BR>
+First, click on "Label".  Now type in the label you gave your hero earlier (in this tutorial, I used "Hero" as the label).  Click "OK".
+<BR>
+Next, click on the blue text called "(Center of (Playable map area))".  From the selected drop-down box, click on "Unit - Position Of Unit".  Now, click on "(Triggering Unit)".  Click on the variable radio button and select the variable "HeroMorph".  Click "OK" 3 times.
+<BR>
+<BR>
+Create a new "Action".  Set the variable "HeroCache2" equal to "Last Restored Unit".
+<BR>
+<BR>
+Now we take out the morphed form of the hero.  Create a new "Action".
+<BR>
+Small drop-down menu:  "Unit"
+<BR>
+Large drop-dwon menu:  "Remove"
+<BR>
+Click on "(Triggering Unit)" and select the variable radio button.  From the drop-down menu, select the "HeroMorph" variable.  Click "OK" twice.
+<BR>
+<BR>
+And finally, create 1 last "Action".
+<BR>
+Small drop-down menu:  "Selection"
+<BR>
+Large drop-down menu:  "Select Unit For Player"
+<BR>
+Click on "(Triggering Unit)" and select the variable radio button.  From the drop-down menu, select the "HeroCache2" variable.  Click "OK" twice.
+<BR>
+<BR>
+Now we are done!  If you decided to make the ability more than 1 level, you can copy the trigger you just made.  Then, all you have to do is change one of the conditions to say:
+<UL>
+<FONT FACE="Courier New">(Level of (Ability being cast) for (Triggering unit)) Equal to 1</FONT>
+</UL>
+Just note that the only thing you change is the number (to match the level).  The other thing you'll need to change is the "Action" that changes the hero:
+<UL>
+<FONT FACE="Courier New">Unit - Replace (Triggering unit) with a Morph 1 using The old unit's relative life and mana</FONT>
+</UL>
+For that "Action" all you would do is change "Morph 1" to the respective morphed form unit.
+<BR>
+Here is what the complete product will look like (for skill level 1):
+<UL>
+<A HREF="http://www.gamedesign.net/content/warcraft3/btut1/morph.txt">Morph Trigger</A>
+</UL>
+<TABLE BORDER="1" BORDERCOLOR="black" CELLPADDING="3" CELLSPACING="0">
+<TR>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/wc3o2.png" ALIGN="left" HSPACE="5" VSPACE="0"><B>Orc Peon</B><BR>
+"Some steps in this tutorial can be (and have been) simplified by copying and pasting.  You can use copying and pasting to create multiple "Actions" (or "Events" or "Conditions") that do the same thing or do similiar things but with a couple different settings.  Experiment more to get a better understanding of copying/pasting."
+</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<H2><B>Wrap Up</B></H2>
+At the time of this tutorial being compiled, I was unable to figure out a way to make the skill still recharging when the unit morphed back to normal.  So, as soon as the unit returns to normal, the skill can be used again (there's no delay from cooldown).
+<BR>
+I'm pretty sure that certain items that are used (like tomes) won't apply to the hero in the hero's original form.
+<BR>
+Items picked up by the hero in their morphed form do not stay when the hero returns to normal (working on a fix).
+<BR>
+<BR>
+<BR>
+<H2><B>Resources Used</B></H2>
+<A HREF="http://www.gamedesign.net/node/1165">Attachment Points And Modifiers</A></ul><h1 id="815" name="815" class="book-h2">Object Editor Basics</h1><ul><H2><B>Introduction</B></H2>
+Most aspects of the Warcraft III World Editor are fairly easy to understand and use.  
+<BR>
+<BR>
+However, there are some more advanced features in the World Editor that require a little explaining; mainly, the Object Editor and the Trigger Editor.  As you have probably already realized from the name of this tutorial, the Object Editor is the topic of discussion here.
+<BR>
+Some of the things in the Object Editor are pretty self-explanatory.
+<BR>
+<BR>
+<TABLE BORDER="0">
+<TR>
+<TD VALIGN="top">
+I will break this tutorial down into eleven catergories (like you see on the right):  Abilities, Art, Combat, Data, Editor, Movement, Pathing, Sounds, Stats, Techtree, and Stats.  These are the sections you can select to view under the "View" menu.  Checking one or more will show the related data entries that can be edited.
+<BR>
+<BR>
+Now, I do not know everything about the Object Editor.  So, certain data fields may not be explained in this tutorial (which means that they aren't very important, that I haven't updated this tutorial to include them, or that I don't know what they are for).  However, most all of the important information is covered.  To make things easy, I will try and list each data field and then explain what it means or I will explain certain things that pertain to most all of the data fields that are classified under a particular catergory.
+</TD>
+<TD>
+<IMG SRC="http://www.gamedesign.net/content/warcraft3/editor/view.gif">
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<BR>
+<BR>
+<H2><B>Abilities</B></H2>
+<I><U>Abilities-Hero</U></I> - This data entry is available for modification on hero units only.  This data field allows you to determine what hero abilities a hero unit can use (such as Holy Light, Blizzard, Wind Walk, etc.).  The maximum allowable hero abilities (set by the editor) is 5.
+<BR>
+<I><U>Abilities-Normal</U></I> - This data field enables you to give units certain normal abilities (such as an inventory, harvest wood, invulnerable, etc.).  For this data entry, you can select as many normal abilities as you like.
+<BR>
+<BR>
+<BR>
+<H2><B>Art</B></H2>
+Pretty much all of the data fields under the Art catergory are self-explanatory.  I will only discuss four data fields in this section.
+<BR>
+<BR>
+<I><U>Art-Button Position (X)</U></I> - This refers to the button that you see in the lower left-hand corner of your screen (for example, when you click on a Barracks, you'll see the buttons to train a Footman, Rifleman, or Knight).  The numbers for the X coordinate go from 0 to 3, and refer to the boxes going from left to right.
+<BR>
+<I><U>Art-Button Position (Y)</U></I> - This refers to the button that you see in the lower left-hand corner of your screen (for example, when you click on a Barracks, you'll see the buttons to train a Footman, Rifleman, or Knight).  The numbers for the Y coordinate go from 0 to 2, and refer to the boxes going from top to bottom.
+<BR>
+To help you understand this better, I'll give you an example.  When you click on a Barracks, you see the button for a Footman at the top left corner (of the little panel).  The coordinates for that button would be X=0 and Y=0.  For the Knight, the coordinates for that button would be X=2 and Y=0.  For the Research Defend, the coordinates for that button would be X=0 and Y=2.
+<BR>
+<I><U>Art-Scaling Value</U></I> - This numeric value determines the size of the unit's model.  A value of 1 is the default model size.
+<BR>
+<I><U>Art-Selection Scale</U></I> - This numeric value determines the size of the selection circle around the unit.  It's a good idea to increase this number if you make the scaling of the unit model bigger.
+<BR>
+<BR>
+<BR>
+<H2><B>Combat</B></H2>
+This section has many data fields, but most of them are the same; the only difference being the attack they refer to.  Basically, any unit can have two attacks.  They can be the same damage, or they can be different.  One can be a melee attack and the other can be a ranged attack.  This is good if you want to, say, make the damage a unit can do to air units higher than the damage that same unit can do to ground units.
+<BR>
+There are three main data fields (actually four, if you are editing a hero unit, but that will be discussed in a moment) that determine the damage of a unit.
+<BR>
+<BR>
+<I><U>Combat-Attack (1 or 2)-Damage Base</U></I> - Used to determine a units attack damage.
+<BR>
+<I><U>Combat-Attack (1 or 2)-Damage Number Of Dice</U></I> - Used to determine a units attack damage.
+<BR>
+<I><U>Combat-Attack (1 or 2)-Damage Sides Per Die</U></I> - Used to determine a units attack damage.
+<BR>
+To calculate a unit's attack damage, Warcraft III takes the values of the data fields just mentioned and uses these formulas:
+<BR>
+Minimum Damage = Damage Base + Damage Number Of Dice
+<BR>
+Maximum Damage = Damage Base + (Damage Number Of Dice * Damage Sides Per Die).
+<BR>
+Now, earlier, I talked about a fourth variable to determine attack damage for Heros.  This would be the primary attribute of the hero (strength, agility, or intelligence).  So, the new formulas would be:
+<BR>
+Minimum Damage = Primary Attribute + Damage Base + Damage Number Of Dice
+<BR>
+Maximum Damage = Primary Attribute + Damage Base + Damage Number Of Dice * Damage Sides Per Die).
+<BR>
+So, if your hero's primary attribute was strength and that hero's strength was 26, that would be the number you would add in to the damage formulas.
+<BR>
+<BR>
+This article is still under construction...</ul></body></html>

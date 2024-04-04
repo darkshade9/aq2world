@@ -1,0 +1,201 @@
+<html><head><title>Creating an outdoor area using Gensurf</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="595" name="595" class="book-h1">Creating an outdoor area using Gensurf</h1><h1 align="left"><u>Creating an outdoor area with Gensurf</u></h1>
+
+<p><i>Original tutorial provided by Ricebug, written with QERadiant in mind.</i>
+
+<p><font face="Arial">This tutorial will involve making an outside area and sky box. For making
+realistic-looking landscape, we will also be using the stand-alone version of
+David Hyde’s fantastic terrain generator program, <i><b><a href="http://www.planetquake.com/gensurf/">GenSurf</a></b></i>.
+A plugin version is available for QERadiant also.</font></p>
+<hr width=80% align="center">
+<h3><u>Making
+the Ground with <i>GenSurf</i></u></h3>
+<p><font face="Arial">Since David Hyde keeps improving <i>GenSurf</i>, the instructions below may
+not follow the current update.</font></p>
+
+<font face="Arial">
+1. For learning purposes, our outdoor area is going to be a small
+&quot;backyard.&quot; Once you have <i>GenSurf</i> up and running, click on the General
+tab. Under Set Waveform, select From
+Bitmap. Also, uncheck Add Skybox<i>.</i>
+The <i>skybox</i> option tells <i>GenSurf</i> to create a playable map with
+ground, sky and player entity. We won’t need these for our purpose.</font>
+
+<p align="center"><a href="content/quake2/tutorials/gensurf_outside/outs_01.gif"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_01.gif" width="450"></a></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 1: <i>GenSurf</i>'s
+interface (click for larger image)</b></font></p>
+<p><font face="Arial">3. We’re going to use a grayscale bitmap to form our ground elevations. If
+you want, you can left-click on the one in Figure 2 and save it as a .BMP to a
+directory of your choosing. Click on <i>GenSurf’s </i>Bitmap
+tab and browse to this location.</font></p>
+<p><font face="Arial">4. Compare the bitmap below with the wireframe preview in Figure 1 above. The
+black areas dictate the lower elevation, while the whiter areas cause the ground
+to swell upward. Lightwave and 3DSMax users know this as &quot;displacement
+mapping.&quot; For example, by drawing thick, black lines on a white background,
+you can easily define drainage ditches or culverts. In reverse, drawing thick,
+white lines on a black background will give you walls. Shades of gray in between
+black &amp; white will cause variations in the height of your walls. Some
+interesting landscapes can be created with a little imagination.</font></p>
+<p align="center"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_02.gif"></font></p>
+
+<div align="center">
+  <center>
+  <table border="0" width="50%">
+    <tr>
+      <td>
+        <p align="center"><font face="Arial"><b><font color="#aa0000" size="2">Figure 2: Grayscale
+        image used to define elevation of terrain in <i>GenSurf.</i></font></b> <font color="#aa0000" size="2"><b><i>Image
+        scaled to half original size for tutorial purposes.</i></b></font></font></p>
+      </td>
+
+    </tr>
+  </table>
+  </center>
+</div>
+<p><font face="Arial">5. Now click on the Extents tab. Under Lower-Left
+Corner<i>,</i> type </font> <font color="#000000" face="Arial Black">–128</font>
+<font face="Arial">
+in both boxes. Under Upper-Right Corner<i>,</i>
+
+type <font color="#000000" face="Arial Black">128</font> in both boxes. This
+will give an area size of 512 pixels, the exact dimensions of our bitmap. Also
+set Number of Divisions to 16
+in both boxes. This will make for a smooth ground.</font></p>
+<div align="center">
+  <center>
+  <table border="0">
+    <tbody>
+      <tr>
+        <td>
+          <p><font color="#aa0000" face="Arial"><b>WARNING</b></font></p>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<div align="justify">
+<table border="0">
+  <tbody>
+    <tr>
+
+      <td>
+        <p><b><small><font face="Arial"><font color="#aa0000">Depending on the size of your map and
+        hardware limitations, <i>GenSurf</i>-created walls, ceiling and floors
+        can very quickly bog down the editor and dramatically increase compile
+        times if you set the </font><font color="#000000">Number of Divisions</font><font color="#aa0000">
+        to a number less than 64. Start with larger numbers and work your way
+        down. As a rule, I complete my maps first and add the terrain when I'm
+        done.&nbsp;</font></font></small></b></p>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+</div>
+<p><font face="Arial">6. Notice that your map preview shows a steep terrain. We want our ground to
+flow downward in a smooth angle. To achieve this, change Map
+color 0 to 50,
+and <i>Map color 255</i>  to 100. Press <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Tab</span></font>
+on the keyboard and your map should smooth out.</font></p>
+<p><font face="Arial">7. Click on the General tab and set Roughness
+to <font color="#000000" face="Arial Black">0</font> and Random
+Seed to <font color="#000000" face="Arial Black">1</font>.</font></p>
+
+<font face="Arial">
+8. Finally, under Output Map File<i>,</i> browse
+to your <i>maps</i> folder and save the ground as <font color="#0000ff">outside.map</font>.</font>
+<p>&nbsp;</p>
+<hr width=80% align="center">
+<h3><u>Adding
+the Ground to the Map</u></h3>
+<font face="Arial">1. Fire up Radiant and select FILE/NEW MAP.
+I want you to clear anything out of the editing window to show you how to load
+multiple maps into Radiant.</font>
+
+<p><font face="Arial">2. With nothing in the editor, click on FILE and choose OPEN (Not LOAD).
+Select the map of the rooms and hallway we’ve been working on. (Hopefully,
+you’ve been saving things.)</font>
+<p><font face="Arial">3. Now click on FILE. This time, choose LOAD and select the <i>GenSurf</i>
+terrain you made. You should have both the terrain (in red) and the other map
+file, as shown in the screen shot below. <u>Leave the terrain selected.</u>
+</font>
+<p><font face="Arial">4. With the terrain in red, click somewhere in its center and drag it towards
+the bottom of your screen (you should be looking at the XY Top view). Drag it so
+it rests on the outside wall of the square room as shown in Figure 3.</font></p>
+<p align="center"><font face="Arial"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_03.gif"></font></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 3: Ground object in
+place</b></font></p>
+&nbsp;
+<p><font face="Arial">5. Since I want the ground to slope down, away from the building, we’ll
+need to rotate it.&nbsp; Look at the row of 6 buttons circled in yellow in Fig.
+4<i>.</i> These show the different rotation commands for <b>X</b>, <b>Y</b>,
+
+&amp; <b>Z</b>. With the ground still selected, you want to click on the last (<font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">ZN</span></font>)
+button TWICE, or you can click the <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Y|Y</span></font>
+button ONCE. The difference between these two buttons is that <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">ZN</span></font>
+rotates a selection clockwise at 90-degree increments, while <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">YY</span></font>
+vertically flips the selection. The end result is the same.</font></p>
+<hr width=80% align="center">
+<blockquote>
+
+  <blockquote>
+    <blockquote>
+      <p align="center"><b><font face="Arial"><font color="#ffff00" size="3"><span style="BACKGROUND-COLOR: #000000">Y|Y</span></font><font color="#008080" size="3">
+      </font><font color="#008000" size="3">flips brushes vertically on the
+      screen;</font><font color="#008080" size="3"> </font><font color="#ffff00" size="3"><span style="BACKGROUND-COLOR: #000000">X|X</span></font><font color="#008080" size="3">
+      </font><font color="#008000" size="3">flips them horizontally.</font></font></b>
+    </blockquote>
+
+  </blockquote>
+</blockquote>
+<hr width=80% align="center">
+<font face="Arial">
+6. The next thing to do is go to a side view of our <u>still-selected</u>
+ground. CTRL-TAB until you get to the <font color="#0000ff" face="Arial Black"><b>YZ
+Side</b></font> view. Click on the ground and drag it down until the high side
+is even with the floor of the square room, as shown in the figure below.</font>
+<p align="center"><font face="Arial"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_04.gif"></font></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 4: Ground lowered to
+same elevation as floor</b></font></p>
+<font face="Arial">
+
+&nbsp;7. Once the slope is positioned where you want it, hit <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">ESC</span></font>ape
+to deselect it. Save your work.</font>
+<p><font face="Arial">8. The next thing we want to put in are some walls to enclose the ground. It
+would look unrealistic to bring the sky texture down to the ground. I added a
+&quot;stepped&quot; down stone fence along the sides.</font>
+<p><font face="Arial">9. Next, select the sky texture and build a box to enclose the fence and
+ground. The &quot;walls&quot; of the sky box should rest flush against the
+outside of the fence. The &quot;ceiling&quot; of the sky should come just above
+the &quot;roof&quot; of the exterior building. See figure 5.</font>
+
+<p align="center"><a href="content/quake2/tutorials/gensurf_outside/outs_05.jpg"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_05.jpg" width="450"></a></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 5: Constructing the
+Sky Box (click for larger image)</b></font></p>
+<hr width=80% align="center">
+<b><font face="Arial"><font color="#008000">Thankfully, Radiant uses some conventional Windows
+commands to make things easier. </font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Ctrl-C</span></font><font color="#008000">
+copies a brush and </font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Ctrl-V</span></font><font color="#008000">
+pastes it. By copying, pasting and rotating brushes with the </font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">X|X</span></font><font color="#008000">,
+</font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Y|Y</span></font><font color="#008000">
+and other rotate buttons, you can quickly fabricate structures.</font></font></b>
+
+<hr width=80% align="center">
+<p><font face="Arial">After you finish the skybox, let’s make a small pool of water in the lower
+depression to give our yard some character.</font></p>
+<font face="Arial">
+10. Find one of the water textures and click on it. Now drag a square brush
+through the ground. Make sure you don’t go outside of the brick fence we just
+built. See figure 6. I made the depth of my water brush 32 units, just enough to
+give it an illusion of depth.</font>
+<p align="center"><a href ="content/quake2/tutorials/gensurf_outside/outs_06.jpg"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_06.jpg" width="450"></a></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 6: Adding water (click for larger image)</b></font></p>
+<p align="center"><font face="Arial"><img border="0" content/quake2/tutorials/gensurf_outside/outs_07.jpg"></font></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>The completed outside area.</b></font></p>
+<p align="center">&nbsp;</p>
+<hr width=80% align="center">
+<p align="center"><b><small><font face="Arial">Copyright 1999, by Terry DeLaney. Permission is granted to
+distribute this file as long as the author receives credit.</font></small></b></p></body></html>

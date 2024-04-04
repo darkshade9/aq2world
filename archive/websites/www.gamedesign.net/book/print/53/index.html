@@ -1,0 +1,228 @@
+<html><head><title>Polygon Count Reduction</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="53" name="53" class="book-h1">Polygon Count Reduction</h1><h2>Polygon Count Reduction</h2>
+
+<blockquote>By David Hyde, Mad Dog and Richard Neff</blockquote>
+<br><br>
+<!-- Table of Contents -->
+<a name="TOC"></a>  
+<p><b>Contents</b><br>
+<p>(Click on a heading to quickly scroll down the page)<p>
+	<ul><li><a href="/node/53/#introduction">Introduction</a><br>
+        <li><a href="/node/53/#examples">Example maps</a><br>
+        <li><a href="/node/53/#tricks">The Tricks</a><br>
+		<ul><li><a href="/node/53/#cut1024">Awarenessof qbsp3's default cuts</a><br>
+		<li><a href="/node/53/#func_wall">Alternative uses of func_walls</a><br>
+		<li><a href="/node/53/#embedlites">Embedded light fixtures</a><br>
+		<li><a href="/node/53/#donut">Doughnut hallway</a><br>
+		<li><a href="/node/53/#evil">Brush subtraction is evil</a><br>
+		<li><a href="/node/53/#gaps">Gaps between brushes</a><br>
+		<li><a href="/node/53/#detail">Detail brushes</a><br>
+		<li><a href="/node/53/#miter">Mitered corners</a><br>
+		<li><a href="/node/53/#textures">Let the textures do the work</a><br>
+		<li><a href="/node/53/#threesides">3 sides rather than 4</a><br>
+		<li><a href="/node/53/#opaque">Transparent vs. opaque water</a><br>
+		<li><a href="/node/53/#nodraw">No draw = No polys</a><br>
+		<li><a href="/node/53/#fooled_you">Fast framerates for large, detailed areas</a></ul>
+	<li><a href="/node/53/#summary">Putting it all together</a></ul>
+
+<br><br>
+<p><br><hr color=black noshade width=75%><br><p>
+
+	<a name="introduction"></a><b>Introduction</b><br>
+	<p>The purpose of this tutorial is to describe several simple techniques you can use in your Quake2 maps to reduce the number of polygons seen by the game engine, thereby increasing the performance of your map and improving gameplay. None of the techniques described here are difficult to implement, and will usually not result in any undesirable tradeoffs, i.e. reduced visual quality. This tutorial does <b>not</b> discuss hint brushes, which, like the techniques discussed here, are often used to influence the way qbsp3 partitions brushes. Proper use of hint brushes is a difficult technique to master, and, unlike the methods discussed here, generally requires a trial-and-error approach to achieve the desired results. NOTE: Don't even think about using hint brushes unless you are able to run &quot;gl_showtris 1&quot; (see below). It's just about impossible to know how to use hint brushes to block off areas when you don't know what the engine can/cannot see from a view. For more information on the use of hint brushes, see Steven Boswell's excellent article, <a href="/content/quake2/tutorials/poly_count/bspvis.htm">qbsp3, qvis3, and map-making</a>.<br><br>
+
+	<p>The authors assume that the reader has some experience at creating maps for Quake2. This is not meant to be a primer on map editing, and we assume that the reader has prior knowledge of why reducing polygon counts is important. For basic information on creating Quake2 maps and map-related issues, read through the <a href="http://www.gamedesign.net/node/42">Tutorials</a>, <a href="http://www.gamedesign.net/node/21">Entity Properties</a>, and <a href="http://www.gamedesign.net/node/17">FAQ</a> sections at Rust. <br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<a name="examples"></a><b>Example maps</b><br>
+	<p>This tutorial is accompanied by an example map that demonstrates most of the techniques mentioned here. To get the most out of this tutorial you should print this document and refer to it as you navigate through the rooms in the examples. The example map is available <a href="/content/quake2/tutorials/poly_count/poly_count.zip">here</a>. Two files are included - a standard .map file that you can import into most Quake2 editors, and a compiled bsp. Unzip tricks.zip to your quake2\baseq2\maps directory. To see the results achieved by the methods used in the examples, you should run the map with <b>r_speeds 1</b> and, if available to you, <b>gl_showtris 1</b>. Either start the map with a command line similar to:<br><br>
+
+	<b>\quake2\quake2.exe +set r_speeds 1 +set gl_showtris 1 +map tricks</b><br><br>
+ 
+	or start Quake2, bring up the console(press the '~' key), and type:<br><br>
+   
+	<b>r_speeds 1;gl_showtris 1;map tricks</b><br><br>
+
+	<b>NOTE:</b> All of the example maps are very simple, and so the polygon counts are reasonably low with or without the methods described in this tutorial. Likewise, the reductions in polygon counts achieved by the methods described here are not very significant in the context of the examples. However, these methods <b>will</b> produce significant performance increases when used together in a large, detailed map.<br><br>
+    
+	<p>GL_Showtris draws white lines around all of the polygons in view of the game engine. This allows you to see how your brushes are broken up in a level, and also shows you what polygons the engine sees that you might have thought were sufficiently isolated that they would not be in view. If you have a 3dfx card, you will first need to download the <b>Mesa OpenGL drivers</b> from <a href="http://www.geocities.com/SiliconValley/Lakes/7220/mesa.html">Phil Frisbie's Programming Page</a>. These drivers will allow you to use the Default OpenGL video mode with your 3dfx card, which in turn allows you to use gl_showtris. Framerates will be only slightly slower than with the normal 3dfx setting.<br><br>
+
+
+	<br><br><center><img src="/content/quake2/tutorials/poly_count/poly_count1.jpg"><br>Screenshot from a level you're probably familiar with, with gl_showtris turned on.</center><br><br>
+    
+	<p>R_Speeds displays several numbers of interest to map authors. The format of this report is dependent on what type of rendering you are using. With software rendering, r_speeds will display something like:<br><br>
+    
+        <b>33 ms 250/220/30
+        poly 0 surf</b><br><br>
+    
+	The first number indicates the time, in milliseconds, required for one game cycle. Your framerate in frames/sec is 1000 divided by this number. The second number indicates how many polygons are in view, the third number shows how many polygons are drawn, and the fourth entry is the number of polygons in view but not drawn. For our purposes, the <b>second</b> number (polygons in view) is what we are trying to reduce.<br><br>
+
+	With 3D accelerators, the r_speeds display will look something like:<br><br>
+    
+        <p><b>250 wpoly 450 epoly 3 tex 2 lmaps</b><br><br>
+
+	&quot;wpoly&quot; is the number of world polygons in view and &quot;epoly&quot; is the number of entity polygons. Although you also need to monitor &quot;epoly&quot;, this tutorial concentrates on the <b>wpoly</b>entry.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<a name="tricks"></a><h3>The Tricks</h3><br>
+
+<a name="cut1024"></a><b>Awareness of qbsp3's default cuts</b><br>The original id-supplied qbsp3 (and most other qbsp3's) initially divides your map into 1024x1024x8192 sections. This procedure can produce unwanted brush cuts unless you arrange your map to minimize these effects. Steven Boswell has produced a version of qbsp3 which does <b>not</b> divide your map up in this way (available <a href="http://yyz.com/~whatis/Quake2/bspvis.html">here</a>), but this can often produce &quot;Subdivide face: didn't split the polygon&quot; errors. In the first room of the example map, the inside face of the wall to the player's left is at x=-16. This causes qbsp3 to break the 4 adjoining surfaces (floor, ceiling, and adjacent walls) along the line x=0. <b><i>Any brush which intersects a line at x or y equal to a multiple of 1024 will be divided in this way</i></b>. (Since the sections used are 8192 units tall, and the maximum extents of a map are +/-4096 units in any direction, you don't have to worry about these cuts on the z axis.) The solution here is obvious: move the entire room (or only this one wall) 16 units in the +x direction, and these cuts are no longer made (Actually they are made, but no longer result in additional polygons). Of course if your room is larger than 1024 units in either the x or y direction, at least one of these cuts will still be made. However, you can minimize the effects of these cuts by careful arrangement of your brushes. For example, if you have a crate with one face at x=1022, move it over 2 units so that this face is at x=1024. This method can very easily decrease your polygon count by 50 or more in a room with many details.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	 <p><a name="func_wall"></a><b>Alternative uses of func_wall</b><br> 
+	 The second set of examples shows a room with 6 columns that span from floor to ceiling. The intersection of the columns with the horizontal floor and ceiling surfaces causes the horizontal faces to be broken up more than they would be if the columns were not present. In the next room, these columns are made into a func_wall. Since entities (including func_walls) do not influence the way qbsp3 breaks up your world brushes, the floor and ceiling are partitioned as they would be if the columns were not present at all.<br><br>
+
+	 There are several limitations to using this method:
+	 <ol>
+		<li>The lighting quality of your func_wall will usually not be as good (though it is hard to see a difference in the example). Extra effort would usually be required to correct this.
+		<li>Entities do not block light or, put another way, cast shadows. You can see this effect in the screenshots from the example map below.</li>
+		<li>You cannot have more than 256 total models in any one map, and each func_wall counts against the total. If you exceed this limitation, you will get a game-crashing Index Overflow error. For more information on this subject, see <a href="http://mapspy.gamedesign.net/eio.html">this tutorial</a>. You <b>can</b> include multiple non-contiguous brushes in the same func_wall (as has been done in the example), <b>but:</b>
+		<li>You should never allow a func_wall to span across areas that are not seen by the engine at the same time. For example, it might be tempting to include many brushes throughout your map into the same func_wall, like on opposite sides of an areaportal, to prevent Index Overflow errors. However, this practice will at a minimum cause visual errors in your func_walls.
+		<li>You should <i>never</i> make a wall/floor/ceiling which &quot;touches&quot; the void an entity; otherwise, your map will leak!
+	 </ol>
+	 <br><br>
+
+
+
+        <center><img src="/content/quake2/tutorials/poly_count/poly_count2.jpg"><br>Normal brushes used for columns</center><br><br>
+           
+        <center><img src="/content/quake2/tutorials/poly_count/poly_count3.jpg"><br>Columns are a func_wall. Note the lack of shadows.</center><br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="embedlites"></a><b>Embedded light fixtures</b><br>
+	<p>It's very easy to slap several of the 16x16 light fixture textures against your ceiling, walls, or floors to light a room. However, the 4 edges adjacent to the lit surface are visible, and will be divided up into 2 polygons each. You can embed your light fixtures in your ceiling/walls/floor such that the sides of the fixture aren't visible. This method generally results in a decrease of 8 polygons/fixture. Of course, this method is quite a bit more trouble, as you will also have to divide your ceiling/walls/floor up carefully. For best results, you could place the fixtures such that the edges are all at multiples of the texture dimensions, as well as making sure they line up with each other. This not only allows you to forego texture alignment hassles, but will also produce fewer brush cuts than if your fixtures are placed at random locations. <p>This method is applicable to other textures, of course. For example, &quot;exit&quot; signs, etc. and texture blending can use this method to decrease the number of brush cuts.<br><br>
+    
+	If you <b>want</b> the edges of the fixtures visible, such that it is apparent that the fixtures stand out from the mounting surface, consider moving the fixtures 1 unit from the surface such that the two brushes don't touch. (This technique is described <a href="/node/53/#gaps">below</a>). This method will not be as effective as embedding the fixtures, but <b>will</b>produce a lower polygon count than placing the fixtures flush against your ceiling/walls/floor.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<a name="donut"></a><b>Doughnut hallway</b><br> 
+	The doughnut hallway is the only method presented here that significantly alters the appearance of your map. If you have adjacent rooms connected by a short hallway, but don't want to separate the rooms with a door and func_areaportal, the doughnut hallway is ideal for blocking visibility from one room to the next. This method was used extensively in Quake1, since it lacked func_areaportals to block vis from one room to another. It's popularly known as the &quot;Donut Trick&quot;, and is as viable a technique for Quake2 as it was for Quake1.<br><br>
+
+	The key to the success of the doughnut hallway is to size the vis-blocking wall such that the player (and the engine) cannot see from one hallway entrance to the opposite side of the wall. This wall should extend from the floor to the ceiling, and both the floor and ceiling of the hallway must be constructed with solid non-transparent textures. Naturally, making this wall an entity in whole or in part would defeat efforts at blocking polygons from view.<br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count4.gif"><br>Doughnut hallway</center><br><br>
+    
+	<p>A similar result can be achieved in a large open space if a huge monolithic structure is placed so it blocks the view from one side of the area to the other. Naturally this would require experimentation to get just right for each specific open area where you might want to use this method. Of course you may only make things worse if your vis-blocking structure is not quite so monolithic, and its own polys added to the mix outnumbers the polys that it blocks.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<a name="evil"></a><b>Brush subtraction is evil</b><br>
+	Well, OK, not really. But brush subtraction (or carving, hollowing, CSG subtraction) is generally the most abused feature of any map editor. The time savings you achieve with brush subtraction are very often more than offset by the time required to fix brush subtraction errors. At best what you're liable to get is a mess that is painful to look at and read in your editor. The example map shows a set of 3 arched doorways constructed with brush subtraction. In this case, small roundoff errors have resulted in several very noticeable gaps between brushes, and higher than necessary polygon counts. In the next room, the identical arched doorways have been created by manual placement of the brushes that form the arches. <b>NOTE:</b> Even if your editor does not have roundoff problems and you very carefully perform the subtraction operation with the cutting brush aligned to the grid and do everything else correctly, this example shows an obvious problem with using brush subtraction with a non-square cutting brush on a large wall - say you've constructed your arches, but then decide you want to move one arch over by 4 units - good luck. Well, take the opportunity then to pat yourself on the back for all the time you saved performing brush subtraction in the first place, because you're going to be using that time now.<br><br>
+   
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count5.gif"></center><br><br>
+
+	<p>If you insist on using brush subtraction for some odd masochistic reason for this type of operation, you will do <b>much less</b> damage in this case by isolating the area that is affected to the smallest possible one.<br><br>
+
+	<center><img border="0" width="450"  src="/content/quake2/tutorials/poly_count/poly_count6.gif"></center><br><br>
+
+	<p>In this example, the cylindrical top of the arch is subtracted from the smallest possible cube. The result of this operation is then copied to the other arch locations. This results in much simpler (and more importantly much easier to edit) brushes.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+    
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<a name="gaps"></a><b>Gaps between brushes</b><br>
+	Brushes will <b>always</b> be split where they intersect other brushes. To get rid of this effect, you can move small objects away from the other brush by 1 unit so that they do not touch. If this trick is used with discretion this small gap will not be visible to the player. This technique is typically best used in areas where the player isn't going to notice differences in shadowing -- such as the ceiling or on the upper edges of walls. You can also use this technique on non-breakable windows to lower your polygon count (it won't help to use this method on breakable windows -- since they are entities they will not break up the window frame anyway). The lighting will be fine, but you should use this method with discretion if the player can get very close to the window - the gap will almost always be visible from close range. Floors are typically the worst place to try to implement this feature (as shown below), unless they're in a very well lit area with offsetting lights where shadows won't be dramatic.<br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count7.jpg"><br>The crate in this example is 1 unit from the floor. Notice that the resulting shadows give the crate the appearance of being suspended several units above the floor.</center><br><br>
+         
+	<p>In the example map, the roof of the test room is open to the sky with many criss-crossing roof beams. These beams result in the faces making up the walls of the room being broken up much more than they would be if the beams were not present. In the following room, these beams have been shortened by 2 units such that neither end touches a wall. Even in this relatively simple room, this method results in a polygon reduction of about 30. The lighting in this room is such that the gap is not visible at all, so there is no visual problem in this case.<br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count8.jpg"><br>Beams touch the wall. Notice how the wall is split up by qbsp3</center><br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count9.jpg"><br>Ends of beams are 1 unit away from wall</center><br><br>
+	
+	<p><b>NOTE: This method should </b><i>never</i> be used on brushes that would otherwise block visibility from one area to another. For example, creating 1-unit gaps at the tops and bottoms of vis-blocking walls is a pretty silly thing to do.</b><br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+    
+	<a name="detail"></a><b>Detail brushes</b><br>
+	You have probably seen warnings that the use of detail brushes will result in higher r_speeds. While <b><i>sometimes</i></b> true, the only way to know for certain whether the use of detail brushes will increase, decrease, or have no effect on r_speeds is to test it and measure the results. Detail brushes are usually recommended as a method for speeding up a lengthy vis, since they are not included in vis calculations. Qbsp3 will <b>not</b> use the planes of detail brushes to split your map, so <b><i>sometimes</i></b> the use of detail brushes will <b><i>decrease</i></b> the number of polygons in your map - this is what we want.<br><br>
+
+	Detail brushes can generally safely be used on any object which does little or nothing to block visibility. If restricted to small objects which don't block the view of other objects, the use of detail brushes <b><i>usually</i></b> does not cause an increase in r_speeds. And in fact, in the 3rd roof beam example detail brushes actually <b>improve</b> r_speeds since the planes of the beams are no longer used to split up the map.<br><br>
+	
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count10.jpg"><br>Beams are detail brushes. Contrast this screenshot with those above. Note that the planes of the beams are no longer selected as bsp splitters.</center><br><br>
+
+	<p><b>NOTE: Detail brushes are designed to be used on brushes that do not block the player's view. You should <i>never</i> make a wall/floor/ceiling which &quot;touches&quot; the void a detail brush; otherwise, your map will leak!</b><br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="miter"></a><b>Mitered corners</b><br>
+	Some may think this method is generally best reserved for times when you are truly desperate to lower your polygon counts. While the return on your investment is usually small, and can be quite a bit of trouble (particularly if your editor does not support vertex manipulation - a glaring omission), in general this can be a good technique on general principles. In the example map, one room contains two open-ended concrete boxes that are constructed from normal cube brushes. The next room shows these same concrete boxes constructed with mitered brushes. This technique will generally result in lower polygon counts in any location where the <b>outside</b> corner of the intersection of two brushes is visible.<br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count11.jpg"><br>Exploded view of mitered box</center><br><br>
+            
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="textures"><b>Let the textures do the work</b><br>
+	This is primarily intended for all of you engineers and architects and wannabe's out there - you know who we're talking about. It may be very tempting to try to mimic a real environment with brushes as much as possible, down to the smallest details. However, this practice will very often produce a completely beautiful, but unplayable map. If architectural details aren't critical to gameplay, consider simplifying your level by <b>simulating details with textures</b>. If a stock-Q2 texture does not exist that will accomplish what you want, make your own! There are several excellent tools available for creating custom textures (<a href="http://www.telefragged.com/wally/">Wally</a>, for example).<br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count12.jpg"><br>&quot;Correct&quot; Wide-flange beams</center><br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count13.jpg"><br>Beams simulated with custom texture</center><br><br>
+	
+	
+	<p>Here's a sobering thought for those wishing to include custom textures (or sounds, models or custom anything for that matter) with multiplayer maps: An online server will seldom run such a map, for the simple reason that it is unlikely that all players connecting to that server will have the necessary files themselves. Other players who make their own maps as you do will have the Quake2 textures extracted for compiling purposes, and they may be loath to &quot;pollute&quot; their textures directory with new ones which will only make selecting textures for their own maps confusing. Additionally, if such a map has to be run from a custom &quot;game&quot; directory, it would be even more unlikely an online server would run it, unless your map is part of a mod which the server is running. Keep in mind also that it is not possible to run 2 &quot;game&quot; directories simultaneously, so maps run from custom directories cannot be used with bots. Custom files are probably best suited to single-player maps.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="threesides"></a><b>3 Sides rather than 4</b><br>
+	This one will seem obvious after you try it. If you have four-sided brushes in a spot where the player cannot get to the far side, use a 3-sided brush instead. Depending on the architecture of your map, this simple change can result in a significant decrease in your polygon count. In the example map, two barred windows are placed in the two test rooms. In the first room, the bars are regular square brushes; in the second room, triangular brushes are used with the point of the triangle facing away from the player. Even up close it is hard to tell that these brushes aren't 4-sided, but the peak polygon count drops by more than 50 with this simple change. This method will likely produce similar results with jail cells and any type of grate.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="opaque"><b>Transparent vs. opaque water</b><br>
+	Transparent water is cool, but of course does nothing to block visibility. If you have water brushes in a high-poly area of your map, consider turning off the TRANS33 or TRANS66 flags, which will make the water opaque (or use a non-transparent water texture). The water is still transparent on the inside, but will act like a normal solid brush from the outside and block visibility. Yeah, you say, &quot;but I like my transparent water.&quot; Before you dismiss this idea entirely check out the example map with r_speeds turned on (or the screenshots below, taken from another map) and note the difference.<br><br>
+
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count14.jpg"><br>Transparent water. Notice that the engine sees the bottom of the pool.</center><br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count15.jpg"><br>Opaque water</center><br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="nodraw"></a><b>No draw = No polys</b><br>
+	This may be the most obvious one of all (so why was it the last method we thought of?). Environment (or sky) textures do not contribute towards the polygon count. You can replace brushes that do little to contribute to the look of a room with sky brushes to lower your polygon count. In the example map, a small section of the ceiling has been replaced with a sky brush, resulting in lowering the world polygon count by 4. Of course, the more complex your  ceiling is, the greater will be the savings realized. Taken to its logical conclusion, here's a screenshot from our ultimate deathmatch map:<br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count16.jpg"><br>Not much to look at, but check out the r_speeds! Yeah, OK, it's a dumb idea. Shut up.</center><br><br>
+
+	<p><b>NOTE: This method is best used on brushes which do not face other parts of a map. If a sky brush is located between two map areas, the player may sometimes see through the brushes of another area and into that area. These visual errors are sometimes hard to fix. For more information on the &quot;sky bug&quot;, see the <a href="http://www.gamedesign.net/quake2/q2faq.shtml">FAQ</a> at Rust.</b><br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+	<p><a name="fooled_you"></a><b>Fast framerates for large, detailed areas</b><br>
+	Ha! Made you look! Sorry, but there's only so much you can do to make your map play well. Large areas with a lot of detail just don't work with Quake2.<br><br>
+<a href="/node/53/#TOC">Back To Table Of Contents</a><br>
+
+	<p><br><hr color=black noshade width=75%><br><p>
+
+
+	<p><a name="summary"></a><b>Putting it all together</b><br>
+	The following screenshots show the results of using several of the techniques described here in a single room. Your own results will vary, of course, but it should be apparent by now that by making prudent, well-thought-out changes to your map you may be able to significantly improve it's performance.<br><br>
+   
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count17.jpg"><br>a. Room has southwest corner at -16,-16<br>b. Roof beams intersect walls<br>c. Light fixtures flush against walls<br>d. Hideous, evil brush subtraction used in floor</center><br><br>
+
+	<center><img src="/content/quake2/tutorials/poly_count/poly_count18.jpg"><br>a. Room has southwest corner at 0, 0<br>b. Roof beams are detail brushes and do not touch walls<br>c. Light fixtures embedded in walls<br>d. Manually placed triangular brushes for the cylindrical part of holes in floor</center><br><br>
+
+	<p>The authors consider this tutorial a work in progress, and are always open to new ideas which should be included here. If you find a technique not outlined here that works, by all means contact us and clue us in!<br><br>
+
+</body></html>

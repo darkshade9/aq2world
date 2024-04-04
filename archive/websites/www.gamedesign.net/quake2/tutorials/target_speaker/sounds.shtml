@@ -1,0 +1,922 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Rust - Quake2 Tutorials - Sounds List</title>
+<LINK rel="Start" title="Main r u s t Page" type="text/html" href="http://www.gamedesign.net">
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Title" CONTENT="rust Game Designer Interviews">
+<META NAME="DC.Creator" CONTENT="Shane Sherman(fishman)">
+<META NAME="DC.Subject" CONTENT="game editing and design">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+
+<link rel=stylesheet href="../../../stylesheets/main.css">
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+<tr>
+	<td colspan="2" valign="TOP" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a><br>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<h1>Quake2 Tutorials</h1>
+
+
+<Br></td>
+
+
+	<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+	
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+	</td>
+<!--menu ends here-->
+</tr>
+<tr>
+	<td width="100%" valign="TOP">
+<div class="text"><br>
+<blockquote>
+<h3>Quake2 Sounds</h3>
+<blockquote>
+The <a href="#world">world/</a> sounds are the most commonly used with the target_speaker entity but you can use any sound on this page. When using them with a target_noise don't forget to include the directory path.<br><br>
+For a better description of the world/ sounds please check out this <a href="q2sounds.html">list</a><br><br>
+
+<u><b>monster_beserk sounds</b></u>
+<br>
+beserk/attack.wav<br>
+beserk/Berdeth2.wav<br>
+beserk/Beridle1.wav<br>
+beserk/Berpain2.wav<br>
+beserk/Bersrch1.wav<br>
+beserk/death.wav<br>
+beserk/idle.wav<br>
+beserk/sight.wav<br>
+beserk/xfire.wav<br>
+<br><br>
+<u><b>monster_boss3 sounds</b></u>
+<br>
+boss3/Bs3atck1.wav<br>
+boss3/Bs3atck2.wav<br>
+boss3/Bs3deth1.wav<br>
+boss3/Bs3idle1.wav<br>
+boss3/Bs3pain1.wav<br>
+boss3/Bs3pain2.wav<br>
+boss3/Bs3pain3.wav<br>
+boss3/Bsp3srch1.wav<br>
+boss3/Bsp3srch2.wav<br>
+boss3/Bsp3srch3.wav<br>
+boss3/d_hit.wav<br>
+boss3/step1.wav<br>
+boss3/step2.wav<br>
+boss3/w_loop.wav<br>
+boss3/xfire.wav<br>
+<br><br>
+<u><b>monster_boss2 sounds</b></u>
+<br>
+bosshovr/Bhvdeth1.wav<br>
+bosshovr/Bhvengn1.wav<br>
+bosshovr/Bhvpain1.wav<br>
+bosshovr/Bhvpain2.wav<br>
+bosshovr/Bhvpain3.wav<br>
+bosshovr/Bhvunqv1.wav<br>
+<br><br>
+<u><b>monster_supertank sounds</b></u>
+<br>
+bosstank/Btkdeth1.wav<br>
+bosstank/Btkengn1.wav<br>
+bosstank/Btkpain1.wav<br>
+bosstank/Btkpain2.wav<br>
+bosstank/Btkpain3.wav<br>
+bosstank/Btkunqv1.wav<br>
+bosstank/Btkunqv2.wav<br>
+<br><br>
+<u><b>monster_brain sounds</b></u>
+<br>
+brain/Brnatck1.wav<br>
+brain/Brnatck2.wav<br>
+brain/Brnatck3.wav<br>
+brain/Brndeth1.wav<br>
+brain/Brnidle1.wav<br>
+brain/Brnidle2.wav<br>
+brain/Brnlens1.wav<br>
+brain/Brnpain1.wav<br>
+brain/Brnpain2.wav<br>
+brain/Brnsght1.wav<br>
+brain/Brnsrch1.wav<br>
+brain/melee1.wav<br>
+brain/melee2.wav<br>
+brain/melee3.wav<br>
+<br><br>
+<u><b>monster_chick sounds</b></u>
+<br>
+chick/Chkatck1.wav<br>
+chick/Chkatck2.wav<br>
+chick/Chkatck3.wav<br>
+chick/Chkatck4.wav<br>
+chick/Chkatck5.wav<br>
+chick/Chkdeth1.wav<br>
+chick/Chkdeth2.wav<br>
+chick/Chkfall1.wav<br>
+chick/Chkidle1.wav<br>
+chick/Chkidle2.wav<br>
+chick/Chkpain1.wav<br>
+chick/Chkpain2.wav<br>
+chick/Chkpain3.wav<br>
+chick/Chksght1.wav<br>
+chick/Chksrch1.wav<br>
+<br><br>
+<u><b>door sounds</b></u>
+<br>
+doors/dr1_end.wav<br>
+doors/dr1_mid.wav<br>
+doors/dr1.strt.wav<br>
+<br><br>
+<u><b>monster_flipper sounds</b></u>
+<br>
+flipper/Flpatck1.wav<br>
+flipper/Flpatck2.wav<br>
+flipper/Flpdeth1.wav<br>
+flipper/Flpidle1.wav<br>
+flipper/Flppain1.wav<br>
+flipper/Flppain2.wav<br>
+flipper/Flpsght1.wav<br>
+flipper/Flpsrch1.wav<br>
+<br><br>
+<u><b>monster_floater sounds</b></u>
+<br>
+floater/Fltatck1.wav<br>
+floater/Fltatck2.wav<br>
+floater/Fltatck3.wav<br>
+floater/Fltdeth1.wav<br>
+floater/Fltidle1.wav<br>
+floater/Fltpain1.wav<br>
+floater/Fltpain2.wav<br>
+floater/Fltsght1.wav<br>
+floater/Fltsrch1.wav<br>
+<br><br>
+<u><b>monster_flyer sounds</b></u>
+<br>
+flyer/Flyatck1.wav<br>
+flyer/Flyatck2.wav<br>
+flyer/Flyatck3.wav<br>
+flyer/Flydeth1.wav<br>
+flyer/Flyidle1.wav<br>
+flyer/Flypain1.wav<br>
+flyer/Flypain2.wav<br>
+flyer/Flysght1.wav<br>
+flyer/Flysrch1.wav<br>
+<br><br>
+<u><b>monster_gladiator</b></u>
+<br>
+gladiator/death.wav<br>
+gladiator/Glddeth2.wav<br>
+gladiator/Gldidle1.wav<br>
+gladiator/Gldpain2.wav<br>
+gladiator/Gldsrch1.wav<br>
+gladiator/melee1.wav<br>
+gladiator/melee2.wav<br>
+gladiator/melee3.wav<br>
+gladiator/pain.wav<br>
+gladiator/railgun.wav<br>
+gladiator/sight.wav<br>
+<br><br>
+<u><b>monster_gunner sounds</b></u>
+<br>
+gunner/death1.wav<br>
+gunner/Gunatck1.wav<br>
+gunner/Gunatck2.wav<br>
+gunner/Gunatck3.wav<br>
+gunner/Gunidle1.wav<br>
+gunner/gunpain1.wav<br>
+gunner/Gunpain2.wav<br>
+gunner/Gunsrch1.wav<br>
+gunner/sight1.wav<br>
+<br><br>
+<u><b>monster_hover sounds</b></u>
+<br>
+hover/Hovatck1.wav<br>
+hover/Hovdeth1.wav<br>
+hover/Hovdeth2.wav<br>
+hover/Hovidle1.wav<br>
+hover/Hovpain1.wav<br>
+hover/Hovpain2.wav<br>
+hover/Hovsght1.wav<br>
+hover/Hovsrch1.wav<br>
+hover/Hovsrch2.wav<br>
+<br><br>
+<u><b>monster_infantry sounds</b></u>
+<br>
+infantry/Infatck1.wav<br>
+infantry/Infatck2.wav<br>
+infantry/Infatck3.wav<br>
+infantry/INFDETH1.wav<br>
+infantry/INFDETH2.wav<br>
+infantry/INFIDLE1.wav<br>
+infantry/Inflies1.wav<br>
+infantry/INFPAIN1.wav<br>
+infantry/Infpain2.wav<br>
+infantry/INFSGHT1.wav<br>
+infantry/INFSRCH1.wav<br>
+infantry/melee2.wav<br>
+<br><br>
+<u><b>misc_insane sounds</b></u>
+<br>
+insane/insane1.wav<br>
+insane/insane2.wav<br>
+insane/insane3.wav<br>
+insane/insane4.wav<br>
+insane/insane5.wav<br>
+insane/insane6.wav<br>
+insane/insane7.wav<br>
+insane/insane8.wav<br>
+insane/insane9.wav<br>
+insane/insane10.wav<br>
+insane/insane11.wav<br>
+<br><br>
+<u><b>Item Sounds</b></u>
+<br>
+items/airout.wav<br>
+items/damage.wav<br>
+items/damage2.wav<br>
+items/damage3.wav<br>
+items/l_health.wav<br>
+items/m_health.wav<br>
+items/n_health.wav<br>
+items/pkup.wav<br>
+items/protect.wav<br>
+items/protect2.wav<br>
+items/protect3.wav<br>
+items/protect4.wav<br>
+items/respawn1.wav<br>
+items/s_health.wav<br>
+<br><br>
+<u><b>monster_makron sounds</b></u>
+<br>
+makron/bfg_fire.wav<br>
+makron/bfg_hum.wav<br>
+makron/bhit.wav<br>
+makron/blaster.wav<br>
+makron/brain1.wav<br>
+makron/death.wav<br>
+makron/head1.wav<br>
+makron/head2.wav<br>
+makron/laf1.wav<br>
+makron/laf2.wav<br>
+makron/laf3.wav<br>
+makron/laf4.wav<br>
+makron/pain1.wav<br>
+makron/pain2.wav<br>
+makron/pain3.wav<br>
+makron/popup.wav<br>
+makron/rail_up.wav<br>
+makron/roar1.wav<br>
+makron/roar2.wav<br>
+makron/spine.wav<br>
+makron/step1.wav<br>
+makron/step2.wav<br>
+makron/voice.wav<br>
+makron/voice1.wav<br>
+makron/voice2.wav<br>
+makron/voice3.wav<br>
+makron/voice4.wav<br>
+<br><br>
+<u><b>monster_medic sounds</b></u>
+<br>
+medic/idle.wav<br>
+medic/Medatck1.wav<br>
+medic/Medatck2.wav<br>
+medic/Medatck3.wav<br>
+medic/Medatck4.wav<br>
+medic/Medatck5.wav<br>
+medic/Meddeth1.wav<br>
+medic/Medpain1.wav<br>
+medic/Medpain2.wav<br>
+medic/Medsght1.wav<br>
+medic/Medsrch1.wav<br>
+<br><br>
+<u><b>misc. sounds</b></u>
+<br>
+misc/am_pkup.wav<br>
+misc/ar1_pkup.wav<br>
+misc/ar2_pkup.wav<br>
+misc/ar3_pkup.wav<br>
+misc/bigtele.wav<br>
+misc/comp_up.wav<br>
+misc/fhit3.wav<br>
+misc/h2ohit1.wav<br>
+misc/keytry.wav<br>
+misc/keyuse.wav<br>
+misc/lasfly.wav<br>
+misc/menu1.wav<br>
+misc/menu2.wav<br>
+misc/menu3.wav<br>
+misc/pc_up.wav<br>
+misc/power1.wav<br>
+misc/power2.wav<br>
+misc/secret.wav<br>
+misc/spawn1.wav<br>
+misc/talk.wav<br>
+misc/talk1.wav<br>
+misc/tele_up.wav<br>
+misc/tele1.wav<br>
+misc/udeath.wav<br>
+misc/w_pkup.wav<br>
+misc/windfly.wav<br>
+<br><br>
+<u><b>monster_mutant sounds</b></u>
+<br>
+mutant/Mutatck1.wav<br>
+mutant/Mutatck2.wav<br>
+mutant/mutatck3.wav<br>
+mutant/Mutdeth1.wav<br>
+mutant/Mutidle1.wav<br>
+mutant/Mutpain1.wav<br>
+mutant/Mutpain2.wav<br>
+mutant/Mutsght1.wav<br>
+mutant/Mutsrch1.wav<br>
+mutant/step1.wav<br>
+mutant/step2.wav<br>
+mutant/step3.wav<br>
+mutant/thud1.wav<br>
+<br><br>
+<u><b>monster_parasite sounds</b></u>
+<br>
+parasite/Paratck1.wav<br>
+parasite/Paratck2.wav<br>
+parasite/Paratck3.wav<br>
+parasite/Paratck4.wav<br>
+parasite/Pardeth1.wav<br>
+parasite/Paridle1.wav<br>
+parasite/Paridle2.wav<br>
+parasite/Parpain1.wav<br>
+parasite/Parpain2.wav<br>
+parasite/Parsght1.wav<br>
+parasite/Parsrch1.wav<br>
+<br><br>
+<u><b>platform sounds</b></u>
+<br>
+plats/pt1_end.wav<br>
+plats/pt1_mid.wav<br>
+plats/pt1_strt.wav<br>
+<br><br>
+<u><b>female player sounds</b></u>
+<br>
+player/female/death1.wav<br>
+player/female/death2.wav<br>
+player/female/death3.wav<br>
+player/female/death4.wav<br>
+player/female/drown.wav<br>
+player/female/fall1.wav<br>
+player/female/fall2.wav<br>
+player/female/gurp1.wav<br>
+player/female/gurp2.wav<br>
+player/female/jump1.wav<br>
+player/female/pain100_1.wav<br>
+player/female/pain100_2.wav<br>
+player/female/pain25_1.wav<br>
+player/female/pain25_2.wav<br>
+player/female/pain50_1.wav<br>
+player/female/pain50_2.wav<br>
+player/female/pain75_1.wav<br>
+player/female/pain75_2.wav<br>
+<br><br>
+<u><b>male player sounds</b></u>
+<br>
+player/male/bump1.wav<br>
+player/male/death1.wav<br>
+player/male/death2.wav<br>
+player/male/death3.wav<br>
+player/male/death4.wav<br>
+player/male/drown1.wav<br>
+player/male/fall1.wav<br>
+player/male/fall2.wav<br>
+player/male/gurp1.wav<br>
+player/male/gurp2.wav<br>
+player/male/jump1.wav<br>
+player/male/pain100_1.wav<br>
+player/male/pain100_2.wav<br>
+player/male/pain25_1.wav<br>
+player/male/pain25_2.wav<br>
+player/male/pain50_1.wav<br>
+player/male/pain50_2.wav<br>
+player/male/pain75_1.wav<br>
+player/male/pain75_2.wav<br>
+<br><br>
+<u><b>player sounds</b></u>
+<br>
+player/burn1.wav<br>
+player/burn2.wav<br>
+player/death4.wav<br>
+player/drown1.wav<br>
+player/fall1.wav<br>
+player/fall2.wav<br>
+player/fry.wav<br>
+player/gasp1.wav<br>
+player/gasp2.wav<br>
+player/jump1.wav<br>
+player/land1.wav<br>
+player/lava_in.wav<br>
+player/lava1.wav<br>
+player/lava2.wav<br>
+player/step1.wav<br>
+player/step2.wav<br>
+player/step3.wav<br>
+player/step4.wav<br>
+player/u_breath1.wav<br>
+player/u_breath2.wav<br>
+player/wade1.wav<br>
+player/wade2.wav<br>
+player/wade3.wav<br>
+player/watr_in.wav<br>
+player/watr_out.wav<br>
+player/watr_un.wav<br>
+<br><br>
+<u><b>rotation sounds</b></u>
+<br>
+rotate/h_rot1.wav<br>
+rotate/h_rot2.wav<br>
+<br><br>
+<u><b>monster_soldier sounds</b></u>
+<br>
+soldier/Solatck1.wav<br>
+soldier/Solatck2.wav<br>
+soldier/Solatck3.wav<br>
+soldier/SOLDETH1.wav<br>
+soldier/SOLDETH2.wav<br>
+soldier/SOLDETH3.wav<br>
+soldier/SOLIDLE1.wav<br>
+soldier/SOLPAIN1.wav<br>
+soldier/SOLPAIN2.wav<br>
+soldier/SOLPAIN3.wav<br>
+soldier/SOLSGHT1.wav<br>
+soldier/SOLSRCH1.wav<br>
+<br><br>
+<u><b>button sounds</b></u>
+<br>
+switches/butn2.wav<br>
+<br><br>
+<u><b>monster_tank sounds</b></u>
+<br>
+tank/death.wav<br>
+tank/pain.wav<br>
+tank/rocket.wav<br>
+tank/sight1.wav<br>
+tank/step.wav<br>
+tank/thud.wav<br>
+tank/Tnkatck1.wav<br>
+tank/Tnkatck3.wav<br>
+tank/Tnkatck4.wav<br>
+tank/Tnkatck5.wav<br>
+tank/Tnkatk2a.wav<br>
+tank/Tnkatk2b.wav<br>
+tank/Tnkatk2c.wav<br>
+tank/Tnkatk2d.wav<br>
+tank/Tnkatk2e.wav<br>
+tank/Tnkdeth2.wav<br>
+tank/Tnkidle1.wav<br>
+tank/Tnkpain2.wav<br>
+<br><br>
+<u><b>weapon sounds</b></u>
+<br>
+weapons/Bfg__f1y.wav<br>
+weapons/Bfg__1a.wav<br>
+weapons/Bfg__x1b.wav<br>
+weapons/bfg_hum.wav<br>
+weapons/Blastf1a.wav<br>
+weapons/Chngnd1a.wav<br>
+weapons/Chngnl1a.wav<br>
+weapons/Chngnu1a.wav<br>
+weapons/Grenlb1b.wav<br>
+weapons/Grenlf1a.wav<br>
+weapons/Grenlr1b.wav<br>
+weapons/Grenlx1a.wav<br>
+weapons/Hgrena1b.wav<br>
+weapons/Hgrenb1a.wav<br>
+weapons/Hgrenb2a.wav<br>
+weapons/Hgrenc1b.wav<br>
+weapons/Hgrent1a.wav<br>
+weapons/Hyprbd1a.wav<br>
+weapons/Hyprbf1a.wav<br>
+weapons/Hyprbl1a.wav<br>
+weapons/Hyprbu1a.wav<br>
+weapons/laser2.wav<br>
+weapons/lashit.wav<br>
+weapons/Machgf1b.wav<br>
+weapons/Machgf2b.wav<br>
+weapons/Machgf3b.wav<br>
+weapons/Machgf4b.wav<br>
+weapons/Machgf5b.wav<br>
+weapons/noammo.wav<br>
+weapons/Railgf1a.wav<br>
+weapons/Railgr1a.wav<br>
+weapons/rg_hum.wav<br>
+weapons/rockfly.wav<br>
+weapons/Rocklf1a.wav<br>
+weapons/Rocklr1b.wav<br>
+weapons/Rocklx1a.wav<br>
+weapons/Shotgf1b.wav<br>
+weapons/Shotgr1b.wav<br>
+weapons/Sshotf1b.wav<br>
+weapons/Sshotr1b.wav<br>
+weapons/xpld_wat.wav<br>
+<br><br>
+<u><b>World sounds</b></u>
+<br>
+<a name="world"></a>
+world/10_0.wav<br>
+world/airhiss1.wav<br>
+world/airhiss2.wav<br>
+world/amb1.wav<br>
+world/amb2.wav<br>
+world/amb3.wav<br>
+world/amb4.wav<br>
+world/amb5.wav<br>
+world/amb6.wav<br>
+world/amb7.wav<br>
+world/amb8.wav<br>
+world/amb9.wav<br>
+world/amb10.wav<br>
+world/amb11.wav<br>
+world/amb12.wav<br>
+world/amb13.wav<br>
+world/amb14.wav<br>
+world/amb15.wav<br>
+world/amb16.wav<br>
+world/amb17.wav<br>
+world/amb18.wav<br>
+world/amb19.wav<br>
+world/amb20.wav<br>
+world/amb21.wav<br>
+world/amb22.wav<br>
+world/amb23.wav<br>
+world/amb24.wav<br>
+world/battle1.wav<br>
+world/battle2.wav<br>
+world/battle3.wav<br>
+world/battle4.wav<br>
+world/battle5.wav<br>
+world/bigpump.wav<br>
+world/bigpump2.wav<br>
+world/blackhole.wav<br>
+world/brkglas.wav<br>
+world/bubbl4.wav<br>
+world/bubl1.wav<br>
+world/bubl2.wav<br>
+world/bubl3.wav<br>
+world/comlas1.wav<br>
+world/comp_hum1.wav<br>
+world/comp_hum2.wav<br>
+world/comp_hum3.wav<br>
+world/curnt1.wav<br>
+world/curnt2.wav<br>
+world/curnt3.wav<br>
+world/dataspin.wav<br>
+world/deactivated.wav<br>
+world/dish1.wav<br>
+world/dr_long.wav<br>
+world/dr_short.wav<br>
+world/drill1.wav<br>
+world/drill2a.wav<br>
+world/driller1.wav<br>
+world/drip_amb.wav<br>
+world/drip1.wav<br>
+world/drip2.wav<br>
+world/drip3.wav<br>
+world/electro.wav<br>
+world/explod1.wav<br>
+world/explod2.wav<br>
+world/fan1.wab<br>
+world/flesh1.wav<br>
+world/flesh2.wav<br>
+world/flyby.wav<br>
+world/flyby1.wav<br>
+world/flyby2.wav<br>
+world/flyby3.wav<br>
+world/force1.wav<br>
+world/force2.wav<br>
+world/force3.wav<br>
+world/fusein.wav<br>
+world/fuseout.wav<br>
+world/incoming.wav<br>
+world/klaxon1.wav<br>
+world/klaxon2.wav<br>
+world/l_hum1.wav<br>
+world/l_hum2.wav<br>
+world/land.wav<br>
+world/laser.wav<br>
+world/lashum1.wav<br>
+world/lasoff1.wav<br>
+world/lava1.wav<br>
+world/lite_on1.wav<br>
+world/lite_on2.wav<br>
+world/lite_on3.wav<br>
+world/lite_out.wav<br>
+world/mach1.wav<br>
+world/mach2.wav<br>
+world/mach3.wav<br>
+world/mov_watr.wav<br>
+world/pilot1.wav<br>
+world/pilot2.wav<br>
+world/pilot3.wav<br>
+world/pump1.wav<br>
+world/pump2.wav<br>
+world/pump3.wav<br>
+world/pumping.wav<br>
+world/pyramid.wav<br>
+world/quake.wav<br>
+world/radio2.wav<br>
+world/radio3.wav<br>
+world/reactor.wav<br>
+world/redforce.wav<br>
+world/ric1.wav<br>
+world/ric2.wav<br>
+world/ric3.wav<br>
+world/rocks1.wav<br>
+world/scan1.wav<br>
+world/short1.wav<br>
+world/spark2.wav<br>
+world/spark3.wav<br>
+world/spark4.wav<br>
+world/spark5.wav<br>
+world/spark6.wav<br>
+world/spark7.wav<br>
+world/steam1.wav<br>
+world/steam2.wav<br>
+world/steam3.wav<br>
+world/stp_watr.wav<br>
+world/tele1.wav<br>
+world/train1.wav<br>
+world/train2.wav<br>
+world/turbine1.wav<br>
+world/uplink2.wav<br>
+world/v_bas1.wav<br>
+world/v_bas2.wav<br>
+world/v_bas3.wav<br>
+world/v_bas4.wav<br>
+world/v_bas5.wav<br>
+world/v_bas6.wav<br>
+world/v_cit1.wav<br>
+world/v_cit2.wav<br>
+world/v_cmd1.wav<br>
+world/v_cmd2.wav<br>
+world/v_fac2.wav<br>
+world/v_fac3.wav<br>
+world/v_gun1.wav<br>
+world/v_gun2.wav<br>
+world/v_war1.wav<br>
+world/ventsys.wav<br>
+world/voice1.wav<br>
+world/voice3.wav<br>
+world/voice4.wav<br>
+world/voice5.wav<br>
+world/voice6.wav<br>
+world/voice7.wav<br>
+world/voice10.wav<br>
+world/voice11.wav<br>
+world/vater1.wav<br>
+world/wind2.wav<br>
+world/x_alarm.wav<br>
+world/x_light.wav<br>
+world/xian1.wav<br>
+world/xianbeats.wav<br>
+world/yelforce.wav<br>
+</blockquote>
+<h3><a href="../../quake2tutorials.shtml" target="_top">Return to Tutorials Page...</a></h3><br><br>
+
+
+</blockquote>
+</div>
+<br><br><br><br>
+
+</td></tr></table>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>

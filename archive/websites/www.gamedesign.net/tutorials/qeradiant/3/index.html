@@ -1,0 +1,336 @@
+<html>
+	<!-- this is the rust html page template. make sure you put a TITLE, META KEYWORDS, META DESCRIPTION META, and a TOPIC TITLE -->
+	<!-- you might run into some problems trying to locally display the pages while not connected to the internet because of the
+		 style sheet call. I would sussgest just commenting it out if you have that problem. -->
+	<BASE HREF="http://www.gamedesign.net/">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Rust - Quake3:Arena Editing Tutorial 3 : Loading, Searching for, and Selecting Textures</title>
+		<LINK rel="Start" title="Main rust Page" type="text/html" href="http://www.gamedesign.net">
+		<LINK REV=made href="mailto:fishman@gamedesign.net">
+		<META NAME="keywords" CONTENT="Quake3 editing, Quake 3:Arena Editing, Quake3 Level Editing, Q3:Arena Level Editing, map making, quake3, quake arena, quake 3 tutorials, editing tutorials">
+		<META NAME="description" CONTENT="The third tutorial on Quake 3:Arena Editing. Loading, Searching for, and Selecting Textures">
+		<META NAME="ROBOTS" CONTENT="ALL">
+		<link rel=stylesheet href="http://www.gamedesign.net/stylesheets/main.css">
+	</head>
+	<body>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+		<tr>
+			<td colspan="2" valign="TOP" width="85%">
+				<a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a>
+				<br>
+				<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+				<h1>Getting Ready for Quake3:Arena Editing</h1>
+				<Br>
+				<div class="text">
+				<h2>Tutorial 3 : Loading, Searching for, and Selecting Textures</h2>
+				<br>
+<blockquote>
+	
+	In this tutorial you will begin the process of making your first "hello world" map. We will concentrate on loading, searching for, and selecting textures.
+	<Br><br>
+	First thing we need to do is start a new map from scratch. So goto <b>FILE</b>, <b>NEW MAP</b> on the menu. After this your screen you should look like the once below:
+	<br><br>
+	<a href="http://www.gamedesign.net/cgi-bin/sshot.pl?pic=/tutorials/qeradiant/3/images/1_BIG.gif"><img src="tutorials/qeradiant/3/images/1_SMALL.gif" width=450 height=338 border=0 alt="Does your screen look like this?"></a>
+	<br><br>
+	
+	<h3>Selecting the Rendering Quality</h3>
+	<blockquote>
+	First think you are going to want to do is select a texture/3d window rendering mode. This is done by clicking on the <b>Textures</b> menu and then the <b>Render Quality</b> submenu. The image below should illustrate it for the lost ones:
+<Br><br>
+<img src="tutorials/qeradiant/3/images/5.gif" width=384 height=421 border=0 alt="Textures, then Render Quality">
+	<Br><br>
+There are 8 different rendering types for the 3D View:
+<br><br>
+<ul>
+<li>Wireframe</li>
+<li>Flat Shade</li>
+<li>Nearest</li>
+<li>Nearest Mipmap</li>
+<li>Linear</li>
+<li>Bilinear</li>
+<li>Bilinear Mipmap</li>
+<li>Trilinear</li>
+</ul>
+<Br>
+These are basically ordered in less to most complexity. If you do not have a OpenGL accelerator like a Nvidia TNT then choose either <b>Nearest</b>, or <b>Nearest Mipmap</b>. If you do have a graphics card with a full OpenGL driver like a Nvidia TNT then I recommend choosing <b>Bilinear</b>, or <b>Bilinear Mipmap</b>. If you have a really really slow computer then you might want to choose Wireframe or Flat Shade, but I don't recommend it.
+</blockquote>
+<Br><br>
+	<h3>Loading Textures</h3>
+	<blockquote>
+	The textures in the texture browser are just the ones that were used in the default map before. We are definitely going to need some more textures to make a cool map, eh?
+	Goto <b>TEXTURES</b> on the menu, and then select <b>E1U2</b>. For those of you lost, an image is included below to help:
+	<Br><Br>
+	<img src="tutorials/qeradiant/3/images/2.gif" width=300 height=440 border=0 alt="yep...pretty basic stuff so far...">
+	<br><br>
+	A dialog box will come up that should look sorta like the one below
+	<Br><Br>
+	<img src="tutorials/qeradiant/3/images/3.gif" width=285 height=178 border=0 alt="Load Textures?">
+	<br><br>
+	Make sure "Load all Textures" is selected and click "OK". After clicking ok, you should see in the console window at the bottom, all the textures being loaded from the PAK file. After it is done you should see the textures from E1U2 in the texture window all ready to use.</blockquote>
+<br><br>
+<h3>Finding and Selecting a Particular Texture</h3>
+<blockquote>Now we need to select a texture to use for a first room. To make this tutorial simple let's just make our map a one texture map, and let's use the texture <b>metal1_3</b>. To navigate through the textures you can either use the scroll bar or hold down the RIGHT MOUSE BUTTON and drag the texture list up or down. Who want's to spend all the time looking for textures though. We know the name, lets search for it! QERadiant has a handy filter/search tool to find a texture that your looking for.
+<br><br>
+in the text input box above the texture window type <i>metal</i>. As you type you should see some textures disappear with each letter. after finishing typing metal, you are left with all the textures that begin with the word metal. Below is a screenshot for those of you who are lost:
+<br><br>
+<img src="tutorials/qeradiant/3/images/4.gif" width=400 height=340 border=0 alt="Filtered Textures!">
+<Br><br>
+It should be easy to find the texture <b>metal1_3</b> now, of course you could just type the whole texture name into the filter box if you want to. <b>DOUBLE CLICK</b> on the texture to select it.</blockquote>
+<Br><Br>
+
+<h3>Changing the Texture Window Scale</h3>
+<blockquote>
+Another cool option that is found under the <b>Texture</b> menu is the option to scale down or up the size of the textures in the texture window. try it out for yourself. Goto to the <b>Texture Window Scale</b> submenu under the <b>Texture</b> menu and choose the scale that you like the best. For the clueless the screenshot below should help:
+<Br><br>
+<img src="tutorials/qeradiant/3/images/6.gif" width=295 height=419 border=0 alt="Texture Window Scale">
+<Br><br>
+Personally I like the default value of 100%
+
+</blockquote>
+Well that sure was short and sweet. Of course there are more texture options, but we shall get to those in due time. In the <a href="tutorials/qeradiant/4/">next tutorial</a> you will learn how to create the basic architecture for your first map.
+<Br>
+<br>
+<hr align="LEFT" size="1" width="75%" color="#000080" noshade>
+<b>If you had problems with this tutorial or found an error or just a better way I could of explained a concept then please post on the <a href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=QERadiant">QERadiant Forum</a>.</b>
+</blockquote>
+				</div>
+				<br><br><br><br>
+			</td>
+			<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+			<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+			<!--menu ends here-->
+			</td>
+		</tr>
+	</table>
+	<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+	</body>
+</html>

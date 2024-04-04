@@ -1,0 +1,43 @@
+<html><head><title>Making a mirror</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="570" name="570" class="book-h1">Making a mirror</h1><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making a mirror -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>First I thought I should make a tutorial how the Curved faces works, but I changed my mind, and made this Mirror tutorial instead. I made this choice basically because the curved faces is tricky to understand, and I think I will make a tutorial about it in Tutorial #5 or #6. So, how do you make a mirror? Just read the stuff below. First, the mirror has one bad thing with it, it will not reflect light, but you wouldn't see it if you don't think about it =). Here comes the tutorial. </p>
+
+<p>Let's open our map, the map I have added upon since tutorial 1. I want to place a mirror at one of the sides in the room where I have my lamp (from tutorial #3). First, do as we always do, load a texture, but this time, you have to load the "common" textures, because that's where the mirror is located. Choose the left of the "Mirror" textures, and make a new object, it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial4/mirrortextur.jpg"><br>
+</center>
+<br>
+<p>Now, many of you think you're done, but it's not that simple =). </p>
+<ul>
+<p><li><i>Now, we're done with the new cube, so push ESC to deselect it. Now we need to put a new entity in front of the mirror. Press your right mouse button in any of the views (except for the 3dview) until you get the small menu, popping up where the mouse cursor is.</i></p>
+
+<p><li><i>Go down on that menu, and choose "misc", and then "misc_portal_surface". A new entity will be shown, place the new entity in front of the mirror. (the entity must be closer than 64 units from the mirror texture). </i></p>
+</ul>
+<br>
+
+<p>If you compile your map, the mirror will work, but act really strange. It wouldn't work from all angles, and that's because the mirror can only have 1 viewable surface. This mean that we have to cover all surfaces except the one we want as a mirror. I will do this by adding new boxes, that I put around the mirror. So it looks like this: </p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial4/done.jpg"><br>
+</center>
+<br>
+<p>Now you can compile your map, and you got yourself a nice mirror =). One thing to know is that if you use mirrors, the clients FPS will be completely killed! But I agree that it is a nice effect. Another note is that
+the mirror will not effect lights.</p></body></html>

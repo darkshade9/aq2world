@@ -1,0 +1,605 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Rust - Quake2 Tutorials - QBSP3 Errors</title>
+<LINK rel="Start" title="Main r u s t Page" type="text/html" href="http://www.gamedesign.net">
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Title" CONTENT="rust Game Designer Interviews">
+<META NAME="DC.Creator" CONTENT="Shane Sherman(fishman)">
+<META NAME="DC.Subject" CONTENT="game editing and design">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+
+<link rel=stylesheet href="../../../stylesheets/main.css">
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+<tr>
+	<td colspan="2" valign="TOP" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a><br>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<h1>Quake2 Tutorials</h1>
+
+
+<Br></td>
+
+
+	<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+	
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+	</td>
+<!--menu ends here-->
+</tr>
+<tr>
+	<td width="100%" valign="TOP">
+<div class="text"><br>
+<blockquote>
+<h3>QBSP3 Errors</h3>
+<blockquote>
+if you have any answers to these errors or have errors to add then please <b><a href="../../../email.shtml">email</a></b> us.
+<br><br>
+
+<li><b>SubdivideFace didnt split the polygons</b></li>
+<br><br>
+
+	<li><b>Mixed Face Contents</b></li>
+<ul>
+content properties all have to be the same for a brush...you cant have 2 different ones on one brush...this is different for surface properties.</ul><br><br>
+
+	<li><b>numvertexes == MAX_MAP_VERTS</b></li>
+	<ul>  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up1.</ul><br><br>
+
+	<li><b>Leak***</b></li>
+	<ul>you have a whole in your map. Your map must be completely closed. Most editors come with leaking finding tools.</ul><br><br>
+
+	<li><b>bad planenum</b></li>
+<ul>The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+   internal maximums. Simplify, make it smaller, or split it up.  Quake 2
+   has a limit of 65536 planes it can support and a brush has a face that
+   excedes that limit.</ul><br><br>
+	
+	<li><b>Tried parent</b></li>
+<ul>A brush has a surface that is in the same plane as a parent entity.
+   This is checked when splitting brushes up and building the partitions
+   for later processing.  The most likely source of the problem is that a
+   brush is malformed and needs to be fixed up or removed.
+</ul><br><br>
+	
+	<li><b>PSIDE_FACING with splits</b></li>
+	<ul>
+   This error should never occur due to the way that the conditions
+   required to cause it.  The source is checking a surface property and the
+   number of splits for a brush that are necessary.  However the routine
+   that would generate the conditions for this error has an #if 0 / #endif
+   around the part that would set the second condition for this error code
+   (s&PSIDE_FACING) so noone should ever see this error.  If they do, Id
+   love to see the .MAP and find out how!
+</ul><br><br>
+	<li><b>Can't write mapname</b></li>
+<ul>There is a problem with your HD, it might be full. Is your map file opened in another program?</ul><br><br>
+	
+	<li><b>HashVec: point outside valid range</b></li>
+		<ul>  There's a vertex outside the valid range. The maximum extents of a
+Quake 2
+  level is (in all dimensions) -4096 to +4096.</ul><br><br>
+  
+	<li><b>GetVertexnum: outside +/- 4096</b></li>
+	<ul>These are "map is too damn big" errors.  Somewhere the map
+is out of the +/- 4096 bounds. Make your map smaller or make sure its in the middle and not way off to the side of the bounds. </ul><br><br>	
+
+	<li><b>MAX_SUPERVERTS</b></li>
+		<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+		
+	<li><b>numedges == MAX_MAP_EDGES</b></li>
+		<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>SubdivideFace: didn't split the polygon</b></li>
+		
+	<li><b>Winsock initialization failed</b></li>
+<ul>When the -draw flag is specified, then QBSP3 will attempt to open a
+   WinSOCK connection to the GLServer port of 25001.  However since noone
+   ever inits the drawflag in the C code, it is up to the compiler to
+   decide if it is set to NULL or if it not init'd.   The latter case means
+   that some compilers may cause drawflag to be accidentally set due to
+   memory garbage.  In any case, this problem should only really appear
+   when the user specifies '-draw' on the QBSP3 command line and they do
+   not have WinSOCK (TCP/IP) installed on their system.
+   Two simple workarounds for this are:<br><br>
+   <br>1: Do not set the -draw flag on the QBSP3 command line.  This should be
+   something that most users dont do anyways!<br>
+   <b>2:</b> Install the Netscape "fake" WinSOCK.dll file (called Mosock.dll or
+   something funky like that).  It is essentially a WinSOCK.dll that
+   contains NULL WinSOCK routines so that a client does not really have to
+   install and configure TCP/IP on their clients but they can use it when
+   viewing local web pages.<br>
+   A third workaround is something that more advanced users can do: simply
+   rename qbsp3\gldraw.c to qbsp3\ogldraw.c and rename qbsp3\nodraw.c to
+   qbsp3\gldraw.c.  This effectively stubs out all of the Draw_* routines
+   that come from processing the tree nodes.
+</ul><br><br>
+	
+	<li><b>draw_socket failed</b></li>
+	<ul>Related to the Winsock error above.  The reason for the failure is that
+   WinSOCK coudl not create a socket for steaming the data to later on.
+   The same answers for dealing with this apply from the error above.
+</ul><br><br>
+	<li><b>Couldn't open</b></li>
+<ul>
+This error occurs 2 times.  One time is when QBSP3 attempts to create
+   and open the .GL file (if the user put -glview on the command line).  If
+   QBSP3 gets ANY error doing this, it stops w/o indicating what the error
+   may be.  The second time is when QBSP3 attempts to create and open the
+   .LIN file to save the leak information.  The most common reasons for
+   either failing is probably lack of disk space or if you are attempting
+   to save to a network file server, no rights to create new files
+   (although why QBSP3 doesnt give the same error when generating the .PRT
+   or .BSP files is something Id have to look at later).
+</ul><br><br>
+	<li><b>Can't write expanded.map</b></li>
+<ul>
+   You did not list this error but it is in the code.  This is the error
+   that QBSP3 generates when it cannot create the file named expanded.map.
+   This file is generated if QBSP3 is unable to create the file that would
+   contain all the new brush info.  This file is generated in
+   TestExpandBrushes() just before QBSP3 gives the can't proceed after
+   expanding brushes error message.  However upon diggin into the code more
+   I noticed that the routine TestExpandBrushes() is never called (its call
+   in LoadMapFile() is commented out).  As a result, noone should EVER see
+   this error message.
+</ul><br><br>
+	
+	<li><b>FloatPlane: bad normal</b></li>
+	<ul>Happens with vertex editing when the geometry is invalid, for example
+when you alter the number of faces (ie: take a block [6 sides], take two
+vertices from the top and bring them over the lower 2 vertices to
+transform the block brush in a wedge [5 sides]. The face isn't a plane
+anymore (now an edge) so the normal can't be calculated).
+</ul><br><br>
+	
+	<li><b>MAX_MAP_PLANES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+		
+	<li><b>MAX_MAP_BRUSHSIDES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>		
+
+	<li><b>nummapbrushes == MAX_MAP_BRUSHES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+		
+	<li><b>parsing brush</b></li>
+	<ul>
+	  Your map file contains an error, so qbsp3 couldn't parse it. You'll
+probably need to fix it with
+  a text editor.
+</ul><br><br>
+	
+	<li><b>Entity %i, Brush %i: origin brushes not allowed in world</b></li>
+<ul>Caused by having the origin (center) of the Origin brush outside the
+bursh it is meant to rotate (func_rotating error)
+<br><br>
+<br><br>
+it occurs when you apply
+the "origin" surface property to a brush that is not a func_rotate(door)
+entity.  In other words it happens when you give an origin surface
+property to a world brush.
+
+</ul><br><br>
+	
+	<li><b>ParseEntity: { not found</b></li>
+	<ul>
+	  Your map file contains an error, so qbsp3 couldn't parse it. You'll
+probably need to fix it with
+  a text editor.
+</ul><br><br>
+	
+	
+	<li><b>num_entities == MAX_MAP_ENTITIES</b></li>
+	<ul>too many entities...delete some or divide your map into 2 maps</ul><br><br>
+	
+	<li><b>ParseEntity: EOF without closing brace</b></li>
+	<ul>
+	  Your map file contains an error, so qbsp3 couldn't parse it. You'll
+probably need to fix it with
+  a text editor.
+  </ul><br><br>
+  
+	<li><b>Entity %i: func_areaportal can only be a single brush</b></li>
+	<ul>
+	  A func_areaportal can only have one brush attached.
+	  </ul><br><br>
+	  
+	<li><b>can't proceed after expanding brushes</b></li>
+<ul>Noone should ever see this error message</ul><br><br>
+	
+	<li><b>Portal_EntityFlood: not a leaf</b></li>
+		
+	<li><b>AddPortalToNode: allready included</b>		</li>
+
+	<li><b>RemovePortalFromNode: portal not in leaf</b></li>
+		
+	<li><b>RemovePortalFromNode: portal not bounding leaf</b></li>
+	
+	<li><b>CutNodePortals_r: mislinked portal</b></li>
+	
+	<li><b>MAX_MAP_AREAS</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+		
+	
+	<li><b>Unknown option</b></li>
+	<ul>
+	you ran qbsp3 with an unknown option. Look <a href="../utilities/utilities.shtml">here</a> for a list of all the options</ul><br><br>
+	
+	<li><b>Tried to invoke command line that wasnt valid</b></li>
+		<ul>
+	you ran qbsp3 with an unknown option. Look <a href="../utilities/utilities.shtml">here</a> for a list of all the options</ul><br><br>
+	
+	<li><b>usage: qbsp3 [options] mapfile</b></li>
+		<ul>
+	you need to specify the map file to compile. Check <a href="../utilities/utilities.shtml">here</a> for all your options</ul><br><br>
+	
+	<li><b>MAX_MAP_TEXTURES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>node->faces seperating CONTENTS_SOLID</b></li>
+		
+	<li><b>!node->faces with children</b>		</li>
+
+	<li><b>PruneNodes: node->brushlist</b></li>
+		
+	<li><b>Bad leafface</b></li>
+<ul>When writing out the information about the faces to the BSP file, one
+   had a face number larger than the largest one QBSP3 knows about.  This
+   should typically be due to some memory overwrite problems or some
+   internal flow problems rather than anything the user did.  I dont have
+   any suggestions on how to fix the problem w/o actually debugging on a
+   .MAP that could generate this error...
+</ul><br><br>
+	
+	<li><b>MAX_MAP_LEAFFACES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>MAX_MAP_LEAFS</b>	</li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	
+	
+	
+	<li><b>MAX_MAP_LEAFBRUSHES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>MAX_MAP_FACES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>MAX_MAP_SURFEDGES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>MAX_MAP_NODES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+	
+	<li><b>WriteDrawNodes_r: odd planenum</b></li>
+		
+	<li><b>stylenum == MAX_SWITCHED_LIGHTS</b>		</li>
+<ul>The map is too big, it exceeds some of Quake 2/QBSP3 internal maximums.
+   You can only have a maxium of 32 switched (ie: targetname light1) lights
+   in Quake2.  It is not clear if a light w/a targetname but is not really
+   targeted counts towards this tally or not.  To be safe, lights that are
+   not switched should not have a targetname (until someone can verify that
+   this does not matter).  Remove some switched lights until you have less
+   than 32.</ul><br><br>
+
+	<li><b>MAX_MAP_BRUSHSIDES</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul><br><br>
+		
+	<li><b>MAX_MAP_MODELS</b></li>
+	<ul>
+	  The map is too big, it exceeds some of Quake 2/qbsp3/qrad3/qvis3's
+  internal maximums. Simplify, make it smaller, or split it up.
+  </ul>
+	<br>
+	<br>
+<b>Here are the max values:</b>
+	<br><br>
+	<blockquote>
+  <li>MAX_MAP_AREAS          256</li>
+  <li>  MAX_MAP_BRUSHES       8192</li>
+  <li>  MAX_MAP_BRUSHSIDES   65536</li>
+   <li> MAX_MAP_EDGES       128000</li>
+    <li>MAX_MAP_ENTITIES      2048</li>
+    <li>MAX_MAP_FACES        65536</li>
+    <li>MAX_MAP_LEAFS        65536</li>
+    <li>MAX_MAP_LEAFBRUSHES  65536</li>
+   <li> MAX_MAP_LEAFFACES    65536</li>
+   <li> MAX_MAP_MODELS        1024</li>
+    <li>MAX_MAP_NODES        65536</li>
+    <li>MAX_MAP_PLANES       65536</li>
+    <li>MAX_MAP_SURFEDGES   256000</li>
+    <li>MAX_SUPERVERTS         512</li>
+    <li>MAX_SWITCHED_LIGHTS     32</li>
+    <li>MAX_MAP_TEXTURES      1024</li>
+    <li>MAX_MAP_VERTS        65536</li>
+	</blockquote>
+
+	</blockquote>
+<h3><a href="../../quake2tutorials.shtml" target="_top">Return to Tutorials Page...</a></h3><br><br>
+
+
+</blockquote>
+</div>
+<br><br><br><br>
+
+</td></tr></table>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>

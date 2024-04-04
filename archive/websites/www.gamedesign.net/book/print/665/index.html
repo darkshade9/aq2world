@@ -1,0 +1,55 @@
+<html><head><title>Making Complex Doors</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="665" name="665" class="book-h1">Making Complex Doors</h1><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Complex Doors-
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+<p>Now it's time to try to get more out of the func_door! Maybe you have tried to make two door halves, that should open at the same time, and haven't got it work? Then this is the tutorial for you! Read on...</p>
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<p><b>STEP 1:</b> Make the door.<p> 
+
+<p>Do this by simply add some objects with a nice texture. Maybe you have it look like this:</p>
+
+<center><img src="content/quake3/tutorials/tutorial30/editor1.jpg"></center>
+
+<p>Okay, as you can see I have two door halves.</p>
+
+<p><b>STEP 2:</b> Make the door A "func_door".<p>
+ 
+<p>Now I select one of them, and make it to a "func_door" by pushing the right-mouse-button. I set the Angle of the door (The direction it should open). <i>Note: that each halves should have different angles (first door half + 180 degrees = second door half).</i></p> 
+
+<p><b>STEP 3:</b> Compile the MAP.<p>
+
+<p>Compiling the map will let you see what you have just created, and it is good mapping practise to examine you map -in the game- at regular intervals. <i>Note: that the two door halves will not open at the same time, when you're in game. To get the two door halves to open at the same time, we have to add some more stuff to it.</i></p>
+
+<p><b>STEP 4:</b> Synchronize the doors.<p>
+
+<p>Now we want the doors to be syncronized. Now add a new box about 8 units infront of the door, and apply the "common/nodraw" texture on it. It should now look like this:</p>
+
+<center><img src="content/quake3/tutorials/tutorial30/editor2.jpg"></center>
+
+<p><b>STEP 5:</b> Apply the "trigger_multiple".<p>
+
+<p>Now, apply the "trigger_multiple" on this box. The Trigger_multiple is an entity that will trigger it's targets when you walk-on/touch it. We use the multiple_trigger, also because that it should be possible to open the door many times =). Do this by:</p> 
+
+<list><p>1. Now select one the door halfs, and push "N". Write in the "Key" area "targetname", and then in the value "door1" (push Enter).</p> 
+
+<p>2. Now select the other door half (deselect the first door), and do the same here "targetname" .. "door1". </p>
+
+<p>3. Now, deselect the door half, and select the "trigger_multiple" box that we just created. Push "N", and type in the Key area "Target" and the value "door1". 
+
+<p>4. Now, try to run the map. If you have done this right, the door half should open at the same time when you walk close up to them. <i>Note: that you have to add a brush like this on the other side of the doors too, otherwise you will only be able to open the doors from one way. (You can also make the "Trigger_multiple" object big, so you use the same object on both sides of the door, this will also prevent the door to hurt you when you stand right in the middle of them).</i></p></list>
+
+<p><hr width=75% color=black noshade><p>
+
+<p>Hope this will help some. Note that you can ofcourse use however many door parts as you want. You can make many VERY cool doors with the "trigger_multiple" and the "func_train". Maybe i should do a tutorial on that too?</p>
+</body></html>

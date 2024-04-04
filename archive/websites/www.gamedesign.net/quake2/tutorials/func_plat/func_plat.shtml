@@ -1,0 +1,409 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Rust - Quake2 Tutorials - func_plat</title>
+<LINK rel="Start" title="Main r u s t Page" type="text/html" href="http://www.gamedesign.net">
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Title" CONTENT="rust Game Designer Interviews">
+<META NAME="DC.Creator" CONTENT="Shane Sherman(fishman)">
+<META NAME="DC.Subject" CONTENT="game editing and design">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+
+<link rel=stylesheet href="../../../stylesheets/main.css">
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+<tr>
+	<td colspan="2" valign="TOP" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a><br>
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<h1>Quake2 Tutorials</h1>
+
+
+<Br></td>
+
+
+	<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+	
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+	</td>
+<!--menu ends here-->
+</tr>
+<tr>
+	<td width="100%" valign="TOP">
+<div class="text"><br>
+<blockquote>
+<h3>func_plat</h3>
+written by <a href="mailto:jfgrol@cam.org">EutecTic </a>
+
+<br><br>
+<B>1. Introduction to Quake 2 platforms</B>
+<BR>
+<BR>Platforms in Quake 2 work pretty
+much the same as in Quake 1 with a few minor distinctions. Let's first
+take a look at what is unchanged and clarify a few things at the same time:
+<UL>
+<LI>
+Platforms can only be made to go <B>up</B>.
+IOW, their normal <B>idle</B> position is the <B>lowered</B> position <B>unless</B>
+they are targeted (more on this later).</LI>
+
+<LI>
+Plats must be drawn in the <B>raised</B>
+position in the map editor so the lighting can be calculated properly by
+the compiling utility (Qrad3).</LI>
+
+<LI>
+<B>BUT</B>, a platform will initially
+be drawn in the lowered position in the game unless it is <B>targeted</B>.</LI>
+</UL>
+Now, let's take a look at what has changed
+from Quake 1 to Quake 2 about platforms. Unfortunately, these differences
+are not really an improvement. IMO, it's quite the opposite, here's why:
+<UL>
+<LI>
+In Quake 1, when you wanted a plat to
+start in the raised position, you simply set the <B>"Plat Low Trigger"
+spawnflag</B> (who knows why they called it that?). Once the plat was touched
+or triggered and brought down the first time, it would thereafter function
+like a normal platform.</LI>
+
+<LI>
+In Quake 2, if you want the platform
+to start in the raised position, you have to <B>target it with a trigger</B>,
+independently of the state of the "Plat Low Trigger" spawnflag. If you
+set the spawnflag <B>without</B> targeting the plat, nothing will happen
+and it will just behave as a <B>normal</B> plat. IOW, the spawnflag is
+<B>useless</B> by itself. This is the first setback compared to Quake 1.</LI>
+
+<LI>
+For platforms in Quake 1, you had 2 choices
+of sounds or no sound at all if you wanted them to be silent.</LI>
+
+<LI>
+In Quake 2, platforms not only <B>don't
+have</B> any choice of sounds, but you can't even make them <B>silent</B>
+either. This is what I call "major setback No. 2" in platforms. Funny,
+I somehow expected more from Quake 2 plats than Quake 1 plats, not <B>less!</B>...
+Oh well...</LI>
+</UL>
+<B>2. Ok, how do I make these work? Do I use height and lip?</B>
+
+<br><br>There are 2 basic ways to make and
+set platforms to operate exactly the way you want (that is within their
+basic limitations):
+
+<br><br>The first and most common way is to
+use the physical dimension of the brushes that are part of the platform
+to set it's up-down travel distance. In this particular case, the <B>height</B>
+key pair is not used but the <B>lip</B> key pair <B>is</B> and can be extremely
+useful. The basic setup formula in this case is as follows:
+<OL>(Total platform height - <B>lip</B>
+value) = platform travel distance
+
+<br><br><B><U>Total platform height:</U></B></OL>
+
+<UL>This is the <B>overall height</B>
+of all the brushes that are part of the <B>func_plat</B> entity when measured
+from the <B>lowest</B> point to the <B>highest</B> point. You're probably
+thinking: hey! This definition is overkill. I could have figured that out
+for myself long ago! All I have to do is add up all the individual heights
+of all the brushes that are part of my plat and I'm in business right?...
+Well, as long as <B>none</B> of your brushes <B>overlap</B> heightwise.
+Otherwise, you'll have to <B>measure</B> the distance from the highest
+to the lowest point.</UL>
+
+<UL><B><U>Lip value:</U></B>
+
+<br><br>The height or amount by which your
+platform will be <B>raised</B> from the floor when it's in the <B>lowered</B>
+position.</UL>
+
+<CENTER><IMG SRC="plat1.gif" border=0 HEIGHT=433 WIDTH=191></CENTER>
+
+<p align=center>
+<B><u>Figure 1: First method of evaluating platform travel</u><br></B>
+</p>
+
+<br>
+
+The second and easiest, most predictable
+way to set your platforms is to use the <B>height</B> key pair. In this
+case, the <B>physical dimensions</B> of the brushes that are part of the
+platform have <B>no importance</B> and the <B>lip</B> key pair has <B>no
+effect</B> and needs not be used. The basic setup formula is as simple
+as it gets:
+<OL><B>height</B> value = platform travel
+distance</OL>
+I bet you're saying: what?... that's
+it?... Yep! That's it! That's <B>all</B> there is to it. Just make the
+platform and turn it into a <B>func_plat</B>. Measure the <B>distance</B>
+between the <B>start</B> and <B>end</B> position of the <B>top</B> of your
+platform and transfer that value straight to the <B>height</B> key pair
+and you're all set. It makes <B>no difference</B> what <B>size</B> or <B>shape</B>
+the brushes of your platform are or whether they <B>overlap</B> or not
+when using this method. The only restriction is that the plat has to be
+drawn in the <B>raised</B> position as always.
+
+<br><br>
+
+<CENTER><IMG SRC="plat2.gif" border=0 HEIGHT=433 WIDTH=191></CENTER>
+
+<p align=center>
+<B><u>Figure 2: Second method of evaluating platform travel</u><br></B>
+</p>
+
+<br><br>So in conclusion, both methods work fine. Choosing which one to use at this point depends mainly on design particulars and personal taste.
+
+<br><br>You can also specify the <B>speed</B>,
+<B>acceleration</B> and <B>deceleration</B>
+of the platform. Speed, acceleration and decelaration are self explanatory.&nbsp; If
+you want to have the platform triggered then just <B>give it a targetname
+and target it with a trigger.</B>
+
+<br><br>I have put an example of func_plat
+in the <A HREF="func_plat.zip">example map</A>. So if you are having any problems
+then be sure to check it out. Any other questions please post to the <a href="../../quake2/discussion/quake2discussion.shtml">discussion</a> board
+
+<h3><a href="../../quake2tutorials.shtml" target="_top">Return to Tutorials Page...</a></h3><br><br>
+
+
+</blockquote>
+</div>
+<br><br><br><br>
+
+</td></tr></table>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>

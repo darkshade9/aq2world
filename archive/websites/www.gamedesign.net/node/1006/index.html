@@ -1,0 +1,201 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Doors in HL2: The prop_door_rotating Entity - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life 2</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/897">Custom Source Tools</a></li><li class="leaf"><a href="node/1024">Entity Guide</a></li><li class="leaf"><a href="node/1015">Source Utilities Roundup</a></li><li class="expanded"><a href="node/775">Tutorials</a><ul><li class="expanded"><a href="node/776">Mapping - Hammer 4</a><ul><li class="leaf"><a href="node/777">Creating a Skybox</a></li><li class="leaf"><a href="node/1006" class="active">Doors in HL2: The prop_door_rotating Entity</a></li><li class="leaf"><a href="node/1039">Hang 'Em High: phys_ballsocket</a></li><li class="leaf"><a href="node/1013">Hidden and Dangerous: npc_sniper</a></li><li class="leaf"><a href="node/780">Import Custom Textures</a></li><li class="leaf"><a href="node/1016">Making Props Show Up</a></li><li class="leaf"><a href="node/1010">Practical Displacements</a></li><li class="leaf"><a href="node/1068">Real Constructive: Hammer Geometry for Unreal Mappers</a></li><li class="leaf"><a href="node/1033">The Tangled Web We Weave: Ropes in HL2</a></li><li class="leaf"><a href="node/779">Using the Nodraw Texture</a></li></ul></li><li class="leaf"><a href="node/934">Reducing Vis Times</a></li></ul></li><li class="leaf"><a href="node/1009">Modelling - Softimage XSI</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/1006" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 43%;" class="foreground"></div></div><div class="percent">43%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 29%;" class="foreground"></div></div><div class="percent">29%</div><div class="total">Total votes: 7</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li><li><a href="node/2375">ehsfilxwwc</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8267" title="View user profile.">Futurist</a></li><li><a href="user/8266" title="View user profile.">pqewx</a></li><li><a href="user/8265" title="View user profile.">dcnnb</a></li><li><a href="user/8264" title="View user profile.">mkdvr</a></li><li><a href="user/8263" title="View user profile.">jetro</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 33 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Doors in HL2: The prop_door_rotating Entity</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/663" title="">Half-Life 2</a> &raquo; <a href="node/775">Tutorials</a> &raquo; <a href="node/776">Mapping - Hammer 4</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/408" title="View user profile.">yesukai</a> on Sun, 2005-03-27 04:23.</div>
+<p style="text-align: justify;"><img src="content/half-life2/tutorials/prop_door_rotating/dev_door.gif" style="float: left; padding: 10px;" width="256" height="249" alt="dev_door" title="dev_door" />Believe it or not, most doors in HL2 are not func_door or even func_door_rotating. They came up with a better way to do the common door, and that is the prop_door_rotating. This is a much more versatile entity then a func_door_rotating, as it provides better physics and generally just acts more like a door.</p>
+<p style="text-align: justify;">In order to make our door, we first need to make our doorway. To do this, we are going to use the <b>/dev/dev_measuredoor01</b> texture. This texture, when properly scaled to .25 for X and Y, shows use the size of a door, and even where the knob will be. Go ahead and make a bush where you want your doorway, 128 units tall and 64 units wide. Fit the texture if you have to, and have a look. The gray area is where you should build the walls around the door, the orange area is what you leave open.</p>
+<p style="text-align: justify;">Now for the door. Using the Entity Tool (Shift-E), place a prop_door_rotating in the doorway. The model to use for doors is <b>models/props_c17/door01_left.mdl</b>. This model is great for doors, its standard size, and has many, many skins (more on that later). After you have the door model in, hit apply. Now you have to position the door in the door way, by rotating and moving it. A little tip: hold down Shift while you rotate if you want the door to rotate in 15 unit increments, which helps keep the door flush with the walls around it.</p>
+<p style="text-align: justify;">After you have your door in place, there are all sorts of keyvalues to play with. Some of the important ones are:<br></p>
+<ul>
+<li><b>World Model:</b> The model you are using for the door. Most of the time, you will be using <b>models/props_c17/door01_left.mdl</b>.<br>
+<li><b>Skin:</b> Changes the appearance of the door. Takes a number from 0-13, giving you 14 different doors to choose from.<Br>
+<li><b>Ajar Angles:</b> Lets you have the door start partway open. Uses Pitch Yaw Roll (YZX), for most doors, you only want to change the middle number, Yaw (Z).<br>
+<li><b>Spawn Position:</b> Paired with the above, lets you choose closed, open forward, open backward, and ajar. The ajar value uses the angle you entered in "ajar angles".<br>
+<li><b>Hinge Axis:</b> tells the door what invisible line to turn on. Takes a value of two YZX numbers. You can either use the Hammer "helper", the purple ball, to define this by dragging it upward, or you can just make the third number of the second YZX triplicate larger then the third number of the first YZX triplicate. Either way, the end result is that the doors rotates around where its hinges would be.<br>
+<li><b>Rotation Distance:</b> How for the door should swing either way. Default is 90, which means the door can open 90 degrees to the back, or 90 degrees to the front.<br>
+<li><b>Speed:</b> how fast the door swings. Higher number means a more well oiled door, while lower numbers make for rusty hinges. :)<br>
+<li><b>Fully Open Sound:</b> The sound you want to play when the door opens all the way. Like a "clang" or something.<br>
+<li><b>Fully Closed Sound:</b> Same as above, but for closed. Perhaps a nice "slam" sound.<br>
+<li><b>Moving Sound:</b> Here is where you can make the door squeak.<br>
+<li><b>Delay Before Close:</b> How long before the door closes itself. If you are scared of ghosts, set this to -1, that will keep the door open till Gordon decides to close it.<br>
+<li><b>Damage Inflicted When Blocked:</b> The amount of damage any creature unlucky enough to get his fingers caught in the door takes. Set from the low (jump around swearing) to the high (gets gibed). Just like when you were a kid, right?<br>
+<li><b>Health:</b> Leave at 0 for invincible doors. Give it a value to be able to bust the door in S.W.A.T. style.<br>
+<li><b>Locked Sound:</b> Sound to play if you try to open a locked door (see the flags). Something like a rattle sound or "access denied".<br>
+<li><b>Unlock Sound:</b> Sound to play if the door isn't locked, like a door handle sound.<br>
+<li><b>Force Closed:</b> Nothing will stop the door from closing. Similar to setting the "damage when blocked" to 4000, but not as messy.<br>
+</ul>
+<p style="text-align: justify;">And then there are the oh-so-important flags:<br></p>
+<ul>
+<li><b>Starts Open:</b> No brainier here.<br>
+<li><b>Starts Locked:</b> The door will not open. It will play the Locked Sound if one is defined. To unlock the door, have an IO send to the "Unlock" input of the door.<br>
+<li><b>Door Silent:</b> Another no brainier.<br>
+<li><b>Use Closes:</b> When you +use the door, it closes. Assuming its open.<br>
+<li><b>Door Silent to NPCs:</b> You can here the door, and so can they. Check this to make them oblivious to the sound of an opening door, as most minions are.<br>
+<li><b>Ignore Player +USE:</b> When poor little Gordon comes up to use the door, ignore him!<br>
+</ul>
+<p style="text-align: justify;">That about wraps up the prop_door_rotating. At the bottom of the document I have a image of the different skins you can use and the corresponding number to enter into "skin". As usual, if you have any questions or comments regarding this article, post here or email me at jeffca51 <b>at</b> yahoo <b>dot</b> com.</p>
+<p>
+Door skins and thier number to use for the <b>skin</b> atribute:<br></p>
+<p><img src="content/half-life2/tutorials/prop_door_rotating/doors.gif" width="500" height="288" alt="doors" title="doors" />
+</p><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/777" title="View the previous page.">previous</a></div><div class="next"><a href="node/934" title="View the next page.">next</a></div><div class="up"><a href="node/776" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Creating a Skybox</div><div class="next">Reducing Vis Times</div></div></div></div></div>
+
+<div class="links"><a href="book/print/1006" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

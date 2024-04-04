@@ -1,0 +1,523 @@
+<html><head><title>Third Party</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="81" name="81" class="book-h1">Third Party</h1>Third Party developers make modifications from existing game engines.<h1 id="76" name="76" class="book-h1">Adnan Zafar, Quake 3: Arena, Combat</h1><ul><h3>Interview -  Adnan 'skew' Zafar, Quake 3: Arena Level Designer, Combat</h3>
+
+<p><hr width=75% color=black noshade>
+
+<br>
+
+<b>Who is Adnan 'skew' Zafar</b>
+<blockquote><div class="title">
+Think waaay back in video game history. Back when a pixel was a white dot the size of your pinky fingernail on a television screen. Back when single-player modelling was either a pink dot holding an arrow (Adventure for Atari) or several lines of text (Zork)
+<br><br>
+A game called Combat (Tank Plus if you had a Sears TeleGames system) pitted 2 slow moving, blocky and somtimes confusingly shaped tanks against each other on a solid colored field with the ocassional impassable square. The object? In 90 seconds, shoot your opponent more than he shoots you. Deathmatch plain and simple.
+<br><br>
+Scroll forward 20 some-odd years to QuakeCon, August 11, 2001. You find the same basic game, <a href=http://combat.mindgrid.net><b>Combat</b></a>, released as a modification for Quake 3: Arena. All you have to do is speed it up several times and add some different weapons and give many arena choices and add a defacto CTF and . . . well you get the picture.
+<br><br>
+I tweaked Combat programmer Adnan "skew" Zafar for a few minutes on irc and talked to him about Combat now and future.
+
+</div></blockquote>
+<br><br><div class="body">
+&lt;<b>Adnan</b>&gt; ive been working on the vehicle damage for our next mod alot lately
+<br>&lt;<b>Adnan</b>&gt; the vehicles have hot swappable parts heh
+<br>&lt;<b>Monsto</b>&gt; next mod?
+<br>&lt;<b>Adnan</b>&gt; ya, another top down vehicle deal
+<br>&lt;<b>Adnan</b>&gt; the only hurdle in this is creating the dumbed down npc's
+<br>&lt;<b>Adnan</b>&gt; there will be a tank or two
+<br><br>
+&lt;<b>Monsto</b>&gt; so how did the Combat release go? Tell me about release day.
+<br>&lt;<b>Adnan</b>&gt; oh god, it was hectic
+<br>&lt;<b>Adnan</b>&gt; the whole weekend actually
+<br>&lt;<b>Adnan</b>&gt; we had a problem with getting true random numbers that was hoolding back alot of our UI effects
+<br>&lt;<b>Monsto</b>&gt; iew
+<br>&lt;<b>Adnan</b>&gt; and we spent close to 4 hours on getting that finalized, then we just got down and did some ui tweakage
+<br>&lt;<b>Adnan</b>&gt; got that all working
+<br>&lt;<b>Adnan</b>&gt; went through all the maps again, recompiled them, play teseted each one, made sure there werew no errors
+<br>&lt;<b>Monsto</b>&gt; that was release w'end?
+<br>&lt;<b>Adnan</b>&gt; yeah, at qcon
+<br>&lt;<b>Monsto</b>&gt; oh gawd...
+<br>&lt;<b>Monsto</b>&gt; well how was reception at QCon?
+<br>&lt;<b>Adnan</b>&gt; well, we announced it a few times and got about 5 servers running in the byoc area at a time
+<br>&lt;<b>Monsto</b>&gt; among how many computers? 1000?
+<br>&lt;<b>Adnan</b>&gt; yeah
+<br>&lt;<b>Adnan</b>&gt; which was really cool because we had people coming up to where our computers were and just giving us compliments
+<br>&lt;<b>Monsto</b>&gt; yeah that is good.
+<br>&lt;<b>Adnan</b>&gt; each server had about 6 people on
+<br>&lt;<b>Monsto</b>&gt; that's a pretty good crowd.
+<br>&lt;<b>Adnan</b>&gt; so it was good
+<br>&lt;<b>Adnan</b>&gt; people LOVED ctf
+<br>&lt;<b>Adnan</b>&gt; were concentrating on the teamplay stuff as being the future of the mod
+<br>&lt;<b>Adnan</b>&gt; though we still have about 4 dm maps that are coming out, things we didnt have time to clean up for the qcon release
+<br>&lt;<b>Monsto</b>&gt; so you're looking that way for the future of Combat?
+<br>&lt;<b>Adnan</b>&gt; yeah, its just really... different
+<br>&lt;<b>Adnan</b>&gt; not too many people have played anything like that in q3 or any other fps
+<br>&lt;<b>Adnan</b>&gt; and they like it
+<br>&lt;<b>Adnan</b>&gt; so we figure why not
+<br>&lt;<b>Monsto</b>&gt; right 'why not'
+<br>&lt;<b>Monsto</b>&gt; so what's the avg brush count for a Combat map?
+<br>&lt;<b>Adnan</b>&gt; hmm
+<br>&lt;<b>Adnan</b>&gt; im guessing its around 250 - 300
+<br>&lt;<b>Adnan</b>&gt; for the more complex ones
+<br>&lt;<b>Monsto</b>&gt; yeah seems pretty low-count kinda stuff.
+<br>&lt;<b>Adnan</b>&gt; the terrain map is insane though
+<br>&lt;<b>Adnan</b>&gt; the terrain map is close to being the size of mpterra*
+<br><br>
+&lt;<b>Monsto</b>&gt; You're releasing an SDK?
+<br>&lt;<b>Adnan</b>&gt; Yes. in it ive outlined the basics of how the camera works and how you can configure it to work per map, how to set up the arena dimensions so things dont feel cramped, what you should avoid (large heights of fog)
+<br>&lt;<b>Adnan</b>&gt; for the map stuff it also goes over how to set up the basic ctf entities
+<br>&lt;<b>Adnan</b>&gt; things like that
+<br>&lt;<b>Adnan</b>&gt; this is targetted towards people who havent done any mapping before
+<br>&lt;<b>Adnan</b>&gt; also, on the model side of things
+<br>&lt;<b>Adnan</b>&gt; it goes over how to create simple tank models, what you should do to include custom gibs, custom sounds, things like that
+<br>&lt;<b>Adnan</b>&gt; what you should look out for when creating models (bounding box, etc)
+<br>&lt;<b>Adnan</b>&gt; beyond that it goes over extra things like how to create new location markers, a new hud, stuff like that
+<br>&lt;<b>Adnan</b>&gt; its everything you need to create combat content, through and through
+<br><br>
+&lt;<b>Monsto</b>&gt; so for game modes you have ctf and straight dm... have you had thoughts on expanding the mods available?
+<br>&lt;<b>Monsto</b>&gt; something like King of the Hill comes to mind.
+<br>&lt;<b>Adnan</b>&gt; yeah there are two new modes that i am working on adding
+<br>&lt;<b>Adnan</b>&gt; one of them is an overlord type of gameplay (like in team arena) where you have to breach the enemy base and destroy an object
+<br>&lt;<b>Adnan</b>&gt; im adding a few extras inthere like multiple buttons to hit before you can get to that object, letting the team whos base it is defend with a giant weapon, etc
+<br>&lt;<b>Adnan</b>&gt; im also doing a capture and hold gametype
+<br>&lt;<b>Adnan</b>&gt; where your team has t control certain points in a map and they get points while its held, etc
+<br>&lt;<b>Monsto</b>&gt; yeah... UT domination like
+<br>&lt;<b>Monsto</b>&gt; Do you have an ETA on these mods?
+<br>&lt;<b>Adnan</b>&gt; yeah, the modes will be in by the next release in a month BUT the content will not be ready by then
+<br>&lt;<b>Adnan</b>&gt; i'll release a new sdk at that point detailing how to create content for the extra modes
+<br>&lt;<b>Adnan</b>&gt; but the new content for that should be ready within 2 and a half months
+<br>&lt;<b>Adnan</b>&gt; if not 3, school does take up alot of our time
+<br>&lt;<b>Adnan</b>&gt; heh
+<br>&lt;<b>Monsto</b>&gt; yeah... darned real life!
+<br><br>
+&lt;<b>Monsto</b>&gt; how many maps you think you'll have per mode with the new mods release?
+<br>&lt;<b>Adnan</b>&gt; oh i'd say 3 for each new mode
+<br>&lt;<b>Adnan</b>&gt; and more afterwards if we have time
+<br>&lt;<b>Monsto</b>&gt; And if Joe Bagodonuts wants to map for that stuff? Hows he get his work in?
+<br>&lt;<b>Adnan</b>&gt; the current sdk will tell him what to do, and the one to be updated for the new modes when they're ready
+<br>&lt;<b>Adnan</b>&gt; if joe is good he might even be able to join the team :)
+<br>&lt;<b>Adnan</b>&gt; were always looking for mappers to contribute
+<br><br>
+&lt;<b>Monsto</b>&gt; Not much feedback yet, i hear. only 3 emails eh?
+<br>&lt;<b>Adnan</b>&gt; getting feedback on this stuff (and providing it) should be easier as soon as we get the forums up
+<br>&lt;<b>Adnan</b>&gt; one from a guy working at a design studio who wants to develop content asap
+<br>&lt;<b>Adnan</b>&gt; one from a guy who said he loves ctf and thinks we should concentrate on that
+<br>&lt;<b>Adnan</b>&gt; and one from a the pc zone uk magazine heh
+<br>&lt;<b>Adnan</b>&gt; no details yet, i am waiting for an e-mail back from the guy
+</div><br><br>
+<blockquote><div class="title">
+You can catch <a href=http://combat.mindgrid.net><b>Combat</b></a> on the web soon to be hosted at Telefragged, or email adnan at <a href=mailto:skew@telefragged.com>skew@telefragged.com</a>.
+</div></blockquote>
+<p></ul><h1 id="74" name="74" class="book-h1">Numerous Level Designers, Ward Six</h1><ul><h3>Interview -  Ward Six level designers</h3>
+
+<p><hr width=75% color=black noshade>
+<br>
+
+<b>Rust: </b>Tell us a bit about yourself, and your work prior to Dawn of Darkness.
+<br><BR>
+<b>Cho:</b>
+My name is Cho Yan Wong and I live in the Netherlands. I have experience in doing several commercial addons for Build games like Redneck Rampage and Shadow Warrior.
+<BR>
+<b>Tim: </b>Tim Snowden.  I'm a first year genetics grad student in Philadelphia (unfortunately, that's not a joke)
+<BR>
+<b>Ben: </b>Ben Caston, 23, Covington LA, work at a local internet company doing web design by day.  Prior work? None really.. just a few SP and DM levels that I played with and released over the past year or so..
+<br>
+<b>Pete: </b>My Name is Peter Weatherby and I live in Maryland not to far from Washington DC.  This is my first job working on a commercial product, but I did make levels for Doom2, Duke Nukem 3D, Quake, and Quake2.
+<BR>
+<b>Anssi: </b>My name is Anssi Hyytiäinen and I live in Finland. I haven't worked on any commercial product before, but I did... er... tried to do some levels for Doom. Well, some of the last ones were actually pretty good I recall. And then some for Duke3D, but I don't think I actually finished any. (lazy...)
+<br>
+Then I tried to do some levels for Quake with Worldcraft, but that didn't work out, so I tried to do the trick with 3D Studio (shut up!). But then the level designer who did levels for Quake Rally (forgot his name), pointed me to BSP, and I was actually able to pull out my first 1-room level (Who said BSP is not a good editor to start with?)
+<br>
+Then of course I started to do my very own mega-giga-cool level(s) (Jesus, I still have the pieces... Delete, quick when no one's watching!), and you can guess where that ended up since I had 16 megs of RAM at a time. So naturally I decided to do a Rocket Arena level, which ended up fine. I converted it into a regular deathmatch level later, and I'm not even shamed to point you there. (ftp://ftp.cdrom.com/pub/idgames2/levels/deathmatch/m-o/mini1n2.zip )
+<BR><BR>
+
+<b>Rust: </b>Editor of choice is?
+<br><BR>
+<b>Cho: </b>
+Worldcraft, not because it's the best but mostly because it's the first Quake editor I learned to use and I'm a creature of habit :-)
+<BR>
+<b>Tim: </b>QER, by far the best editor out there. I remember the dark days a long time ago when I used to use Qoole *shudder* :)
+<BR>
+<b>Ben: </b>Worldcraft.  You know what I like sweet lady!!
+<BR>
+<b>Pete: </b>QERadiant, it was the first Q2 editor I tried and i just feel in love with it. =)
+<BR>
+<b>Anssi: </b>Yahn Bernier's BSP. (Thank's Yahn for doing such a great editor, wish you could finish it -&gt; convert to Q3A ;)
+<BR><BR>
+
+<b>Rust: </b>Your favorite monster in Dawn of Darkness is? 
+<br><BR>
+<b>Cho: </b>The framerate monster, oh wait, that's my least favorite monster.
+<BR>
+<b>Tim: </b> The Scout. His only purpose in maps is to get his ass handed to him regularly.
+<BR>
+<b>Ben: </b> The scout.  Fun to dagger fight with.  Mean little bugger.
+<BR>
+<b>Pete: </b> Hmm.. tough one!!   I would have to go with the Tenebrions... who wouldn't love a monster that can tear you apart in a matter of seconds!!
+<BR>
+<b>Anssi: </b> Well I haven't made too close contact with all of them yet, and even if I had, I don't think I would be able to point up any favourite monster... Good monster is a dead monster. If I HAVE to say something, then Tenebrion would make a great pet.
+<BR><BR>
+
+<b>Rust: </b>What is the biggest problem you have ran into while making maps for Dawn of Darkness? 
+<br><BR>
+<b>Cho: </b> The horrendous compile times.
+<BR>
+<b>Tim: </b> Compile times.... It seems that Vis doesn't ever want to be my friend. I've already sacrificed one hard drive to the almighty Compile God.
+<BR>
+<b>Ben: </b> The realism bit.  Making stuff look like a 'human' could have built it, rather than some fiendish Strogg technology.  :)
+<BR>
+<b>Pete: </b> That would have to be the RAD error: MAX_MAP_LIGHTING!! All of my levels are outdoors and rather large, resulting in large areas of sky and I ran into this error numerous times while working on my maps.  Also 12 hour compiles aren't much fun either!!
+<BR>
+<b>Anssi: </b> Due the fact that we work in virtual office, there's always lack of communication and you often have to guess what other people are up to, and often even simple things cost time alot. (I have a good hint why it took 3 years to make Unreal) If you are asking about mapping issues, it's basicly been learning the hard way what Q2 can or can't handle. (There's alot of these restrictions which I think could've been solved if we had full license, thus Sin and Half-life guys didn't have to worry that much about those)
+<BR><BR>
+
+<b>Rust: </b>You love it you hate it. What was your best and worst experience working on Dawn of Darkness? 
+<br><BR>
+<b>Cho: </b> Best experience? People not noticing the screenshots were not 3d accelerated. Worst: Noticing how poor my work is compared to the other level designers.
+<BR>
+<b>Tim: </b> Best- The team. There are quite a few guys here spread out all across the world, many of which have been working together for about a year now. Worst- The "virtual office". A simple concept sometimes gets lost in the mail, and it makes for wasted effort if what you produce wasn't what was expected ofyou.
+<br>
+<b>Ben: </b> Best: Meeting and working with so many damn awesome people, helping each other out and learning more about this thing they call game development. Worst: Loss of free time.  Having a demanding RealLife job during the day and a demanding gamedev job at night, along with meeting deadlines for both. Wouldn't be so bad if I could just have one job.  :)
+<BR>
+<b>Pete: </b> Best: Finishing my first level for the game Worst: Having to redo almost half of one of my levels. 
+<BR>
+<b>Anssi: </b> Worst experiences are maybe when occasionally you have a headache, you are tired as hell, and deadline is the next day. ;) I hope the best experience is yet to come...
+<BR><BR>
+
+<b>Rust: </b>Future plans after Dawn of Darkness? 
+<br><br>
+<b>Cho: </b> Working fulltime as a level designer at a games company. Developing games via internet is a major pain in the butt. I'm looking forward to explaining people what kind of job I do. "I make 3D worlds." "Oooohh aaahh huh?"
+<BR>
+<b>Tim: </b> Get drunk. Very very drunk :)
+<BR>
+<b>Ben: </b> Interested in new technology.  Namely Q3A. And I'm very sad by the fact that there are barely any SP HalfLife maps out there, so I'll definitely get deep into HalfLife and try to wake everyone up.  All that aside, if WardSix gets bigger, it would be great to stick around.
+<BR>
+<b>Pete: </b> That would have to be working full-time at a game company making/designing levels.  Working over the internet designing games is a very difficult task.
+<BR>
+<b>Anssi: </b> Have to go to the army (ouch), and after that... Let's see, would be nice to stick with the gaming business.
+<BR><BR>
+
+<b>Rust: </b>Any closing comments? 
+<br><BR>
+<b>Cho: </b>Wait, no, that's not my level! Uh, ok, it is, but I was drunk then!
+<BR>
+<b>Tim: </b>Beware of the goat!
+<BR>
+<b>Ben: </b>Triangles.  Thank you for being there for me.
+<BR>
+<b>Pete: </b>Watch those r_speeds..   ack!!
+<BR>
+<b>Anssi: </b>Well I could thank Rodney Burns (DeadMeat) for his great mapping tutorials at BSP headquarters. Those were a great help to get started.</ul><h1 id="87" name="87" class="book-h1">Randy Pitchford of Rebel Boat Rocker</h1><ul><h3>Interview -  Randy Pitchford of Rebel Boat Rocker</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+ 
+<B>Howdy Randy, for the few people who don't know tell us who you are, what you
+do, what your working on, and whatever the hell else you would like all
+these rabid fans to know about you?</B>
+<br><br>
+<blockquote>
+I'm game designer and one of the owners of Rebel Boat Rocker.  I'm charging through game and level design for our next game.
+</blockquote>
+<br><br>
+<B>We are all anxiously awaiting some info on 'the game' that <a href="http://www.rebelboatrocker.com" target="_top">RBR</a> is currently
+working on. Anything you would like to tell us about it? How is progress
+going?</B>
+<br><br>
+<blockquote>
+It's a crazy customizable near future, sci-fi, military, action/adventure game
+that's huge on solo and multi-play. Our &quot;coming-out&quot; happens around E3.  We'll
+announce the title and tons of details soon.  Progress is going sweet...better
+than expected.  We had some concerns at the onset months ago about some tech
+issues and the total horsepower of the team, but we're really happy with our
+core team of 11 developers and the tech is just wonderful. The Zelsnack's are
+just amazing.  For example, recently Billy implemented the character geometry
+scaling code and it works and looks way better than any of us expected.
+</blockquote>
+<br><br>
+<B>
+One of the problems I have noticed with all the Quake/Quake2 engine based
+games is that the number of enemies on the screen at the same time is
+drastically lower then back in the good ol doom days. I remember when you
+could have 20+ enemies on screen at the same time. I've read that this is
+going to change in the game you all are working on. Is this true? And how do
+you think this will effect the gameplay?</B>
+<br><br>
+<blockquote>  
+I've noticed the problem too.  It's getting worse and it worries me. <a href="http://www.rebelboatrocker.com" target="_top">RBR</a> is
+committed to changing that. The tech was designed to allow for all game geometry
+to be scalable.  We're using levels of detail and some other cool stuff Billy
+came up with to drop detail when you can't see it anyway.  This allows us to drop
+tons of dudes into an area for us to go nuts with when we're playing it.  As you get
+close to a guy, details become clear.  Our guys have articulated fingers, even
+ears.  It looks great up close with no penalty when more dudes are added and
+some distance is gained.  One of the features Billy's really excited about is being
+able to set a target frame rate.  The game will add or remove detail
+automatically to achieve that speed. Gameplay is affected because we're now allowed again to
+create hugely intense combat sequences with tons of guys.  We've got tougher
+dudes as well that'll be in smaller groups or even on their own.  We're making
+these guys smarter, not just with more hit points.  The fun of these games is in
+the fight...we're focusing on that as the core game.  It's pretty damn fun.
+</blockquote>
+<br><br>
+<B>How customizable will 'the game' be when it is released. Will users be able
+to make their own levels, mods, etc?
+</B>
+<br><br>
+<blockquote>
+The game is &quot;crazy customizable.&quot;  When we're done, it'll be open season on game
+specs and code.  We intend to go nuts adding cool game variants after we're
+finished and we want everyone to do the same.  Two of our biggest priorities for custom
+stuff is accessibility and compatibility.  We've taken the extra time to make
+sure that anyone can quickly goof around with doing game mods. Compatibility
+means that we're taking extra steps to make it easy for mods to work with one another.
+We'll be talking more about the customizable aspect of our game really soon. The
+kids will be happy.
+</blockquote>
+<br><br>
+<B>Does 'the game' have long compiling times like Quake/Quake2 or something
+quicker like the Build Engine?</B>
+<br><br>
+<blockquote>
+The <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>1 engine was designed to be a very dynamic system.  <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>1's equivalent to VISing is done as you go, completely controlled by the level designer. For
+the type of detail we're used to in most maps of yesterday's tech, there's
+really no need to worry about manual (mapper controlled) culling of level geometry.
+The engine can cull polys in really quick and cool ways on the fly. When I'm
+working, I can build tremendous amounts of polygons and play it through with
+full game physics on before I've even optimized with manual visibility
+control and still get a reasonable frame rate.  After I optimize, things just
+blaze...  The only &quot;compiling&quot; time level designers have to worry about is
+running a radiosity solution for light maps.  Theoretically, a designer could
+light their entire map with dynamic lights and not run a solution at all, but
+a much richer effect with nice, smoothed shadows and such can be achieved by
+running a long solution.  The length of time the radiosity solution takes to
+calculate is affected by the density of your lightmap (mapper defined per face),
+the size of the level, the number of bounces you want to run and a few other
+factors.  We've talked about setting up some hairball machine somewhere that
+users could log into, upload their un-lit map and download the light maps after
+the hairy machine runs the lighting solution for you.  That would be cool. I
+don't know if we'll do it or not.  If we don't I'm sure someone else will.
+Any takers?
+</blockquote>
+<br><br>
+<B>What program is used to create the levels?</B>
+<br><br>
+<blockquote>
+Most stuff is built using the tools Billy and Jason wrote.  Billy has created a
+wonderful geometry editor for us.  Jason gave us tools that allow us to use
+just about any other 3d package or level editor you can think of, though.  I use
+MAX occassionally for terrain and stuff sticking to the editor for the
+complicated indoor environments.  Rob, however, is an editor biggot.  He refuses to use MAX
+or any other package and does EVERYTHING with Billy's tool.  He's really
+amazing.
+</blockquote>
+<br><br>
+<B>How long on the average does it take to create a finished level? Is it a
+longer process then Quake or Build since the level of detail is higher?
+</B>
+<br><br>
+<blockquote>
+It takes us about two man months of work per map to complete to beta stage a
+level for our game.  Looking back at it, it's actually kind of fast.  I spent
+about half that time per map when I worked at 3dRealms on Duke Nukem stuff but
+the maps for this game have at least eight to twelve times the detail per cubic
+foot and are an order of magnitude larger in scope.  I attribute our build speed
+to design experience, pre planning and the tools we're using.  Between Reichert,
+Rob, James and I, we're blazing through the stuff pretty quick. But we always
+want to do more, make it cooler and take that extra step towards more fun.  It's
+worth it.
+</blockquote>
+<br><br>
+<B>Compared to an average Quake2 level, How much more advanced is the level of
+detail of 'the game'?</B>
+<br><br>
+<blockquote>
+Comparisons suck.  That last question agonized me.  Let's just say the <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>1
+engine represents a new generation of 3d graphics technology and it's painfully
+obvious to whomever looks at our game.  When we start dropping shots around
+E3, we're hoping to stir some stuff up.  I'm not promising the shots, though.
+We're doing our hype machine stuff in conjunction with EA.  They've been
+doing it a lot longer than we have and they're better at it.
+</blockquote>
+<B>With such a greater level of detail should we start saving our money now for
+a new p1mp machine or can we hang on to that C64 for awhile longer?
+</B>
+<br><br>
+<blockquote>
+No, that's what's so cool about scaling stuff.  The game will work great on
+older machines with any 3d card in them.  The super high detail stuff will just
+jump in at closer range (or not at all if you're on a p60 &lt;g&gt;).  We're taking
+advantage of a lot of the cool stuff on the horizon in 3d hardware, though, for
+the kids.  Billy's down with a fair bit of the 3d hardware community and
+currently we're supporting everything you bought your card for.
+</blockquote>
+<br><br> 
+<B>I read in another Interview you did that you started designing games with
+Adventure Construction Set. Was that not the coolest freaking program!?
+Except when you actually played the game you made. hehe.
+</B>
+<br><br>
+<blockquote>
+Yeah...ACS was the DooM of the 80's for me.  You even drew room sectors in
+very similar ways to many DooM editors.  I was big into all of the EA
+construction set titles...Pinball, Racing Destruction.  I guess it's part
+of the reason why I've been so hyped about working with Electronic Arts now
+as our publisher.
+</blockquote>
+<br><br>
+<B>How much planning do you do before the actual creation of a level begins? Do
+you design it first on paper or just have a mental image of how the level
+will look and play and then go from there?</B>
+<br><br>
+<blockquote> 
+Design phase is very important to us but quick and efficient.  About a year
+ago Brian, Dirk, Jason, Doug (Wood, Cool d00d now at Valve), James, Billy and
+myself used to get together constantly to talk about &quot;the game.&quot;  I then took
+all the stuff we came up with and wrote a mother of a design document. It's
+over a hundred pages of game stuff but at least half of it is about the levels.
+When a level designer starts to work on a new map, we'll read the doc and
+make some decisions about what's good and what sucks about what I wrote last
+year.  The level designer will take as many liberties as he wants as long
+as he sticks to certain extremely basic plot flow concepts and philosophies
+then he'll tell the rest of the team what he plans to do.  A ton of work
+is done on paper and even using the tools we'll &quot;rough&quot; stuff out to get
+an idea of scope, flow, critical path, tension, climax and the like. We're
+really concerned about the fun and solidity of the level so we spend
+enough time before we start to make sure we've covered everything in our
+level concept.
+</blockquote>
+<br><br>
+<B>You mentioned in your plan that most of the action of 'the game' will take
+place on Earth, compared to a number of other games that use a sci fi
+environment to avoid realistic detailed environments that would arise with
+creating an Earth based game. Does this mean that we will see such things
+like realistic terrain, trees, and large realistic outdoor areas in <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>'s first game?
+</B>
+<br><br>
+<blockquote>
+Yes.  I could write a book on the theory and practice of designing indoor and
+outdoor environments as in our game.  In a nutshell, the trick is to provide
+a sense of vastness without marching the player across five miles of boring
+terrain.  Past attempts to do large environments when you're not in a very
+fast vehicle have been pretty boring. We've developed some very cool techniques
+for influencing critical path and keeping it fun. There's NOTHING boring in our
+game.  Every minute is like an action movie.  Perhaps when we're finished, I'll
+write some essays for Game Developer magazine with our discoveries.  I bet other
+designers would gain some insight from our experience with this.  I have a
+feeling other designers in this genre are going to try to do outdoor areas
+soon.  It's a cool evolution, but there's a lot of ways to screw it up if you're
+not careful.  As a player, I fear some people will screw it up.  We've had
+a lot of time with tech that's able to handle it to figure it all out.  So
+far, everything in our game about this is &quot;the right thing.&quot;
+</blockquote>
+<br><br>
+<B>When creating a level do you build the entire layout first and then go back
+and add all the details or do you add one section at a time, detailing as
+you go?</B>
+<br><br>
+<blockquote>
+It depends on the level and the area I'm working on.  In some cases (as in my
+city map) I managed to restrain myself an lay the whole thing out with very
+little detail before put the really cool stuff in.  Other times (like my sea
+port map) I couldn't help but bring an area I was excited about to a shippable
+state with massive detail and perfect lighting.
+</blockquote> 
+<br><br>
+<B>Are there any other designers out there who have inspired you or that you
+look up to? If so then who and how have they inspired you?</B>
+<br><br>
+<blockquote>
+Tons. Early on I was influenced heavily by adventure and role playing games.
+As I had less time on my hands, I got more into quick in, quick out action
+games.
+<b>All the dudes below have inspired me in one way or another:</b>
+<br><br>
+<b>Old days:</b>
+<blockquote>
+Scott Adams:  At the time he was cranking out tons of content.  I played them
+all.<br>
+Richard Garriot: Ultima taught me a lot.  And the sheer volume is cool.  I'd
+love to hang out with him for a couple of hours and pick his brain.<br>
+Whoever wrote Collossal Cave: This game captivated me for over a year!<br>
+Ken and Roberta Williams: There was a lot of clever stuff in the KQ games. They
+built an empire doing what they love.<br><br>
+</blockquote>
+<b>Later on:</b>
+<blockquote>
+Sid Meier:  Civ burned tons of my time. I realized a *game* was actually
+teaching me stuff. That's kind of cool.<br>
+Paul Reich III: From Mail Order Monsters to Star Control...I'd love to meet
+this dude some day and talk him into doing a M.O.M. remake with me sometime.
+I think EA would be down :)<br>
+Lawrence Holland: I was into flight sims for awhile... He showed us how to
+make a game out of a sim.<br>
+Chris Roberts: The first WC was the first computer game to really graphically
+impress me.  This started my diving into graphics as well as game design.<br><br>
+</blockquote>
+<b>Professionally; Dudes since I've gone pro:</b>
+<blockquote>
+Allen Blum III: Brilliant...he'll get his.  Taught me lessons about first
+person action game design I didn't learn from id software.<br>
+John Carmack: Mysterious, productive, humble.  We all just go, &quot;Wow&quot;  This
+dude has provided the platform for much of my recent life's fun.<br>
+Richard Gray: Rich drives home the cult of personality theory.  He's a great
+designer, too who knows good sushi.  Can't wait for SiN.<br>
+George Broussard: Taught me how to design for myself AND for others.  Burned
+the importance of what I call impressionism in game design.  It's very important
+when building &quot;realistic&quot; enviornments to do just enough detail stuff to give
+the &quot;impression&quot; of where you are without blowing all your resources on
+background.<br>
+John Romero:  More cult of personality.  He really set the stage the for most
+of the types of puzzles you now encounter in first person action.  I don't know
+whether to acknowledge him for adding more game type fun to a genre that
+could've been only about shooting stuff or be pissed because no one's advanced the actual
+combat part of the game fun for three generations of technology.<br>
+Brian Martel:  He made me think about my own design philosophies more than any
+one ever has.  I don't think he even realizes the clarity he's lended to my
+thinking about game design.<br>
+Billy Zelsnack:  If there ever was a &quot;next Carmack&quot;, Billy's the guy.  I'd do
+anything to have the two of them work together on building some tech sometime.
+Billy's humble, though.  He'll be a little purturbed that I even compared him
+to Carmack because Billy really respects him.  We all respect Carmack and we
+all really respect Mr. Zelsnack.<br>
+Team <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>:  I can't imagine compiling a more talented group...We got really f'n
+lucky...no shit, I'm dazzled daily.
+</blockquote>
+</blockquote>
+<br><br>
+<B>Describe a typical work day at Rebel Boat Rocker</B>
+<br><br>
+<blockquote>
+Make cool stuff.  Eat. Show team my cool stuff, look at theirs.  Influence
+others and allow myself to be influenced.  Deal with a zillion little outside factors.
+Kick ass in the game de jour.  Eat.  Evaluate progress.  Mail and News. DooM2,
+Quake or Quake 2 deathmatch. Sleep.
+</blockquote>
+<br><br>
+<b>
+How important do you think playing games is for designing games? From all
+the plans from the various FPS designers I have read over the past year I
+have came to the conclusion that not all these designers play games
+themselves and I wonder how this might affect their final product in terms
+of fun and gameplay.
+</B>
+<br><br>  
+<blockquote>
+To me, playing games is very important.  Most designers will look and toy with
+anything *cool* that comes out.  But, I feel, that to really understand the
+heart of a game and to really be able to get what's good and what sucks about
+a game requires an intimate knowledge of it.  I play a lot of games.  I go home
+after working all day and drag Rob or Reichert over to my place to deathmatch
+with me or play N64 or something, anything.  My wife and I always play adventure
+games together.  I try to be aware of my interest level and my feelings at each
+stage of my playing a game.  I try to apply everything I learn about other's
+successes and failures to the games I design.
+</blockquote>
+<br><br>
+<B>Any closing thoughts or suggestions you have for all us amateur designers
+out here?</B>
+<br><br>
+<blockquote>
+Keep on playing and thinking and creating.  Give me something really cool to
+play.  I'll try to do the same for you.
+</blockquote></ul></body></html>

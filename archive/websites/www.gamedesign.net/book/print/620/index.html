@@ -1,0 +1,373 @@
+<html><head><title>Game</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="620" name="620" class="book-h1">Game</h1><!-- Submitted by Andy  -->
+	 
+<A NAME="Top"><H3>Half-Life Game Entities</H3></A><BR> Originally written for <A HREF="http://www.cariad.co.za/twhl">TWHL</A> .
+
+<!--Start Description-->
+<B>
+<UL>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_counter">Game_counter</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_counter_set">Game_counter_set</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_end">Game_end</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_playerequip">Game_player_equip</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_player_hurt">Game_player_hurt</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_player_team">Game_player_team</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_score">Game_score</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_team_master">Game_team_master</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_team_set">Game_team_set</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_text">Game_text</A></li><BR>
+<LI><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#game_zone_player">Game_zone_player</A></li><BR>
+</UL></B><br>
+<!--Start Entity-->
+
+<hr noshade COLOR="black">
+
+<A NAME="game_counter"><H3>game_counter</H3></A>
+  <P>This entity counts each trigger that it receives, and triggers its target when 
+the count reaches a specified limit.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> - This entity needs to be triggered. </P>
+<P><B> Target</B> - This target will be activated when the counter reaches its 
+  limit. </P>
+    <P><B>Delay before trigger</B> - Time in seconds before the 'target' is activated </P>
+    <P><B>KillTarget</B> - This target will be removed when the counter reaches 
+  its limit. </P>
+    <P><B>Master</B> - The name of a multisource of game_team_master entity. This 
+  master must be active in order for the counter to work. </P>
+   <P><B> Initial Value</B> - This sets the initial count. </P>
+    <P><B>Limit Value</B> - This is the value that the counter must reach before 
+  firing its target. </P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+ <FONT COLOR=red>(1) Remove on fire</FONT> - Remove the counter entity after firing.<BR>
+  <FONT COLOR=red>(2) Reset on fire</FONT> - Reset the counter after firing.<BR>
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><BR>
+None.<BR><BR>
+<B>Notes</B>:<BR>
+None <BR><BR>
+<hr noshade COLOR="gray">
+<p ALIGN=center><A HREF="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</A></P>
+<hr noshade COLOR="gray">
+<BR>
+
+
+<!--Next Entity -->
+	 
+<A NAME="game_counter_set"><H3>game_counter_set</H3></A> 
+  <P>When triggered, this entity will set a game_counter to a specified value.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> -The Name of the entity for triggering. </P>
+<P><B> Target</B> - The name of the game_counter to be set. </P>
+ <P><B>Master</B> - The name of a multisource or game_team_master. The master 
+  must be active for this entity to work.</P>
+ <P><B>New Value</B> - The new value to be given to the target game_counter.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+ <FONT COLOR=red>(1)  Remove on fire</FONT>  - After firing, this entity will be removed. 
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+None<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+
+<A name="game_end">	<h3>game_end</h3></a>
+  <P>When triggered, this entity ends the current game.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> - Use this name as the target of another entity to trigger.</P>
+  <P><B>Master</B> - The name of a multisource or game_team_master entity. This master must be active in order for the entity to work.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+  None
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+None<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+<!--Next Entity -->
+
+	<a name="game_player_equip"><h3>game_player_equip</h3></a>
+  <P>This entity allows you to equip a player with specific items when they join a 
+game or at some time during gameplay.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+ <P><B>Name</B> - If this entity has a name, it will need to be triggered to 
+  activate. Without a name, it will activate when the map loads or a player 
+  joins.</P>
+ <P><B>Team Master</B> - The name of a game_team_master can go here so that you 
+  can control which team is equipped.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+  None
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+To actually specify what you want to be equipped, turn off SmartEdit mode and 
+  click Add. The item's name is the key, and the value is the number of items to 
+  be given to the player.<br>
+For example, a key of 'weapon_rpg' with a value of '3' will equip the player 
+  with 3 rockets. Use item_battery for armour and item_healthkit for health. <BR>
+  Note that health and armour cannot exceed the normal maximum of 100 each.<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+
+<!--Next Entity -->
+	 
+
+<a name="game_player_hurt">	<h3>game_player_hurt</h3></a>
+  <P>Unlike the trigger_hurt, this entity will apply damage (or health) to a player 
+without that player being in a specific place. </P>
+<hr noshade COLOR="gray" width=75%>
+<!--break-->
+<H3>Properties</H3>
+ <P><B>Name</B> - This entity must be triggered to activate.</P>
+  <P><B>Damage To Apply</B> - This is the amount of damage to apply to the player 
+  that activated the entity. Using a negative number heals the player.</P>
+   <P><B>Master</B> - The name of a multisource or game_team_master. This master 
+  must be active for the entity to work.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+<FONT COLOR=red>(1) Remove on fire</FONT> - Remove the entity after firing. [Entities with this flag 
+  set on will be removed from the game after doing whatever they're supposed to 
+  do. As a result they will only activate once.]
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+None<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+<!--Next Entity -->
+	 
+
+<a name="game_player_team">	<h3>game_player_team</h3></a>
+  <P>This entity makes a player change teams. </P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+ <P><B> Name</B> - Trigger to activate. 
+  <P><B> game_team_master to use</B> - The player that activates this entity will 
+  have his team changed to the team index of the game_team_master entity 
+  specified here.</P>
+   <P><B>Master</B> - The name of a multisource or game_team_master. The master 
+  must be active for this entity to work.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+<FONT COLOR=red>(1) Remove on fire</FONT> - Remove the entity after firing. [Entities with this flag 
+  set on will be removed from the game after doing whatever they're supposed to 
+  do. As a result they will only activate once.]
+  <BR>
+ <FONT COLOR=red>(2) Kill Player</FONT> - The player will be killed when the entity is activated.<BR>
+  <FONT COLOR=red>(4) Gib Player</FONT> - The player will be pulled apart when the entity is activated.<BR>
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+None<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="game_score"><h3>game_score</h3></a>
+  <P>This entity gives or takes points from a player or team.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+   <P><B>Name</B> - Trigger to activate.</P>
+  <P><B>Points to add (+/-)</B> - The number of points to be given or taken.</P>
+   <P><B>Master</B> - The name of a multisource or game_team_master. The master 
+  must be active for the entity to work.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+<FONT COLOR=red>(1) Allow Negative</FONT> - Set this to allow the game_score to make a score 
+negative.<BR>
+ <FONT COLOR=red>(2) Team Points</FONT> - Set this to make the entity affect the activating player's 
+  whole team.<BR>
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+None<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+<!--Next Entity -->
+	 
+<a name="game_team_master"><h3>game_team_master</h3></a>
+  <P>This entity acts like a combination of the multisource and trigger_relay 
+entities, but is based on teams. <BR>
+The game_team_master can replace the multisource as the master for any entity. 
+It will only be active when the activating team matches the team index value.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> - If used as a relay, this entity must be activated to 
+  trigger.</P>
+  <P><B>Target</B> - If used as a relay, the event that will be activated.</P>
+  <P><B>Delay before trigger</B> - If used as a relay, the delay before activating 
+  the target.</P>
+  <P><B>KillTarget</B> - If used as a relay, this target will be removed from 
+  the game.</P>
+  <P><B>Trigger State</B> - Activate the target with this trigger state (0 
+  = off, 1 = on, 2 = toggle).</P>
+  <P><B>Team Index (-1 = no team)</B> - The team number that is valid for this 
+  entity. -1 allows all teams.</P>
+  <P><B>Master</B> - The name of a multisource or game_team_master entity. The 
+  master must be active for the entity to work. </P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+<FONT COLOR=red>(1) Remove on fire</FONT> - The entity will be removed after firing. 
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+  The team index can be changed by the game_team_set entity.<BR>
+  The server selects which team corresponds to which number with the 
+  'mp_teamlist' cvar.<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+
+<!--Next Entity -->
+	 
+<a name="game_team_set"><h3>game_team_set</h3></a>
+  <P>This entity will set the team index of the game_team_master it targets to the 
+team of the player that activates it.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> - Trigger to activate. [Property used to identify entities.],/P>
+    <P><B>Target</B> - The game_team_master to be affected.</P>
+   <P><B>Delay before trigger</B>- Wait this amount of time before triggering. 
+ </P>
+   <P><B>KillTarget</B> - This target will be removed from the game when the 
+  entity fires.</P>
+   <P><B>Master</B> - The name of a multisource or game_team_master. The master 
+  must be active for the entity to work</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+<FONT COLOR=red>(1) Remove on fire</FONT> - Remove the entity after firing. [Entities with this flag 
+  set on will be removed from the game after doing whatever they're supposed to 
+  do. As a result they will only activate once.]
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+None <br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+<!--Next Entity -->
+	 
+<a name="game_text"><h3>game_text</h3></a>
+  <P>This entity is used to display messages on-screen. It is used instead of 
+env_message because it doesn't need to be a file full of message strings to be 
+distributed with the map.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> - Trigger to activate.</P>
+    <P><B>Target</B> - Event to activate when this entity is activated.</P>
+   <P><B> Message Text</B> - The text to be displayed.</P>
+   <P><B> X (0 - 1.0 = left to right, -1 = center)</B> - X position of text (across 
+  screen).</P>
+  <P><B>Y (0 - 1.0 = top to bottom, -1 = center)</B> - Y position of text (up/down 
+  screen).</P>
+    <P><B>Text Effect </B> - Effect to apply to the text (0 = Fade In/Out, 1 = 
+  Credits, 2 = Scan Out).</P>
+    <P><B>Color1</B> - The main colour.</P>
+    <P><B>Color2</B> - The highlight colour.</P>
+    <P><B>Fade in Time (or character scan time)</B> - Time taken to fade in each 
+  character.</P>
+    <P><B>Fade Out Time</B> - Time taken to fade out message.</P>
+    <P><B>Hold Time</B> - Length of time to hold message on screen after fading 
+  in.</P>
+    <P><B>Scan time (scan effect only)</B> - The amount of time the highlight lags 
+  behind the leading edge of the text.</P>
+   <P><B>Text Channel</B> - Any of four channels can be used by this entity. If 
+  while one channel is being used another entity on the same channel is 
+  triggered, the old text will be cleared from the screen.</P>
+    <P><B>Master</B> - The name of a multisource or game_team_master. The master 
+  must be active for the entity to work.</P>
+<H3>Flags:</H3>
+<BLOCKQUOTE>
+<FONT COLOR=red>(1) All Players</FONT> - Show the text to all players. If not set, only the player 
+  who activated the game_text will see the message.
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+<A HREF="book/view/625?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#trigger_auto">Trigger_auto</A><BR>
+<A HREF="book/view/618?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#env_message">Env_message</A><BR><br>
+<B>Notes</B>:<BR>
+  You are limited to a maximum message length of 127 characters.<BR>
+  Line breaks can be added with the newline code  <B>\n</B><BR> . e.g. 'Line one\nLine 
+  two'.<BR>
+  X, Y, effect, color, color2, fadein, fadeout and fxtime are the same as those 
+  found in titles.txt.<BR><BR>
+  The easiest way to get a text based message at the start of your level, like 
+  the Black Mesa one from HL, is to add a trigger_auto to the level and set it's 
+  target to the name of your game_text. You might have to add a delay to the 
+  trigger, depending on wether you fade the screen in or not, but either way 
+  when the game starts your text will be displayed.<br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top</a></p>
+<hr noshade color="black"><br>
+
+
+
+<!--Next Entity -->
+	 
+<A name="game_zone_player"><h3>game_zone_player</h3></a>
+  <P>This entity is used to trigger targets based on player locations.</P>
+<hr noshade COLOR="gray" width=75%>
+<H3>Properties</H3>
+  <P><B>Name</B> - Trigger to activate. [Property used to identify entities.]</P>
+   <P><B>Target for IN players</B> - All players inside the area covered by the 
+  brush fire this target.</P>
+   <P><B>Target for OUT players</B> - All players outside the area covered by 
+  the brush fire this target.</P>
+    <P><B>Counter for IN players </B> - This game_counter's value will be set to 
+  the number of players inside the area.</P>
+   <P><B>Counter for OUT players</B> - This game_counter's value will be set to 
+  the number of players outside the area.</P>
+<H3>Flags:</H3>
+ <BLOCKQUOTE>
+  None
+</BLOCKQUOTE>
+<hr noshade COLOR="gray" width=75%>
+<B>Related Entities</B><br>
+None<br><br>
+<B>Notes</B>:<BR>
+  The only brush-based game_ entity.<br><hr noshade color="black"><br>
+<p align=center><a href="book/view/620?PHPSESSID=535bd5b910cfdee0f95e87d278bc4cce#Top">Top of Page</a></p>
+<hr noshade color="black"><br><br></body></html>

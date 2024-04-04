@@ -1,0 +1,9 @@
+<html><head><title>Configuring the q3config.cfg</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="858" name="858" class="book-h1">Configuring the q3config.cfg</h1><h3>Configuring the Q3CONFIG.CFG</h3>
+<p class="q3bg3">There is no better place on the web for you to learn about the q3config file than at <a href="http://www.maxxblade.co.uk" target="blank">Maxx Blade's Javascripts</a>. The <a href="http://www.maxxblade.co.uk/q3config/index.htm" target="blank">Q3A Config V1.2</a> is a tool that allows you to paste your config into it and then customize it completely across ten categorical and desciptive option pages.</p>
+<p class="q3bg1">NOTE - As things progress this page will grow so check back here for updates.</p>
+<h3>Binding a screenshotjpeg</h3>
+<p class="q3bg3">Make a copy of the q3config.cfg and rename it q3config.cfgbk. Open up the q3config.cfg using wordpad(notepad delimits line breaks differently), scroll down until you find the area between keys where the one you wish to bind fits alphabetically. Ensure that it is not already bound. Bind the key (the = ) by pasting the following in.</p>
+<blockquote>bind = "cg_drawcrosshair 0;cg_drawstatus 0;cg_drawTimer 0;wait;wait;wait;wait;wait;screenshotjpeg;wait;cg_drawcrosshair 4;cg_drawstatus 1;cg_drawtimer 1"</blockquote>
+<p class="q3bg3">This turns off the various items related to HUD then waits to ensure they've shut off. Then takes a jpeg format screenshot, waits to ensure it's been taken, then turns everything back on again. All by pressing the equal sign key, or f12 or whatever you bind yours to.</p></body></html>

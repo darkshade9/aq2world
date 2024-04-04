@@ -1,0 +1,69 @@
+<html><head><title>Using Clip Brushes</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="49" name="49" class="book-h1">Using Clip Brushes</h1><h3>Quake 2</h3>
+	<blockquote>
+		Using Clip Brushes - <a href="mailto:dmm2editor@aol.com">Richard Neff</a> and <a href="mailto:rascal@magnolia.net">David Hyde</a>
+	</blockquote>
+	
+<br><br>
+
+<p>One of the signs of a quality map maker for any game is creating maps that do two things:
+
+<ul>
+<li>Create visually exciting areas for the player 
+<li>Create a level that is interesting to play 
+</ul>
+
+<p>This tutorial is going to concentrate on the latter concept.  More precisely, the use of Clip brushes to help keep the player from being "snagged" on small brushes used to help with the first concept above.
+
+<br><br><b>"Oh no! I'm stuck"</b>
+
+<p>One of the things you'll notice if you fire up any of Id Software's original Quake 2 levels, is that there are a lot of columns and uneven surfaces running along walls.   This creates an exciting visual impact, however, you should notice that the player can run along those walls backwards and not stop until they reach another wall.
+
+<p>To be more precise, let's look at the following screenshot from one of those levels, base1.bsp (the first level in single player.)
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/clip/clip_img1.jpg"></div>
+
+<p>Towards the end of the level, you'll see this wall near the stairs.  Note that there are both columns and light fixtures running along this wall.  Yet, if you press yourself against this wall and run all the way to the next wall, you don't get "snagged."  A <b>very</b> useful thing when you're being pursued by a Quake 2 monster, or worse yet, a real live Deathmatch opponent!
+
+<br><br><b>So, how is this done?</b>
+
+<p>Ok, the answer is pretty obvious given the title - It was done using Clip brushes.   But, in this tutorial we'll look at the two methods of using Clip brushes to keep players from being "snagged" while playing your levels.
+
+<p>Clip brushes themselves are pretty easy to create.  Simply create a brush with the Clip texture on all sides of the brush.  It's totally invisible in the game and it won't have any effect on the poly count (r_speeds) of the level.   Essentially, they're like invisible "force fields" that prevent the player from getting to an area (useful for more than "snagging" problems also.) Some editors may require that you manually specify the Clip content property, but most will automatically create the Clip brush.  If you run your map and see the Clip texture, then you probably haven't applied that texture to all sides of the brush.
+
+<br><br><b>The Two Techniques</b>
+
+<p>Truthfully, none of this is rocket science - it's pretty straightforward.   However, there are two ways to handle not getting "snagged."   Consider the image above showing base1.bsp.  One way to help the player from getting snagged is to put an angled brush on both sides of the columns or lights.   For example, here's a screenshot in my editor of a light fixture that hangs on a wall:
+
+<p><div align="center"><img border="0" width="450"  src="/content/quake2/tutorials/clip/clip_img2.jpg"></div>
+
+<p>In this example, you'll notice that the clip brushes on each side are designed to gently let the player get around the protruding light fixture by forcing them along an angle between the wall and the fixture itself.  The slope of the angle is something you sometimes have to work with, but typically a 45 degree angle between perpendicular surfaces works well.
+
+<p>So, what's the drawback to this method?  Two primary drawbacks come to mind.   One involves the player, the other often involves you, the editor.  First, if a player is running on the surface of a such a wall, their direction will change slightly.   For those players that like to run backwards against a wall while firing, this will affect those shots when the light fixture is hit.  And, as well all know, this could mean life or death in a deathmatch game!
+
+<p>The next drawback is with editing.  If you wanted to do this along a wall with a lot of columns or light fixtures, you'd have to create 2 clip brushes for each object that protrudes from that wall.  Needless to say, this makes an already tedious process more painstaking!  So, this method is best used for any light fixtures or the like that you've created as a prefab in your editor.
+
+<p>So, what's the easiest way to handle a wall like the base1.bsp figure that won't take a lot of time to create, yet still allow the player good movement along the wall?  The answer is actually quite simple -- make a Clip brush that covers all the protruding objects along that wall. (And what Id actually did in that particular area.)
+
+<p>Here's some screenshots to help you out:
+
+<p>In this figure, here's a room with some columns
+
+<p><div align="center"><img src="/content/quake2/tutorials/clip/clip_img3.jpg"></div>
+
+<p>If the player were to run along the wall on the right, they'd get snagged on every column and I'd need to make 6 total clip brushes using the first technique.
+
+<p>However, if I make the Clip brush (the red box) like so:
+
+<p><div align="center"><img src="/content/quake2/tutorials/clip/clip_img4.jpg"></div>
+
+<p>Then, the player will run along the entire wall without getting snagged or being moved.   Plus, the added benefit to the level maker is that it is a much simpler job to create 1 rectangular brush than 6 triangular ones!
+
+<p>So, why not use this method all the time?  Well, one word -- doors.  If we had a door on the right side we couldn't have the Clip brush covering the door, the player would never be able to pass through the door.  In this case, a combination of the above methods would need to be used.
+
+<br><br><b>Pretty Simple Huh?</b>
+
+<p>Well, that's pretty much the main points about Clip brushes.  See, that wasn't very hard, was it?  However, putting Clip brushes in your level will make a big difference for those people playing your maps (especially if you're designing DM or CTF maps.)  So, it's worth the extra time placing Clip brushes in your level.
+
+<p></body></html>

@@ -1,0 +1,134 @@
+<html><head><title>Custom door/plat/button sounds</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="530" name="530" class="book-h1">Custom door/plat/button sounds</h1><!-- by Knightmare (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Quake II</h3>
+<blockquote>
+	<b>Custom door/plat/button sounds</b> by <a href="mailto:knightmare66@yahoo.com">Knightmare</a> .
+</blockquote>
+
+  <p>I've found a quick way to add support for custom door, plat and button sounds to Q2. This will be in the next release of KMQuake2, but it can easily be added to any MOD.</p>
+
+<hr noshade color="black">
+<!--break-->
+<h3>Methodology</h3>
+
+<h3>Step 1:</h3>
+
+  <p>In g_func.c, look for this code in the function SP_func_plat:</p>
+
+<blockquote><code>
+  ent->moveinfo.sound_start = gi.soundindex ("plats/pt1_strt.wav");</br> 
+ent->moveinfo.sound_middle = gi.soundindex ("plats/pt1_mid.wav");</br> 
+ent->moveinfo.sound_end = gi.soundindex ("plats/pt1_end.wav");</br>
+</code></blockquote>
+
+  <p>and replace it with this:</p>
+
+<blockquote><code>
+if (ent->style > 0 && ent->style < 100) // custom sounds</br> 
+{</br> 
+   ent->moveinfo.sound_start = gi.soundindex  (va("plats/pt%02i_strt.wav", ent->style));</br> 
+   ent->moveinfo.sound_middle = gi.soundindex  (va("plats/pt%02i_mid.wav", ent->style));</br> 
+   ent->moveinfo.sound_end = gi.soundindex  (va("plats/pt%02i_end.wav", ent->style));</br> 
+}</br> 
+else</br> 
+{</br> 
+   ent->moveinfo.sound_start = gi.soundindex ("plats/pt1_strt.wav");</br> 
+   ent->moveinfo.sound_middle = gi.soundindex ("plats/pt1_mid.wav");</br> 
+   ent->moveinfo.sound_end = gi.soundindex ("plats/pt1_end.wav");</br> 
+}</br> 
+</code></blockquote>
+
+  <p>This change could also be added to the func_trackchange entity in Lazarus.</p>
+
+<h3>Step 2:</h3>
+
+  <p>In the SP_func_button, replace the following:</p>
+
+<blockquote><code>
+if (ent->sounds != 1)</br> 
+   ent->moveinfo.sound_start = gi.soundindex("switches/butn2.wav");</br> 
+</code></blockquote>
+
+  <p>with this:</p>
+
+<blockquote><code>
+if (ent->style > 0 && ent->style < 100) // custom sounds</br> 
+   ent->moveinfo.sound_start = gi.soundindex (va("switches/butn%02i.wav", ent->style));</br> 
+else if (ent->sounds != 1)</br> 
+   ent->moveinfo.sound_start = gi.soundindex ("switches/butn2.wav");</br> 
+else</br> 
+   ent->moveinfo.sound_start = 0;</br> 
+</code></blockquote>
+
+<h3>Step 3:</h3>
+
+  <p>In both the  SP_func_door and SP_func_door_rotating, replace this:</p>
+
+<blockquote><code>
+if (ent->sounds != 1)</br> 
+{</br> 
+   ent->moveinfo.sound_start = gi.soundindex  ("doors/dr1_strt.wav");</br> 
+   ent->moveinfo.sound_middle = gi.soundindex  ("doors/dr1_mid.wav");</br> 
+   ent->moveinfo.sound_end = gi.soundindex  ("doors/dr1_end.wav");</br> 
+}</br> 
+</code></blockquote>
+
+  <p>and replace it with this:</p>
+
+<blockquote><code>
+if (ent->style > 0 && ent->style < 100) // custom sounds</br> 
+{</br> 
+   ent->moveinfo.sound_start = gi.soundindex  (va("doors/dr%02i_strt.wav", ent->style));</br> 
+   ent->moveinfo.sound_middle = gi.soundindex  (va("doors/dr%02i_mid.wav", ent->style));</br> 
+   ent->moveinfo.sound_end = gi.soundindex  (va("doors/dr%02i_end.wav", ent->style));</br> 
+}</br> 
+else if (ent->sounds != 1)</br> 
+{</br> 
+   ent->moveinfo.sound_start = gi.soundindex  ("doors/dr1_strt.wav");</br> 
+   ent->moveinfo.sound_middle = gi.soundindex  ("doors/dr1_mid.wav");</br> 
+   ent->moveinfo.sound_end = gi.soundindex  ("doors/dr1_end.wav");</br> 
+}</br> 
+else</br> 
+{</br> 
+   ent->moveinfo.sound_start = 0;</br> 
+   ent->moveinfo.sound_middle = 0;</br> 
+   ent->moveinfo.sound_end = 0;</br> 
+}</br> 
+</code></blockquote>
+
+<hr noshade color="black">
+<!--break-->
+<h3>FILES</h3>
+
+  <p>The custom filenames for doors are:</p>
+
+  <p><UL type="square"> 
+     <LI>doors/drxx_strt.wav, 
+     <LI>doors/drxx_mid.wav, 
+     <LI>doors/drxx_end.wav
+  </UL></p>
+ 
+  <p>The custom filenames for plats are:</p> 
+
+  <p><UL type="square"> 
+     <LI>plats/ptxx_strt.wav, 
+     <LI>plats/ptxx_mid.wav, 
+     <LI>plats/ptxx_end.wav
+  </UL></p>
+ 
+  <p>The custom filenames for buttons are:</p> 
+
+  <p><UL type="square"> 
+     <LI>switches/butnxx.wav
+  </UL></p>
+ 
+  <p>Where xx is a 2-digit number from 01 to 99 that corresponds to the style value.</br> 
+</p>
+
+<hr noshade color="black">
+<!--break-->
+<h3>Comments</h3>
+
+  <p>I decided to use the style key for custom sounds because many maps may have different sounds values set for doors. The default QERadiant .def file has door sound sets listed that are from Q1, and many mappers may have given their doors sounds values other than 0 and 1 (default and no sound). I didn't want to change the behavior of existing maps.</p></body></html>

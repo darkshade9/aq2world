@@ -1,0 +1,43 @@
+<html><head><title>How to make character head towards path_corner_cast?</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="151" name="151" class="book-h1">How to make character head towards path_corner_cast?</h1><!-- (c) 2004, [DS]Kingpin_Xatrix -->
+
+<h3>PATH_CORNER_CAST</h3>
+
+<b>
+Character will head towards the specified path_corner_cast.<br>
+Pathtarget: gets used when an entity that has this <br>path_corner targeted touches it. Could be used to <br>trigger a button, or a character. (see pathtarget tutorial)<br>
+Combattarget: when the cast reaches this marker, they'll <br>take on this combattarget. (see combattarget tutorial)<br><br>
+</b>
+Example use: Select character entity and open <br>Entity inspector.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t24<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+
+Select path_corner_cast and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t24<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t25<br><br>
+</font>
+Value is the targetname of another path_corner_cast.<br><br>
+
+Select another path_corner_cast and open Entity <br>inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t25<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+
+If you want to make a loop, add this to the last <br>path_corner.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t24<br><br>
+</font>
+After character touches last path_corner, he'll go to the <br>first path_corner.</body></html>

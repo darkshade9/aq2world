@@ -1,0 +1,98 @@
+<html><head><title>How to make respawnable glass</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="196" name="196" class="book-h1">How to make respawnable glass</h1><!-- by Koga73(koga73@msn.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>How to make respawnable glass</b> - by <a href="koga73@msn.com?PHPSESSID=99422e7b8523efb691e346dba7ec032f">Koga73</a>
+</blockquote>
+<br> <br>
+
+  <p>Have you ever wondered how to make respawnable glass in half-life or tfc? 
+     I have. I needed it for a map when i began mapping about 4 years ago... 
+     Now that I'm an advanced mapper I finally figured it out! 
+     (I'm not saying i was trying for 4 years to make respawnable glass or anything ... I have a real life!).</p>
+
+<hr noshade color="black">
+
+<h3>Respawnable Glass</h3>
+
+  <p><b>To make respawnable glass, do the following:</b></p>
+
+  <p><b>1.</b> First make a polygon with a glass brush,</p> 
+
+  <p><b>2.</b> Tie the polygon to an entity - func_wall_toggle,</p> 
+
+  <p><b>3.</b> Set the properties for the func_wall_toggle too;</p> 
+
+<blockquote>
+<font color="red">
+<b>name:</b> glass</br> 
+<b>render mode:</b> texture</br> 
+<b>fx_amount:</b> 90</br> 
+</font>
+</blockquote>
+
+  <p><b>4.</b> Create a brush of a crack and put it over the glass so when it is shot, it breakes.</p>
+
+  <p><b>5.</b> Tie the crack to and entity - func_wall_toggle;</p> 
+
+<blockquote>
+<font color="red">
+<b>name:</b> glass</br> 
+<b>render mode:</b> solid</br> 
+<b>fx_amount:</b> 255</br> 
+</font>
+</blockquote>
+
+  <p><b>6.</b> Create a brush of the aaa trigger texture and put it over the crack,</p> 
+
+  <p><b>7.</b> Tie it to an entity of button_target and set it's properties too;</p> 
+
+<blockquote>
+<font color="red">
+<b>target:</b> multiglass</br> 
+<b>render mode:</b> solid (<i>this will make it invisible</i>)</br> 
+</font>
+</blockquote>
+
+  <p><b>8.</b> Create the aaa brush over your button_target,</p>
+
+  <p><b>9.</b> Tie it to an entity - func_wall_toggle and set too;</p>
+
+<blockquote>
+<font color="red">
+<b>name:</b> glass</br> 
+<b>render mode:</b> solid</br> 
+<b>under flags, check:</b> starts invisable.</br> 
+</font>
+</blockquote>
+
+  <p><b>10.</b> Create an entity: ambiant_generic and set to;</p> 
+
+<blockquote>
+<font color="red">
+<b>name:</b> glasswave</br> 
+<b>wav name:</b> glassbreak3 (or other sounds)</br> 
+<b>volume:</b> 10</br> 
+<b>start volume:</b> 10</br> 
+<b>under flags check:</b> <i>start silent, not looped, with small radius</i></br> 
+</font>
+</blockquote>
+
+<p>and,</p>
+
+  <p><b>11.</b> create a multi_manager and set too; </p> 
+
+<blockquote>
+<font color="red">
+<b>properties:</b> click - smart edit</br> 
+add the folowing with values of zero:</br> 
+<b>glass:</b> 0</br> 
+<b>glasswave:</b> 0</br> 
+add the folowing with values of 5 (<i>or how long you want until the glass restores</i>)</br> 
+<b>glass:</b> 60</br> 
+</font>
+</blockquote>
+
+<p>That should do it. Follow these instructions and your glass will constantly respawn when broken ... without having to call the repair_entity (that's a joke!)</p></body></html>

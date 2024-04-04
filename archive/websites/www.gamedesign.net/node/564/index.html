@@ -1,0 +1,218 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Basic Shaders - Part 1 - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Quake III Arena</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/601">Updates/Downloads for Quake III</a></li><li class="collapsed"><a href="node/682">Quake III Game Data</a></li><li class="expanded"><a href="node/774">Quake III Media Editing Tools</a><ul><li class="leaf"><a href="node/903">Gensurf - Terrain Mesh Generator</a></li><li class="leaf"><a href="node/896">GMAX & Tempest Q3 GamePack</a></li><li class="leaf"><a href="node/907">ICE - Item Configuration Editor</a></li><li class="leaf"><a href="node/908">MapProp - Shell Ext for Win Explorer</a></li><li class="leaf"><a href="node/890">PakScape v0.11 PK3 Explorer</a></li><li class="leaf"><a href="node/894">Particle Studio</a></li><li class="leaf"><a href="node/891">Pk3Man Q3Radiant Plugin</a></li><li class="leaf"><a href="node/800">Q3ASE Shader Maker GUI</a></li><li class="leaf"><a href="node/797">Q3Build - GUI Compiler Front End</a></li><li class="collapsed"><a href="node/798">Q3MAP2 BSP Compiler</a></li><li class="leaf"><a href="node/906">Q3ME - Quake 3 Map Explorer</a></li><li class="expanded"><a href="node/796">QERadiant/GTKRadiant Level Editor</a><ul><li class="collapsed"><a href="node/760">Entities (Function)</a></li><li class="leaf"><a href="node/863">Entities (Holdable)</a></li><li class="leaf"><a href="node/862">Entities (Info)</a></li><li class="leaf"><a href="node/864">Entities (Item)</a></li><li class="leaf"><a href="node/868">Entities (Path and Shooter)</a></li><li class="leaf"><a href="node/866">Entities (Target)</a></li><li class="leaf"><a href="node/865">Entities (Team)</a></li><li class="leaf"><a href="node/867">Entities (Trigger)</a></li><li class="collapsed"><a href="node/840">Entities (Weapon & Ammo)</a></li><li class="collapsed"><a href="node/576">GTKRadiant Tutorials (Level Editing)</a></li><li class="collapsed"><a href="node/898">Tutorials (Modelling)</a></li><li class="expanded"><a href="node/563">Tutorials (Shader and Scripting)</a><ul><li class="leaf"><a href="node/578">Alpha Channels and Transparencies</a></li><li class="leaf"><a href="node/564" class="active">Basic Shaders - Part 1</a></li><li class="leaf"><a href="node/575">Basic Shaders - Part 2</a></li><li class="leaf"><a href="node/546">Falling leaves!</a></li></ul></li></ul></li><li class="leaf"><a href="node/905">Quake Toolkit</a></li><li class="leaf"><a href="node/900">Quark - Level Editor</a></li><li class="leaf"><a href="node/901">Quest - Level Editor</a></li><li class="leaf"><a href="node/892">SC3K Map Editor (Terrain)</a></li><li class="leaf"><a href="node/917">ScapeMaker Landscape Generator Viewer</a></li><li class="leaf"><a href="node/895">Terragen</a></li><li class="leaf"><a href="node/902">Tread - Level Editor</a></li></ul></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/564" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 60%;" class="foreground"></div></div><div class="percent">60%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 20%;" class="foreground"></div></div><div class="percent">20%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 20%;" class="foreground"></div></div><div class="percent">20%</div><div class="total">Total votes: 5</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2020">vrdxrgnewu</a></li><li><a href="node/2019">tlrkjthhrt</a></li><li><a href="node/2018">unfdczcezd</a></li><li><a href="node/2017">emrxcxyymh</a></li><li><a href="node/2016">axiouyczbz</a></li><li><a href="node/2015">xwhpptdfrm</a></li><li><a href="node/2014">vgvshgiial</a></li><li><a href="node/2013">zbrxbkkwhp</a></li><li><a href="node/2012">qhdpxrytch</a></li><li><a href="node/2011">aueouiwrpq</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8130" title="View user profile.">pwxnr</a></li><li><a href="user/8129" title="View user profile.">ITbusher</a></li><li><a href="user/8128" title="View user profile.">Stephen Hinton</a></li><li><a href="user/8127" title="View user profile.">Sites top</a></li><li><a href="user/8126" title="View user profile.">Florence Travis</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 34 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Basic Shaders - Part 1</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/12" title="">Quake III Arena</a> &raquo; <a href="node/774">Quake III Media Editing Tools</a> &raquo; <a href="node/796">QERadiant/GTKRadiant Level Editor</a> &raquo; <a href="node/563">Tutorials (Shader and Scripting)</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2281" title="View user profile.">skinmaster</a> on Mon, 2004-08-23 04:57.</div>
+<!-- by old Q3Lab Tutorial -->
+<h3>Basic Shaders - Part 1<br><span class="tinytext">Created by Alvar Jansson</span></h3>
+<h4>Preface:</h4>
+<p>This tutorial tries to resolve the meaning of "shader" and also create some simple ones ourselves. Unfortunately, shaders are a *very* complex subject, one that isn't easily explained in half a minute.<br><br>
+You should download the Official <a href="http://www.heppler.com/shader/">Quake 3 Shader Manual</a>, or you will go nuts, when you don't understand something! You should also get the cool program <a href="http://www.jgsoft.com/">Editpad</a>, this is because q3radiant has a routine for editing shaders, based on the use of Editpad.</p>
+<hr>
+<h4>Basic Shader Concepts</h4>
+<b>1: What is a shader?</b><br><br>
+<p>A shader is a script, that tells the q3 engine, how to treat the surface. A shader may not only change the way a surface looks, but as well as the actual shape of it, (like water waves). The shader also affects how the surface behaves in the game (if it is non-solid, or a water surface).</p>
+<b>2: How do I use shaders?</b><br><br>
+<p>You have probably used shaders allready, you see, most of the "textures" in q3 radiant are actually shaders. You can tell the difference by looking at the thumbnail in the texture window, all shaders have a white border. It is not necessarily the texture that shows in the editor, that you will see in the game.</p>
+<b>3: How do I make my own?</b><br><br>
+<p>This is not as hard as you might think. First, you make a new shaderfile in the baseq3\scripts path, it should have the extension .shader, you may want to call it the same name as your level, like if you made some cool blood shaders for use in your splat.map, you could call your file splat.shader, for this tutorial, create tut.shader. Now, we have to make an entry in the file shaderlist.txt. This is to make q3radiant load our shaders, type tut in the end of the file. To see our shaders in the textures menu, we also have to make a new folder under the textures folder, call it the same as your shaderfile (baseq3\textures\tut\). If you now (re)open q3radiant, you will see a new entry in the textures menu called tut, for now, it is empty.</p>
+<hr>
+<h4>Make Your first Shader</h4>
+<p>We are now set up to make our first shader! We will start out by adjusting the strength of a light emitting texture. (This a good place to point out the fact that neither the Surf flags nor the Content flags in the Surface inspector have ANY effect in quake 3, they are ONLY for quake2 editing! The surface inspector is only good for sizing/moving textures in q3 editing)</p>
+<p>Let's get started! make a small room, make two lamp brushes and apply the base_light/baslt4_1_2k shader to the bottom face (and of course a non-light texture to the other faces). </p>
+<center><img src="content/quake3/tutorials/shadertut1/editor1.jpg"></center>
+<p>(As you see you can run q3 in a window, at the same time as q3radiant, I doubt this will work without a sturdy amount of ram (like 128 mb)) So, what if we want the light a little dimmer on one of the lamps? Well, then we have to make a shader of our own! Open the texture window (textures in use) and shift click on the light texture. If Editpad is correctly installed, it will now open, browsing down to the beginning of the shader. Now select the whole shader (as you probably have guessed, the shader consists of the declaration, and all the indented text, including the brackets). Copy the selected text, now open tut.shader (your empty shader script which we created earlier) and paste the text, we should now be here:</p>
+<center><img src="content/quake3/tutorials/shadertut1/editor2.jpg"></center>
+<p>First, to avoid conflicts, rename the shader. This is done by changing the line:</p>
+<blockquote>textures/base_light/baslt4_1_2k<br>to<br>textures/tut/mylight_2k</blockquote>
+<p>Now save the shader script choose textures|shaders|Load all (reload) from the q3radiant menu to reload the shaders. You should now see your shader if you load the texture set textures|tut. Apply your shader to one of the lamps, and bsp the map. The map should look the same. And now for the actual change! Enter the shader script and change the line:</p>
+<blockquote>q3map_surfacelight 2000<br>to<br>q3map_surfacelight 500</blockquote>
+<p>This will cut the ammount of light emitted by the surface in half. To reflect the change, rename your shader to mylight_500. Reload the shaders, and apply your new shader (q3radiant will think that your old shader is still there, I suppose this is a bug, and the old shader will disappear next time you restart q3radiant). Bsp the map, you will now clearly see that the left lamp, which we edited has a dimmer light.</p>
+<center><img src="content/quake3/tutorials/shadertut1/editor3.jpg"></center>
+<p>So, how do they get that fancy colored light then? This one is not as straight forward... If you study the .pk3 files, you can see that the light textures also have a blend texture. (This is a picture of the light emitting parts of the light, for example, the blend file for baslt4_1.tga is baslt4_1.blend.tga /*baslt4_1.tga baslt4_1.blend.tga */) In quake 3, the blend texture is drawn fullbright, using the formula: blendfunc GL_ONE GL_ONE This texture is also drawn last, so that it covers the other textures. When rendering the lightmap, q3map uses the average of all the pixels in the texture. For our light, this means gray, with a little brown, but if we want a blue light? Well, if we take a look at the shader textures/gothic_light/ironcrosslt2_2000 It contains the line</p>
+<blockquote>q3map_lightimage textures/gothic_light/ironcrosslt2.blend.tga</blockquote>
+<center><img src="content/quake3/tutorials/shadertut1/baslt4_1.jpg"></center>
+<p>This makes q3map use the specified texture, instead of the default. This was made, because the designer wanted a more yellow light than the original texture would give. Now we want to make a cool blue light! Then we need a blue lightimage. I saved you the trouble. download the tga by pressing the picture.(right-click|save target as)</p>
+<blockquote><b>DO THE FOLLOWING:</b><br><br>
+- Place it in your baseq3\textures\tut folder.<br><br> 
+- Copy the entire shader script nd paste it below, so that you have two identical shaders.<br><br>
+- Rename the new one to mylight_500_blue<br><br> 
+- Now inert the line q3map_lightimage 
+textures/tut/baslt4_1.blueblend.tga just above the q3map_surfacelight line.<br><br> 
+- Change the map textures/base_light/baslt4_1.blend.tga line in the final shader stage to map textures/tut/baslt4_1.blueblend.tga this will give the texure a blue look too.</blockquote>
+<center><img src="content/quake3/tutorials/shadertut1/editor4.jpg"></center>
+<p>Now that you have a some sort of clue of what shader editing is all about, we are going to do something that a lot of people have asked about, which is changing the look of fog.</p>
+<blockquote><b>DO THE FOLLOWING:</b><br><br>
+- Create a pit where the fog will reside, and make a big brush that covers the pit, remember that only one side of the brush should be visible, the fog may be bigger than the space that it should fill, the brushes inside it will show up correctly.<br><br>
+- Shift-click the shader, (that one didn't work for me, if it just steps to the end of the sfx.shader, use the find function to search for fog_intel, or use the go to line function and type in 5020). Copy the fog_intel shader and paste it to your own tut.shader.<br><br> 
+- Rename the shader to textures/tut/fog_yellow1 Reload the shaders in q3radiant and apply your yellow_fog1 to the fog brush. Bsp, and you will hopefully see the yellow smog.</blockquote>
+<center><img src="content/quake3/tutorials/shadertut1/editor5.jpg"></center>
+<p>But, we would like a green smog instead, so we have to modify the shader. The fog's appearance is controlled by a function called fogparms.</p>
+<p>fogparms ( .75 .38 0 ) 800 means ( r g b ) distance-to-opaque The r, g and b values are the same as for lights, they range from 0 to 1 and thereby controls the color of the fog. Distance-to-opaque is the distance, in game units, from the player, to the point where the fog stops being transparent.</p>
+<p>So lets make that fog <i>green</i>! Copy the shader and paste another copy of it below, name it fog_green1 Very well, a nice poisionus color is ( 0 0.7 0.2 ). (don't forget the spaces inside the paranteces, your fog will just be a gray grid without them).</p>
+<center><img src="content/quake3/tutorials/shadertut1/editor6.jpg"></center>
+<p>As you experiment with colors, a good thing to notice is that the shaders stand free of the bsp, if you want to experiment with different settings, well, except the q3map parameters (duh..), You don't have to re-bsp your map, just save the shader file, and restart your map (nom \map_restart won't work... use the \map command).</p>
+<p>But, you have seen that flashy hellfog with moving textures on it, well, let's take a look at it!</p>
+<p>Snatch the hellfog shader from the sfx.shader and paste it to our file, rename it tut/myhellfog make a cosy little hellfog pit so that we can study it a little closer. As you see, it emits light, because the surfacelight parameter. There is also two texture passes, they both apply the same texture, though one of them is flipped, this makes for a darker texture, as well as a little more complexity. The tga texture is white, so we are free to create a nice blue strange hellfog, by changing the color to ( 0 0.1 0.4 ). But... even if I re-bsp the emitted light is red! Now this is a little problem, that we could easily fix by making a 16*16 (or whatever) tga file filled with blue, and specify it as q3map_lightimage, but today I am lazy so I specify our good old baslt4_1.blueblend.tga which is blue by nature. So, add the line q3map_lightimage textures/tut/baslt4_1.blueblend.tga </p>
+<center><img src="content/quake3/tutorials/shadertut1/ingame1.jpg"></center>
+<p>Goodluck and I hope you have learned something new!</p><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/578" title="View the previous page.">previous</a></div><div class="next"><a href="node/905" title="View the next page.">next</a></div><div class="up"><a href="node/563" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Alpha Channels and Transparencies</div><div class="next">Quake Toolkit</div></div></div></div></div>
+
+<div class="links"><a href="book/print/564" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

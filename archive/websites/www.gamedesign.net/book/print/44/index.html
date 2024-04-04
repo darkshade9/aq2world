@@ -1,0 +1,148 @@
+<html><head><title>The Absolute Beginner's Guide to Quake 2 Editing</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="44" name="44" class="book-h1">The Absolute Beginner's Guide to Quake 2 Editing</h1><h3>Quake 2</h3>
+	<blockquote>
+		The Absolute Beginner's Guide to Quake 2 Editing - <a href="mailto:dmm2editor@aol.com">Richard Neff</a>
+	</blockquote>
+	
+<br><br><b>In the Beginning...</b>
+
+<p>So, you've finally played Quake 2 until your eyes are bloodshot and rather than get some sleep, you've decided, &quot;Hey, it would be sooooo cool to create my own levels!&quot; Unfortunately, you're getting into level design rather late, since Quake 2 is really an evolution of Id games since Wolfenstein 3D. So, keep one thing in the back of your mind: it is <b>not</b> a trivial thing to do Quake 2 editing. It is a very long and time consuming process - but, rest assured, the first time you blast a Strogg in a level you've created yourself, you'll be very glad you put the time into it 
+
+<p>Just be aware that not only are you going to have to spend time creating the level, but you'll have to spend time learning the basic concepts, learning the editor you've chosen, planning the design of your level, waiting a <b>lot</b> on the compilers to do their job, and putting in the time to do all the picky little detail work on your level before it's &quot;good enough&quot; to post. Be fully aware that all of this takes some serious time, so don't expect to have a quality level in a few days.
+	
+<br><br><b>The First Steps</b> 
+
+<p>The first thing you need (other than the registered version of Quake 2) is a level editor. Right now, I'm only talking about an editor that creates Quake 2 levels, not skins, texture, entities, models, etc. Some editors also include a few of those functions, but right now, let's just concentrate on the basic level editing functions. The first questions that are probably popping into your head are: &quot;What's the best editor?&quot; or &quot;What did Id use? That <b>must</b> be the best editor!&quot; First and foremost, you have to understand that <b>there is no best editor!</b>
+
+<p>I know, all your friends babble endlessly how great one editor is and how another sucks. But, the bottom line is that you are the one that gets to spend hours bleary-eyed in front of this thing, so you need to check out all the editors you can before committing to a single one. In fact, you may have already jumped the gun and bought/downloaded an editor. That's ok too, just realize that although it may be the editor you learn on, it may not be the editor that you use to do all your later maps. (And Id used a rather hard-to-get working QE4, which had an interface that was designed more for people who REALLY knew the game rather than beginners. If you're really interested in trying to use QE4 under Windows 95, you're probably much better off just downloading QERadiant - trust me on this.)
+	
+<br><br><b>Where Do I Get a Level Editor?</b> 
+
+<p>Fortunately, you're in luck. Go to the Links page here at Rust and you'll see a listing of some of the major Quake 2 editors. Keep in mind that some of them are freeware, some are shareware, and finally some are retail products. However, don't assume that the retail products are any better/worse than the others. Also, each has it share of advantages, disadvantage and flaws. Most also have Web sites dedicated to updates, tutorials and other editor specific information (as opposed to Rust which is pretty editor non-specific.)
+
+<p>Additionally, there is something you may need beyond the level editor itself: the compiling tools. Id uses 3 compilers to turn the maps that editors create into fully playable levels for Quake 2. They are QBSP3, QVIS3, and QRAD3. Each of these has a different purpose which will be described later in this document. Some editors provide these files with the package/download, while others require you to download them yourself.
+	
+<br><br><b>Knowing the Components of the Quake 2 Engine</b>
+
+<p>The key components of the Quake 2 engine are: Entities, Attributes, Brushes, .map files, and the compiler programs. Let's look at each and what it does.
+
+<blockquote>
+	
+	<b>Entities</b>
+
+	<p>Entities are the &quot;active&quot; objects of Quake 2. Things like monsters, weapons, powerups, triggers, etc. are all entities. Each entity in Quake 2 has a specific task that is hard coded, either in the regular Quake 2 engine or as a separate add-on modification, such as Capture the Flag (CTF) or the Mission Pack. Additionally, there are two different types of entities: point entities and solid entities.
+
+	<p>A point entity is an entity that has a model preassigned to it. For example, a monster. The monster does not require the user to create the physical representation of the monster or its movement. This has already been done by the entity creator. When you place a monster entity in your editor, Quake 2 automatically puts the monster in its proper place. Typically, this also means that if you use a box and make it a monster, you don't need to worry about the size of the box, since it will be replaced by the appropriate model when Quake 2 runs. Some examples of point entities: monsters, lights, health, player starts and powerups.
+
+	<p>A solid entity is an entity where the level designer does have to give a solid geometry in order for the entity to work. An example of this is a door. You have to make a door the size and shape you want. The advantage of having to define the solid for the entity is to allow a greater design range for which to create those entities. For example, you may want a double door rather than a single door, so being able to define this gives you that option. Examples of solid entities are: doors, triggers, buttons, trains, and platforms.
+
+	<p>A common thing about all entities is that certain things need to be defined for each entity in the level to modify the behavior of that entity. For example a trigger isn't much good if you can't tell what is to be done by that trigger. So, each entity has properties that can be defined by the user. These properties are known as <em>attributes</em>.
+
+	<br><br><b>Attributes</b>
+	
+	<p>An attribute is basically, the stuff that defines how an entity is supposed to work. For example, a trigger needs to have something to target when the player goes over it. So, one attribute of a trigger is the Target attribute, which points to the name of whatever is supposed to happen when the player runs over it. If the trigger is to open a door, then the Target attribute will have the name of that door. Additionally, a trigger entity also has a delay, which allows you to set the amount of time has to pass before the trigger becomes &quot;active&quot; again.
+
+	<br><br><b>Brushes</b>
+	
+	<p>Now that we know what entities are, we can adequately describe what brushes are. Brushes are simply anything in the Quake 2 level <b>other</b> than entities. Basically, this means the walls, floor, ceiling and anything else that the player can't pass through, but don't really do any other functions. A good way to think of brushes is to equate them to bricks or building blocks. They simply define the structure of a level.
+
+	<p>Some things to note about brushes, however. A brush can only be convex. This means that no &quot;dents&quot; are in the brush. You can't pass a straight line through a brush where it passes out of the brush and back in. For example, a square is a convex brush. A &quot;C&quot; shape, is not a convex brush. However, you can make multiple brushes to comprise a &quot;C&quot; shape.
+
+	<p>Additionally, brushes must be solid and are comprised of straight edges. You can't ever be &quot;inside&quot; a brush (rooms are actually &quot;hollowed out&quot; brushes where you have six solid brushes making up the walls, roof, and floor.) The Quake 2 engine also doesn't support curved edges - however, you can have many straight edges on a &quot;side&quot; that make it seem curved. This was done by Id and other levels to simulate rounded objects.
+
+	<br><br><b>*.MAP Files</b>
+	
+	<p>This is the standard for all Quake 2 editing files. However, as with any type of &quot;standard&quot; in the industry, each editor may implement .map files differently - which may make it harder to open a .map file created in one editor into another. That aside however, all editors (whether they are able to import .map files are not) must be able to create a .map file so the compilers can create a playable level.
+
+<p>The structure of the .map file is actually pretty straightforward. It is a text file (meaning you can open it and modify it directly in any text editor, such as Notepad) that holds descriptions and attributes of the brushes and the entities that make up the level.
+
+	<br><br><b>Compiler Programs</b>
+	
+        <p>As I mentioned earlier, you need 3 compiler programs in order to create playable Quake 2 levels. These compilers turn the text-based .map file into a compiled .bsp file which users can play. The first compiler, QBSP3, creates the initial .bsp file. This breaks up all the brushes into smaller brushes and builds the playable .bsp file. In fact, you could just run the QBSP3 compiler and have a playable map (and you'll usually do this as your maps get bigger for testing purposes.) However, the other two compilers do more modifications to the .bsp file that make it run faster and look better.
+        
+        <p>The next compiler, the QVIS3 program, does something known as visibility calculating. Basically, it calculates what a player can see from any given viewpoint in the level. The primary function of the VIS compiler is to speed the level up during gameplay be pre-determining whether or not a player can see certain areas of the map at the current viewpoint. While you may not notice much of a difference in the actual appearance of a VIS compiled map, the speed should almost always be faster than a map that hasn't had the VIS compile run.
+        
+        <p>The final compiler, QRAD3, is the lighting (radiosity) generator. Until this compiler is run, the map will not have any lighting effects defined. This means that the level will run completely lit, regardless of the location of any light entities or surface texture lighting. This is the last compiler to run, meaning you must run the QBSP3 and the QVIS3 compilers before this compiler can be run.
+        
+        <p>A thing to note about the compiled .bsp files. In Quake 1 textures used in the level were kept inside the .bsp file. In Quake 2 however, they are not. So, if you decide to use custom textures other than the ones originally used in the Id game, you have to provide those textures either in a .zip file or .pak file (which Id used to store all the .bsp level files) to distribute those textures. However, this is a little outside the range of what you should worry about as a beginner.
+
+	<br><br><b>And Just What the Heck is a Leak?</b>
+
+	<p>The dreaded leak - the biggest stumbling block to the beginner editor (and it even plagues more advanced editors from time to time). To understand leaks you need to understand how the Quake 2 engine views the world around it. By default, anything a that isn't in a self contained room, is in the 'void.' (not to be confused with the sky) Players can NEVER see or go into the void.
+
+	<p>The best way to handle this is to realize that your level much be completely contained. Imagine filling up your level completely with liquid...if any of the liquid could escape, then your level is not completely contained - and a leak occurs. However, this checking occurs from the player start position and works out - so, if you have the player starting outside the outer walls of your level, a leak could occur as well.
+
+	<p>Additionally, the player can't be able to see into the void. So, you can't use transparent textures as outer walls. This will also cause a leak error to be displayed.
+
+        <p>As I mentioned, don't confuse this with the sky. A sky is simply a special texture property. The Quake 2 engine gives the illusion that there is more out there beyond the limits of your map, but from a design standpoint, your level still has to be self contained and the player can't see the void anywhere.
+
+	<p>Keep in mind leaks can be very small...the slightest gap between two outer walls can cause leaks (and on a more advanced note - be sure to use the right compiler for your editor since some editors, such as Qoole, use 'floating point' sizes, while some compilers round off.) And some editors can use what's known as pointfile information to draw a line to leaks, while other editors don't offer this feature.
+
+	<p>But, why worry about leaks? First and foremost, leaks are bad because they slow the engine down a lot. Also, they prevent you from running the VIS and RAD compilers, so you don't get proper lighting or a fast playing level. Both of which are considered bad and prevent you from having your levels posted or played by others. Finally, anywhere a player can see into the void may cause effect like the &quot;Hall of Mirrors&quot; effect where the last image is constantly displayed or a &quot;grey area&quot; effect, where the player is able to see grey where the void is.
+
+</blockquote>
+
+<b>What about the Next Steps?</b>
+
+<p>Ok, so you've learned the basic concepts of Quake 2 editing, now lets look at what all Quake 2 levels need:
+
+<blockquote>
+
+	<b>The Worldspawn Entity</b>
+	
+	<p>The Worldspawn entity is a special entity that defines certain things about the map, like the CD track to play, the sky to use, the next level, and other things that affect the entire level. Keep in mind that with some editors, this may be listed or access differently (Qoole and DMM2 come to mind - Qoole requires you to bring up the entity window while no other entities are selected and DMM2 uses File, Game Options to edit these settings.)
+
+	<br><br><b>A Room</b>
+	
+	<p>This is pretty obvious. But, you do need to have a least a room before you can place entities into your quake level
+
+	<br><br><b>The Player_Start Entity</b>
+	
+	<p>Even in DM and CTF maps, you probably want to put this entity down to test your levels. Some editors will even put this entity in if you don't explicitly specify it. You can have only one player_start entity. However, you need to have a player start, even if you use the DM or CTF starts, in order to play your map.
+
+	<p>The player_start has to be inside the level otherwise a leak will occur. This is especially important with editors that put a player_start where the observer in the editor is when you don't have an explicit player_start entity defined.
+	
+</blockquote>
+
+<b>And that's about all the basics!</b>
+
+<p>That's is the overview of Quake 2 editing in general.
+Obviously, we didn't cover every single aspect of editing. Heck,
+we didn't even talk about how to create a room! That's because
+most anything else you want to do is going to be specific to a
+particular editor. Some editors will create a room automatically
+with all six sides, while some editors will require you to create
+a box, then &quot;hollow&quot; it out. Check out the tutorials
+for your editor on either the editor's home page or pages
+dedicated to that editor to help you get started.
+
+<p>However, Rust lists all the Quake 2 entities and attributes
+for the entities included with the Id game (however, not all
+modifications, total conversions (TCs), and mission pack entities
+are listed). Additionally, other tutorials are here for helping
+you to create better Quake 2 levels.
+
+<div align="center"><br><br><b>Some Tips for Beginners</b><br><br></div>
+
+<table width="400" align="center" border="0" cellspacing="0" cellpadding="0"><tr><td> 
+        <li><b>Go slowly.</b> Don't try to make the perfect level on your first few attempts! Make small practice levels to learn basic concepts and effects before implementing them in a level you care about.<br><br>     
+        
+        <li><b>Read a </b><em><b>lot</b></em><b>! </b>Read through all of the tutorials here at Rust before you go head-first into map building. In fact, you may want to fire up the ol' printer and get some of this stuff in hardcopy so you have it in front of you while editing. Trust me, you'll save yourself a lot of time and frustration later on if you do this.<br><br>
+        
+        <li><b>Learn your editor!</b> One of the best things you can do is visit sites dedicated to your editor and learn what it can/can't do. It always amazes me the number of people who complain, &quot;My editor can't do this!&quot; when, in fact, it can. They just didn't take the time to read all the tutorials out there.<br><br>
+        
+        <li><b>Start small!</b> Don't try to do every single cool effect you've ever seen. A lot of this stuff was done by people who had done a lot more maps than you have, so don't assume that you can do the cool stuff that Id or anyone else did right away. The truth of the matter is that your first few maps probably aren't even &quot;playable&quot; maps, so don't even post them - in fact, expect this and realize that they are learning experiences, not &quot;playable&quot; levels.<br><br>
+        
+        <li><b>Keep rooms small too!</b> The Quake engine is very picky about size. The larger the room, the more the Quake engine has to do to display the room and all the stuff in it. <b>Don't</b> do large outdoor areas!!! Until you learn what the Quake 2 engine can handle, don't even try to create outdoor rooms. This is better left for when you've gotten some basic experimenting out of the way.<br><br>
+        
+        <li><b>Plan ahead.</b> Without question, the biggest mistake of the beginner. Quake is very sensitive to the number of brushes and entities in a single view. The more stuff the engine has to render, the slower the gameplay. Also, knowing what you want to do makes it easier to create a level that &quot;flows&quot; well from one room to another. Keep in mind a level isn't just a bunch of different rooms connected to each other. It's something that is designed to either complete an objective in Single Player mode or to create a fair, yet interesting battleground for DM mode. You have to plan ahead to keep from spending hours on a map that doesn't even play well or doesn't look good. <br><br>
+
+        <li><b>Ask questions, but don't bug people.</b> Most editors are willing to help a beginner out, but don't abuse that willingness. When you have a question, post it on a discussion board, like the one here at Rust, or a public discussion area, such as a newsgroup. And don't assume the world revolves around you. You're question may sit a while before it's answered (and if it goes unanswered too long either your idea can't be done or you haven't exhausted the sources of information out there.) Be sure that you've read FAQs and tutorials about Quake 2 editing and your editor specifically before posting questions - otherwise, you may get the short reply of, &quot;Check the FAQ&quot; or some other less-than-happy reply. Additionally, don't assume that an author of a tutorial, FAQ, or reply wants a personal e-mail. (Especially in my case!) You should ask before you send questions whizzing through cyberspace using e-mail, or you may not like the reply (plus still not get your question answered by someone who could normally help.) <br><br>
+             
+        
+        <li><b>Finally, have fun!</b> Editing is a long and tedious process, but the final result almost always makes it worthwhile!
+</td></tr></table>
+
+<p>
+</body></html>

@@ -1,0 +1,59 @@
+<html><head><title>How to create fixed size trigger?</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="154" name="154" class="book-h1">How to create fixed size trigger?</h1><!-- (c) 2004, [DS]Kingpin_Xatrix -->
+
+<h3>TRIGGER_RELAY</h3>
+<b>
+This fixed size trigger cannot be touched, it can only be <br>fired by other events.</b><br><br>
+
+
+Example use: create func_button and open Entity inspector.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	0<br><br>
+</font>
+Value determines the opening direction.<br><br>
+<font color = "red">
+Key	lip<br>
+Value	5<br><br>
+</font>
+Value is the override the default 4 pixel lip remaining at<br> end of move.<br><br>
+<font color = "red">
+Key	sounds<br>
+Value	4<br><br>
+</font>
+Value is the sound number.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t86<br><br>
+</font>
+Create trigger_relay and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t86<br><br>
+</font>
+Value is the trigger_relay target ID.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t88<br><br>
+</font>
+Value is the targetname of target_speaker.<br><br>
+
+Create target_speaker and open Entity inspector.<br><br>
+<font color = "red">
+Key	spawnflags<br>
+Value	4<br><br>
+</font>
+Value is the flag reliable.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t88<br><br>
+</font>
+Value is the target_speaker target ID.<br><br>
+<font color = "red">
+Key	noise<br>
+Value	world/pawnbuzz<br><br>
+</font>
+Value is the path for the sound.<br><br>
+
+You can also add delay to trigger_relay.<br><br></body></html>

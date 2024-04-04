@@ -1,0 +1,489 @@
+<html><head><title>Weapon</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="626" name="626" class="book-h1">Weapon</h1><!--Submitted by Andy Sep 2004 -->
+<a name="Top"><h3>Half-Life Weapon Entities</h3></a>
+<!-- Start description -->
+<p><b>
+<ul>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_357">Weapon_357</a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_9mmAR">Weapon_9mmAR </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_9mmhandgun">Weapon_9mmhandgun </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_crossbow">Weapon_crossbow</a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_crowbar">Weapon_crowbar </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_egon">Weapon_egon </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_gauss">Weapon_gauss </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_handgrenade">Weapon_handgrenade </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_hornetgun">Weapon_hornetgun</a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_rpg">Weapon_rpg </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_satchel">Weapon_satchel</a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_shotgun">Weapon_shotgun </a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_snark">Weapon_snark</a></li>
+<li><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#weapon_tripmine">Weapon_tripmine </a></li>
+
+<br></ul></b>
+</p>
+<hr noshade color="black">	
+<!--break-->
+<br><br>
+<a name="weapon_357"><h3>weapon_357</h3></a>
+  <p>The 'Dirty Harry" weapon.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_357.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_357">Ammo_357</a><br><br>
+<b>Notes</b>:<br>
+   You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_9mmAR"><h3>weapon_9mmAR</h3></a>
+  <p>The standard machine gun.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_9mmAR.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+ <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_9mmAR">Ammo_9mmAR</a><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_9mmbox">Ammo_9mmbox</a><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_9mmclip">Ammo_9mmclip</a><br><br>
+<b>Notes</b>:<br>
+   You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="weapon_9mmhandgun"><h3>weapon_9mmhandgun</h3></a>
+  <p>Barney's standard weapon.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_9mmhandgun.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_9mmclip">Ammo_9mmclip</a><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_9mmAR">Ammo_9mmAR</a><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_9mmbox">Ammo_9mmbox	</a><br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_crossbow"><h3>weapon_crossbow</h3></a>
+<p>The 'Crossbow" weapon.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_crossbow.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_crossbow">Ammo_crossbow</a><br><br>
+<b>Notes</b>:<br>
+    You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="weapon_crowbar"><h3>weapon_crowbar</h3></a>
+  <p>The standard issue Crowbar.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_crowbar.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+    You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_egon"><h3>weapon_egon</h3></a>
+  <p>The standard Egon Backpack.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_egon.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_gaussclip">Ammo_gaussclip</a><br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="weapon_gauss"><h3>weapon_gauss</h3></a>
+  <p>The standard Gauss Gun.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_gauss.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_gauss">Ammo_gauss</a><br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered. 
+  events targetname value.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_handgrenade"><h3>weapon_handgrenade</h3></a>
+  <p>The Handgrenade.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_grenade.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+<p><b>Name</b> - The 'name' of the entity.</p>
+<p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/624?PHPSESSID=4cdbde99da4359722479b003bda29049#monster_handgrenade">Monster_handgrenade</a><br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_hornetgun"><h3>weapon_hornetgun</h3></a>
+  <p>The Alien_Grunt weapon.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_hornetgun.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/624?PHPSESSID=4cdbde99da4359722479b003bda29049#monster_alien_grunt">Monster_alien_grunt</a><br><br>
+<b>Notes</b>:<br>
+  The weapon used by monster_alien_grunt.<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="weapon_rpg"><h3>weapon_rpg</h3></a>
+  <p>Rocket Propelled Grenade.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_rpg.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_rpgclip">Ammo_rpgclip</a><br><br>
+<b>Notes</b>:<br>
+   You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!-- Next Entity -->
+	 
+<a name="weapon_satchel"><h3>weapon_satchel</h3></a>
+  <p>The Backpack Bomb.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_satchel.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_shotgun"><h3>weapon_shotgun</h3></a>
+  <p>Shotgun.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_shotgun.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/612?PHPSESSID=4cdbde99da4359722479b003bda29049#ammo_buckshot">Ammo_buckshot</a><br><br>
+<b>Notes</b>:<br>
+   You can trigger an event when this item is picked up by giving it a Target
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+
+<!-- Next Entity -->
+	 
+<a name="weapon_snark"><h3>weapon_snark</h3></a>
+  <p>These nasty little tikes are fast and furious.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_snark.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!-- Next Entity -->
+	 
+<a name="weapon_tripmine"><h3>weapon_tripmine</h3></a>
+  <p>Mine with it's own built in laser.</p>
+<center>
+    <img border="0" width="350" src="content/half-life/entimgs/weapon/w_tripmine.jpg">
+</center>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - The 'name' of the entity.</p>
+  <p><b>Pitch Roll Yaw(YZX)</b> - Sets the pitch (up / down), yaw (left / right) 
+  and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds 
+  to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Target</b> - When an entity is picked up, it triggers the entity with the 
+  name specified by Target.</p>
+  <p><b>Delay before trigger</b> - The delay in seconds before the 'Target is triggered after the weapon is 'picked up' by the player.</p>
+  <p><b>Kill Target</b> - Object to kill when weapon is picked up.</p>
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in 
+  deathmatch games.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+  You can trigger an event when this item is picked up by giving it a Target 
+  value and using that same value as the Name of the event to be triggered.<br><br>
+  
+  <hr noshade color="black">
+<p align=center><a href="book/view/626?PHPSESSID=4cdbde99da4359722479b003bda29049#Top">Top of Page</a></p>
+<hr noshade color="black">
+<br></body></html>

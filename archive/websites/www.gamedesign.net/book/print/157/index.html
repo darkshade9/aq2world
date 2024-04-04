@@ -1,0 +1,76 @@
+<html><head><title>Common KP FAQ</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="157" name="157" class="book-h1">Common KP FAQ</h1><!-- by Method (yanostrestov@yahoo.com) 2004 -->
+	 
+<h3>KINGPIN</h3>
+<blockquote>
+		COMMON KINGPIN FAQ - by [DS]Method<br>
+		<a href="yanostretsov@yahoo.com?PHPSESSID=49b57cc2f637bb368ea4731e76b2ebd5">Updates contact RUST</a>
+</blockquote>
+<br><br>
+
+<b>Preface:</b><br>
+<p>Here's a bunch of KP frequently asked questions.
+Including mapping, gameplay and common questions.</p>
+
+<hr noshade color="black"><br>
+
+<h3>MAPPING</h3>
+<blockquote>
+  <p><b>When I try to compile a map, the DOS screen flashes fast and closes.</b><br>
+To compile your map you need to copy <font color = "red">kpbsp.exe</font>, <font color = "red">kprad.exe</font> and <font color = "red">kpvis.exe</font> into Kingpin/main/maps folder. You can find those files in the Kingpin/kprad folder.</p>
+
+  <p><b>When I set texture light flag in kprad's Surface Inspector, no matter what the color of texture light is always white.</b><br>
+When Xatrix was working on KP, they didn't have time to update ArgRad, and since KP based on Quake2 engine, it used wal files. After finishing KP, Xatrix recompiled textures to tga format, but forgot about wal lighting. You need to search the net for Kingpin wal textures.</p>
+
+  <p><b>I made Deathmatch/Bagman map and when I try to load it, it loads in SinglePlayer mode.</b><br>
+To load DM/BM map, you need to type in console "<font color=red>deathmatch 1</font>", or start game with shortcut parameter "<font color=red>+deathmatch 1</font>".</p>
+
+  <p><b>If I want to check the map design, do I have to wait all the rad and vis time?</b><br>
+You can pick "<font color=red>Bsp | bsp_only (novis/norad)</font>" in kprad toolbar. It'll take less than a minute to compile, but you won't see lights and shadows in your map, it'll be fullbright.</p>
+
+  <p><b>If I created entity, is it possible to undo it?</b><br>
+Select your entity and pick "<font color=red>Selection | Ungroup entity</font>" in kprad toolbar.</p>
+
+  <p><b>Is it possible to preview how func_door, func_train, etc works in game?</b><br>
+Select your entity and press "<font color=red>Ctrl-A</font>", it won't work for specific KP entities, only Quake2 entities.</p>
+
+  <p><b>When I hire guys in my map they can't follow me.</b><br>
+You need to have navdata file in navdata folder. Load your map and type in console "<font color=red>nav_debug 1</font>" and "<font color=red>nav_dynamic 1</font>", now run everywhere you want your hired guys to follow. When you're done quit the game and navdata file will save itself in navdata folder.</p>
+</blockquote>
+
+
+
+<h3>GAMEPLAY</h3>
+<blockquote>
+  <p><b>When I shoot at func_explosive or blow up characters, my KP crashes.</b><br>
+You need to install the latest <a href="http://www.gamedesign.net/content/kingpin/kingpin_v121_patch.exe">KP patch - v1.21.</a></p>
+
+  <p><b>How can you zoom in KP?</b><br>
+You need to use "<font color=red>fov</font>" - field of view. <font color = "red">fov 90</font> is the default fov.
+<font color = "red">fov 180</font> is the highest fov. The smaller the number the more you zoom. Some players like to play with <font color = "red">fov 120</font> cause you can see alot more than with the default fov.</p>
+
+  <p><b>What's doublejump?</b><br>
+Doublejump is a kind of jump. To do it, you need to find something small (less then 64 * 64 brush), then run toward it and before touching it, press jump twice fast. If you did it correctly you should jump higher than normal jump.</p>
+
+  <p><b>What's bunnyhopping?</b><br>
+Bunnyhopping is another kind of jump. To do it, you should press right strafe and turn your mouse 45 degrees to the right side, then press jump, keep jumping and cirle, you'll gain speed. You can use right or left strafe to bh or you can use them in combination. Don't press forward, the bunnyhop won't work, use only left or right strafe.</p>
+
+  <p><b>Is there a weapon against bazooka?</b><br>
+Flamethrower is a great weapon against bazooka, flame kills rockets, so if you aim at the enemy's bazooka he'll blow himself up.</p>
+</blockquote>
+
+
+
+<h3>COMMON</h3>
+<blockquote>
+  <p><b>What voices Cypress Hill did in KP?</b><br>
+They did voices of bartender, Momo and Jesus.</p>
+
+  <p><b>What things didn't make into final version of KP?</b><br>
+There was different kinds of mods for weapons. Three kinds of armor, chemical, flamable and bulletproof. Bumpmapping and drivable car, etc.</p>
+
+  <p><b>Was there any movies, which inspired KP?</b><br>
+Some of KP dialog was inspired by Pulp Fiction and
+Big Lebowski.</p>
+</blockquote></body></html>

@@ -1,0 +1,431 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Code Locks - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Half-Life</h2>
+<div class="block-content"><ul><li class="leaf"><a href="node/34">FAQ</a></li><li class="collapsed"><a href="node/36">Updates</a></li><li class="collapsed"><a href="node/929">Half-Life 1 Mod List</a></li><li class="collapsed"><a href="node/33">Entity Properties</a></li><li class="expanded"><a href="node/35">Half-Life 1 Tutorials</a><ul><li class="leaf"><a href="node/194">Big Block Method of Error Finding</a></li><li class="leaf"><a href="node/3">Chairs, Scientists and Barneys</a></li><li class="leaf"><a href="node/290" class="active">Code Locks</a></li><li class="leaf"><a href="node/831">Creating an Overview</a></li><li class="leaf"><a href="node/9">Creating Environment Maps With Terragen</a></li><li class="leaf"><a href="node/6">Creating Proximity Doors</a></li><li class="leaf"><a href="node/5">Customizing the lights.rad File</a></li><li class="leaf"><a href="node/596">Dimensions</a></li><li class="leaf"><a href="node/8">How to Make a Sphere in Worldcraft</a></li><li class="leaf"><a href="node/196">How to make respawnable glass</a></li><li class="leaf"><a href="node/4">Making a Custom Console Background</a></li><li class="leaf"><a href="node/539">Making New Buttons for Your MOD</a></li><li class="leaf"><a href="node/1046">R_speeds</a></li><li class="leaf"><a href="node/541">Sentry continued: adding Sentry-parts box and hud-icon</a></li><li class="leaf"><a href="node/538">Sentry Tutorial</a></li><li class="leaf"><a href="node/558">Skies</a></li><li class="leaf"><a href="node/613">Skies (2)</a></li><li class="leaf"><a href="node/687">Sprites</a></li><li class="leaf"><a href="node/7">Taming the Speaker Entity</a></li><li class="leaf"><a href="node/267">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/303">Ways to Prevent Leaks</a></li><li class="collapsed"><a href="node/628">WorldCraft/Hammer 3.4 Editing</a></li></ul></li><li class="collapsed"><a href="node/1084">Day of Defeat Tutorials</a></li><li class="leaf"><a href="node/1023">Modelling</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/290" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 50%;" class="foreground"></div></div><div class="percent">50%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 13%;" class="foreground"></div></div><div class="percent">13%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 25%;" class="foreground"></div></div><div class="percent">25%</div><div class="total">Total votes: 8</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2385">mekiboz.cn</a></li><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8457" title="View user profile.">x465735</a></li><li><a href="user/8456" title="View user profile.">Fordghjk</a></li><li><a href="user/8455" title="View user profile.">x0ef4b1</a></li><li><a href="user/8454" title="View user profile.">ttsyu</a></li><li><a href="user/8453" title="View user profile.">x759eb7</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 18 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Code Locks</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/921" title="">Half-Life</a> &raquo; <a href="node/35">Half-Life 1 Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/2" title="View user profile.">Gard</a> on Mon, 2004-06-07 05:44.</div>
+<!-- by by Sebastiannielsen 2004 -->
+
+<h3>Half-Life</h3>
+<blockquote>
+       <b>Code Locks</b> - by Sebastiannielsen
+</blockquote>
+<br><br>	
+
+<p>Well there are several techniques to make doors with passwords, but I think this is by far the easiest method. Although this tutorial is relatively long, it is still relatively easy - trust me).<p> 
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 1: BUILDING A KEY PAD</b><br><br>
+
+If you want to do a key pad password to a door(or anything else) the following is required. Note, that the colors of the keys relate to the key position and order they must be pressed to unlock the door. In this example the code is 5734:<BR><BR>
+
+For consistency, I have colored all keys in this tutorial, and the colours are assigned thus: <font color=blue> FIRST DIGIT </font>, <font color=red> SECOND DIGIT </font>, <font color=brown> THIRD DIGIT </font>, <font color=green> FOURTH DIGIT </font><br><BR>
+
+In the map editor align the buttons of your key pad like this:<br><br>
+
+B1,B2,<font color=brown>B3</font> <BR>
+<font color=green>B4</font>,<font color=blue>B5</font>,B6<BR>
+<font color=red>B7</font>,B8,B9 <BR>
+BR,B0,BA <BR><BR>
+
+Make sure <i>all</i> buttons have wait=0.1<BR><BR>
+
+Buttons B0-B9 can have the "port 0#" texture. Where you make it bigger and make it so only the last number is shown, the port 0# textures are in SIGNS category in Qoole 99.<BR><BR>
+
+To make the 0-button, take port01, but use the zero in the beginning.<BR><BR>
+
+BR can have the empty round, gray button that turns orange when pressed. <BR><BR>
+
+BA can have elevator button pointing UP.<BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 2: MAKING THE LOCK CODE</b><br><br>
+
+The first code number must have a trigger refering to the first trigger_changetarget <BR><BR>
+
+As stated above, the code is set to 5734 <BR><BR>
+
+<b>B1: </b><BR>
+targetname: B1 <BR>
+target: but_reset <BR><BR>
+
+<b>B2: </b><BR>
+targetname: B2<BR> 
+target: but_reset <BR><BR>
+
+<b>B3: </b><BR>
+<font color=brown>
+targetname: B3 <BR>
+target: but_reset <BR>
+</font><BR>
+
+<b>B4: </b><BR>
+<font color=green>
+targetname: B4 <BR>
+target: but_reset <BR>
+</font><BR>
+
+<b>B5: </b><BR>
+<font color=blue>
+targetname: B5 <BR>
+target: but_code1 <BR>
+</font><BR>
+
+<b>B6: </b><BR>
+targetname: B6 <BR>
+target: but_reset <BR><BR>
+
+<b>B7: </b><BR>
+<font color=red>
+targetname: B7 <BR>
+target: but_reset <BR>
+</font><BR>
+
+<b>B8: </b><BR>
+targetname: B8 <BR>
+target: but_reset <BR><BR>
+
+<b>B9: </b><BR>
+targetname: B9 <BR>
+target: but_reset <BR><BR>
+
+<b>B0: </b><BR>
+targetname: B0 <BR>
+target: but_reset <BR><BR>
+
+<b>BR: </b><BR>
+targetname: (nothing) <BR>
+target: but_reset <BR><BR>
+
+<b>BA: </b><BR>
+targetname: BA <BR>
+target: sound_denied <BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 3: CODING THE TRIGGER_CHANGETARGETS</b><br><br>
+
+11 trigger_changetarget are required to make the key pad work. Note that all these triggers here are trigger_changetarget. Set the trigger_changetargets to:<BR><BR>
+
+targetname: but_reset <BR>
+target: B0 <BR>
+newtarget: but_reset <BR><BR>
+
+targetname: but_reset <BR>
+target: B1 <BR>
+newtarget: but_reset <BR><BR>
+
+targetname: but_reset <BR>
+target: B2 <BR>
+newtarget: but_reset <BR><BR>
+
+<font color=brown>
+targetname: but_reset <BR>
+target: B3 <BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+<font color=green>
+targetname: but_reset <BR>
+target: B4 <BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+<i>NOTE: The first code digit must be reset correctly, or else the code lock will "lock" after entering a wrong code digit!! (I learnt that the hard way)</i><BR><BR>
+
+<font color=blue>
+targetname: but_reset <BR>
+target: B5 <BR>
+newtarget: but_open1 <BR>
+</font><BR>
+
+targetname: but_reset <BR>
+target: B6 <BR>
+newtarget: but_reset <BR><BR>
+
+<font color=red>
+targetname: but_reset <BR>
+target: B7 <BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+targetname: but_reset <BR>
+target: B8 <BR>
+newtarget: but_reset <BR><BR>
+
+targetname: but_reset <BR>
+target: B9 <BR>
+newtarget: but_reset <BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 4: SETTING THE RESET FOR THE ENTER BUTTON</b><br><br>
+
+The reset for "enter" button by:<BR><BR>
+
+targetname: but_reset <BR>
+target: BA <BR>
+newtarget: sound_denied <BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 5: BUILDING THE CODE CHECK</b><br><br>
+
+Now we create an 8 trigger_changetarget to update the codelock, if the correct code digit has been entered. <BR><BR>
+
+<b>[GROUP 1] </b><BR><BR>
+<font color=blue>
+targetname: but_open1 <BR>
+target: B5 <BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+<font color=red>
+targetname: but_open1 <BR>
+target: B7 <BR>
+newtarget: but_open2 <BR>
+</font><BR>
+
+<b>[GROUP 2] </b><BR><BR>
+
+<font color=red>
+targetname: but_open2 <BR>
+target: B7<BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+<font color=brown>
+targetname: but_open2 <BR>
+target: B3<BR>
+newtarget: but_open3 <BR>
+</font><BR>
+
+<b>[GROUP 3]</b> <BR><BR>
+
+<font color=brown>
+targetname: but_open3 <BR>
+target: B3<BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+<font color=green>
+targetname: but_open3 <BR>
+target: B4  <BR>
+newtarget: but_open4 <BR>
+</font><BR>
+
+<b>[GROUP 4] </b><BR><BR>
+<font color=green>
+targetname: but_open4 <BR>
+target: B4<BR>
+newtarget: but_reset <BR>
+</font><BR>
+
+targetname: but_open4 <BR>
+target: BA <BR>
+newtarget: sound_granted <BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 6: CONNECTING THE CODE LOCK TO THE DOOR</b><br><br>
+
+Connecting the code lock to the door is essential, else the codelock is completely useless. To do this you need to create two small button <i>OUTSIDE</i> the map. <BR><BR>
+
+<b>The first button: </b><BR><BR>
+
+targetname: sound_denied <BR>
+target: but_reset <BR>
+sound: Access Denied <BR>
+wait: 0.1 <BR><BR>
+
+<b>the second button: </b><BR><BR>
+
+targetname: sound_granted <BR>
+target: but_door <BR>
+sound: Access Granted <BR>
+wait: 0.1 <BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>STEP 7: TARGETING THE DOOR</b><br><br>
+
+Now we target but_door to what we want when the correct code is entered. We target it to a single func_door: <BR><BR>
+
+targetname: but_door <BR>
+target: but_reset<BR><BR> 
+
+<i><<< NOTE!! The but_reset is vital to reset the code when the door has been opened. For example, in multiplayer maps this means the next play can not open the door, without re-entering the code</i><BR><BR>
+
+<p><hr color=black noshade width=75%><p>
+
+<b>CONCLUSION</b><br><br>
+
+The codelock can be used again and again. I believe this will be cool in multiplayer maps, where the developer can have a "code" to enter a protect-room, or full with weapons. Imagine a button to open a door with lava under all the other players. Why not a turret? use your imagination!<BR><BR>
+
+Finally I have included an flow diagram of all the triggers and buttons reqyired to make this work. It doesn't display to well here, so click and download:<br><br>
+
+<center><img border="0" width="450"  src="content/half-life/tutorials/passwdoors/code.jpg"></center><br><br>
+
+Have fun with your code locks!<br><br>
+<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/3" title="View the previous page.">previous</a></div><div class="next"><a href="node/1084" title="View the next page.">next</a></div><div class="up"><a href="node/35" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Chairs, Scientists and Barneys</div><div class="next">Day of Defeat Tutorials</div></div></div></div></div>
+
+<div class="links"><a href="book/print/290" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

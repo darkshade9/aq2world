@@ -1,0 +1,3774 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><base href="http://www.gamedesign.net/" />
+<style type="text/css">
+@import url(misc/drupal.css);
+</style>
+			<title>
+				RUST - Gamedesign.net
+			</title>
+			<link rel="stylesheet" type="text/css" href="themes/rusted/rusted.css">
+			<style type="text/css">
+				@import "themes/rusted/rusted.css";
+			</style>
+		</head>
+		<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#000000">
+	<table width="900" height="24" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000"><tr><td align="left" valign="middle" width="40"><img src="/images/smalltf.gif" width="40" height="24" alt=""></td><td align="left" valign="middle"  width="250"><div class="networkBar">&nbsp;&nbsp;<A href="http://www.telefragged.com">TeleFragged</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.telefragged.com/network">Network</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.3ddownloads.com">Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;</div></td><td align="right" valign="middle" width="610"><div class="networkBar3"><iframe width=610 height=18 marginwidth=0 marginheight=0 frameborder=0 scrolling=no src="http://www.ugo.com/syndicatedContent/todayOnUGO/680x18_IframeContent.asp?channel=games&site=gamebanshee&bgcolor=000000&fontcolor=ffffff"></iframe></div></td></tr></table>
+			<table bgcolor="000000" width="900" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="5"><img src="images/mh_top.jpg" width="900" height="88" /></td>
+				</tr>
+				<tr>
+					<td valign="top" width="7"><img src="images/mh_lowerbg1.jpg" width="7" height="150" /></td><td valign="top" width="150"><!-- Left Sidebar --><table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td valign="center" background="images/lsb_firstheader.jpg" width="150" height="24">
+									<div align="center" class="sidebar_head">Navigation</div>
+								</td>
+							</tr>
+							<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar">- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://www.gamedesign.net/node/view/14" title="">Community</a><br />- <a href="http://www.gamedesign.net/node/view/13" title="Learn more about the crazy kids running this joint.">Staff</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a></div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+							<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+							<tr>
+								<td valign="center" background="images/lsb_header.jpg" width="150" height="24">
+									<div align="center" class="sidebar_head">Editing Handbooks</div>
+								</td>
+							</tr>
+							<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar">							
+										- <a href="/book/view/1?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Half-Life</a><br />- <a href="/book/view/11?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Quake II</a><br />- <a href="/book/view/12?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Quake III</a><br />- <a href="/book/view/111?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Generic</a><br />- <a href="/book/view/58?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Interviews</a><br />- <a href="/book/view/128?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Kingpin</a><br />- <a href="/book/view/167?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Doom 3</a><br />- <a href="/book/view/532?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">Modeling</a><br />- <a href="/book/view/549?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">RUST Resumes</a><br />- <a href="/book/view/14?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">RUST Community</a><br />- <a href="/book/view/630?PHPSESSID=48f6391464173a172a0a2ae2c0d5714b">RUST Competition</a><br />									</div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr><tr>
+								<td><img src="images/spacer.gif" width="7" height="7" /></td>
+							</tr>
+																						<tr><td valign="center" background="images/lsb_header.jpg" width="150" height="24"><div align="center" class="sidebar_head">Advertisement</div></td> </tr>
+								<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar" align="center"><!-- AdSpace Network=ugo size=120x600 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=120 height=600 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+</div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+								<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+													</table>
+					</td>
+					<td valign="top" width="7"><img src="images/mh_lowerbg2.jpg" width="7" height="90" /></td>
+					<td valign="top">
+						<!-- Body and Right Sidebar -->
+						<table width="729" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0">
+							<tr><td valign="top" background="images/mh_lowerbg_ad.jpg" colspan="3"><!-- AdSpace Network=ugo size=728x90 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=728 height=90 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+<!-- START RedSheriff Customer Intelligence V4 - Java v1.1  Revision: 1.8 -->
+<!-- COPYRIGHT 2002 Red Sheriff Limited -->
+<script language="JavaScript"><!--
+var pCid="us_us-ugo_network-telefragged";
+var w0=1;
+var refR=escape(document.referrer);
+if (refR.length>=252) refR=refR.substring(0,252)+"...";
+//--></script>
+<script language="JavaScript1.1"><!--
+var w0=0;
+//--></script>
+<script language="JavaScript1.1" src="http://server-us.imrworldwide.com/a1.js">
+</script>
+<script language="JavaScript"><!--
+if(w0){
+var imgN='<img src="http://server-us.imrworldwide.com/cgi-bin/count?ref='+
+        refR+'&cid='+pCid+'" width=1 height=1>';
+if(navigator.userAgent.indexOf('Mac')!=-1){document.write(imgN);
+}else{
+        document.write('<applet code="Measure.class" '+
+        'codebase="http://server-us.imrworldwide.com/"'+'width=1 height=2>'+
+        '<param name="ref" value="'+refR+'">'+'<param name="cid" value="'+pCid+
+        '"><textflow>'+imgN+'</textflow></applet>');
+        }
+}
+document.write("<COMMENT>");
+//-->
+</script>
+<noscript>
+<img src="http://server-us.imrworldwide.com/cgi-bin/count?cid=us_us-ugo_network-telefragged" width=1 height=1>
+</noscript>
+</COMMENT>
+<!-- END RedSheriff Customer Intelligence V4 --></td></tr>
+							<tr><td valign="top" height="7" colspan="3"><img src="images/spacer.gif" width="7" height="7"></td></tr>
+							<tr>
+								<td colspan="3">
+								<table width="729" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0"><tr><td>
+								<td valign="top" width="422" height="250">
+									<table width="422" height="250" border="0" cellspacing="0" cellpadding="0">
+										<tr><td height="23" valign="center" background="images/midbar_head.jpg"><div align="center" class="sidebar_head">Rust Community Forums</div></td></tr>
+										<tr><td valign="top" background="images/midbar_body.jpg"><img src="images/midbar_top.jpg" /><div class="sidebar"><a href="http://forums.gamedesign.net/"><strong>View the Forums</strong></a> | <a href="http://forums.gamedesign.net/profile.php?mode=register">Sign up for an Account</a> <br><small>This panel is updated every 30 minutes.</small><br><br>
+											<table border=0 width="100%"><tr><td><strong>Topic Name</strong></td><td><strong>Forum</strong></td><td><strong>Last post by</strong></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209500#209500">CPU Overclocking</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=24">Off-Topic</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=617">Peeves</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209499#209499">compile error</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=14">Quake II</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=1439">theimprobablejedi</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209498#209498">Email.map error when compiling</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=31">WorldCraft / Hammer</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=1556">Andy</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209489#209489">hi =D</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=15">Quake III Arena</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=14061">tIKi_mAn</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209488#209488">Slow-motion and ...</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=13">Quake</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=14090">skin[NCN]master</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209487#209487">Texture Artist Strongly Needed</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=25">Help Wanted</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=617">Peeves</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209486#209486">Miniwood</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=81">RUST .plan</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=186">Miniwood</a></td></tr>
+</table>
+</div></td></tr><tr><td valign="bottom"><img src="images/midbar_bottom.jpg" /></td></tr></table></td>
+								<td valign="top" width="7" height="250"><img src="images/spacer.gif" width="7" height="7"></td>
+								<td valign="top" width="300" height="250">
+									<!-- AdSpace Network=ugo size=300x250 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=300 height=250 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+								</td></tr></table> </td>
+							</tr>
+							<tr>
+								<td valign="top" height="7" colspan="3"><img src="images/spacer.gif" width="7" height="7"></td>
+							</tr>							<tr>
+								<td width="729" valign="top">
+									<table border="0" width="522" cellpadding="0" cellspacing="0">
+										<tr>
+											<td valign="top" width="522" height="52" background="images/body_header.jpg">
+												<div align="center" class="body_title">RUST - Gamedesign.net</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" background="images/body_bg.jpg" width="522">
+												<div class="body">
+<div class="breadcrumb"><a href="http://www.gamedesign.net/" >Home</a> &raquo; <a href="http://www.gamedesign.net/book" >Books</a> &raquo; <a href="http://www.gamedesign.net/book/view/1" >Half-Life</a> &raquo; <a href="http://www.gamedesign.net/book/view/35" >Tutorials</a></div>
+<!-- Node: "Half-Life Sprites" -->
+<div class="body_box_header">Half-Life Sprites</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2198" title="View user profile.">Andy</a> on Friday, August 27, 2004 - 03:46</small><br /><br />
+<!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<H3>Half-Life Sprite List</H3>
+<BLOCKQUOTE>
+	<B>Sprites</B> - A visual representation of 128 sprites. 
+</BLOCKQUOTE>
+<hr noshade COLOR="gray">
+<!--break-->
+<BODY>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=350>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=86>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=10 HEIGHT=16>
+</TD>
+<TD WIDTH=4>
+</TD>
+<TD WIDTH=2>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=2>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=1>
+</TD
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=1>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="2" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/aexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+aexplo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="6" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/bexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+bexplo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=42>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+<TD COLSPAN=5 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="10" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/blood.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=7>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=22>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+blood
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="15" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/blueflare2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+blueflare2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="19" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/b-tele1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+b-tele1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="23" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/c-tele1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+c-tele1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="27" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/eexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+eexplo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="31" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/explode1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+explode1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=7 HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=21>
+<IMG ID="35" HEIGHT=64 WIDTH=21 SRC="content/half-life/tutorials/hlsprites/fire.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+fire
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="39" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/flare4.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+flare4
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=15 ALIGN=CENTER VALIGN=MIDDLE WIDTH=53>
+<IMG ID="43" HEIGHT=64 WIDTH=53 SRC="content/half-life/tutorials/hlsprites/gexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+gexplo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="47" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/glow04.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+glow04
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="52" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/laserbeam.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+laserbeam
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=44>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=16>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="56" HEIGHT=16 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/mommablob.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=25>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=19 WIDTH=71>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+mommablob
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=19>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="60" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/mushroom.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+mushroom
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="64" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz4.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+muz4
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="68" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz8.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+muz8
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="72" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muzzleflash3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=21 WIDTH=76>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+muzzleflash3
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="76" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/poison.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+poison
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=32>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="80" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/richo1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+richo1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=11 HEIGHT=64>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=8>
+<IMG ID="84" HEIGHT=64 WIDTH=8 SRC="content/half-life/tutorials/hlsprites/sdrip1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=10>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+sdrip1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="89" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/smoke.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+smoke
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=42>
+<IMG ID="93" HEIGHT=64 WIDTH=42 SRC="content/half-life/tutorials/hlsprites/steam1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+steam
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=12>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="97" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/tile.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+tile
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="101" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/wexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+wexplo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=9 HEIGHT=64>
+</TD>
+<TD COLSPAN=5 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="105" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/xbeam3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=8>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xbeam3
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="109" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xffloor.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xfloor
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="113" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/xflare1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xflare1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="117" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xsmoke3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xsmoke3
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=32>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="121" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xspark3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xspark3
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=17 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="125" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/yelflare2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+yelflare2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=22 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=8 HEIGHT=64>
+</TD>
+<TD COLSPAN=5 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="129" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/zbeam4.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=9>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=17 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+zbeam4
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=80>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=3 HEIGHT=16>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=2>
+</TD>
+<TD WIDTH=4>
+</TD>
+<TD WIDTH=13>
+</TD>
+<TD WIDTH=3>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=13>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=7>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=11>
+</TD>
+<TD WIDTH=2>
+</TD>
+<TD WIDTH=3>
+</TD>
+<TD WIDTH=1>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="3" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/animglow.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+animglow
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=41>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="7" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/bhit.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=23>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+bhit
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=41>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=8 HEIGHT=16>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="11" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/blooddrop.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=8>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=23>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+blooddrop
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="16" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/bluejet1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+bluejet1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=39>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="20" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/bubble.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=25>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+bubble
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="24" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/dexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+dexplo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="28" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/enter.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+enter
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="32" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/explode2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+explode2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="36" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/flare1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+flare1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="40" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/flare5.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+flare5
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="44" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/glow01.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+glow01
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=29>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=51>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="49" HEIGHT=51 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/gwave1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+gwave1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=42>
+</TD>
+</TR>
+                    <TR VALIGN=TOP ALIGN=LEFT>
+                        <TD COLSPAN=9 HEIGHT=16>
+                        </TD>
+                        <TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+                                                        <IMG ID="53" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/laserdot.jpg" BORDER=0>
+                                                   </TD>
+                        <TD COLSPAN=7>
+                        </TD>
+                    </TR>
+                    <TR VALIGN=TOP ALIGN=LEFT>
+                        <TD COLSPAN=20 HEIGHT=22>
+                        </TD>
+                    </TR>
+                    <TR VALIGN=TOP ALIGN=LEFT>
+                        <TD COLSPAN=4>
+                        </TD>
+                        <TD COLSPAN=13 WIDTH=64>
+                                                     <P ALIGN=CENTER>
+                                <FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+                                laserdot
+                                </FONT>
+                            </P>
+                                                    </TD>
+                        <TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=32>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="57" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/mommaspit.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=17 WIDTH=73>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+mommaspit
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="61" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+muz1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="65" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz5.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+muz5
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="69" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muzzleflash.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=18 WIDTH=76>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+muzzleflash
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="73" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/nhth.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+nhth
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="77" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/portal1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+portal1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="81" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/richo2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+richo2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="85" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/shellchrome.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=16 WIDTH=73>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+shellchrome
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=28>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=40>
+</TD>
+<TD COLSPAN=11 ALIGN=CENTER VALIGN=MIDDLE WIDTH=40>
+<IMG ID="90" HEIGHT=40 WIDTH=40 SRC="content/half-life/tutorials/hlsprites/spark1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+spark1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=32>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="94" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/stmbal1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+stmbal1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+ </TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=41>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="98" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/tinyspit.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=23>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+tinyspit
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="102" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/wsplash.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+wsplash
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=9 HEIGHT=64>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="106" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/xbeam4.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=7>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xbeam4
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="110" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/xfire.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xfire
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=13 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="115" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/xflare2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xflare2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="118" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xsmoke4.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xsmoke4
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=32>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="122" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xspark4.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+xspark4
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=9 HEIGHT=64>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="126" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/zbeam1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=7>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+zbeam1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=20 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=7 HEIGHT=64>
+</TD>
+<TD COLSPAN=4 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="130" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/zbeam5.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=9>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4>
+</TD>
+<TD COLSPAN=13 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+zbeam5
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TD>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=154>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=74>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=10 HEIGHT=16>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=8>
+</TD>
+<TD>
+</TD>
+<TD WIDTH=8>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=5>
+</TD>
+<TD WIDTH=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="4" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/arrow.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ arrow
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=32>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="8" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/bigspit.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+bigspit
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="13" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/bloodspray.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ bloodspray
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="17" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/bm1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ bm1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="21" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/cexplo.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ cexplo
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=40>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=16>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="25" HEIGHT=16 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/dot.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=24>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   dot
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="29" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/e-tele1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  e-tele1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=53>
+<IMG ID="33" HEIGHT=64 WIDTH=53 SRC="content/half-life/tutorials/hlsprites/fexplo.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  fexplo
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="37" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/flare2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+ <P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  flare2
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="41" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/flare6.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+    flare6
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=9 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="45" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/glow02.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ glow02
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=5 ALIGN=CENTER VALIGN=MIDDLE WIDTH=42>
+<IMG ID="50" HEIGHT=64 WIDTH=42 SRC="content/half-life/tutorials/hlsprites/hexplo.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   hexplo
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="54" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/lgtning.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=9 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  lgtning
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=32>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="58" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/mommaspout.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=80>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=16 HEIGHT=16>
+</TD>
+<TD WIDTH=16>
+</TD>
+<TD>
+</TD>
+<TD WIDTH=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="5" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/ballsmoke.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  ballsmoke
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="9" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/blast.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  blast
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="14" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/blueflare1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  blueflare1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+ <TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+ <TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="18" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/bolt1.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  bolt1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="22" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/cnt1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   cnt1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="26" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/d-tele1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ d-tele1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="30" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/exit1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ exit1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="34" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/fexplo1.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ fexplo1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=32>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="38" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/flare3.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   flare3
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=32>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="42" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/gargeye1.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ gargeye1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="46" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/glow03.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ glow03
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="51" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/hotglow.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  hotglow
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=45>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD HEIGHT=12>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="55" HEIGHT=12 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/logo.jpg" BORDER=0>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=23>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=3 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ logo
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=41>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=16>
+</TD>
+<TD ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="59" HEIGHT=16 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/moths.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=154>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=84>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=4 HEIGHT=16>
+</TD>
+<TD WIDTH=80>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD WIDTH=80>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   mommaspout
+</FONT>
+</P>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=70>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=6 HEIGHT=16>
+</TD>
+<TD WIDTH=64>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  moths
+</FONT>
+</P>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=160>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=80>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=4 HEIGHT=16>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=16>
+</TD>
+<TD WIDTH=7>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=15>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=8>
+</TD>
+<TD WIDTH=16>
+</TD>
+<TD WIDTH=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="62" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz2.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  muz2
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="66" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz6.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ muz6
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+ </TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="70" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muzzleflash1.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+ <TR VALIGN=TOP ALIGN=LEFT>
+ <TD>
+</TD>
+<TD COLSPAN=9 WIDTH=76>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ muzzleflash1
+</FONT>
+</P>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="74" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/oriented.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ oriented
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+ <TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="78" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/redflare1.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ redflare1
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="82" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/rjet1.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+ <FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  rjet1
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="86" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/shockwave.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  shockwave
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="91" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/spotlight01.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  spotlight01
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="95" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/streak.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  streak
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="99" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/wallpuff.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  wallpuff
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD COLSPAN=2 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="103" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/xbeam1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  xbeam1
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=2 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="107" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/xbeam5.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   xbeam5
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="111" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/xfire2.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  xfire2
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="114" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/xflare3.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  xflare3
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=32>
+</TD>
+<TD COLSPAN=5 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="119" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xspark1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  xspark1
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=5 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="123" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xssmke1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   xssmke1
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=64>
+</TD>
+<TD COLSPAN=2 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="127" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/zbeam2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ zbeam2
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=10 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD COLSPAN=2 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="131" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/zbeam6.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=7 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  zbeam6
+</FONT>
+</P>
+</TD>
+<TD>
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=80>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD WIDTH=3 HEIGHT=16>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=15>
+</TD>
+<TD WIDTH=7>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=2>
+</TD>
+<TD WIDTH=13>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=2>
+</TD>
+<TD WIDTH=6>
+</TD>
+<TD WIDTH=16>
+</TD>
+<TD WIDTH=1>
+</TD>
+<TD WIDTH=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="63" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  muz3
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="67" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muz7.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   muz7
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="71" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/muzzleflash2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=2>
+</TD>
+<TD COLSPAN=13 WIDTH=76>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   muzzleflash2
+</FONT>
+</P>
+</TD>
+</TR>
+ <TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="75" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/plasma.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   plasma
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="79" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/redflare2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  redflare2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=7 HEIGHT=32>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="83" HEIGHT=32 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/rope.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=5>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  rope
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=42>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=4 HEIGHT=12>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="88" HEIGHT=12 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/small_logo.jpg" BORDER=0>
+</TD>
+<TD>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=26>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  small_logo
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="92" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/spotlight02.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ spotlight02
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="96" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/tele1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ tele1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="100" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/wdrip2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   wdrip2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=8 HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="104" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/xbeam2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=4>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   xbeam2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=64>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="108" HEIGHT=64 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xenobeam.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+   xenobeam
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=20>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="112" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/xfireball3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  xfireball3
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=32>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="116" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xsmoke1.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+ xsmoke1
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=32>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=5 HEIGHT=32>
+</TD>
+<TD COLSPAN=7 ALIGN=CENTER VALIGN=MIDDLE WIDTH=32>
+<IMG ID="120" HEIGHT=32 WIDTH=32 SRC="content/half-life/tutorials/hlsprites/xspark2.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=3>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+  xspark2
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="124" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/yelflare.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+yelflare
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=6 HEIGHT=64>
+</TD>
+<TD COLSPAN=3 ALIGN=CENTER VALIGN=MIDDLE WIDTH=16>
+<IMG ID="128" HEIGHT=64 WIDTH=16 SRC="content/half-life/tutorials/hlsprites/zbeam3.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=6>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3>
+</TD>
+<TD COLSPAN=10 WIDTH=64>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+zbeam3
+</FONT>
+</P>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=15 HEIGHT=16>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD COLSPAN=3 HEIGHT=64>
+</TD>
+<TD COLSPAN=10 ALIGN=CENTER VALIGN=MIDDLE WIDTH=64>
+<IMG ID="133" HEIGHT=64 WIDTH=64 SRC="content/half-life/tutorials/hlsprites/zerogxplode.jpg" BORDER=0>
+</TD>
+<TD COLSPAN=2>
+</TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD>
+</TD>
+<TD COLSPAN=14 WIDTH=77>
+<P ALIGN=CENTER>
+<FONT SIZE="-1" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+</FONT>
+<FONT SIZE="-2" FACE="Verdana,Tahoma,Arial,Helvetica,sans-serif">
+zerogxplode
+</FONT>
+</P>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+<hr noshade COLOR="gray">
+<H4>Notes:</H4>
+<P>There are 180 Sprites in the original Half-Life folder. Some of these are game specific and have not been listed here, others are 'fillers' or blank. Here are the ones not listed:<BR>
+White, vp_parallel, vp_parallel_oriented, voice_icon, camera, crosshairs, spot3 and spot 4, agrunt1<BR>
+glow5.<BR>
+In addition to those, there are 16 txt files, 19 Hud Sprites and 7 Multiplayer icons in the folder.</P><div class="book"><div class="tree"><ul></ul></div><div class="nav"><div class="links"><div class="prev"><a href="http://www.gamedesign.net/book/view/613" title="View the previous page in this book.">previous</a></div><div class="next"><a href="http://www.gamedesign.net/book/view/8" title="View the next page in this book.">next</a></div><div class="up"><a href="http://www.gamedesign.net/book/view/35" title="View this page's parent section.">up</a></div></div><div class="titles"><div class="prev">Half-Life Skies (Part 2)</div><div class="next">How to Make a Sphere...</div></div></div></div>
+<br /><br />
+<a href="http://www.gamedesign.net/book/print/572" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> &middot; <a href="http://www.gamedesign.net/comment/reply/572#comment" title="Share your thoughts and opinions related to this posting.">Add new comment</a> &middot; 6 reads
+</div><br />
+
+<a id="comment"></a>
+<form method="post" action="http://www.gamedesign.net/comment"><div>
+<input type="hidden" name="edit[nid]" value="572" />
+</div></form>												</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" width="522" height="41" background="images/body_footer.jpg">
+												&nbsp;
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td valign="top" width="7">
+									<img src="images/spacer.gif" width="7" height="7" />
+								</td>
+								<td valign="top" width="200">
+									<table border="0" cellpadding="0" cellspacing="0">	
+													<!-- Box: User login (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">User login</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="user-login-link"><div class="user-login-block">
+<form action="http://www.gamedesign.net/user/login" method="post">
+<input type="hidden" name="edit[destination]" value="http://www.gamedesign.net/book/view/572" />
+<div class="form-item"><div class="title">Username:</div><input type="text" maxlength="64" class="form-text" name="edit[name]" size="15" value="" /></div>
+<div class="form-item"><div class="title">Password:</div><input type="password" class="form-password" maxlength="64" name="edit[pass]" size="15" value="" /></div>
+<input type="hidden" name="edit[remember_me]" value="0" />
+<div class="form-item"><input type="checkbox" class="form-checkbox" name="edit[remember_me]" value="1" /> Remember me</div>
+<input type="submit" class="form-submit" name="op" value="Log in" />
+
+</form>
+</div>
+<div class="item-list"><ul><li><a href="http://www.gamedesign.net/user/register" title="Create a new user account.">Create new account</a></li><li><a href="http://www.gamedesign.net/user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+						<!-- Box: Poll (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Poll</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="poll-title">Half-Life 2: Retail or Steam Which one will you buy?</div><br><div class="poll"><form action="/book/view/572" method="post"><div class="vote-form"><div class="choices"><div><input type="radio" name="pollvote[641]" value="0" />Retail Standard: I don't want no stinkin' T Shirt.</div><div><input type="radio" name="pollvote[641]" value="1" />Collectors Edition: I need the T Shirt.</div><div><input type="radio" name="pollvote[641]" value="2" />Steam Bronze: Because it seemed like a good idea.</div><div><input type="radio" name="pollvote[641]" value="3" />Steam Silver: I like shiny things.</div><div><input type="radio" name="pollvote[641]" value="4" />Steam Gold: I want that hat!!</div><div><input type="radio" name="pollvote[641]" value="5" />I will not be buying Half-Life2</div></div><input type="submit" class="form-submit" name="vote" value="Vote" />
+</div><div class="links"><a href="http://www.gamedesign.net/node/view/641#comment" title="Jump to the first comment of this posting.">2 comments</a> &middot; <a href="/book/view/572?pollresults[641]=1">View results</a> &middot; 28 reads &middot; <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Older polls</a></div></form></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+						<!-- Box: Who's new (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Who's new</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="item-list"><ul><li><a href="http://www.gamedesign.net/user/view/2282" title="View user profile.">GameDrained</a></li><li><a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a></li><li><a href="http://www.gamedesign.net/user/view/2280" title="View user profile.">haiderjan</a></li><li><a href="http://www.gamedesign.net/user/view/2279" title="View user profile.">mithilwane</a></li><li><a href="http://www.gamedesign.net/user/view/2278" title="View user profile.">insanity257</a></li></ul></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+						<!-- Box: Who's online (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Who's online</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar">There are currently 0 users and 24 guests online.</div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+												</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td valign="top" width="7">
+						<img src="images/mh_lowerbg3.jpg" width="7" height="90" />
+					</td>
+				</tr>
+			</table>
+					</body>
+		</html>
+	

@@ -1,0 +1,63 @@
+<html><head><title>Colored Light</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="48" name="48" class="book-h1">Colored Light</h1><h3>Quake 2</h3>
+	<blockquote>
+		Colored Light - <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>
+	</blockquote>
+
+<p>The one thing that I think makes quake2 one of the best looking games ever is colored lighting. The difference in visual quality between the software version with no colored lights and the hardware version with colored light support is like night and day. It adds so much atmosphere to the game. id made it very easy to use colored lighting when level designing and hopefully I can give some tips on the best ways to use them to their full potential. If you know all about colored lights and using them then you might want to skip to the bottom and check out my tips. Some of them can be very useful. 
+	
+<br><br><b>How do I use colored light?</b> 
+
+<p>There are 2 ways you can produce colored lights:
+
+<p>First way is the typical light entity with the key value pair <b>_color</b> and a value of the RGB code of the color you want.
+
+<p>The second way is to have a texture radiate light. What's cool about this is whatever color the texture is that is the color the light will be. This is my preferred choice with using colored lights. Why? It gives off a much more realistic color of light. <em>It's much easier to let the light texture radiate the color then trying to match that color with a light entity</em>. 
+
+<br><br><b>Why do some user made levels look like shit?</b> 
+
+<p>It is very easy to overuse colored light. A lot of the first user made levels I have seen have severely overused colored light. Here are a few examples of overused colored lights:
+
+<p><div align="center"><img src="/content/quake2/tutorials/clight/clight_img1.jpg">
+
+<p>Blue and Red? Very unnatural light.
+
+</div>
+
+<p><div align="center"><img src="/content/quake2/tutorials/clight/clight_img2.jpg">
+
+<p>Lime green...yuck.
+
+</div>
+
+<p><div align="center"><img src="/content/quake2/tutorials/clight/clight_img3.jpg">
+
+<p>Not bad but still too much -- 5 different colors in one shot.
+
+</div>
+
+<p>Now if these people just let the surfaces radiate most of the light for them then they would get a much more natural look and feel. I'm not saying never use light entities i'm just saying to let the surfaces do some of the work for you.
+
+<br><br><b>How do I made a surface emit light?</b> 
+
+<p>To make a surface emit light, you must you the edit the surface properties of that brush or surface. There is a surface Property flag called light. For a better explanation on how to edit the surface properties and the light property I suggest you read my surface/content properties tutorial. It will explain everything you need to know on how to edit the surface properties. 
+
+<br><p><b>Hints and Tips</b><br><br>
+
+
+<p>Here are a couple of tricks I have figured out about colored light that might be able to help you:
+
+<ul>
+   <li>Values don't have to be between 0 and 1. The can be between 0 and 255 like normal RGB colors.<br><br>
+        
+   <li>Try using your favorite paint program and pick the color you want and write down the RGB code.<br><br>
+        
+   <li>Most editors have a color button that allows you to select the color from a pallete. Very handy!<br><br>
+        
+   <li>Sometimes when having a surface emit light, you will have to set the value EXTREMELY high depending on the size of the face or brush. Light values as high as 10000 are not uncommon. This is only with surface emitting light though.<br><br>
+
+</ul>
+
+<p>
+</body></html>

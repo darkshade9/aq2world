@@ -1,0 +1,37 @@
+
+<html>
+	<head>
+	<title>Link Submission Form</title>
+	</head>
+	
+	<body>
+		<FORM ENCTYPE="multipart/form-data" ACTION="process.php3" METHOD="POST">
+
+                <h3>Link Submission Form</h3>
+		<p>If you would like your editing related site to be considered for addition to our 'Links Database' (which is soon to come!), you can use this form to submit your website URL.
+
+                <p><b>Site Name:</b><br>
+                <input type="text" name="title" size=40 maxsize=50>
+                
+                <p><b>Site URL:</b><br>
+                <input type="text" name="url" value="http://" size=40 maxsize=75>
+                
+                <p><b>Site Category:</b><br>
+                <select name="category">
+		<option>Game Companies
+<option>Level Design
+<option>Map Authors
+<option>Miscellaneous
+<option>Modelling
+<option>Programming
+<option>Review Sites
+<option>Textures/2D Art
+		</select>
+
+                <p><b>Site Description:</b><br>
+                <textarea name="desc" cols="45" rows="10" wrap="VIRTUAL"></textarea>
+                
+		<p><input type=submit value="Submit Link">
+	
+	</body>
+</html>

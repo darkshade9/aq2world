@@ -1,0 +1,190 @@
+<html><head><title>Code Locks</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="290" name="290" class="book-h1">Code Locks</h1><p><!-- by by Sebastiannielsen 2004 --></p>
+<h3>Half-Life</h3>
+<blockquote><p>
+       <b>Code Locks</b> - by Sebastiannielsen
+</p></blockquote>
+<p><br><br>	</p>
+<p>Well there are several techniques to make doors with passwords, but I think this is by far the easiest method. Although this tutorial is relatively long, it is still relatively easy - trust me).
+<p><hr color=black noshade width=75%>
+<p><b>STEP 1: BUILDING A KEY PAD</b><br><br></p>
+<p>If you want to do a key pad password to a door(or anything else) the following is required. Note, that the colors of the keys relate to the key position and order they must be pressed to unlock the door. In this example the code is 5734:<BR><BR></p>
+<p>For consistency, I have colored all keys in this tutorial, and the colours are assigned thus: <font color=blue> FIRST DIGIT </font>, <font color=red> SECOND DIGIT </font>, <font color=brown> THIRD DIGIT </font>, <font color=green> FOURTH DIGIT </font><br><BR></p>
+<p>In the map editor align the buttons of your key pad like this:<br><br></p>
+<p>B1,B2,<font color=brown>B3</font> <BR><br />
+<font color=green>B4</font>,<font color=blue>B5</font>,B6<BR><br />
+<font color=red>B7</font>,B8,B9 <BR><br />
+BR,B0,BA <BR><BR></p>
+<p>Make sure <i>all</i> buttons have wait=0.1<BR><BR></p>
+<p>Buttons B0-B9 can have the "port 0#" texture. Where you make it bigger and make it so only the last number is shown, the port 0# textures are in SIGNS category in Qoole 99.<BR><BR></p>
+<p>To make the 0-button, take port01, but use the zero in the beginning.<BR><BR></p>
+<p>BR can have the empty round, gray button that turns orange when pressed. <BR><BR></p>
+<p>BA can have elevator button pointing UP.<BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>STEP 2: MAKING THE LOCK CODE</b><br><br></p>
+<p>The first code number must have a trigger refering to the first trigger_changetarget <BR><BR></p>
+<p>As stated above, the code is set to 5734 <BR><BR></p>
+<p><b>B1: </b><BR><br />
+targetname: B1 <BR><br />
+target: but_reset <BR><BR></p>
+<p><b>B2: </b><BR><br />
+targetname: B2<BR><br />
+target: but_reset <BR><BR></p>
+<p><b>B3: </b><BR><br />
+<font color=brown><br />
+targetname: B3 <BR><br />
+target: but_reset <BR><br />
+</font><BR></p>
+<p><b>B4: </b><BR><br />
+<font color=green><br />
+targetname: B4 <BR><br />
+target: but_reset <BR><br />
+</font><BR></p>
+<p><b>B5: </b><BR><br />
+<font color=blue><br />
+targetname: B5 <BR><br />
+target: but_code1 <BR><br />
+</font><BR></p>
+<p><b>B6: </b><BR><br />
+targetname: B6 <BR><br />
+target: but_reset <BR><BR></p>
+<p><b>B7: </b><BR><br />
+<font color=red><br />
+targetname: B7 <BR><br />
+target: but_reset <BR><br />
+</font><BR></p>
+<p><b>B8: </b><BR><br />
+targetname: B8 <BR><br />
+target: but_reset <BR><BR></p>
+<p><b>B9: </b><BR><br />
+targetname: B9 <BR><br />
+target: but_reset <BR><BR></p>
+<p><b>B0: </b><BR><br />
+targetname: B0 <BR><br />
+target: but_reset <BR><BR></p>
+<p><b>BR: </b><BR><br />
+targetname: (nothing) <BR><br />
+target: but_reset <BR><BR></p>
+<p><b>BA: </b><BR><br />
+targetname: BA <BR><br />
+target: sound_denied <BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>STEP 3: CODING THE TRIGGER_CHANGETARGETS</b><br><br></p>
+<p>11 trigger_changetarget are required to make the key pad work. Note that all these triggers here are trigger_changetarget. Set the trigger_changetargets to:<BR><BR></p>
+<p>targetname: but_reset <BR><br />
+target: B0 <BR><br />
+newtarget: but_reset <BR><BR></p>
+<p>targetname: but_reset <BR><br />
+target: B1 <BR><br />
+newtarget: but_reset <BR><BR></p>
+<p>targetname: but_reset <BR><br />
+target: B2 <BR><br />
+newtarget: but_reset <BR><BR></p>
+<p><font color=brown><br />
+targetname: but_reset <BR><br />
+target: B3 <BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p><font color=green><br />
+targetname: but_reset <BR><br />
+target: B4 <BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p><i>NOTE: The first code digit must be reset correctly, or else the code lock will "lock" after entering a wrong code digit!! (I learnt that the hard way)</i><BR><BR></p>
+<p><font color=blue><br />
+targetname: but_reset <BR><br />
+target: B5 <BR><br />
+newtarget: but_open1 <BR><br />
+</font><BR></p>
+<p>targetname: but_reset <BR><br />
+target: B6 <BR><br />
+newtarget: but_reset <BR><BR></p>
+<p><font color=red><br />
+targetname: but_reset <BR><br />
+target: B7 <BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p>targetname: but_reset <BR><br />
+target: B8 <BR><br />
+newtarget: but_reset <BR><BR></p>
+<p>targetname: but_reset <BR><br />
+target: B9 <BR><br />
+newtarget: but_reset <BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>STEP 4: SETTING THE RESET FOR THE ENTER BUTTON</b><br><br></p>
+<p>The reset for "enter" button by:<BR><BR></p>
+<p>targetname: but_reset <BR><br />
+target: BA <BR><br />
+newtarget: sound_denied <BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>STEP 5: BUILDING THE CODE CHECK</b><br><br></p>
+<p>Now we create an 8 trigger_changetarget to update the codelock, if the correct code digit has been entered. <BR><BR></p>
+<p><b>[GROUP 1] </b><BR><BR><br />
+<font color=blue><br />
+targetname: but_open1 <BR><br />
+target: B5 <BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p><font color=red><br />
+targetname: but_open1 <BR><br />
+target: B7 <BR><br />
+newtarget: but_open2 <BR><br />
+</font><BR></p>
+<p><b>[GROUP 2] </b><BR><BR></p>
+<p><font color=red><br />
+targetname: but_open2 <BR><br />
+target: B7<BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p><font color=brown><br />
+targetname: but_open2 <BR><br />
+target: B3<BR><br />
+newtarget: but_open3 <BR><br />
+</font><BR></p>
+<p><b>[GROUP 3]</b> <BR><BR></p>
+<p><font color=brown><br />
+targetname: but_open3 <BR><br />
+target: B3<BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p><font color=green><br />
+targetname: but_open3 <BR><br />
+target: B4  <BR><br />
+newtarget: but_open4 <BR><br />
+</font><BR></p>
+<p><b>[GROUP 4] </b><BR><BR><br />
+<font color=green><br />
+targetname: but_open4 <BR><br />
+target: B4<BR><br />
+newtarget: but_reset <BR><br />
+</font><BR></p>
+<p>targetname: but_open4 <BR><br />
+target: BA <BR><br />
+newtarget: sound_granted <BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>STEP 6: CONNECTING THE CODE LOCK TO THE DOOR</b><br><br></p>
+<p>Connecting the code lock to the door is essential, else the codelock is completely useless. To do this you need to create two small button <i>OUTSIDE</i> the map. <BR><BR></p>
+<p><b>The first button: </b><BR><BR></p>
+<p>targetname: sound_denied <BR><br />
+target: but_reset <BR><br />
+sound: Access Denied <BR><br />
+wait: 0.1 <BR><BR></p>
+<p><b>the second button: </b><BR><BR></p>
+<p>targetname: sound_granted <BR><br />
+target: but_door <BR><br />
+sound: Access Granted <BR><br />
+wait: 0.1 <BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>STEP 7: TARGETING THE DOOR</b><br><br></p>
+<p>Now we target but_door to what we want when the correct code is entered. We target it to a single func_door: <BR><BR></p>
+<p>targetname: but_door <BR><br />
+target: but_reset<BR><BR> </p>
+<p><i><<< NOTE!! The but_reset is vital to reset the code when the door has been opened. For example, in multiplayer maps this means the next play can not open the door, without re-entering the code</i><BR><BR></p>
+<p><hr color=black noshade width=75%>
+<p><b>CONCLUSION</b><br><br></p>
+<p>The codelock can be used again and again. I believe this will be cool in multiplayer maps, where the developer can have a "code" to enter a protect-room, or full with weapons. Imagine a button to open a door with lava under all the other players. Why not a turret? use your imagination!<BR><BR></p>
+<p>Finally I have included an flow diagram of all the triggers and buttons reqyired to make this work. It doesn't display to well here, so click and download:<br><br></p>
+<p><center><img border="0" width="450"  src="content/half-life/tutorials/passwdoors/code.jpg"></center><br><br></p>
+<p>Have fun with your code locks!<br><br></p>
+</body></html>

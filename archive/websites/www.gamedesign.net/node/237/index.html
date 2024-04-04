@@ -1,0 +1,290 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Sunlight - Part 2 - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Quake II</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/17">FAQ</a></li><li class="collapsed"><a href="node/603">Updates</a></li><li class="collapsed"><a href="node/263">Miscellaneous</a></li><li class="expanded"><a href="node/42">Tutorials</a><ul><li class="leaf"><a href="node/43">Advanced Brushes</a></li><li class="leaf"><a href="node/45">Area Light</a></li><li class="leaf"><a href="node/50">Clip Brush Q&A</a></li><li class="leaf"><a href="node/48">Colored Light</a></li><li class="leaf"><a href="node/595">Creating an outdoor area using Gensurf</a></li><li class="leaf"><a href="node/530">Custom door/plat/button sounds</a></li><li class="leaf"><a href="node/51">Environmental Maps</a></li><li class="leaf"><a href="node/241">Func_areaportal - 1 - Addendum</a></li><li class="leaf"><a href="node/242">Func_areaportal - 2 - Problems</a></li><li class="leaf"><a href="node/243">Func_areaportal - 3 - Common Problems</a></li><li class="leaf"><a href="node/52">Hint Brushes De-Mystified</a></li><li class="leaf"><a href="node/46">Jump pads in Q2? You betcha!</a></li><li class="leaf"><a href="node/47">Making ENV. Maps with Bryce 2</a></li><li class="leaf"><a href="node/561">Making Rain</a></li><li class="leaf"><a href="node/54">Partial Transparency</a></li><li class="leaf"><a href="node/53">Polygon Count Reduction</a></li><li class="leaf"><a href="node/235">Sunlight - Part 1</a></li><li class="leaf"><a href="node/237" class="active">Sunlight - Part 2</a></li><li class="leaf"><a href="node/55">Surface Properties and Content Properties</a></li><li class="leaf"><a href="node/238">Texture Blending</a></li><li class="leaf"><a href="node/44">The Absolute Beginner's Guide to Quake 2 Editing</a></li><li class="leaf"><a href="node/266">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/56">Timing in Quake 2</a></li><li class="leaf"><a href="node/57">Turrets</a></li><li class="leaf"><a href="node/49">Using Clip Brushes</a></li><li class="leaf"><a href="node/552">Using Text Editors for Mapping</a></li></ul></li><li class="collapsed"><a href="node/21">Entity Properties</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/237" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 43%;" class="foreground"></div></div><div class="percent">43%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 29%;" class="foreground"></div></div><div class="percent">29%</div><div class="total">Total votes: 7</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li><li><a href="node/2375">ehsfilxwwc</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8256" title="View user profile.">Geri Moran</a></li><li><a href="user/8255" title="View user profile.">goldapples</a></li><li><a href="user/8254" title="View user profile.">nquqy</a></li><li><a href="user/8253" title="View user profile.">qrexu</a></li><li><a href="user/8252" title="View user profile.">hhate</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 45 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Sunlight - Part 2</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/11" title="">Quake II</a> &raquo; <a href="node/42">Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/204" title="View user profile.">Miniwood</a> on Mon, 2004-04-19 20:36.</div>
+<h1>Sun part II</h1>
+
+<p>I swear, these guys are worse than Intel! Just when you think you have one radiosity program nabbed, someone goes and releases another.
+</p>
+<p>
+Actually, thanks goes to Tim Wright (Argh!) for making so many improvements. And thanks goes to Geoffry DeWan for getting the ball rolling. If you don't already have ArghRad, download it now!
+<BR><BR>
+<A HREF="http://www.planetquake.com/arghrad">Arghrad Homepage</A>
+</p>
+<h2>Contents</h2>
+      
+<h3>Why should I use something new...</h3>
+<ol>
+<li>
+<a href=node/237/#why>...when what I have works fine?            </a>
+</li>
+</ol>
+
+<h3>What's new?</h3>
+<ol>
+<li>
+<a href=node/237/#four>Did you say FOUR suns?</a>
+</li>
+<li>
+<a href=node/237/#shadow>Ambient shadow coloring</a>
+</li>
+<li>
+<a href=node/237/#diffusion>Shadow diffusuion</a>
+</li>
+<li>
+<a href=node/237/#alternate>Alternate aiming techniques</a>
+</li>
+</ol>
+<hr width=100%>
+<br><br>
+
+<h3>Why should I use something new...</h3>
+
+<div class="bodytext">
+<a name=why>...when what I have works fine?</a>
+</div>
+<p>
+Progress.
+</p>
+<p>
+For real, though, ArghRad is like a version update of gddqrad3. It fixes some of limitations of gdqrad3 that caused the shadows caused by sunlight to look blocky, and made some definite improvements (like ambient color control and multiple suns. It does all of this WITHOUT sacrificing support of gddqrad3 and qrad3.
+</p>
+
+<h3>What's new?</h3>
+<p>
+Here are all of the new keys available for the sun. If you're hungry for more, go to the online manual         at the Arghrad page.
+</p>
+
+<h5>
+&quot;_sun_angle&quot;<br>
+&quot;_sun_mangle&quot;<br>
+&quot;_sun_vector&quot;<br>
+&quot;_sun_diffuse&quot;<br>
+&quot;_sun_diffade&quot;<br>
+&quot;_sun_difwait&quot;
+</h5>
+<p>
+"_sun_angle" and "_sun_mangle" are aliases for the same function, as are "_sun_fade" and "_sun_wait", but that still leaves us with four new options, plus the ability to use up to four suns.
+</p>
+<div class="bodytext">
+<a name=four>Did you say FOUR suns?</a>
+</div>
+<p>
+Yes! You can now use up to four suns in your maps, each with their own color and angle. To use multiple suns, you would simply define them as you normally do, except you substitute "_sun2" "_sun3" and "_sun4" for "_sun" when entering information on your second, third, and fourth suns.
+</p>
+<p>
+You can use multiple suns on all of the _sun keys except "_sun_ambient".
+</p>
+<div class="bodytext">
+<a name=shadow>Ambient shadow coloring</a>
+</div>
+<p>
+You can color your ambient shadows now (the part that can't see the sun, but can see the sky). If you define a straight light value instead of a color value, the shadow color will default          to the average of all of your suns' colors. To define the color of the shadow, simply enter three values after the "_sun_ambient" key instead of one.
+</p>
+<h5>"_sun_ambient" "[red] [green] [blue]"</h5>
+<p>
+Each value represents the brightness of each individual color, so if the value entered were 120 150 50, the shadow color would have a minimum red brightness of 120, a minimum green brightness         of 150, and a minimum blue brightness of 50.    </p>
+<div class="bodytext">
+<a name=diffusion>Shadow diffusion</a>
+</div>
+<p>
+This feature is so freakin' cool, I can't contain myself! What shadow diffusion does is provide an buffer of hazy shadow between the shade and the direct sunlight. This can make your shadows look much smoother less harsh. To define the diffusion, simply enter a value less than the highlight value,
+and greater than the shadow value.
+</p>
+<h5>
+"_sun_diffuse"   "[value]"
+</h5>
+<p>
+To control the fade distance of the diffusion, Tim Wright has added the _sun_diffade and _sun_difwait keys. A value less than 1 will cause the diffusion to fade out slower, while a value greater than 1 will make it fade faster. Be aware, however, that if you use a large value, you may need to reduce         your -chopsky value (or else you will get a chunky shadow). This defaults to a value of 1, and any value entered will scale relative to the default. For example, if you entered a value of .5, the diffusion would fade twice as rapidly as it          did at 1.
+</p>
+<h5>
+"_sun_diffade"   "[value]"
+</h5>
+<h5>
+"_sun_difwait"   "[value]"
+</h5>
+<div class="bodytext">
+<a name=alternate>Alternate aiming techniques</A>
+</div>
+<p>
+There are now two additional ways to aim your sun (both of which you can substitute for the "_sun" "targetname" method. The first method is angle aiming. This uses pitch and yaw to aim. This method is the same as is used to aim info_player_intermission minus the roll.
+</p>
+<p>
+The yaw is the position on the z axis. You aim yaw the same way you aim a door, or a player facing, with 0 pointing east, and moving counter-clockwise. Pitch is the angle on the horizon. Pitch values range from negative 90 to positive 90. -90 points straight down, and 90 points straight up.
+</p>
+<h5>
+"_sun_angle"    "[yaw] [pitch]"
+</h5>
+<h5>
+"_sun_mangle"    "[yaw] [pitch]"
+</h5>
+<p>
+The second method is vector aiming. By using vector         aiming, you enter a vector coordinate into the value field, and ArghRad will calculate the angle from the origin (0 0 0) to the vector (x y z) coordinates you entered. The resulting angle         will be the sun's angle.
+</p>
+<h5>
+"_sun_vector"    "[x] [y] [z]"
+</h5>
+<br><br><br><br><br>
+<center>      
+This was written by Michael N. Meadows, AKA Ryche AKA eg0. My sources were as follows: Me, the text file included with ArghRad 1.0, Tim Wright, and a lot of hard work. Feel free to quote me. Feel free to steal my words and claim them as your own. Your conscience is all that stands in your way. Most important of all, however, is that you have fun.</center><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/235" title="View the previous page.">previous</a></div><div class="next"><a href="node/21" title="View the next page.">next</a></div><div class="up"><a href="node/42" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Sunlight - Part 1</div><div class="next">Entity Properties</div></div></div></div></div>
+
+<div class="links"><a href="book/print/237" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

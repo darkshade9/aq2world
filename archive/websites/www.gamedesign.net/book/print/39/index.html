@@ -1,0 +1,42 @@
+<html><head><title>Turret</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="39" name="39" class="book-h1">Turret</h1><h3>Quake 2 Turret Entities</h3><p>
+
+	<!-- Start description -->
+
+	<p><a name="#turret_base"><b>turret_base</b></a> - This enitity along with <b>turret_breach</b> and <b>turret_driver</b> all must be used together to create those cool gun turrets that are in 2 of the quake2 levels. These entities are by far the hardest I have come across to use in a level and only advanced level editors should attempt this. I would of never of figured it out if it wasn't for steve at the <a href="http://www.planetquake.com/QuakeLab/QuakeLab2/" target="_top"><b>quakelab</b></a> telling me to specify an origin for the turret_breach and turret_base. We will get to that though in due time.<br><br>
+	
+	The first thing you need to do is to <b>create the gun</b>. This might take awhile to make it look good. Here is a shot of the id one:<br>
+	
+	<br><center><img src="/content/quake2/tutorials/turret/gunpic1.JPG" width=250 height=143 border=0 alt="gunpic"></center><br><br>
+	
+	You must also make everything <b>orientated towards angle 0</b>(straight right from a top view), The trick is to kind of <b>make it into 2 parts. The barrel and the base.</b> the barrel is the part that is going to be the turret_breach and the base is going to be the turret_base. Also take into consideration that the creature driving the gun will be standing on the turret_breach so actually <b>the turret_breach will include the barrel and the platform that the turret_driver will be standing on.</b> Here is another visual example to show you what the hell I am talking about:<br><br><center>here is the barrel which includes the barrel and the platform for the driver to stand on(<b>turret_breach</b>)<br>
+	
+	<img src="/content/quake2/tutorials/turret/barrel.jpg" width=250 height=52 border=0 alt="barrel"><br><br>
+	
+	Here is the base(<b>turret_base</b>)<br>
+	
+	<img src="/content/quake2/tutorials/turret/base.JPG" width=250 height=146 border=0 alt="turret_base"><br><br>
+	
+	Here is the barrel(<b>turret_breach</b>) and the base(<b>turret_base</b>) together<br>
+	
+	<img src="/content/quake2/tutorials/turret/both.jpg" width=250 height=70 border=0 alt="turret_breach and turret_base"></center><br><br>
+	
+	Once you get these 2 parts made then you must <b>select the barrel and make it a turret_breach, and select the base and make it a turret_base.</b> Now you must <b>give the turret_breach a targetname</b>. So for this example lets give it a targetname of breach. <b>targetname=breach</b>. The turret_breach and the turret_base go together so <b>they must be teamed</b>. To do this give each of these entities the key value pair <b>team</b> with the same value. For this example lets give them a team name of gun. So on <b>both</b> the turret_breach and the turret_base there should be a key value pair of <b>team gun</b> Now you must decide which direction you want your gun to point in the game and <b>set the key value pair angle to what ever direction you want the gun to point.</b> <b>BOTH</b> the turret_breach and the turret_base should have the same angle. For this example we will set the angle to be 180. <b>angle 180</b>.<br><br>
+	
+	Next thing you must do is create the target that the gun will shoot at. To do this you must <b>create an info_notnull entity and place it at the tip of the barrel and give it a targetname.</b> For this example our info_notnull will have a targetname of tip. <b>targetname tip</b>. Then <b>set the target of the turret_breach to the info_notnull</b>. <b>target=tip</b>.<br><br>
+	
+	Next thing you need to do is to <b>create the turret_driver and target it to the turret_breach.</b> target=breach. Place the turret_drive where you want him to be standing(on the platform you made him on the turret_breach)<br><br>
+	
+	Now to the part that I couldn't figure out but steve at the <a href="http://www.planetquake.com/quakelab/quakelab2/" target="_top">quakelab</a> helped me out on. For the turret_breach and the turret_base <b>you must have a brush set as an origin brush</b>. These will keep gun from rotating all around the room and looking really messed up. So the turret_breach <b>must</b> have an origin brush and the turret_base <b>must</b> have an origin brush. To make a brush an origin brush you must <b>change the surface property</b> of that brush and set the origin flag. This is done differently for each editor. Check your manual. It is better to select origin brushes that for breach and the base that are near each other. Here is a diagram of what brushes i made into origin brushes.<br><br>
+	
+	<center><img src="/content/quake2/tutorials/turret/complete.JPG" width=400 height=168 border=0 alt="complete"></center><br><br>
+	
+	Thats about all there is too it. As you can see this is a <b>very</b> difficult entity to use. Not very fun at all. I urge you to download my <a href="/content/quake2/tutorials/turret/rust7.zip?PHPSESSID=6f1d28fbb2546efec572b7f97cde4947">example</a> map if you are going to try do this. If you still have problems post your question in the <a href="http://forums.gamedesign.net/forums">discussion</a> board and I will try to help you out.<br><br>
+	
+	<p><a name="#turret_breach"><b>turret_breach</b></a> - See turret_base
+	
+	<p><a name="#turret_driver"><b>turret_driver</b></a> - See turret_base
+	<!-- End description -->
+
+	</ul></body></html>

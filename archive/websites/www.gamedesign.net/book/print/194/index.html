@@ -1,0 +1,33 @@
+<html><head><title>Big Block Method of Error Finding</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="194" name="194" class="book-h1">Big Block Method of Error Finding</h1><b>Big Block Method of Error Finding</b><br />
+<br />
+What is the BBMoEF? Basically its a method of breaking your map down into different peices to determine which part is causing your problem.<br />
+<br />
+With an unknown or unusual error, there could be a  million different potential causes - too many entities of this type, map geometry too complex, this or that memory being maxed out, etc.<br />
+<br />
+Assuming your problem has a single cause, you can strategically eliminate the suspects through trial and error - get rid of half your "stuff" to see which half is causing the problem, then try half of half, and <i>keep winnowing down until you isolate the problem</i>. This is similar to the "Big Block Method of Leak Finding", except you are looking objects/entities causing an error rather than a leak.<br />
+<br />
+Here is an <i>oversimplified</i> breakdown:<br />
+  <img src="http://www3.hmc.edu/~nalger/BBMoEF_s.png"> <br />
+<br />
+Now lets take an example - lets say Jim has an unknown error. To solve this, he decides to use the BBMoEF.<br />
+<br />
+-----<br />
+<br />
+First Jim hides all the entities in the map and recompiles with visible objects only. For the sake of example, lets say that <b>when Jim got rid of all the entities, the error went away</b>. Now Jim KNOWS that the <b>error is with some or all of the entities</b>, and in the above diagram He blocks off all the worldspawn stuff:<br />
+  <img src="http://www3.hmc.edu/~nalger/BBMoEF_1_s.png">  <br />
+<br />
+Next, Jim hides all the point entities, and the error goes away. Thus Jim knows that the point entities must be the problem and can focus only on them.<br />
+  <img src="http://www3.hmc.edu/~nalger/BBMoEF_2_s.png"><br />
+<br />
+After that, Jim hides half of his point entities of which (for the sake of example) they are all of types that are in the diagram -- Jim hides all the infrastructure entities and light entities, but the error remains. Therefore Jim can cross off all the infrastructure and light entities from the list of potential error-causers.<br />
+  <img src="http://www3.hmc.edu/~nalger/BBMoEF_3_s.png">  <br />
+<br />
+Finally, Jim <b>hides all the sound entities but the error remains</b>. By deduction, what can Jim conclude is causing his errors?<br />
+<br />
+<a href="http://www3.hmc.edu/~nalger/BBMoEF_4_s.png">Answer Here</a><br />
+<br />
+-----<br />
+<br />
+In real life it may not be so cookie-cutter as this, and there may be multiple factors contributing to the problem, or entire groups may be causing the problem, but this process is basically a good strategy to get an idea for whats wrong with your map.</body></html>

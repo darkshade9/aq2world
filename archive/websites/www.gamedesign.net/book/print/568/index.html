@@ -1,0 +1,97 @@
+<html><head><title>Making a second room</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="568" name="568" class="book-h1">Making a second room</h1><!-- tutorial2 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making a second room -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<p>If you haven't already, please take a look at tutorial number #1 if something is unclear here. We will use the room we made in tutorial number #1. I had a few complaints that I used to many pictures, so the tutorial page loaded really slow. I am really sorry about this, but I will keep the pictures because I think it's easier to understand what I'm talking about. Let's get started!</p>
+<br>
+
+<p>First off, I must give you this tip, that I forgot, or just didn't mention in the tutorial #1. Look at the bar above the four views. You should find a button that looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/tvm.jpg"><br>
+</center>
+<br>
+<p>If your Q3Eradiant becomes slow when your map is growing larger and larger, its about 99% because of the 3Dview render of your map. If the map is big, the more the 3D view your 3d-card has to render, and the slower it gets doing so. Simply push this button. Now you'll see a few options, where "Wireframe" is on top, and "Trilinear" at the bottom. If I'm not to wrong I think the "Nearest Mipmap" is set to default (it's the one that's in use when you install Q3Eradiant for the first time). I had to change that to "Nearest" when I made my map "jondm1", you might have to do the same. When you do this, observe that the 3D view quality gets worse By changing it back it will get better again. Change it until you find an option that fits your computer. </p>
+<br>
+
+<p>When I left you last time, we had just made one room, with the same texture on all sides of the room, including a Ceiling and a Floor. Now we will make two rooms, and change a few of the textures. This is how it looked when we stopped last time:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/tut1done.jpg"><br>
+</center>
+<br>
+<p>I received an e-mail from "Jim Franchetti", who asked how to do an outdoor level, so I thought since we're about to change the texture on the floor and on the ceiling, let's make the ceiling like a sky! </p>
+<br>
+
+<p>First of all, we need to change the texture of the floor, and to do this we need to select the floor cube. The easiest way to do this is to hold shift and push SHIFT + left mouse button on the floor in the 3Dview. It's really hard to try catching the floor in any other view, so i highly recommend that you move your camera either with your middle mouse button in the three views, or by using the arrows on your keyboard. When you have selected the floor, it should be red like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/selectfloor.jpg"><br>
+</center>
+<br>
+<p>Now we load a floor texture, we do this by pushing "Textures" in the menu, and choose for example "base_floor". It takes a few seconds and when the cursor is an arrow again, push "T", and open the small window in the lower left (just like in Tutorial #1). You can now choose a texture, and you can see in the 3D view how the texture change when you push a new texture. When you're ready minimize the "Textures" window, and the floor is finished. Now your 3D view might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/textfloor.jpg"><br>
+</center>
+<br>
+<p>Now we have the ceiling left. Push ESC to deselect the floor, and select the Ceiling, like we did with the floor before. We need to have a sky texture on this one, and you will find under "Textures" in the menu.</p>
+<br>
+
+<p>Select the word "skies", and wait until the textures areloaded. Then open the Textures window in the low left. Here you see a few sky textures. I will choose the texture called [pj arena2sky] (it's one of the blue ones). </p>
+<br>
+
+<p>When you've selected your texture, minimize the "Textures" window. Now the sky is finished, wasn't really hard was it? =). Now for some trickier stuff.</p>
+<br>
+
+<p>Now we will combine two rooms with a corridor between them. First of all, make the other room. We do as we did in Tutorial #1. First choose a texture, so we don't make a room with the Sky texture, then drag out a cube (Be sure that the floor of the new room is in the same level as the old room (also remember that the room gets 8 units smaller from all sides), and make it hollow with the bottom, located above the views. A small tip is that you can move your coordinate system by holding down the right mouse button and moving the mouse. You can also zoom in and out using "insert"-key and "delete"-key (deleting objects, like entities and cubes from your map is made by the "Backspace" key) Let's, you're ready with the second room? Then it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/tworoom.jpg"><br>
+</center>
+<br>
+<p>This next step to make a corridor is fairly simple too. First push ESC to un/deselect (I don't know what sounds best =) the new room. And make another smaller cube between the two rooms (sounds strange? I know, it's hard to explain, hope this picture help)</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/mellancub.jpg"><br>
+</center>
+<br>
+<p>(if you still don't get it, send me a mail, this is kinda tricky) Don't make this new cub hollowed with the "hollow" command, it's not necessary. Our next step is to create a cube that is a little bit smaller than this cube. We put this smaller cube inside the bigger cube, and be sure that the smaller cube reaches the two rooms too, here's two pictures showing what I mean (it's a TOP, and FRONT view):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/holwcub1.jpg"><br><br>
+<img src="./content/quake3/tutorials/tutorial2/holwcub2.jpg"><br>
+</center>
+<br>
+<p>Now we want to make a hole where the new smaller cube is, right. We make a hole by pushing this button:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/hollowbutton.jpg"><br>
+</center>
+<br>
+<p>It's just to the left from the "Hollow" button. This button called "CSG Subtract". Push this button, only once. You will probably see no difference after pushing this button, not until you push "Backspace" on your keyboard (this will delete the small cube). Now you can se the small corridor. Yeah! It should look something like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial2/corridordone.jpg"><br>
+</center>
+<br>
+<p>Now you can start changing textures in the new room. A small tip if you want to use the same floor texture as in the other room is to select the floor you want to change texture on, and then push your middle mouse button in the 3D view on the texture you want to have. This way you don't need to brows threw all the textures all over again to find the same texture twice =). </p>
+<br>
+
+<p>I hope the pictures explain the stuff I couldn't explain good enough, but be sure to give me a mail if you have ANY questions! Keep up the good work!</p></body></html>

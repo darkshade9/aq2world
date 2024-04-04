@@ -1,0 +1,930 @@
+<html><head><title>Kingpin</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="128" name="128" class="book-h1">Kingpin</h1><!-- by Gard (stephen@geol.uwa.edu.au) 2004 -->
+	 
+<h3>Kingpin</h3>
+
+</p>The Kingpin sections covers the tutorials, Entity descriptions, Frequently Asked Questions (FAQ) stored on the RUST web pages. Further contribution is greatly welcomed.</p>
+
+</p>If you have any immediate questions check out the <a href="http://forums.gamedesign.net/viewforum.php?f=12">RUST Kingpin Forums</a> for fast feedback on any Kingpin Questions, Chat, Gossip ... etc. What these guys don't know isn't worth knowing</p>
+<!--break-->
+      <h1 id="130" name="130" class="book-h1">FAQ</h1><ul>Frequently Asked Questions about Kingpin.</ul><h1 id="157" name="157" class="book-h2">Common KP FAQ</h1><ul><!-- by Method (yanostrestov@yahoo.com) 2004 -->
+	 
+<h3>KINGPIN</h3>
+<blockquote>
+		COMMON KINGPIN FAQ - by [DS]Method<br>
+		<a href="yanostretsov@yahoo.com">Updates contact RUST</a>
+</blockquote>
+<br><br>
+
+<b>Preface:</b><br>
+<p>Here's a bunch of KP frequently asked questions.
+Including mapping, gameplay and common questions.</p>
+
+<hr noshade color="black"><br>
+
+<h3>MAPPING</h3>
+<blockquote>
+  <p><b>When I try to compile a map, the DOS screen flashes fast and closes.</b><br>
+To compile your map you need to copy <font color = "red">kpbsp.exe</font>, <font color = "red">kprad.exe</font> and <font color = "red">kpvis.exe</font> into Kingpin/main/maps folder. You can find those files in the Kingpin/kprad folder.</p>
+
+  <p><b>When I set texture light flag in kprad's Surface Inspector, no matter what the color of texture light is always white.</b><br>
+When Xatrix was working on KP, they didn't have time to update ArgRad, and since KP based on Quake2 engine, it used wal files. After finishing KP, Xatrix recompiled textures to tga format, but forgot about wal lighting. You need to search the net for Kingpin wal textures.</p>
+
+  <p><b>I made Deathmatch/Bagman map and when I try to load it, it loads in SinglePlayer mode.</b><br>
+To load DM/BM map, you need to type in console "<font color=red>deathmatch 1</font>", or start game with shortcut parameter "<font color=red>+deathmatch 1</font>".</p>
+
+  <p><b>If I want to check the map design, do I have to wait all the rad and vis time?</b><br>
+You can pick "<font color=red>Bsp | bsp_only (novis/norad)</font>" in kprad toolbar. It'll take less than a minute to compile, but you won't see lights and shadows in your map, it'll be fullbright.</p>
+
+  <p><b>If I created entity, is it possible to undo it?</b><br>
+Select your entity and pick "<font color=red>Selection | Ungroup entity</font>" in kprad toolbar.</p>
+
+  <p><b>Is it possible to preview how func_door, func_train, etc works in game?</b><br>
+Select your entity and press "<font color=red>Ctrl-A</font>", it won't work for specific KP entities, only Quake2 entities.</p>
+
+  <p><b>When I hire guys in my map they can't follow me.</b><br>
+You need to have navdata file in navdata folder. Load your map and type in console "<font color=red>nav_debug 1</font>" and "<font color=red>nav_dynamic 1</font>", now run everywhere you want your hired guys to follow. When you're done quit the game and navdata file will save itself in navdata folder.</p>
+</blockquote>
+
+
+
+<h3>GAMEPLAY</h3>
+<blockquote>
+  <p><b>When I shoot at func_explosive or blow up characters, my KP crashes.</b><br>
+You need to install the latest <a href="http://www.gamedesign.net/content/kingpin/kingpin_v121_patch.exe">KP patch - v1.21.</a></p>
+
+  <p><b>How can you zoom in KP?</b><br>
+You need to use "<font color=red>fov</font>" - field of view. <font color = "red">fov 90</font> is the default fov.
+<font color = "red">fov 180</font> is the highest fov. The smaller the number the more you zoom. Some players like to play with <font color = "red">fov 120</font> cause you can see alot more than with the default fov.</p>
+
+  <p><b>What's doublejump?</b><br>
+Doublejump is a kind of jump. To do it, you need to find something small (less then 64 * 64 brush), then run toward it and before touching it, press jump twice fast. If you did it correctly you should jump higher than normal jump.</p>
+
+  <p><b>What's bunnyhopping?</b><br>
+Bunnyhopping is another kind of jump. To do it, you should press right strafe and turn your mouse 45 degrees to the right side, then press jump, keep jumping and cirle, you'll gain speed. You can use right or left strafe to bh or you can use them in combination. Don't press forward, the bunnyhop won't work, use only left or right strafe.</p>
+
+  <p><b>Is there a weapon against bazooka?</b><br>
+Flamethrower is a great weapon against bazooka, flame kills rockets, so if you aim at the enemy's bazooka he'll blow himself up.</p>
+</blockquote>
+
+
+
+<h3>COMMON</h3>
+<blockquote>
+  <p><b>What voices Cypress Hill did in KP?</b><br>
+They did voices of bartender, Momo and Jesus.</p>
+
+  <p><b>What things didn't make into final version of KP?</b><br>
+There was different kinds of mods for weapons. Three kinds of armor, chemical, flamable and bulletproof. Bumpmapping and drivable car, etc.</p>
+
+  <p><b>Was there any movies, which inspired KP?</b><br>
+Some of KP dialog was inspired by Pulp Fiction and
+Big Lebowski.</p>
+</blockquote></ul><h1 id="158" name="158" class="book-h1">Info</h1><ul>Here you can find some info on KP, links and files.</ul><h1 id="189" name="189" class="book-h2">Console Commands</h1><ul><!-- (c)2004 [DS]Kingpn_Xatrix -->
+
+<h3>CONSOLE COMMANDS</h3>
+
+To enable the ability to bring up the console during play<br>add <font color = "red">"+set developer 1"</font> to the command line in you<br>windows shortcut.<br><br>
+
+<h4>CHEATS</h4>
+<b>immortal</b> - god mode<br>
+<b>give all</b> - gives every item, weapon, etc.<br>
+<b>notarget</b> - enemies can't see you.<br><br>
+
+<h4>MAPPING</h4>
+<b>r_speeds 1(0)</b> - shows r_speeds and fps.<br>
+<b>gl_showtris 1(0)</b> - shows polygons, won't work if you don't<br> have the full OpenGL support graphics card.<br>
+<b>nav_debug 1(0)</b> - debug the map's navdata.<br>
+<b>nav_dynamic 1(0)</b> - enables to make navdata.<br><br>
+
+<h4>OTHER</h4>
+<b>noclip</b> - fly through walls.<br>
+<b>map xxx</b> - load map (xxx.bsp or xxx), load demo <br>(xxx.dm2) or picture (xxx.tga), where xxx is the name of the map.<br>
+<b>exec xxx</b> - execute config, where xxx is the config name.<br>
+<b>fov xxx</b> - field of view, where xxx is the number. Default fov is 90.<br>
+<b>record xxx</b> - record demo, where xxx is the demo name.<br>
+<b>stop</b> - stop recording demo.<br>
+<b>togglecam</b> - toggle chase-cam mode.<br>
+<b></b></ul><h1 id="160" name="160" class="book-h2">Files</h1><ul><!-- (c) 2004, [DS]Kingpin_Xatrix -->
+
+<h3>FILES</h3>
+
+<b>
+<a href = "http://gamedesign.net/content/kingpin/kingpin_v121_patch.exe">KP patch v1.21</a></b><br>
+Few maps and a bunch of bug fixes. <br><br>
+
+<b>
+<a href = "http://gamedesign.net/content/kingpin/kpsdk.zip">KP sdk</a></b><br>
+SDK includes source code, program to make mdx files and<br>a couple of map examples.<br><br>
+
+<b>
+<a href = "http://gamedesign.net/content/kingpin/XatrixTEXTURES.zip">Xatrix unreleased textures</a></b><br>
+Additional KP textures, which weren't released with KP.<br><br>
+
+<b>
+<a href = "http://gamedesign.net/content/kingpin/kp_starter_pack.zip">KP starter pack</a></b><br>
+You need this pack if you want to play online, includes<br> MonkeyMod, a good program for blocking cheats and hacks.</ul><h1 id="159" name="159" class="book-h2">Links</h1><ul><!-- (c) 2004, [DS]Kingpin_Xatrix -->
+
+<h3>LINKS</h3>
+
+<b>
+<a href = "http://www.gmistudios.com/">Gray Matter Studios, Inc.</a></b><br><br>
+Former Xatrix Entertainment, Inc.<br><br>
+
+<b><a href = "http://www.gamedesign.net/content/kingpin/kingpin_xatrix/index.htm">Kingpin_Xatrix's Turf</a><br><br></b>
+
+Here's the link to my website, where you can find <br>everything about Kingpin:Final Crime and [DS] or Da <br>Scumbags, including news, files, scrnshots, faq, <br>tutorials and links.<br><br>
+
+<b>
+<a href = "http://www.cypressonline.com/">Cypress Hill</a></b><br><br>
+A group, who brought us official KP soundtrack and their voices.<br><br>
+
+<b>
+<a href = "http://www.kingpinforever.com/">KP4EVER</a></b><br><br>
+KP info, news, maps, skins, models, etc.<br><br>
+
+<b>
+<a href = "http://www.planetkingpin.com/">PlanetKingpin</a></b><br><br>
+KP info, news, and some old KP scrnshots.<br><br>
+
+<b>
+<a href = "http://forums.gamedesign.net/viewforum.php?f=12&sid=46717628251764220e3ee1967f2abb53">Rust KP Forum</a></b><br><br>
+Rust KP Forum, news and info.<br><br>
+
+<b><a href = "http://prefabs.gamedesign.net/game.php3?game_id=11&num=0">KP prefabs</a></b><br><br>
+Rust KP prefab website.</ul><h1 id="204" name="204" class="book-h1">Kingpin:Final Crime</h1><ul><h3>METHOD'S TURF</h3>
+<p><b><a href = "http://method.gamedesign.net">Method's Turf</a><br><br></b></p>
+<p>Here's the link to the Method's Turf, where you can find everything about Kingpin: Final Crime, Doom 3 maps, articles, tutorials and interviews.</p></ul><h1 id="131" name="131" class="book-h1">Tutorials</h1><ul>Miscellaneous Kingpin Tutorials</ul><h1 id="548" name="548" class="book-h2">Compiling Maps In KPRadiant</h1><ul><h3>Compiling Maps In KPRadiant </h3>
+- by Zirco<br><br>
+
+<b>Introduction:</b><br><br>
+
+Compiling is probably the most important thing you must learn in mapping. This tutorial will show you how to compile your map to bsp format in QERadiant.<br><br>
+
+<b>Step 1:</b><br><br>
+
+If you have Kingpin installed to a custom directory or on a different hard drive letter:<br><br>
+
+
+<b>Step 2:</b><br><br>
+
+By this time, you should have a map with a light entity in it. If not build one now. Remember, if your map does not have any light entities or light brushes in it, all you will see is dark when it comes to play your map.<br><br>
+
+Save your map to .../Kingpin/main/maps, the directory may not exist so you will have to make a new folder called 'maps' in your 'main' folder. Next save your map to the .../Kingpin/KPRad directory when it comes time to compile and test your map. It is important that both maps are the exact same thing. Now go to the 'bsp' menu and click 'bsp_FullVis'. A DOS window should pop up then everything should run okay, if you get any errors and the compile process stops, it means your project file settings is not correct.<br><br>
+
+Although it may seem useless and a little time consuming to save your map to two different locations, it is required for it to work.<br><br>
+
+<b>Step 3:</b><br><br>
+
+When the compile process is done, close the window and QERadiant if you want then run Kingpin. Type in the console "map x" without quotation marks and x being the name of your map. If you do not have the console enabled, startup shortcut with "+set developer 1" without the quotation marks.<br><br>
+
+<b>Step 4 (optional):</b><br><br>
+
+Other BSP compile types:
+If 'bsp_FullVis' takes too long or if you're map is huge, then try 'bsp_FastVis' or if you want to see your map with full brightness which takes only a second to compile then try 'bsp_only (novis/norad)'. When releasing a final map, use bsp_FullVis.<br><br>
+
+</ul><h1 id="138" name="138" class="book-h2">How to create character witch cigar, fedora hat, etc.?</h1><ul><h3>COUNT</h3>
+
+by Method
+<p>
+
+<p><i>Count</i> defines character items and is used to assign a charatcter with different hat's and cigar's</p>
+
+<hr noshade color="black"><br>
+
+<p>The <i>count</i> defines four types of characters items and is set with the enitity inspector. A <i>count</i> value of zero will assign no character item. The four types of character items are:</p>
+
+<blockquote>
+<b>1</b>: Cigar,<br>
+<b>2</b>: Fedora hat,<br>
+<b>4</b>: Stetson hat; and<br>
+<b>8</b>: Cap.<br>
+</blockquote>
+
+<p><b>Example 1:</b><br>
+Open entity inspector for any selected character and set</p>
+
+<blockquote>
+<font color = "red">
+Key	count</br>
+Value	9</br>
+</font>
+</blockquote>
+
+<p>The character entity will be assigned both a cap (<b>8</b>) and cigar(<b>1</b>). Where a value of 9 = 8 + 1.</p>
+
+<p><b>Example 2:</b><br>
+Open entity inspector for any selected character and set</p>
+
+<blockquote>
+<font color = "red">
+Key	count</br>
+Value	5</br>
+</font>
+</blockquote>
+
+<p>The character entity will be assigned both a stetson hat (<b>4</b>) and cigar (<b>1</b>). Where a value of 5 = 4 + 1.</p>
+
+<p><b>Example 3:</b><br>
+Open entity inspector for any selected character and set</p>
+
+<blockquote>
+<font color = "red">
+Key	count</br>
+Value	2</br>
+</font>
+</blockquote>
+
+<p>The character entity will be just assigned a Fedora hat and will not have a cigar (poor guy!!!)</p>
+<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/548" title="View the previous page.">previous</a></div><div class="next"><a href="node/137" title="View the next page.">next</a></div><div class="up"><a href="node/131" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Compiling Maps In KPRadiant</div><div class="next">How to create character's combattarget?</div></div></div></div></ul><h1 id="137" name="137" class="book-h2">How to create character's combattarget?</h1><ul><h3>COMBATTARGET</h3>
+
+by Method
+<p>
+
+<b>
+When the cast reaches this marker, they'll take on this combattarget.
+</b><br><br>
+
+Example use: Select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	combattarget<br>
+Value	combat1<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+
+Select path_corner_cast and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	combat1<br><br>
+</font>
+
+Value is the targetname of path_corner_cast.<br><br>
+
+Place it away from the character.<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/138" title="View the previous page.">previous</a></div><div class="next"><a href="node/140" title="View the next page.">next</a></div><div class="up"><a href="node/131" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">How to create character witch cigar, fedora hat, etc.?</div><div class="next">How to create character's deathtarget?</div></div></div></div></ul><h1 id="140" name="140" class="book-h2">How to create character's deathtarget?</h1><ul><h3>DEATHTARGET</h3>
+by Method
+<p>
+<b>
+Deathtarget used with characters to trigger other entities.
+</b><br><br>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	deathtarget<br>
+Value	startmovie<br>
+</font><br>
+Value is the targetname of the entity, which will activate after<br>
+you kill character.<br><br>
+You can enter any targetname for the entity.
+<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/137" title="View the previous page.">previous</a></div><div class="next"><a href="node/142" title="View the next page.">next</a></div><div class="up"><a href="node/131" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">How to create character's combattarget?</div><div class="next">How to create characters with different kinds of head?</div></div></div></div></ul><h1 id="142" name="142" class="book-h2">How to create characters with different kinds of head?</h1><ul><h3>HEAD</h3>
+by Method
+<p>
+<b>
+Head used with characters for different kinds of head.<br><br>
+
+Bitch's head:<br><br>
+
+Bald		1<br>
+Pony tail	2<br>
+Default		0 or anything else<br><br>
+
+Punk's head:<br><br>
+
+Bald		1<br>
+Ski		2<br>
+Weld		3<br>
+Default		0 or anything else<br><br></b>
+
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	head<br>
+Value	1<br><br>
+</font>
+This character will spawn bald.
+
+</ul><h1 id="153" name="153" class="book-h2">How to create characters with different scale?</h1><ul><h3>SCALE</h3>
+by Method
+<p>
+<b>
+Scale used as size of the character.<br>
+</b><br>
+Example use:<br><br>
+<font color = "red">
+Key	scale<br>
+Value	1.05<br><br>
+</font>
+Value is the size of a character. This scale is Nicki
+Blanco size. So if you want to create a small size,
+use scale 0.85.
+</ul><h1 id="148" name="148" class="book-h2">How to create cutscene?</h1><ul><h3>How to create cutscene?</h3>
+by Method
+<p>
+<p>This is an example of how to use a camera to be targeted from a misc_cutscene_trigger.<p> 
+
+<p><hr color=black noshade width=75%><p>
+
+<h3>Misc_cutscene_trigger Options:</h3>
+
+<b>targetname</b> - camera target ID.<br><br>
+<b>cameraorigin</b> - X Y Z camera start position.<br><br>
+<b>cameraangle</b> - X Y Z start angles.<br><br>
+<b>rotate</b> - X Y Z rotational velocity during cut scene.<br><br>
+<b>cameravel</b> - [forward] [right] [up] speed to move from initial angle.<br><br>
+<b>cameravelrel</b> - [forward] [right] [up] speed to move relative to current frame angle.<br><br>
+<b>wait</b> - cut scene length in seconds (default 5).<br><br>
+<b>target</b> - next camera to target.<br><br>
+<b>target2</b> - [NOT WORKING!!] camera angle points to this entity (overides other angle commands).<br><br>
+<b>deadticks</b> - fov for this camera.<br><br>
+<b>duration</b> - fade out time.<br><br>
+<b>reactdelay</b> - time into camera to start fading out.<br><br>
+
+<p><hr color=black noshade width=75%><p>
+
+<h3>Example:</h3>
+
+Create misc_cutscene_trigger and open Entity inspector.<br><br>
+
+<font color = "red">
+Key	duration<br>
+Value	1<br><br>
+</font>
+Value is the fade out time.<br><br>
+<font color = "red">
+Key	target<br>
+Value	cam_1<br><br>
+</font>
+Value is the targetname of misc_cutscene_camera.<br><br>
+
+Create misc_cutscene_camera and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	cam_1<br><br>
+</font>
+Value is the camera target ID.<br><br>
+<font color = "red">
+Key	name<br>
+Value	cut_scene/cut1.wav<br><br>
+</font>
+Value is the sound name to play.<br><br>
+<font color = "red">
+Key	cameraangle<br>
+Value	52 35 0<br><br>
+</font>
+Value is the X Y Z start angles.<br><br>
+<font color = "red">
+Key	cameraorigin<br>
+Value	-2071 2534 263<br><br>
+</font>
+Value is the X Y Z camera start position.<br><br>
+<font color = "red">
+Key	cameravel<br>
+Value	7 50 -48<br><br>
+</font>
+Value is the [forward] [right] [up] speed to move from <br>initial angle.<br><br>
+<font color = "red">
+Key	cameravelrel<br>
+Value	0 10 0<br><br>
+</font>
+Value is the [forward] [right] [up] speed to move relative <br>to current frame angle.<br><br>
+<font color = "red">
+Key	reactdelay<br>
+Value	5<br><br>
+</font>
+Value is the time into camera to start fading out.<br><br>
+<font color = "red">
+Key	wait<br>
+Value	15<br><br>
+</font>
+Value is the cut scene length in seconds (default 5).<br>
+<font color = "red">
+Key	target<br>
+Value	cam_2<br><br>
+</font>
+Value is the next camera to target.<br><br>
+<font color = "red">
+Key	target2<br>
+Value	cam_1_viewtarget<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+<font color = "red">
+Key	delay<br>
+Value	5<br><br>
+</font>
+Value is the time into camera to start fading out.<br><br>
+<font color = "red">
+Key	accel<br>
+Value	0.3<br><br>
+</font>
+Value is the camera acceleration.<br><br>
+<font color = "red">
+Key	decel<br>
+Value	0.3<br><br>
+</font>
+Value is the camera deceleration.<br><br>
+
+Create info_player_start and open Entity inspector.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	225<br><br>
+</font>
+Value is the opening direction.<br><br>
+Place info_player_start inside misc_cutscene_trigger.<br><br>
+
+Create path_corner_cast and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	cam_1_viewtarget<br><br>
+</font>
+Value is the path_corner_cast target ID.<br><br>
+
+I used sr1.map cutscene as an example.</ul><h1 id="154" name="154" class="book-h2">How to create fixed size trigger?</h1><ul><h3>TRIGGER_RELAY</h3>
+by Method
+<p>
+<b>
+This fixed size trigger cannot be touched, it can only be <br>fired by other events.</b><br><br>
+
+
+Example use: create func_button and open Entity inspector.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	0<br><br>
+</font>
+Value determines the opening direction.<br><br>
+<font color = "red">
+Key	lip<br>
+Value	5<br><br>
+</font>
+Value is the override the default 4 pixel lip remaining at<br> end of move.<br><br>
+<font color = "red">
+Key	sounds<br>
+Value	4<br><br>
+</font>
+Value is the sound number.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t86<br><br>
+</font>
+Create trigger_relay and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t86<br><br>
+</font>
+Value is the trigger_relay target ID.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t88<br><br>
+</font>
+Value is the targetname of target_speaker.<br><br>
+
+Create target_speaker and open Entity inspector.<br><br>
+<font color = "red">
+Key	spawnflags<br>
+Value	4<br><br>
+</font>
+Value is the flag reliable.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t88<br><br>
+</font>
+Value is the target_speaker target ID.<br><br>
+<font color = "red">
+Key	noise<br>
+Value	world/pawnbuzz<br><br>
+</font>
+Value is the path for the sound.<br><br>
+
+You can also add delay to trigger_relay.<br><br></ul><h1 id="134" name="134" class="book-h2">How to create gang territory?</h1><ul><h3>AI_TERRITORY</h3>
+by Method
+<p>
+<b>
+Marks the boundary of a gang's territory.<br>
+A character touching this will be deemed inside<br>
+the gang's territory. This means war if sighted.<br><br>
+</b>
+Example use: select ai_territory and open Entity<br>
+inspector<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	2<br><br>
+</font>
+Cast_group is the group that owns this territory.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	270<br><br>
+</font>
+Angles points to the direction of the territory.<br><br>
+<font color = "red">
+Key	moral<br>
+Value	4<br><br>
+</font>
+Only characters with an equal or lower moral<br>
+level will be effected by this brush.<br><br>
+
+Place it near enemy turf.
+</ul><h1 id="133" name="133" class="book-h2">How to create gang war?</h1><ul><h3>AI_EVENT_HOSTILE</h3>
+by Method
+<p>
+<b>
+Character touching this brush will become a<br>
+hostile enemy to all other characters in LOS, that have<br>
+the same "cast_group" as the brush.<br><br>
+</b>
+Example use: select 2 characters and open Entity inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	153<br><br>
+</font>
+Value is the number of their cast_group.<br><br>
+<font color = "red">
+Key	localteam<br>
+Value	postbattery1<br><br>
+</font>
+Value is the name of their localteam.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	119<br><br>
+</font>
+Value is the targetname of the character.<br><br>
+
+Select another 2 cast_ entities and open Entity inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	152<br><br>
+</font>
+Value is the number of their cast_group.<br><br>
+<font color = "red">
+Key	localteam<br>
+Value	postbattery2<br><br>
+</font>
+Value is the name of their localteam.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	119<br><br>
+</font>
+Value is the targetname of the character.<br><br>
+
+Create ai_event_hostile brush with x: 64 y: 64 z: 32 and<br> place it on the ground. Select it and open Entity <br>inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	152<br><br>
+</font>
+Place it inside character with cast_group 153.<br>
+That means that this cacharacter and members of his <br>localteam is enemy of cast_group 152.<br><br>
+
+Create another ai_event_hostile brush with X: 64 y: 64 z: <br>32 and place it on the ground. Select it and open <br>Entity inspector.<br><br>
+<font color = "red">
+Key	cast_group<br>
+Value	153<br><br>
+</font>
+Place it inside character with cast_group 152. That means <br>that this character and members of his localteam is <br>enemy of cast_group 153.<br><br>
+
+Create trigger_once brush with x: 32 y: 288 z: 128 (or x: <br>128 y: 16 z: 128)<br><br>
+<font color = "red">
+Key	target<br>
+Value	t119<br><br>
+</font>
+Value is the target of character.<br><br>
+
+Place this brush away from characters.<br>
+So when player trigger trigger_once, characters will start<br> blasting.<br><br>
+To see this tutorial load sr2.bsp, get bike battery and <br>watch Rats and Scorps waste each other.
+
+
+</ul><h1 id="144" name="144" class="book-h2">How to create killtarget?</h1><ul><h3>KILLTARGET</h3>
+by Method
+<p>
+<b>
+Killtarget used with trigger_relay to kill entities.<br><br>
+</b>
+Example use: select trigger_relay and open Entity<br>
+inspector.<br><br>
+<font color = "red">
+Key	killtarget<br>
+Value	guards1<br><br>
+</font>
+Value is targetname of entity, which will be killed after<br>
+you trigger trigger_relay. You can enter any name for<br>
+killtarget value.
+
+
+</ul><h1 id="152" name="152" class="book-h2">How to create pathtarget?</h1><ul><h3>PATHTARGET</h3>
+by Method
+<p>
+<b>
+Pathtarget used with path_corner. Any entity which will<br>
+follow this path_corner will activate entity with targetname<br>
+of pathtarget value.<br><br>
+</b>
+Example use: select path_corner and open Entity inspector.<br><br>
+<font color = "red">
+Key	pathtarget<br>
+Value	opengate<br><br>
+</font>
+Value is targetname of entity which will activate after any<br>
+entity will follow this path_corner. You can enter any name<br>
+for pathtarget value.
+
+
+</ul><h1 id="141" name="141" class="book-h2">How to divide the world into areas?</h1><ul><h3>FUNC_AREAPORTAL</h3>
+by Method
+<p>
+<b>
+This is a non-visible object that divides the world into<br>
+areas that are seperated when this portal is not activated.<br>
+Usually enclosed in the middle of a door.<br><br>
+</b>
+Example use: select func_door_rotating and open<br>
+Entity inspector. Find fields with "key" and "value".<br><br>
+<font color = "red">
+Key	target<br>
+Value	t94<br><br>
+</font>
+Value is the targetname of func_areaportal.<br><br>
+
+Select func_areportal and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t94<br><br>
+</font>
+Targetname of func_areaportal.<br><br>
+<font color = "red">
+Key	style<br>
+Value	1<br><br>
+</font>
+Style used as areaportal number.<br><br>
+
+Place func_areaportal in the middle of a door<br>(func_door_rotating).</ul><h1 id="147" name="147" class="book-h2">How to group characters in gang?</h1><ul><h3>LOCALTEAM</h3>
+by Method
+<p>
+<b>
+Localteam used to group AI in gangs. Like gang, Sewer Rats<br>
+in Skidrow. They're your enemies, but sometimes they warn<br>
+you like "What the f*ck you lookin' at?". If you kill<br>
+gang member they start blasting you without saying anything.<br><br>
+</b>
+Example use: select all characters, which you want to be<br>
+in the gang and open Entity inspector.<br><br>
+<font color = "red">
+Key	localteam<br>
+Value	sewer_rats<br><br>
+</font>
+Value is the name of the gang. You can change it on whatever
+you want.
+</ul><h1 id="146" name="146" class="book-h2">How to light props?</h1><ul><h3>LIGHTIT</h3>
+by Method
+<p>
+<b>
+Lightit used to light props (props_trashwall,
+<br>props_trashbottle, etc.)<br><br>
+</b>
+Example use: select props and open Entity inspector.<br><br>
+<font color = "red">
+Key	lightit<br>
+Value	8<br><br>
+</font>
+Value is light of props. You can enter any value you want.
+</ul><h1 id="145" name="145" class="book-h2">How to make character follow another character?</h1><ul><h3>LEADER_TARGER</h3>
+by Method
+<p>
+<b>
+Leader_target used to follow the characters. Like in<br>
+sr2 map, dog is following Lamont.<br><br>
+</b>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	leader_target<br>
+Value	Lamont<br><br>
+</font>
+Value is the name of the character, which this entity<br>
+will follow. You can put any name of the entity.
+</ul><h1 id="151" name="151" class="book-h2">How to make character head towards path_corner_cast?</h1><ul><h3>PATH_CORNER_CAST</h3>
+by Method
+<p>
+<b>
+Character will head towards the specified path_corner_cast.<br>
+Pathtarget: gets used when an entity that has this <br>path_corner targeted touches it. Could be used to <br>trigger a button, or a character. (see pathtarget tutorial)<br>
+Combattarget: when the cast reaches this marker, they'll <br>take on this combattarget. (see combattarget tutorial)<br><br>
+</b>
+Example use: Select character entity and open <br>Entity inspector.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t24<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+
+Select path_corner_cast and open Entity inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t24<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t25<br><br>
+</font>
+Value is the targetname of another path_corner_cast.<br><br>
+
+Select another path_corner_cast and open Entity <br>inspector.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t25<br><br>
+</font>
+Value is the targetname of path_corner_cast.<br><br>
+
+If you want to make a loop, add this to the last <br>path_corner.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t24<br><br>
+</font>
+After character touches last path_corner, he'll go to the <br>first path_corner.</ul><h1 id="132" name="132" class="book-h2">How to set character's accuracy?</h1><ul><h3>ACC</h3>
+by Method
+<p>
+<b>
+Acc is a weapon accuracy. It used only with characters<br>
+(cast_bitch, cast_punk, etc.). There is 5 kinds of accuracy<br> for AI.<br><br>
+
+ACC_GREEN	0<br>
+ACC_POOR	1<br>
+ACC_NORMAL	2<br>
+ACC_SEASONED	3<br>
+ACC_VETERAN	4<br>
+ACC_ELITE	5<br><br>
+</b>
+Example use: select a character in KPRadiant and hit "n".<br>
+You'll open Entity inspector. Find fields with "key" <br>and "value".<br><br>
+<font color = "red">
+Key	acc<br>
+Value	3<br><br>
+</font>
+This AI will have accuracy of ACC_SEASONED.<br>
+Accuracy also used with melee weapons.
+</ul><h1 id="136" name="136" class="book-h2">How to set character's calibur?</h1><ul><h3>CAL</h3>
+by Method
+<p>
+<b>
+Cal is damage caused by weapon - calibur.<br><br>
+</b>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	cal<br>
+Value	4<br><br>
+</font>
+The only characters I saw used cal in Kingpin was cast_punk.
+
+</ul><h1 id="139" name="139" class="book-h2">How to set character's currentcash?</h1><ul><h3>CURRENTCASH</h3>
+by Method
+<p>
+<b>
+Currentcash is how much money entity has. You can put any<br>
+value for money. Used with characters.<br><br>
+</b>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	currentcash<br>
+Value	8<br><br>
+</font>
+It also used with cast_group 1 (friendly AI). Select entity<br>
+with cast_group 1 and open Entity inspector.<br><br>
+<font color = "red">
+Key	currentcash<br>
+Value	-10<br><br>
+</font>
+You need to pay $10 to hire him.
+</ul><h1 id="143" name="143" class="book-h2">How to set character's health?</h1><ul><h3>HEALTH</h3>
+by Method
+<p>
+<b>
+Health is used for health of AI. If you create a character<br>
+without health, Kingpin engine will give the default health.<br><br>
+</b>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	health<br>
+Value	300<br><br>
+</font>
+For health value you can enter any value.
+</ul><h1 id="149" name="149" class="book-h2">How to set character's moral?</h1><ul><h3>MORAL</h3>
+by Method
+<p>
+<b>
+Moral is effect willingness to fight until death,<br>
+attack unprovoked, etc. Used with characters.<br>
+There are 7 kinds of moral.<br><br>
+
+MORAL_RANDOM		0<br>
+MORAL_COWARD		1<br>
+MORAL_HAPPY		2<br>
+MORAL_NORMAL		3<br>
+MORAL_AGGRESSIVE	4<br>
+MORAL_BESERK		5<br>
+MORAL_HEROIC		6<br>
+MORAL_PSYCOTIC		7<br><br>
+</b>
+Example use: select a character and open Entity<br>
+inspector.<br><br>
+<font color = "red">
+Key	moral<br>
+Value	5<br><br>
+</font>
+Moral also used with ai_boundary and ai_territory.
+</ul><h1 id="150" name="150" class="book-h2">How to set character's name?</h1><ul><h3>NAME</h3>
+by Method
+<p>
+<b>
+Name used as name of a character. Also when you talk to AI,<br>
+on the screen you'll see "stranger : ", but if you enter the<br>
+name it'll be "name : ", where name is the name you <br>entered.<br><br>
+</b>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	name<br>
+Value	Lamont<br><br>
+</font>
+Value is the name. You can enter any name for the character.
+
+</ul><h1 id="135" name="135" class="book-h2">How to set character's skins?</h1><ul><h3>ART_SKINS</h3>
+by Method
+<p>
+<b>
+Art_skins used as a skin for a model. Art_skins hold 3 -<br>digit skins for head, torso and legs.<br><br>
+</b>
+Example use: select a character and open Entity inspector.<br><br>
+<font color = "red">
+Key	art_skins<br>
+Value	041 026 010<br><br>
+</font>
+Value is skin number. To find all skins go to <br>main\models\actors.<br><br>
+Look in thug, runt and bitch folder.
+</ul><h1 id="155" name="155" class="book-h2">How to unlock a targeted door?</h1><ul><h3>TRIGGER_UNLOCK</h3>
+by Method
+<p>
+<b>
+Player will unlock a targeted door when this brush is <br>touched<br><br>
+
+Can be triggered also!<br>
+door's "key" should equal -1<br>
+"target" target ID to match door<br><br>
+</b>
+Example use: create func_door and open Entity inspector.<br><br>
+<font color = "red">
+Key	angle<br>
+Value	-1<br><br>
+</font>
+Value determines the opening direction.<br>
+-1 opens up, -2 opens down.<br><br>
+<font color = "red">
+Key	key<br>
+Value	-1<br><br>
+</font>
+Value is the key number.<br>
+If key is -1, that means door is closed.<br><br>
+<font color = "red">
+Key	sounds<br>
+Value	6<br><br>
+</font>
+Value is sound number.<br><br>
+<font color = "red">
+Key	targetname<br>
+Value	t120<br><br>
+</font>
+Value is the func_door target ID.<br><br>
+<font color = "red">
+Key	wait<br>
+Value	6<br><br>
+</font>
+Value is the time to wait before returning (3 default, -1 =<br> never return)<br><br>
+
+Create trigger_unlock and open Eintity inspector.<br><br>
+<font color = "red">
+Key	target<br>
+Value	t120<br><br>
+</font>
+Value is the targetname of func_door.<br><br>
+
+Place trigger_unlock behind a func_door.</ul><h1 id="547" name="547" class="book-h2">Setting Up QERadiant</h1><ul><h3>SETTING UP QERADIANT</h3> - by Zirco<br><br>
+
+<b>Introduction:</b>
+
+This tutorial will help you to setup QERadiant that was <br>installed with Kingpin.<br><br>
+
+<b>Step 1:</b><br><br>
+
+If you have Kingpin installed to its default directory (c:\program files\Kingpin):
+With it installed to it's default directory, only the preferences should be modified, and not the project file which points everything to its correct places. First, startup QERadiant, it should ask you for the project file, locate kingpin.qe4 in Kingpin/KPRadiant then click 'open'.<br><br>
+
+If you have Kingpin installed to a custom directory or on a different hard drive letter:
+With it installed to a foreign directory, you will need to change the Kingpin project settings and the QERadiant preferences. First, startup QERadiant, it should ask you for the project file, locate kingpin.qe4 in Kingpin/KPRadiant then click 'open'. This is the file we must modify, but to make it easy, we will do it within QERadiant. Go to the 'File' menu then click the 'Project Settings' submenu. Everything should be pointing to the default directories (c:\program files\kingpin...). Change the paths so they match the location you installed Kingpin to.<br><br>
+
+<b>Step 2:</b><br><br>
+
+Go to the 'Edit' menu then click the 'Preferences' submenu. This will load up the common settings for QERadiant. Though some fields are not filled in, they are not required or needed.<br><br>
+
+<b>Step 3 (optional):</b><br><br>
+
+Color Settings:<br><br>
+
+When you have finished steps 1 and 2, you should by now have noticed the black grid on white background. It helps to change the colors to white grid on black background. We will use preset colors by going to the 'Misc' menu, 'Colors' submenu, then 'Themes', and finally click on 'Black and Green'.<br><br>
+
+You will notice that it has made the minor grid disappear. This is because it's actually now black, so change it by going to the 'Misc' menu, 'Colors' submenu, then 'Grid Minor' to a dark gray color of your choice, I recommend the RGB to be 25,25,25.
+</ul><h1 id="268" name="268" class="book-h2">The BSP Process and Visibility</h1><ul>This is a link to a tutorial that was originally written for Quake II but largely applies to all Quake engine games including Kingpin.
+
+<A HREF="http://www.gamedesign.net/node/view/266">Click to view the tutorial</A></ul></body></html>

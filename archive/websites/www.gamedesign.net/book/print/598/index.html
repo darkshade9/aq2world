@@ -1,0 +1,39 @@
+<html><head><title>Making Doors</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="598" name="598" class="book-h1">Making Doors</h1><!-- tutorial1 - converted 25/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Making Doors -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+
+<B><U>Making a door</B></U><br>
+
+<p>It's easier than you may think to make a door. I have two rooms, a small corridor between them, and I want a door right in the corridor.</p>
+
+<p>First, load a nice texture for a door. There is nice Wall textures for a door, but there is also specific textures for doors. I will load the Gothic_door textures, for my map. Most of the Door textures are hard to make a good door with, so I will take a more Wall-like texture.</p>
+
+<p>Once I've chosen a texture I make a new box, and this is the box that will be my door, so I form the box so it fits the corridor. To make it even more complicated, I want a door that is 2 parts, one left part, and one right part. The right part should move right, and the left should move left when the door opens. Actually, it's pretty easy =). </p>
+
+<p>The thing is that those doors are actually two doors. One door moves left, and the other right. This makes an illusion that it's one door that moves apart when you run thru it. </p>
+
+<p>Okay, the texture is set, and everything is set to go. Let's select the door (or one half of the door). Now, push the right mousebutton, so the menu appears. Choose "func", and then "func_door". This will set the box to be a door. Push "n" to bring up the "entity list", and here you can enter a few new keys, with values, but we want a simple door, so we don't have to change anything (the keys is listed in the text in the Entety window). </p>
+
+<p>The only thing we have to do here is to push one of the direction buttons. The "Direction buttons" are the buttons that are located in the lower left in the entity window. It says "135", "90", "45" ... This tells the game what direction the door should move to get opened. If you don't know for sure, look in the Top view (upper left in the Q3radiant window). For my door, i had to push the "270" button to get my door right. Now, that door is finished. If you only have one door, you're done. But if you have a two parted door, you have to select the other door-half, and makes the same step as with the first one, except that the direction should be the opposite. That makes my other door half to be in the direction of "90". Now, this is how my door looks like:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial5/door.jpg"><br>
+</center>
+<br>
+<p>I've written a tutoruial about more complexed doors in another tutorial.</p></body></html>

@@ -1,0 +1,254 @@
+<html><head><title>Using Text Editors for Mapping</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="552" name="552" class="book-h1">Using Text Editors for Mapping</h1><h2>Using Text Editors For Mapping</h2>
+
+<blockquote>by Ricebug</blockquote>
+
+<p>You've been working on this huge map and have just discovered
+that about a thousand brushes need the <i>detail</i> property applied to them.
+This job would be tedious in the best of
+circumstances, not to mention the possibility of missing a few brushes.&nbsp; Or let's
+say you need to change all the _focus values for a certain light entity. Those
+mine lights are a bitch to select due to their size. Again, an exercise in
+tedium.</p>
+
+<p>Lucky for us, the standard .map format is nothing more than
+simple ASCII---in other words, plain English. So opening it up in a text editor
+provides us with the ability to use the <i>Search &amp; Replace</i> functions to
+do sweeping changes in a map, thus removing the drudgery. Doing so requires some
+preparation, however.</p>
+
+<p align="left"><font face="Arial">1. Back up the map file! There's nothing worse than destroying a
+map with the click of a mouse.</font></p>
+
+<p align="left"><font face="Arial">2. Get a text editor. I'd recommend <a href="http://www.jgsoft.com/"><b>EditPad</b></a>.
+It's free, it will do operations on multiple files, and will not contaminate the
+map file with unnecessary (and fatal) characters. If you like more muscle, <a href="http://www.idmcomp.com/index.html"><b>UltraEdit32</b></a>
+is also a good choice. Do not use Windows' <i>Notepad.</i> It has the nasty
+habit of inserting or deleting carriage returns. Besides, it has a limited
+filesize buffer. Same for any high-end word processor. Unless you really
+understand the different .txt formats, (there are 4) it's safer to use EditPad.&nbsp;</font></p>
+
+<p align="left"><font face="Arial">3. If you're using a map editor that saves its maps in a
+proprietary format, such as WorldCraft or QOOLE, you'll have to export the map
+as a <i>.map</i> file. Once the changes have been made, you can then re-load the
+repaired map and press on.</font></p>
+
+<div align="center">
+  <center>
+  <table border="1" width="450">
+    <tr>
+      <td bgcolor="#FFFFFF">
+        <p align="center"><font face="Arial">WARNING</font></p>
+  </center>
+        <p align="center"><font face="Arial">If your editor supports&nbsp; brush
+        grouping or some other hierarchical tactic,
+        you will lose this information in the export process. See the caveat and
+        recommendations mentioned at the end of this tutorial.</font></td>
+
+    </tr>
+  </table>
+</div>
+<hr>
+<h3><font face="Arial">The Basic Brush</font></h3>
+<div align="center">
+  <center>
+  <table border="0" width="450" bgcolor="#FFFFFF">
+    <tr>
+      <td width="711">
+
+        <p align="left"><font face="Arial" size="2">{<br>
+        ( 128 0 -64 ) ( 8 0 -64 ) ( 8 -128 -64 ) e1u1/c_met11_2 0 0 0 1 1 0 0 0<br>
+        ( 8 -128 0 ) ( 8 0 0 ) ( 128 0 0 ) e1u1/c_met11_2 0 0 0 1 1 0 0 0<br>
+        ( 8 -64 8 ) ( 128 -64 8 ) ( 128 -64 0 ) e1u1/c_met11_2 0 0 0 1 1 0 0 0<br>
+        ( 64 -128 8 ) ( 64 0 8 ) ( 64 0 0 ) e1u1/c_met11_2 0 0 0 1 1 0 0 0<br>
+        ( 128 0 8 ) ( 8 0 8 ) ( 8 0 0 ) e1u1/c_met11_2 0 0 0 1 1 0 0 0<br>
+
+        ( 0 0 8 ) ( 0 -128 8 ) ( 0 -128 0 ) e1u1/c_met11_2 0 0 0 1 1 0 0 0<br>
+        }</font></td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<p align="left"><font face="Arial">This is all the info describing a 64<sup>3</sup> brush with the <b>c_met11_2</b>
+
+texture applied to it. If you care to check, one corner of this brush sits at
+the center of the world (0 0 0). Imagine having to construct an entire map using
+a text editor! Believe it or not, the first CAD programs were done exactly in
+this manner. Lucky for the users, they only had to worry about drawing a 2-dimensional world.</font></p>
+
+<p align="left"><font face="Arial">What we're really interested in are the numbers following the
+texture name. You'll see there are eight. Taken from the example above, the
+first line would be <span style="background-color: #FFFFFF">0 0 0 1 1 0 0 0</span>.
+These are all of the texture values and spawnflags. The fact that there are
+mostly zeros means the texture has no surface or content flags set for it; it's
+just a plain old texture. The two 1's are the texture's dimensions, which mean
+that it has been applied with it's default size.&nbsp;</font></p>
+
+<p align="center"><font face="Arial"><img border="0" src="content/quake2/tutorials/text_editing/texf_01.gif"></font></p>
+
+<p align="center"><b><font color="#800000" size="2" face="Arial">A visual reference for the
+texture property flags</font></b></p>
+
+<p align="left"><font size="3" face="Arial">Even though you may use a different
+editor, the flags still mean the same thing.</font></p>
+<hr>
+<h3 align="left"><font face="Arial">Texture Properties</font></h3>
+
+<p align="left"><font face="Arial">Now that you know what the 8 data bits reference, you now need
+to know what possible values can be used. Let's take the light value, which is
+used typically for sky textures and light-emitting textures. Therefore, a string
+of <font color="#000000"><span style="background-color: #FFFFFF">0 0 0 1 1 0 0
+100</span></font> means that you've get a light value of 100. However, since the
+light flag is normally set for a situation like this, it would read <span style="background-color: #FFFFFF"><font color="#000000">0
+0 0 1 1 0 1 100.</font></span> Reason being, is that 'light' is the first item
+in the surface property list, and therefore has a spawnflag value of '1'.
+'Slick' is '2', sky is '4' and so on, following the numerical convention used
+for spawnflags. Here's a handy reference showing all of the spawnflags:</font></p>
+<div align="center">
+  <center>
+  <table border="1" width="450" bgcolor="#FFFFFF">
+    <tr>
+      <td align="center" bgcolor="#808080" colspan="2"><b><font face="Arial">Surface Property
+        Spawnflags</font></b></td>
+
+      <td align="center" bgcolor="#808080" colspan="2"><b><font face="Arial">Content Property
+        Spawnflags</font></b></td>
+    </tr>
+    <tr>
+      <td valign="top">	<font face="Arial">	Light<br>
+	Slick&nbsp;<br>
+	Sky Flag<br>
+
+        Warp<br>
+	Trans33&nbsp;<br>
+	Trans66&nbsp;<br>
+	Flowing&nbsp;<br>
+	NoDraw&nbsp;<br>
+	Hint<br>
+
+        Skip<br>
+        </font>
+      </td>
+      <td valign="top"><font face="Arial">1<br>
+        2<br>
+        4<br>
+        8<br>
+
+        16<br>
+        32<br>
+        64<br>
+        128<br>
+        256<br>
+        512</font></td>
+
+      <td><font face="Arial">Solid<br>
+	Window<br>
+	Aux<br>
+	Lava<br>
+	Slime<br>
+	Water<br>
+
+	Mist<br>
+	PlayerClip<br>
+	MonsterClip<br>
+	Current_0<br>
+	Current_90<br>
+	Current_180<br>
+
+	Current_270<br>
+	Current_up<br>
+	Current_dn<br>
+	Origin<br>
+	Monster<br>
+	Corpse<br>
+
+	Detail<br>
+	Translucent<br>
+	Ladder</font></td>
+      <td><font face="Arial">1<br>
+        2<br>
+        4<br>
+
+        8<br>
+        16<br>
+        32<br>
+        64<br>
+        65536<br>
+        131072<br>
+
+        262144<br>
+        524288<br>
+        1048576<br>
+        2097152<br>
+        4194304<br>
+        8388608<br>
+
+        16777216<br>
+        33554432<br>
+        67108864<br>
+        134217728<br>
+        268435456<br>
+        536870912</font></td>
+
+    </tr>
+  </table>
+  </center>
+</div>
+<p><font face="Arial">With this information you can now fix certain things in the blink of an eye.
+Some suggestions:</font></p>
+<p><font face="Arial">In some map editors, applying the ladder flag can be a tedious process.
+Suppose your ladder is using a texture named <b>eggwhite</b>. Open the map in
+EditPad, highlight and copy the text, paste it into the <i>Text to find</i>
+field, paste it again into the <i>Replace with:</i> field and replace the <u>third
+zero from the end</u> with the ladder spawnflag number.</font></p>
+
+<p align="center"><font face="Arial"><img border="0" src="content/quake2/tutorials/text_editing/texf_02.gif"></font></p>
+<p align="center"><b><small><font color="#800000" face="Arial">EditPad's Find &amp; Replace
+dialog</font></small></b></p>
+<p><font face="Arial">Or suppose you had a level with a lot of sky brushes and it needed the light
+value jacked up. A real pain to do so within the editor, but a piece of cake
+with a text editor.&nbsp;</font></p>
+<p align="center"><span style="background-color: #FFFFFF"><font face="Arial">e1u1/sky1 0 0 0 50 50 0 133
+50</font></span></p>
+<p align="left"><font face="Arial">&nbsp;The '50 50' tells you that I've applied a vertical and
+horizontal stretch value of 50 to the sky texture. The '133' is a surface
+property spawnflag total of light (1) + sky (4) + nodraw (128). The '50' at the
+end is the light value I applied to the sky texture. Since 100 would give me
+better results, changing this last number via EditPad on all sky brushes would
+be a piece of cake.</font></p>
+<p align="left"><font face="Arial">I had a large warehouse whose ceiling used a light-emitting
+texture that covered a host of various-sized brushes. As in the case of the sky,
+the same method was used to correct the light value, A real time saver.</font></p>
+<hr>
+<h3 align="left"><font face="Arial">A Note Concerning Non-Radiant Editors</font></h3>
+<p align="left"><font face="Arial">Mad Dog had some input on this issue which is relevant to
+Worldcraft, QOOLE, and QuArk users. If you're thinking of replacing textures
+globally with new properties using a text editor, do not export not the entire
+map as a .map.&nbsp; Instead, first determine which groups are affected, and
+then export each group<br>
+
+individually as a separate .map. Then, after changing things, copy the contents
+of each of those new &quot;maplets&quot; into your primary map, make each a new
+group, and replace each old group with the new ones. That way the grouping is
+preserved.</font></p>
+<hr>
+<p align="left"><font face="Arial">Map making should be fun and not tedious. Hopefully, I've
+enlightened you on how to be more productive in your endeavors and put the fun
+back into creating those worlds.&nbsp;</font></p>
+<hr>
+<div align="center">
+  <center>
+  <table border="0">
+    <tr>
+      <td width="50%"><a href="http://ricebug.qeradiant.com/"><font face="Arial"></font></a></td>
+
+      <td width="50%"><a href="http://ricebug.qeradiant.com/menu1.shtml"><font face="Arial"></font></a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p align="center"><b><font face="Arial"><small>Copyright 2001, by Terry DeLaney. Permission is granted to
+distribute this file as long as the author receives credit.</small></font></b></p>
+</body></html>

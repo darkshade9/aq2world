@@ -1,0 +1,2918 @@
+<html><head><title>Func_</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="178" name="178" class="book-h1">Func_</h1><p>Func entities are derived from:<br> <center><b><i>halflife.fgd revision apr 15 2003 - v3.1.0.0</b></i></p></center><br>
+<b><i>Related</i></b> entities are now linked at the bottom of the individual entity properties. This should make it easier to find further information about the entity you are working with. </p>
+
+<p>Please feel free to add comment on any of these func_entity descriptions. I will include all 'relevant' information in future re-writes.</p><h1 id="177" name="177" class="book-h1">Func_breakable</h1><ul><!-- by Gard (stephen@geol.uwa.edu.au) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>func_breakable</b> - by <a href="mailto:stephen@segs.uwa.edu.au">Gard</a>
+</blockquote>
+<br> <br>
+
+  <p>This entity allows you to create a breakable brush, and is a useful affect for 
+     breaking glass, accidents and explosions.</p>
+
+<hr noshade color="black">
+
+<h3>Properties</h3>
+
+      
+  <p><b>Name</b> - A unique target name allows for a trigger, else for 
+     the brush to break it will have be damaged (shot, chainsawed ... etc). 
+     Set the Name if you want a trigger for an event.</p>
+
+  <p><b>Target</b> - Often when a brush breaks you will want to activate 
+     sound, another trigger ... etc. Target on break will activate that feature.</p>
+
+  <p><b>Material Type</b> - This defines the material type, where:</p>
+
+      <font color=red>
+      <blockquote>
+      0 - Glass</br>
+      1 - Wood</br>
+      2 - Metal</br>
+      3 - Flesh</br>
+      4 - Cinder Block</br>
+      5 - Ceiling Tile</br>
+      6 - Computer</br>
+      7 - Unbreakable Glass</br>
+      8 - Rocks</br>
+      </blockquote>
+      </font>
+
+ <p><b>Strength</b> - Sets the amount of damage a brush will sustain before 
+    breaking (unless a Name is set and trigger is used). Note that it is logical 
+    to make stronger materials harder. <a href="http://www.geocities.com/tovanen/">Tovanen</a> 
+    once suggested a value of 50 for wood, less for glass more for metal.</p>
+
+ <p><b>Delay (before breaking)</b> - Sets the delay between the breaking of the brush and 
+    by default flag properties (see below). Very useful for traps!</p>
+
+ <p><b>Gib Model</b> - Spawned the gibmodel when the brush is broken.</p>
+
+ <p><b>Spawn object</b> - Sets an item to be spawned when the brush is broken, options are:</p>
+
+      <font color=red>
+      <blockquote>
+      0 - Nothing</br>
+      1 - Battery</br>
+      2 - Healthkit</br>
+      3 - 9mm Handgun</br>
+      4 - 9mm Clip</br>
+      5 - Machine Gun</br>
+      6 - Machine Gun Clip</br>
+      7 - Machine Gun Grenades</br>
+      8 - Shotgun</br>
+      9 - Shotgun Shells</br>
+      10 - Crossbow</br>
+      11 - Crossbow Bolts</br>
+      12 - 357</br>
+      13 - 357 clip</br>
+      14 - RPG</br>
+      15 - RPG Clip</br>
+      16 - Gauss clip</br>
+      17 - Hand grenade</br>
+      18 - Tripmine</br>
+      19 - Satchel Charge</br>
+      20 - Snark</br>
+      21 - Hornet Gun</br>
+      </blockquote>
+      </font>
+
+ <p><b>Explosion Magnitude</b> - This sets the size of the explosion 
+    that will result from breaking the brush. A value of Zero will result in no explosion. 
+    Breaking glass shouldn't have a explosion magnitude! </p>
+
+ <p><b>Render Properties</b> - Sets the control the visual behavior of the object, 
+    See Render Properties Tutorial (still to be written!)</p>
+
+ <p><b>Flag Properties</b>- Set the entity event to break on</p>
+
+      <font color=red>
+      <blockquote>
+      (1) Only Trigger - Trigger is activated</br>
+      (2) Touch - Player touches</br>
+      (4) Pressure - When any object touches</br>
+      (256) Crowbar - When hit with a crowbar</br> 
+      </blockquote>
+      </font>
+
+<hr noshade color="black">
+
+ <h3>Interesting Func_Breakable Discussions on the RUST Forums:</h3>
+
+      <font color=red>
+      <blockquote>
+      1. <a href="http://forums.gamedesign.net/viewtopic.php?t=5787&start=0&postdays=0&postorder=asc&highlight=funcbreakable">breakable func_ladder?</a></br>
+      2. <a href="http://forums.gamedesign.net/viewtopic.php?t=5704&highlight=funcbreakable">Respawnable Glass</a></br>
+      </blockquote>
+      </font></ul><h1 id="190" name="190" class="book-h1">Func_button</h1><ul><!-- by Gard (stephen@geol.uwa.edu.au) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>func_button</b> - by <a href="mailto:stephen@segs.uwa.edu.au">Gard</a>
+</blockquote>
+<br> <br>
+
+  <p>This entity allows you to create a button, such as a elevator button ... any button in the game. This function
+     is typically used to trigger an event when it is touched or "used" by a player. 
+     Once activated a Func_button will move in the direction set by an angle, for 
+     a distance equal to its own length. Which gives the affect of a button being 
+     pushed!</p>
+
+<hr noshade color="black">
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - If a name, or target name, is assigned to a func_button entity, 
+     it can be activated by any trigger_ function. Name defines a unique identity to
+     any func_button.</p>
+
+  <p><b>Render Properties</b>  - Sets the control the visual behavior of the object, 
+    See Render Properties Tutorial (still to be written!)</p>
+
+  <p><b>Speed</b> - This defines the rate a func_button will move from the inactivated to 
+     activate position.</p>
+
+  <p><b>Targeted object</b> - Sets the event that will be activated when a button
+     is Flagged (see flags below)</p>
+
+  <p><b>Health</b> - If a non zero value is set here the func_button has to be 
+     shot/damaged rather than touched or used (flags are negated). When the button health
+     reaches zero the target object will be activated.</p>
+
+  <p><b>Master</b> - Multisource master option (tutorial to be written ... sorry)</p>
+
+  <p><b>Wait</b> - Defines the time between switching between on and off. This is useful
+     if you have a scripted sequence running, and don't wont the sequence to be restarted/
+     interrupted</p>
+
+  <p><b>Delay</b> - Defines the delay between when the func_button is touched or used and 
+     the target object is activated.</p>
+
+  <p><b>Flags</b> - There are a four button flags behaviors, these are:</p>
+
+      
+      <blockquote>
+      <b><font color=red>(1) Don't move</font></b> - When enabled, the button will jump from inactive to 
+      activated without moving,</br> 
+      <b><font color=red>(32) Toggle</font></b> - When enabled, the button moves in and out. The user has 
+      to press again to switch been active and inactive. The targeted object is
+      activated everytime the button is toggled.</br> 
+      <b><font color=red>(64) Sparks</font></b> - When enabled sparks are generated when the button is
+      inactive.</br> 
+      <b><font color=red>(256) Touch</font></b> - When enabled, the button is activated by a 
+      players touch, and does not require the "<i>use</i>" key.</br> 
+      </blockquote>
+      
+<hr noshade color="black">
+
+<h3>Related Entities</h3>
+
+      
+      <blockquote>
+      <b><font color=red><a href="http://www.gamedesign.net/book/view/443">button_target</a></font></b></br> 
+      <b><font color=red><a href="http://www.gamedesign.net/book/view/325">func_rot_button</a></font></b></br> 
+      <b><font color=red><a href="http://www.gamedesign.net/book/view/455">momentary_rot_button</a></font></b></br> 
+      </blockquote>
+      
+<hr noshade color="black">
+
+<h3>RUST Forum Discusions</h3>
+
+      
+      <blockquote>
+      <p><b><font color=red>Mazemaster</font></b> suggested this great idea for a trap "<i>make the wall 
+         a func_button with health 1 and with the "do not move" flag checked. 
+         Have that button target a multimanager, and have that multimanager 
+         trigger the gas and the turrets to come on.</i>"</p>
+
+      <p><b><font color=red>RD (Previous known as Realdespair)</font></b> suggested this cool affects idea using a func_button, "<i>Make 
+         tracer fire in the sky (func_button with lightemitting texture RED, 
+         speed 3500,rendermode additive and a thin long shape) that just flies 
+         over the skyline around the map, like i did in lan_iban, i KNOW 
+         people will be digging that!</i>"</p>
+      </blockquote>
+      </font></ul><h1 id="308" name="308" class="book-h1">Func_conveyor</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_conveyor</b><br>Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity creates a 'moving' conveyor belt. It can push things along or be used to simulate a waterfall.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes, translucency are controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Name</b> - Using the Name to trigger the func_conveyor will cause it to reverse direction.</p>
+ <p><b>Pitch Roll Yaw</b> - Set the direction of push here.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p> <p><b>Conveyor Speed</b> - The speed the conveyor runs at.</p>
+ <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ <p><b>Flag Properties</b>- Set the entity event to break on</p>
+      <font color=red>
+      <blockquote>
+      (1) No Push</font> - Enabled, this flag will stop the push effect.</br>
+      <font color=red>
+      (2) Not Solid</font> - Allows the player to move through, for waterfalls</br>
+      </blockquote>
+      </font>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/526">Trigger_push	</a>
+<hr noshade color="black">
+
+ <p><b>Notes</b>:<br>
+For this entity to actually look like it's moving, you need to use a texture with 'scroll' in its name (like 'scrollwater1').<br>
+Set the texture's angle to the direction of the conveyor's movement (the texture will only scroll in its direction, not the conveyor's (so you can't make it move sideways unless the texture is rendered sideways).</p></ul><h1 id="310" name="310" class="book-h1">Func_door</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>func_door</b> <br>Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>Probably one of the most fundemental entities in Half-Life.<br> Yes folks... A Door, but with imagination it can be used as a moving platform.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+ <p><b>Name</b> - This entity can be triggered to 'Open' by targeting its Name.</p>
+ <p><b>RenderFX</b> - Gives objects special render effects. Think of it as modifying whatever the Render Mode puts out.</p>
+ <p><b>Render mode</b> - Controls the type of rendering that is used for an object.</p>
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. 'Solid' mode simply needs a non-0 value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Colour</b> - An RGB value that controls the colour of the object rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names
+ <p><b>Global Entity Name</b> - 
+ <p><b>Pitch Roll Yaw</b> - Set the direction of push here.</p>
+ <p><b>KillTarget</b> - The entity 'Named' here will be removed from the game forever, when the door is triggered.</p>
+ <p><b>Speed</b> - The speed the door will move.</p>
+ <p><b>Master</b> - The name of a multisource (or game_team_master) entity.<br> A master must usually be active in order for the entity to work. Thus they act almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource. If the specified 'Master' is not active, the door will be locked.</p>
+ <p><b>Move Sound</b> - the options are as follows: </p>
+<blockquote>
+0 = No Sound<br>
+1 = Servo (Sliding)<br>
+2 = Pneumatic (Sliding)<br>
+3 = Pneumatic (Rolling)<br>
+4 = Vacuum<br>
+5 = Power Hydraulic<br>
+6 = Large Rollers<br>
+7 = Track Door<br>
+8 = Snappy Metal Door  <br>
+</blockquote>
+
+<p><b>Stop Sound</b> - the options are: </p>
+<blockquote>
+0 = No Sound <br>
+1 = Clang with brake <br>
+2 = Clang reverb <br>
+3 = Ratchet Stop <br>
+4 = Chunk <br>
+5 = Light airbrake <br>
+6 = Metal Slide Stop <br>
+7 = Metal Lock Stop <br>
+8 = Snappy Metal Stop   <br>
+</blockquote>
+
+ <p><b>Delay before Close</b> - This is the time in seconds the door will remain open after opening, '-1' makes the door stay open.</p>
+ <p><b>Lip</b> - The number of units 'in relation to the door width' that remain after opening. A negative value <font color=red>-10</font> will make the door move it's width <font color=red>+10</font> units in the direction chosen.</p>
+ <p><b>Damamge Inflicted when Blocked</b> - This figure is how much damage the player will suffer if caught in the door.</p>
+ <p><b>Message if triggered</b> - </p>
+ <p><b>Target</b> - Event to activate on opening.</p>
+ <p><b>Delay before Fire</b> - Usually the time in seconds before an entity should trigger its target (after being triggered itself).</p>
+ <p><b>Fire on Close</b> - The entity to trigger when the door closes.</p>
+ <p><b>Health</b> - The amount of damage required before the door opens.</p>
+ <p><b>Locked Sound</b> - Sounds that play when the play is 'locked'.<br> Options are:</p>
+<blockquote>
+0 = None<br>
+2 = Access Denied<br>
+8 = Small zap<br>
+10 = Buzz<br>
+11 = Buzz Off<br>
+12 = Latch Locked<br>
+</blockquote>
+
+ <p><b>Unlocked Sound</b> - Sound to play when the door is 'unlocked'.<br>
+Options are:</p>
+<blockquote>
+0 = None<br>
+1 = Big zap & Warmup<br>
+3 = Access Granted<br>
+4 = Quick Combolock<br>
+5 = Power Deadbolt 1<br>
+6 = Power Deadbolt 2<br>
+7 = Plunger <br>
+8 = Small zap<br>
+9 = Keycard Sound<br>
+10 = Buzz<br>
+</blockquote>
+
+ <p><b>Locked Sentence</b> - Sentence that is spoken when entity is 'locked'.<br>
+Options are:</p>
+<blockquote>
+1 = Gen. Access Denied<br>
+2 = Security Lockout<br>
+3 = Blast Door<br>
+4 = Fire Door<br>
+5 = Chemical Door  <br>
+</blockquote>
+
+ <p><b>Unlocked Sentence</b> - Sentence that is spoken when door is 'unlocked'.<br>
+Options are:</p>
+<blockquote>
+1 = Gen. Access Granted<br>
+2 = Security Disengaged<br>
+3 = Blast Door<br>
+4 = Fire Door<br>
+5 = Chemical Door<br>
+6 = Radiation Door<br>
+7 = General Containment<br>
+8 = Maintenance area  <br>
+</blockquote>
+
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light,  the range is '0' and '1'.</p>
+   <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+   <h3>Flag Properties</h3>
+
+    
+      <blockquote>
+<font color=red>(1) Starts open</font> - The door will 'Start Open'.<br>
+<font color=red>(4) Don't link</font> - <br>
+<font color=red>(8) Passable</font> - Not Solid: an entity with this flag enabled will not obstruct the player or monsters.<br>
+<font color=red>(32)Toggle</font> - With this flag set on, an entity can be turned on and off, either by the player, or by being triggered.<br>
+<font color=red>(256) Use Only</font> - Player must 'Use' to open. Checking this flag prevents the door being triggered any other way.<br>
+<font color=red>(512) Monsters can't</font> - Monsters with arms (Zombies) can't use this door.<br>
+<font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.<br>
+           </blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/311">Func_door_rotating</a><br>
+<a href="http://www.gamedesign.net/book/view/339">Func_water</a><br>
+<a href="http://www.gamedesign.net/book/view/454">Momentary_door</a>
+
+
+<hr noshade color="black">
+
+ <p><b>Notes</b>:<br>
+<p>A door will move it's entire width in the Open direction when activated.<br>
+Doors can be made to trigger other entities, so in effect it can act as a button.<br>
+Changing the Pitch Roll Yaw can make the door perform as an elevator.</p></ul><h1 id="311" name="311" class="book-h1">Func_door_rotating</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_door_rotating</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>Much like func_door, this entity allows you to make a door that rotates on an axis rather than sliding back on its width.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+ <p><b>Name</b> - Use the 'Name' to trigger the door.</p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>Global Entity Name</b> - The name of the Global controlling this door</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and  roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used. Doors are unique in that they have 'Flags" to allow movement set in the 'Z' and 'Y' planes.</p>
+ <p><b>Kill Target</b> -  The entity named here will be removed from the game when the rotating door is activated</p>
+ <p><b>Speed</b> - Speed at which the door rotates.</p>
+ <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A master must usually be active in order for the entity to work. Thus they act almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource.</p>
+ <p><b>Move Sound</b> - These apply to the door when it moves.<br>
+The options are as follows:</p>
+<blockquote>
+        0 = No Sound<br>
+        1 = Servo (Sliding)<br>
+        2 = Pneumatic (Sliding)<br>
+        3 = Pneumatic (Rolling)<br>
+        4 = Vacuum<br>
+        5 = Power Hydraulic<br>
+        6 = Large Rollers<br>
+        7 = Track Door<br>
+        8 = Snappy Metal Door <br>
+</blockquote>
+
+ <p><b>Stop Sound</b> - These apply to the door when it stops.<br>
+The options are:</p>
+<blockquote>
+        0 = No Sound<br>
+        1 = Clang with brake<br>
+        2 = Clang reverb<br>
+        3 = Ratchet Stop<br>
+        4 = Chunk<br>
+        5 = Light airbrake<br>
+        6 = Metal Slide Stop<br>
+        7 = Metal Lock Stop<br>
+        8 = Snappy Metal Stop <br>
+</blockquote>
+
+ <p><b>Delay before close</b> - Delay before the door moves back to its closed position (-1 makes it stay open).</p>
+ <p><b>Lip</b> - See Func_door, I am not sure why you would to change the Lip, as the 'Distance' property dictates the angle of swing....Unless you wanted it's Origin to move also?</p>
+ <p><b>Damage inflicted when blocked</b> - How much damage the player receives if trapped in a closing door.</p>
+ <p><b>Message</b> - Message if triggered.</p>
+ <p><b>Target</b> - An entity named here will be triggered when the entity is activated.</p>
+ <p><b>Delay before fire</b> - Usually the time in seconds before the door triggers its target (above) after being triggered itself.</p>
+ <p><b>Fire on Close</b> - This will trigger the entity 'Named' when the door closes.</p>
+ <p><b>Health</b> - If the figure here is > 0, the door will have to be damaged to the amount specified to open.</p>
+ <p><b>Locked Sound</b> - Sound played when the entity is 'locked'.<br>
+Options are:</p>
+<blockquote>
+  0 = None<br>
+  2 = Access Denied<br>
+  8 = Small zap<br>
+  10 = Buzz<br>
+  11 = Buzz Off<br>
+  12 = Latch Locked<br>
+</blockquote>
+
+  <p><b>Unlocked Sound</b> - Sound played when entity is 'unlocked'.<br> 
+Options are:</p>
+<blockquote>
+        0 = None<br>
+        1 = Big zap & Warmup<br>
+        3 = Access Granted<br>
+        4 = Quick Combolock<br>
+        5 = Power Deadbolt 1<br>
+        6 = Power Deadbolt 2<br>
+        7 = Plunger<br>
+        8 = Small zap<br>
+        9 = Keycard Sound<br>
+        10 = Buzz<br>
+        13 = Latch Unlocked<br>
+        14 = Light Switch <br>
+</blockquote>
+ 
+ <p><b>Locked Sentence</b> - Sentence that is spoken when entity is  'locked'.<br>
+Options are:</p>
+<blockquote>
+        1 = Gen. Access Denied<br>
+        2 = Security Lockout<br>
+        3 = Blast Door<br>
+        4 = Fire Door<br>
+        5 = Chemical Door <br>
+        6 = Radiation Door<br>
+        7 = Gen. Containment<br>
+        8 = Maintenance Door<br>
+        9 = Broken Shut Door <br>
+</blockquote>
+  
+ <p><b>Unlocked Sentence</b> - Sentence that is spoken when entity is 'unlocked'.<br>
+Options are:</p>
+<blockquote>
+        1 = Gen. Access Granted<br>
+        2 = Security Disengaged<br>
+        3 = Blast Door<br>
+        4 = Fire Door<br>
+        5 = Chemical Door<br>
+        6 = Radiation Door<br>
+        7 = General Containment<br>
+        8 = Maintenance area <br>
+</blockquote>
+
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+  <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>  <p><b>Distance</b> - Distance in degrees the door will rotate.</p>
+
+
+<h3>Flags:</h3>
+      <blockquote>
+ <font color=red>(1) Starts open</font> - Door starts in its 'open' position.<br>
+ <font color=red>(2) Reverse Direction</font> - Reverse direction of rotation.<br>
+ <font color=red>(4) Don't link</font> -<br>
+ <font color=red>(8) Passable</font> - When 'ticked' the entity will be 'Not Solid' and will not restrict player or monster movement.<br>
+ <font color=red>(16) One Way</font> - Door only opens in one direction.<br>
+ <font color=red>(32) Toggle</font> - <br>
+ <font color=red>(64) X axis</font> - Door will rotate on its X axis.<br>
+<font color=red>(128) Y axis</font> - Door will rotate on its Y axis.<br>
+ <font color=red>(256) Use only</font> - Player must "use" to open. Enabling this prevents the entity being triggered any other way.<br>
+ <font color=red>(512) Monsters can't</font> - Monsters with arms (e.g. zombies, grunts) can't use the door. 'armless monsters don't count.<br>
+<font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.<br>
+      </blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view310">Func_door</a><br>
+<a href="http://www.gamedesign.net/book/view/326">Func_rotating</a><br>
+<a href="http://www.gamedesign.net/book/view/454">Momentary_door</a>
+
+
+<hr noshade color="black">
+<p><b>Notes:</p></b>
+<p><blockquote>The func_door_rotating requires an origin brush as part of its entity. This gives it the axis to rotate on.<br>
+  The axis defaults to 'Z' if neither of the axis flags is enabled.<br>
+  There are two ways to reverse the direction of rotation:<br> Check the relevent flag,<br> or make the Distance property a negative value.<br>
+  If One Way is not enabled, the door will open away from the player.</blockquote></p></ul><h1 id="312" name="312" class="book-h1">Func_friction</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_friction</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+ <p>This entity allows you to create an area of low friction, to simulate wet or oily or icy surfaces.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+<p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+  <p><b>Percentage of standard</b> - The percentage of friction between 0 and 100 (where 100% is normal friction).</p>
+
+  <h3>Flags</h3>
+
+<blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.
+</blockquote>
+
+  <hr noshade color="black">
+<h4>Related Entities</h4>
+None.
+<hr noshade color="black">
+<p><b>Notes:</p></b>
+
+<p>None, why not add a comment?</p></ul><h1 id="313" name="313" class="book-h1">Func_guntarget</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_guntarget</b><br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+  <p>This entity was designed for the Hazard course, it is a moving target that stops when shot and triggers another event.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - The func_guntarget must be triggered to start it moving on its path. </p>
+  <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+   <p><b>Global Entity Name</b> - The Global name that controls this target</p>
+   <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+   <p><b>Speed</b> - Speed that the guntarget travels at in units per second.</p>
+   <p><b>First Stop target</b> - The name of the first path_corner to follow. </p>
+   <p><b>Fire on Damage</b> - When the target is damaged, this event will be triggered.</p>
+   <p><b>Damage to take</b> - The amount of damage that must be taken before halting movement and activating the target.</p>
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+    <h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="black">
+
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/335">Func_train</a><br>
+<a href="http://www.gamedesign.net/book/view/461">Path_corner</a>
+<hr noshade color="black">
+
+<p><b>Notes:</b></p>
+<p> None yet, but feel free to add a comment.</p></ul><h1 id="315" name="315" class="book-h1">Func_healthcharge</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_healthcharge</b> <BR> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity creates an area in which the player can recharge his health.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+ <p><b>Global Entity Name</b> - 
+   <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+  <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>  <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/324">Func_recharge	</a>
+<hr noshade color="black">
+
+<p><b>Notes:</b></p>
+<p> None Yet, but feel free to add comment.</p></ul><h1 id="316" name="316" class="book-h1">Func_illusionary</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_illusionary</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>The func_illusionary has all the properties of a func_wall entity, except for 
+the fact that it is non-solid.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - Property used to identify the entity.</p>
+  <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+   <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+   <p><b>Contents</b> - <font color=red>-1</font> = Empty, <font color=red>-7</font> = Volumetric light.</p>
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+None.
+<hr noshade color="black">
+<p><b>Notes:</b></p>
+ <p><blockquote>Combined with a clip brush, this entity can be used to make a grate or fence  that can be shot through, but not walked through.<br><br>
+  Small objects made into func_illusionary entities will not obstruct player  movement, useful for knee-height light fixtures etc.</blockquote></p></ul><h1 id="317" name="317" class="book-h1">Func_ladder</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_ladder</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This creates an invisible area which, when entered by the player, allows to player to climb up or down.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - Property used to identify the entity.</p>
+
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/337">Func_wall</a>
+<hr noshade color="black">
+<p><b>Notes:</b></p>
+  <p>The simplest way to create a ladder is to construct the visible bit first, with the ladder texture you want, then copy the brush, drag it forward, and turn the front brush into a func_ladder.<br>
+The Brush with the ladder texture should be a func_wall, with Render mode set to 'Solid' and FX Amount set to '255'. This will make the 'blue' parts of the texture disappear in game.<br>
+  This entity can also simulate ropes (although the sound isn't quite right).</p></ul><h1 id="318" name="318" class="book-h1">Func_monsterclip</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+             <b>func_monsterclip</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity acts like the 'clip' brush, except it restricts monster movement, not the player's.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - This entity can be triggered to turn it on and off. </p>
+
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/486">Info_node</a>
+<hr noshade color="black">
+
+<p><b>Notes:</b></p>
+  <p> Can be used to control the paths monsters take when chasing the player.<br>
+  Only monsters with their MonsterClip flag enabled will take notice of this entity.</p></ul><h1 id="319" name="319" class="book-h1">Func_mortar_field</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_mortar_field</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity is used to define an area that an airstrike is called on.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+<p><b>Name</b> - This entity can be triggered to turn it on and off. </p>
+<p><b>Spread Radius</b> - Defines the accuracy of the bombardment.</p>
+<p><b>Repeat Count</b> - Determines how many bombs will be dropped per strike.</p>
+<p><b>Targeting</b> - <font color=red>0</font> = random, <font color=red>1</font> = activator, <font color=red>2</font> = table.
+
+<p><b>X Controller</b> - The name of a momentary_rot_button to provide a relative strike position on the X axis.</p>
+<p><b>Y Controller</b> - The name of a momentary_rot_button to provide a relative strike position on the Y axis.</p>
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/454">Momentary_door</a><br>
+<a href="http://www.gamedesign.net/book/view/455">Momentart_rot_button</a><br>
+<hr noshade color="black">
+<p><b>Notes:</b></p>
+<p>Using a Targeting value of <font color=red>0</font> will simulate a random bombardment.<br>
+The X and Y controlers can be used where a table is utilised to define the strike location (as seen in Half-Life).</p></ul><h1 id="320" name="320" class="book-h1">Func_pendulum</h1><ul><!-- by Andy(andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_pendulum</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity allows you to create an object that moves like a pendulum.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+<p><b>Global Entity Name</b> - Name of the Global controlling this pendulum. </p>
+<p><b>Name</b> - Use the 'Name' to trigger the pendulum to move or stop.</p>
+
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and  roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used. Doors are unique in that they have 'Flags" to allow movement set in the 'Z' and 'Y' planes.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+ <p><b>Speed</b> - Speed of movement of the pendulum.</p>
+ <p><b>Distance</b> - Distance in degrees the pendulum will swing. Negative values reverse the direction.</p>
+ <p><b>Damping</b> - If you specify a value here the pendulum will slowly narrow its movement until it stops moving. It will end in the middle of it's swing, so if you specified 90 degrees as its distance, it will stop at the 45 degree position. Range: 0 - 1000.</p>
+   <p><b>Damage inflicted when blocked</b> - When movement is blocked by the player, he will receive this amount of damage.</p>
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) Start on</font> - Pendulum will start on (or active). This usually only has effect 
+  if the entity is given a name, most entities that aren't given names start on anyway, or has its Toggle flag set on.<br>
+  <font color=red> (8) Passable</font>  - Makes the pendulum non-soild. The ambiguous name is a synonym 
+  for Not Solid: an entity with this flag enabled will not obstruct the player or monsters.<br>
+  <font color=red>(16) Auto-return</font>  - If this is enabled it will cause the pendulum to return to 
+  its start position when triggered.<br>
+  <font color=red>(64)X-axis</font>  - If enabled, the swing will be in the X axis.<br>
+  <font color=red> (128) Y-axis</font>  - If enabled, the swing will be in the Y axis.<br>
+  <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear 
+  in deathmatch games.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+None.
+<hr noshade color="black">
+<p><b>Notes:</b></p>
+<p> Swing defaults to the Z axis if neither of the axis flags is enabled.<br>
+  Use this entity to make broken lights, grandfather clocks and swinging grates.</p></ul><h1 id="321" name="321" class="book-h1">Func_plat</h1><ul><!-- by Andy (andy_howard@bigpond.com) -->
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_plat</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity lets you create a platform that will move to its raised position 
+when the player walks onto it.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+ <p><b>Name</b> - Can be activated by being triggered. </p>
+ <p><b>Global Entity name</b> - The Global Name controlling this platform. </p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Move Sound</b> - These apply to the platform when it moves.<br> The options are as follows:</p>
+<blockquote>
+
+  And for elevators:<br>
+         0 = No Sound<br>
+        1 = big elev 1<br>
+        2 = big elev 2<br>
+        3 = tech elev 1<br>
+        4 = tech elev 2<br>
+        5 = tech elev 3<br>
+        6 = freight elev 1<br>
+        7 = freight elev 2<br>
+        8 = heavy elev<br>
+        9 = rack elev<br>
+        10 = rail elev<br>
+        11 = squeek elev<br>
+        12 = odd elev 1<br>
+        13 = odd elev 2 <br>
+</blockquote>
+
+<p><b>Stop Sound</b> - These apply to the platform when it stops.<br> The options are:</p>
+<blockquote>
+         0 = no sound<br>
+        1 = big elev stop 1<br>
+        2 = big elev stop 2<br>
+        3 = freight elev stop<br>
+        4 = heavy elev stop<br>
+        5 = rack stop<br>
+        6 = rail stop<br>
+        7 = squeek stop<br>
+        8 = quick stop <br>
+</blockquote>
+
+ <p><b>Sound Volume</b> - Volume in the range <font color=red>0.0</font> - <font color=red>1.0</font>.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+ <p><b>Travel Altitude</b> - The distance the object will move.</p>
+ <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(1) Toggle</font> - If enabled, the platform can be triggered to toggle it between its raised and lowered positions. [With this flag set on, an entity can be turned on and off, either by the player, or by being triggered.]
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/322">Func_platrot</a>
+<hr noshade color="black">
+<p><b>Notes:</p></b>
+<p> Although the Travel Altitude property may say 'can be negative' in SmartEdit mode, it can't.<br>
+  This entity can be used to make simple elevators.</p></ul><h1 id="322" name="322" class="book-h1">Func_platrot</h1><ul><!--Andy (andy_howard@bigpond.com) 2004-->	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_platrot</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity lets you create a platform that will move to its raised position when you walk onto it. It differs from func_plat in that it will also rotate as it moves.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+ <p><b>Name</b> - Can be activated by being triggered. </p>
+ <p><b>Global Entity name</b> - The Global name controlling this rotating platform.</p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Move Sound</b> - These apply to the platform when it moves.<br> The options are as follows:</p>
+<blockquote>
+        0 = No Sound<br>
+        1 = big elev 1<br>
+        2 = big elev 2<br>
+        3 = tech elev 1<br>
+        4 = tech elev 2<br>
+        5 = tech elev 3<br>
+        6 = freight elev 1<br>
+        7 = freight elev 2<br>
+        8 = heavy elev<br>
+        9 = rack elev<br>
+        10 = rail elev<br>
+        11 = squeek elev<br>
+        12 = odd elev 1<br>
+        13 = odd elev 2 <br>
+</blockquote>
+
+<p><b>Stop Sound</b> - These apply to the platform when it stops.<br> The options are:</p>
+<blockquote>
+         0 = no sound<br>
+        1 = big elev stop 1<br>
+        2 = big elev stop 2<br>
+        3 = freight elev stop<br>
+        4 = heavy elev stop<br>
+        5 = rack stop<br>
+        6 = rail stop<br>
+        7 = squeek stop<br>
+        8 = quick stop <br>
+</blockquote>
+
+ <p><b>Sound Volume</b> - Volume in the range 0.0 - 1.0.</p>
+ <p><b>Pitch Yaw Roll</b> - Use to set rotation. [Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+<p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p> <p><b>Speed</b> - Speed the rotating platform moves</p>
+ <p><b>Travel Altitude</b> - The distance the object will move.</p>
+<p><b>Spin Amount</b> - This is the distance, in degrees, the platform will rotate between its lowered and raised positions.</p>
+ <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(1) Toggle</font> - If enabled, the platform can be triggered to toggle it between its raised and lowered positions. [With this flag set on, an entity can be turned on and off, either by the player, or by being triggered.]<br>
+<font color=red>(64) X axis</font> - If enabled, the rotation will be in the X axis.<br>
+<font color=red>(128) Y axis</font> - If enabled, the rotation will be in the Y axis.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/321">Func_plat</a>
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p> Rotation defaults to the Z axis if neither of the axis flags is enabled.</p></ul><h1 id="323" name="323" class="book-h1">Func_pushable</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_pushable</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>Func_pushable entities can be pushed and pulled around by the player. Func_pushables can also be breakable.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+ <p><b>Name</b> - Can be activated by being triggered.</p>
+ <p><b>Global Entity name</b> - The name of the Global controlling this Pushable.</p>
+ <p><b>Target on break</b> - If breakable, this event will be activated when broken.</p>
+ <p><b>Strength</b> - If breakable, this is the amount of damage to be taken before breaking.</p>
+ <p><b>Material Type</b> - The type of material that a func_breakable or func_pushable should act as.<br>Options are:</p>
+<blockquote>
+        0 = Glass<br>
+        1 = Wood<br>
+        2 = Metal<br>
+        3 = Flesh<br>
+        4 = Cinder Block<br>
+        5 = Ceiling Tile<br>
+        6 = Computer<br>
+        7 = Unbreakable Glass<br>
+        8 = Rocks <br>
+</blockquote>
+
+ <p><b>Gibs Direction</b> - Direction the gibs will go when the brush is broken.<br>
+Values:</p>
+<blockquote>
+ 0 = Random<br>
+ 1 = Relative to attack.<br>
+</blockquote>
+
+ <p><b>Delay before fire</b> - Delay before Target on Break is triggered after being broken. </p>
+<p><b>Gib Model</b> - Specify a gib model to use. This overrides the default specified by Material Type.</p>
+<p><b>Spawn on break</b> - Select an item to be spawned when the brush breaks. [Used by func_breakable and func_pushable. Determines what item is spawned when the entity is broken.<br>
+Options are:</p>
+<blockquote>
+        0 = Nothing<br>
+        1 = Battery<br>
+        2 = Health Kit<br>
+        3 = 9mm Handgun<br>
+        4 = 9mm Clip<br>
+        5 = Machine Gun<br>
+        6 = Machine Gun Clip<br>
+        7 = Machine Gun Grenades<br>
+        8 = Shotgun<br>
+        9 = Shotgun Shells<br>
+        10 = Crossbow<br>
+        11 = Crossbow Bolts<br>
+        12 = 357<br>
+        13 = 357 Clip<br>
+        14 = RPG<br>
+        15 = RPG Clip<br>
+        16 = Gauss Clip<br>
+        17 = Hand Grenade<br>
+        18 = Tripmine<br>
+        19 = Satchel Charge<br>
+        20 = Snark<br>
+        21 = Hornet Gun <br>
+</blockquote>
+
+  <p><b>Explode Magnitude</b> - A non-zero value here creates an explosion when the object breaks.</p>
+<p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p> <p><b>Hull size</b> - Values:</p>
+<blockquote>
+0 = point sized<br>
+1 = player sized<br>
+2 = big size<br>
+3 = player duck<br>
+</blockquote>
+ <p><b>Friction</b> - This determines the amount of resistance the brush will give when the player pushes it. <br>Range is 0 to 400, where 400 is the most resistance.</p>
+ <p><b>Bouyancy</b> - Determines how well the brush floats on water.</p>
+<p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(128) Breakable</font> - If this is enabled, the entity will act like a func_breakable.
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/177">Func_breakable</a>
+<hr noshade color="black">
+<p><b>Notes:</p></b>
+<p>Most commonly used with crates.</p></ul><h1 id="324" name="324" class="book-h1">Func_recharge</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_recharge</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>Similar to the func_healthcharge, this entity specifies an area in which the player can recharge his armour (HEV suit).</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+  <p><b>Global Entity name</b> - The Global name controlling this charger.</p>
+
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+<p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ 
+<h3>Flags:</h3>
+<blockquote>
+ None
+</blockquote>
+<hr noshade color="black">
+
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/315">Func_healthcharge</a>
+<hr noshade color="black">
+<p><b>Notes</b><br>
+None yet, add a comment</p></ul><h1 id="326" name="326" class="book-h1">Func_rotating</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_rotating</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity lets you create a rotating object.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+ <p><b>Name</b> - Can be activated by being triggered. </p>
+ <p><b>Global Entity name</b> - The Name of the Global controlling this entity.</p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+ <p><b>Rotation Speed</b> - This is the maximum speed the rotating object will acheive.</p>
+ <p><b>Volume</b> - Sound volume from 0 to 10 (10 loudest).</p>
+ <p><b>Friction</b> - If the Acc/Dcc flag is enabled, this value determines the time it takes to reach full speed or to stop after being triggered.</p>
+ <p><b>Fan Sounds</b> - The sound to make while moving.<br>
+Values:</p>
+<blockquote>
+  0 = no sound<br>
+  1 = fast whine<br>
+  2 = slow rush<br>
+  3 = medium rickety<br>
+  4 = fast beating<br>
+  5 = slow smooth<br>
+</blockquote>
+
+  <p><b>WAV Name</b> - The path / filename of a custom movement sound to be played (overrides Fan Sounds).</p>
+
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+   <p><b>X Y Z - Move here after lighting</b> - From <a href="http://www.thewall.de">The Wall</a> and translated by Pepper:<br> The object will move to these coordinates after lighting. Usually the lightning around a rotating object is not good. It could be that a side is darkend, and that will look bad as the object rotates in game play. To solve this make a seperate room that is lit the way you want, select the coordinates you want the object to move to 'after it is initially lit' in your special room, and enter them under this property. As the game begins, the object will be lit in your special room, and then move to these coordinates. Check your grid alignment using the 2D windows.</p>
+   <p><b>Damage inflicted when blocked</b> - If the player blocks the entity's movement, this amount of damage will be dealt.</p>
+
+
+<h3>Flags:</h3>
+
+<blockquote>
+ <font color=red>(1) Start On</font> Entity will start on (or active). This usually only has effect if the entity is given a name (most entities that aren't given names start on anyway), or has its Toggle flag set on.<br>
+  <font color=red>(2) Reverse Direction </font> - Set this flag to make the brush turn in the opposite direction.<br>
+  <font color=red>(4) X axis</font> - If enabled, the rotation will be in the X axis.<br>
+  <font color=red>(8) Y axis </font> - If enabled, the rotation will be in the Y axis.<br>
+  <font color=red>(16) Acc/Dcc</font> - If enabled, the entity will accelerate and decelerate from maximum speed based on the Friction property.<br>
+  <font color=red> (32) Fan Pain</font> - With this enabled, the player will be hurt when coming into contact with the brush.<br>
+  <font color=red>(64) Not Solid</font> - With this flag enabled, a brush-based entity will not be solid, so will not affect the player's movement in the way solid brushes do. Useful for things like moving laser targets that musn't obstruct the player.<br>
+  <font color=red>(128) Small Radius</font> - Sets sound range to low.<br>
+  <font color=red> (256) Medium Radius</font> - Sets sound range to medium.<br>
+  <font color=red> (512) Large Radius</font> - Sets sound range to high.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/311">Func_door_rotating</a><br>
+<a href="http://www.gamedesign.net/book/view/322">Func_platrot</a><br>
+<a href="http://www.gamedesign.net/book/view/325">Func_rot_button</a>
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p> Often used to create fans.  An origin brush needs to be part of the entity to specify its axis of rotation.<br>
+If you use a WAV file to produce your sound, the 'Fan Sounds' will not work. </p></ul><h1 id="325" name="325" class="book-h1">Func_rot_button</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_rot_button</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity creates a button that rotates. Most commonly used for wheels and valves.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+<p><b>Name</b> - Can be activated by being triggered.</p>
+ <p><b>Global Entity name</b> - The name of the Global controlling this button.</p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+ <p><b>Targetted Object</b> - The event that the button will activate.</p>
+ <p><b>Change Target Name</b> - </p>
+ <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A master must usually be active in order for the entity to work. Thus they act   almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource.</p>
+ <p><b>Speed</b> - How fast the button rotates when activated.</p>
+ <p><b>Health</b> - If non-zero, the button must be damaged to this extent to activate it.</p>
+<p><b>Sounds</b> - Values:</p>
+<blockquote>
+  21 = squeaky<br>
+  22 = squeaky pneumatic<br>
+  23 = ratchet groan<br>
+  24 = clean ratchet<br>
+  25 = gas clunk<br>
+</blockquote>
+
+ <p><b>Delay before reset</b> - Time to wait before button resets itself. <font color=red>-1</font> makes it stay set.</p>
+ <p><b>Delay before trigger</b> - Usually the time in seconds before an entity should trigger its target (after being triggered itself).</p>
+  <p><b>Distance</b> - Distance in degrees the button will rotate before activating its target.</p>
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+<h3>Flags:</h3>
+
+<blockquote>
+ <font color=red>(1) Not solid</font> - With this flag enabled, a brush-based entity will not be solid, 
+  so will not affect the player's movement in the way solid brushes do. Useful 
+  for things like moving laser targets that musn't obstruct the player.<br>
+<font color=red>(2) Reverse Direction</font> - Reverse rotation direction<br>
+<font color=red>(32) Toggle</font> - Allows button to be toggled. Using the button toggles it between 
+  'on' and 'off', each time retriggering its target. With this flag set on, an 
+  entity can be turned on and off, either by the player, or by being triggered.<br>
+ <font color=red>(64) X axis</font> - If enabled, the rotation will be on the X axis.<br>
+<font color=red>(128) Y axis</font> - If enabled, the rotation will be in the Y axis.<br>
+<font color=red>(256) Touch Activates</font> - The button can only be activated by the player bumping 
+  into it (or by being shot, if Health is > 0).<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/326">Func_rotating</a><br>
+<a href="http://www.gamedesign.net/book/view/190">Func_button</a>
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p> Used for taps, spigots, levers, etc.<br>
+  If neither of the axis flags is enabled, rotation will default to the Z axis.<BR> Don't forget the Origin brush!</p></ul><h1 id="327" name="327" class="book-h1">Func_tank</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_tank</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity allows you to create a controllable or automatic gun turret.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+  <p><b>Name</b> - The gun must have a unique name. If non-player-controllable, the gun can be triggered to activate, otherwise this name is used with a func_tankcontrols entity to give the player control. </p>
+ <p><b>Target</b> - Event to activate on each fire. </p>
+<p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Global Entity Name</b> - The name of the Global controlling this tank. </p>
+  <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+  <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A master must usually be active in order for the entity to work. Thus they act almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource.</p>
+ <p><b>Yaw rate</b> - The speed of the left/right movement of the gun.</p>
+  <p><b>Yaw range</b> - Range of left/right movement in degrees.</p>
+  <p><b>Yaw tolerance</b> - defaults at 15.</p>
+  <p><b>Pitch rate</b> - The speed of the up/down movement of the gun.</p>
+  <p><b>Pitch range</b> - Range of up/down movement in degrees.</p>
+  <p><b>Pitch tolerance</b> - Default is 5.</p>
+  <p><b>Barrel Length</b> - The distance from the center of the origin brush to the tip of the barrel.</p>
+  <p><b>Barrel Horizontal</b> - Horizontal distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Barrel Vertical</b> - Vertical distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Smoke Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Flash Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Sprite Scale</b> - Scale of the sprites that appear at the end of the barrel. 1 is normal, 0.5 is half, etc.</p>
+  <p><b>Rotate Sound</b> - Specify the name of an ambient_generic.</p>
+  <p><b>Rate of Fire</b> - Number of bullets fired per second.</p>
+  <p><b>Damage per Bullet</b> - Default is 0, so if you want it to kill things you must enter something.</p>
+  <p><b>Firing Persistance</b> - Used by non-player-controlled guns to determine for how long the gun carries on firing after the player has left its range.</p>
+ <p><b>Bullet accuracy</b> - How accurate the gun is.<br>
+Values:</p>
+<blockquote> 
+  0 = perfect shot<br>
+  1 = small cone<br>
+  2 = medium cone<br>
+  3 = large cone<br>
+  4 = extra-large cone<br>
+</blockquote>
+
+  <p><b>Minimum target range</b> - Minimum range the target can be at for a non-player-controlled gun to fire.</p>
+ <p><b>Maximum target range</b> - Maximum range the target can be at for a non-player-controlled gun to fire.</p>
+  <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+  <p><b>Bullets</b> - Projectile type: </p>
+<blockquote>
+  0 = none<br>
+  1 = 9mm<br>
+  2 = MP5<br>
+  3 = 12mm<br>
+</blockquote>
+
+
+
+<h3>Flags:</h3>
+
+<blockquote>
+  <font color=red>(1) Active</font> - If enabled, the gun will be active when the map loads. If not 
+  enabled, the gun will need to be triggered to work (if non-player-controlled).<br>
+  <font color=red>(16) Only direct</font> - Gun will only fire if the target is in direct line of sight.<br>
+  <font color=red>(32) Controllable</font> - If enabled, the gun can be controlled by the player through a func_tankcontrols entity.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/328">Func_tankcontrols</a><br>
+<a href="http://www.gamedesign.net/book/view/329">Func_tanklaser</a><br>
+<a href="http://www.gamedesign.net/book/view/330">Func_tankmortar</a><br>
+<a href="http://www.gamedesign.net/book/view/331">Func_tankrocket</a><br>
+<a href="http://www.gamedesign.net/book/view/442">Ambient_generic</a>
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p>The func_tank needs to be created facing 0 degrees (to the right in the top (x/y) view). The angle that the weapon faces in-game can be controlled with the compass (Yaw).<br>
+  Targetting an ambient_generic (with its Not Toggled and Start Silent flags enabled) allows you to give the gun a sound.<br>
+  You can also target an env_shooter to shoot out spent shells!</p></ul><h1 id="328" name="328" class="book-h1">Func_tankcontrols</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_tankcontrols</b> <br>Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity defines an area in which a player can control a func_tank entity.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+
+  <p><b>Tank Entity Name</b> - Set this to the Name of the gun you want to control.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/327">Func_tank</a><br>
+<a href="http://www.gamedesign.net/book/view/336">Func_traincontrols</a>
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p> Getting the position of this entity right is important.<br> It can be directly behind the gun, or placed for a 'remote control' effect.<br>
+ When 'used' by a player, the player's 'look' movements are translated into relative turret movements.<br>
+  Similar to func_traincontrols.</p></ul><h1 id="329" name="329" class="book-h1">Func_tanklaser</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_tanklaser</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This is a func_tank that fires laser beams instead of bullets.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+ <p><b>Name</b> - If non-player-controllable, the gun can be triggered to activate, otherwise this name is used with a func_tankcontrols entity to give the player control.</p>
+ <p><b>Target</b> - Event to activate on each shot. </p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Global Entity Name</b> - The Name of the Global controlling this laser.</p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A master must usually be active in order for the entity to work. Thus they act almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource.</p>
+  <p><b>Yaw rate</b> - The speed of the left/right movement of the gun.</p>
+  <p><b>Yaw range</b> - Range of left/right movement in degrees.</p>
+  <p><b>Yaw tolerance</b> - Default is 15.</p>
+  <p><b>Pitch rate</b> - The speed of the up/down movement of the gun.</p>
+  <p><b>Pitch range</b> - Range of up/down movement in degrees.</p>
+  <p><b>Pitch tolerance</b> - Default's to 5.</p>
+  <p><b>Barrel Length</b> - The distance from the center of the origin brush to the tip of the barrel.</p>
+  <p><b>Barrel Horizontal</b> - Horizontal distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Barrel Vertical</b> - Vertical distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Smoke Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Flash Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Sprite Scale</b> - Scale of the sprites that appear at the end of the barrel. (1 is normal, 0.5 is half, etc).</p>
+  <p><b>Rotate Sound</b> - Specify an ambient_generic.</p>
+  <p><b>Rate of Fire</b> - Number of bullets fired per second.</p>
+  <p><b>Damage per Bullet</b> - Default is 0, so if you want it to kill things you must enter something.</p>
+  <p><b>Firing Persistance</b> - Used by non-player-controlled guns to determine for how long the gun carries on firing after the player has left its range.</p>
+  <p><b>Bullet accuracy</b> - How accurate the gun is.<br> 
+Values:</p>
+<blockquote> 
+  0 = perfect shot<br>
+  1 = small cone<br>
+  2 = medium cone<br>
+  3 = large cone<br>
+  4 = extra-large cone<br>
+</blockquote>
+
+ <p><b>Minimum target range</b> - Minimum range the target can be at for a non-player-controlled gun to fire.</p>
+ <p><b>Maximum target range</b> - Maximum range the target can be at for a non-player-controlled gun to fire.</p>
+ <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+ <p><b>env_laser Entity</b> - The Name of the env_laser entity to use.</p>
+
+<h3>Flags:</h3>
+
+<blockquote>
+   <font color=red>(1) Active</font> - If enabled, the gun will be active when the map loads. If not 
+  enabled, the gun will need to be triggered to work (if non-player-controlled).<br>
+   <font color=red>(16) Only direct</font> - Laser will only fire if the target is in direct line of 
+  sight (when non-player-controlled).<br>
+   <font color=red>(32) Controllable</font> - If enabled, the gun can be controlled by the player 
+  through a func_tankcontrols entity.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/432">Env_laser</a><br>
+<a href="http://www.gamedesign.net/book/view/327">Func_tank</a><br>
+<a href="http://www.gamedesign.net/book/view/330">Func_tankmortar</a><br>
+<a href="http://www.gamedesign.net/book/view/331">Func_tankrocket</a><br>
+<a href="http://www.gamedesign.net/book/view/442">Ambient_generic</a>
+
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p>The func_tanklaser needs to be created facing 0 degrees (to the right in the top (x/y) view). The angle that the weapon faces in-game can be controlled with the compass (Yaw).<br>
+Targetting an ambient_generic (with its Not Toggled and Start Silent flags enabled) allows you to give the gun a sound.<br>
+The env_laser entity is used to determine how the laser beams look. The Target of the env_laser should be the Name of the func_tanklaser.</p></ul><h1 id="330" name="330" class="book-h1">Func_tankmortar</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_tankmortar</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This is basically mortar-firing func_tank. Most commonly used for 'real' tanks.</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+ <p><b>Name</b> - If non-player-controllable, the gun can be triggered to activate, otherwise this name is used with a func_tankcontrols entity to give the player control.</p>
+ <p><b>Target</b> - Event to activate on each shot. </p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Global Entity Name</b> - The name of the Global controlling this tank. </p>
+
+<p><b>Yaw rate</b> - The speed of the left/right movement of the gun.</p>
+  <p><b>Yaw range</b> - Range of left/right movement in degrees.</p>
+  <p><b>Yaw tolerance</b> - Default is 15.</p>
+  <p><b>Pitch rate</b> - The speed of the up/down movement of the gun.</p>
+  <p><b>Pitch range</b> - Range of up/down movement in degrees.</p>
+  <p><b>Pitch tolerance</b> - Default is 5.</p>
+  <p><b>Barrel Length</b> - The distance from the center of the origin brush to the tip of the barrel.</p>
+  <p><b>Barrel Horizontal</b> - Horizontal distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Barrel Vertical</b> - Vertical distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Smoke Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Flash Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Sprite Scale</b> - Scale of the sprites that appear at the end of the barrel. (1 is normal, 0.5 is half, etc).</p>
+  <p><b>Rotate Sound</b> - Specify an ambient_generic.</p>
+  <p><b>Rate of Fire</b> - Number of bullets fired per second.</p>
+
+ <p><b>Damage per Bullet</b> - Default is 0, so if you want it to kill things you must enter something.</p>
+  <p><b>Firing Persistance</b> - Used by non-player-controlled guns to determine for how long the gun carries on firing after the player has left its range.</p>
+  <p><b>Bullet accuracy</b> - How accurate the gun is.<br> 
+  Values:</p>
+<blockquote> 
+  0 = perfect shot<br>
+  1 = small cone<br>
+  2 = medium cone<br>
+  3 = large cone<br>
+  4 = extra-large cone<br>
+</blockquote>
+ <p><b>Minimum target range</b> - Minimum range the target can be at for a non-player-controlled gun to fire.</p>
+ <p><b>Maximum target range</b> - Maximum range the target can be at for a non-player-controlled gun to fire.</p>
+ <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+ <p><b> Explosion Magnitude</b> - The size of the explosion produced when the 
+  round hits its target.</p>
+<h3>Flags:</h3>
+
+<blockquote>
+   <font color=red>(1) Active</font> - If enabled, the gun will be active when the map loads. If not 
+  enabled, the gun will need to be triggered to work (if non-player-controlled).<br>
+   <font color=red>(16) Only direct</font> - Laser will only fire if the target is in direct line of 
+  sight (when non-player-controlled).<br>
+   <font color=red>(32) Controllable</font> - If enabled, the gun can be controlled by the player 
+  through a func_tankcontrols entity.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/435">Env_shake</a><br>
+<a href="http://www.gamedesign.net/book/view/327">Func_tank</a><br>
+<a href="http://www.gamedesign.net/book/view/329">Func_tanklaser</a><br>
+<a href="http://www.gamedesign.net/book/view/331">Func_tankrocket</a>
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p>The func_tankmortar needs to be created facing 0 degrees (to the right in the top (x/y) view). The angle that the weapon faces in-game can be controlled with the compass (Yaw).</p>
+  <p>Targetting an ambient_generic (with its Not Toggled and Start Silent flags enabled) allows you to give the gun a sound.</p>
+  <p>Doesn't fire a visible projectile. Contact is instant after firing.</p>
+  <p>If you want a shake effect when the gun fires, use an env_shake. Giving it the same name as the ambient_generic used for sound makes the func_tankmortar target both.</p></ul><h1 id="331" name="331" class="book-h1">Func_tankrocket</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_tankrocket</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>A func_tank that fires visible rockets (like the ones from the RPG).</p>
+
+ <hr noshade color="black">
+<!--break-->
+
+ <h3>Properties</h3>
+
+<p><b>Name</b> - If non-player-controllable, the gun can be triggered to activate, otherwise this name is used with a func_tankcontrols entity to give the player control.</p>
+ <p><b>Target</b> - Event to activate on each shot. </p>
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>Global Entity Name</b> - The name of the Global controlling this tank. </p>
+ <p><b>Pitch Roll Yaw</b> - Sets the pitch (up / down), yaw (left / right) and roll (bank) respectively. The compass in WorldCraft / Hammer corresponds to Yaw. The settings are not always (or not all) used.</p>
+ <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A master must usually be active in order for the entity to work. Thus they act almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource.</p>
+
+  <p><b>Yaw rate</b> - The speed of the left/right movement of the gun.</p>
+  <p><b>Yaw range</b> - Range of left/right movement in degrees.</p>
+  <p><b>Yaw tolerance</b> - Default is 15.</p>
+  <p><b>Pitch rate</b> - The speed of the up/down movement of the gun.</p>
+  <p><b>Pitch range</b> - Range of up/down movement in degrees.</p>
+  <p><b>Pitch tolerance</b> - Default is 5.</p>
+  <p><b>Barrel Length</b> - The distance from the center of the origin brush to the tip of the barrel.</p>
+  <p><b>Barrel Horizontal</b> - Horizontal distance from the center of the origin brush to the center of the Barrel.</p>
+  <p><b>Barrel Vertical</b> - Vertical distance from the center of the origin brush to the center of the Barrel.</p>
+  brush to the center of the Barrel.
+
+  <p><b>Smoke Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Flash Sprite</b> - The sprite that will be shown at the end of the barrel when the gun is fired.</p>
+  <p><b>Sprite Scale</b> - Scale of the sprites that appear at the end of the barrel. (1 is normal, 0.5 is half, etc).</p>
+
+  <p><b>Rotate Sound</b> - specify an ambient_generic.</p>
+  <p><b>Rate of Fire</b> - Number of bullets fired per second.</p>
+  <p><b>Damage per Bullet</b> - Default is 0, so if you want it to kill things you must enter something.</p>
+  <p><b>Firing Persistance</b> - Used by non-player-controlled guns to determine for how long the gun carries on firing after the player has left its range.</p>
+  <p><b>Bullet accuracy</b> - How accurate the gun is.<br> 
+  Values:</p>
+<blockquote> 
+  0 = perfect shot<br>
+  1 = small cone<br>
+  2 = medium cone<br>
+  3 = large cone<br>
+  4 = extra-large cone<br>
+</blockquote>
+ <p><b>Minimum target range</b> - Minimum range the target can be at for a non-player-controlled gun to fire.</p>
+ <p><b>Maximum target range</b> - Maximum range the target can be at for a non-player-controlled gun to fire.</p>
+<p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional light flags, See ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement, see ZHLTReference for more info. </p>
+
+<h3>Flags:</h3>
+
+<blockquote>
+   <font color=red>(1) Active</font> - If enabled, the gun will be active when the map loads. If not enabled, the gun will need to be triggered to work (if non-player-controlled).<br>
+   <font color=red>(16) Only direct</font> - Laser will only fire if the target is in direct line of sight (when non-player-controlled).<br>
+   <font color=red>(32) Controllable</font> - If enabled, the gun can be controlled by the player through a func_tankcontrols entity.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/327">Func_tank</a><br>
+<a href="http://www.gamedesign.net/book/view/329">Func_tanklaser</a><br>
+<a href="http://www.gamedesign.net/book/view/330">Func_tankmortar</a><br>
+<a href="http://www.gamedesign.net/book/view/442">Ambient_generic</a>
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p> The func_tankrocket needs to be created facing 0 degrees (to the right in the top (x/y) view). The angle that the weapon faces in-game can be controlled with the compass (Yaw).</p>
+  <p>Targetting an ambient_generic (with its Not Toggled and Start Silent flags enabled) allows you to give the gun a sound.</p>
+  <p>Setting the Rate of Fire too high may result in the rockets hitting each other as they leave the barrel, so anything in the vicinity of the gun will be blown to pieces (including the player).</p></ul><h1 id="332" name="332" class="book-h1">Func_trackautochange</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_trackautochange</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity lets you switch a train that is not being controlled by the player 
+to a new track via a moving piece of track, either rotating, or ascending / 
+decending, or both. </p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - Using the Name to trigger the func_conveyor will cause it to reverse direction.</p>
+  <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes, translucency are controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+ 
+
+  <p><b>Global Entity Name</b> - The name of the Global controlling this autochange. (globalname)</p> 
+<p><b>Move Sound</b> - These apply to the trackchange when it occurs.<br>
+ The options are as follows:</p>
+<blockquote>
+        0 = No Sound<br>
+        1 = big elev 1<br>
+        2 = big elev 2<br>
+        3 = tech elev 1<br>
+        4 = tech elev 2<br>
+        5 = tech elev 3<br>
+        6 = freight elev 1<br>
+        7 = freight elev 2<br>
+        8 = heavy elev<br>
+        9 = rack elev<br>
+        10 = rail elev<br>
+        11 = squeek elev<br>
+        12 = odd elev 1<br>
+        13 = odd elev 2 <br>
+</blockquote>
+
+ <p><b>Stop Sound</b> - These apply to the trackchange when it stops.<br>
+ The options are:</p>
+<blockquote>
+         0 = no sound<br>
+        1 = big elev stop 1<br>
+        2 = big elev stop 2<br>
+        3 = freight elev stop<br>
+        4 = heavy elev stop<br>
+        5 = rack stop<br>
+        6 = rail stop<br>
+        7 = squeek stop<br>
+        8 = quick stop <br>
+</blockquote>
+
+  <p><b>Sound Volume</b> - Volume in the range 0.0 - 1.0.</p>
+  <p><b>Travel altitude</b> - Altitude to ascend or descend (use negative values for the latter, or 0 to disable altitude change).</p>
+  <p><b>Spin Amount</b> - This is the amount in degrees the track will turn on its way up / down.</p>
+  <p><b>Train to Switch</b> - The Name of the train that is using the track.</p>
+  <p><b>Top Track</b> - This is the Name of the last path_corner in the upper track.</p>
+  <p><b>Bottom Track</b> -The Name of the first path_corner in the lower track.</p>
+  <p><b>Move/Rotate Speed</b> - The speed in units/sec that the track platform will move. If the Rotate Only flag is set this will be the speed of rotation only.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+  <p><b>Travel Altitude</b> - The distance the object will move.</p>
+  <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(1) Auto activate train</font> - <br>
+ <font color=red>(2) Relink track</font>  - <br>
+ <font color=red>(8) Start at bottom</font>  - Moving track will start in the bottom position.<br>
+ <font color=red>(16) Rotate only</font>  - Track will not move up and down.<br>
+ <font color=red>(64) X axis</font>  - Rotate around the X axis.<br>
+ <font color=red>(128) Y axis</font>  - Rotate around the Y axis.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/462">Path_track	</a><br>
+<a href="http://www.gamedesign.net/book/view/333">Func_trackchange</a><br>
+<a href="http://www.gamedesign.net/book/view/334">Func_tracktrain</a><br>
+<a href="http://www.gamedesign.net/book/view/335">Func_train</a><br>
+<a href="http://www.gamedesign.net/book/view/336">Func_traincontrols</a>
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p>It is important that the last path_track should not have a Next Stop Target. <br>
+  For this path_track to function correctly, set the property Fire on Dead End to the Name of the func_trackautochange.<br>
+  An origin brush needs to be part of the entity to specify its axis of rotation.<br>
+  The axis defaults to <font color=red>Z</font> if neither of the axis flags is enabled.</p></ul><h1 id="333" name="333" class="book-h1">Func_trackchange</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_trackchange</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity allows you to create a rotating platform that will switch a 
+func_tracktrain's path, used mainly with player-controllable trains.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+
+  <p><b>Name</b> - Using the Name to trigger the func_conveyor will cause it to reverse direction.</p>
+  <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes, translucency are controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+<p><b>Global Entity Name</b> - The name of the Global controlling this trackchange.</p> 
+
+ <p><b>Move Sound</b> - These apply to the trackchange when it occurs.<br>
+ The options are as follows:</p>
+<blockquote>
+        0 = No Sound<br>
+        1 = big elev 1<br>
+        2 = big elev 2<br>
+        3 = tech elev 1<br>
+        4 = tech elev 2<br>
+        5 = tech elev 3<br>
+        6 = freight elev 1<br>
+        7 = freight elev 2<br>
+        8 = heavy elev<br>
+        9 = rack elev<br>
+        10 = rail elev<br>
+        11 = squeek elev<br>
+        12 = odd elev 1<br>
+        13 = odd elev 2 <br>
+</blockquote>
+
+ <p><b>Stop Sound</b> - These apply to the trackchange when it stops.<br>
+ The options are:</p>
+<blockquote>
+         0 = no sound<br>
+        1 = big elev stop 1<br>
+        2 = big elev stop 2<br>
+        3 = freight elev stop<br>
+        4 = heavy elev stop<br>
+        5 = rack stop<br>
+        6 = rail stop<br>
+        7 = squeek stop<br>
+        8 = quick stop <br>
+</blockquote>
+
+  <p><b>Sound Volume</b> - Volume in the range 0.0 - 1.0.</p>
+  Travel altitude (height) - Altitude to ascend or descend (use negative values 
+  for the latter, or 0 to disable altitude change).
+
+   <p><b>Travel altitude</b> - Altitude to ascend or descend (use negative values for the latter, or 0 to disable altitude change).</p>
+  <p><b>Spin Amount</b> - This is the amount in degrees the track will turn on its way up / down.</p>
+  <p><b>Train to Switch</b> - The Name of the train that is using the track.</p>
+  <p><b>Top Track</b> - This is the Name of the last path_corner in the upper track.</p>
+  <p><b>Bottom Track</b> -The Name of the first path_corner in the lower track.</p>
+  <p><b>Move/Rotate Speed</b> - The speed in units/sec that the track platform will move. If the Rotate Only flag is set this will be the speed of rotation only.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+  <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(1) Auto activate train</font> - ??<br>
+ <font color=red>(2) Relink track</font>  - ??<br>
+ <font color=red>(8) Start at bottom</font>  - Moving track will start in the bottom position.<br>
+ <font color=red>(16) Rotate only</font>  - Track will not move up and down.<br>
+ <font color=red>(64) X axis</font>  - Rotate around the X axis.<br>
+ <font color=red>(128) Y axis</font>  - Rotate around the Y axis.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/332">Func_trackautochange</a><br>
+<a href="http://www.gamedesign.net/book/view/334">Func_tracktrain</a><br>
+<a href="http://www.gamedesign.net/book/view/335">Func_train</a><br>
+<a href="http://www.gamedesign.net/book/view/336">Func_traincontrols</a><br>
+<a href="http://www.gamedesign.net/book/view/462">Path_track</a>
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p>Identical to func_trackautochange except that this one is for player-controlled trains.<br>
+  An origin brush needs to be part of the entity to specify its axis of rotation.<br>
+  The axis defaults to Z if neither of the axis flags is enabled.</p></ul><h1 id="334" name="334" class="book-h1">Func_tracktrain</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_tracktrain</b> <br>Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity allows you to create a player-controllable train / platform etc. 
+that follows a path.</p>
+
+<hr noshade color="black">
+<!--break-->
+<h3>Properties</h3>
+
+ <p><b>Name</b> - Using the Name to trigger the func_conveyor will cause it to reverse direction.</p>
+
+ <p><b>Global Entity Name</b> - If your trian is going to cross level 
+  transitions, it'll need a global name.</p>
+
+   <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes, translucency are controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+
+ <p><b>First stop Target</b> - The name of the path_track to start at.</p>
+
+  <p><b>Sound</b> - Values:</p>
+<blockquote>
+  0 = none<br>
+  1 = rail 1<br>
+  2 = rail 2<br>
+  3 = rail 3<br>
+  4 = rail 4<br>
+  5 = rail 6<br>
+  6 = rail 7<br>
+</blockquote>
+
+  <p><b>Distance between the wheels</b> - This determines how the train behaves 
+  when turning corners. Generally the length of the object works here.</p>
+  <p><b>Height above track</b> - This is the height above the path_track that the 
+  train will ride, based on the location of the train's origin brush.</p>
+  <p><b>Initial Speed</b> - The speed the train starts at, until overridden 
+  by player control or path_track settings.</p>
+  <p><b>Speed</b> - The maximum speed the player can make a controllable train go in units/second. You can really have some fun here!</p>
+  <p><b>Damage on crush</b> - If train movement is blocked by the player, the player will take this much damage.</p>
+  <p><b> Volume</b> - Range: 0 - 10.</p>
+  <p><b>Bank angle on turns</b> - This is the angle the train will tilt when    cornering.</p>
+  <p><b>Minimum Light Level</b> - If you want the train to emit light, set this to <font color=red>1</font> The range is '0' to '1'</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+  <font color=red>(1) No pitch</font> - Enabling this will make the train rotate on the Z axis only (yaw - left and right)<br>
+  <font color=red>(2) No User Control</font> - Removes the player's ability to control the train (free 
+  ride to death?... yeah!) <br>
+  <font color=red>(8) Passable</font> - Makes train non-solid.<br>
+</blockquote>
+
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/333">Func_trackchange</a><br>
+<a href="http://www.gamedesign.net/book/view/332">Func_trackautochange</a><br>
+<a href="http://www.gamedesign.net/book/view/335">Func_train</a><br>
+<a href="http://www.gamedesign.net/book/view/336">Func_traincontrols</a><br>
+<a href="http://www.gamedesign.net/book/view/462">Path_track</a>
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p> When you create the brush model it must face west (90 degrees - to the left in the top view). When it spawns in the game it will automatically move to the first path_track and orientate itself to face the second path_track.<br>
+  func_traincontrol entities allow the player to control the train. They are not part of the func_tracktrain and their placement only determines the area of use. They will automatically stay in that area relative to the train as it 
+  moves.<br>
+  An origin brush needs to be part of the entity to specify its axes.<br>
+  This is one of the few entities that can have 'clip' brushes as part of itself, which prevent player movement (i.e. to stop the player falling off the sides).</p></ul><h1 id="335" name="335" class="book-h1">Func_train</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_train</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity creates a moving object. Not just used for trains; in fact, the 
+func_train is more commonly seen in elevators, platforms, laser targets etc.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+ <p><b>Name</b> - Using the Name to trigger the func_conveyor will cause it to reverse direction.</p>
+
+ <p><b>Global Entity Name</b> - If your trian is going to cross level 
+  transitions, it'll need a global name.</p>
+
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes, translucency are controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+
+ <p><b>First stop Target</b> - The name of the path_track to start at.</p>
+
+  <p><b>Move Sound</b> - options are as follows:</p>
+<blockquote>
+        0 = No Sound<br>
+        1 = big elev 1<br>
+        2 = big elev 2<br>
+        3 = tech elev 1<br>
+        4 = tech elev 2<br>
+        5 = tech elev 3<br>
+        6 = freight elev 1<br>
+        7 = freight elev 2<br>
+        8 = heavy elev<br>
+        9 = rack elev<br>
+        10 = rail elev<br>
+        11 = squeek elev<br>
+        12 = odd elev 1<br>
+        13 = odd elev 2 <br>
+</blockquote>
+
+  <p><b>Stop Sound</b> - the options are:</p>
+     <blockquote>
+        0 = no sound<br>
+        1 = big elev stop 1<br>
+        2 = big elev stop 2<br>
+        3 = freight elev stop<br>
+        4 = heavy elev stop<br>
+        5 = rack stop<br>
+        6 = rail stop<br>
+        7 = squeek stop<br>
+        8 = quick stop <br>
+</blockquote>
+
+ <p><b>Speed</b> - The speed the entity will move at in units/second.</p>
+  <p><b>Angular velocity</b> - Sets up axial rotation. Format: Y Z X.</p>
+  <p><b>Damage on crush</b> - If the player is caught between the entity and a solid brush, this is the amount of damage he will sustain.</p>
+  <p><b>Contents</b> - </p>
+  <p><b>Sound Volume</b> - Range: 0.0 - 1.0</p>
+  <p><b>Minimum Light Level</b> - If you want this entity to emit light, set this to '1'.</p>
+
+
+<h3>Flags:</h3>
+<blockquote>
+ <font color=red>(8) Not solid</font> - With this flag enabled, a brush-based entity will not be solid, so will not affect the player's movement in the way solid brushes do. Useful for things like moving laser targets that musn't obstruct the player.
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/334">Func_tracktrain</a><br>
+<a href="http://www.gamedesign.net/book/view/328">Func_traincontrols</a><br>
+<a href="http://www.gamedesign.net/book/view/461">Path_corner</a>
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p> After spawning, the func_train moves instantly to its First Stop Target path_corner. So the entity can be created in another area (and therefore lighting can be controlled), but it will always appear in the right place to 
+  the player.<br>
+  When making moving targets for things like env_laser, set Render Mode to Texture and Render Amount to 0, and enable the Not Solid flag.<br>
+  No origin brush is required - the func_train aligns itself so that its centre is right over the centre of its path_corners.</p></ul><h1 id="336" name="336" class="book-h1">Func_traincontrols</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+	<b>func_traincontrols</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity defines the area in which the player can control a func_tracktrain, 
+relative to the train (since they move). Similar to func_tankcontrols.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Train Name</b> - Set this to the Name of the func_tracktrain you want to 
+  control.</p>
+
+<h3>Flags:</h3>
+<blockquote>
+  None
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/333">Func_trackchange</a><br>
+<a href="http://www.gamedesign.net/book/view/332">Func_trackautochange</a><br>
+<a href="http://www.gamedesign.net/book/view/334">Func_tracktrain</a><br>
+<a href="http://www.gamedesign.net/book/view/335">Func_train</a><br>
+<a href="http://www.gamedesign.net/book/view/462">Path_track</a>
+
+<hr noshade color="black">
+
+<p><b>Notes:</b></p>
+<p>None Yet, but feel free to comment.</p></ul><h1 id="337" name="337" class="book-h1">Func_wall</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>func_wall</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>This entity lets you create a stationary piece of geometry in your level which can then be modifed (through its rendering properties) for a number of effects. Often used for performace reasons, and for things like unbreakable glass, masked textures (fences, ladders).</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+  <p><b>Name</b> - If the func_wall is covered by a switchable texture<br> (e.g. <font color=red>+0~light3a</font> , <font color=red>+A~light3a</font>) , then use this name to toggle the texture.</p>
+  <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+  <p><b>Global Entity Name</b> - The name of the Global controlling this wall.</p>
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+  <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+
+<h3>Flags:</h3>
+      <blockquote>
+ <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.<br>
+</blockquote>
+
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/338">Func_wall_toggle</a><br>
+<a href="http://www.gamedesign.net/book/view/317">Func_ladder</a>
+
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+ <p> <b>Unbreakable windows</b>: Set the Render Mode to Texture, and the FX amount to about 100. This will make the entity see-through.</p>
+  <p><b>Masked textures</b> (blue background, prefixed with <font color=red>{</font> ): Apply a masked texture, then set the Render mode to Solid and the FX Amount to 255. The blue areas on the texture will not show up in the game.</p>
+  <p><b>Small / complex objects</b>: Brush entities break up other world brushes (which can cause harsh transitions between light and dark, and performance decreases), so bind small stuff (light fittings, pipe flanges etc.) to func_wall entities. Beware of the fact that entities bound together (as one entity) over a large area will all be visible by the engine at the same time.</p></ul><h1 id="338" name="338" class="book-h1">Func_wall_toggle</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>func_wall_toggle</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>The func_wall_toggle is a func_wall that is made invisible when triggered.</p>
+
+<hr noshade color="black">
+<!--break-->
+
+<h3>Properties</h3>
+
+  <p><b>Name</b> - Provide a name to enable the entity to be triggered visible / invisible.</p>
+
+ <p><b>Render FX</b> -  The options are as follows:</p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes  translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+  <p><b>Global Entity Name</b> - The name of the Global that controlls this wall.</p>
+   <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light, the range is '0' and '1'.</p>
+ <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+
+<h3>Flags:</h3>
+      <blockquote>
+ <font color=red>(1) Starts invisible</font> - Use this if you are triggering the wall and want it to start in an invisible state.<br>
+
+  <font color=red>(2048) Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.<br>
+</blockquote>
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/337">Func_wall</a>
+
+<hr noshade color="black">
+
+<p><b>Notes:</p></b>
+<p>Concept seems similar to func_illusionary, but illusionary is 'not solid' (with optional invisibility... which makes it effectively the same), while this becomes 'not there'. Illusionary is always not solid; func_wall_toggle isn't always 'not there'. Just depends on what you're trying to achieve :)</p></ul><h1 id="339" name="339" class="book-h1">Func_water</h1><ul><!-- by Andy (andy_howard@bigpond.com) 2004 -->
+	 
+<h3>Half-Life</h3>
+<blockquote>
+		<b>func_water</b> <br> Originally written for <a href="http://www.cariad.co.za/twhl">TWHL</a>.
+</blockquote>
+
+  <p>You guessed it.... Water.<br> A water texture (one prefixed with <font color=red>!</font>) will act as water, but binding it to an entity gives added advantages. By the way, this entity looks a lot like func_door, because it's designed to be able to move (flooding etc.)</p>
+
+<hr noshade color="black">
+<!--break-->
+<h3>Properties</h3>
+
+
+  <p><b>Name</b> - Provide a name to use as a trigger for this entity. </p>
+
+ <p><b>Render FX</b> -  The options are as follows: </p>
+<blockquote>
+        0 = Normal<br>
+        1 = Slow Pulse<br>
+        2 = Fast Pulse<br>
+        3 = Slow Wide Pulse<br>
+        4 = Fast Wide Pulse<br>
+        5 = Slow Fade Away<br>
+        6 = Fast Fade Away<br>
+        7 = Slow Become Solid<br>
+        8 = Fast Become Solid<br>
+        9 = Slow Strobe<br>
+        10 = Fast Strobe<br>
+        11 = Faster Strobe<br>
+        12 = Slow Flicker<br>
+        13 = Fast Flicker<br>
+        14 = Constant Glow<br>
+        15 = Distort<br>
+        16 = Hologram (Distort and Fade) <br>
+</blockquote>
+
+ <p><b>Render Mode</b> -  Options are:</p>
+<blockquote>
+  0 = Normal<br>
+  1 = Color<br>
+  2 = Texture<br>
+  3 = Glow<br>
+  4 = Solid<br>
+  5 = Additive <br>
+</blockquote>
+
+ <p><b>FX Amount</b> - The value of the Render Mode, between 0 and 255. <br>
+  'Solid' mode simply needs a non '0' value to work, while in other modes translucency is controlled by this value.</p>
+ <p><b>FX Color</b> - An RGB value that controls the colour of the object  rendering. Only Color and Glow Render Modes use the Render Color property, but other entities also use it under different SmartEdit names.</p>
+
+<p><b>Global Entity Name</b> - The name of the Global controlling the water.</p>
+ <p><b>Pitch Roll Yaw</b> - Set the direction of push here.</p>
+ <p><b>KillTarget</b> - The entity 'Named' here will be removed from the game forever, when the door is triggered.</p>
+ <p><b>Speed</b> - The speed the door will move.</p>
+ <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A master must usually be active in order for the entity to work. Thus they act almost like an on/off switch, in their simplest form, and like an AND gate in the case of the multisource. If the specified 'Master' is not active, the door will be locked.</p>
+
+ <p><b>Move Sound</b> - Options are as follows: </p>
+<blockquote>
+0 = No Sound<br>
+1 = Servo (Sliding)<br>
+2 = Pneumatic (Sliding)<br>
+3 = Pneumatic (Rolling)<br>
+4 = Vacuum<br>
+5 = Power Hydraulic<br>
+6 = Large Rollers<br>
+7 = Track Door<br>
+8 = Snappy Metal Door  <br>
+</blockquote>
+
+<p><b>Stop Sound</b> - the options are: </p>
+<blockquote>
+0 = No Sound <br>
+1 = Clang with brake <br>
+2 = Clang reverb <br>
+3 = Ratchet Stop <br>
+4 = Chunk <br>
+5 = Light airbrake <br>
+6 = Metal Slide Stop <br>
+7 = Metal Lock Stop <br>
+8 = Snappy Metal Stop   <br>
+</blockquote>
+
+  <p><b>Delay before Close</b> - This is the time in seconds the door will remain open after opening, '-1' makes the door stay open.</p>
+ <p><b>Lip</b> - The number of units 'in relation to the door width' that remain after opening. A negative value <font color=red>-10</font> will make the door move it's width <font color=red>+10</font> units in the direction chosen.</p>
+ <p><b>Damamge Inflicted when Blocked</b> - This figure is how much damage the player will suffer if caught in the door.</p>
+ <p><b>Message if triggered</b> - </p>
+ <p><b>Target</b> - Event to activate on opening.</p>
+
+  <p><b>Fire on Close</b> - The entity to trigger, when this entity returns to it's starting position. </p>
+  <p><b>Health</b> - The amount of damage required before the water opens. I am sure there is a use for this... I just haven't figured it out yet.</p>
+
+ <p><b>Locked Sound</b> - Sounds that play when the play is 'locked'.<br> Options are:</p>
+<blockquote>
+0 = None<br>
+2 = Access Denied<br>
+8 = Small zap<br>
+10 = Buzz<br>
+11 = Buzz Off<br>
+12 = Latch Locked<br>
+</blockquote>
+
+ <p><b>Unlocked Sound</b> - Sound to play when the door is 'unlocked'.<br>
+Options are:</p>
+<blockquote>
+0 = None<br>
+1 = Big zap & Warmup<br>
+3 = Access Granted<br>
+4 = Quick Combolock<br>
+5 = Power Deadbolt 1<br>
+6 = Power Deadbolt 2<br>
+7 = Plunger <br>
+8 = Small zap<br>
+9 = Keycard Sound<br>
+10 = Buzz<br>
+</blockquote>
+
+ <p><b>Locked Sentence</b> - Sentence that is spoken when entity is 'locked'.<br>
+Options are:</p>
+<blockquote>
+1 = Gen. Access Denied<br>
+2 = Security Lockout<br>
+3 = Blast Door<br>
+4 = Fire Door<br>
+5 = Chemical Door  <br>
+</blockquote>
+
+ <p><b>Unlocked Sentence</b> - Sentence that is spoken when door is 'unlocked'.<br>
+Options are:</p>
+<blockquote>
+1 = Gen. Access Granted<br>
+2 = Security Disengaged<br>
+3 = Blast Door<br>
+4 = Fire Door<br>
+5 = Chemical Door<br>
+6 = Radiation Door<br>
+7 = General Containment<br>
+8 = Maintenance area  <br>
+</blockquote>
+
+
+  <p><b>Minimum light level</b> - A Value > '0' will let this entity emit light,  the range is '0' and '1'.</p>
+  <p><b>ZHLT Lightflags</b> - Set optional lightflags. Refer to ZHLTReference for more info.</p>
+ <p><b>Light Origin Target</b> - Set optional light placement. Refer to ZHLTReference for more info.</p>
+
+<p><b>Contents</b> - Values:</p>
+<blockquote>
+  -3 = water<br>
+  -4 = slime<br>
+  -5 = lava<br>
+</blockquote>
+  <p><b>Wave Height</b> - Overrides the height set in worldspawn.</p>
+
+ <h3>Flag Properties</h3>
+      <blockquote>
+<font color=red>(1) Starts open</font> - The door will 'Start Open'.<br>
+<font color=red>(4) Don't link</font> - <br>
+<font color=red>(8) Passable</font> - Not Solid: an entity with this flag enabled will not obstruct the player or monsters.<br>
+<font color=red>(32)Toggle</font> - With this flag set on, an entity can be turned on and off, either by the player, or by being triggered.<br>
+<font color=red>(256) Use Only</font> - Player must 'Use' to open. Checking this flag prevents the door being triggered any other way.<br>
+<font color=red>(512) Monsters can't</font> - Monsters with arms (Zombies) can't use this door.<br>
+<font color=red>Not in Deathmatch</font> - If this flag is set on, the entity will not appear in deathmatch games.<br>
+           </blockquote>
+<hr noshade color="black">
+<h4>Related Entities</h4>
+<a href="http://www.gamedesign.net/book/view/471">Worldspawn</a><br>
+<a href="http://www.gamedesign.net/book/view/308">Func_conveyor</a><br>
+<a href="http://www.gamedesign.net/book/view/526">Trigger_push</a><br>
+<a href="http://www.gamedesign.net/book/view/310">Func_door</a>
+
+
+<hr noshade color="black">
+
+ <p><b>Notes</b>:<br>
+<p>You can set the default wave height in the worldspawn properties (Map -> Map Properties) and this will effect all func_water entities in the map, but if you want less wave height for a particular entity, use the Wave Height property.</p>
+ <p>Some of the func_door-derived properties don't work with func_water.</p>
+  <p>To get the water to look like it's flowing, use a water texture name that starts with <font color=red>scroll</font>, (ie: SCROLLWATER1) and place it on a func_conveyor.<br>
+The direction the "water" will flow is decided by the texture angle settings and not the conveyor direction.</p></ul></body></html>

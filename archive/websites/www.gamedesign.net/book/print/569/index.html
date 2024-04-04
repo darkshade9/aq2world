@@ -1,0 +1,87 @@
+<html><head><title>Advanced Texturing</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="569" name="569" class="book-h1">Advanced Texturing</h1><!-- tutorial1 - converted 26/08/04 from q3lab.telefragged.com -->
+<h3>Quake III: Arena</h3>
+<blockquote>
+	<font class="title">
+		Advanced Texturing -
+		<a href="mailto:jon80@home.se">Jon Eriksson</a>
+	</font>
+</blockquote>
+<br><br>	
+					
+ <p>Please note: this resource among other resources here at rust are no longer 
+	updated and maintained by the original author any more. If you need to contact
+	someone in regards to this, please contact the moderators of the Quake III Arena 
+	Forum on the RUST website.
+
+<p><hr width=75% color=black noshade><p>
+<br>
+<p>This time we're going to make a little more advanced texturing, by giving a cube many textures, and also making a small lamp, where we let the texture an amount of light.</p>
+<br>
+
+<p>Okay, in the last tutorial we made the corridor, and changed textures on boxes. Now your map probably look like this between the corridor and one of the rooms (if you have different textures on the corridor and the wall that is):</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/kant.jpg"><br>
+</center>
+<br>
+<p>We don't want that edge to look like that do we? So, what do we do about it? </p>
+<br>
+
+<p>Well, first we open Q3Eradiant (that's for sure =). Next, we know how to select a box (SHIFT + left mouse button), but that's not exactly what we should do. We want to select the small face of the box. We can select it by pressing down <Shift> + <Ctrl> + left mouse button, on the face (you should do this in the 3D view). The face will now become red (note that the whole box will not be red, only one side of it, and that's only in the 3D view, the other views wouldn't show anything). It should look something like this now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/kantmarkerad.jpg"><br>
+</center>
+<br>
+<p>Don't mind the bad quality of the picture =). Okay, now we load some textures from the Textures menu (you should know how now =) When the loading is finished, open the Textures by pressing "T", scroll down to a nice texture and select it. Then press ESC to deselect the face. A note here is that you can select the texture of another wall easy by pushing the middle mouse button on it. When you're done, it might look like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/brakant.jpg"><br>
+</center>
+<br>
+<p>Fix all faces you want to fix like this. You might ask yourself why you need this tool, and what you can make with it. It's actually even more powerful than this. If any of you have downloaded my map "jondm1" you can se a lamp hanging over a corridor. That lamp has 2 different textures, and the "lamp"-texture that shows the lamp actually sends out light. Let's take a look of what I mean:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/jondm1.jpg"><br>
+</center>
+<br>
+<p>This looks pretty good, doesn't it? So, why don't we make a lamp? Okay, lets get to business.</p><br>
+
+<p>First, load a NON-lamp texture. I will load a wall texture, (this is the easiest way to make the lamp, because the lamp will have 5 faces with the wall texture and 1 face with the lamp texture, so it's easier to change 1 face, than change 5 =), you'll know what I mean later). </p>
+<br>
+
+<p>Now, I actually know how big the lamp texture is, so it's really easy then, but if you don't, just test a little bit I will make a small cube that is 128 units long, 32 units wide, and 8 units tall (that 8 units doesn't matter actually, you can make it bigger). Let's take a look how it looks like now:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/lampstorlek.jpg"><br>
+</center>
+<br>
+<p>Now, push ESC to deselect the lamp, and select the bottom face of it, by pushing <Shift> + <Ctrl> + Left mouse button. The Bottom of the cube will now be red. Now choose under the Textures menu the "Base_Light" textures (cause that's what I'm about to do in this tutorial =). </p>
+<br>
+
+<p>Once the loading is done, open up the Textures by first pressing "T" and then open the window. I will select the Texture that is located at the very top, second to the left. Now the texture will be placed, but it's probably not right! The texture can be rotated 90 degrees to any direction, or it just don't fit. Just relax, go grab a Jolt Cola or something, and let's make it look good. Now, push the "S" button on your keyboard. This will open up a small window called "Surface inspector", it looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/surface.jpg"><br>
+</center>
+<br>
+<p>Here you can rotate the texture, move it forward/backward, left and right + a lot more =). Test moving around the texture by changing the values at the upper left of this window.</p><br>
+
+<p>Now you should have a workable lamp on your level. But you might not be satisfied yet, maybe you want to tilt your lamp a little bit, so it will light more of the room. </p>
+<br>
+
+<p>To do this, push ESC and Select the entire Lamp box with <Shift> + Left mouse button. Now go to Selection in the menu, and choose Rotate. There you can choose to either rotate the object in the X-axis, Y-axis or the Z-axis. It's hard, even for me, to know witch direction I want to rotate it in, to get it right. Those three options will rotate your object 90 degrees, and I (maybe you too =), want to rotate my lamp 45 degrees. Then I choose "Arbitrary Rotation" (under the same menu). Now a small window will be visible, and you can rotate your object how ever you want. Observe that Q3Eradiant can transform your object a little bit if you use this rotation. Instead you can use "manual" rotation, by using your mouse. Then you have to Select the "Free Rotation" button in the menu. It looks like this:</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/rotation.jpg"><br>
+</center>
+<br>
+<p>Now your object will change color to pink in all the views except for the 3Dview, where it's red. Now, you can rotate the object by holding down Left mouse button and moving the mouse. You will rotate it in different directions in the different views. When you have finished the rotation, push the "Free rotation" button again, so you can move around your lamp to the right possession again.</p>
+<br>
+<center>
+<img src="./content/quake3/tutorials/tutorial3/mylamp.jpg"><br>
+</center>
+<br>
+<p>After a few attempts to get it right, it might look like my lamp here. Remember to save your map, and then run the "bsp_FullVis (light -extra)" under the BSP menu.</p></body></html>

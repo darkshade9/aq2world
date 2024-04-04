@@ -1,0 +1,383 @@
+<html><head><title>Func</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="24" name="24" class="book-h1">Func</h1><h3>Quake 2 Func Entities</h3><p>
+
+
+	
+
+	<!-- Start description -->
+
+<p><b>
+<ul>
+<li><a href="node/24#func_areaportal">func_areaportal</a></li>
+<li><a href="node/24#func_button">func_button</a></li>
+<li><a href="node/24#func_clock">func_clock</a></li>
+<li><a href="node/24#func_conveyor">func_conveyor</a></li>
+<li><a href="node/24#func_door">func_door</a></li>
+<li><a href="node/24#func_door_rotating">func_door_rotating</a></li>
+<li><a href="node/24#func_door_secret">func_door_secret</a></li>
+<li><a href="node/24#func_explosive">func_explosive</a></li>
+<li><a href="node/24#func_object">func_object</a></li>
+<li><a href="node/24#func_group">func_group</a></li>
+<li><a href="node/24#func_killbox">func_killbox</a></li>
+<li><a href="node/24#func_plat">func_plat</a></li>
+<li><a href="node/24#func_rotating">func_rotating</a></li>
+<li><a href="node/24#func_timer">func_timer</a></li>
+<li><a href="node/24#func_train">func_train</a></li>
+<li><a href="node/24#func_wall">func_wall</a></li>
+<li><a href="node/24#func_water">func_water</a></li><br></ul></b>
+</p>
+
+	<p><b><a href="/content/quake2/entity/samples/func_areaportal.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_areaportal"><h3>func_areaportal</h3></a>
+
+<hr color=black noshade width=75%>	
+
+	<p>A <b>func_areaportal</b> is a strange entity but does some bad ass things. If you have done any extensive quake editing then you know that the quake engine can see right through a door and draws all the polys beyond that door. This causes the framerate to increase and cause map makers much havoc. Well in quake2, John Carmack has given us a solution to this problem and it's the func_areaportal entity. What it actually does is when used it will make it so the engine cannot see through the door and keeps the framerate low. I could go into a bunch of tech talk explaining exactly what it does but you don't want to hear all of that and I really don't want to type it all so I will simply tell you how to use it.<br><br>
+	
+	<b>How it works</b><br>A <b>func_areaportal</b> will only work when it <b>is enclosed within a portal such as a door</b>. It is actually very simple to use. First you make the doors of course. Then you create a brush that is enclosed within the door and completely covers the area of the door so engine can't see through it at any areas. What I usually do is make it just a bit taller and wider then the door just to make sure. Next thing you need to do is turn this brush into a <b>func_areaportal</b>.<br><br>
+	
+	<b>Next you need to link the func_areaportal and the door so that when the door is opened the func_areaportal will disappear and when it is closes it will reappear</b>. This is done by giving the func_areaportal a targetname and then targeting the func_areaportal with the door. For example, if the func_areaportal has a targetname of ap1, <b>targetname ap1</b>, then the func_door would have a target of ap1. <b>target ap1</b>. If you don't target the func_areaportal then you will get this weird hall of mirrors effect when the door is opened.<br><br>
+	
+	Here are 2 example shot of that i took to show you the effect of using the func_areaportal does. The shots are from the doors tutorial example map with and without using area_portals. I simply turned on r_speeds right when the player enters the level and is standing in front of a hallway with 4 doors in it. <br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_areaportal1.jpg"><br>
+	
+	with an areaportal<br><br>
+	
+	<img src="/content/quake2/entity/images/func_areaportal2.jpg">
+	
+	<br>without</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>As you can see there is a huge difference with that first number which is the number of polys in the current view. This is from a small simple level. Just think of the improvements that could be made on a huge level.<br><br>
+
+	<p><b><a href="/content/quake2/entity/samples/func_button.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_button"></a><h3>func_button</h3><p><hr color=black noshade width=75%><p>The <b>func_button</b> entity is a very simple entity that is used for for triggering other entities such as doors to open, platforms to rise, etc, etc. In many ways it acts like a regular trigger_ entity but there are a few more options and differences that you may notice.<br><br>
+	
+	<b>Creating the func_button</b><br>First thing you need to do is create the brush/brushes that will be the func_button and then turn it into a func_button. Pretty straight forward and simple.<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Key Value Pairs</b><br>
+	
+	<b>Angle</b> - Angle determines the direction that the button will move when it is pressed. In most cases you will set the angle towards the wall that the func_button is up against to give the impression that it is being pressed into the wall. There are also cases in which you would have the angle set differently then towards the wall that it is up against. For example: You could have a button on the floor that the player would step on to trigger. Another advanced use of the angle key is for creating a lever. This would just be made by creating a thin lever shaped brush that has the angle set parallel to the wall.<br><br>
+	
+	<b>Target</b> - It should be set to the corresponding targetname that the func_button will trigger. A func_button MUST have a target or it would be useless.<br><br>
+	
+	<b>Targetname</b> - A targetname on a func_button is very strange, but it still works fine and can be useful. When a func_button has a targetname and is triggered the button will be set off just like it was pushed by the player, setting off it's own targets in the process.<br><br>
+	
+	<b>Speed</b> - Speed is pretty self explanatory. It determines the speed in which the button moves when it is pushed.<br><br>
+	
+	<b>Wait</b> - Wait is the amount of time that the button will pause before becoming active again. If you don't want the button to return then set the wait to -1.<br><br>
+	
+	<b>Lip</b> - Lip is the length of the button that is offset after being activated. So if you have a large lip value then more of the button will stick out after being pressed in.<br><br>
+	
+	<b>Health</b> - A value for health can be set if you want the button to be activated when shot. The button MUST be killed to be activated. Pushing it won't do anything after a value for health is set. The higher the value for health the more damage is needed to trigger it.<br><br>
+	
+	<b>Sounds</b> - The key value pair sounds works the same way for the func_button entity as it does for func_door and func_door_rotating:<br><br>
+	
+	1. There are no choices for different sounds, only one sound is available.<br><br>
+	
+	2. If you set this key to anything else than 1, you will always get the same standard button sound. If you set it to 1, you will have no sound.<br><br>So the "sound choices" list in the source code comments are outdated and probably just left over from Quake1. You do NOT have to use this key value pair unless you want your button to be silent.
+	
+	<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Spawnflags</b><br>There are no spawnflags that are required or used for the func_button
+	
+	<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Animated Textures</b><br>There are lots of animated textures that can be used for buttons. Animated textures are not something new but in Quake2, they behave a bit differently and this is one of it's coolest features. The best choice for these are 4 frame texture sets: To make a long story short, the button's face will toggle between the first 2 when idle and between the last 2 when pressed. Here's an example:<br><br>
+	
+	Suppose you make a button and apply the <b>e1u1/arrow0</b> texture, when the button is idle, the button face will cycle between the arrow0 and <b>arrow1</b> textures. While the button is pressed, the button face will cycle between the <b>arrow2</b> and <b>arrow3</b> textures.<br><br>
+	
+	This will work with all textures that follow one another in alphanumeric order and which end with the numbers <b>0 to 3</b>. If you use a set which has only 2 textures in a row in the list, the button face will cycle between these 2 textures <b>both</b> in the idle and pressed states. Note that if there are more that 4 textures in the set, the ones after 3 will simply <b>not</b> be used. For instance, there is a <b>e1u1/arrow4</b> in the last example: well, it is not used in the animation sequence. If you apply it to the button face, the texture will <b>not</b> be animated.<br><br>
+	
+	Also note that whether you apply the first, last or any other texture in the set makes no difference, the button face's texture will still be animated. If you use a 4 texture set, changing which one of the 4 you apply to the button face will change the sequence of which pair is displayed in the idle and pressed state. Let's pick up the previous example with a slight modification:<br><br>
+	
+	Also note that whether you apply the first, last or any other texture in the set makes no difference, the button face's texture will still be animated. If you use a 4 texture set, changing which one of the 4 you apply to the button face will change the sequence of which pair is displayed in the idle and pressed state. Let's pick up the previous example with a slight modification:<br><br>
+	
+	Make a button and apply the <b>e1u1/arrow1</b> texture, when the button is idle, the button face will cycle between the <b>arrow1</b> and <b>arrow2</b> textures. While the button is pressed, the button face will cycle between the <b>arrow3</b> and <b>arrow0</b> textures.<br><br>
+	
+	Most animated "4 frame sequence" textures usually look and operate better when you apply the <b>first</b> texture (no. 0) in the set to the button face but that's not a fixed rule. Experiment and see what works best for you.<p><hr color=black noshade width=75%><p><br><br>
+	
+	<b>Uses of the func_button</b><br>In most cases you are going to use the func_button for easy tasks such as opening a door or triggering a lift of some sort. Which is very simple. Just make the func_door or platform give it a targetname, then target it with the func_button.<br><br>
+	
+	There are also some more advanced uses of a func_button such as a platform or a lever. Remember that although it is called a func_button you can use it for anything that you want to use it for.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_clock.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_clock"><h3>func_clock</h3></a>
+
+<p><hr color=black noshade width=75%>
+
+<p>These entitys are probably the one that gave me the most trouble out of any of them. They are not easy to use(except for the target_explosion). The <b>func_clock</b> acts like a time of day clock and in most instances it will be used with a <b>target_character</b> and <b>target_string</b>. It was used in the biggun level and the last level where you have to escape before in a certain amount of time.<br><br>
+	
+	In this example we will make a button that you press and it will make a counter appear on the wall that will count down from 10 and when it gets to 0 then the room will explode killing you and everything else..<br><br>
+	
+	The <b>first</b> thing you need to do is make a somewhat small room and put a player_start and a light in it.<br><br>
+	
+	Next you need to create a <b>func_clock</b> entity. You can put this entity anywhere you want. It will not show up in the level. This will control the clock. The key value pairs that you can set are <b>count</b>, <b>pathtarget</b>, and <b>style</b>. count determines the amount of time that the func_clock will count. Pathtarget is the target that will be triggered once count runs out. Style is for the actual visual clock that we will explain later. There are 3 styles. 0(xx), 1(xx:xx), and 2(xx:xx:xx). In this example we are going to set <b>count</b> to 10 and we are going to use style 2. We also need to specify the <b>pathtarget which we will set to bang</b>. Pathtarget bang. This will be the targetname of the <b>target_explosion</b> that we will make later that will kill everything. Now set the target to string which will be the <b>target_string</b> that we will make next. Also give the func_clock a <b>targetname of clock</b> so we can use a button that we will make later to trigger it into action.<br><br>
+	
+	There is also a variety of spawnflags for the func_clock. They are <b>timer_up</b>, <b>timer_down</b>, <b>start_off</b>, and <b>multiuse</b>. <b>Timer_up</b> makes it so the counter will count up and <b>timer_down</b> makes it so the counter will count down. This is basically just for looks. It does'nt effect the outcome. <b>Start_off</b> should be set if the clock will be triggered into starting. If this is off then the func_clock will start when the level starts. <b>Multiuse</b> should always be on. I'm not sure what it does but I do know that I have never ran into any problems when I keep it on. For this example we will set the timer_down, start_off, and multiuse spawnflags.<br><br>
+	
+	The next thing we will do is make a <b>target_string</b> entity. It doesn't matter where this entity is placed either. It will not be shown. Give it a <b>targetname of string</b> so that the func_clock will be targeted to it. Also give it a <b>team key value pair of countdown</b>. team countdown. This is all you have to do for the target_string.<br><br>
+	
+	Now we need to make 8 small brushes 8x16 right next to each other. These will represent the 8 characters that will be used from the <b>style</b> key value pair that we set on the func_clock. xx:xx:xx<br><br>You then need to turn all of these 8 brushes into <b>target_strings</b>. There are 2 key value pairs that you can set. They are <b>count</b> and <b>team</b>. The count is the position of the string that this the brush is and the team is the team that the entity is on. So on all 8 of these target_strings the team needs to be countdown. The count must be different for each of the 8. The one on the far left needs to start with 1. count 1. and the one on the far right needs to be set to 8.<br><br>
+	
+	Now the tricky part that I could'nt figure out till EutecTic told me. Y<b>ou must have the texture of all these target_strings set to num_0 that is in the test.wal file</b>. If you don't have this texture set then the countdown will not be printed.<br><br>
+	
+	Now we have to make the func_button that will trigger the func_clock into action. Make a button on the wall and set the target of it to clock and the wait to -1 so you will not be able to press the button again.<br><br>
+	
+	Now we have to make the <b>func_button</b> that will trigger the func_clock into action. Make a button on the wall and set the target of it to clock and the <b>wait to -1</b> so you will not be able to press the button again.<br><br>
+	
+	The final thing we need to do is to make the explosion that will kill everything. For this we will use a <b>target_explosion</b>. What a target_explosion does is when triggered creates a visual explosion that can be set to do any amount of damage. There are 2 key value pairs that you can set. <b>Dmg</b> and <b>delay</b>. Dmg is the amount of damage the explosion will cause and delay is the amount of time after triggered that the explosion will take place. For this example we will put the target_explosion in the middle of the room and give it a targetname of bang and a damage of 10000. This extreme high value will make sure everything is dies when it is triggered. If you have a larger room or a huge level then you will need to use multiple target_explosions all with the same targetname. and we are done. Be sure to check out the example map.<br><br>
+	
+	You can also use a func_clock without the visual countdown, just don't create any target_strings. You still must have a target_character though. As you can see this is a somewhat difficult entity to master but can come in handy for quite a few things<br><br>
+
+	<p><a name="func_conveyor"></a><h3>func_conveyor</h3><p><hr color=black noshade width=75%><p>Useless, If you want a conveyor use a func_train. This entity is NEVER used in quake2<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_door.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_door"><h3>func_door</h3></a>
+
+<p><hr color=black noshade width=75%>
+
+<p>To me I think that doors are one of the hardest entities to master. There are just so many different options and uses for a door. Now doors have even more options since there are rotating doors in Quake2.<br><br>
+	
+	The First thing you need to do is make brushes that are going to make up the door and turn it into a func_door. Then you need to decide which way the door is going to open and <b>set the angle</b>. After you have done this your door will be in working order. As of now the door will open when you touch it. If you want to set it so that you have to set off a trigger to open it then just give your <b>func_door a targetname and target it with a trigger</b>.<br><br>
+	
+	There are a ton of key value pairs and spawnflags for func_doors that do a variety of cool things. We will go over all the spawnflags first. They are: <b>message</b>, <b>angle</b>, <b>health</b>, <b>speed</b>, <b>wait</b>, <b>lip</b>, <b>dmg</b>, and <b>sounds</b>. <b>Message</b> will print a message when the door is touched <b>ONLY</b> when it is triggered open. Message won't do anything if your func_door does'nt have a targetname. <b>Angle</b> is of course the opening direction. If <b>health</b> is set then the door must be shot to open. <b>Speed</b> determines how fast the door moves. <b>Wait</b> is the length of time between opening the door and when the door closes. If you never want the door to close then set wait=-1. <b>Lip</b> is the length remaining after the door opens. I get a lot of question asking for this. <b>dmg</b> is of course the amount of damage the door will give off when blocked by an entity like the player. Damn! I sure made that sound difficult. hehe. Sounds determines the sound the door with put out when opened. Choices are 1)<b>silent</b>, 2)<b>light</b>, 3)<b>medium</b>, 4)<b>heavy</b>.<br><br>
+	
+	The <b>spawnflags</b> that you can set for a func_door are: <b>start_on</b>, <b>crusher</b>, <b>nomonster</b>, and <b>toggle</b>. <b>Start_on</b> will make the door operate in reverse. So the door will be open and then close. By default when a door crushes you again a wall it will take off damage and then go back a bit and then take off damage again. If <b>crusher</b> is on then there won't be that little pause between trying to close again. It will just keep trying to close and crush you. No matter what, if crush is turned on or turned off a door will take off damage and eventually kill you. Crusher will just do it quicker. <b>nomonster</b> makes it so a creature can not open the door. By default a monster can open a door. <b>Toggle</b> will only make a difference when a door has a opened by a trigger. It makes it so it wait until triggered in both the opening position and the closing position.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_door.jpg"><br>amount of lip</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Those are all the different spawnflags and key value pairs that are available for a regular func_door.<br><br>
+
+	<p><a name="func_door_rotating"></a><h3>func_door_rotating</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Now to the amazing <b>func_door_rotating</b>. A func_door_rotating basically works the exact same way a normal door does except for a few minor things. A func_door_rotating <b>must</b> have an <b>origin brush</b> as part of the brush. This is the actual part that the door rotates around. So the first thing you have to do is make the brushes that will make up the func_door_rotating and the brush you want as the origin brush. Then select the brushes for the actual door and the origin brush and make them into func_door_rotating.<br><br>
+	
+	Next thing you have to do is <b>select the brush that is going to be the origin brush and change the surface property of this brush to an origin brush</b>. All the editors have different ways of setting the surface properties. Hit the 'S' key in BSP and Qed4. Alt T will do it for QOOLE. Check your editor documentation if you don't know.<br><br>
+	
+	There are also a few additional key value pairs and spawnflags for a rotating door that I will of course tell you about.<br><br>
+	
+	There is only 1 new key value pair called <b>distance</b>. Distance determines the degrees the rotating door will travel. So a distance of 90 will make the door rotate 90 degrees. There are also 3 new spawnflags. <b>reverse</b>, <b>x-axis</b>, and <b>y-axis</b>. <b>Reverse</b> will make the door rotate in the opposite direction. <b>X-axis</b> will make the door rotate along the x-axis and <b>y-axis</b> will make the door rotate along the y-axis. By default the door will rotate along the <b>z-axis</b> so there isn't a spawnflag for that. Everything else about a func_door_rotating is exactly like a regular door so to save me from typing all that over again like....just go up and read it there. =)<br><br>
+	
+	Now I am going to try to explain how to make a door that must have a key to be opened. This is kind of nasty.<br><br>
+	
+	First you need to make the door. I already explained all that. Next you need to give the door a <b>targetname and a message</b>. The message should be a message that tells what item the player needs to open the door. Now you must place a <b>trigger_key</b> somewhere. It really doesn't matter where. The <b>trigger_key</b> entity only has one key value pair...<b>item</b>. Set this to the name of the entity that is required to open the door. Now you must target the door with the <b>trigger_key</b>. Now here is the trick. The trigger_key entity must be triggered by another trigger to work. So you must make another trigger that will be targeted to the trigger_key. Kind of nasty huh? If you want the door to open only once and stay open then you should use a <b>trigger_once</b> entity and target the <b>trigger_key</b>. So therefore the trigger_key must also have a targetname.<br><br>
+	
+	<p><a name="func_door_secret"></a><h3>func_door_secret</h3>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>The final type of door is a <b>func_door_secret</b>. These of course are the doors that usually look like walls and when you shoot them they slide forward or back and then to the side. I'm sure you've seen them before. They are actually pretty simple to use. First you need to make the door of course then make it into a func_door_secret entity. There are 3 key value pairs. <b>angle</b>, <b>dmg</b>, <b>wait</b>. <b>Angle</b> is the direction the door will slide open. <b>dmg</b> is the amount of damage the door will give off when the player blocks the progress of the door. <b>wait</b> is the duration of time that the door stays open before closing. There is also 4 spawnflags. <b>once_open</b>, <b>1st_left</b>, <b>1st_down</b>, and <b>always_shoot</b>. <b>open_once</b> makes the door open once...duh. <b>1st_left</b> makes the door move a small amount to the left and then go the angle of the door. <b>1st_down</b> does the same thing but it goes down instead of left. <b>Always_shoot</b> makes the door always open when shot even where the door is targeted to open my another trigger.<br><br>
+	
+	<p></a><b><a href="/content/quake2/entity/samples/func_explosive.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_explosive"><h3>func_explosive</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>This is a pretty easy entity to use. func_explosive is an object that when triggered explodes.<br><br>
+	
+	Just make the brush you wish to explode and make it into a func_explosive. Yep, thats it. If you want a visual explosion then you will have to set the <b>dmg=value</b>, value being the amount of radius damage. There are also <b>health</b> and <b>mass</b> key value pairs. Health determines the amount of damage the brush can take before exploding and mass determines the amount of rubble that is produced when the brush explodes. That's all there is to a func_explosive.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_explosive.jpg"><br>settings example</center><br><br>
+
+<p><b><a href="/content/quake2/entity/samples/func_object.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_object"><h3>func_object</h3><p><hr color=black noshade width=75%></a>
+	
+	<p>A <b>func_object</b> is a pretty cool entity plus its easy to use. Its a object that when triggered falls down. There are no key value pairs that need to be set for the func_object except for the targetname. Just create the brush you want to fall, give it a targetname, and set the trigger_spawn spawnflag. To make it easier to understand for you beginners here is a pic of the func_object entity dialog box from BSP.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_object.jpg"><br>sample settings</center><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>A good way to use a func_object is to team it with a func_explosive. In the example map I made I created a column that when shot the base of it explodes and the top part falls to the ground. So the exploding part of the column would be the func_explosive and the top part that falls to the ground is the func_object. To get this to work all you have to do is give the func_object a target_name and set the target of the func_explosive to the func_object. Be sure to set the trigger_spawn spawnflag of the func_object though.<br><br>
+	
+	Another good example of a func_object and func_explosive is on the level biggun. After you kill the boss and stop the computer or whatever and your trying to escape the ceiling is falling down and explosions are going off, etc. Hope all this helps.<br><br>
+
+	<p><a name="func_group"></a><h3>func_group</h3><p>
+
+<hr color=black noshade width=75%>
+
+<p>Not used in the game. Only used in qed4 for grouping brushes.<br><br>
+	
+	<p><b><a href="/content/quake2/entity/samples/func_killbox.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_killbox"><h3>func_killbox</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>When I first tried to get <b>func_killbox</b> to work I had no success and I got really frustrated but then my friend EutecTic emailed me and told me what I was doing wrong. I had already put on the tutorials page that the func_killbox did nothing, so this tutorial is here all because of him. <b>Thanks EutecTic</b>. This guy is good!<br><br>
+	
+	What the func_killbox does is kill everything inside of it. It is actually a pretty simple entity to use, but there is a trick to it that gave me all my problems.<br><br>
+	
+	The <b>first</b> thing you need to do is decide where you want the func_kill box and create the brush. If you want it to kill everyone in a room then you need to make sure that the box is covering that whole room or it will be at least hitting every entity. Once you get the brush the size you want it then make it into the func_killbox.<br><br>
+	
+	The <b>next</b> thing you need to do is give the <b>func_killbox a targetname</b>. This is the only key value pair that you will need. For this example lets just give it a targetname of die.<br><br>
+	
+	Now you must make the trigger that is going to set off the func_killbox. In this example lets make it a button on the wall. So create the button and make it into a func_button. G<b>ive the func_button a target of the func_killbox. target=die</b>. Now here is the trick that I was I couldn't figure out. <b>You must also give the trigger that will set off the func_kill box a pathtarget of the func_killbox</b>. So in this example we would give the func_button a key value pair pathtarget and set it to die. pathtarget=die.<br><br>
+	
+	Thats it for a func_killbox. Your probably laughing at me right now cause this one was so easy. =) I wouldn't have such a problem if there were more comments in the code.<br><br>
+	
+	<p></a><b><a href="/content/quake2/entity/samples/func_plat.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_plat"><h3>func_plat</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>Introduction to Quake 2 platforms</b><br>
+	
+	Platforms in Quake 2 work pretty much the same as in Quake 1 with a few minor distinctions. Let's first take a look at what is unchanged and clarify a few things at the same time:<ul><li>Platforms can only be made to go up. IOW, their normal idle position is the lowered position unless they are targeted (more on this later).<li>Plats must be drawn in the raised position in the map editor so the lighting can be calculated properly by the compiling utility (Qrad3).<li>BUT, a platform will initially be drawn in the lowered position in the game unless it is targeted.</ul><br><br>
+	
+	Now, let's take a look at what has changed from Quake 1 to Quake 2 about platforms. Unfortunately, these differences are not really an improvement. IMO, it's quite the opposite, here's why:<br>
+	
+	<ul><li>In Quake 1, when you wanted a plat to start in the raised position, you simply set the "Plat Low Trigger" spawnflag (who knows why they called it that?). Once the plat was touched or triggered and brought down the first time, it would thereafter function like a normal platform.<li>In Quake 2, if you want the platform to start in the raised position, you have to target it with a trigger, independently of the state of the "Plat Low Trigger" spawnflag. If you set the spawnflag without targeting the plat, nothing will happen and it will just behave as a normal plat. IOW, the spawnflag is useless by itself. This is the first setback compared to Quake 1.<li>For platforms in Quake 1, you had 2 choices of sounds or no sound at all if you wanted them to be silent.<li>In Quake 2, platforms not only don't have any choice of sounds, but you can't even make them silent either. This is what I call "major setback No. 2" in platforms. Funny, I somehow expected more from Quake 2 plats than Quake 1 plats, not less!... Oh well...</ul><br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>Ok, how do I make these work? Do I use height and lip?</b><br>
+	
+	There are 2 basic ways to make and set platforms to operate exactly the way you want (that is within their basic limitations):<br><br>The first and most common way is to use the physical dimension of the brushes that are part of the platform to set it's up-down travel distance. In this particular case, the <b>height</b> key pair is not used but the <b>lip</b> key pair is and can be extremely useful. The basic setup formula in this case is as follows:<br><br>
+	
+	(Total platform height - <b>lip</b> value) = platform travel distance<br><br>
+	
+	<b>Total platform height:</b><br>
+	
+	This is the overall height of all the brushes that are part of the <b>func_plat</b> entity when measured from the <b>lowest</b> point to the <b>highest</b> point. You're probably thinking: hey! This definition is overkill. I could have figured that out for myself long ago! All I have to do is add up all the individual heights of all the brushes that are part of my plat and I'm in business right?... Well, as long as <b>none</b> of your brushes <b>overlap</b> heightwise. Otherwise, you'll have to <b>measure</b> the distance from the highest to the lowest point.<br><br>
+	
+	<b>Lip value:</b><br>
+	
+	The height or amount by which your platform will be raised from the floor when it's in the lowered position.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_plat1.gif"><br>
+	
+	First method of evaluating platform travel</center><br><br>
+
+<p><hr color=black noshade width=75%>
+
+<p>The second and easiest, most predictable way to set your platforms is to use the <b>height</b> key pair. In this case, the <b>physical dimensions</b> of the brushes that are part of the platform have no importance and the <b>lip</b> key pair has no effect and needs not be used. The basic setup formula is as simple as it gets:<br><br>
+	
+	<b>height</b> value = platform travel distance<br><br>
+	
+	I bet you're saying: what?... that's it?... Yep! That's it! That's all there is to it. Just make the platform and turn it into a <b>func_plat</b>. Measure the <b>distance</b> between the <b>start</b> and <b>end</b> position of the <b>top</b> of your platform and transfer that value straight to the <b>height</b> key pair and you're all set. It makes no difference what size or shape the brushes of your platform are or whether they overlap or not when using this method. The only restriction is that the plat has to be drawn in the raised position as always.<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_plat2.gif"><br>
+	
+	Second method of evaluating platform travel</center><br><br><p><hr color=black noshade width=75%><p>So in conclusion, both methods work fine. Choosing which one to use at this point depends mainly on design particulars and personal taste.<br><br>
+	
+	You can also specify the speed, acceleration and deceleration of the platform. <b>Speed</b>, <b>acceleration</b> and <b>decelaration</b> are self explanatory.  If you want to have the platform triggered then just give it a targetname and target it with a trigger.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_rotating.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_rotating"><h3>func_rotating</h3></a>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p>Rotating brushes were first showcased in hipnotic's quake mission pack and they were <b>extremely</b> difficult to get to work. They required a ton of work to get them to turn out right. Well quake2 fixed all this. Rotating brushes are very easy to use now.<br><br>
+	
+	The first step in making your rotating brush is to make the actually brushes that will be rotating. There are basically 2 parts to a rotating brush. First part is the object that will <b>rotate</b> and the second is the object that part 1 will <b>rotate</b> around. We are going to call this the <b>origin brush</b>. Think of it as the part that won't be moving. For example...picture a fan with 2 blades that are spinning around. The middle part that the blades are connected to would be the origin brush.<br><br><center><img src="/content/quake2/entity/images/func_rotating.jpg"><br>rotation explanation</center><br><br>
+	
+	<p><hr color=black noshade width=75%><p>After creating the brushes that will make up your <b>func_rotating</b> then select all the parts of the object and turn it into a <b>func_rotating</b>. Now <b>select</b> the part of the object that will be the non moving center(<b>origin</b>) of the object and change the surface property of it to an origin brush.<br><br>
+	
+	By default the object will rotate on the z axis. To change this just set the spawnflag to either <b>x_axis</b> or <b>y_axis</b>. <b>Z axis</b> rotation is parallel to the floor. <b>X axis</b> rotation will be parallel to the wall at 90 or 273 degrees. <b>Y axis</b> rotation is parallel to the wall at 0 and 180 degrees.<br><br>
+	
+	There are a few more spawnflags that you can set for a <b>func_rotating</b>. They are <b>start_on</b>, <b>reverse</b>, <b>touch_pain</b>, and <b>stop</b>. <b>Start_on</b> will make the rotating object start rotating when the game begins. Reverse makes the brush rotate in the opposite direction. By default the rotating object will only cause you pain if you are stuck between the object and a wall or something. If <b>touch_pain</b> is turned on then it will cause damage to any entity it touches. <b>Stop</b> makes the rotating object stop completely when the an entity such as the player blocks its way. It will still take your health away though. By default a func_rotating will push you around with it. With stop set it will not push you just give damage.<br><br>
+	
+	You can also specify the <b>speed</b> of the object and <b>damage</b> it will give out. Just set the key value pairs speed and dmg to change these. So if you made a fan and you wanted it to kill the player very quickly when touched then you would set dmg to something like 200. dmg=100. Likewise with speed.<br><br>
+
+	<p><a name="func_timer"></a><h3>func_timer</h3>
+
+<p><hr color=black noshade width=75%>
+
+<p>Information will be added later<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_train.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_train"><h3>func_train</h3></a>
+
+<p><hr color=black noshade width=75%><p>A func_train is moving object that travels along a specified path. For those of you familiar with quake1 editing then your probably familiar with func_trains. They are not the easiest entity to use but they are not extremely difficult.<br><br>
+	
+	<p><hr color=black noshade width=75%>
+	
+	<p><b>How do I get the dang thing to work?!</b><br>
+	
+	It takes at least 2 entities to get a func_train in working order. The actual func_train and more then 1 path_corner. The <b>path_corners</b> specify the actual path that the func_train will follow. We will get to that in a little later though.<br><br>
+	
+	<b>First</b> thing you need to do is to build the actual object that will be the func_train. This can be one single brush or multiple brushes, it all depends on what you want the train to be. After you have build the object then you will need to turn the object into a func_train entity. It does not matter where you place the func_train because it will automatically spawn at the first path_corner.<br><br>
+	
+	The <b>second</b> thing that you need to do is to make all your <b>path_corners</b>. These will be the actual path that the func_train will follow as mentioned above. Each path_corner will link to the next. So if I made a lift that would travel around the corners of a square room then I would have 4 path_corners. The first one would have a <b>targetname p1</b>, and a <b>target p2</b>. The second one would have a <b>targetname p2</b> and a <b>target p3</b>. Third one would have a targetname p3 and a target p4. The fourth one would have a targetname p4 and if you wanted the lift to continuously travel around the room then you would give it a <b>target p1</b>, which is the targetname of the first <b>path_corner</b>. Now I am going to go into more detail on all the different key value pairs and spawnflags.<br><br>
+	
+	<p><hr color=black noshade width=75%><p><b>Key Value Pairs of the func_train</b><br><b>speed</b> - speed is simply the speed that the func_train will travel from path_corner to path_corner.<br><br>
+	
+	<b>dmg</b> - dmg is the amount of damage the train will inflict when it crushes you up agaist a object. What I mean is it won't take off damage by just touching you...only when you are like...trapped up against a wall and the func_train.<br><br><b>noise</b> - noise is the sound that will be played when the func_train is moving. Here is a list(<b>please link to list</b>) of sounds that you can use. Don't forget to include the directory along with the sound name. Example: <b>noise</b> world/pump1.wav.<br><br>
+	
+	<b>target</b> - target will be set to the first path_corner. A func_train MUST have a target key and it MUST be a path_corner.<br><br>
+	
+	<b>targetname</b> - If a func_train has a targetname then it will have to be triggered before it will be become active.<br><br>
+	
+	<p><hr color=black noshade width=75%><p><b>spawnflags</b><br>
+	
+	<b>start_on</b> - By default a train will only start moving when triggered by another entity. If you set the start_on spawnflag then the func_train will start moving when the level starts.<br><br>
+	
+	<b>toggle</b> - toggle will allow the func_train to be toggled on and off numerous times. It will only work when a func_train is triggered into action multiple times by another entity such as a func_button. This is useful in making moving elevator type platforms.<br><br>
+	
+	<b>block_stops</b> - When the spawnflag block_stops is set the func_train will stop completely when an entity like the player is blocking its way and it won't take any damage off. EVEN if the dmg key is set.<br><br>
+	
+	<b>Other misc. things you might like to know about the func_train and path_corners</b><br>
+	
+	func_trains are very useful entities and can be used for a variety of cool effects. To get some of these cool effects you need to be familiar with some of the spawnflags of a path_corner like, <b>teleport</b>, <b>pathtarget</b>, and <b>wait</b>.<br><br>
+	
+	<b>teleport</b> will actually teleport the func_train to the next path_corner that is targeted. This was used in the id levels to create the cool conveyor belts in some of the levels. It can also create the effect of moving crates. Just use one func_train that looks like a crate, target it to 2 path_corners, have teleport on for the second one.<br><br>
+	
+	<b>pathtarget</b> corresponds to a targetname of an entity that will be triggered when the func_train arrives at that path_corner. This can be used for a variety of cool effects. I remember seeing this in the id level where a machine is carrying a barrel from the ceiling and it smashing into the wall and blows a hole in it. This effect was created by placing a path_corner very close to a wall that is actually a func_explosive. Then the pathtarget of that path_corner is set to the targetname of the func_explosive. Pretty cool.<br><br>
+	
+	<b>wait</b> will make the func_train wait at that path_corner for the specified amount of time before preceding to the next path_corner.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_wall.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_wall"><h3>func_wall</h3></a>
+
+<p><hr color=black noshade width=75%>
+	
+	<p>A <b>func_wall</b> is a very strange entity. It's basically a wall that can be triggered into or out of existance. id used func_walls on a number of levels to make a wall <b>disappear</b> and let creatures out to surprise you. If you have played single player quake any then you know what I'm talking about. Well they are real easy to use. Func_walls that is.<br><br>
+	
+	First thing you do is make the wall. Then you turn it into a func_wall. Currently this wall will not show up in your level. It must be triggered to work. So give the func_wall a targetname and create some sort of trigger like a func_botton or whatever and set the target of the trigger to the func_wall. So lets say you give your func_wall a targetname of wall1. Then you make a trigger_once to trigger it open. You would give the trigger_one a target of wall1. Now whenever the player comes in contact with this trigger_once then the wall will suddenly blink into existance killing anything blocking it. Cool huh?<br><br>
+	
+	There are a few spawnflags that you can set that will change the actions of the wall. They are <b>trigger_spawn</b>, <b>toggle</b>, and <b>start_on</b>. <b>Trigger_spawn</b> must be set if you have triggered the func_wall. In all the possible uses that I can think of for the wall I can't think of one in which you wouldn't have trigger_spawn set. s<b>tart_on</b> makes the wall work in reverse. Instead of the wall blinking into existance it will blink out of existance. This is how id uses func_wall in a lot of their levels to let monsters out of a secret room to surprise the player. If <b>start_on</b> is set then toggle must be set also. I actually don't think it has to be set but if you don't set it then you will get a error message when entering your level. Probably a bug in the code but it doesn't hurt anything.<br><br>
+
+	<p></a><b><a href="/content/quake2/entity/samples/func_water.zip">Download Sample Map</a></b><br><br>
+	
+	<a name="func_water"><h3>func_water</h3></a>
+
+<p><hr color=black noshade width=75%>
+
+        <p><b>Func_water</b> is kinda an easy entity to use and its pretty damn cool. What it does is creates a water brush(lava, slime, etc) that can move. Like a pool of water slowly bobbing up and down. You can also use it to make some other cool effects like a trap that when triggered an area fills up with lava. IF you really want to get fancy you can make a func_water brush without a solid non-water brush to make some kick ass effects that i have included in the examples zip file at the bottom of the page.<br><br>
+	
+	First thing you need to do is create the brush you want to be the moving water and make it a <b>func_water</b> entity. One thing to remember is that the water must not be <b>translucent</b>. For some reason only non-translucent water will work with a func_water. A func_water entity must be triggered to work so therefore it must have a <b>targetname</b>. So lets give it a targetname of <b>water1</b>.<br><br>
+	
+	Next you need to specify the <b>angle</b> of the water movement. For most purposes you will only need the water to move up and down but if you can find a purpose to make the water move left or right then go for it. So lets set the angle of the movement to be down. angle=-2.<br><br>Now you need to set the <b>sound</b> of the water brush. You can either have 0)no sound, 1)water, 2)lava. lets make it have a water sound. sounds=1<br><br>
+	
+	You can also specify the <b>speed</b> of the movement, the wait before returning, and the lip remaining at end of the move.<br><br>
+	
+	Okay, the final thing to do to get your <b>func_water</b> to work is to make the <b>trigger</b> that will start the movement of the water. Any kind of trigger will work. If you want the water to bob up and down continuously you will need to use a <b>func_timer</b>. If you want to make a lava trap you will need to use a <b>trigger_once</b>, <b>trigger_multiple</b>, or a <b>func_button</b>.<br><br>
+	
+	so all that is left to do is choose what you are going to use the func_water for and pick the trigger entity that you wish to use and set the target of the trigger entity to the name of the func_water.target=water1<br><br>
+	
+	<center><img src="/content/quake2/entity/images/func_water.jpg"><br>water in a tube</center><br><br>
+
+	
+
+	<!-- End description -->
+
+</body></html>

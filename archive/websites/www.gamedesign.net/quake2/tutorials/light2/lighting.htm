@@ -1,0 +1,346 @@
+<html>
+<head>
+<title>Lighting Techniques - an overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" text="#009900" link="#009900">
+<h1><font face="Arial, Helvetica, sans-serif">Techniques: Lighting</font></h1>
+<h4 align="LEFT">by Mike 'Codex' Pearce</h4>
+<table border="0" width="90%" vspace="0" hspace="0">
+  <tr> 
+    <td width="39%">This document may be distributed freely provided that:</td>
+    <td width="61%"> 
+      <br><br>1. The actual content (the text) is unaltered, unless my express permission 
+        has been given</p>
+      <br><br>2. If for archival purposes, the document must remain in its original, 
+        unaltered form.</p>
+      <br><br>3. If for a Web Page posting, the style of the document (HTML Tags) may 
+        be changed so the document fits in with the rest of the web site. Rule 
+        1 (above) still applies.</p>
+      </td>
+  </tr>
+</table>
+<h5 align="LEFT">Copyright © 1998 Michael Pearce</h5>
+<h5 align="LEFT">Contact me at <a href="mailto:MikeyPearce@compuserve.com"><font color="#0000FF">MikeyPearce@Compuserve.com</font></a><font color="#0000FF"> 
+  </font>if you have any questions. Please give a subject line of <font color="#0000FF">Level 
+  Questions <font color="#009900">so my mail client can sort it out, and I can 
+  reply quickly.</font></font></h5>
+<h4 align="LEFT"><i>This Tutorial is not designed to be a technical guide on how 
+  to use lights, but rather to give ideas on how to use lighting effectively.</i></h4>
+<table border="1" width="31%" bordercolor="#009900" bordercolorlight="#009900" bordercolordark="#009900">
+  <tr>
+    <td><font face="Arial, Helvetica, sans-serif">index: </font></td>
+    <td>
+      <br><br><a href="#background" target=""><font face="Arial, Helvetica, sans-serif">Background</font></a></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#Basic" target="">Basic 
+        Lighting</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#texture" target="">Texture 
+        Lighting</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#coloured" target="">Coloured 
+        Lighting</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#styles" target="">Lighting 
+        Styles</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#dynamic" target="">Dynamic 
+        Lighting</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#shadow" target="">Shadow 
+        Lighting</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#tricks" target="">Why 
+        Bother? - The Tricks</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#Examples">Examples</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#credits">Credits</a></font></p>
+      <br><br><font face="Arial, Helvetica, sans-serif"><a href="#author">About the 
+        Author</a></font></p>
+      </td>
+  </tr>
+</table>
+<h5 align="LEFT">&nbsp;</h5>
+<div align="CENTER">
+  <h4 align="LEFT"><font face="Arial, Helvetica, sans-serif">Background<a name="background"></a></font></h4>
+  <h4 align="LEFT"><font face="Arial, Helvetica, sans-serif">Realistic lighting 
+    is one of the most valuable features that the Quake II engine has given us. 
+    It gives us more freedom than ever before to create immersive, life-like environments, 
+    as has been seen with some of the superb user level that have been made. However, 
+    it is also very open to abuse and mis-use - something which can destroy an 
+    otherwise good level.</font></h4>
+</div>
+<div align="LEFT">
+  <div align="CENTER">
+  </div>
+  <br><br><font face="Arial, Helvetica, sans-serif">Let's start with a little bit of 
+    history. With Doom and Duke Nukem, the only way to light was to set the light 
+    individually for each sector of the map. This was a massive advance at the 
+    time, but it made life impossible when trying to create realistic shadows. 
+    Then Quake1 came along, with point source lighting, making all of this exceptionally 
+    easy. So all the first user levels were virtually pitch black, because everyone 
+    was playing with realistic shadows. This slowly went away, as people started 
+    to get used to it, and went for more subtle effects.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">Something similar happened when 
+    Quake2 User Levels started to appear. People were stunned by the coloured 
+    lighting, and so went WAY over the top, using plain, bold colours as the basis 
+    for their lighting. And, well, this was pretty damn crap. However, as had 
+    happened with Quake1, things mellowed out, and other techniques were used, 
+    and it is these that I intend to concentrate on...</font></p>
+      <br><br>&nbsp;</p>
+  <br><br><font face="Arial, Helvetica, sans-serif"><b>Basic Lighting...<a name="basic"></a></b></font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">When Quake1 levels were being created, 
+    there was a popular opinion that all lighting should be from a light source. 
+    When Quake2 came out, this opinion was reinforced to a great extent, because 
+    there were many more ways to make realistic lights. Let's start by taking 
+    these 'rules' with a pinch of salt. They give the beginner a good start at 
+    making realistic levels. I'm not saying that lights shouldn't have a source 
+    - that would be inviting trouble. No, just follow a simple rule... use lighting 
+    that suits the environment. If you need source lights, then source them. If 
+    you don't then don't. For most of the time, your lighting should be sourced 
+    - it looks silly walking round a level where everything just seems to give 
+    off light. Most of the time, your lights will be sourced, because you'll be 
+    using texture lighting (might change that if you read on), and there is no 
+    doubt in my mind when I say that - if in doubt, source your light. But to 
+    say that you should always source your light is silly. You should by no means 
+    feel that you <i>have</i> to provide a light source. Sometimes, the overall 
+    effect is much better without a light source. But choose what is right for 
+    the situation.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">Lighting has a two main purposes. 
+    The first is to light your level (whoa, a tough one that). The second, and 
+    IMO, more important use, is to add an additional ambiance to the level. Ambiance 
+    is everything - the way a level 'feels'. Of course, lighting is not the only 
+    thing that adds to this - design and sound play the other major parts - but 
+    it can add a hell of a lot. You can have made an amazing level - innovative, 
+    beautifully designed, pretty and yet speedy, and with brilliant monster placing 
+    - but if it's lit badly, well, it'll still end up <i>very</i> mediocre.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">So intelligent lighting is vital 
+    to the success of a level. Lets make sure you do a good job of it then :)</font></p>
+  <br><br>&nbsp;</p>
+  <br><br><b><font face="Arial, Helvetica, sans-serif">Texture Lighting<a name="Texture"></a></font></b></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">This is the type of lighting you'll 
+    probably be using the most. Texture lighting is the use of a texture to give 
+    off light. Thus, if you tell a yellow texture to give off light, then the 
+    light will be yellow. Simple. It has its advantages and its disadvantages, 
+    which I will discuss now.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">The reason you use Texture Lighting 
+    the most is simply because it is the most realistic of all the lighting types. 
+    With Quake1, there were no texture lights, only entity lights, which were 
+    all white. And with point entities in Q2, it's hard to match the colours by 
+    sight - there are easy ways round this, but really you should only use them 
+    for special reasons. (See the Tricks section at the bottom for this). With 
+    lights giving off the right colours, and QRAD bouncing these colours round 
+    the place, lighting is generally far more realistic than ever before.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">However, such realism has its costs. 
+    Firstly, Texture lighting cannot be 'dynamic'. By this, I mean that it cannot 
+    change. It cannot flicker, and it cannot be turned on or off. It's static. 
+    Secondly, because of the way texture lights work, it is often the case that 
+    shadows given off by such a light are less well defined - smoothed out. This 
+    is not an absolute, clear-cut thing. Sometimes texture lights will give off 
+    very good shadows, but this is not the usual case. To see more on this, go 
+    to the <a href="#shadow">Shadow Lighting</a> section</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">However, these are small prices 
+    to pay for the realism that texture lighting allows.</font></p>
+  <br><br><b><font face="Arial, Helvetica, sans-serif">Coloured<a name="Coloured"></a> 
+    Lighting</font></b></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">As it happens, all lighting in 
+    Quake2 is coloured lighting, however, it is divided into two types - texture 
+    lighting and entity lighting. Texture lighting, as described above, is obviously 
+    coloured lighting. Entity lighting is slightly different. This is very similar 
+    to the lighting in Quake1 - using entities to give off light. The default 
+    colour is white, but any colour can be used, by assigning an RGB value to 
+    the light.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">Coloured entity lighting is a very 
+    dangerous thing. If used well, it can add a lot to a level, and if used carelessly, 
+    it can destroy a level. The usual thing for a beginner LD is to use loads 
+    of these - not surprising, they are a cool new play-thing. Problem is, this 
+    always ends up looking awful. Lighting is a very subtle art, and these lights 
+    can be very harsh. As a general rule, you should keep the number of colours 
+    in a scene down to an absolute minimum if working with coloured light entities. 
+    If you don't, the scene loses all of its realism, and looks tacky, and very 
+    amateur. This is not so much of a problem with Texture lights, because they 
+    are far more subtle.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">The examples here do take things 
+    to an extreme, but demonstrate the point perfectly.</font></p>
+  <p align="CENTER"><a href="green.htm"><img src="green1.jpg" width="200" height="150" alt="Plain Green" vspace="1" hspace="1" border="2"></a> 
+    <a href="g&amp;r.htm"><img src="col2a.jpg" width="200" height="150" border="2" alt="Red and Green" vspace="1" hspace="1"></a> 
+    <a href="r&amp;g&amp;b.htm"><img src="col3a.jpg" width="200" height="150" border="2" alt="Primary Colours" vspace="1" hspace="1"></a><a href="multex.htm"><img src="texmul1.jpg" width="200" height="150" vspace="1" hspace="1" border="2" alt="Multiple Texture Lights"></a></p>
+  <br><br><b><font face="Arial, Helvetica, sans-serif">Lighting Styles<a name="styles"></a></font></b></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">These are simply the 'flicker' 
+    settings available on entity lights. They are very simple to add, and if used 
+    well, can add much needed ambiance to a level at virtually no extra cost in 
+    either compilation time, or rendering time. This sort of thing has been available 
+    since the days of Doom, although then it was less subtle, There are a wide 
+    range of flicker styles to obvious on/off settings to slow fades. These slow 
+    fades can be very good if used with a coloured light, since they will fade 
+    up and down the colour ramp for that colour in the palette. If used in the 
+    right place, it can look excellent. The best thing is just to try them all 
+    out. However, one word of warning - don't overuse them. It either becomes 
+    tacky, or just looks bad.</font></p>
+  <br><br><b><font face="Arial, Helvetica, sans-serif">'Dynamic' Lighting<a name="dynamic"></a></font></b></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">What I mean with 'Dynamic' Lighting 
+    is changeable lighting - for want of a better description. Imagine walking 
+    into a room with a cage in the middle, with a HUGE monster inside. The lights 
+    suddenly die, and all you can hear is the monster. Then a spotlight goes on 
+    inside the cage, shining onto the monster, and the floor. The whole of the 
+    rest of the room is shrouded in darkness. Slowly the cage rises...</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">There are two main uses for switchable 
+    light styles, and this is the first. Tension. OK, so it's a little melodramatic, 
+    but if you were playing this, it could make you skin crawl. And it isn't very 
+    hard. The scene described requires 1 trigger_once, 1 func_timer, and a pile 
+    of lights. Now that's not hard. Point is, with little extra work, you can 
+    transform a level from a sedate, static experience to a flesh tingling, insanity 
+    inducing romp. And as I've said, it's very easy.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">However, smaller effects can be 
+    done. Imagine a room at the end of a corridor,with low lighting. As you walk 
+    into the room, a load of lights come on, lighting up the room. Or walking 
+    into a long room, and lights flick on at random, and turn off again - ok, 
+    so I don't know what you'd use that for, but hey... The point is, it can add 
+    interest at little extra cost.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">The second major use for dynamic 
+    lighting is pointing out things. For example, you need to kill a monster, 
+    to open a hatch with a switch in it. To make the hatch easier to spot, when 
+    the monster dies, a light turns on, highlighting the switch. Easy. This sort 
+    of thing makes levels much more interesting, and logical (i.e., you don't 
+    spend 10 minutes trying to find the damn switch. The observant will spot the 
+    light difference and go to it straight away).</font></p>
+  <br><br><b><font face="Arial, Helvetica, sans-serif">Shadow<a name="Shadow"></a> 
+    Lighting</font></b></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">This is something that was used 
+    to a great extent in Quake1 Levels - though people didn't really think of 
+    it in this way. It is basically clever use of shadows - something which has 
+    virtually disappeared from Quake2 Levels, mainly because of the use of texture 
+    lighting. </font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">The actual reason for this is not 
+    really the way that texture lighting works, though no doubt this contributes 
+    something towards it. The real reason is that texture lighting is real, sourced 
+    lighting, and entity lights are point sources. Take a look round your self 
+    when you are indoors. The best place is in a school or work place, since such 
+    places have fluorescent bar lights. Then take a look outside on a sunny day. 
+    With the bar lights, shadows are 'mostly' soft, and ill defined. Outside, 
+    they are reasonably sharp, and well defined. This is for a simple reason. 
+    A bar light is usually larger than what it is lighting - by larger, I mean 
+    it is wider, or longer. The sun, although it is obviously much larger than 
+    most objects, is so far away, that effectively it is a point light, and is 
+    thus smaller than what it is lighting. The importance is that a source which 
+    is 'larger' than the object it is illuminating will allow light to flow round 
+    the object, making the shadows smaller, and less defined. A source which is 
+    smaller than the object it is illuminating (or infinitely further away), does 
+    not allow light to flow round the object, and thus the shadows are well defined. 
+    On Earth, the shadows are not perfectly formed, because of atmospheric interference. 
+    On the moon, they are, because there is no atmosphere - and that is what entity 
+    lights are like in Quake. No interference, and effectively, infinitely small.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">Shadow lighting is something that 
+    has almost completely vanished from Quake2 Levels. Take a look at all the 
+    latest levels, and you'll see that, although beautifully lit, the lighting 
+    looks very similar from level to level - very smooth transitions from Light 
+    to Light, and shadows only really appearing in areas of low light.. Quake 
+    1 Levels had the same problem, because Entity lighting was the only type of 
+    lighting. However, there it was commonplace to have far too many shadows, 
+    and a lot of the time you would end up playing in the dark. Now, both styles 
+    of lighting are available to the editor, and they should be used, if merely 
+    to add a difference to the style of lighting in a level. It can be used to 
+    add interesting details to levels, with little cost in Frame Rate.</font></p>
+  <br><br><font face="Arial, Helvetica, sans-serif">The difference between the shadows 
+    produced by both kinds of lighting are very clearly shown in the images below. 
+    </font></p>
+  <p align="CENTER"><a href="texshad.htm"><img src="tex1.jpg" width="200" height="150" vspace="1" hspace="1" border="2" alt="Texture Lit Shadows"></a><a href="entshad.htm"><img src="entity1.jpg" width="200" height="150" vspace="1" hspace="1" border="2" alt="Entity Lit Shadows"></a></p>
+  <h4><font face="Arial, Helvetica, sans-serif">Why Bother? - The Tricks<a name="tricks"></a></font></h4>
+  <br><br><font face="Arial, Helvetica, sans-serif">To start with, I'm going to give 
+    you one more example on how to light that scene. It takes from some of the 
+    information above, and also demonstrates some of these tips.</font></p>
+  <p align="CENTER"><a href="alternat.htm"><img src="ideal1.jpg" width="200" height="150" vspace="1" hspace="1" border="2" alt="Alternative lighting"></a></p>
+  <table border="1" width="75%">
+    <tr> 
+      <td width="24%"> 
+        <br><br>Getting the right coloured Entity Light</p>
+      </td>
+      <td width="76%"> 
+        <br><br>OK, lets imagine you want a light which turns on and off, but you need 
+          it to be the same colour as the texture would give off, if it were a 
+          texture light. Set up the scene so that it IS a texture light. Go up 
+          to the right area, and take a screenshot (F12). Load up the image in 
+          a Paint Program, such as PaintShop Pro. get the EyeDropper tool, and 
+          put it over the light. Move it around until you get the right colour, 
+          then click. This will set the foreground colour to the colour of the 
+          texture light. Double Click the foreground colour, and you have the 
+          RGB numbers for the colour. Create and Entity Light, set the brightness, 
+          and enter these RGB numbers as the settings for the Entity Light. Voila 
+          - you have what it apparently a texture light, but is actually entity 
+          lit.</p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="24%">Everybody uses Texture Lighting. Why Should I use Entity 
+        Lights at all?</td>
+      <td width="76%"> 
+        <br><br>1. Entity Lights can be used for dynamic changes - lights coming on 
+          or going off for effect, and can be used to great effect (lights going 
+          off at vital moments, or spots coming on to highlight switches)</p>
+        <br><br>2. They can have Lighting Styles (flickering, pulses and the such). 
+          Don't over use these, but they're cool for effect.</p>
+        <br><br>3. They create great shadows.</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="24%">Why Bother with Shadow Lighting?</td>
+      <td width="76%">
+        <br><br>Well, Firstly, it can look damn cool - put a light in a hole in the 
+          roof (to the sky, or something), then cover the base with a cross pattern. 
+          It appears on the floor as a rather neat shadow. This is just one effect. 
+          There are an infinite number of cool effects that can be got. Try in 
+          outside scenes to create interesting shadows on rocks, which also helps 
+          to give them a more 3D feeling.</p>
+        <br><br>They can be used to hide enemies more effectively, and keep up the 
+          feeling of suspense.</p>
+        <br><br>They can be used to replace detail - helps in the eternal battle of 
+          trying to keep r_speeds up. Shadows add detail on walls, making them 
+          seem less flat than they otherwise would do. A Flat wall does not engage 
+          the mind, but an interesting shadow does. Shadows can also make rocks 
+          seem more 3D - more solid, and so make it easier to create realistic 
+          rocks with fewer faces.</p>
+      </td>
+    </tr>
+  </table>
+  <p align="LEFT">Time Constraints have made me cut this short. I will update 
+    this section in the near future. There's quite a lot more to come, especially 
+    on Tips and Tricks, so check back later.</p>
+  <h4 align="LEFT"><font face="Arial, Helvetica, sans-serif">Examples<a name="examples"></a></font></h4>
+  <p align="LEFT"><font face="Arial, Helvetica, sans-serif">Here are a few examples 
+    which demonstrate some of the features I have described in this document.</font></p>
+  <p align="CENTER"><a href="q1a.htm"><img src="q1shad1a.jpg" width="200" height="150" vspace="1" hspace="1" border="2"></a><a href="q1b.htm"><img src="q1shad2a.jpg" width="200" height="150" vspace="1" hspace="1" border="2"></a><a href="q1c.htm"><img src="q1shad3a.jpg" width="200" height="150" vspace="1" hspace="1" border="2"></a></p>
+  <p align="CENTER">All of these are from an Old Quake1 DM level I did some time 
+    back, 'CMI'. I can't put in any Quake2 Examples yet, since they are all from 
+    the new project I'm working on with TeamTNT, 'LUC'. To find out more on that 
+    go to either <a href="http://www.quake2.com">Quake2.com</a> or <a href="http://www.teamtnt.com">TeamTNT</a>. 
+    If you want a look at this level for some other examples, give us a shout. 
+    It's not the most amazing example og level design, but it's fun, and informative 
+    in places.</p>
+  <h4><font face="Arial, Helvetica, sans-serif">Credits<a name="credits"></a></font></h4>
+  <br><br><font face="Arial, Helvetica, sans-serif">Drake O'Brien - for kindly allowing 
+    me to use his textures</font></p>
+  <h4><font face="Arial, Helvetica, sans-serif">About the Author...<a name="Author"></a></font></h4>
+  <br><br>Why should you listen to me, and anything I say? Well, you don't have to, 
+    but you might find something interesting in what is written above. I've been 
+    Level Editing on a very basic level since the first Doom Editors came out. 
+    However, my first real 'break' in style and originality came with Duke3D. 
+    Anyone who's edited with the Build editor will know that, despite its irritating 
+    bugs, and desperate will to corrupt levels, it is by far the best game editor 
+    to be made. Admittedly, Duke3D is not True3D, and thus can be simpler than 
+    other editors - but it is a damn fine editor. Anyway, I did a lot of work 
+    with Duke3D, coming up with already known, and some original ideas for faking 
+    True3D, and creating a lot of DM levels for private matches. </p>
+  <br><br> I've been editing in Quake for quite a while now, and like most people, 
+    have until recently concentrated on DM levels. However, I have, temporarily, 
+    forsaken DM, and gone for SP Levels. I'm now a Level Designer working with 
+    TeamTNT - the creators of Final Doom. We're working on a Quake2 TC - LUC. 
+    A TC is an ambitious project anyway, and what we're doing is really pushing 
+    the Q2 engine to its full. Check out TeamTNT's website to find out more - 
+    details are scant at the moment, but more information will be available soon.</p>
+  <br><br>So I've had a pretty full 'education' in the area of Level Design :) I take 
+    the 'look' of my levels very seriously. I feel that they should evoke real 
+    feelings, and spend a lot of time getting them just right. And, as you may 
+    have guessed, I spend a lot of time on lighting - It's really the best way 
+    to create an atmosphere, since it's relatively free in terms of Processing 
+    times, so doesn't effect the overall speed of play for a level. Of course, 
+    clever design and good design is the staple of any level, but Decent Lighting 
+    is vital for the success of a level.</p>
+  <h5>Copyright © 1998 Michael Pearce</h5>
+  <br><br>&nbsp;</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html><head><title>Half-Life Version 1.1.1.0 Patch</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="37" name="37" class="book-h1">Half-Life Version 1.1.1.0 Patch</h1><h3>Half-Life Version 1.1.1.0 Patch</h3>
+
+<blockquote>
+	<p>The latest Halflife updates are always found at <a href="http://www.planethalflife.com/half-life/files/">Planet Halflife</a>. The following is a list of the latest fixes.
+</blockquote><br><br>
+
+<p><b>README</b> [6.12.02]</p>
+<p><br>
+    
+<u><b>Changes/Additions: </b></u><br>
+<blockquote>
+  <p>- Ricochet included in this release.<br>
+   - Added logging of the anti-cheat system catching and kicking detected cheats. <br>
+   - Added logging of "kick" commands. <br>
+   - Added logging of "banid" commands. <br>
+   - Changed error message if clients try to download missing resources to be more helpful. <br>
+   - Changed 'exec' command now only works on .cfg and .rc files. <br>
+   - Changed 'exec' command no longer allows ".." or "\\" or ":" in the filename. <br>
+   - Added new debug message for mod makers if a packet couldn't be parsed correctly. 
+   - Linux: hlds_run now does auto-restart by default (to disable: define "-norestart" on the command line) <br>
+   - Linux: hlds_run uses "exec" when you define the "-norestart" option. <br>
+   - Linux: Added -pingboost command line parameter. Currently supports three different methods ('-pingboost 1', '-pingboost 2', and 'pingboost 3'). These may not work well (or at all) on some OS environments. <br>
+   - Linux: Added "-debug" flag to hlds_run to automatically run gdb and pull out  useful info. <br>
+  <br></p>
+</blockquote>
+    
+<u><b>New CVARS:</b></u></p>
+<blockquote>
+  <p><br>
+    - Added "serverversion", can be set to '1108' to view/re-record old demos. <br>
+    - Added "sv_logbans" to turn the logging of player bans on and off. Default is 0 (off). <br>
+    <br></p>
+</blockquote>
+      
+<p></p><u><b>Bug Fixes:</b></u></p>
+<blockquote>
+  <p><br>
+    - Fixed incorrect WonID logging. <br>
+    - Fixed sv_allowdownload being required to be set to 1 for clients to connect to secure servers<br>
+    - Fixed 'bad address type' fatal error on servers that attempt to run in secure mode but have no DNS resolution<br>
+    - Fixed DropClient messages for Steam clients who were banned or have a duplicate Steam ID to properly show the SteamID of the client<br>
+    - Fixed HLTV reporting wrong spectator numbers if connection to server was pending<br>
+    - Fixed "multicast 1" not working if it was issued before HLTV connected to game server<br>
+    - Fixed relay proxies reporting wrong spectator/slots numbers in multiplayer/LAN menu<br>
+    - Fixed DMC powerup bug where the invisibility ring would make people glow red. <br>
+    - Fixed rcon bug in HLTV. <br>
+    - Fixed delay being reset to default value during changelevel. <br>
+    - Fixed a problem with propagating HLTV banners. <br>
+    - Fixed client freeze on exit. <br>
+    - Fixed framerate problem on some ATI video cards. <br>
+    - Fixed MaxPing filter not being saved correctly.<br>
+    - Fixed sky box bug. <br>
+    - Fixed TFC spy disguise menu bug.<br>
+    - Fixed DMC view model animation bug. <br>
+    - Fixed bug using "exec " on large files (e.g. banned.cfg). <br>
+    - Linux: Fixed server using 64 MB more memory than it needed to. 
+    - Linux: Fixed 'undefined symbol: __strtouq_internal' on some Linux systems.<br>
+    - Linux: Fixed segmentation fault on some Linux systems when attempting to run in secure mode.<br>
+  </p>
+</blockquote></body></html>

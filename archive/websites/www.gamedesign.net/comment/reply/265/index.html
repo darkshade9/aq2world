@@ -1,0 +1,949 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><base href="http://www.gamedesign.net/" />
+<style type="text/css">
+@import url(misc/drupal.css);
+</style>
+			<title>
+				RUST - Gamedesign.net
+			</title>
+			<link rel="stylesheet" type="text/css" href="themes/rusted/rusted.css">
+			<style type="text/css">
+				@import "themes/rusted/rusted.css";
+			</style>
+		</head>
+		<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#000000">
+	<table width="900" height="24" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000"><tr><td align="left" valign="middle" width="40"><img src="/images/smalltf.gif" width="40" height="24" alt=""></td><td align="left" valign="middle"  width="250"><div class="networkBar">&nbsp;&nbsp;<A href="http://www.telefragged.com">TeleFragged</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.telefragged.com/network">Network</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.3ddownloads.com">Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;</div></td><td align="right" valign="middle" width="610"><div class="networkBar3"><iframe width=610 height=18 marginwidth=0 marginheight=0 frameborder=0 scrolling=no src="http://www.ugo.com/syndicatedContent/todayOnUGO/680x18_IframeContent.asp?channel=games&site=gamebanshee&bgcolor=000000&fontcolor=ffffff"></iframe></div></td></tr></table>
+			<table bgcolor="000000" width="900" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0">
+				<tr>
+					<td colspan="5"><img src="images/mh_top.jpg" width="900" height="88" /></td>
+				</tr>
+				<tr>
+					<td valign="top" width="7"><img src="images/mh_lowerbg1.jpg" width="7" height="150" /></td><td valign="top" width="150"><!-- Left Sidebar --><table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td valign="center" background="images/lsb_firstheader.jpg" width="150" height="24">
+									<div align="center" class="sidebar_head">Navigation</div>
+								</td>
+							</tr>
+							<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar">- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://www.gamedesign.net/node/view/14" title="">Community</a><br />- <a href="http://www.gamedesign.net/node/view/13" title="Learn more about the crazy kids running this joint.">Staff</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a></div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+							<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+							<tr>
+								<td valign="center" background="images/lsb_header.jpg" width="150" height="24">
+									<div align="center" class="sidebar_head">Editing Handbooks</div>
+								</td>
+							</tr>
+							<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar">							
+										- <a href="/book/view/1?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Half-Life</a><br />- <a href="/book/view/11?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Quake II</a><br />- <a href="/book/view/12?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Quake III</a><br />- <a href="/book/view/111?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Generic</a><br />- <a href="/book/view/58?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Interviews</a><br />- <a href="/book/view/128?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Kingpin</a><br />- <a href="/book/view/167?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Doom 3</a><br />- <a href="/book/view/532?PHPSESSID=e2bd532c0e7d996202839841f59f5409">Modeling</a><br />- <a href="/book/view/549?PHPSESSID=e2bd532c0e7d996202839841f59f5409">RUST Resumes</a><br />- <a href="/book/view/14?PHPSESSID=e2bd532c0e7d996202839841f59f5409">RUST Community</a><br />- <a href="/book/view/630?PHPSESSID=e2bd532c0e7d996202839841f59f5409">RUST Competition</a><br />									</div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr><tr>
+								<td><img src="images/spacer.gif" width="7" height="7" /></td>
+							</tr>
+																						<tr><td valign="center" background="images/lsb_header.jpg" width="150" height="24"><div align="center" class="sidebar_head">Advertisement</div></td> </tr>
+								<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar" align="center"><!-- AdSpace Network=ugo size=120x600 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=120 height=600 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=120x600&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+</div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+								<tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+													</table>
+					</td>
+					<td valign="top" width="7"><img src="images/mh_lowerbg2.jpg" width="7" height="90" /></td>
+					<td valign="top">
+						<!-- Body and Right Sidebar -->
+						<table width="729" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0">
+							<tr><td valign="top" background="images/mh_lowerbg_ad.jpg" colspan="3"><!-- AdSpace Network=ugo size=728x90 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=728 height=90 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=728x90&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+<!-- START RedSheriff Customer Intelligence V4 - Java v1.1  Revision: 1.8 -->
+<!-- COPYRIGHT 2002 Red Sheriff Limited -->
+<script language="JavaScript"><!--
+var pCid="us_us-ugo_network-telefragged";
+var w0=1;
+var refR=escape(document.referrer);
+if (refR.length>=252) refR=refR.substring(0,252)+"...";
+//--></script>
+<script language="JavaScript1.1"><!--
+var w0=0;
+//--></script>
+<script language="JavaScript1.1" src="http://server-us.imrworldwide.com/a1.js">
+</script>
+<script language="JavaScript"><!--
+if(w0){
+var imgN='<img src="http://server-us.imrworldwide.com/cgi-bin/count?ref='+
+        refR+'&cid='+pCid+'" width=1 height=1>';
+if(navigator.userAgent.indexOf('Mac')!=-1){document.write(imgN);
+}else{
+        document.write('<applet code="Measure.class" '+
+        'codebase="http://server-us.imrworldwide.com/"'+'width=1 height=2>'+
+        '<param name="ref" value="'+refR+'">'+'<param name="cid" value="'+pCid+
+        '"><textflow>'+imgN+'</textflow></applet>');
+        }
+}
+document.write("<COMMENT>");
+//-->
+</script>
+<noscript>
+<img src="http://server-us.imrworldwide.com/cgi-bin/count?cid=us_us-ugo_network-telefragged" width=1 height=1>
+</noscript>
+</COMMENT>
+<!-- END RedSheriff Customer Intelligence V4 --></td></tr>
+							<tr><td valign="top" height="7" colspan="3"><img src="images/spacer.gif" width="7" height="7"></td></tr>
+							<tr>
+								<td colspan="3">
+								<table width="729" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0"><tr><td>
+								<td valign="top" width="422" height="250">
+									<table width="422" height="250" border="0" cellspacing="0" cellpadding="0">
+										<tr><td height="23" valign="center" background="images/midbar_head.jpg"><div align="center" class="sidebar_head">Rust Community Forums</div></td></tr>
+										<tr><td valign="top" background="images/midbar_body.jpg"><img src="images/midbar_top.jpg" /><div class="sidebar"><a href="http://forums.gamedesign.net/"><strong>View the Forums</strong></a> | <a href="http://forums.gamedesign.net/profile.php?mode=register">Sign up for an Account</a> <br><small>This panel is updated every 30 minutes.</small><br><br>
+											<table border=0 width="100%"><tr><td><strong>Topic Name</strong></td><td><strong>Forum</strong></td><td><strong>Last post by</strong></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209628#209628">athlon vs intel</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=24">Off-Topic</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=31">Olpainless</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209624#209624">Fullscreen vs. Windowed Mode</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=50">Doom III</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=310">tmg</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209622#209622">DOOM 3 SDK released!</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=50">Doom III</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=2287">Method</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209619#209619">Compo One Discussion.</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=80">RUST Competitions</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=14116">W01f</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209615#209615">New DM Map Frag'n'Die3</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=12">Kingpin</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=277">MrDamage</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209614#209614">New COLORS CTF Map By Dread</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=12">Kingpin</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=277">MrDamage</a></td></tr>
+<tr><td><a href="http://forums.gamedesign.net/viewtopic.php?p=209611#209611">Method</a></td><td><a href="http://forums.gamedesign.net/viewforum.php?f=81">RUST .plan</a></td><td><a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&u=2287">Method</a></td></tr>
+</table>
+</div></td></tr><tr><td valign="bottom"><img src="images/midbar_bottom.jpg" /></td></tr></table></td>
+								<td valign="top" width="7" height="250"><img src="images/spacer.gif" width="7" height="7"></td>
+								<td valign="top" width="300" height="250">
+									<!-- AdSpace Network=ugo size=300x250 adtype=under affiliate=telefragged suba=telefragged channel=games subchannel=pc category=fps PT=hp CR=mi pez=tic --><iframe width=300 height=250 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&Network=ugo&size=300x250&adtype=under&affiliate=telefragged&suba=telefragged&channel=games&subchannel=pc&category=fps&PT=hp&CR=mi&pez=tic" border=0></a></noscript></iframe><!-- /AdSpace -->
+								</td></tr></table> </td>
+							</tr>
+							<tr>
+								<td valign="top" height="7" colspan="3"><img src="images/spacer.gif" width="7" height="7"></td>
+							</tr>							<tr>
+								<td width="729" valign="top">
+									<table border="0" width="522" cellpadding="0" cellspacing="0">
+										<tr>
+											<td valign="top" width="522" height="52" background="images/body_header.jpg">
+												<div align="center" class="body_title">RUST - Gamedesign.net</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" background="images/body_bg.jpg" width="522">
+												<div class="body">
+
+<!-- Node: "Quake 2 World Sounds In Detail" -->
+<div class="body_box_header">Quake 2 World Sounds In Detail</div>
+<div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/204" title="View user profile.">Miniwood</a> on Saturday, May 22, 2004 - 19:25</small><br /><br />
+<h2 align="left">Quake2 Ambient Sounds</h2>
+
+<p align="left">By Zedek<br>
+</p>
+
+<table border="1">
+  <tr valign="top">
+    <td align="left">10_0.WAV</td>
+    <td align="left">Computer: &quot;10..9..8..7..6..5..4..3..2..1..&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AIRHISS1.WAV</td>
+    <td align="left">Air hiss (short, soft)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AIRHISS2.WAV</td>
+    <td align="left">Air hiss (short, louder)</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB1.WAV</td>
+    <td align="left">Soft energy whistle</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB10.WAV</td>
+
+    <td align="left">Alien computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB11.WAV</td>
+    <td align="left">Rattling sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">AMB12.WAV</td>
+    <td align="left">Air pumping sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB13.WAV</td>
+    <td align="left">Machinery</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AMB14.WAV</td>
+    <td align="left">Air whistle</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB15.WAV</td>
+    <td align="left">Deep computer hum</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB16.WAV</td>
+    <td align="left">Air/computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB17.WAV</td>
+
+    <td align="left">Machines rattling/cranking</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB18.WAV</td>
+    <td align="left">Very soft drone sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">AMB19.WAV</td>
+    <td align="left">Air/computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB2.WAV</td>
+    <td align="left">Fluorescent light hum</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AMB20.WAV</td>
+    <td align="left">Fireball sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB21.WAV</td>
+    <td align="left">Air at intervals</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB22.WAV</td>
+    <td align="left">Very soft computer sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB23.WAV</td>
+
+    <td align="left">Computer hum, shorter</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB24.WAV</td>
+    <td align="left">Funny alien humming</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">AMB3.WAV</td>
+    <td align="left">Soft rattle, machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB4.WAV</td>
+    <td align="left">Alien machines</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">AMB5.WAV</td>
+    <td align="left">Sounds like a helicopter</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB6.WAV</td>
+    <td align="left">Helicopter, higher pitched</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB7.WAV</td>
+    <td align="left">Fluorescent lights</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB8.WAV</td>
+
+    <td align="left">Water or steam rushing</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">AMB9.WAV</td>
+    <td align="left">Rattling machines</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">BATTLE1.WAV</td>
+    <td align="left">Distant explosion</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BATTLE2.WAV</td>
+    <td align="left">Distant explosion</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">BATTLE3.WAV</td>
+    <td align="left">Three explosions</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BATTLE4.WAV</td>
+    <td align="left">Loud explosion + soft explosion</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">BATTLE5.WAV</td>
+    <td align="left">Loud explosion</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BIGPUMP.WAV</td>
+
+    <td align="left">A water pump</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BIGPUMP2.WAV</td>
+    <td align="left">A pump machine</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">BLACKHOLE.WAV</td>
+    <td align="left">A blackhole generator sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BRKGLAS.WAV</td>
+    <td align="left">Loud glass shattering sound</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">BUBBL4.WAV</td>
+    <td align="left">Water glurp</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BUBL1.WAV</td>
+    <td align="left">Underwater bubbles</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">BUBL2.WAV</td>
+    <td align="left">Underwater bubbles</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">BUBL3.WAV</td>
+
+    <td align="left">Underwater bubbles</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">COMLAS1.WAV</td>
+    <td align="left">Computer: &quot;Communication laser neutralized.&quot;</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">COMP_HUM1.WAV </td>
+    <td align="left">Soft computer hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">COMP_HUM2.WAV</td>
+    <td align="left">Sounds like computer talk</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">COMP_HUM3.WAV</td>
+    <td align="left">Computer beeps</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">CURNT1.WAV</td>
+    <td align="left">Moving water (fast stream, small waterfall)</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">CURNT2.WAV</td>
+    <td align="left">Small stream (trickle)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">CURNT3.WAV</td>
+
+    <td align="left">Stream with a little echo</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DATASPIN.WAV</td>
+    <td align="left">Computer: &quot;Data spinner reprogrammed.&quot;</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">DEACTIVATED.WAV</td>
+    <td align="left">Computer: &quot;Deactivated.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DISH1.WAV</td>
+    <td align="left">Satellite Dish moving</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">DRILL1.WAV</td>
+    <td align="left">Drill hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRILL2A.WAV</td>
+
+    <td align="left">Vehicle moving</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRILLER1.WAV</td>
+    <td align="left">Drill engine</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">DRIP1.WAV</td>
+    <td align="left">Water drip</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRIP2.WAV</td>
+    <td align="left">Water drip</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">DRIP3.WAV </td>
+    <td align="left">Water drip</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DRIP_AMB.WAV</td>
+    <td align="left">A few drips</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">DR_LONG.WAV</td>
+    <td align="left">A crane moving (long)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">DR_SHORT.WAV</td>
+
+    <td align="left">Crane (short)</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">ELECTRO.WAV</td>
+    <td align="left">Sizzling</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">EXPLOD1.WAV</td>
+    <td align="left">Explosion</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">EXPLOD2.WAV</td>
+    <td align="left">Short explosion</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">FAN1.WAV</td>
+    <td align="left">Soft fan hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLESH1.WAV</td>
+    <td align="left">Guts sound</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">FLESH2.WAV</td>
+    <td align="left">Guts sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLYBY.WAV</td>
+
+    <td align="left">Flyby sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLYBY1.WAV</td>
+    <td align="left">Flyby sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">FLYBY2.WAV</td>
+    <td align="left">Flyby sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FLYBY3.WAV</td>
+    <td align="left">Flyby sound</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">FORCE1.WAV</td>
+    <td align="left">Deep forcefield hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FORCE2.WAV</td>
+    <td align="left">Force field shutting off</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">FORCE3.WAV</td>
+    <td align="left">Spark sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FUSEIN.WAV</td>
+
+    <td align="left">Plugin sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">FUSEOUT.WAV</td>
+    <td align="left">Unplug sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">INCOMING.WAV</td>
+    <td align="left">Computer: &quot;Incoming air strike.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">KLAXON1.WAV</td>
+    <td align="left">Warning klaxon</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">KLAXON2.WAV</td>
+    <td align="left">High pitched klaxon</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LAND.WAV</td>
+
+    <td align="left">Hit the ground</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LASER.WAV</td>
+    <td align="left">Laser hum</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">LASHUM1.WAV</td>
+    <td align="left">Few second delay, then &quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LASOFF1.WAV</td>
+    <td align="left">Laser hum, fades away</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">LAVA1.WAV</td>
+    <td align="left">Lava fizzling</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_ON1.WAV</td>
+    <td align="left">Lights on</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_ON2.WAV</td>
+    <td align="left">Lights on</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_ON3.WAV</td>
+
+    <td align="left">Lights fade on</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">LITE_OUT.WAV</td>
+    <td align="left">Lights out</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">L_HUM1.WAV</td>
+    <td align="left">Light fizzling sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">L_HUM2.WAV</td>
+    <td align="left">Deep light hum</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">MACH1.WAV</td>
+    <td align="left">Rackety machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">MACH2.WAV</td>
+    <td align="left">Longer rackety machines</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">MACH3.WAV</td>
+    <td align="left">Slower rackety machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">MOV_WATR.WAV</td>
+
+    <td align="left">Moving water</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PILOT1.WAV</td>
+    <td align="left">Pilot: &quot;We had a fix on target but no lock.
+    Re-establish contact with ground unit and paint us a clean target.&quot;</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">PILOT2.WAV</td>
+    <td align="left">Pilot: &quot;Mother goose, target is painted and green
+    for fox 3. ECM is active and I'm going &lt;something&gt; for payload delivery.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PILOT3.WAV</td>
+
+    <td align="left">Pilot: &quot;Red leader, this is papa sierra 3-3. We
+    need some paint on the ground for payload.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PUMP1.WAV</td>
+    <td align="left">Pump machines</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">PUMP2.WAV</td>
+    <td align="left">Pump machines</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PUMP3.WAV</td>
+    <td align="left">Pumping hum</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">PUMPING.WAV</td>
+    <td align="left">Computer: &quot;Pumping system activated.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">PYRAMID.WAV</td>
+    <td align="left">Alien pyramid moving</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">QUAKE.WAV</td>
+    <td align="left">Earthquake sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RADIO2.WAV</td>
+
+    <td align="left">Radio fizzling sound</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RADIO3.WAV</td>
+    <td align="left">Radio fizzling sound</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">REACTOR.WAV</td>
+    <td align="left">Computer: &quot;Reactor core exposed.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">REDFORCE.WAV</td>
+    <td align="left">Computer: &quot;Red force fields deactivated.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">RIC1.WAV</td>
+    <td align="left">Bullet ricocheting</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RIC2.WAV</td>
+
+    <td align="left">Bullet ricocheting</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">RIC3.WAV</td>
+    <td align="left">Bullet ricocheting</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">ROCKS1.WAV</td>
+    <td align="left">Rocks tumbling</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SCAN1.WAV</td>
+    <td align="left">Alien scanner sound</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">SHORT1.WAV</td>
+    <td align="left">Electrical short</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK1.WAV</td>
+    <td align="left">Sparks</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK2.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK3.WAV</td>
+
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK5.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">SPARK6.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">SPARK7.WAV</td>
+    <td align="left">Sparks</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">STEAM1.WAV</td>
+    <td align="left">Steam puff</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">STEAM2.WAV</td>
+    <td align="left">Steam puff, longer</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">STEAM3.WAV</td>
+    <td align="left">Four steam puffs</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">STP_WATR.WAV</td>
+
+    <td align="left">Water swish</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">TELE1.WAV</td>
+    <td align="left">Teleporter hum</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">TRAIN1.WAV</td>
+    <td align="left">Train racketing</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">TRAIN2.WAV</td>
+    <td align="left">Train stopping</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">TURBINE1.WAV</td>
+    <td align="left">Turbine hum</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">UPLINK2.WAV</td>
+    <td align="left">Computer: &quot;Communication uplink
+    established.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">VENTSYS.WAV</td>
+    <td align="left">Computer: &quot;Ventilation systems activated.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE1.WAV</td>
+
+    <td align="left">Radio: &quot;All pods launched.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE10.WAV</td>
+    <td align="left">Radio: &quot;All personnel copying this transmission
+    rendezvous at designated points alpha, bravo, charlie.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">VOICE11.WAV</td>
+    <td align="left">Radio: &quot;Establish communications, priority
+    alpha.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE3.WAV</td>
+    <td align="left">Radio: &quot;Remaining fire teams engage in primary
+    and secondary objectives</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE4.WAV</td>
+    <td align="left">Radio: &quot;Reporting 80%, failing vital sign
+    track.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE5.WAV</td>
+
+    <td align="left">Radio: &quot;All squad leaders coordinate with sister
+    tapes.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">VOICE6.WAV</td>
+    <td align="left">Radio: &quot;Any squad leaders this freq. fall back to
+    primary L-Z.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">VOICE7.WAV</td>
+    <td align="left">Radio: &quot;Reporting 95%, failing vital sign
+    track.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS1.WAV</td>
+    <td align="left">Radio: &quot;EOD confirms bridge is down.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS2.WAV</td>
+    <td align="left">Radio: &quot;Last recon beta indicates access through
+    sewers.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS3.WAV</td>
+
+    <td align="left">Radio: &quot;&lt;something&gt; indicate possible
+    camouflaged access in wet sector 432.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS4.WAV</td>
+    <td align="left">Radio: &quot;Recon established and confirm heavy
+    fortification near enemy comm facility.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS5.WAV</td>
+    <td align="left">Radio: &quot;Copy that recon 1 charlie. Scan for
+    keycode pass now.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_BAS6.WAV</td>
+
+    <td align="left">Radio: &quot;Marines we're at %5 ground force
+    operational status.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_CIT1.WAV</td>
+    <td align="left">Radio: &quot;All units locate and acquire working
+    enemy data device.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">V_CIT2.WAV</td>
+    <td align="left">Radio: &quot;We have a disable and destroy order on
+    communication link.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_CMD1.WAV</td>
+    <td align="left">Radio: &quot;All units, we have a disable and destroy
+    order on enemy central computer.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_CMD2.WAV</td>
+    <td align="left">Radio: &quot;All units, we have target confirmation
+    for EOD on enemy launch computers and black hole generator.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_FAC2.WAV</td>
+
+    <td align="left">Radio: &quot;We have confirmed visual on troops
+    being....being disassembled.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_FAC3.WAV</td>
+    <td align="left">Radio: &quot;Somebody shut that place down.&quot;</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">V_GUN1.WAV</td>
+    <td align="left">Radio: &quot;Disable and destroy orders are green for
+    big gun and primary area.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">V_GUN2.WAV</td>
+    <td align="left">Radio: &quot;IR just spiked in big gun area. Explosion
+    imminent.&quot;</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">V_WAR1.WAV</td>
+    <td align="left">Radio: &quot;Tactical has given a disable and destroy
+    order on enemy supply train.&quot;</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">WATER1.WAV</td>
+
+    <td align="left">Water leaking</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">WIND2.WAV</td>
+    <td align="left">Wind rushing</td>
+  </tr>
+  <tr valign="top">
+
+    <td align="left">XIAN1.WAV</td>
+    <td align="left">Groovy beat</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">XIANBEATS.WAV</td>
+    <td align="left">Another shorter groovy beat</td>
+  </tr>
+
+  <tr valign="top">
+    <td align="left">X_ALARM.WAV</td>
+    <td align="left">A klaxon, almost identical to KLAXON2.WAV</td>
+  </tr>
+  <tr valign="top">
+    <td align="left">X_LIGHT.WAV</td>
+    <td align="left">Alien light</td>
+
+  </tr>
+  <tr valign="top">
+    <td align="left">YELFORCE.WAV</td>
+    <td align="left">Computer: &quot;Yellow force fields deactivated.&quot;</td>
+  </tr>
+</table>
+<br /><br />
+<a href="http://www.gamedesign.net/book/print/265" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> &middot; <a href="http://www.gamedesign.net/comment/reply/265#comment" title="Share your thoughts and opinions related to this posting.">Add new comment</a> &middot; 3 reads
+</div><br />
+
+			<!-- Box: Reply (main)-->
+							<div class="body_box_header">Reply</div>
+				<div class="body_box">
+					<form action="http://www.gamedesign.net/comment/reply/265" method="post">
+<a id="comment"></a>
+<div class="form-item"><div class="title">Your name:</div>Anonymous</div>
+<div class="form-item"><div class="title">Subject:</div><input type="text" maxlength="64" class="form-text" name="edit[subject]" size="50" value="" /></div>
+<div class="form-item"><div class="title">Comment:</div><textarea wrap="virtual" cols="40" rows="10" name="edit[comment]" id="edit[comment]"></textarea></div>
+<input type="hidden" name="edit[cid]" value="" />
+<input type="hidden" name="edit[pid]" value="0" />
+<input type="hidden" name="edit[nid]" value="265" />
+<input type="submit" class="form-submit" name="op" value="Preview comment" />
+<input type="submit" class="form-submit" name="op" value="Post comment" />
+
+</form>
+				</div><br />
+															</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" width="522" height="41" background="images/body_footer.jpg">
+												&nbsp;
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td valign="top" width="7">
+									<img src="images/spacer.gif" width="7" height="7" />
+								</td>
+								<td valign="top" width="200">
+									<table border="0" cellpadding="0" cellspacing="0">	
+													<!-- Box: User login (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">User login</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="user-login-link"><div class="user-login-block">
+<form action="http://www.gamedesign.net/user/login" method="post">
+<input type="hidden" name="edit[destination]" value="http://www.gamedesign.net/comment/reply/265" />
+<div class="form-item"><div class="title">Username:</div><input type="text" maxlength="64" class="form-text" name="edit[name]" size="15" value="" /></div>
+<div class="form-item"><div class="title">Password:</div><input type="password" class="form-password" maxlength="64" name="edit[pass]" size="15" value="" /></div>
+<input type="hidden" name="edit[remember_me]" value="0" />
+<div class="form-item"><input type="checkbox" class="form-checkbox" name="edit[remember_me]" value="1" /> Remember me</div>
+<input type="submit" class="form-submit" name="op" value="Log in" />
+
+</form>
+</div>
+<div class="item-list"><ul><li><a href="http://www.gamedesign.net/user/register" title="Create a new user account.">Create new account</a></li><li><a href="http://www.gamedesign.net/user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+						<!-- Box: Poll (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Poll</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="poll-title">What is the coolest weapon out of the original Half-Life?</div><br><div class="poll"><form action="/comment/reply/265" method="post"><div class="vote-form"><div class="choices"><div><input type="radio" name="pollvote[644]" value="0" />The Glock</div><div><input type="radio" name="pollvote[644]" value="1" />The Mp5</div><div><input type="radio" name="pollvote[644]" value="2" />The Snark</div><div><input type="radio" name="pollvote[644]" value="3" />The Gauss</div><div><input type="radio" name="pollvote[644]" value="4" />The Crowbar</div><div><input type="radio" name="pollvote[644]" value="5" />The satchel</div><div><input type="radio" name="pollvote[644]" value="6" />The Rpg</div><div><input type="radio" name="pollvote[644]" value="7" />Shotgun</div><div><input type="radio" name="pollvote[644]" value="8" />I dont care, if it kills its good</div></div><input type="submit" class="form-submit" name="vote" value="Vote" />
+</div><div class="links"><a href="http://www.gamedesign.net/node/view/644#comment" title="Jump to the first comment of this posting.">2 comments</a> &middot; <a href="/comment/reply/265?pollresults[644]=1">View results</a> &middot; 22 reads &middot; <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Older polls</a></div></form></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+						<!-- Box: Who's new (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Who's new</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="item-list"><ul><li><a href="http://www.gamedesign.net/user/view/2285" title="View user profile.">ratt30</a></li><li><a href="http://www.gamedesign.net/user/view/2284" title="View user profile.">dcchancy</a></li><li><a href="http://www.gamedesign.net/user/view/2283" title="View user profile.">mrsleepless</a></li><li><a href="http://www.gamedesign.net/user/view/2282" title="View user profile.">GameDrained</a></li><li><a href="http://www.gamedesign.net/user/view/2281" title="View user profile.">skinmaster</a></li></ul></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+						<!-- Box: Who's online (all)-->
+						
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Who's online</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar">There are currently 1 user and 65 guests online.</div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="images/spacer.gif" width="7" height="7" /></td></tr>
+			
+												</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td valign="top" width="7">
+						<img src="images/mh_lowerbg3.jpg" width="7" height="90" />
+					</td>
+				</tr>
+			</table>
+					</body>
+		</html>
+	

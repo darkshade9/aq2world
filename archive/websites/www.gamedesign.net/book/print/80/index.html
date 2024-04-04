@@ -1,0 +1,102 @@
+<html><head><title>Christian Antkow, Quake 3: Arena, Id Software #1</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="80" name="80" class="book-h1">Christian Antkow, Quake 3: Arena, Id Software #1</h1><h3>Interview -  Christian "Disruptor" Antkow, Quake 3: Arena Level Designer for <a href="http://www.idsoftware.com" target="_top">id</a> Software</h3>
+
+<p><hr width=75% color=black noshade>		
+
+<br>
+
+I had a chance to fire off some very specific Quake 3:Arena level editing questions to Christian Antkow of <A href="http://www.idsoftware.com">id software</a> recently and got some great information, as well as some exclusive screenshots of the Quake3:Arena Editor in action. I don't know about you, but I can not wait to start making some levels for Q3! Below is the interview:
+
+<b>Rust: </b>Are there still Surface Properties? And are they implemented the same way?
+<Br><Br>
+<b>Christian: </b>Not in the same way as Quake II. Surface properties are now set up in the shader files.
+<br><br>
+
+<b>Rust: </b>How are Curved Surfaces created in the editor?
+<Br><Br>
+<b>Christian: </b><a href="/content/interviews/disruptor2/images/rust_curve_BIG.gif?PHPSESSID=6e8871ecdf92c31c9be4dbda15e452c3"><img src="/content/interviews/disruptor2/images/rust_curve_SMALL.gif" width=500 height=392 border=0 alt="Click to Enlarge"></a>
+<br><br>
+
+<b>Rust: </b>How are the map compile times compared to Quake2? I thought I remember Carmack mentioning at QuakeCon that the actual .bsp files were just text now.
+<Br><Br>
+<b>Christian: </b>Map compile times are a bit longer than Quake II, but that's mostly spent in vis and light. The actual BSP process doesn't take that long.
+<br><br>
+
+<b>Rust: </b>Pertaining to Level Editing, what do you think will be the most difficult learning curve from Q2 Editing to Q3 Editing?
+<Br><Br>
+<b>Christian: </b>Probably curves. Even now we're still learning how to make our curves properly so that they t-junction properly and don't "crack" when they touch another brush.
+<br><br>
+
+<b>Rust: </b>Is Lighting handled the same way? As in entity based lighting or Surface Lighting.
+<Br><Br>
+<b>Christian: </b>We still have both pointlights and surface lights. Most of our light is emitted from surfaces however. And John also wrote in spiffy new Sunlight code, so we can set the angle and intensity of the sun, so it gives us really neat shadows in the world if used effectively.
+<br><br>
+
+<b>Rust: </b>How are the new portal effects done in the editor?
+<Br><Br>
+<b>Christian: </b><a href="/content/interviews/disruptor2/images/rust_portal1_BIG.gif?PHPSESSID=6e8871ecdf92c31c9be4dbda15e452c3"><img src="/content/interviews/disruptor2/images/rust_portal1_SMALL.gif" width=500 height=391 border=0 alt="CLICK TO ENLARGE"></a>
+<br>
+<a href="/content/interviews/disruptor2/images/rust_portal2_BIG.gif?PHPSESSID=6e8871ecdf92c31c9be4dbda15e452c3"><img src="/content/interviews/disruptor2/images/rust_portal2_SMALL.gif" width=500 height=390 border=0 alt="CLICK TO ENLARGE"></a>
+<br><br>
+1) This is a trigger_multiple which is used for a teleporter. (links to 3) Notice the "portal" texture in the background. This is a special shader which is applied to the surface where we wish to see through to another area.
+<br><br>
+2) This is a misc_portal_surface entity which should be placed right in front of a "portal" texture. The shader definition for the portal texture is as below.
+<br><br>
+The misc_portal_surface entity will "lock on" to the nearest texture with a "portal" parm set in the shader, and that view is then linked to a "misc_portal_camera" entity (see 4)
+<br><br>
+
+<code><pre>
+textures/common/portal
+{
+        qer_editorimage textures/common/qer_portal.tga
+        portal  
+        surfaceparm nolightmap
+        {
+                depthWrite
+                blendFunc GL_ONE GL_ONE
+                map textures/common/static.tga
+                tcMod scroll 1292.7 11233.9
+        }
+}
+</pre></code>
+<Br><Br>
+3) This is a "target_teleporter" entity. It teleports the activator to a misc_teleporter_dest (6) entity.
+<br><Br>
+4) This is a "misc_portal_camera" entity (should be linked from entity 2). This is pointed to an "info_notnull" (5) to set the camera direction. This entity is also used to grab the PVS of the destination area
+<br><Br>
+6) "misc_teleporter_dest" -- This can either display a teleporter pad, or if you select the "Nodraw" checkbox in the editor, nothing is displayed (so that you can make Q1 style teleporters)
+<Br><br>
+
+<b>Rust: </b>Any new really cool features in the level editor?
+<Br><Br>
+<b>Christian: </b>Curves mostly. That's the biggest.
+<br><br>
+
+<b>Rust: </b>Are textures stored in the .bsp file Q1 style or in the PAK file, q2 style, or in an all new style?
+<Br><Br>
+<b>Christian: </b>Textures are stored in a directory and not the BSP file like Q1. They are simply TGA images which the engine loads in directly. 
+<br><br>
+
+<b>Rust: </b>Do you think Q3 curved surfaces will be abused more then Q2 colored lights were in the custom map community?
+<Br><Br>
+<b>Christian: </b>I don't think so. Curved surfaces add to the geometry of a level and generally make things look nicer when used properly, whereas gaudy use of coloured lighting just makes things look... well... gaudy.
+<Br><Br>
+
+<b>Rust: </b>what exactly are the 'shader files' ?
+<Br><Br>
+<b>Christian: </b>A "shader file" is simply a text file with a bunch of "shader" entries in it. From Brian Hook's internal "Shader Manual"
+<br><Br>
+<font face="Courier New" size="-1">
+"A Quake 3 shader file consists of a series of brace (“{“ and “}”) delimited, line oriented surface attribute and rendering specifications. "
+</font>
+<Br><br>
+That line I pasted in in my previous e-mail was an example of a shader entry for how our portal texture is defined, with an alpha texture applied over it to give a sort of "TV-Static" effect.
+<br><Br>
+<small>--<b>Rust: </b>editors note: he is referring to question #6 about the portals</small>
+<Br><Br>
+
+<b>Rust: </b>I'd like to thank Christian Antkow for taking the time to answer my questions!
+<Br><br>
+So after hearing all the stuff above, what are your thoughts on Quake 3 Arena Level Editing now?<br><br>
+<b>Rust: </b>Post your thoughts in the <a href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Gamedesign.net Quake3 Arena Editing Forum</a>.</body></html>

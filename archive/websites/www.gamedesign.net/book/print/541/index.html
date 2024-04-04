@@ -1,0 +1,389 @@
+<html><head><title>Sentry continued: adding Sentry-parts box and hud-icon</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="541" name="541" class="book-h1">Sentry continued: adding Sentry-parts box and hud-icon</h1><h3>Half-Life</h3>
+<blockquote>
+	<b>Adding Sentry-parts box and hud-icon to the Sentry Tutorial</b> by <a href="http://rcbot.bots-united.com/emailuser.php?u=1">Cheesemonster</a> .
+</blockquote>
+
+<h3>Introduction</h3>
+
+<p>
+This tutorial is to add a little more to the sentry tutorial. You are going to add a new entity which will be the "sentryparts" box you will use to make a sentry. Also a hud sprite will show up when you have the sentry parts. 
+</p>
+<hr noshade color="black">
+<h3>Setting up the player</h3>
+
+<p>
+Each player must now need to know whether they have sentry parts or not so they can build the sentry.</p>
+<p>
+First you should add new variables in CBasePlayer class... open "player.h" and insert these into the CBasePlayer class, make them public or private if you want.</p>
+
+<font color="red"><pre>
+int m_iGotSentryParts; // is 1 when you have the parts. Initialise it to 0 at spawn 
+int m_iPrevGotSentryParts; // Used to find out if we need to show the sprite on the HUD 
+</pre></font>
+ 
+<p>
+Open up player.cpp and initialise these values at CBaseplayer::Spawn()... </p>
+
+<font color="red"><pre>
+   m_iPrevGotSentryParts   = 0; // Dont set this anywhere else except in UpdateClientData ONCE! 
+   m_iGotSentryParts       = 0; 
+</pre></font>
+
+<p>
+Just as a precaution, go into CBasePlayer::PreThink() and add this... </p>
+
+<font color="red"><pre>
+
+   if( !IsAlive() ) 
+      m_iGotSentryParts = 0; 
+</pre></font>
+
+<p>
+This is so the player loses the sentry parts when the player dies.
+</p>
+
+<h3>Making the sentry parts</h3>
+
+<p>
+Okay thats the variables set up. Now we need to make an entity that will be the sentry parts. The sentry parts will be a little box you have to pick up.</p>
+<p>
+Open up "MySentry.cpp" and add a new class at the end of the file. </p>
+
+<font color="red"><pre>
+
+class CMySentry_Pickup : public CBaseEntity 
+{ 
+public: 
+   void Spawn(void); 
+   void Precache(void); 
+   void EXPORT PickupTouch(CBaseEntity *pOther); 
+}; 
+
+LINK_ENTITY_TO_CLASS( MySentry_parts, CMySentry_Pickup ); 
+
+/*Dont forget this, 'MySentry_parts' will be the classname, 
+you can change this, although they need to match up with the rest of the code. */
+</pre></font>
+ 
+<p>
+Next we'll have the spawn function, where we call precache, initialise variables and set the touch function to PickupTouch() </p>
+
+<h4>Sentry parts class methods</h4>
+
+<font color="red"><pre>
+
+void CMySentry_Pickup :: Spawn(void) 
+{ 
+   Precache(); 
+
+   SET_MODEL(ENT(pev),"models/w_isotopebox.mdl"); // We'll use the isotope box model at the moment 
+
+   UTIL_SetSize(pev,Vector(-16,-16,-16),Vector(16,16,16)); 
+   UTIL_SetOrigin(pev,pev->origin); 
+
+   pev->spawnflags        &= ~SF_NORESPAWN; 
+
+   pev->gravity            = 1; 
+   pev->solid              = SOLID_TRIGGER; // You can walk through it but you can touch it! 
+
+   pev->health             = 100; 
+   pev->max_health         = pev->health; 
+   pev->takedamage           = DAMAGE_NO; 
+   pev->deadflag      = DEAD_NO; 
+
+   pev->movetype      = MOVETYPE_FLY; 
+   pev->sequence      = 0; 
+   pev->frame      = 0; 
+
+   pev->nextthink          = gpGlobals->time + 0.1; 
+
+   SetTouch(PickupTouch); 
+    
+} 
+</pre></font>
+
+<p>
+The precahce funtion should be simple.. below 
+</p>
+
+<font color="red"><pre>
+
+void CMySentry_Pickup :: Precache(void) 
+{ 
+   PRECACHE_MODEL("models/w_isotopebox.mdl"); 
+} 
+ 
+</pre></font>
+
+<p>
+The pickupTouch function is called when something touches the box, so we want to check if a player touches it, if so, set the sentry parts to 1 for that player and remove the box. </p>
+
+<font color="red"><pre>
+
+void CMySentry_Pickup :: PickupTouch (CBaseEntity *pOther) 
+{ 
+   if( pOther->pev->flags & FL_CLIENT ) 
+   { 
+      CBasePlayer *pPlayer = GetClassPtr((CBasePlayer*)pOther->pev); 
+
+      if( pPlayer && !pPlayer->m_iGotSentryParts ) // Check if we can pick it up 
+      { 
+         pPlayer->m_iGotSentryParts = 1; 
+
+         Killed(pev,GIB_NEVER); // Remove the parts 
+      } 
+   } 
+} 
+</pre></font>
+
+<p>Save and build, You can now spawn this entity in the map by spawning the classname you specified in the LINK_ENTITY_TO_CLASS call. </p>
+
+<h3>Build the sentry with sentry parts</h3>
+
+<p>It isn't totally finished yet, we need to change the command to build the sentry and then add the HUD icon. </p>
+
+<p>First, open up client.cpp and goto your "build_Sentry" command you have, and change it to this.. </p>
+
+<font color="red"><pre>
+
+   else if ( FStrEq(pcmd, "build_sentry" ) ) 
+   {                            
+      if( m_pPlayer->m_Sentry ) 
+      { 
+         ClientPrint( &pEntity->v, HUD_PRINTCENTER, "Sentry Already Built!\n"); 
+      } 
+      else 
+      { 
+         if( m_pPlayer->m_iGotSentryParts ) // got the parts? 
+         { 
+            Vector origin = UTIL_ForwardPosition(pEntity,64.0); 
+             
+            origin.z = m_pPlayer->pev->absmin.z + 24; 
+             
+            CBaseEntity *Sentry = CBaseEntity::Create( "MySentry", origin, pev->angles, pEntity ); 
+             
+            if( !FNullEnt(Sentry->edict()) ) 
+            {                
+               m_pPlayer->m_Sentry = Sentry; 
+                
+               Sentry->pev->owner  = pEntity; 
+                
+               ClientPrint( pev, HUD_PRINTCENTER, "Building Sentry...\n"); 
+               m_pPlayer->m_iGotSentryParts = 0; // Set parts to zero since we've used them 
+            } 
+            else 
+               ALERT(at_console,"Error allocating new edict for sentry!\n"); 
+         } 
+         else 
+            ClientPrint( &pEntity->v, HUD_PRINTCENTER, "You don't have any sentry parts!\n"); 
+      } 
+   } 
+</pre></font>
+
+<h3>Setting up the HUD icon</h3>
+
+<h4>Server-side</h4>
+
+<p>
+Thats the main stuff done, now the hud stuff, to do this we need to make a new user message and stuff in the client dll. </p>
+<p>
+First let's make the messages, open up player.h and look in the code where a lot of integer variables called gmsg[SOMETHING] are being declared, i.e. search for "gmsgGeigerRange" and you'll see the line.. <em>"int gmsgGeigerRange = 0;"</em>, put this underneath it... </p>
+
+<font color="red"><pre>
+
+int gmsgSentryParts = 0; 
+</pre></font>
+
+<p>
+Now go into LinkUserMessages() in player.h and where there are a lot of variables being set to a REG_USER_MSG, add a new one underneath them liek this.. </p>
+
+<font color="red"><pre>
+
+   gmsgSentryParts = REG_USER_MSG("SentryParts",1); 
+</pre></font> 
+
+<p>Now staying in player.cpp, goto UpdateClientData() and after the HIDE_HUD stuff, add these lines </p>
+
+<font color="red"><pre>
+
+   if ( m_iPrevGotSentryParts != m_iGotSentryParts ) 
+   { 
+      int write_byte = 0; 
+
+      if( m_iGotSentryParts ) 
+         write_byte = 1; 
+
+      MESSAGE_BEGIN( MSG_ONE, gmsgSentryParts, NULL, pev ); 
+         WRITE_BYTE( write_byte ); 
+      MESSAGE_END(); 
+
+      m_iPrevGotSentryParts = m_iGotSentryParts; 
+   } 
+</pre></font>
+
+<p>That should be all the message stuff figured out, now save all the files and build. </p>
+
+<h4>Client-side</h4>
+
+<p>Now open up the cl_dll workspace and open up hud.h and add the new HUD class (after the declaration of CHUDBase of course!) </p>
+
+<font color="red"><pre>
+
+class CHudSentryParts: public CHudBase 
+{ 
+
+public: 
+
+   int Init( void ); 
+   int VidInit( void ); 
+   int Draw(float flTime); 
+   int MsgFunc_SentryParts(const char *pszName,  int iSize, void *pbuf ); 
+
+private: 
+
+   HSPRITE m_hSpriteSentryParts1; 
+}; 
+</pre></font>
+
+<p>
+Go further down the hud.h file now and search for "GetSpriteIndex", below it you'll see a few lines declaring classess as variable structures, below them add the new line </p>
+
+<font color="red"><pre>
+
+   CHudSentryParts      m_SentryParts; 
+</pre></font>
+
+<p>
+That should be all int hud.h, now open up "hud.cpp"... Search for ".Init()" and where you find it, add the new line below it.. </p>
+
+<font color="red"><pre>
+
+   m_SentryParts.Init(); 
+</pre></font>
+
+<p>
+Now search for ".VidInit" and add the new line below one of the found lines </p>
+
+<font color="red"><pre>
+
+   m_SentryParts.VidInit(); 
+ 
+</pre></font>
+
+<p>
+That is all in hud.cpp. Now we need to make our own file to contain the code for our SentryParts class. </p>
+
+<h3>Client-side Sentry-parts code</h3>
+
+<p>
+Make a new file called something like "sentryparts.cpp" and add it to the cl_dll Source Files project (If the file doesnt appear in the workspace, press undo while the workspace window is selected and then just right click on the "Source Files" folder and "Add Files to folder", select the sentryparts.cpp file and OK). </p>
+<p>In this new file we're going to add some code below.. </p>
+
+<p>First we need to include some files... </p>
+
+<font color="red"><pre>
+
+#include "hud.h" 
+#include "cl_util.h" 
+#include "parsemsg.h" 
+ 
+</pre></font>
+
+<p>
+Now declare the SentrtyParts message, this is the same name as the message name ("SentryParts") </p>
+
+<font color="red"><pre>
+
+DECLARE_MESSAGE(m_SentryParts, SentryParts) 
+</pre></font>
+
+<p>
+Now declare the name of the sprite here, I've made my own sprite called sentryparts.spr (32x32 pixels), You can call it whatever you want, as long as the file exists so you can see it! </p>
+
+<font color="red"><pre>
+
+#define SPRITE_NAME "sprites/sentryparts.spr" 
+ 
+</pre></font>
+<p>
+Note that the Init() Code below will hook the SentryParts message And make sure the class is called when we send the SentryParts net message </p>
+
+<font color="red"><pre>
+
+int CHudSentryParts ::Init(void) 
+{ 
+   HOOK_MESSAGE(SentryParts); 
+   gHUD.AddHudElem(this); 
+
+   return 1; 
+} 
+</pre></font>
+
+<p>
+The ViDInit part below will just initialise some variables or whever else you want to do, at the moment I've only got one variable to initialise so it looks very simple. </p>
+
+<font color="red"><pre>
+
+int CHudSentryParts ::VidInit(void) 
+{ 
+   m_hSpriteSentryParts1 = 0; 
+
+   return 1; 
+} 
+ 
+</pre></font>
+
+<p>
+The draw funtion below will be called when the sprite is drawn on the hud. </p>
+
+<font color="red"><pre>
+
+int CHudSentryParts ::Draw(float flTime) 
+{ 
+   int r,g,b; 
+
+   if ( !m_hSpriteSentryParts1 ) 
+   { 
+      m_hSpriteSentryParts1 = LoadSprite(SPRITE_NAME); 
+   } 
+
+   if( !m_hSpriteSentryParts1 ) 
+      return 0; // Sprite doesn't exist, return 0 
+
+   UnpackRGB(r, g, b, RGB_YELLOWISH); // "Yellowish" colour 
+   SPR_Set(m_hSpriteSentryParts1, r, g, b); // Set these colours 
+
+   int x = ScreenWidth - 64; // I've made my sprite 32 pixels wide so I just moved it 64 pixels from the edge of the screen 
+   int y = ScreenHeight - (ScreenHeight/2); // I made it centre vertically. 
+
+   // X and Y are positions on the HUD. 
+
+   SPR_DrawAdditive(0, x, y, NULL); // Draw the sprite on X,Y 
+
+   return 1; 
+
+} 
+ 
+</pre></font>
+
+<p>The last bit is called when the message "SentryParts" is made, the READ_BYTE() will be the state of the sprite being shown (i.e. if it's 1, draw the sprite on the hud, if not then stop drawing it) </p>
+
+<font color="red"><pre>
+
+int CHudSentryParts ::MsgFunc_SentryParts(const char *pszName,  int iSize, void *pbuf ) 
+{ 
+   BEGIN_READ( pbuf, iSize ); 
+
+   int flag = READ_BYTE(); 
+
+   if (flag == 0) 
+      m_iFlags &= ~HUD_ACTIVE;  // turn off the Draw function 
+   else 
+     m_iFlags |= HUD_ACTIVE; // else Draw it! 
+
+   return 1; 
+} 
+ 
+</pre></font></body></html>

@@ -1,0 +1,114 @@
+<html><head><title>Grunts and Gun's</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="883" name="883" class="book-h1">Grunts and Gun's</h1><!--
+Submitted by Andy Dec 04
+Updated  Feb 2005 - Validated at W3C XHTML1.0 Transitional
+-->
+<h3>Hammer 3.4</h3>
+<blockquote>Grunts and Guns - by Andy<br/>
+Special thanks to Raymond Talavera and Handy Vandal</blockquote>
+<p>
+Remember that rocket launcher in the Half-Life map <span style="font-weight: bold; font-style: italic">On a Rail</span>?&nbsp; The one that was at the end of the tunnel. You had to kill the grunt to get it to stop firing. 
+</p><!--break-->
+<center>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/gruntgun/gruntgun_1.jpg" width="400" height="300" vspace="6" alt="turret" title="turret" />
+</center>
+<p>
+This tutorial assumes that you can already build a turret. In this example I have used the func_tank entity because you can set the Bullets to &quot;None&quot; and this saves you having to go into God Mode to test it.<br />
+The turret I have used was built from scratch as I had a particular field gun theme in mind, but you don't have to limit yourself to the func_tank. This tutorial will work with the func_tanklaser, tankmortar or rocket.
+</p>
+<p>
+Place your func_tank in the map and give it a name. I have used <span style="color: #ff0000">Gun1</span>. <br />
+The only other thing you have to do is set Active on in its flag properties. Don't set the Controllable flag just yet, we will discuss that later.
+</p>
+<p>
+Place a monster_grunt behind it and set the grunt properties to:<br />
+Trigger Target: <span style="color: #ff0000">Gun1</span> (the name of the func_tank)<br />
+Trigger Condition: <span style="color: #ff0000">Death</span> (<span style="font-style: italic">the reason I haven't set it to 50% is that I had trouble with the tank stopping if the grunt was killed outright on the first shot - sometimes the gun would continue to function</span>)
+</p>
+<p>
+And in the monster_human_grunt Flag properties check &quot;Prisoner&quot; as this will stop the grunt from leaving the gun and attacking.<br />
+You can also check Gag if you want the grunt to stay silent.<br />
+Ok, run the map and you should have a functioning gun with a grunt behind it.<br />
+Shoot the grunt, the gun stops! 
+</p>
+<p>
+<span style="font-style: italic; color: #ff0000">Note</span>:<br />
+If the gun doesn't stop when you kill the grunt, then go over the settings again. If it still doesn't work you can add a trigger_relay and get the grunt to Trigger Target the relay's name, and the relay to target the func_tank, with the Trigger State set to <span style="color: #ff0000">Off</span>.  Either way you now have a gun that will target the player.
+</p>
+<p>
+<span style="font-weight: bold">What if you want to kill the grunt and then let the player use the gun?</span>
+</p>
+<p>
+Taking what you have achieved above, copy your tank.
+</p>
+<ul>
+<li>Give it a name of <span style="color: #ff0000">Gun2</span>.</li>
+<li>Change the Render Mode attribute to <span style="color: #ff0000">Texture</span>.</li>
+<li>Leave the FX Amount set at <span style="color: #ff0000">0</span>.</li>
+<li>Set the Controllable flag on, and make sure Active is <span style="font-style: italic">not</span> checked.</li>
+<li>Place gun 2 in the exact same place as gun 1, so that they look like one in all views.</li>
+<li>Create a brush and tie it to a func_tankcontrols entity, Set the Tank Entity Name to <span style="color: #ff0000">Gun2</span> and place the brush so Gun2 will be controllable.</li>
+</ul>
+<p> 
+Check out the <a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/gruntgun/gruntgun.zip"><span style="font-weight: bold; text-decoration: none">Downloadable Example</span></a>:<br /> 
+The func_tankcontrols is placed at the player end of the gun, but to make it useable a clip brush is added so the player won't get caught on the gun. Also in the initial trial the corpse of the grunt got in the way; Check Fade Corpse in the grunt's properties to fix this.
+</p>
+<p>
+Add two env_render entities to your map. For ease of use I put them above and to the right of the gun.<br />
+The first env_render:
+</p>
+<blockquote>
+Name it <span style="color: #ff0000">unrend1</span>.<br />
+Target is <span style="color: #ff0000">Gun1</span>.<br />
+Set the Render Mode to <span style="color: #ff0000">Texture</span>.
+</blockquote>
+<p>
+The second env_render:
+</p>
+<blockquote>Name it <span style="color: #ff0000">rend2</span>.<br />
+Target is <span style="color: #ff0000">Gun2</span>.<br />
+Leave the rest of the settings at their defaults.
+</blockquote>
+<p>
+Add a multi_manager to your map. Name it <span style="color: #ff0000">rendermm</span>. With Smart Edit off, add the following keys and values:<br />
+</p>
+<blockquote>
+unrend1 <span style="color: #ff0000">0.2</span><br />
+rend2 <span style="color: #ff0000">0.2</span><br />
+gun1 <span style="color: #ff0000">0</span>
+</blockquote>
+<p>
+Click on your grunt, and change his Trigger Target property to <span style="color: #ff0000">rendermm</span>.
+</p>
+<span style="font-weight: bold">So what's happening?</span><br />
+<p>
+The gun will commence firing when it has the player in range.<br />
+Shooting the grunt triggers <span style="color: #ff0000">rendermm</span> which instantly switches off <span style="color: #ff0000">Gun1</span>, then triggers <span style="color: #ff0000">unrend1</span> and <span style="color: #ff0000">rend2</span>.<br />
+Unrend1 makes Gun1 disappear. Rend2 makes Gun2 appear and Gun2 is flagged as Controllable.<br />
+The player can now use the gun!
+</p>
+<img src="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/gruntgun/gruntgun_2.jpg" width="514" height="427" alt="Entity Setup" title="Entity Setup" />
+<p>
+Just a few things added to this map to make it more realistic, I have added another multimanager, an env_shake and an ambient_generic because the func_tank is set to <span style="color: #ff0000">No Bullets</span>. There is no need to add the ambient_generic if you set the gun to fire something as it is already included as part of the entity. 
+</p>
+<p>
+multi_manager:<br />
+Name set to <span style="color: #ff0000">mm2</span>.<br />
+Smart edit off and keys and values added for bang, <span style="color: #ff0000">0</span> and shake, <span style="color: #ff0000">0</span>.
+</p>
+<p>
+env_shake:<br />
+Name set to <span style="color: #ff0000">shake</span>.
+</p>
+<p>
+ambient_generic:<br />
+Name set to <span style="color: #ff0000">bang</span>.<br />
+WAV File Name set to <code>weapons/explode3.wav</code>.
+</p>
+<p>
+To get this part of it to work, you need to set Gun1 and Gun2 to Target <span style="color: #ff0000">mm2</span>. 
+That way mm2 will turn the sound and shake on for Gun1 when it fires, and turn it on again when Gun2 is fired by the player.
+</p>
+&nbsp;
+<!--EOF@109--></body></html>

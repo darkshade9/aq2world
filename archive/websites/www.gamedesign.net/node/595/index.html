@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Creating an outdoor area using Gensurf - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Quake II</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/17">FAQ</a></li><li class="collapsed"><a href="node/603">Updates</a></li><li class="collapsed"><a href="node/263">Miscellaneous</a></li><li class="expanded"><a href="node/42">Tutorials</a><ul><li class="leaf"><a href="node/43">Advanced Brushes</a></li><li class="leaf"><a href="node/45">Area Light</a></li><li class="leaf"><a href="node/50">Clip Brush Q&A</a></li><li class="leaf"><a href="node/48">Colored Light</a></li><li class="leaf"><a href="node/595" class="active">Creating an outdoor area using Gensurf</a></li><li class="leaf"><a href="node/530">Custom door/plat/button sounds</a></li><li class="leaf"><a href="node/51">Environmental Maps</a></li><li class="leaf"><a href="node/241">Func_areaportal - 1 - Addendum</a></li><li class="leaf"><a href="node/242">Func_areaportal - 2 - Problems</a></li><li class="leaf"><a href="node/243">Func_areaportal - 3 - Common Problems</a></li><li class="leaf"><a href="node/52">Hint Brushes De-Mystified</a></li><li class="leaf"><a href="node/46">Jump pads in Q2? You betcha!</a></li><li class="leaf"><a href="node/47">Making ENV. Maps with Bryce 2</a></li><li class="leaf"><a href="node/561">Making Rain</a></li><li class="leaf"><a href="node/54">Partial Transparency</a></li><li class="leaf"><a href="node/53">Polygon Count Reduction</a></li><li class="leaf"><a href="node/235">Sunlight - Part 1</a></li><li class="leaf"><a href="node/237">Sunlight - Part 2</a></li><li class="leaf"><a href="node/55">Surface Properties and Content Properties</a></li><li class="leaf"><a href="node/238">Texture Blending</a></li><li class="leaf"><a href="node/44">The Absolute Beginner's Guide to Quake 2 Editing</a></li><li class="leaf"><a href="node/266">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/56">Timing in Quake 2</a></li><li class="leaf"><a href="node/57">Turrets</a></li><li class="leaf"><a href="node/49">Using Clip Brushes</a></li><li class="leaf"><a href="node/552">Using Text Editors for Mapping</a></li></ul></li><li class="collapsed"><a href="node/21">Entity Properties</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/595" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 43%;" class="foreground"></div></div><div class="percent">43%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 14%;" class="foreground"></div></div><div class="percent">14%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 29%;" class="foreground"></div></div><div class="percent">29%</div><div class="total">Total votes: 7</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/2384">vcgaxwbyrc</a></li><li><a href="node/2383">xvsdhqrunq</a></li><li><a href="node/2382">ewxbjpeaap</a></li><li><a href="node/2381">xwhycbtrdp</a></li><li><a href="node/2380">zdbvhtebfu</a></li><li><a href="node/2379">dfgufxbqwj</a></li><li><a href="node/2378">qhyuadsjwb</a></li><li><a href="node/2377">fwrydspuvn</a></li><li><a href="node/2376">cxwugcwhgl</a></li><li><a href="node/2375">ehsfilxwwc</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/8296" title="View user profile.">umtvp</a></li><li><a href="user/8295" title="View user profile.">mvawu</a></li><li><a href="user/8294" title="View user profile.">Ghost</a></li><li><a href="user/8293" title="View user profile.">BiaoBiao</a></li><li><a href="user/8291" title="View user profile.">hmyre</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 30 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Creating an outdoor area using Gensurf</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/11" title="">Quake II</a> &raquo; <a href="node/42">Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/120" title="View user profile.">KaMiKrAe-Z</a> on Mon, 2004-08-30 04:16.</div>
+<h1 align="left"><u>Creating an outdoor area with Gensurf</u></h1>
+
+<p><i>Original tutorial provided by Ricebug, written with QERadiant in mind.</i>
+
+<p><font face="Arial">This tutorial will involve making an outside area and sky box. For making
+realistic-looking landscape, we will also be using the stand-alone version of
+David Hyde’s fantastic terrain generator program, <i><b><a href="http://www.planetquake.com/gensurf/">GenSurf</a></b></i>.
+A plugin version is available for QERadiant also.</font></p>
+<hr width=80% align="center">
+<h3><u>Making
+the Ground with <i>GenSurf</i></u></h3>
+<p><font face="Arial">Since David Hyde keeps improving <i>GenSurf</i>, the instructions below may
+not follow the current update.</font></p>
+
+<font face="Arial">
+1. For learning purposes, our outdoor area is going to be a small
+&quot;backyard.&quot; Once you have <i>GenSurf</i> up and running, click on the General
+tab. Under Set Waveform, select From
+Bitmap. Also, uncheck Add Skybox<i>.</i>
+The <i>skybox</i> option tells <i>GenSurf</i> to create a playable map with
+ground, sky and player entity. We won’t need these for our purpose.</font>
+
+<p align="center"><a href="content/quake2/tutorials/gensurf_outside/outs_01.gif"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_01.gif" width="450"></a></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 1: <i>GenSurf</i>'s
+interface (click for larger image)</b></font></p>
+<p><font face="Arial">3. We’re going to use a grayscale bitmap to form our ground elevations. If
+you want, you can left-click on the one in Figure 2 and save it as a .BMP to a
+directory of your choosing. Click on <i>GenSurf’s </i>Bitmap
+tab and browse to this location.</font></p>
+<p><font face="Arial">4. Compare the bitmap below with the wireframe preview in Figure 1 above. The
+black areas dictate the lower elevation, while the whiter areas cause the ground
+to swell upward. Lightwave and 3DSMax users know this as &quot;displacement
+mapping.&quot; For example, by drawing thick, black lines on a white background,
+you can easily define drainage ditches or culverts. In reverse, drawing thick,
+white lines on a black background will give you walls. Shades of gray in between
+black &amp; white will cause variations in the height of your walls. Some
+interesting landscapes can be created with a little imagination.</font></p>
+<p align="center"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_02.gif"></font></p>
+
+<div align="center">
+  <center>
+  <table border="0" width="50%">
+    <tr>
+      <td>
+        <p align="center"><font face="Arial"><b><font color="#aa0000" size="2">Figure 2: Grayscale
+        image used to define elevation of terrain in <i>GenSurf.</i></font></b> <font color="#aa0000" size="2"><b><i>Image
+        scaled to half original size for tutorial purposes.</i></b></font></font></p>
+      </td>
+
+    </tr>
+  </table>
+  </center>
+</div>
+<p><font face="Arial">5. Now click on the Extents tab. Under Lower-Left
+Corner<i>,</i> type </font> <font color="#000000" face="Arial Black">–128</font>
+<font face="Arial">
+in both boxes. Under Upper-Right Corner<i>,</i>
+
+type <font color="#000000" face="Arial Black">128</font> in both boxes. This
+will give an area size of 512 pixels, the exact dimensions of our bitmap. Also
+set Number of Divisions to 16
+in both boxes. This will make for a smooth ground.</font></p>
+<div align="center">
+  <center>
+  <table border="0">
+    <tbody>
+      <tr>
+        <td>
+          <p><font color="#aa0000" face="Arial"><b>WARNING</b></font></p>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+</div>
+<div align="justify">
+<table border="0">
+  <tbody>
+    <tr>
+
+      <td>
+        <p><b><small><font face="Arial"><font color="#aa0000">Depending on the size of your map and
+        hardware limitations, <i>GenSurf</i>-created walls, ceiling and floors
+        can very quickly bog down the editor and dramatically increase compile
+        times if you set the </font><font color="#000000">Number of Divisions</font><font color="#aa0000">
+        to a number less than 64. Start with larger numbers and work your way
+        down. As a rule, I complete my maps first and add the terrain when I'm
+        done.&nbsp;</font></font></small></b></p>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+</div>
+<p><font face="Arial">6. Notice that your map preview shows a steep terrain. We want our ground to
+flow downward in a smooth angle. To achieve this, change Map
+color 0 to 50,
+and <i>Map color 255</i>  to 100. Press <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Tab</span></font>
+on the keyboard and your map should smooth out.</font></p>
+<p><font face="Arial">7. Click on the General tab and set Roughness
+to <font color="#000000" face="Arial Black">0</font> and Random
+Seed to <font color="#000000" face="Arial Black">1</font>.</font></p>
+
+<font face="Arial">
+8. Finally, under Output Map File<i>,</i> browse
+to your <i>maps</i> folder and save the ground as <font color="#0000ff">outside.map</font>.</font>
+<p>&nbsp;</p>
+<hr width=80% align="center">
+<h3><u>Adding
+the Ground to the Map</u></h3>
+<font face="Arial">1. Fire up Radiant and select FILE/NEW MAP.
+I want you to clear anything out of the editing window to show you how to load
+multiple maps into Radiant.</font>
+
+<p><font face="Arial">2. With nothing in the editor, click on FILE and choose OPEN (Not LOAD).
+Select the map of the rooms and hallway we’ve been working on. (Hopefully,
+you’ve been saving things.)</font>
+<p><font face="Arial">3. Now click on FILE. This time, choose LOAD and select the <i>GenSurf</i>
+terrain you made. You should have both the terrain (in red) and the other map
+file, as shown in the screen shot below. <u>Leave the terrain selected.</u>
+</font>
+<p><font face="Arial">4. With the terrain in red, click somewhere in its center and drag it towards
+the bottom of your screen (you should be looking at the XY Top view). Drag it so
+it rests on the outside wall of the square room as shown in Figure 3.</font></p>
+<p align="center"><font face="Arial"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_03.gif"></font></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 3: Ground object in
+place</b></font></p>
+&nbsp;
+<p><font face="Arial">5. Since I want the ground to slope down, away from the building, we’ll
+need to rotate it.&nbsp; Look at the row of 6 buttons circled in yellow in Fig.
+4<i>.</i> These show the different rotation commands for <b>X</b>, <b>Y</b>,
+
+&amp; <b>Z</b>. With the ground still selected, you want to click on the last (<font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">ZN</span></font>)
+button TWICE, or you can click the <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Y|Y</span></font>
+button ONCE. The difference between these two buttons is that <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">ZN</span></font>
+rotates a selection clockwise at 90-degree increments, while <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">YY</span></font>
+vertically flips the selection. The end result is the same.</font></p>
+<hr width=80% align="center">
+<blockquote>
+
+  <blockquote>
+    <blockquote>
+      <p align="center"><b><font face="Arial"><font color="#ffff00" size="3"><span style="BACKGROUND-COLOR: #000000">Y|Y</span></font><font color="#008080" size="3">
+      </font><font color="#008000" size="3">flips brushes vertically on the
+      screen;</font><font color="#008080" size="3"> </font><font color="#ffff00" size="3"><span style="BACKGROUND-COLOR: #000000">X|X</span></font><font color="#008080" size="3">
+      </font><font color="#008000" size="3">flips them horizontally.</font></font></b>
+    </blockquote>
+
+  </blockquote>
+</blockquote>
+<hr width=80% align="center">
+<font face="Arial">
+6. The next thing to do is go to a side view of our <u>still-selected</u>
+ground. CTRL-TAB until you get to the <font color="#0000ff" face="Arial Black"><b>YZ
+Side</b></font> view. Click on the ground and drag it down until the high side
+is even with the floor of the square room, as shown in the figure below.</font>
+<p align="center"><font face="Arial"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_04.gif"></font></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 4: Ground lowered to
+same elevation as floor</b></font></p>
+<font face="Arial">
+
+&nbsp;7. Once the slope is positioned where you want it, hit <font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">ESC</span></font>ape
+to deselect it. Save your work.</font>
+<p><font face="Arial">8. The next thing we want to put in are some walls to enclose the ground. It
+would look unrealistic to bring the sky texture down to the ground. I added a
+&quot;stepped&quot; down stone fence along the sides.</font>
+<p><font face="Arial">9. Next, select the sky texture and build a box to enclose the fence and
+ground. The &quot;walls&quot; of the sky box should rest flush against the
+outside of the fence. The &quot;ceiling&quot; of the sky should come just above
+the &quot;roof&quot; of the exterior building. See figure 5.</font>
+
+<p align="center"><a href="content/quake2/tutorials/gensurf_outside/outs_05.jpg"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_05.jpg" width="450"></a></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 5: Constructing the
+Sky Box (click for larger image)</b></font></p>
+<hr width=80% align="center">
+<b><font face="Arial"><font color="#008000">Thankfully, Radiant uses some conventional Windows
+commands to make things easier. </font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Ctrl-C</span></font><font color="#008000">
+copies a brush and </font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Ctrl-V</span></font><font color="#008000">
+pastes it. By copying, pasting and rotating brushes with the </font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">X|X</span></font><font color="#008000">,
+</font><font color="#ffff00"><span style="BACKGROUND-COLOR: #000000">Y|Y</span></font><font color="#008000">
+and other rotate buttons, you can quickly fabricate structures.</font></font></b>
+
+<hr width=80% align="center">
+<p><font face="Arial">After you finish the skybox, let’s make a small pool of water in the lower
+depression to give our yard some character.</font></p>
+<font face="Arial">
+10. Find one of the water textures and click on it. Now drag a square brush
+through the ground. Make sure you don’t go outside of the brick fence we just
+built. See figure 6. I made the depth of my water brush 32 units, just enough to
+give it an illusion of depth.</font>
+<p align="center"><a href ="content/quake2/tutorials/gensurf_outside/outs_06.jpg"><img border="0" src="content/quake2/tutorials/gensurf_outside/outs_06.jpg" width="450"></a></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>Figure 6: Adding water (click for larger image)</b></font></p>
+<p align="center"><font face="Arial"><img border="0" content/quake2/tutorials/gensurf_outside/outs_07.jpg"></font></p>
+<p align="center"><font color="#aa0000" size="2" face="Arial"><b>The completed outside area.</b></font></p>
+<p align="center">&nbsp;</p>
+<hr width=80% align="center">
+<p align="center"><b><small><font face="Arial">Copyright 1999, by Terry DeLaney. Permission is granted to
+distribute this file as long as the author receives credit.</font></small></b></p><div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/48" title="View the previous page.">previous</a></div><div class="next"><a href="node/21" title="View the next page.">next</a></div><div class="up"><a href="node/42" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Colored Light</div><div class="next">Entity Properties</div></div></div></div></div>
+
+<div class="links"><a href="book/print/595" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

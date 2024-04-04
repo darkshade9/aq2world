@@ -1,0 +1,59 @@
+<html><head><title>Partial Transparency</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="54" name="54" class="book-h1">Partial Transparency</h1><h3>Quake 2</h3>
+	<blockquote>
+		Partial Transparency in Quake 2 - <a href="mailto:jexjackl@home.com">Jex</a> and <a href="mailto:suppenhuhn123@hotmail.com">Who</a>
+	</blockquote>
+	
+<br><br>
+
+<p>Something that's always been missing from Quake 2 is the ability to have "holes" in a texture. Half-life was one of the first games to properly implement "holes". Some examples of this are: see-through, shoot-through railings made from a single brush, see-through grating for floors. Well it is possible to do the same in Quake 2. While Quake 2's Partial Texture Transparency is not perfect, when used intelligently, it is a simple and effective way of adding detail without adding many faces.
+
+<br><br><b>Image of the web texture before and after:</b>
+
+<p><div align="center"><img src="/content/quake2/tutorials/pttrans/pttrans_img1a.jpg"> <img src="/content/quake2/tutorials/pttrans/pttrans_img1b.jpg"></div>
+
+<p><div align="center"><img src="/content/quake2/tutorials/pttrans/pttrans_img2.jpg"></div>
+
+<p>The first step in the process is preparing the texture; punching the "holes" in it. Any part of the texture that will be invisible must be coloured with Quake 2's transparency colour (Red: 159, Green: 91, Blue: 83). In our examples all the black spaces in the cobweb are replaced with the transparency colour.
+
+<p>Once you've got you texture prepared, it is only a matter of applying the texture to a brush and setting the proper flags. In all cases either trans_33 or trans_66 will be checked (usually trans_66 as trans_33 makes the visible parts of the texture very noticably translucent) as this is what does the magic. This flag must be applied to all faces of the brush. All other flags are completely optional as with any other brush. 
+
+<p><div align="center"><img src="/content/quake2/tutorials/pttrans/pttrans_img3.jpg"><br>Image of the web texture without trans_66 checked.</div>
+
+<p><div align="center"><img src="/content/quake2/tutorials/pttrans/pttrans_img4.jpg"><br>Image of the web with trans_66 checked, the web texture is applied on all faces.</div>
+
+<p><div align="center"><img src="/content/quake2/tutorials/pttrans/pttrans_img5.jpg"><br>Image of the web with a totally clear texture, and the web texture applied to one face (the "correct" way).</div>
+
+<p>When making a fence-like brush, you will only want to have 1 face of the brush visible. One way would be to make a completely transparent texture to apply to all faces but one. This would be the "proper" way to do it. But there is also another trick which may come in handy as well as decreasing the translucency of the visible fence. Create the fence as a 1 unit thick brush. Keep the fence texture applied to both sides of the brush. If the brush is any thicker than 1 unit the double effect can become quite noticeable, but at 1 unit apart the player has to be very close to notice the effect.
+
+<blockquote>
+<p><div align="center"><a href="/content/quake2/tutorials/pttrans/pttrans_img6.jpg"><img src="/content/quake2/tutorials/pttrans/pttrans_img6_sm.jpg" border=0></a><br>Image of two fences, the right side is a brush 8 units thick. You can clearly see the double effect. The fence on the right is only 1 unit thick, making the double effect disappear, and also reducing the translucency.</div>
+</blockquote>
+
+<p>One disadvantage of this technique is that it cannot be used in software mode:
+
+<p><div align="center"><a href="/content/quake2/tutorials/pttrans/pttrans_img7.jpg"><img src="/content/quake2/tutorials/pttrans/pttrans_img7_sm.jpg" border=0></a></div>
+
+	<b>Things to remember when using this technique:</b><br>
+        <li>This does not work in software rendering mode.
+        <li>The visible parts of the texture will always be translucent which makes thinner visible areas preferable (example: a wire fence). 
+        <li>Translucency can be reduced by making the brush 1 unit thick with two exact visible sides overlapping eachother. 
+        <li>Placing the transparent brush partially out of range of the player will reduce the chances of any translucency/double effect being noticed. 
+        <li>Colour for transparency is: Red: 159, Green: 91, Blue: 83. 
+        <li>Detail added this way does not produce high r_speeds. 
+        <li>Only works with trans_33 or trans_66 applied to all faces. 
+        <li>Wherever the transparent brushes intersect other brushes, a faint red glow appears.<br>
+
+<br><br><b>Some Examples:</b>
+
+<p><div align="center"><a href="/content/quake2/tutorials/pttrans/pttrans_img8.jpg"><img src="/content/quake2/tutorials/pttrans/pttrans_img8_sm.jpg" border=0></a></div>
+
+<p><div align="center"><a href="/content/quake2/tutorials/pttrans/pttrans_img9.jpg"><img src="/content/quake2/tutorials/pttrans/pttrans_img9_sm.jpg" border=0></a></div>
+
+<p><hr width=75% color=black noshade><p>
+
+<p> You can download the example map <a href="/content/quake2/tutorials/pttrans/pttrans_ex.zip">here</a>.
+
+<p>
+</body></html>

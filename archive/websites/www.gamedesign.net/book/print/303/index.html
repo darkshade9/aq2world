@@ -1,0 +1,63 @@
+<html><head><title>Ways to Prevent Leaks</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="303" name="303" class="book-h1">Ways to Prevent Leaks</h1><!-- 
+by Cheat_McSlick(no email address provided) 2001
+by Gard (stephen@geol.uwa.edu.au) 2003 
+Updated XHTML - FEB 05 Andy
+-->
+<h3>Half-Life</h3>
+<blockquote>
+Ways to Prevent Leaks - Created by <a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&amp;u=8">Cheat_McSlick</a><br />
+for updates contact <a href="stephen@geol.uwa.edu.au">RUST</a>
+</blockquote>
+<p>
+<span style="font-weight: bold">Preface:</span>
+</p>
+<p>
+ If your level doesn't compile because it has a leak, then you need to find the leak and delete. This tutorial helps define methods to find and eliminate leaks
+</p>
+<hr />
+<h3>Prevent leaks</h3>
+<p>
+The best way to fix a leak is to prevent it in the first place. Better map building is the solution. The ways to prevent leaks are:<br />
+</p>
+<ol>
+<li><span style="font-weight: bold">Don't make a big box around your level.</span> Ever. Let me repeat that, because it bears repeating. Don't make a big box around your level. That is the wuss way out, and it has so many bad effects on your map (like high r_speeds) that it's probably one of the worst mapping habits ever.</li>
+<li><span style="font-weight: bold">Don't carve.</span> Unless you really know what you're doing, carving causes a lot more problems than it solves. Avoid carving and you'll avoid leaks. Some times WC will split up a carved block so crazy-like it will cause a leak.</li>
+<li><span style="font-weight: bold">Don't work in grid size 1.</span> To the common n00b, grid size 1 might look like the best size to work in because it allows the most freedom. Wrong! You will make so many mistakes in grid size 1 that you'll end up having more leaks than you know what to do with. I'm talking about things like connecting a floor and a wall. In grid size 1, you'll probably miss and there will be a crack between them. You should work in grid size 8 or 16 most of the time.</li>
+</ol>
+<h3>Finding leaks:</h3>
+<p>
+Well none of the above worked, or you didn't pay attention and now you have a leak. I tried to warn you! Here are some helpful ways to finding a rogue leak:<br />
+</p>		
+<ol>
+<li><span style="font-weight: bold">The point file.</span> In WC, you may load the point file of a leaky map. It will show a crazy red line in the 2d views, and this line can be traced to the source of the leak. If there is no red line when you load the point file, then you probably have a point entity outside the map.</li>
+<li><span style="font-weight: bold">Look at the log.</span> The compile log will tell you the name and coordinates of the closest point entity to the leak. Use this to narrow down your search.</li>
+<li><span style="font-weight: bold">Big Block method.</span> Surround part of your map with a big, solid block and compile. If the leak errors are gone, then the leak must be in that area of the map. If not, move the block to another area and compile again. This will really help you narrow down your search.</li>
+<li><span style="font-weight: bold">Big Purple Sky method.</span> Surround your map with a giant hollow block with the sky texture, and make your light_enviroment bright purple (or other noticeable color). Compile the map and run it. Walk around every nook and cranny of the map. If you see a space in the map where purple light shines through, then a leak is there. It also might help to temporarily get rid of all your other lights so the purple light is more noticeable.</li>
+<li><span style="font-weight: bold">3-D view method.</span> (Suggested by <a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&amp;u=390">Yesukai</a>) In worldcraft, make the 3D view nice and big(i use independant window configs). Put it on solid. Fly around the outside of your map, looking for the spot were the colors change strangly or the perspective is screwed up. Now, this may sound like a bad method, but combined with experience, I can locate any leak in minutes and be on my way while you are still flying down a pointfile</li>
+<li><span style="font-weight: bold">Advanced method.</span> (Suggested by <a href="http://forums.gamedesign.net/profile.php?mode=viewprofile&amp;u=32">RoyelEF</a>) The pointfile can get quite large and I find the 2d-only pointfile in WC is useless. To get around this:</li>
+</ol>
+<blockquote><ol start="1">
+    <li>Copy the broken bsp and pts files into Halflife and load your map.</li>
+    <li>In worldcraft,In the console type POINTFILE to load it. If it complains about not enough particles then add <br /><code>-particles 65000</code> to your halflife launch for debugging. This is easily done in WC compiler settings.</li>
+    <li>However, the pointfile can still be outrageously long and take some patience to trace.</li>
+    <li>The pointfile stops when it encounters a pointbased entity (light, playerstart, monster, weapon, ammo, etc). For the compiler this is the very definiton of a leak, a point-based entity is encountered by the pointfile. It passes through brush based ones unnoticed.</li> 
+    <li>You can shorten your pointfile by increasing the number of point-based entities in the map. Player deathmatch starts or gman around. Place them in each major room, hallway. When the pointfile enters it will encounter an entity sooner and will stop closer to the actual problem.</li>
+    <li>Having gmen around also gives you a perspective of what player will look like in a room.</li>
+ </ol> </blockquote>
+ <p>&nbsp;</p>
+ <p>
+ So the next time someone asks you how to fix a leak, you point them to the old Cheat_McSlick &quot;How to fix a Leak&quot; Tutorial.
+ </p>
+<hr />
+<h3>Interesting Leak Discussions on the RUST Forums:</h3>
+<blockquote>
+<span style="color: #ff0000">
+1. <a href="http://forums.gamedesign.net/viewtopic.php?t=497&amp;highlight=leaks">Cheat_McSlick's original post?</a><br />
+2. <a href="http://forums.gamedesign.net/viewtopic.php?t=497&amp;highlight=leaks">Typical Leak problems?</a><br />
+3. <a href="http://forums.gamedesign.net/viewtopic.php?t=2868&amp;highlight=leaks">VIS and Leaks</a><br />
+4. <a href="http://forums.gamedesign.net/viewtopic.php?t=5675&amp;highlight=leaks">Entities don't stop leaks</a><br />
+ </span>
+ </blockquote>
+<!--EOF@62--></body></html>

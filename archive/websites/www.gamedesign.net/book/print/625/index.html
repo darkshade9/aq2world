@@ -1,0 +1,568 @@
+<html><head><title>Trigger</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="625" name="625" class="book-h1">Trigger</h1><!--Submitted by Andy Sep 2004 -->
+<a name="Top"><h3>Half-Life Trigger Entities</h3></a>
+<!-- Start description -->
+<p><b>
+<ul>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_auto">Trigger_auto</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_autosave">Trigger_autosave</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_camera">Trigger_camera</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_cdaudio">Trigger_cdaudio</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_changelevel">Trigger_changelevel</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_changetarget">Trigger_changetarget</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_counter">Trigger_counter</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_endsection">Trigger_endsection</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_gravity">Trigger_gravity</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_hurt">Trigger_hurt</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_monsterjump">Trigger_monsterjump</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_multiple">Trigger_multiple</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_once">Trigger_once</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_push">Trigger_push</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_relay">Trigger_relay</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_teleport">Trigger_teleport</a></li>
+<li><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_transition">Trigger_transition</a></li>
+<br></ul></b>
+</p>
+<hr noshade color="black">	
+<!--break-->
+<br><br>
+<!--Start Description-->
+	 
+<a name="trigger_auto"><h3>trigger_auto</h3></a>
+  <p>This entity fires its target the moment the map has loaded.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - The name of the event to be activated.</p>
+  <p><b>Delay before trigger</b> - The length of time in seconds to wait before 
+  triggering the target.</p>
+ <p><b>KillTarget</b> - This event will be removed when the trigger_auto 
+  fires.</p>
+  <p><b>Global State to Read</b> - The name of a global variable (set by an 
+  env_global). This variable sets the state of the trigger_auto.</p>
+  <p><b>Trigger State</b> - Sets the type of trigger the trigger_auto sends <br>
+  (0 = Off 1 = On 2 = Toggle).</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1)  Remove On fire</font> - If this is set, the trigger_auto will be removed from the game after firing.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#env_global">Env_global</a><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#multimanager">multimanager</a><br><br>
+ <b>Notes</b>:<br>
+  Setting 'Delay before trigger' to something like 0.2 is a good idea, because 
+  it's possible for the trigger_auto to fire before the entity it targets has 
+  even been spawned.<br>
+  Usually the Trigger State is On.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+
+<a name="trigger_autosave"><h3>trigger_autosave</h3></a>
+  <p>When the player moves through the area covered by this entity, the game will be autosaved.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - Name a trigger_autosave, if you want it to be triggered by another event.</p>
+  <p><b>Master</b> - The entity will only work if the master is active.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#player_loadsaved">Player_loadsaved</a><br><br>
+<b>Notes</b>:<br>
+Autosaves are a great idea if the area ahead of the player is dangerous. It will give the player a point to reload the map from. The drawback is that the autosave is announced as text. It gives the player a warning of impending doom.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_camera"><h3>trigger_camera</h3></a>
+  <p>This entity allows you to place cameras in your map. The camera will take over from the players normal view.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - When an the camera is activated, it triggers the entity with the name specified by Target.</p>
+  <p><b>Delay before trigger</b> - Delay in seconds before the Target above is triggered.</p>
+  <p><b>KillTarget</b> - When the camera is triggered, it will remove from the game the entity specified by this property.</p>
+  <p><b>Name</b> - This entity must be triggered to work. </p>
+  <p><b>Hold time</b> - Time to keep the camera going in seconds.</p>
+  <p><b>Path Corner</b> - The first path_corner the camera will move to if you want it to move and have set up a series of path_corners for it to move along. The camera will start where it spawns and move to the first path_corner at the "Initial Speed". Freeze Player flag must be checked.</p>
+  <p><b>Initial Speed</b> - The speed the camera moves to it's first path_corner.</p>
+  <p><b>Acceleration units/sec^2</b> - </p>
+  <p><b>Stop Deceleration units/sec^2</b> - </p> 
+<h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Start At Player</font> - Begin with the player's view.<br>
+   <font color=red>(2) Follow Player</font> - Use the player as the focal point.<br>
+   <font color=red>(4) Freeze Player</font> - Stop the player from moving while camera is in action.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/428?PHPSESSID=2a88c2583725b13440edb00958e46a61">Env_fade	</a><br><br>
+<b>Notes</b>:<br>
+  The camera can be set up to work in any of several ways - fixed position, with 
+  a fixed or moving target (e.g. a security camera), or moving, with a fixed or 
+  moving target.<br>
+  The area that the camera is looking at must be in the players visible set of brushes. <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_cdaudio"><h3>trigger_cdaudio</h3></a>
+  <p>When the player passes through this entity, the selected CD audio track will be 
+played.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name </b> - Although brush-based, this entity can also be triggered by another entity. </p>
+  <p><b>Track # </b> - This is the track number that will play.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#target_cdaudio">Target_cdaudio</a><br><br>
+<b>Notes</b>:<br>
+  None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_changelevel"><h3>trigger_changelevel</h3></a>
+  <p>This entity causes a level transition, where a new map is loaded and the player 
+is placed in it.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - Provide a name to allow the transition to be triggered by 
+  another event.</p>
+  <p><b>New map name</b> - The name of the new map to load.</p>
+ <p><b>Landmark name</b> - The name of the info_landmark that defines the same 
+  point in space in both maps.</p>
+  <p><b>Change Target</b> - </p>
+  <p><b>Delay before change target</b> - </p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) No Intermission</font> - <br>
+  <font color=red>(2) Use Only</font> - Entity can only be triggered by another event.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/621?PHPSESSID=2a88c2583725b13440edb00958e46a61#info_landmark">Info_landmark</a><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_transition">Trigger_transition</a><br><br>
+ <p><b>Notes</b>:<br>
+  None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+	 
+<a name="trigger_changetarget"><h3>trigger_changetarget</h3></a>
+  <p>This entity can change the Target value of any entity.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+<p><b>Target</b> - The name of the entity to be affected.</p>
+<p><b>Delay before trigger</b> - Delay in seconds before the target change.</p>
+<p><b>KillTarget</b> - This entity will be removed from the game when the 
+  trigger is activated.</p>
+  <p><b>Name</b> - Trigger this entity to activate. </p>
+  <p><b>New Target</b> - Change the target entity's 'target' value to 
+  this.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+	 
+<a name="trigger_counter"><h3>trigger_counter</h3></a>
+	  <p>This entity counts the number of times it is triggered and activates its target 
+when it reaches a specified number.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - The event to be activated once the count has reached the 
+  specified limit.</p>
+  <p><b>Name</b> - Provide a name to allow this entity to be triggered by 
+ another. </p>
+  <p><b>Kill target</b> - Remove this entity from the game on activation. 
+ </p>
+  <p><b>Target Path</b> - </p>
+  <p><b>Master</b> - The name of a master. This master must be active in order 
+  for this trigger to fire.</p>
+  <p><b>Sound Style</b> - </p>
+  <p><b>Delay before trigger</b> - The trigger_counter will wait this many seconds before activating its target. </p>
+ <p><b>Message</b> - </p>
+  <p><b>Count before activation</b> - The number that the counter must reach 
+  before activating its targets.</p>
+<h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) No Message</font><br>
+ <font color=red>(2) No Clients</font> - The 'client' is the player. So with this flag set on, the entity will not be affected by the player.<br>
+   <font color=red>(4) Pushables</font>  - With this flag set on, the entity will be activated by pushable objects.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#multisource">Multisource</a><br><br>
+<b>Notes</b>:<br>
+None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_endsection"><h3>trigger_endsection</h3></a>
+  <p>This entity ends the current game and returns the player to the Half-Life main 
+menu.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - This entity can be activated by other triggers.</p>
+  <p><b>Section</b> - The type of game to end.<br>Values are:</p>
+  <b>_oem_end_training</b> : takes the player back to the main menu<br>
+  <b>_oem_end_logo</b> : same as above<br>
+  <b>_oem_end_demo</b> : This was used in the demo. Same as above, but also attempts to open 'media/order/default.hml'.<br>
+<br>
+<h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Use Only</font> - Entity cannot be triggered by the player walking into it.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_gravity"><h3>trigger_gravity</h3></a>
+  <p>This entity sets the effect of gravity from low to normal.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - When trigger_gravity is activated, it triggers the entity with the name specified by Target.</p>
+  <p><b>Name</b> - Name of the entity, for external triggering.</p>
+  <p><b>Kill target</b> - When an entity is triggered, it will remove from the 
+  game the entity specified by this property.</p>
+  <p><b>Target Path</b> - </p>
+  <p><b>Master</b> - The name of a multisource (or game_team_master) entity. A 
+  master must usually be active in order for the entity to work. Thus they act 
+  almost like an on/off switch, in their simplest form, and like an AND gate in 
+  the case of the multisource.</p>
+  <p><b>Sound style</b>- </p>
+  <p><b>Delay before trigger</b> - Usually the time in seconds before an entity 
+  should trigger its target (after being triggered itself). Under other 
+  SmartEdit names, delay might also be the time to wait before performing some 
+  other action.</p>
+  <p><b>Message</b> - </p>
+  <p><b>Gravity (0-1)</b> - Any value between 0 and 1, <b>1</b> being normal gravity.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Monsters</font> - With this set, the monster entities will not be affected by the gravity<br>
+   <font color=red>(2) No Clients</font> - The 'client' is the player. Same as above<br>
+  <font color=red>(4) Pushables</font> -  With this flag set on,pushables will not be affected by gravity
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+  Level of gravity stays set after being put into effect - use two brushes, one 
+  with the new gravity, one with the old, to make sure the player returns to 
+  normal gravity in situations where that is necessary.<BR>
+The player normally walks through this trigger<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_hurt"><h3>trigger_hurt</h3></a>
+  <p>This entity hurts anyone in its area. Being brush based, any player or monster will recieve damage when they walk into the brush</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - If this is specified, the entity can be triggered on and 
+  off.</p>
+  <p><b>Target</b> - When the trigger_hurt is activated (by a player touching 
+  it), it will trigger this target.</p>
+  <p><b>Master</b> - If used, this master must be active for the trigger_hurt to work. 
+ </p>
+  <p><b>Damage</b> - The amount of damage to deal out.</p>
+  <p><b>Delay before trigger</b> - Delay in seconds before the Target is activated.</p>
+  <p><b>Damage Type</b> - Type of damage. One of the following:</p>
+  <blockquote>
+        0 = GENERIC<br>
+        1 = CRUSH<br>
+        2 = BULLET<br>
+        4 = SLASH<br>
+        8 = BURN<br>
+        16 = FREEZE<br>
+        32 = FALL<br>
+        64 = BLAST<br>
+        128 = CLUB<br>
+        256 = SHOCK<br>
+        512 = SONIC<br>
+        1024 = ENERGYBEAM<br>
+        16384 = DROWN<br>
+        32768 = PARALYSE<br>
+        65536 = NERVEGAS<br>
+        131072 = POISON<br>
+        262144 = RADIATION<br>
+        524288 = DROWNRECOVER<br>
+        1048576 = CHEMICAL<br>
+        2097152 = SLOWBURN<br>
+        4194304 = SLOWFREEZE<br>
+</blockquote>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1)Target Once</font> - Normally the trigger_hurt will trigger its target every time it hurts something. Setting this flag lets it do this only once.<br>
+  <font color=red>(2) Start Off</font>  - Start the trigger off (needs to be activated to work). <br>
+  <font color=red>(8) No clients</font> - The entity won't affect players. The 'client' is the player. So with this flag set on, the entity will not be affected by the player.<br>
+ <font color=red>(16) FireClientOnly</font>  - Will hurt anyone, but will only fire its target when it hurts a player.<br>
+  <font color=red>(32) TouchClientOnly</font>  - Only the player will be hurt.
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#multisource">Multisource</a><br><br>
+<b>Notes</b>:<br>
+None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+	 
+<a name="trigger_monsterjump"><h3>trigger_monsterjump</h3></a>
+  <p>Any monster that walks into the area covered by this entity will be made to jump in the specified direction, height and speed once.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Pitch Yaw Roll</b> - Yaw sets the jump direction. </p>
+  <p><b>Master</b> - Monsters will not jump unless this master is active. </p>
+  <p><b>Jump Speed</b> - Speed of the jump in units per second.</p>
+  <p><b>Jump Height</b> - The height of the jump in units.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+None<br><br>
+<b>Notes</b>:<br>
+Don't expect to get Barney doing circus tricks... This entity is limited, but might be really usefull to get monsters over small objects or start the run up a set of stairs.<br> I couldn't get Barney to jump more than 48 units, and even then it looked like a 'run over obstacle' rather than a jump.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_multiple"><h3>trigger_multiple</h3></a>
+  <p>This entity triggers a specified target every time its area is entered by 
+players, monsters or pushables.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - Name of event to be triggered when this entity is activated. 
+ </p>
+ <p><b>Name</b> - Name of the trigger</p>
+  <p><b>Kill target</b> - Remove this entity from the game when triggered. </p>
+  <p><b>Target Path</b> - </p>
+  <p><b>Master</b> - This master must be active for the trigger_multiple to work. </p>
+ <p><b>Sound style</b> - </p>
+  <p><b>Delay before trigger</b> - The delay in seconds to wait before triggering 
+  the target. </p>
+ <p><b>Message</b> - </p>
+ <p><b>Delay before reset</b> - Time in seconds before the entity is ready to be 
+  re-triggered.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Monsters</font> - Allow monsters to activate this entity. <br>
+  <font color=red>(2) No Clients</font> - Players cannot activate this entity. <br>
+  <font color=red>(4) Pushables</font> - Allow pushable objects to activate this entity. <br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_once">Trigger_once</a><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_relay">Trigger_relay</a><br><br>
+<b>Notes</b>:<br>
+None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+	 
+<a name="trigger_once"><h3>trigger_once</h3></a>
+  <p>When this entity's area is entered by players, pushable objects or monsters, it 
+triggers its target, but only once.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+ <p><b>Target</b> - Name of event to be triggered when this entity is activated.  </p>
+ <p><b>Name</b> - Name of the trigger</p>
+  <p><b>Kill target</b> - Remove this entity from the game when triggered. </p>
+  <p><b>Target Path</b> - </p>
+  <p><b>Master</b> - This master must be active for the trigger_multiple to work. </p>
+  <p><b>Sound style</b> - </p>
+  <p><b>Delay before trigger</b> - The delay in seconds to wait before triggering 
+  the target. </p>
+ <p><b>Message</b> - </p>
+  <p><b>Delay before reset</b> - Time in seconds before the entity is ready to be 
+  re-triggered.</p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Monsters</font> - Allow monsters to activate this entity. <br>
+  <font color=red>(2) No Clients</font> - Players cannot activate this entity. <br>
+  <font color=red>(4) Pushables</font> - Allow pushable objects to activate this entity. <br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_multiple">Trigger_multiple</a><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_relay">Trigger_relay</a><br><br>
+<b>Notes</b>:<br>
+None<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_push"><h3>trigger_push</h3></a>
+  <p>When a player, monster or pushable object enters this entity's area, it is 
+pushed in the specified direction and speed.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - Name of event to be triggered when this entity is activated. 
+  </p>
+  <p><b>Name</b> - Trigger to turn on or off. </p>
+  <p><b>Kill target</b> - Remove this entity from the game when the 
+  trigger_once is triggered.</p>
+  <p><b>Target Path</b> - </p>
+  <p><b>Master</b> - This master must be active for the trigger_push to work. 
+ </p>
+  <p><b>Sound style</b> - </p>
+  <p><b>Delay before trigger</b> - The delay in seconds to wait before triggering 
+  the target.</p>
+  <p><b>Message</b> - </p>
+  <p><b>Pitch Yaw Roll</b> - These values set the direction of the push. </p>
+  <p><b>Speed of push</b> - The speed to push at in units per second.</p>
+<h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Once Only</font> - Makes the entity have effect once only.<br>
+  <font color=red>(2) Start Off</font> - Start off and wait to be triggered on. <br>
+  <font color=red>(4) Pushables</font> - Allow pushable objects to be affected this entity. </blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/619?PHPSESSID=2a88c2583725b13440edb00958e46a61#func_conveyor">Func_conveyor</a><br><br>
+<b>Notes</b>:<br>
+None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+	 
+<a name="trigger_relay"><h3>trigger_relay</h3></a>
+  <p>This entity acts as a relay between an event and its target. Its main advantage is that it can send a specific trigger state to its target.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - Name of the trigger</p>
+ <p><b>Target</b> - Name of event to be triggered when this entity is activated.  </p>
+  <p><b>Delay before trigger</b> - The delay in seconds to wait before triggering 
+  the target. </p>
+  <p><b>Trigger State</b> - Off (0), On (1), or Toggle (2). Toggle mode is 
+  what normal triggers use. On and Off will only trigger their targets on or off 
+  respectively, and will not affect targets that are already on or off.</p>
+<h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Remove On fire</font> - After triggering its targets, this entity will be removed. </blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/620?PHPSESSID=2a88c2583725b13440edb00958e46a61#game_team_master">Game_team_master</a><br>
+<a href="book/view/623?PHPSESSID=2a88c2583725b13440edb00958e46a61#multimanager">Multimanager</a><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_multiple">Trigger_multiple</a><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_once">Trigger_once</a><br><br>
+<b>Notes</b>:<br>
+None <br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+
+<!--Next Entity -->
+	 
+<a name="trigger_teleport"><h3>trigger_teleport</h3></a>
+  <p>This entity will teleport things in its area </p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Target</b> - The name of the info_teleport_destination to teleport to.</p> 
+  <p><b>Name</b> - Name of the trigger, if you need to trigger it using another trigger.</p>
+  <p><b>Kill target</b> - Remove this entity from the game when triggered. </p>
+ <p><b>Target Path</b> - </p>
+  <p><b>Master</b> - This master must be active for the trigger_multiple to work.</p>
+  <p><b>Sound style</b> - </p>
+  <p><b>Delay before trigger</b> - The delay in seconds to wait before triggering 
+  the target. </p>
+ <p><b>Message</b> - </p>
+ <h3>Flag Properties</h3>
+<blockquote>
+  <font color=red>(1) Monsters</font> - Allow monsters to activate this entity. <br>
+  <font color=red>(2) No Clients</font> - Players cannot activate this entity. <br>
+  <font color=red>(4) Pushables</font> - Allow pushable objects to activate this entity. <br>
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/621?PHPSESSID=2a88c2583725b13440edb00958e46a61#info_teleport_destination">Info_teleport_destination</a><br><br>
+<b>Notes</b>:<br>
+  To make a trigger_teleport toggleable, use a multisource master. Trigger this 
+  master with a button or multi_manager or something to activate it. When the 
+  master is inactive, the teleporter will be as well.<br><br>
+<hr noshade color="gray">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top</a></p>
+<hr noshade color="black">
+<br>
+<!--Next Entity -->
+	 
+<a name="trigger_transition"><h3>trigger_transition</h3></a>
+<p>This entity creates an area in which the player must be for an associated 
+trigger_changelevel to work.</p>
+<hr noshade color="gray" width=75%>
+<h3>Properties</h3>
+  <p><b>Name</b> - Provide a name so that the entity can be associated with a 
+  trigger_changelevel.</p>
+<h3>Flag Properties</h3>
+<blockquote>
+  None
+</blockquote>
+<hr noshade color="gray" width=75%>
+<b>Related Entities</b><br>
+<a href="book/view/621?PHPSESSID=2a88c2583725b13440edb00958e46a61#info_landmark">Info_landmark</a><br>
+<a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#trigger_changelevel">Trigger_changelevel</a><br><br>
+<b>Notes</b>:<br>
+None<br><br>
+<hr noshade color="black">
+<p align=center><a href="book/view/625?PHPSESSID=2a88c2583725b13440edb00958e46a61#Top">Top of page</a></p>
+<hr noshade color="black">
+<br></body></html>

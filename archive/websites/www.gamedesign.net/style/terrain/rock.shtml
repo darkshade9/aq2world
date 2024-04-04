@@ -1,0 +1,428 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Natural Terrain within the Quake2 Engine - How To</title>
+<LINK rel="Start" title="Main rust Page" type="text/html" href="http://www.gamedesign.net">		<LINK REV=made href="mailto:fishman@gamedesign.net">		<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake edin		g, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+<link rel=stylesheet href="http://www.gamedesign.net/stylesheets/main.css">	</head>	<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">		
+<tr>			<td colspan="2" valign="TOP" width="85%">				
+<a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a>				
+<br>				
+<!-- AdSpace cat=games cat2=games page=111 site=telefragged size=468x60 --><iframe width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://adserver.ugo.com:80/html.ng/cat=games&cat2=games&page=111&site=telefragged&size=468x60"><script language="javascript1.1" src="http://adserver.ugo.com:80/js.ng/params.richmedia=yes&cat=games&cat2=games&page=111&site=telefragged&size=468x60"></script><noscript><a href="http://adserver.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60"><img src="http://adserver.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&cat=games&cat2=games&page=111&site=telefragged&size=468x60" border=0></a></noscript></iframe><!-- /AdSpace -->
+				
+<h1>S&nbsp;t&nbsp;y&nbsp;l&nbsp;e&nbsp;&nbsp;G&nbsp;u&nbsp;i&nbsp;d&nbsp;e</h1>				
+<Br>				
+<div class="text">				
+<br>				
+<blockquote><b>Rocks</b><br><br>
+
+Creating realistic looking rocks, such as canyon walls, takes a bit of work. As you probably 
+noticed in the earlier sections of this interview, there are some methods that should be used 
+and some that should be avoided.<br><br>
+
+Personally, I have never carved and don't intend to when I'm creating rocks or rock walls. The 
+best methods you can use are skewing faces and clipping because they don't affect the number of 
+brushes.<br><br>
+
+With that said, let's get started!<br><br>
+
+<b>The Odd-Sided Cylander Method</b><br><br>
+
+The Cylander Method is the easiest of all methods to create rock walls. What you do is create a 
+layout for your area and begin forming the walls with odd-sided cylanders. I'm going to be using 
+the ground we just created in the Ground section. Make sure you have cylanders that touch each 
+other touch on actual points in the grid, that will make things a lot easier in the later steps. 
+Once you have your walls all built up to the height you want, go alonge the outside of the level 
+and clip off the backs of the cylanders that you can't see so that the outside walls are flat. 
+Here's a picture of my XY view showing how I placed the cylanders. I've filled the sky brushes 
+in blue so you can see how the rocks should align up against it. (Btw, the rocks walls are 
+outlined in red all those other lines are the triangles from our ground =)<br><br>
+
+<center><table border="0" width="368"><tr valign="top"><td>
+<img src="rock_1.gif" width="368" height="222" border="0"><br><br>
+<center><font size="-1">See how the cylander is placed along the sky?
+One problem though, we've got excess faces of
+the rock that can't be seen that we need to
+clip off. What needs clipped off is outlined
+in yellow.</font></center><br>
+</td></tr></table></center>
+
+<center><table border="0" width="490"><tr valign="top"><td>
+<center><img src="rock_2.gif" width="490" height="80" border="0"></center><br>
+<center><font size="-1">In this picture we've taken away the excess faces on the backs
+of our rocks. Pay attention to how the rocks meet at points in
+order to be sure there are no gaps between them later.
+</font></center><br>
+</td></tr></table></center>
+
+If you've looked at your 3d View since you're put the rocks in, you might be saying "This 
+doesn't look too good yet!!!" That's because we're not done yet! Remember above how I said 
+clipping and skewing worked best? Well, that's what we're about to do now!<br><br>
+
+First thing to consider is how tall you want your rock walls, so adjust the height of all your 
+cylanders to your liking now because it'll be a pain to do it later after you've clipped and 
+skewed everything. Now decide whether you want your rock walls to be steep, have a nice smooth 
+slope to them, or even slope from the top. Which ever way you choose will affect how you skew 
+the rocks. If you want a smooth slope, you'll skew the bottoms of your rock out pretty far. If 
+you want a steep slope, you'll skew the bottoms out very little or maybe not at all. If you want 
+the rock to hang over from above, you'll have to skew the top of the rock towards the inside of 
+the map. Below is a picture of skewing the top of a rock out and making a smooth sloped rock.<br><br>
+
+<center><table border="0" width="436"><tr valign="top"><td>
+<center><img src="rock_3.gif" width="436" height="244" border="0"></center><br>
+<center><font size="-1">This shows you how to make the top of a rock skew
+outwards. I've circled the top point that we drag
+to skew the face and made it green in the camera.
+Also, the rock on the top is the rock before we 
+actually skewed the face and the rock on the 
+bottom is, of course, the rock that we skewed.
+</font></center><br>
+</td></tr></table></center>
+
+After you do the first rock, move on to the next one. Be careful to skew the brushes different 
+ammounts and possible vary the method of skewing you use to keep things looking natural. Here's 
+what I ended up with after I skewed everything.<br><br>
+
+<center><table border="0" width="322"><tr valign="top"><td>
+<center><img src="rock_5.gif" width="322" height="269" border="0"></center><br>
+<center><font size="-1">That's what my rock wall looks like in the
+camera right now, after I've skewed the
+faces around. If you look closely, you can
+see that the rock on the right has it's
+bottom skewed inwards, while the other two
+Have their tops skewed inwards.<br><br>
+
+Also, when skewing your brushes, try not
+to modify vertices that touch other rock
+brushes. By doing this, you'll end up with
+rocks that line up together perfectly.
+</font></center><br>
+</td></tr></table></center>
+
+Alright, now let's do some clipping. Look at the tops of your rocks, pretty flat? We can fix 
+that. What we want to do is clip the tops of the brushes so they are sloped and meet the other 
+brushes at different angles. It might also be good to clip sideways across the brush too. This 
+is done by clipping from somewhere in the middle of the brush to the top of it in either the XZ 
+or YZ view, depending on which direction your rock is facing in the XY. Here's a few pics that 
+demonstrate how to do the clip. Confused? Take a look at these pictures and pay close attention 
+to how the rocks all meet at the top. (Btw, that yellow line represents the clipping plane.)
+<br><br>
+
+<table border="0" cellpadding="4">
+<tr valign="top"><td width="320">
+<b>Step 1</b><br><center><img src="rock_6.gif" width="320" height="215" border="0"></center><br>
+<center><font size="-1">First thing we want to do is go into either
+our XZ or YZ view, depending on which way
+your rocks are facing. Then simply place your
+two clip points to trim off a piece of the
+rock. My points would be at each end of the
+yellow line, which represents the clipping plane.
+</font></center><br><br></td>
+
+<td width="320">
+<b>Step 2</b><br><center><img src="rock_8.gif" width="320" height="215" border="0"></center><br>
+<center><font size="-1">Now we move on to the second rock. What we
+need to do now is make this rock meet up
+with it's neighboring rock by clipping with
+a plane that shares the point of the first rock that's touching the second rock.
+</font></center><br><br>
+</td></tr>
+
+<tr valign="top">
+<td width="320">
+<b>Step 3</b><br><center><img src="rock_7.gif" width="320" height="215" border="0"></center><br>
+<center><font size="-1">Still on the second rock, doing a second clip to make the rock look 
+more rounded over. Only thing you need to do is make a different clipping plane than the first 
+one you used.
+</font></center><br><br>
+</td>
+
+<td width="320">
+<b>Step 4</b><br><center><img src="rock_9.gif" width="320" height="215" border="0"></center><br>
+<center><font size="-1">Now switch to your YZ or XZ view (oppositte the one your were just in) and clip across the side of the brush. By doing this we can make the brush appear rounded over at the top.
+</font></center><br><br>
+</td></tr>
+</table>
+
+Clipping is also very handy for adding odd angles to your terrain and shaping in general. What we want to do is clip off the fronts of some of our rocks to get an extra angle in there. To do this, you want to take your brush and clip a piece of it off. The best place to clip is the across the part that is skewed out in the XY view because you won't affect the entire brush when you clip. Be careful when you are going to clip the brush from above, always check in the 3D View to make sure your brushes are going to line up after the clip! The best thing to do is move the clip path around and keep checking the camera until your are satisfied with what will be left after the clip.<br><br>
+
+<center><table border="0" width="360"><tr valign="top"><td>
+<center><img src="rock_10.gif" width="360" height="270" border="0"></center><br>
+<center><font size="-1">Take a look at the XY View below to see how this
+clip is done. See how we are only taking away from
+the fronts of the brushes and not messing up the
+edges of the brushes that touch eachother? That's
+a good thing =) The only thing that you need to
+make sure the player can't walk under these parts
+you clipped away and get crushed. It's very easy
+for a player to get stuck under a brush that slopes
+inward too sharply from above.
+</font></center><br>
+</td></tr></table></center>
+
+<center><img src="rock_11.gif" width="430" height="127" border="0"></center><br>
+
+I like to do a lot of clipping, sometimes I may do this type of clipping as many as 3 or 4 times 
+to a single rock. Nature is natural, so adding in odd angles to create odd shapes is a good 
+thing. As always, you can go overboard, so keep an eye on how many faces you have before you 
+decide to clip and possibly create another one. If you thik you have too many faces, load the 
+map up in the game and check the r_speeds. If the r_speeds are good then you can go ahead and 
+do some more clipping.<br><br>
+
+Finally, after all that work we have some cool canyon walls! Here's what I ended up with.<br><br>
+
+<center><img src="rock1.jpg" width="512" height="384" border="0"></center><br>
+
+<center><font size="-1">R_speeds under 175! 3 Minutes compile time on a P166 w/24 RAM! Pretty sweet eh?</font></center><br>
+
+<center><img src="rock2.jpg" width="512" height="384" border="0"></center><br>
+
+<br><br>
+
+<p align="right">Got Cliffs?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cliff.shtml"><img src="triangle.gif" width=15 height=15 border=0 alt=""></a></p>
+
+</blockquote>				
+</div>				
+<br><br><br><br>			
+</td>			
+<td width="15%" rowspan="2" align="RIGHT" valign="TOP">			
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+			
+<!--menu ends here-->			
+</td>		
+</tr>	
+</table>	
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body></html>

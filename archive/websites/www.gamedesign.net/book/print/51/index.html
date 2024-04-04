@@ -1,0 +1,39 @@
+<html><head><title>Environmental Maps</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="51" name="51" class="book-h1">Environmental Maps</h1><h3>Quake2</h3>
+	<blockquote>
+		Environmental Maps - <a href="mailto:fishman@gamedesign.net">Shane "Fishman" Sherman</a>
+	</blockquote>
+	
+<p>One of the coolest new things in Quake2 are the environment maps. The only problem is that there is not a great variety of them in Quake2. They are <b>unit1_</b> through <b>unit9_</b> and <b>space1</b>. The unit maps are all of the alien world backgrounds and space is the one used on the last few levels. To view these in a map just type <b>sky</b> <i>name of sky</i> at the console.<br><br>
+
+What if you dont like any of the Quake2 environment maps? Well make your own. This is what I will attempt to show you how to do. It's not very easy though.<br><br>
+
+First thing you have to do is draw the art which is by far the hardest part. The environment map acts like a cube around your level so there must be 6 seperate pictures; up, down, left, right, front, back. They aren't orientated the way you think they are though... Below are some screenshots of some of the Quake2 env. maps so you can see what sides must match the other sides.<br><br>
+
+<p><div align="center"><img src="content/quake2/tutorials/env_maps/env_maps_img1.jpg"></div>
+
+<p>The unit5_ environment map.
+
+<p><div align="center"><img src="content/quake2/tutorials/env_maps/env_maps_img2.jpg"></div>
+
+<p>The space1_ environment map.
+
+<p><hr width=75% color=black noshade><p>
+
+<p>Each image <b>must be 256x256 pixels and there must be 2 seperate sets of images</b>. This is because there must be a set of 6 24 bit color tga files for people with 3d acceleration cards and a set of 6 8 bit color pcx files for people without. Remember though that the 8 bit color pictures must be converted to the quake2 pallete. You can get the quake2.act photoshop file on the <A HREF="../../quake2files.shtml">files</A> page.<br><br>
+
+The last thing you need to do is <b>end all your image file names with: bk, dn, ft, lf, rt, and up</b>. These stand for back, down, front, left, right, and up.<br><br>
+
+So if we made a new environment map called earth1 these are the image files we would have to have: earth1bk.tga, earth1dn.tga, earth1ft.tga, earth1lf.tga, earth1rt.tga, earth1up.tga, earth1bk.pcx, earth1dn.pcx, earth1ft.pcx, earth1lf.pcx, earth1rt.pcx, and earth1up.pcx. All of these images would be 256x256 pixels in size.<br><br>
+
+Once you have all your art done and you want to see what it looks like in a level then all you need to do is create a directory off of your /quake2/baseq2 dir called env. and put all the files in that directory. Then load up quake and start playing and type sky <i>name of sky you made</i>. So with earth1 we would type sky earth1.<br><br>
+
+To actually get the sky to appear from the beginning you will need to add sky <i>name of sky</i> to your worldspawn entity. You can also make the sky rotate by adding a <b>skyaxis</b> and a <b>skyrotate</b> key and value into the worldspawn. Thats about all there is to creating your own environmental maps. The hardest part is the art but there are some programs that will make it easier. The one is called Bryce2 which is a 3d landscape creator. There is also a photoshop plugin at <a href="http://www.wasabisoft.com/" target="_top">http://www.wasabisoft.com/</a> that lets you create cubic graphics that you might want to check out. You might also like to have a good graphic editing program. I prefer Photoshop4. also remember that you will have to include your homemade environment map with any level you distribute if you want other people to be able to see it.<br><br>
+
+<p><div align="center"><img src="content/quake2/tutorials/env_maps/env_maps_img3.jpg"></div>
+
+<p>Here is my own bright sky env. map I made
+
+<p>
+</body></html>

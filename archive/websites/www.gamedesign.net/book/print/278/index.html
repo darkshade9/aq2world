@@ -1,0 +1,50 @@
+<html><head><title>Cool Ass Terrain Tutorial</title><base href="http://www.gamedesign.net/" /><style type="text/css">
+@import url(misc/print.css);
+</style></head><body><h1 id="278" name="278" class="book-h1">Cool Ass Terrain Tutorial</h1><h2>The Cool-Ass Terrain Tutorial</h2>
+
+
+<B>By <a href="mailto:Bobby@ionstorm.com">Bobby Pavlock</a><br><BR>
+Level Designer - <a href="http://www.ionstorm.com">Ion Storm</a></B>
+<BR><BR>
+<h3>WHATS THE PROBLEM?</h3>
+
+The idea of making natural-looking terrain was brought to the mainstream with Quake 2.  Some of the outdoor areas in Quake 2 were awe-inspiring compared to what we were used to.  Yet, even the revolutionary outdoor areas found in Quake 2 have quickly become sub-par when compared to some of the terrain found in many of the newer games.  So how is it that level designers are able to make such convincing terrain without sacrificing gameplay?  Well that's what I'm going to attempt to show you in this tutorial.
+<br><br>
+Before I started working at Ion Storm, I was like many of you reading this - an aspiring amateur level designer, looking to hopefully one day make my way into the industry.  As an amateur, one of my biggest struggles was making cool-looking outdoor terrain, while keeping the r_speeds low enough to not affect gameplay.  Regardless of how many approaches I tried to use, it just didn't seem to want to work.  Then, when I arrived here at Ion Storm, I quickly discovered an extremely simple but effective method of constructing natural terrain - the "triangle method".  I don't know if that's what it's really called, or if it even has a proper name, but that's what I call it.
+<br><br>
+Basically, all you do is make a grid of triangular-shaped brushes, and then raise/lower vertices.  Sounds easy, huh?  With the triangle method, a level designer of any skill level, can easily make convincing natural terrain, and keep the r_speeds down to a minimum.  Interested?  Read on…
+
+<h3>WHAT'S THIS "TRIANGLE METHOD"?</h3>
+
+The triangle method for making natural terrain is so simple, that you'll ask yourself why in the hell you never thought of it.  For this tutorial, I will be constructing an example map.  The example map will simply be a small section of a canyon area.
+<br><br>
+The first thing I am going to do is decide how I want my canyon to flow.  When I have come up with the general idea of what I want the area to look like, I begin by drawing an outline of the canyon area using brushes with a sky texture.  Don't overcomplicate this part of it.  Some people, in an effort to be random, will draw the outline of the area with brushes going in all sorts of different angles.  While being random is they key to making convincing natural terrain, we can hold off on the random part til later.  Here's what the outline of my canyon area looks like…
+<br><br>
+<CENTER><img src="http://www.gamedesign.net/miniwood/tutorials/images/terrain_fig1.jpg"  border=0 alt="terrain_fig1.jpg"></CENTER>
+<br><br>
+Now that I have the outline of my area, the next step is to fill this area with a grid of triangle brushes, which will make up the ground for my canyon area.  Here is where the random part comes in.  Don't be afraid to make your triangles be all different shapes and sizes.  You don't find too many outdoor areas that are all neat and orderly, so don't try to make your outdoor area neat and orderly.  The only thing to remember when filling your area with this grid of triangle brushes is to make sure that all your triangle brushes meet at the vertices.  Don't have the vertex of one triangle brush meeting the side of another triangle brush.  This will cause problems in the next step.  Here is what my map looks like after filling the canyon area with a grid of triangle brushes…
+<br><br>
+<CENTER><img src="http://www.gamedesign.net/miniwood/tutorials/images/terrain_fig2.jpg"  border=0 alt="terrain_fig1.jpg"></CENTER>
+<br><br>
+Ok, once you have your area filled with triangles, the next step is to go through and raise/lower vertices to give the ground an uneven, natural look.  I usually prefer to start in a corner area.  Simply select one of the triangle brushes, go into vertex manipulation mode, and raise or lower the vertices to your liking.  In this example I have started off by raising 2 of the vertices of the triangle brush I selected by 32 units, and leaving the third in its original position.  Here's what it looks like…
+<br><br>
+<CENTER><img src="http://www.gamedesign.net/miniwood/tutorials/images/terrain_fig3.jpg"  border=0 alt="terrain_fig3.jpg"></CENTER>
+<br><br>
+Once I have that brush adjusted how I want it, then I select the neighboring brush, and raise/lower any adjoining vertices between the 1st and 2nd brushes until the vertices of the 2nd brush match the position of the vertices of the 1st brush.  Any vertices that are not shared between the 2 brushes you can manipulate however you like.  Here is what it looks like after manipulating the vertices of the 2nd brush to match those of the 1st brush…
+<br><br>
+<CENTER><img src="http://www.gamedesign.net/miniwood/tutorials/images/terrain_fig4.jpg"  border=0 alt="terrain_fig4.jpg"></CENTER>
+<br><br>
+As you can see, by making sure all the triangles in the grid meet at the vertices, aligning the heights of 2 neighboring brushes is very easy.  However, if you have a vertex of one triangle brush meeting the side of a neighboring triangle brush, then it becomes more difficult to get the heights of the 2 brushes, and any other brushes that meet at that point, to match.  So to be safe and make it easier on yourself, make sure all your triangles meet at the vertices.
+<br><br>
+Believe it or not, that's all there it to it.  All you do now is simply go through the grid, raising/lowering the vertices of the rest of the triangle brushes.  Obviously, the more you raise/lower the vertices the more uneven the ground is going to look.  For example, if you want the ground to have a subtle, natural roll to it, then raise/lower the vertices less.  In this example, I am adjusting the vertices by 32 units.  Also, the more triangles you use in an area, the smoother, and more natural, the ground will look.  Just be careful not to go crazy with it, or else you might begin to sacrifice those precious r_speeds.
+<br><br>
+After you have the ground looking the way you want, then add some rocks or walls or whatever you want, and you're done!  Now wasn't that easy?  Here are a couple pics of the canyon area I made, after all was said and done…
+<br><br>
+<CENTER><img src="http://www.gamedesign.net/miniwood/tutorials/images/terrain_pic1.jpg"  border=0 alt="terrain_pic1.jpg"></CENTER>
+<br><br>
+<CENTER><img src="http://www.gamedesign.net/miniwood/tutorials/images/terrain_pic2.jpg"  border=0 alt="terrain_pic2.jpg"></CENTER>
+<br><br>
+Notice how the ground has that natural, uneven look to it?  And check out those r_speeds, with rocks and everything!  Obviously there's a lot of room r_speed-wise for adding even more detail to this canyon area, but for the purposes of this little tutorial, I think this is good enough.
+<br><br>
+I hope you enjoyed this little tutorial on making natural terrain.  And I hope you find the "triangle method" as easy and useful as I have.  If you want to take a look at the <a href="http://www.gamedesign.net/miniwood/tutorials/files/terraintut.zip">example map</a> I used for this tutorial you can download it <a href="http://www.gamedesign.net/miniwood/tutorials/files/terraintut.zip">here</a>.  Best of luck in making some cool-ass outdoor areas in your levels!
+</body></html>

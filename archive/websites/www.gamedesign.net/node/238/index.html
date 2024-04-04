@@ -1,0 +1,197 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Texture Blending - RUST | Gamedesign.net</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<!-- NEED TO ADD META TAGS -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="http://www.gamedesign.net/" />
+<style type="text/css" media="all">@import "misc/drupal.css";</style>				<link type="text/css" rel="stylesheet" href="rusted.css" />
+	</head>
+	<body >
+		<!-- tf bar -->
+		
+		<!-- masthead -->
+		<table cellspacing="0" cellpadding="0" width="100%">
+		<tr><td height="88" id="masthead" colspan="5"><img src="/themes/rusted/images/mh_top.jpg" width="760" height="88" /></td></tr><tr><td colspan="5"><div id="navigation">
+				<div id="horz_ad">
+				<iframe border="0" 
+width="728" 
+height="90" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default.html"> 
+</iframe> 
+				<!--<img src="/themes/rusted/images/horz_ad.jpg" width="728" height="92" />--></div>
+					<div id="searchbox">
+						 <form action="search" method="post">
+						 	 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="bottom"><input id="bawx" type="text" size="15" value="" name="keys" /> <input class="form-submit" type="image" src="/themes/rusted/images/search_btn.jpg" alt="Search Rust" value="Search" /></td></tr></table>
+						 </form>
+					</div>
+				<div id="navlinks" align="center">
+					<a href="" title="Return to the main page.">Home</a> | <a href="book" title="Read and contribute to the collaborative books.">Books</a> | <a href="poll" title="View the list of polls on this site.">Polls</a> | <a href="search" title="Search for older content.">Search</a>				| <a href="http://forums.gamedesign.net/">RUST Forums</a></div>
+			</div>
+			</td>
+		</tr>
+		<!-- site content -->
+		<tr>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="left-bar" valign="top" width="192">
+				<div class="block block-book" id="block-book-0">
+<h2>Quake II</h2>
+<div class="block-content"><ul><li class="collapsed"><a href="node/17">FAQ</a></li><li class="collapsed"><a href="node/603">Updates</a></li><li class="collapsed"><a href="node/263">Miscellaneous</a></li><li class="expanded"><a href="node/42">Tutorials</a><ul><li class="leaf"><a href="node/43">Advanced Brushes</a></li><li class="leaf"><a href="node/45">Area Light</a></li><li class="leaf"><a href="node/50">Clip Brush Q&A</a></li><li class="leaf"><a href="node/48">Colored Light</a></li><li class="leaf"><a href="node/595">Creating an outdoor area using Gensurf</a></li><li class="leaf"><a href="node/530">Custom door/plat/button sounds</a></li><li class="leaf"><a href="node/51">Environmental Maps</a></li><li class="leaf"><a href="node/241">Func_areaportal - 1 - Addendum</a></li><li class="leaf"><a href="node/242">Func_areaportal - 2 - Problems</a></li><li class="leaf"><a href="node/243">Func_areaportal - 3 - Common Problems</a></li><li class="leaf"><a href="node/52">Hint Brushes De-Mystified</a></li><li class="leaf"><a href="node/46">Jump pads in Q2? You betcha!</a></li><li class="leaf"><a href="node/47">Making ENV. Maps with Bryce 2</a></li><li class="leaf"><a href="node/561">Making Rain</a></li><li class="leaf"><a href="node/54">Partial Transparency</a></li><li class="leaf"><a href="node/53">Polygon Count Reduction</a></li><li class="leaf"><a href="node/235">Sunlight - Part 1</a></li><li class="leaf"><a href="node/237">Sunlight - Part 2</a></li><li class="leaf"><a href="node/55">Surface Properties and Content Properties</a></li><li class="leaf"><a href="node/238" class="active">Texture Blending</a></li><li class="leaf"><a href="node/44">The Absolute Beginner's Guide to Quake 2 Editing</a></li><li class="leaf"><a href="node/266">The BSP Process and Visibility</a></li><li class="leaf"><a href="node/56">Timing in Quake 2</a></li><li class="leaf"><a href="node/57">Turrets</a></li><li class="leaf"><a href="node/49">Using Clip Brushes</a></li><li class="leaf"><a href="node/552">Using Text Editors for Mapping</a></li></ul></li><li class="collapsed"><a href="node/21">Entity Properties</a></li></ul></div>
+</div><div class="block block-user" id="block-user-0">
+<h2>User login</h2>
+<div class="block-content"><form action="user/login" method="post">
+<div class="user-login-block">
+<input type="hidden" name="edit[destination]" value="node/238" />
+<div class="form-item">
+ <label for="edit-name">Username:</label><br />
+ <input type="text" maxlength="64" class="form-text" name="edit[name]" id="edit-name" size="15" value="" />
+</div>
+<div class="form-item">
+ <label for="edit-pass">Password:</label><br />
+ <input type="password" class="form-password" maxlength="64" name="edit[pass]" id="edit-pass" size="15" value="" />
+</div>
+<input type="submit" class="form-submit" name="op" value="Log in"  />
+</div>
+
+</form>
+<div class="item-list"><ul><li><a href="user/register" title="Create a new user account.">Create new account</a></li><li><a href="user/password" title="Request new password via e-mail.">Request new password</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-1">
+<h2>Navigation</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="collapsed"><a href="node" title="">Content</a></li>
+<li class="leaf"><a href="tracker" title="">Recent Posts</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-poll" id="block-poll-0">
+<h2>Poll</h2>
+<div class="block-content"><div class="poll"><div class="title">I downloaded the ETQW demo and....</div><div class="text">...I'm too busy playing for polls.</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...it's awesome.</div><div class="bar"><div style="width: 60%;" class="foreground"></div></div><div class="percent">60%</div><div class="text">...it's okay, I expected better.</div><div class="bar"><div style="width: 20%;" class="foreground"></div></div><div class="percent">20%</div><div class="text">...I'm lost in the valley, anyone have a map?</div><div class="bar"><div style="width: 0%;" class="foreground"></div></div><div class="percent">0%</div><div class="text">...my machine won't run it. :-(</div><div class="bar"><div style="width: 20%;" class="foreground"></div></div><div class="percent">20%</div><div class="total">Total votes: 5</div></div><div class="links"><a href="user/login">login</a> or <a href="user/register">register</a> to post comments | <a href="poll" title="View the list of polls on this site.">older polls</a></div></div>
+</div><div class="block block-blog" id="block-blog-0">
+<h2>Recent blog posts</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="node/1872">freewebtown.com</a></li><li><a href="node/1871">freewebtown.com</a></li><li><a href="node/1869">ekgjpjgmme</a></li><li><a href="node/1868">fiffcwwcyf</a></li><li><a href="node/1867">fiffcwwcyf</a></li><li><a href="node/1866">mrgwhaeckc</a></li><li><a href="node/1865">mrgwhaeckc</a></li><li><a href="node/1864">yczurrabii</a></li><li><a href="node/1863">gckqthujyd</a></li><li><a href="node/1862">gckqthujyd</a></li></ul></div><div class="more-link"><a href="blog" title="Read the latest blog entries.">more</a></div></div>
+</div><div class="block block-user" id="block-user-2">
+<h2>Who's new</h2>
+<div class="block-content"><div class="item-list"><ul><li><a href="user/7994" title="View user profile.">hsknq</a></li><li><a href="user/7993" title="View user profile.">jimtj</a></li><li><a href="user/7992" title="View user profile.">gdqwt</a></li><li><a href="user/7991" title="View user profile.">effpu</a></li><li><a href="user/7990" title="View user profile.">ohyyu</a></li></ul></div></div>
+</div><div class="block block-user" id="block-user-3">
+<h2>Who's online</h2>
+<div class="block-content">There are currently 0 users and 39 guests online.</div>
+</div>				<img src="/themes/rusted/images/spacer.gif" width="192" height="1" />
+			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+			<td valign="top" id="content">
+				<h1>Welcome to RUST | Gamedesign.net</h1>
+				<!-- inner content -->
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top">
+							<div class="body">
+								<h1>Texture Blending</h1>
+								<div id="breadcrumb"><div class="breadcrumb"><a href="">Home</a> &raquo; <a href="node/11" title="">Quake II</a> &raquo; <a href="node/42">Tutorials</a></div></div>																								<!-- begin content --><div class="node">
+
+<div class="node-content">
+<div class="info">Submitted by <a href="user/204" title="View user profile.">Miniwood</a> on Mon, 2004-04-19 21:39.</div>
+<h3>Texture Blending</h3>
+<br>
+By James Parkman
+<p>
+I got an email from someone who played my maps, asking how to create the effect of a wall being painted with multiple textures. The solution is simple, but there are some nice tricks you can use to enhance both the appearance and speeds of rooms created like this. Here goes.
+</p>
+<p>
+Ok, the goal here is to create a room whose walls appear to be painted with separate but well integrated textures. This is something you need to learn pretty quickly when editing Quake 2. Tim Willits mastered this in his levels in Quake2, and that's basically where I got the inspiration for the base style I used in Abandon All Hope. The textures were made to be used this way, and are usually clustered together by name in a manner that makes it easy to find a nicely fitting group of textures for your room. For instance, a lot of the e1u1 textures are 64x64, and their edges are specifically drawn to fit together perfectly with one another.
+</p>
+<p>
+The idea is to <strong>let the textures do the work for you</strong>. Complex architecture may look pretty cool, but your speeds will suffer, and your vis times will completely skyrocket. So instead of adding to your poly count by crafting decorations, it's a lot more effective in the Quake 2 engine to simply meld two brushes, each painted with a well fitted texture.
+</p>
+<p>
+<h4>An Example</h4>
+<p><font size="2" face="verdana">Here you've got a simple wall. Paint it with one of the "duct" textures from e1u1, you'll notice that the texture doesn't look so hot when it's used on a large brush. So take that section of wall, decrease it's height by 64 units, and create another brush of equal width and length, this one 64 units high. Place this section in the spot that's now open from decreasing the former large wall brush. Here's 2 screenshots, before and after:
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/tbtut01.jpg" width="300" height="225"> <img src="http://www.gamedesign.net/miniwood/tutorials/images/tbtut02.jpg" width="300" height="225"></center></p>
+
+<p>This adds a lot, without the need for complex architecture and outcroppings which slow down the level... plus it's simply got a nice even flow which doesn't draw your attention immediately, but creates a deep atmosphere within your level... to me, that's the difference between a level thats a work of art, and one that's "pretty cool". The best authors out there have this method down, and use it alot.
+</p>
+<p>Let's throw a wall support in now, using the same principle:
+</p>
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/tbtut03.jpg" width="300" height="225"></center></p>
+<p>... no  seams, blended well... get a motif like this going, and your level is one step closer to becoming a classic... take for instance this hallway from Abandon All Hope.
+</p>
+<p><center><img src="http://www.gamedesign.net/miniwood/tutorials/images/tbtut04.jpg" width="350" height="263"></center></p>
+<p>I've used this effect to create an entire hallway, including the ceiling, walls, and support structures. Notice the depth and atmosphere this gives to the area. I'd say that this hallway was the first time I truly had that lightbulb flicker in my skull about the "art" of texture use... before this, I'd fight the editor alot trying to stretch and align whatever texture I was working with to fit the architecture. The key is, the OPPOSITE is what you should aim to do: design the architecture around the textures you will be using for your level. Of course, the brush count here is significantly higher than a simple cubic hall would give, but chances are that if you build a simple cudic hall, you're going to spend alot of time and waste alot of cpu power on decorations, or the hallway will end up looking quite plain.
+</p>
+
+<p>One other thing I should mention is light fixture placement. Personally, I like to carve my light brushes into the wall... some authors, even very good ones, don't mind having their lights jut out from the wall, which makes editing alot easier for them, as they don't have to deal with carving up their walls. If you do decide, however, to carve your lights into walls, keep in mind that you should make your light brush at least as thick as your wall, or you'll be splitting your wall brush not only into the 4 sections that result from splitting with a cube, but a 5th section, lengthwise, resulting from splitting a brush with another which is less thick. This makes it alot more difficult to move and resize your walls, and should you have alot of lights like this, you'll soon end up with a nasty  mess.</p>
+<br><br>
+
+J Parkman<div class="book"><div class="nav"> <div class="links"><div class="prev"><a href="node/55" title="View the previous page.">previous</a></div><div class="next"><a href="node/21" title="View the next page.">next</a></div><div class="up"><a href="node/42" title="View this page's parent section.">up</a></div></div> <div class="titles"><div class="prev">Surface Properties and Content Properties</div><div class="next">Entity Properties</div></div></div></div></div>
+
+<div class="links"><a href="book/print/238" title="Show a printer-friendly version of this book page and its sub-pages.">printer-friendly version</a> | <a href="user/login">login</a> or <a href="user/register">register</a> to post comments</div>
+</div><!-- end content -->							</div>
+							<div id="body-spring">RUST | Gamedesign.net is your source for all the latest game-editing news and tutorials. If you are seeing this message, this means that you are using a browser that does not support CSS. Please upgrade your browser and enjoy your stay at RUST and if you have any questions, comments, or suggestions, please contact a site administrator.</div>
+							</td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+						<td valign="top" width="160"><div id="right-bar"><div class="block block-menu" id="block-menu-153">
+<h2>Editing Handbooks</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/532" title="">3D Modeling</a></li>
+<li class="leaf"><a href="node/167" title="">Doom 3</a></li>
+<li class="leaf"><a href="node/111" title="">Game/Map Design</a></li>
+<li class="leaf"><a href="node/921" title="">Half-Life</a></li>
+<li class="leaf"><a href="node/663" title="">Half-Life 2</a></li>
+<li class="leaf"><a href="node/128" title="">Kingpin</a></li>
+<li class="leaf"><a href="node/1147" title="">Quake 4</a></li>
+<li class="leaf"><a href="node/11" title="">Quake II</a></li>
+<li class="leaf"><a href="node/12" title="">Quake III Arena</a></li>
+<li class="leaf"><a href="node/813" title="">Warcraft III</a></li>
+<li class="leaf"><a href="node/708" title="">Interviews</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-menu" id="block-menu-337">
+<h2>About Us</h2>
+<div class="block-content"><div class="menu">
+<ul>
+<li class="leaf"><a href="node/1034" title="">Staff Resume's</a></li>
+<li class="leaf"><a href="node/726" title="">Design Resume's</a></li>
+<li class="leaf"><a href="node/759" title="">Resume Template</a></li>
+
+</ul>
+</div></div>
+</div><div class="block block-block" id="block-block-1">
+<h2>Advertisement</h2>
+<div class="block-content"><div align="center"><!-- <img src="/themes/rusted/images/vert_ad.jpg" border="1" width="120" height="600" /> -->
+<iframe border="0" 
+width="120" 
+height="600" 
+marginwidth="0" 
+marginheight="0" 
+frameborder="0" 
+bordercolor="#000000" 
+scrolling="no" 
+src="http://banner.telefragged.com/telefragged/default600.html"> 
+</iframe> 
+</div></div>
+</div></div><br /><img src="/themes/rusted/images/spacer.gif" width="160" height="1" /></td>
+						<td valign="top"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+					</tr>
+				</table>
+ 			</td>
+			<td valign="top" width="7"><img src="/themes/rusted/images/spacer.gif" width="7" height="1" /></td>
+		</tr>
+		<tr><td valign="top" height="7" colspan="5"></td></tr>
+		<!-- footer -->
+		<tr>
+			<td valign="top" id="footer" colspan="5">&copy; 2005 <strong><a href="/">RUST | Gamedesign.net</a></strong>. Site design by <a href="http://www.bleasedesign.com/">Jherax</a> with modifications by <a href="http://crockatt.computed.net/portfolio/mainFrame.htm">Skinmaster</a>.</td>
+		</tr>
+		</table>
+		 	</body>
+</html>

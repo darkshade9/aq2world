@@ -1,0 +1,667 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>rust Interviews - RBR's Randy Pitchford</title>
+<LINK rel="Start" title="Main r u s t Page" type="text/html" href="http://www.gamedesign.net">
+<LINK REV=made href="mailto:fishman@gamedesign.net">
+<META NAME="keywords" CONTENT="quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake2, unreal, tutorials, game design, level design, maps, bsp, quake editing, unreal editing, game editing, unreal tutorials, quake2 tutorials, design tutorials, interviews, discussion, id interviews, level making, quake, quake2, unreal, sin, sin editing, halflife, halflife editing, level making, map making, quake 2, quake 2 level making, game editing, quake2 editing, computer game editing, duke3d, level editing, map making, quake editing, quake2 editing, half-life editing, halflife editing, halflife, half-life, sin, sin editing, id, quake3, quake3 arena">
+<META NAME="description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion forums. 100's of quake, quake2, unreal tutorials, covering all aspects of quake, quake2, unreal, half-life, and sin editing. As well as other 3d games. quake quake2 sin halflife half-life unreal">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META NAME="DC.Title" CONTENT="rust Game Designer Interviews - RBR's Randy Pitchford">
+<META NAME="DC.Creator" CONTENT="Shane Sherman(fishman)">
+<META NAME="DC.Subject" CONTENT="game editing and design">
+<META NAME="DC.Description" CONTENT="game editing and design. Specifically quake2, unreal, half-life, sin. tutorials, interviews, discussion">
+
+<link rel=stylesheet href="../stylesheets/main.css">
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP">
+<tr>
+	<td colspan="2" valign="TOP" width="85%"><a href="http://www.faustgfx.com"><img src="http://www.gamedesign.net/images/newlogo.GIF" width=400 height=101 border=0 alt="rust - logo by faust|GFX! (www.faustgfx.com)"></a>
+
+<h1>Interviews</h1>
+<h3>Randy Pitchford</h3>
+<!-- AdSpace size=468x60 affiliate=telefragged channel=games subchannel=fps Network=affiliates rating=pg13 --><iframe id=adbanner width=468 height=60 marginwidth=0 marginheight=0 frameborder=0 bordercolor=000000 scrolling=no src="http://mediamgr.ugo.com:80/html.ng/size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><script language="javascript1.1" src="http://mediamgr.ugo.com:80/js.ng/params.richmedia=yes&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"></script><noscript><a href="http://mediamgr.ugo.com:80/click.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13"><img src="http://mediamgr.ugo.com:80/image.ng/params.richmedia=yes&UID=$random$&size=468x60&affiliate=telefragged&channel=games&subchannel=fps&Network=affiliates&rating=pg13" border=0></a></noscript></iframe><!-- /AdSpace -->
+
+<Br></td>
+
+
+	<td width="15%" rowspan="2" align="RIGHT" valign="TOP">
+	
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="Silver">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>General</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+
+
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/" target="_top">News</A>  <BR><br>
+<A href="http://www.gamedesign.net/tutorials/" target="_top">General Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/archived_news.shtml" target="_top">Old News</A>  <BR><br>
+<A href="http://forums.gamedesign.net/" target="_top">Editing Forums</A>  <BR><br>
+<A href="http://prefabs.gamedesign.net/" target="_top">Prefabs</A>  <BR><br>
+<A href="http://www.gamedesign.net/cgi-bin/Ultimate.cgi" target="_top">Old Discussions</A>  <BR><br>
+<A href="http://tux.telefragged.com/ftp.pl?dir=gamedesign/rust/" target="_top">File Server</A> <br><br>
+<A href="http://www.gamedesign.net/style.shtml" target="_top">Style Guide</A>  <BR><br>
+<A href="http://www.gamedesign.net/interview.shtml" target="_top">Interviews</A>  <BR><br>
+<A href="http://www.gamedesign.net/links.shtml" target="_top">Links</A>  <BR><br>
+<A href="http://www.gamedesign.net/aboutus.shtml" target="_top">About Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/email.shtml" target="_top">Email Us</A>  <BR><br>
+<A href="http://www.gamedesign.net/hosting.shtml" target="_top">Hosting</A>  <BR><br>
+<A href="http://www.gamedesign.net/oldpoll.shtml" target="_top">Old Polls</A>  <BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br>
+ 
+  <!-- ##################### Community ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Community</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/community_profile.shtml" target="_top">Community Profile</A><BR><br>
+<A href="http://www.gamedesign.net/map_of_month/" target="_top">Map of the Month</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Community MENU ENDS HERE ---------------------------------------------->
+ 
+    <!-- ##################### hosted sites MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Hosted Sites</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+        <A href="http://3dmr.gamedesign.net" target="_top">3DMR</A>  <BR><BR>
+        <A href="http://buzzsaw.gamedesign.net" target="_top">buzzsaw</A>  <BR><BR>
+        <A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+        <A href="http://hlprefabs.gamedesign.net" target="_top">Half-Life Prefabs</A>  <BR><BR>
+        <A href="http://qoole.gamedesign.net" target="_top">Pursuit of Perfection</A>  <BR><BR>
+        <A href="http://mappack.gamedesign.net" target="_top">Mappack</A>  <BR><BR>
+        <A href="http://heretic2.gamedesign.net" target="_top">Mappers Shrine(Heretic 2)</A>  <BR><BR>
+        <A href="http://sounds.gamedesign.net" target="_top">The Sound Studio</A>  <BR><BR>
+        <A href="http://txtgen.gamedesign.net" target="_top">.txtGen</A>  <BR><BR>
+        <A href="http://texturecentral.gamedesign.net" target="_top">Texture Central</A>  <BR><BR>
+	<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+</b></font>
+
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### hosted sites MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+
+<A href="http://www.gamedesign.net/quake2/quake2tutorials.shtml" target="_top">Tutorials</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/quake2techniques.shtml" target="_top">Techniques</A><BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q2Editing" target="_top">Editing Forum</A><BR><br>
+<A href="http://www.gamedesign.net/quake2/q2faq.shtml" target="_top">FAQ</A><BR><br>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Quake 3:Arena</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Q3ArenaLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+
+
+ </TABLE>
+ <br><Br> 
+ 
+ 
+ <!-- ##################### UNREAL MENU STARTS HERE ---------------------------------------------->
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Unreal</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://unreal.gamedesign.net" target="_top">Wolf's Unreal</A>  <BR><BR>
+<A href="http://www.gamedesign.net/unreal/unrealtutorials.shtml" target="_top">Tutorials</A>  <BR><br>
+<A href="http://www.gamedesign.net/unreal/unrealtechniques.shtml" target="_top">Techniques</A>  <BR><br>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=UnrealLE" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### UNREAL MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Half-Life MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Half-Life</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://halflife.gamedesign.net" target="_top">Half-Life ERC</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=HL_LevelEditing" target="_top">Editing Forum</A>  <BR><BR>
+<A href="http://www.gamedesign.net/half-life/half-life_faq.shtml" target="_top">FAQ</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Half-Life MENU ENDS HERE ---------------------------------------------->
+ 
+ 
+  <!-- ##################### Heretic 2 MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Heretic2</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://heretic2.gamedesign.net" target="_top">The Mappers Shrine</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=Heretic2Editing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### Heretic2 MENU ENDS HERE ---------------------------------------------->
+ 
+   <!-- ##################### Sin MENU STARTS HERE ---------------------------------------------->
+  <TABLE width="100%" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="#dddddd">
+        <TR>
+                <TD bgcolor="navy" colspan="5"><FONT face="arial black" size="-1" color="white"><center>Sin</center></FONT></TD>
+        </TR>
+		<tr><td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+		<td width="1" bgcolor="#dddddd">&nbsp;</td>
+		<td align="RIGHT" bgcolor="#dddddd">
+<font face="Helvetica, Courier New" size="-2"><b>
+<A href="http://www.gamedesign.net/sin/introduction.shtml" target="_top">Introduction</A>  <BR><BR>
+<A href="http://www.gamedesign.net/sin/sintutorials.shtml" target="_top">Tutorials</A>  <BR><BR>
+<A href="http://forums.gamedesign.net/forums/wwwthreads.pl?action=list&Board=SinEditing" target="_top">Editing Forum</A>  <BR><BR>
+</td>
+<td width="1" bgcolor="#dddddd">&nbsp;</td>
+<td width="1" bgcolor="navy"><font face="Arial Narrow" size="-3">&nbsp;</font></td>
+</tr>
+<tr><td colspan="5" bgcolor="navy" height="1" width="100%"><font face="Arial Narrow" size="-3">&nbsp;</font></td></tr>
+ </TABLE>
+ <br><Br> 
+ <!-- ##################### sin MENU ENDS HERE ---------------------------------------------->
+ 
+
+
+	</td>
+<!--menu ends here-->
+</tr>
+<tr>
+	<td width="100%" valign="TOP">
+<div class="text">
+<blockquote>
+<I>Interviewed by <A HREF="mailto:fishman@gamedesign.net">Fishman</A> on Friday, March 20, 1998</i>
+
+Randy Pitchford aka DuvalMagic, Chief Game Architect for <a href="http://www.rebelboatrocker.com" target="_top">Rebel Boat Rocker</a> agreed to answer a few questions about level design in general and 'the game' that <a href="http://www.rebelboatrocker.com" target="_top">RBR</a> is currently working on.
+<br><br>
+<CENTER><BR>Questions are in <B>bold</B>. Answers are in...um...not-bold.</CENTER>
+<BLOCKQUOTE>
+
+<P><BR><U><B>Fishman:</B></U> <B><ul>Howdy Randy, for the few people who don't know tell us who you are, what you
+  do, what your working on, and whatever the hell else you would like all
+  these rabid fans to know about you?</ul></B>
+  
+<P><U><B>Randy:</B></U><ul>I'm game designer and one of the owners of Rebel Boat Rocker.  I'm charging
+through game and level design for our next game.</ul>
+
+
+<P><U><B>Fishman:</B></U> <B>
+  <ul>We are all anxiously awaiting some info on 'the game' that <a href="http://www.rebelboatrocker.com" target="_top">RBR</a> is currently
+  working on. Anything you would like to tell us about it? How is progress
+  going?</ul></B>
+  
+ <P><U><B>Randy:</B></U>
+<ul>It's a crazy customizable near future, sci-fi, military, action/adventure game
+that's huge on solo and multi-play. Our &quot;coming-out&quot; happens around E3.  We'll
+announce the title and tons of details soon.<p>  Progress is going sweet...better
+than expected.  We had some concerns at the onset months ago about some tech
+issues and the total horsepower of the team, but we're really happy with our
+core team of 11 developers and the tech is just wonderful. The Zelsnack's are
+just amazing.  For example, recently Billy implemented the character geometry
+scaling code and it works and looks way better than any of us expected.</ul>
+
+<P><U><B>Fishman:</B></U> <B>
+ <ul> One of the problems I have noticed with all the Quake/Quake2 engine based
+  games is that the number of enemies on the screen at the same time is
+  drastically lower then back in the good ol doom days. I remember when you
+  could have 20+ enemies on screen at the same time. I've read that this is
+  going to change in the game you all are working on. Is this true? And how do
+  you think this will effect the gameplay?</ul></B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>I've noticed the problem too.  It's getting worse and it worries me. <a href="http://www.rebelboatrocker.com" target="_top">RBR</a> is
+committed to changing that. The tech was designed to allow for all game geometry
+
+to be scalable.  We're using levels of detail and some other cool stuff Billy
+came
+up with to drop detail when you can't see it anyway.  This allows us to drop
+tons
+of dudes into an area for us to go nuts with when we're playing it.  As you get
+close to a guy, details become clear.  Our guys have articulated fingers, even
+ears.  It looks great up close with no penalty when more dudes are added and
+some
+distance is gained.  One of the features Billy's really excited about is being
+able to set a target frame rate.  The game will add or remove detail
+automatically
+to achieve that speed. Gameplay is affected because we're now allowed again to
+create hugely intense combat sequences with tons of guys.  We've got tougher
+dudes as well that'll be in smaller groups or even on their own.  We're making
+these guys smarter, not just with more hit points.  The fun of these games is in
+
+the fight...we're focusing on that as the core game.  It's pretty damn fun.</ul>
+
+<P><U><B>Fishman:</B></U> <B>
+
+ <ul> How customizable will 'the game' be when it is released. Will users be able
+  to make their own levels, mods, etc?</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>The game is &quot;crazy customizable.&quot;  When we're done, it'll be open season on game
+
+specs and code.  We intend to go nuts adding cool game variants after we're
+finished
+and we want everyone to do the same.  Two of our biggest priorities for custom
+stuff is accessibility and compatibility.  We've taken the extra time to make
+sure that anyone can quickly goof around with doing game mods. Compatibility
+means
+that we're taking extra steps to make it easy for mods to work with one another.
+
+We'll be talking more about the customizable aspect of our game really soon. The
+
+kids will be happy.</ul>
+
+ <P><U><B>Fishman:</B></U> <B>
+  <ul> Does 'the game' have long compiling times like Quake/Quake2 or something
+  quicker like the Build Engine?</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> The <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>1 engine was designed to be a very dynamic system.  <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>1's equivalent
+to VISing is done as you go, completely controlled by the level designer. For
+the type of detail we're used to in most maps of yesterday's tech, there's
+really
+no need to worry about manual (mapper controlled) culling of level geometry.
+The engine can cull polys in really quick and cool ways on the fly. When I'm
+working, I can build tremendous amounts of polygons and play it through with
+full game physics on before I've even optimized with manual visibility
+control and still get a reasonable frame rate.  After I optimize, things just
+blaze...  The only &quot;compiling&quot; time level designers have to worry about is
+running a radiosity solution for light maps.  Theoretically, a designer could
+light their entire map with dynamic lights and not run a solution at all, but
+a much richer effect with nice, smoothed shadows and such can be achieved by
+running a long solution.  The length of time the radiosity solution takes to
+calculate is affected by the density of your lightmap (mapper defined per face),
+
+the size of the level, the number of bounces you want to run and a few other
+factors.  We've talked about setting up some hairball machine somewhere that
+users could log into, upload their un-lit map and download the light maps after
+the hairy machine runs the lighting solution for you.  That would be cool. I
+don't know if we'll do it or not.  If we don't I'm sure someone else will.
+Any takers?</ul>
+ 
+  <P><U><B>Fishman:</B></U> <B>
+<ul>    What program is used to create the levels?</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>Most stuff is built using the tools Billy and Jason wrote.  Billy has created a
+wonderful geometry editor for us.  Jason gave us tools that allow us to use
+just about any other 3d package or level editor you can think of, though.  I use
+
+MAX occassionally for terrain and stuff sticking to the editor for the
+complicated
+indoor environments.  Rob, however, is an editor biggot.  He refuses to use MAX
+or any other package and does EVERYTHING with Billy's tool.  He's really
+amazing.</ul>
+
+ <P><U><B>Fishman:</B></U> <B>
+ <ul> How long on the average does it take to create a finished level? Is it a
+  longer process then Quake or Build since the level of detail is higher?</ul>
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> It takes us about two man months of work per map to complete to beta stage a
+level for our game.  Looking back at it, it's actually kind of fast.  I spent
+about half that time per map when I worked at 3dRealms on Duke Nukem stuff but
+the maps for this game have at least eight to twelve times the detail per cubic
+foot and are an order of magnitude larger in scope.  I attribute our build speed
+
+to design experience, pre planning and the tools we're using.  Between Reichert,
+
+Rob, James and I, we're blazing through the stuff pretty quick. But we always
+want
+to do more, make it cooler and take that extra step towards more fun.  It's
+worth
+it.</ul>
+
+ <P><U><B>Fishman:</B></U> <B>
+
+  <ul>Compared to an average Quake2 level, How much more advanced is the level of
+  detail of 'the game'?</ul>
+
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> Comparisons suck.  That last question agonized me.  Let's just say the <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>1
+engine represents a new generation of 3d graphics technology and it's painfully
+obvious to whomever looks at our game.  When we start dropping shots around
+E3, we're hoping to stir some stuff up.  I'm not promising the shots, though.
+We're doing our hype machine stuff in conjunction with EA.  They've been
+doing it a lot longer than we have and they're better at it.</ul>
+
+<P><U><B>Fishman:</B></U> <B>
+
+
+  <ul>With such a greater level of detail should we start saving our money now for
+  a new p1mp machine or can we hang on to that C64 for awhile longer?</ul>
+
+
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> No, that's what's so cool about scaling stuff.  The game will work great on
+older machines with any 3d card in them.  The super high detail stuff will just
+jump in at closer range (or not at all if you're on a p60 &lt;g&gt;).  We're taking
+advantage of a lot of the cool stuff on the horizon in 3d hardware, though, for
+the kids.  Billy's down with a fair bit of the 3d hardware community and
+currently we're supporting everything you bought your card for.</ul>
+ 
+ <P><U><B>Fishman:</B></U> <B>
+
+  <ul>I read in another Interview you did that you started designing games with
+  Adventure Construction Set. Was that not the coolest freaking program!?
+  Except when you actually played the game you made. hehe.</ul>
+
+
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>Yeah...ACS was the DooM of the 80's for me.  You even drew room sectors in
+very similar ways to many DooM editors.  I was big into all of the EA
+construction set titles...Pinball, Racing Destruction.  I guess it's part
+of the reason why I've been so hyped about working with Electronic Arts now
+as our publisher.</ul>
+
+<P><U><B>Fishman:</B></U> <B>
+
+<ul>  How much planning do you do before the actual creation of a level begins? Do
+  you design it first on paper or just have a mental image of how the level
+  will look and play and then go from there?</ul>
+
+
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> Design phase is very important to us but quick and efficient.  About a year
+ago Brian, Dirk, Jason, Doug (Wood, Cool d00d now at Valve), James, Billy and
+myself used to get together constantly to talk about &quot;the game.&quot;  I then took
+all the stuff we came up with and wrote a mother of a design document. It's
+over a hundred pages of game stuff but at least half of it is about the levels.
+When a level designer starts to work on a new map, we'll read the doc and
+make some decisions about what's good and what sucks about what I wrote last
+year.  The level designer will take as many liberties as he wants as long
+as he sticks to certain extremely basic plot flow concepts and philosophies
+then he'll tell the rest of the team what he plans to do.  A ton of work
+is done on paper and even using the tools we'll &quot;rough&quot; stuff out to get
+an idea of scope, flow, critical path, tension, climax and the like. We're
+really concerned about the fun and solidity of the level so we spend
+enough time before we start to make sure we've covered everything in our
+level concept.</ul>
+ 
+<P><U><B>Fishman:</B></U> <B>
+<ul>You mentioned in your plan that most of the action of 'the game' will take
+  place on Earth, compared to a number of other games that use a sci fi
+  environment to avoid realistic detailed environments that would arise with
+  creating an Earth based game. Does this mean that we will see such things
+  like realistic terrain, trees, and large realistic outdoor areas in <a href="http://www.rebelboatrocker.com" target="_top">RBR</a>'s
+  first game?</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> Yes.  I could write a book on the theory and practice of designing indoor and
+outdoor environments as in our game.  In a nutshell, the trick is to provide
+a sense of vastness without marching the player across five miles of boring
+terrain.  Past attempts to do large environments when you're not in a very
+fast vehicle have been pretty boring. We've developed some very cool techniques
+for influencing critical path and keeping it fun. There's NOTHING boring in our
+game.  Every minute is like an action movie.  Perhaps when we're finished, I'll
+write some essays for Game Developer magazine with our discoveries.  I bet other
+
+designers would gain some insight from our experience with this.  I have a
+feeling other designers in this genre are going to try to do outdoor areas
+soon.  It's a cool evolution, but there's a lot of ways to screw it up if you're
+
+not careful.  As a player, I fear some people will screw it up.  We've had
+a lot of time with tech that's able to handle it to figure it all out.  So
+far, everything in our game about this is &quot;the right thing.&quot;</ul>
+
+ <P><U><B>Fishman:</B></U> <B>
+ <ul> When creating a level do you build the entire layout first and then go back
+  and add all the details or do you add one section at a time, detailing as
+  you go</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul> It depends on the level and the area I'm working on.  In some cases (as in my
+city map) I managed to restrain myself an lay the whole thing out with very
+little detail before put the really cool stuff in.  Other times (like my sea
+port map) I couldn't help but bring an area I was excited about to a shippable
+state with massive detail and perfect lighting.</ul>
+ 
+ 
+ <P><U><B>Fishman:</B></U> <B>
+<ul>Are there any other designers out there who have inspired you or that you
+  look up to? If so then who and how have they inspired you?</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>Tons.<p>
+Early on I was influenced heavily by adventure and role playing games.
+As I had less time on my hands, I got more into quick in, quick out action
+games.
+<p>
+<b>All the dudes below have inspired me in one way or another:</b><p>
+<blockquote>
+<b>Old days:</b>
+<p>
+<u>Scott Adams</u>:  At the time he was cranking out tons of content.  I played them
+all.
+<p>
+<u>Richard Garriot</u>: Ultima taught me a lot.  And the sheer volume is cool.  I'd
+love
+to hang out with him for a couple of hours and pick his brain.
+<p>
+Whoever wrote Collossal Cave: This game captivated me for over a year!
+<p>
+<u>Ken and Roberta Williams</u>: There was a lot of clever stuff in the KQ games. They
+built an empire doing what they love.
+<p>
+<b>Later on:</b>
+<p>
+<u>Sid Meier</u>:  Civ burned tons of my time. I realized a *game* was actually
+teaching me stuff. That's kind of cool.
+<p>
+<u>Paul Reich III</u>: From Mail Order Monsters to Star Control...I'd love to meet
+this dude some day and talk him into doing a M.O.M. remake with me sometime.
+I think EA would be down :)
+<p>
+<u>Lawrence Holland</u>: I was into flight sims for awhile... He showed us how to
+make a game out of a sim.
+<p>
+<u>Chris Roberts</u>: The first WC was the first computer game to really graphically
+impress me.  This started my diving into graphics as well as game design.
+<p>
+<b>Professionally; Dudes since I've gone pro:</b>
+<p>
+<u>Allen Blum III</u>: Brilliant...he'll get his.  Taught me lessons about first
+person action game design I didn't learn from id software.
+<p>
+<u>John Carmack</u>: Mysterious, productive, humble.  We all just go, &quot;Wow&quot;  This
+dude has provided the platform for much of my recent life's fun.
+<p>
+<u>Richard Gray</u>: Rich drives home the cult of personality theory.  He's a great
+designer, too who knows good sushi.  Can't wait for sIn.
+<p>
+<u>George Broussard</u>: Taught me how to design for myself AND for others.  Burned
+the importance of what I call impressionism in game design.  It's very important
+
+when building &quot;realistic&quot; enviornments to do just enough detail stuff to give
+the &quot;impression&quot; of where you are without blowing all your resources on
+background.
+<p>
+<u>John Romero</u>:  More cult of personality.  He really set the stage the for most
+of the types of puzzles you now encounter in first person action.  I don't know
+whether to acknowledge him for adding more game type fun to a genre that
+could've
+been only about shooting stuff or be pissed because no one's advanced the actual
+
+combat part of the game fun for three generations of technology.
+<p>
+<u>Brian Martel</u>:  He made me think about my own design philosophies more than any
+one ever has.  I don't think he even realizes the clarity he's lended to my
+thinking about game design.
+<p>
+<u>Billy Zelsnack</u>:  If there ever was a &quot;next Carmack&quot;, Billy's the guy.  I'd do
+anything to have the two of them work together on building some tech sometime.
+Billy's humble, though.  He'll be a little purturbed that I even compared him
+to Carmack because Billy really respects him.  We all respect Carmack and we
+all really respect Mr. Zelsnack.
+<p>
+<u>Team <a href="http://www.rebelboatrocker.com" target="_top">RBR</a></u>:  I can't imagine compiling a more talented group...We got really f'n
+lucky...no shit, I'm dazzled daily.
+</blockquote></ul>
+
+<P><U><B>Fishman:</B></U> <B>
+<ul>  Describe a typical work day at Rebel Boat Rocker</ul>
+</B>
+  
+ <P><U><B>Randy:</B></U>
+<ul>Make cool stuff.  Eat. Show team my cool stuff, look at theirs.  Influence
+others
+and allow myself to be influenced.  Deal with a zillion little outside factors.
+Kick ass in the game de jour.  Eat.  Evaluate progress.  Mail and News. DooM2,
+Quake or Quake 2 deathmatch. Sleep.</ul>
+
+ <P><U><B>Fishman:</B></U> <B>
+  <ul>How important do you think playing games is for designing games? From all
+  the plans from the various FPS designers I have read over the past year I
+  have came to the conclusion that not all these designers play games
+  themselves and I wonder how this might affect their final product in terms
+  of fun and gameplay.</ul>
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>To me, playing games is very important.  Most designers will look and toy with
+anything *cool* that comes out.  But, I feel, that to really understand the
+heart of a game and to really be able to get what's good and what sucks about
+a game requires an intimate knowledge of it.  I play a lot of games.  I go home
+after working all day and drag Rob or Reichert over to my place to deathmatch
+with me or play N64 or something, anything.  My wife and I always play adventure
+
+games together.  I try to be aware of my interest level and my feelings at each
+stage of my playing a game.  I try to apply everything I learn about other's
+successes and failures to the games I design.</ul>
+
+ <P><U><B>Fishman:</B></U> <B>
+ <ul>Any closing thoughts or suggestions you have for all us amateur designers
+  out here?</ul>
+
+
+</B>
+  
+ <P><U><B>Randy:</B></U>
+ <ul>Keep on playing and thinking and creating.  Give me something really cool to
+play.  I'll try to do the same for you.</ul>
+
+I would like to thank Randy Pitchford aka DuvalMagic™ for taking the time to answer my questions, and from the looks of it, their new game is going to kick some <b>serious ass</b>! Can't wait.</blockquote>
+
+</blockquote>
+</div>
+<br><br><br><br>
+
+</td></tr></table>
+<!-- footer starts here -->
+<table width="400" border="0" cellspacing="0" cellpadding="0" valign="TOP" bgcolor="navy" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td><strong><font color="White">Copyright Crap</font></strong></td></tr></table>
+<table width="400" border="1" cellspacing="0" cellpadding="0"  bgcolor="#DDDDDD" bordercolor="navy" bordercolorlight="navy" bordercolordark="navy">
+<tr><td class="footer">
+
+HTML Design, original concept of rust by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a>  rust is &copy; 1998, and 1999 by <a href="mailto:fishman@gamedesign.net">Shane 'Fishman' Sherman</a> and <a href="mailto:granny@gamedesign.net">Martin Ka'ai Cluney</a>(GrrandMaMa). Quake, Quake2, Quake3:Arena are trademarks of <a href="http://www.idsoftware.com" target="_top">id software</a>. Unreal is a trademark of <a href="http://www.unreal.com" target="_top">Epic</a>. Half-Life is a trademark of <a href="http://www.valvesoftware.com" target="_top">Valve Software</a>. Sin is a trademark of <a href="http://www.ritual.com" target="_top">Ritual</a>. All rights reserved. If you have any problems or comments about rust then please <a href="http://www.gamedesign.net/email.shtml">Contant Us</a>.
+
+<br><br>
+
+</td></tr>
+</table>
+<!-- footer ends here -->
+</body>
+</html>
