@@ -4202,7 +4202,7 @@ by Chris "Kold" Stringer</center>
 <span class="note"><b>IMPORTANT CONSIDERATION:</b> There's one flaw to making the rain in this tutorial and that's the <a href="http://www.gamedesign.net/book/view/53">r_speeds</a>, you'll notice a massive difference in fps .. that noted don't use this affect too much in your map or it will be unplayable in the online arena's.</span></p>
 <hr noshade width="75%" align="center">
 <h3>Requirements:</h3>
-<p class="q2bg1">Before you start this tutorial, in order for the rain to work you'll need a graphics card with the latest opengl driver's installed as the affect's of the texture/rain rapidly disappear in software mode as explained in this <a href="http://www.gamedesign.net/node/54">tutorial</a>.<br><br>You'll also need the <a href="content/quake2/tutorials/make_rain/rainb.wal">rain texture</a> and the <a href="content/quake2/tutorials/make_rain/raintut.zip">example map</a> I'm using in this tutorial (the rain texture is in the .zip with the example map)<br><br>In the editor, work with the grid settings on "16" as that's what I'm using in this tutorial.<br><br>phew ! With keeping all the above in mind, in this tutorial i'll show you a fast and affective way to make some convincing looking rain in no time!</p> 
+<p class="q2bg1">Before you start this tutorial, in order for the rain to work you'll need a graphics card with the latest opengl driver's installed as the affect's of the texture/rain rapidly disappear in software mode as explained in this <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/54">tutorial</a>.<br><br>You'll also need the <a href="content/quake2/tutorials/make_rain/rainb.wal">rain texture</a> and the <a href="content/quake2/tutorials/make_rain/raintut.zip">example map</a> I'm using in this tutorial (the rain texture is in the .zip with the example map)<br><br>In the editor, work with the grid settings on "16" as that's what I'm using in this tutorial.<br><br>phew ! With keeping all the above in mind, in this tutorial i'll show you a fast and affective way to make some convincing looking rain in no time!</p> 
 
 <hr noshade width="75%" align="center">
 
@@ -4339,7 +4339,7 @@ document.write('<a href="&#32;&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#11
 	<a name="introduction"></a><b>Introduction</b><br>
 	<p>The purpose of this tutorial is to describe several simple techniques you can use in your Quake2 maps to reduce the number of polygons seen by the game engine, thereby increasing the performance of your map and improving gameplay. None of the techniques described here are difficult to implement, and will usually not result in any undesirable tradeoffs, i.e. reduced visual quality. This tutorial does <b>not</b> discuss hint brushes, which, like the techniques discussed here, are often used to influence the way qbsp3 partitions brushes. Proper use of hint brushes is a difficult technique to master, and, unlike the methods discussed here, generally requires a trial-and-error approach to achieve the desired results. NOTE: Don't even think about using hint brushes unless you are able to run &quot;gl_showtris 1&quot; (see below). It's just about impossible to know how to use hint brushes to block off areas when you don't know what the engine can/cannot see from a view. For more information on the use of hint brushes, see Steven Boswell's excellent article, <a href="/content/quake2/tutorials/poly_count/bspvis.htm">qbsp3, qvis3, and map-making</a>.<br><br>
 
-	<p>The authors assume that the reader has some experience at creating maps for Quake2. This is not meant to be a primer on map editing, and we assume that the reader has prior knowledge of why reducing polygon counts is important. For basic information on creating Quake2 maps and map-related issues, read through the <a href="http://www.gamedesign.net/node/42">Tutorials</a>, <a href="http://www.gamedesign.net/node/21">Entity Properties</a>, and <a href="http://www.gamedesign.net/node/17">FAQ</a> sections at Rust. <br><br>
+	<p>The authors assume that the reader has some experience at creating maps for Quake2. This is not meant to be a primer on map editing, and we assume that the reader has prior knowledge of why reducing polygon counts is important. For basic information on creating Quake2 maps and map-related issues, read through the <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/42">Tutorials</a>, <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/21">Entity Properties</a>, and <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/17">FAQ</a> sections at Rust. <br><br>
 <a href="/node/53/#TOC">Back To Table Of Contents</a><br>
 
 	<p><br><hr color=black noshade width=75%><br><p>
@@ -4539,51 +4539,51 @@ document.write('<a href="&#32;&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#11
 <h3>Introduction</h3>
 <ol>
 <li>
-<a href="node/235#intro">Just the facts, ma'am.</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#intro">Just the facts, ma'am.</a>
 </li>
 </ol>
 <h3>You're not the only one staring at the _sun.</h3>
 <ol>
 <li>
-<a href="node/235#what">What does it do?</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#what">What does it do?</a>
 </li>
 <li>
-<a href="node/235#sowhat">Okay, it's a sun.  So what?</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#sowhat">Okay, it's a sun.  So what?</a>
 </li>
 </ol>
 <h3>That's neat.  How do I use it?</h3>
 <ol>
 <li>
-<a href="node/235#_sun">From the beginning (_sun)</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#_sun">From the beginning (_sun)</a>
 </li>
 <li>
-<a href="node/235#_sun_light">Shedding a little light on the subject (_sun_light</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#_sun_light">Shedding a little light on the subject (_sun_light</a>
 </li>
 <li>
-<a href="node/235#_sun_ambient">How about the shadows? (_sun_ambient)</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#_sun_ambient">How about the shadows? (_sun_ambient)</a>
 </li>
 <li>
-<a href="node/235#_sun_color">What color is the sun, anyway? (_sun_color)</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#_sun_color">What color is the sun, anyway? (_sun_color)</a>
 </li>
 </ol>
 <h3>No fluff</h3>
 <ol>
 <li>
-<a href="node/235#sun">Explain it non-verbosely</a>                 </li>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#sun">Explain it non-verbosely</a>                 </li>
 </ol>
 <h3>Summary</h3>
 <ol>
 <li>
-<a href="node/235#example">What should my worldspawn look like?</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#example">What should my worldspawn look like?</a>
 </li>
 <li>
-<a href="node/235#comments">Conclusion</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#comments">Conclusion</a>
 </li>
 </ol>
 <h3><font color="red">C</font><font color="orange">o</font><font color="yellow">l</font><font color="green">o</font><font color="blue">r</font><font color="purple">e</font><font color="violet">d</font> lights are neat, but...</h3>
 <ol>
 <li>
-<a href="node/235#nocolor">...how about we not use it               </a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/235#nocolor">...how about we not use it               </a>
 </li>
 </ol>
 
@@ -5019,7 +5019,7 @@ For example, you could mark one brush face as light, or two face, or three, etc,
     <li><b>hint</b><br>
         A hint brush blocks vis from seeing into certain areas, thus decreasing frame 
         rate(which is a good thing) They are difficult to determine where to place though.
-        There is a good <a href="http://www.gamedesign.net/node/52">tutorial</a> 
+        There is a good <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/52">tutorial</a> 
         written by <a href="mailto:jcaesar@mediaone.net">Joel Caesar</a> on hint brushes 
         that will help you figure out how to use them.
         <br>&nbsp;
@@ -5060,7 +5060,7 @@ For example, you could mark one brush face as light, or two face, or three, etc,
         The player cannot walk through a brush set with player clip but he will be able to shoot 
         through it. Monster clip is the same thing but it affects the monster_ entities instead of 
         the player. Good for not allowing monsters past a certain point or restricting the player 
-        so he/she can't get into areas in which there is a possibility of getting stuck.  The use of clip brushes discussed in detail in <a href="http://www.gamedesign.net/node/49"this tutorial</a>.<br>
+        so he/she can't get into areas in which there is a possibility of getting stuck.  The use of clip brushes discussed in detail in <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/49"this tutorial</a>.<br>
         <br>
         You must also have nodraw set for the clip properties to work.
         <br>&nbsp;
@@ -5072,9 +5072,9 @@ For example, you could mark one brush face as light, or two face, or three, etc,
         create the effect of flowing, moving water.
         <br>&nbsp;
     <li><b>origin</b><br>
-        The origin property is used with certain entities like the <a href="http://www.gamedesign.net/node/39">turret_</a> 
-        entities, <a href="http://www.gamedesign.net/node/24#func_rotating">func_rotate</a>, and 
-        <a href="http://www.gamedesign.net/node/24#func_door_rotating">func_door_rotating</a>. Check those corresponding pages on how
+        The origin property is used with certain entities like the <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/39">turret_</a> 
+        entities, <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_rotating">func_rotate</a>, and 
+        <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_door_rotating">func_door_rotating</a>. Check those corresponding pages on how
         to use the origin property with these entities.
         <br>&nbsp;
     <li><b>monster, corpse</b><br>
@@ -5089,7 +5089,7 @@ For example, you could mark one brush face as light, or two face, or three, etc,
         to brushes that the player will not often see.<br>
         <br>
         Detail brushes, and how to use them, are discussed in 
-        <a href="http://www.gamedesign.net/node/53">this tutorial</a>.
+        <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/53">this tutorial</a>.
         <br>&nbsp;
     <li><b>translucent</b><br>
         if you have water and trans33 or 66 *not* set and the surface
@@ -6322,23 +6322,23 @@ distribute this file as long as the author receives credit.</small></font></b></
 
 <p><b>
 <ul>
-<li><a href="node/24#func_areaportal">func_areaportal</a></li>
-<li><a href="node/24#func_button">func_button</a></li>
-<li><a href="node/24#func_clock">func_clock</a></li>
-<li><a href="node/24#func_conveyor">func_conveyor</a></li>
-<li><a href="node/24#func_door">func_door</a></li>
-<li><a href="node/24#func_door_rotating">func_door_rotating</a></li>
-<li><a href="node/24#func_door_secret">func_door_secret</a></li>
-<li><a href="node/24#func_explosive">func_explosive</a></li>
-<li><a href="node/24#func_object">func_object</a></li>
-<li><a href="node/24#func_group">func_group</a></li>
-<li><a href="node/24#func_killbox">func_killbox</a></li>
-<li><a href="node/24#func_plat">func_plat</a></li>
-<li><a href="node/24#func_rotating">func_rotating</a></li>
-<li><a href="node/24#func_timer">func_timer</a></li>
-<li><a href="node/24#func_train">func_train</a></li>
-<li><a href="node/24#func_wall">func_wall</a></li>
-<li><a href="node/24#func_water">func_water</a></li><br></ul></b>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_areaportal">func_areaportal</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_button">func_button</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_clock">func_clock</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_conveyor">func_conveyor</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_door">func_door</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_door_rotating">func_door_rotating</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_door_secret">func_door_secret</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_explosive">func_explosive</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_object">func_object</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_group">func_group</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_killbox">func_killbox</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_plat">func_plat</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_rotating">func_rotating</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_timer">func_timer</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_train">func_train</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_wall">func_wall</a></li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/24#func_water">func_water</a></li><br></ul></b>
 </p>
 
 	<p><b><a href="/content/quake2/entity/samples/func_areaportal.zip">Download Sample Map</a></b><br><br>
@@ -6697,7 +6697,7 @@ distribute this file as long as the author receives credit.</small></font></b></
 
 	<ul>
 	
-<li><a href="node/23#info_player_intermission">info_player_intermission</a>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/23#info_player_intermission">info_player_intermission</a>
 
 
 	<!-- Start description -->
@@ -6816,9 +6816,9 @@ distribute this file as long as the author receives credit.</small></font></b></
 
 	<ul>
 
-<li><a href="node/27#light">light</a>
-<li><a href="node/27#light_mine1">light_mine1</a>
-<li><a href="node/27#light_mine2">light_mine2</a>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/27#light">light</a>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/27#light_mine1">light_mine1</a>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/27#light_mine2">light_mine2</a>
 	
 	<!-- Start description -->
 
@@ -7411,43 +7411,43 @@ Just a fancied up Tank, I have found no differences, perhaps a little more aggre
 <p>
 <ul>
 <li>
-<a href="node/32#target_actor">target_actor</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_actor">target_actor</a>
 <li>
-<a href="node/32#target_blaster">target_blaster</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_blaster">target_blaster</a>
 <li>
-<a href="node/32#target_changelevel">target_changelevel</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_changelevel">target_changelevel</a>
 <li>
-<a href="node/32#target_character">target_character</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_character">target_character</a>
 <li>
-<a href="node/32#target_crosslevel_target">target_crosslevel_target</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_crosslevel_target">target_crosslevel_target</a>
 <li>
-<a href="node/32#target_crosslevel_trigger">target_crosslevel_trigger</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_crosslevel_trigger">target_crosslevel_trigger</a>
 <li>
-<a href="node/32#target_earthquake">target_earthquake</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_earthquake">target_earthquake</a>
 <li>
-<a href="node/32#target_explosion">target_explosion</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_explosion">target_explosion</a>
 <li>
-<a href="node/32#target_goal">target_goal</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_goal">target_goal</a>
 <li>
-<a href="node/32#target_help">target_help</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_help">target_help</a>
 <li>
-<a href="node/32#target_laser">target_laser</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_laser">target_laser</a>
 <li>
-<a href="node/32#target_lightramp">target_lightramp</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_lightramp">target_lightramp</a>
 <li>
-<a href="node/32#target_secret">target_secret</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_secret">target_secret</a>
 <li>
-<a href="node/32#target_spawner">target_spawner</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_spawner">target_spawner</a>
 <li>
-<a href="node/32#target_speaker">target_speaker</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_speaker">target_speaker</a>
 <li>
-<a href="node/32#target_splash">target_splash</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_splash">target_splash</a>
 <li>
-<a href="node/32#target_string">target_string</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_string">target_string</a>
 <li>
-<a href="node/32#target_temp_entity">target_temp_entity</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_temp_entity">target_temp_entity</a>
 <li>
-<a href="node/32#target_actor">target_actor</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_actor">target_actor</a>
 </ul>
 </P>
 <br><br>
@@ -7480,12 +7480,12 @@ Here are a few examples:
 </P>
 <p><a name="target_crosslevel_target"><b>target_crosslevel_target</b></a>
 <BR><BR>
- - See <a href="node/32#target_changelevel">target_changelevel</a>
+ - See <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_changelevel">target_changelevel</a>
 </P>	
 <p>
 <a name="target_crosslevel_trigger"><b>target_crosslevel_trigger</b></a>
 <BR><BR>
- - See <a href="node/32#target_changelevel">target_changelevel</a>
+ - See <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_changelevel">target_changelevel</a>
 </P>
 <p>
 <a name="target_earthquake"><b>target_earthquake</b></a>
@@ -7502,7 +7502,7 @@ What a target_explosion does is when triggered creates a visual explosion that c
 <p>
 <a name="target_goal"><b>target_goal</b></a> 
 <BR><BR>
-The <strong>target_goal</strong> is used in exactly the same way as the target secret. However, since you will most likely have set up a <a href="node/32#target_help">target_help</a> to tell the player just what the goal is, you will most likely want to set up a new one at or near the <strong>target_goal</strong>. You don't want people wandering around with nothing to do. <br><br>
+The <strong>target_goal</strong> is used in exactly the same way as the target secret. However, since you will most likely have set up a <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/32#target_help">target_help</a> to tell the player just what the goal is, you will most likely want to set up a new one at or near the <strong>target_goal</strong>. You don't want people wandering around with nothing to do. <br><br>
 </P>
 <p><a name="target_help"><b>target_help</b></a>
 <BR><BR>

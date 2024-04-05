@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>	
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><base href="http://www.gamedesign.net/" />
 <style type="text/css">
-@import url(misc/http://assets.aq2world.com/archive/websites/www.gamedesign.net/drupal.css);
+@import url(http://assets.aq2world.com/archive/websites/www.gamedesign.net/drupal.css);
 </style>
 <title>RUST - GameDesign.Net</title>
 <style type="text/css">@import "themes/rusted/http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/rusted.css";</style>
@@ -21,7 +21,7 @@
 <!-- Left Sidebar -->
 <table border="0" cellpadding="0" cellspacing="0"><tr><td valign="center" background="images/lsb_firstheader.jpg" width="150" height="24"><div align="center" class="sidebar_head"><a href="#" onMouseOver="stm(Text[1],Style[1])" onMouseOut="htm()">Navigation</a></div></td></tr>
 <tr><td valign="top" class="navbg" width="150"><div class="sidebar">	
-- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://www.gamedesign.net/node/view/710" title="">Design Comps.</a><br />- <a href="http://www.gamedesign.net/node/view/708" title="">Interviews</a><br />- <a href="http://www.gamedesign.net/node/view/757" title="">RUST Community</a><br />- <a href="http://www.gamedesign.net/node/view/726" title="">RUST Resumes</a><br />- <a href="http://www.gamedesign.net/node/view/837" title="">RUST Web IRC</a><br />- <a href="http://www.gamedesign.net/node/view/839" title="">RUSTY Reviews</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a><br />- <a href="http://forums.gamedesign.net" onMouseOver="stm(Text[3],Style[0])" onMouseOut="htm()">RUST Forums</a><br /><br />
+- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/710" title="">Design Comps.</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/708" title="">Interviews</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/757" title="">RUST Community</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/726" title="">RUST Resumes</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/837" title="">RUST Web IRC</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/839" title="">RUSTY Reviews</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a><br />- <a href="http://forums.gamedesign.net" onMouseOver="stm(Text[3],Style[0])" onMouseOut="htm()">RUST Forums</a><br /><br />
 <center><form action="http://www.gamedesign.net/search" method="post"><input type="hidden" name="PHPSESSID" value="598f3d6aab9cb43391cca6aab5783093" /><input type="text" class="form-text" size="15" value="" name="keys" /><input type="submit" class="form-submit" value="- Search -" /></form></center>
 </div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
 <tr><td><img src="images/http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/images/spacer.gif" width="7" height="7" /></td></tr>
@@ -118,7 +118,7 @@ document.write("<COMMENT>");
 <div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/55" title="View user profile.">oirfid</a> on Wednesday, December 8, 2004 - 01:21</small><br /><br />
 <p>We've got another competition for all of you aspiring mappers to have a go at.  This time around we want to see how well you can plan a map and how your plan translates to a finished product.</p>
 
-<p>Visit the our 'Design Comps." section or click <a href="http://www.gamedesign.net/node/view/879">HERE</a> for all the details.</p>
+<p>Visit the our 'Design Comps." section or click <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/879">HERE</a> for all the details.</p>
 <br /><div align=right>
 <a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; 1 read</div>
 </div></td></table><br />
@@ -142,7 +142,7 @@ I've seen a few people asking how to create the words seeing on the walls throug
 target="_blank"><img  src="/content/news/compo2/rabidmonkey777_post.jpg" alt="Rabid Monkey777" title="Rabid Monkey777" height="262" width="350" border="0" hspace="6" vspace="6"></a><br><small>Click 
 to enlarge (800x600)</small></center>
 <br /><div align=right>
-<a href="http://www.gamedesign.net/node/view/874#comment" title="Jump to the first comment of this posting.">5 comments</a> &middot; <a href="http://www.gamedesign.net/node/view/874" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 454 reads</div>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/874#comment" title="Jump to the first comment of this posting.">5 comments</a> &middot; <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/874" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 454 reads</div>
 </div></td></table><br />
 <table><td class="body_box2">
 <!-- Node: "HL2 Full SDK and Deathmatch Mode Released" -->
@@ -161,7 +161,7 @@ Valve has released the full Half-Life 2 SDK and HL2 deathmatch. Both are availab
 <br><br>
 The creators of this mod also created <b><a href="http://www.ironoak.de/PE/index.php" target="_blank">&quot;Public Enemy&quot;</a></b>, a terrorist vs police based Half-Life mod.</div>
 <br /><div align=right>
-<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://www.gamedesign.net/node/view/870" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 16 reads</div>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/870" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 16 reads</div>
 </div></td></table><br />
 <table><td class="body_box2">
 <!-- Node: "Game Survey" -->
@@ -175,9 +175,9 @@ The creators of this mod also created <b><a href="http://www.ironoak.de/PE/index
 <!-- Node: "Rusty Reviews Dust-Off" -->
 <div class="body_box_header">Rusty Reviews Dust-Off</div>
 <div class="body_box"><small>Submitted by <a href="http://www.gamedesign.net/user/view/2275" title="View user profile.">tIKi_mAn</a> on Friday, November 26, 2004 - 19:05</small><br /><br />
-<p class="skyboxbg1"><br><img src="/images/tiki.gif" align="left" hspace=5"><b>We're launching <a href="http://www.gamedesign.net/node/view/839">Rusty Reviews</a></b> with the Quake III map..<br>
+<p class="skyboxbg1"><br><img src="/images/tiki.gif" align="left" hspace=5"><b>We're launching <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/839">Rusty Reviews</a></b> with the Quake III map..<br>
 "<b>Rust in Peace</b>" by <a href="http://www.planetquake.com/kaziganthe"><i>Kaziganthe</i></a>.<br><br>
-Every Friday check the reviews page to see the new review! All the reviewed maps and information on how to get your map reviewed can be found in the <a href="http://www.gamedesign.net/node/view/839">RUSTY Reviews</a> section.<br><br></p>
+Every Friday check the reviews page to see the new review! All the reviewed maps and information on how to get your map reviewed can be found in the <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/839">RUSTY Reviews</a> section.<br><br></p>
 <br /><div align=right>
 <a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments</div>
 </div></td></table><br />
@@ -202,7 +202,7 @@ These are all great entries and show theres some tough competition out there.. l
 by the Natural Selection Community, they can now be downloaded for your use.</p>
 <p align="center">What’s new in the <img src="http://www.gamedesign.net/content/half-life/andy/zhlt3.bmp" width="95" height="16" border="0" alt="ZHLT 3.0" title="ZHLT 3.0" align="absmiddle"> Beta 4? &nbsp;&nbsp;Read More!</p>
 <br /><div align=right>
-<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://www.gamedesign.net/node/view/841" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 55 reads</div>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/841" title="Read the rest of this posting." class="read-more"><b>Read more</b></a> &middot; 55 reads</div>
 </div></td></table><br />
 <table><td class="body_box2">
 <!-- Node: "New Web GUI java IRC for RUST!" -->
