@@ -127,7 +127,7 @@ document.write("<COMMENT>");
 The compo guidelines asked the contestants to produce a screen shot of a map that would 'make' the viewer want to be there and all the entries exceeded our expectations.<br><br> The diversity and skill on offer proved without a doubt that there are some very talented designers out there. Unfortunately there can be only one...<br><br>
 First Place goes to <font color="red"><a href="http://www.nathansilvers.com/"><b>natestah</b></a></font> :<br>
 
-<CENTER><A href="content/news/04_OCT_23/natestah.jpg" 
+<CENTER><A href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/news/04_OCT_23/natestah.jpg" 
 target=_new><IMG height=262 alt="natestah" src="content/news/04_OCT_23/natestah.jpg" width=350 border=0 hspace=6 vspace=6><BR><SMALL>Click 
 to enlarge (640x480)</SMALL></A></CENTER>
 <br /><br />
@@ -169,7 +169,7 @@ RUST | gamedesign.net now has a .plan where we (RUST staff) can discuss our plan
 The first beta of the Half-Life mod <a href="http://www.thetrenches.net/"><b>The Trenches</b></a> has been released.<br><br>
 
 <center>
-<a href="content/news/04_OCT_20/water_16476.jpg" target=_new><img border="0" src="http://www.gamedesign.net/content/news/04_OCT_20/thumb_16476.jpg"><br>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/news/04_OCT_20/water_16476.jpg" target=_new><img border="0" src="http://www.gamedesign.net/content/news/04_OCT_20/thumb_16476.jpg"><br>
 <i>All these men will die...in the trenches! Watch it now!</i><br>
 </a></center><br>
 

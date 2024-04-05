@@ -141,7 +141,7 @@ Now we need to give the door a name, so that we can use a <span style="font-styl
 Finally, we want the <span style="font-style: italic">momentary_door</span> to close automatically once we stop triggering the <span style="font-style: italic">momentary_rot_button</span>. To do this, set the door's <code>spawnflags</code> value to <code>32</code>. (In Worldcraft, this means to check only the "Toggle" spawnflag). Enabling this spawnflag allows the door to close automatically once the <span style="font-style: italic">momentary_rot_button</span> stops activating it.
 </p>
 <center>
-<a href="content/half-life/tutorials/proxdoor/prox_snap1.jpg" style="text-decoration: none"><img src="content/half-life/tutorials/proxdoor/prox_thmb1.jpg" width="100" height="70" vspace="6" alt="Worldcraft Screen" title="Worldcraft Screen" /><br />
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap1.jpg" style="text-decoration: none"><img src="content/half-life/tutorials/proxdoor/prox_thmb1.jpg" width="100" height="70" vspace="6" alt="Worldcraft Screen" title="Worldcraft Screen" /><br />
 Screen shot of the<span style="font-style: italic">momentary_door </span>in Worldcraft</a><br /> [94K]
 <br />
 </center>
@@ -153,7 +153,7 @@ Screen shot of the<span style="font-style: italic">momentary_door </span>in Worl
  If you've created a <span style="font-style: italic">func_rot_button</span> entity before, then this will be easy, too. Create your rotating button as usual (complete with origin brush!), but turn it instead into a <span style="font-style: italic">momentary_rot_button</span> entity. Set its speed, auto-return speed (<code>returnspeed</code>), and rotation distance (<code>distance</code>) as desired.
  </p>
  <p>
- For this tutorial, since the player doesn't have to &#43; use the button to activate it, the button does not have to be set up in a visible part of the level. Since the <span style="font-style: italic">momentary_rot_button</span> entity is brush-based, it can even be placed in the "void" outside of the map. The <a href="content/half-life/tutorials/proxdoor/proxdoor.zip">example map</a> places the button in full view of the player so that you can see that the button turns when triggered repeatedly.
+ For this tutorial, since the player doesn't have to &#43; use the button to activate it, the button does not have to be set up in a visible part of the level. Since the <span style="font-style: italic">momentary_rot_button</span> entity is brush-based, it can even be placed in the "void" outside of the map. The <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/proxdoor.zip">example map</a> places the button in full view of the player so that you can see that the button turns when triggered repeatedly.
  </p>
  <p>
  Now, set the <code>target</code> key (WC: &quot;Targetted object&quot;) to the name of your <span style="font-style: italic">momentary_door</span>. The example map sets it to <code>proxim_door</code>. This allows the button to open and shut the door.
@@ -165,7 +165,7 @@ Now, set the spawnflags of the <span style="font-style: italic">momentary_rot_bu
 Finally, give the button a name, so that we can activate it via triggers. The example map uses the name <code>proxim_btn</code>.
 </p>
 <center>
-<a href="content/half-life/tutorials/proxdoor/prox_snap2.jpg" style="text-decoration: none"><img src="content/half-life/tutorials/proxdoor/prox_thmb2.jpg" width="100" height="70" vspace="6" alt="Prox door" title="prox door" /><br />
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap2.jpg" style="text-decoration: none"><img src="content/half-life/tutorials/proxdoor/prox_thmb2.jpg" width="100" height="70" vspace="6" alt="Prox door" title="prox door" /><br />
 Screen shot of the <span style="font-style: italic">momentary_rot_button </span>in Worldcraft</a><br /> [90K]
 </center>
 <hr />
@@ -188,7 +188,7 @@ The different spawnflags of the <span style="font-style: italic">trigger_multipl
 <li>&quot;Pushables&quot; (4): If this spawnflag is enabled, then pushing a pushable object into the trigger area will activate the door and cause it to stay open.</li>
 </ul>
 <center>
-<a href="content/half-life/tutorials/proxdoor/prox_snap3.jpg" style="text-decoration: none"><img src="content/half-life/tutorials/proxdoor/prox_thmb3.jpg" width="100" height="69" vspace="6" alt="Activate" title="activate" /><br />
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap3.jpg" style="text-decoration: none"><img src="content/half-life/tutorials/proxdoor/prox_thmb3.jpg" width="100" height="69" vspace="6" alt="Activate" title="activate" /><br />
 Screen shot of the <span style="font-style: italic">trigger_multiple </span>in Worldcraft</a><br /> [99K] 
 </center>
 <hr />
@@ -202,16 +202,16 @@ Compile and run your map. The door should begin to open when the player steps in
 I've created a small example map that illustrates the concept. The first door you come to is a normal sliding <span style="font-style: italic">func_door</span> -- ignore this one. The second door is the proximity door. There is a wheel along the wall here -- this is the <span style="font-style: italic">momentary_rot_button</span> that controls the door. I decided not to hide it so that you can see the button rotate when it is triggered, and to allow you to +use the wheel yourself to open the door. The proximity area for the door is the area covered in the red and white stripes.
 </p>
 <center>
-<a href="content/half-life/tutorials/proxdoor/prox_snap4.jpg"><img src="content/half-life/tutorials/proxdoor/prox_thmb4.jpg" width="100" height="75" vspace="6" alt="Door opening" title="Door Opening" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="content/half-life/tutorials/proxdoor/prox_snap5.jpg"><img src="content/half-life/tutorials/proxdoor/prox_thmb5.jpg" width="100" height="75" vspace="6" alt="Door Closing" title="Door Closing" /></a><br />
-<a href="content/half-life/tutorials/proxdoor/prox_snap4.jpg"><span style="font-style: italic; text-decoration: none">Door Opening</span></a> [21K] and <a href="content/half-life/tutorials/proxdoor/prox_snap5.jpg"><span style="font-style: italic; text-decoration: none">Door Closing</span></a> [22K]<br />
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap4.jpg"><img src="content/half-life/tutorials/proxdoor/prox_thmb4.jpg" width="100" height="75" vspace="6" alt="Door opening" title="Door Opening" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap5.jpg"><img src="content/half-life/tutorials/proxdoor/prox_thmb5.jpg" width="100" height="75" vspace="6" alt="Door Closing" title="Door Closing" /></a><br />
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap4.jpg"><span style="font-style: italic; text-decoration: none">Door Opening</span></a> [21K] and <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap5.jpg"><span style="font-style: italic; text-decoration: none">Door Closing</span></a> [22K]<br />
 <span style="font-style: italic">Click on thumbnails to view larger versions of the images</span>
 </center>
 <hr />
 <span style="font-weight: bold">Example Files</span><br />
 <ul type="square">
-<li><a href="content/half-life/tutorials/proxdoor/proxdoor.zip">Example map (proxdoor.zip)</a> [8K]</li>
-<!--li><a href="content/half-life/tutorials/proxdoor/prox_snap4.jpg" target="_blank">Screen shot of the proximity door opening</a> [21K]</li>
-<li><a href="content/half-life/tutorials/proxdoor/prox_snap5.jpg" target="_blank">Screen shot of the proximity door closing</a> [22K]</li-->
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/proxdoor.zip">Example map (proxdoor.zip)</a> [8K]</li>
+<!--li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap4.jpg" target="_blank">Screen shot of the proximity door opening</a> [21K]</li>
+<li><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/content/half-life/tutorials/proxdoor/prox_snap5.jpg" target="_blank">Screen shot of the proximity door closing</a> [22K]</li-->
 </ul>
 <p><span style="font-weight: bold">NOTE:</span> Special thanks to <a href="http://www.geocities.com/TimesSquare/Alley/7579/members/oddsock.html">[RPS]Odd Sock</a>, who came up with the basic mechanism for creating such a door, at least as far as I know.
 </p>
