@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>MapZone</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" text="#FFCC00" link="#FFcc00" vlink="#FFcc00" alink="#FFcc00">
+<table width="90%" border="0" cellspacing="5" cellpadding="5" align="center">
+  <tr bgcolor="#660000"> 
+    <td height="37"> 
+      <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="5" color="#FFFFFF"> 
+        <font color="#FFCC00">Reaction Quake 3 - Ladders</font></font></div>
+    </td>
+  </tr>
+</table>
+<table width="85%" border="0" cellspacing="15" cellpadding="15" align="center">
+  <tr> 
+    <td width="39%" align="left" valign="top"> 
+      <p>To make your brushes climbable in <b>Reaction Quake 3</b>, a shader must 
+        be applied to the brush you'd like climbable. To get this to work on a 
+        simple ladder that only has a texture applied to it, you'd need to make 
+        a shader file or add on to an existing one if you're more experienced 
+        with shaders. For this example, our ladder is covered with the <b>gothic_ceiling/woodceiling1a</b> 
+        texture, but we'll need to make a shader for this. Create a text file 
+        called <b>rq3laddy</b>, and paste this text from this <a href="files/ladder.txt">text 
+        file</a> into it. Now, save it and rename <b>rq3laddy.txt</b> to <b>rq3laddy.shader</b> 
+        and place that into <b>/quake3path/baseq3/scripts</b> then open up the 
+        <b>shaderlist.txt</b> file in that folder, scroll down to the last line 
+        and add <b>rq3laddy</b>. All done, now save the updated <b>shaderlist.txt 
+        </b>file, load up your map editor and apply <b>gothic_ceiling/woodceilingladder</b> 
+        to the simple ladder you made. It will now have the <b>gothic_ceiling/woodceiling1a</b> 
+        texture applied to it, and it'll be climbable.</p>
+      <p>Another way to make an area climbable is to make a brush and cover it 
+        with the <b>Ladder Shader</b> provided below, which uses a special texture 
+        to make it easier to see where the ladder brush is. Just save the <b>ladder.shader</b> 
+        file below into /quake3path/baseq3/scripts and add the word <b>ladder 
+        </b>to the last line of the <b>shaderlist.txt </b>in that folder, save 
+        that and you're ready to make an invisible ladder(Save the ladderclip.tga 
+        file to /quake3path/baseq3/textures/common - Then when you load up Radiant 
+        just load the /textures/common directory and you should see &quot;ladder&quot; 
+        there). The advantage to this is if you only want a part of the ladder 
+        climbable, just shape the brush to however you want the player to be able 
+        to climb upon, and put the ladder shader on it. In Radiant there should 
+        be a translucent brush covered with the word &quot;ladder&quot;, now the 
+        player will be able to climb on that, so place it against a wall or ladder 
+        to use it effectively.</p>
+      </td>
+  </tr>
+</table>
+<table width="45%" border="0" cellspacing="15" cellpadding="15" align="center" height="1%">
+  <tr bgcolor="#660000"> 
+    <td width="39%" align="left" valign="top" height="34"> 
+      <div align="center"> 
+        <p><b>Reaction Quake 3 Ladder Files<br>
+          <br>
+          </b> </p>
+        <p> <a href="files/rq3laddy.shader">rq3laddy.shader</a></p>
+        <p><br>
+          <a href="files/ladderclip.tga">ladderclip.tga</a> <a href="files/ladder.txt">Ladder 
+          Shader</a></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
