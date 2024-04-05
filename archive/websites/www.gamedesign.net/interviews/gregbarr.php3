@@ -3,7 +3,7 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><base href="http://www.gamedesign.net/" />
 <style type="text/css">
-@import url(misc/http://assets.aq2world.com/archive/websites/www.gamedesign.net/drupal.css);
+@import url(http://assets.aq2world.com/archive/websites/www.gamedesign.net/drupal.css);
 </style>
 			<title>
 				RUST - Gamedesign.net
@@ -26,7 +26,7 @@
 									<div align="center" class="sidebar_head">Navigation</div>
 								</td>
 							</tr>
-							<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar">- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://www.gamedesign.net/node/view/14" title="">Community</a><br />- <a href="http://www.gamedesign.net/node/view/13" title="Learn more about the crazy kids running this joint.">Staff</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a></div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
+							<tr><td valign="top" background="images/lsb_bodybg.jpg" width="150"><img src="images/lsb_bodytop.jpg" width="150" height="1" /><div class="sidebar">- <a href="http://www.gamedesign.net/" title="Return to the main page.">home</a><br />- <a href="http://www.gamedesign.net/book" title="Read and contribute to the collaborative books.">Handbooks</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/14" title="">Community</a><br />- <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/13" title="Learn more about the crazy kids running this joint.">Staff</a><br />- <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Polls</a><br />- <a href="http://www.gamedesign.net/search" title="Search for older content.">Search</a><br />- <a href="http://www.gamedesign.net/user" title="Create a user account, request a new password or edit your account settings.">My account</a></div><img src="images/lsb_bodybottom.jpg" width="150" height="1" /></td></tr>
 							<tr><td><img src="http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/images/spacer.gif" width="7" height="7" /></td></tr>
 							<tr>
 								<td valign="center" background="images/lsb_header.jpg" width="150" height="24">
@@ -120,7 +120,7 @@ Func_door_rotating, Func_friction, Func_guntarget, Func_healthcharge, Func_illus
 Func_tracktrain, Func_train, Func_traincontrols, Func_wall
 Func_wall_toggle, Func_water</i></blockquote>
 <br /><br />
-<a href="http://www.gamedesign.net/node/view/341#comment" title="Jump to the first comment of this posting.">1 comment</a> &middot; <a href="http://www.gamedesign.net/node/view/341" title="Read the rest of this posting." class="read-more"><b>Read more</b></a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/341#comment" title="Jump to the first comment of this posting.">1 comment</a> &middot; <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/341" title="Read the rest of this posting." class="read-more"><b>Read more</b></a>
 </div><br />
 
 
@@ -150,7 +150,7 @@ Please send multiple examples of your work (level editing + scripting preferred)
 Simon Barratt, Lead Developer, Pineapple Interactive Ltd<br />
 e: barog@pineapple-interactive.com
 <br /><br />
-<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://www.gamedesign.net/node/view/314" title="Read the rest of this posting." class="read-more"><b>Read more</b></a>
+<a href="http://www.gamedesign.net/user/login" >Login</a> or <a href="http://www.gamedesign.net/user/register" >Register</a> to post comments &middot; <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/314" title="Read the rest of this posting." class="read-more"><b>Read more</b></a>
 </div><br />
 
 
@@ -169,7 +169,7 @@ e: barog@pineapple-interactive.com
 <p>TWHL are running a <a href="http://www.cariad.co.za/twhl/compoinfo.php?id=10">
 Machine Building Contest</a>. Basically the rules involve creating ... "a room with a machine and make the machine belong. It doesn't have to do be a "functional" part of the map, but it must look as though it is meant to be there. Enhance it with lasers, func_rotating, func_platforms ... etc" ... Cant tell if there is any prize money, but the competition ends on the 12th of July. Good mapping!</p>
 <br /><br />
-<a href="http://www.gamedesign.net/node/view/307#comment" title="Jump to the first comment of this posting.">1 comment</a>
+<a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/307#comment" title="Jump to the first comment of this posting.">1 comment</a>
 </div><br />
 
 
@@ -252,7 +252,7 @@ While Ritual Entertainment does not currently have further huts to fill, the Tri
 			
 						<!-- Box: Poll (all)-->
 						
-			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Poll</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="poll-title">When will the madness stop?</div><br><div class="poll"><div class="text">Never!!!</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 33%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 67%;" \></div><div class="percent"> 33%</div><div class="text">Tomorrow</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 7%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 93%;" \></div><div class="percent"> 7%</div><div class="text">Along with these polls i'd say</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 7%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 93%;" \></div><div class="percent"> 7%</div><div class="text">When the fat lady sings</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 20%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 80%;" \></div><div class="percent"> 20%</div><div class="text">when Miniwood tells it to stop</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 13%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 87%;" \></div><div class="percent"> 13%</div><div class="text">The day you catch me (hahaha)</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 20%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 80%;" \></div><div class="percent"> 20%</div><div class="total">Total votes: 15</div><div class="links"><a href="http://www.gamedesign.net/node/view/292#comment" title="Jump to the first comment of this posting.">4 comments</a> &middot; <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Older polls</a></div></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/images/spacer.gif" width="7" height="7" /></td></tr>
+			<tr><td valign="center" background="images/rsb_header.jpg" width="200" height="24"><div class="sidebar_head" align="center">Poll</div></td></tr><tr><td valign="top" background="images/rsb_bodybg.jpg" width="200"><img src="images/rsb_bodytop.jpg" width="200" height="1" /><div class="sidebar"><div class="poll-title">When will the madness stop?</div><br><div class="poll"><div class="text">Never!!!</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 33%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 67%;" \></div><div class="percent"> 33%</div><div class="text">Tomorrow</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 7%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 93%;" \></div><div class="percent"> 7%</div><div class="text">Along with these polls i'd say</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 7%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 93%;" \></div><div class="percent"> 7%</div><div class="text">When the fat lady sings</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 20%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 80%;" \></div><div class="percent"> 20%</div><div class="text">when Miniwood tells it to stop</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 13%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 87%;" \></div><div class="percent"> 13%</div><div class="text">The day you catch me (hahaha)</div><div class="bar"><img src="/misc/poll.jpg" style="height: 14px; width: 20%;"/ \><img src="/misc/nopoll.jpg" style="height: 14px; width: 80%;" \></div><div class="percent"> 20%</div><div class="total">Total votes: 15</div><div class="links"><a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/view/292#comment" title="Jump to the first comment of this posting.">4 comments</a> &middot; <a href="http://www.gamedesign.net/poll" title="View the list of polls on this site.">Older polls</a></div></div></div><img src="images/rsb_bodybottom.jpg" width="200" height="1" /></td></tr><tr><td><img src="http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/images/spacer.gif" width="7" height="7" /></td></tr>
 			
 						<!-- Box: Who's new (all)-->
 						

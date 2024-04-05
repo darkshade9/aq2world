@@ -500,7 +500,7 @@ Add a <a href="book/view/623?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#multisou
 Approaching the door from the locked side will play the 'Locked Latched' Sound. The door will not open even if the player presses the 'Use' key. It wont open because the 'Multisource' is waiting for the trigger to be activated before allowing the door to open. 
 </p>
 <p>
-The download example map makes use of textured lighting. Make sure you include a 'lights.rad' in your root folder for compiling. Check the Half-Life tutorials for more info on <a href="http://www.gamedesign.net/node/5" target="_blank"> 'Lights.rad'</a>.
+The download example map makes use of textured lighting. Make sure you include a 'lights.rad' in your root folder for compiling. Check the Half-Life tutorials for more info on <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/5" target="_blank"> 'Lights.rad'</a>.
 </p>
 <p align="center">Download the <a href="http://www.gamedesign.net/content/half-life/tutorials/wchbasic/simpledoors/sdoors.zip">Simple Doors</a> .zip</p>
 <!--EOF@125--></ul><h1 id="834" name="834" class="book-h1">Creating a dark environment.</h1><ul><!--
@@ -923,7 +923,7 @@ Security Cards - by Andy<br />
 </blockquote>
 <p>Here's a really quick tutorial about getting a key to open a door (there might be an easier way to do this but I found that this method works pretty well).  You can also use the key in other levels by just cloning the door, trigger and multisource.
 </p>
-<p>The idea here is to make sure that the door will not open until you have the key. First up place an <a href="node/958?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#item_security">item_security</a> entity, an <a href="node/954?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#env_global">env_global</a> entity and a <a href="node/959?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#multisource">multisource</a> in your map. Oh yeah, don't forget the door and the card scanner.
+<p>The idea here is to make sure that the door will not open until you have the key. First up place an <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/958?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#item_security">item_security</a> entity, an <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/954?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#env_global">env_global</a> entity and a <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/959?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#multisource">multisource</a> in your map. Oh yeah, don't forget the door and the card scanner.
 </p>
 <p>In the properties of the item_security entity, set the 'Target' to the name of the env_global.<br />
 I have used the name card to make things easy. [ Something of interest here is that you could also use a world_items entity because it does the same thing.]
@@ -932,7 +932,7 @@ I have used the name card to make things easy. [ Something of interest here is t
 </p>
 <p>In the properties of the multisource set the Name to Cardms and Global State Master to cardtaken. 
 </p>
-<p>You need to set the properties of the door and the door's <a href="node/955?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#func_button">func_button</a> (card scanner) so that it actually works. The card scanner does not need a name; the only properties that really need 
+<p>You need to set the properties of the door and the door's <a href="http://assets.aq2world.com/archive/websites/www.gamedesign.net/node/955?PHPSESSID=ee62a24bcec5cc33641252d7e58d3cb0#func_button">func_button</a> (card scanner) so that it actually works. The card scanner does not need a name; the only properties that really need 
 setting are the Target, in this case door2 (the name of the door) and 
 Master, cardms (the name of the multisource). If you want the door to close behind the player, make sure that Toggle is not checked in the flag properties and that the door has the same flag.
 </p>
