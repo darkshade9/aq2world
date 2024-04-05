@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>MapZone</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" text="#FFCC00" link="#FFcc00" vlink="#FFcc00" alink="#FFcc00">
+<table width="90%" border="0" cellspacing="5" cellpadding="5" align="center">
+  <tr bgcolor="#660000"> 
+    <td height="37"> 
+      <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="5" color="#FFFFFF"> 
+        <font color="#FFCC00">Reaction Quake 3 - Rotating Doors</font></font></div>
+    </td>
+  </tr>
+</table>
+<table width="85%" border="0" cellspacing="15" cellpadding="15" align="center">
+  <tr> 
+    <td width="39%" align="left" valign="top"> 
+      <p>To get rotatng doors to work in <b>Reaction Quake 3</b>, you must put 
+        the definition file found below into your <b>Q3R</b>adiant (in /quake3path/tools) 
+        or <b>GTKR</b>adiant folder(in quake3path/extras), make sure to back up 
+        your existing <b>entities.def</b> file in the appropriate directory. The 
+        entity defination file below includes the <b>func_rotating_door</b> and 
+        <b>func_breakable</b> entities. </p>
+      <p align="center">For a simple rotating door to work, there needs to be 
+        two brushes, a &quot;hinge&quot;(The origin brush is where the door rotates 
+        from, so think of it as a hinge on a door in the Real World(tm) ) brush 
+        covered with the origin shader (found in /textures/common) and the actual 
+        brush that you want to be the door. Below is an example on how it should 
+        be done. Once those two brushes are made, select both of them and select 
+        the <b>func_rotating_door</b> entity (Assuming you have your definition 
+        file updated, using the file below or your own if you're more experienced). 
+      </p>
+      <p align="center"><br>
+        <a href="images/rq3/door.jpg" target="window2"><img src="images/rq3/door1.jpg" width="339" height="205" border="0"></a> 
+      </p>
+      <p align="center"><b><br>
+        Note:</b> If you have a special entities definition file and know how 
+        to add an entity entry to the file, then simply copy and paste this: </p>
+      <p><code>//============================================================================= 
+        <br>
+        <br>
+        /*QUAKED func_door_rotating (0 .5 .8) START_OPEN CRUSHER REVERSE TOGGLE 
+        X_AXIS Y_AXIS<br>
+        This is the rotating door... just as the name suggests it's a door that 
+        rotates <br>
+        START_OPEN the door to moves to its destination when spawned, and operate 
+        in reverse. <br>
+        REVERSE if you want the door to open in the other direction, use this 
+        switch. <br>
+        TOGGLE wait in both the start and end states for a trigger event. <br>
+        X_AXIS open on the X-axis instead of the Z-axis <br>
+        Y_AXIS open on the Y-axis instead of the Z-axis <br>
+        <br>
+        You need to have an origin brush as part of this entity. The center of 
+        that brush will be the point around which it is rotated. It will rotate 
+        around the Z axis by default. You can check either the X_AXIS or Y_AXIS 
+        box to change that.<br>
+        "model2" .md3 model to also draw <br>
+        "distance" how many degrees the door will open <br>
+        "speed" how fast the door will open (degrees/second) <br>
+        "color" constantLight color <br>
+        "light" constantLight radius*/ <br>
+        <br>
+        //=============================================================================</code></p>
+      </td>
+  </tr>
+</table>
+<table width="45%" border="0" cellspacing="15" cellpadding="15" align="center">
+  <tr bgcolor="#660000"> 
+    <td width="39%" align="left" valign="top" height="34"> 
+      <div align="center"> 
+        <p><b>Reaction Quake 3 Rotating Door Files</b></p>
+        <p><b><a href="files/door.zip">Example Rotating Door</a></b></p>
+        <p><br>
+          <b><a href="files/entities.zip">Updated Definition File</a></b></p>
+        </div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
