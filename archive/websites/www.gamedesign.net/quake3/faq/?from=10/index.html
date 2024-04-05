@@ -17,7 +17,7 @@
 	<table width="900" height="24" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000"><tr><td align="left" valign="middle" width="40"><img src="/images/smalltf.gif" width="40" height="24" alt=""></td><td align="left" valign="middle"  width="250"><div class="networkBar">&nbsp;&nbsp;<A href="http://www.telefragged.com">TeleFragged</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.telefragged.com/network">Network</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://www.3ddownloads.com">Downloads</a>&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;</div></td><td align="right" valign="middle" width="610"><div class="networkBar3"><iframe width=610 height=18 marginwidth=0 marginheight=0 frameborder=0 scrolling=no src="http://www.ugo.com/syndicatedContent/todayOnUGO/680x18_IframeContent.asp?channel=games&site=gamebanshee&bgcolor=000000&fontcolor=ffffff"></iframe></div></td></tr></table>
 			<table bgcolor="000000" width="900" border="0" bordercolor="FFFFFF" cellpadding="0" cellspacing="0">
 				<tr>
-					<td colspan="5"><img src="images/http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/images/mh_top.jpg" width="900" height="88" /></td>
+					<td colspan="5"><img src="http://assets.aq2world.com/archive/websites/www.gamedesign.net/themes/rusted/images/mh_top.jpg" width="900" height="88" /></td>
 				</tr>
 				<tr>
 					<td valign="top" width="7"><img src="images/mh_lowerbg1.jpg" width="7" height="150" /></td><td valign="top" width="150"><!-- Left Sidebar --><table border="0" cellpadding="0" cellspacing="0">
