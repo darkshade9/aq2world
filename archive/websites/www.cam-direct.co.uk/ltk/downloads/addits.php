@@ -180,7 +180,7 @@ A:hover
                         src="http://www.cam-direct.co.uk/ltk/images/lb.gif" width="21" height="16"></td>
                       <td width="560" bgcolor="#404040" height="215">
 					  <font color="#CCCCCC">You can find other models/files 
-                          that can be used at the <a href="http://guild.telefragged.com/" target="_blank">actors 
+                          that can be used at the <a href="https://assets.aq2world.com/archive/websites/guild.action-web.net" target="_blank">actors 
                           guild</a></font> <font color="#CCCCCC">although this 
                           site hasn't been updated in a long time. If you wish 
                           to submit models/additionals, do it through the <a href="http://www.cam-direct.co.uk/forums/index.php?act=SF&f=19" target="_blank">retexturing 
