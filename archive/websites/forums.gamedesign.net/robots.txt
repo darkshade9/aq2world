@@ -1,0 +1,916 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+AtomicGamer</title>
+<meta http-equiv="refresh" content="3700; URL=http://www.atomicgamer.com" />
+<meta name="description" content="AtomicGamer has the latest news, feeds, and information regarding the upcoming and released games. Check us out for the newest gaming reviews, previews, screenshots, and so much more." />
+<meta name="keywords" content="rss, feeds, headlines, games, gaming, fun, computer, pc, xbox, ps2, ps3, xbox 360, gamecube, revolution, sony, nintendo, microsoft, information" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="StyleSheet" href="/layouts/AtomicGamer_Grunge/includes/root.css" title="sheet" type="text/css" media="screen" />
+<script language="JavaScript" src="/js/customize.js" type="text/javascript"></script>
+<script language="JavaScript" src="/js/browse.js" type="text/javascript"></script>
+<script language="JavaScript" src="/js/features.js" type="text/javascript"></script>
+<script language="JavaScript" src="/js/popup.js" type="text/javascript"></script>
+<script language="JavaScript" src="/js/management.js" type="text/javascript"></script>
+<script language="JavaScript" src="/js/misc.js" type="text/javascript"></script>
+</head>
+
+<body>
+<script language="Javascript" src="/hostPageScript.js"></script>
+
+<div id="wrapper">
+
+<ul id="topNavigation">
+	<li><a href="http://www.atomicgamer.com/">AtomicGamer</a></li>
+	<li><a href="http://www.atomicgamer.com/network.php">Network</a></li>
+</ul>
+<map name="logoMap">
+<area href="http://www.atomicgamer.com/" alt="AtomicGamer" shape="rect" coords="10,30 570,80" />
+<area href="http://www.ugo.com/" alt="UGO" shape="circle" coords="920,53 40" />
+</map>
+
+<div id="header">
+	<img src="/layouts/AtomicGamer_Grunge/images/logo.jpg" style=" width: 987px; height: 106px;" alt="AtomicGamer" title="AtomicGamer" border="0"  usemap="#logoMap" />	
+	<div id="search">
+		<form method="get" action="/search.php">
+			<input type="hidden" name="searchProcess" value="1" />
+			<input type="text" id="searchText" name="search" value="Search" size="14" maxlength="50" style="width: 100px; margin-right: 3px; color: #BBBBBB;" 
+				onfocus="if (this.value == 'Search') { document.getElementById('searchTypeSelect').style.color='#000000'; this.value = ''; this.style.color = '#000000' }"
+				onblur="if (this.value == '') { document.getElementById('searchTypeSelect').style.color='#BBBBBB'; this.value = 'Search'; this.style.color = '#BBBBBB' }" /> 
+			<select id="searchTypeSelect" name="searchType" style="color: #BBBBBB;"
+				onfocus="this.style.color = '#000000';">
+			<option>Any Type</option>
+			<option>Headlines</option>
+<option>Games</option>
+<option>Modifications</option>
+<option>Companies</option>
+<option>Articles</option>
+<option>Files</option>
+			</select>		
+			<input type="image" src="/layouts/AtomicGamer_Grunge/images/go.png" value="Go Search" />
+		</form>
+	</div>
+</div>
+
+
+<div id="leftColumn">
+
+	<ul id="leftNavigation">
+		<li>
+			<img src="/layouts/AtomicGamer_Grunge/images/newsAndArticlesLeftColumn.gif" style=" width: 160px; height: 25px;" alt="News and Articles" title="News and Articles" border="0"   />			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contests.php">Contests</a></li>
+				<li><a href="/uploads.php">Uploads</a></li>
+			
+				<li><a href="/articles.php?type=1">Reviews</a></li>
+<li><a href="/articles.php?type=2">Previews</a></li>
+<li><a href="/galleries.php">Screenshots</a></li>
+<li><a href="/articles.php?type=4">Interviews</a></li>
+<li><a href="/articles.php?type=5">Articles</a></li>
+			</ul>
+			<br/>
+		</li>
+		
+		<li>
+	<img src="/layouts/AtomicGamer_Grunge/images/gamesLeftColumn.gif" style=" width: 160px; height: 25px;" alt="Games" title="Games" border="0"   />	<ul id="leftNavigationGames">
+		
+		<a href="javascript:void(0)" onclick="uncheckAll(event);"><img src="/layouts/AtomicGamer_Grunge/images/close.png" style=" width: 20px; height: 16px;" alt="Uncheck All" title="Uncheck All" border="0" class="uncheckAll"  /></a>
+		
+		<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">Platforms</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-17" /><span>Arcade</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-18" /><span>Atari 2600</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-24" /><span>Blu-Ray</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-26" /><span>DOS</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-9" /><span>Dreamcast</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-21" /><span>Gameboy</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-11" /><span>Gameboy Advance</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-14" /><span>Gameboy Color</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-6" /><span>GameCube</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-25" /><span>HDDVD</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-4" /><span>Linux</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-3" /><span>Mac</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-16" /><span>Mobile</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-12" /><span>N-Gage</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-15" /><span>Nintendo 64</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-13" /><span>Nintendo DS</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-19" /><span>Nintendo Entertainment System</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-23" /><span>Nintendo Wii</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-10" /><span>Playstation</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-5" /><span>Playstation 2</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-22" /><span>Playstation 3</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-7" /><span>Playstation Portable</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-27" /><span>Saturn</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-28" /><span>Sega Genesis</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-20" /><span>Super Nintendo</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-29" /><span>TurboGrafx16</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-1" /><span>Windows</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-2" /><span>Xbox</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Platforms-8" /><span>Xbox 360</span></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">Genres</a>
+<ul class="child">
+<li>
+<input type="checkbox" onclick="updateBrowseItems();" id="Genres-1" /><a href="javascript:void(0);" onclick="showHideChild(event);">Action</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-8" /><span>Action Adventure</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-13" /><span>Arcade</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-14" /><span>Driving</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-9" /><span>Fighting</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-12" /><span>Hack and Slash</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-7" /><span>Platform</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-10" /><span>Shooter</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-11" /><span>Stealth</span></li>
+</ul>
+</li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-5" /><span>Adventure</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-41" /><span>Puzzle</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-4" /><span>RPG</span></li>
+<li>
+<input type="checkbox" onclick="updateBrowseItems();" id="Genres-3" /><a href="javascript:void(0);" onclick="showHideChild(event);">Simulation</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-18" /><span>Business</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-23" /><span>City-building</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-21" /><span>Flight</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-40" /><span>Music</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-24" /><span>Naval</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-19" /><span>Park-building</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-20" /><span>People</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-22" /><span>Space</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-25" /><span>Train Building</span></li>
+</ul>
+</li>
+<li>
+<input type="checkbox" onclick="updateBrowseItems();" id="Genres-6" /><a href="javascript:void(0);" onclick="showHideChild(event);">Sports</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-27" /><span>Baseball</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-31" /><span>Basketball</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-48" /><span>Billiards</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-50" /><span>Bowling</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-32" /><span>Boxing</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-30" /><span>Cricket</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-46" /><span>Fishing</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-28" /><span>Football</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-37" /><span>Futuristic Sport</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-39" /><span>Golf</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-26" /><span>Hockey</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-33" /><span>Racing</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-38" /><span>Rugby</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-47" /><span>Skateboarding</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-34" /><span>Skiing</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-45" /><span>Snowboarding</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-29" /><span>Soccer</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-36" /><span>Surfing</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-35" /><span>Tennis</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-43" /><span>Volleyball</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-49" /><span>Wrestling</span></li>
+</ul>
+</li>
+<li>
+<input type="checkbox" onclick="updateBrowseItems();" id="Genres-2" /><a href="javascript:void(0);" onclick="showHideChild(event);">Strategy</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-44" /><span>Card Based</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-15" /><span>Real-time</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-17" /><span>Tactical</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-16" /><span>Turn-based</span></li>
+</ul>
+</li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Genres-51" /><span>Trivia</span></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">Styles</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-15" /><span>Anime</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-10" /><span>Cartoon</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-5" /><span>Comedy</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-11" /><span>Comic</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-2" /><span>Fantasy</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-13" /><span>Film Noir</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-3" /><span>Horror</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-12" /><span>Mobster</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-6" /><span>Mystery</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-9" /><span>Post-Apocalypse</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-4" /><span>Sci-Fi</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-14" /><span>Spy</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-1" /><span>War</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Styles-7" /><span>Western</span></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">Eras</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-14" /><span>1920s</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-8" /><span>1930s</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-17" /><span>1940s</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-13" /><span>1960s</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-10" /><span>Age-Spanning</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-6" /><span>Ancient</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-15" /><span>Ancient Asia</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-11" /><span>Cold War</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-2" /><span>Future</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-5" /><span>Historical</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-12" /><span>Korean War</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-4" /><span>Medieval</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-1" /><span>Modern</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-9" /><span>Old West</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-7" /><span>Vietnam War</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-16" /><span>World War I</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Eras-3" /><span>World War II</span></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">Perspectives</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Perspectives-2" /><span>First-Person</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Perspectives-6" /><span>Free Camera</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Perspectives-3" /><span>Isometric</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Perspectives-4" /><span>Side-Scroller</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Perspectives-1" /><span>Third-Person</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Perspectives-5" /><span>Top-Down</span></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">Players</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-5" /><span>Hot Seat</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-2" /><span>Internet</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-4" /><span>LAN</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-7" /><span>Local Wi-Fi</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-3" /><span>Massively Multiplayer</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-6" /><span>Same Console Multiplayer</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="Players-1" /><span>Singleplayer</span></li>
+</ul>
+</li>
+<li>
+<a href="javascript:void(0);" onclick="showHideChild(event);">A to Z</a>
+<ul class="child">
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-#" /><span>#</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-A" /><span>A</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-B" /><span>B</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-C" /><span>C</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-D" /><span>D</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-E" /><span>E</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-F" /><span>F</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-G" /><span>G</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-H" /><span>H</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-I" /><span>I</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-J" /><span>J</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-K" /><span>K</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-L" /><span>L</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-M" /><span>M</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-N" /><span>N</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-O" /><span>O</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-P" /><span>P</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-Q" /><span>Q</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-R" /><span>R</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-S" /><span>S</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-T" /><span>T</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-U" /><span>U</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-V" /><span>V</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-W" /><span>W</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-X" /><span>X</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-Y" /><span>Y</span></li>
+<li><input type="checkbox" onclick="updateBrowseItems();" id="A to Z-Z" /><span>Z</span></li>
+</ul>
+</li>
+		
+	</ul>
+	<br/>
+</li>
+
+		
+		<li>
+	<img src="/layouts/AtomicGamer_Grunge/images/latestFilesLeftColumn.gif" style=" width: 160px; height: 25px;" alt="Latest Files" title="Latest Files" border="0"   />	<ul>
+	<li><a href="/fileTypes.php?id=3">Full Versions</a></li>
+<li><a href="/fileTypes.php?id=2">Demos</a></li>
+<li><a href="/fileTypes.php?id=4">Patches</a></li>
+<li><a href="/fileTypes.php?id=10">Official Add-ons</a></li>
+<li><a href="/fileTypes.php?id=1">Movies</a></li>
+	</ul>
+	<br/>
+</li>
+
+		<li>
+			<img src="/layouts/AtomicGamer_Grunge/images/contactingLeftColumn.gif" style=" width: 160px; height: 25px;" alt="Contacting" title="Contacting" border="0"   />			<ul>
+				<li><a href="/contact.php">Contact Us</a></li>
+				<li><a href="/hosting.php">Hosting</a></li>
+				<li><a href="/network.php">Network</a></li>				
+			</ul>
+			<br/>
+			
+			<ul>
+				<li>irc.atomicgamer.com</li>
+				<li>#atomicgamer</li>
+			</ul>
+			<br/>			
+		</li>
+	</ul>
+	<br/>
+		
+	 <div id="bannerSideLeft"><iframe name="bannerSideLeft" border="0" width="120" height="600" marginwidth="0" marginheight="0" frameborder="0" bordercolor="#000000" scrolling="no" src="http://banner.atomicgamer.com/atomicgamer/default600.html"></iframe></div> 	<br/>
+	
+	<div id="affiliates">
+</div><br/>
+	
+</div>
+
+ 
+<div id="features" style="width: 814px;">
+<img src="/layouts/AtomicGamer_Grunge/images/features814Header.gif" style=" width: 814px; height: 25px;" alt="Features" title="Features" border="0" class="featuresHeader"  /> <div id="bannerFeatures"><iframe name="bannerFeatures" border="0" width="300" height="250" marginwidth="0" marginheight="0" frameborder="0" bordercolor="#000000" scrolling="no" src="http://banner.atomicgamer.com/atomicgamer/default300.html"></iframe></div> <div id="featuresWrap" style="visibility: hidden" onmouseover="mouseOverFeatures();" onmouseout="mouseOutFeatures();">
+<div id="feature--3" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=562"><img width="160" width="84" src="/screenshots/game-1951/47434-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=562">Super Smash Bros. Brawl Guide Vol 2</a></h2>
+<p>Now that the <a href="http://www.atomicgamer.com/article.php?id=552">basics</a> are out of the way, it's time to get to the more advanced levels of playing Super Smash Bros. Brawl.  <a href="http://www.atomicgamer.com/article.php?id=562">Dive in!</a></p>
+</div>
+<div id="feature--2" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=561"><img width="160" width="84" src="/screenshots/game-2639/52679-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=561">The World Ends With You Review</a></h2>
+<p>Square Enix's latest title comes out of nowhere, but will this ultra-modern action RPG give you the fix you need or just have you wishing they did another <i>Final Fantasy</i>?</p>
+</div>
+<div id="feature--1" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=560"><img width="160" width="84" src="/screenshots/game-2742/45960-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=560">Mario Kart Wii Review</a></h2>
+<p>It's a year or two into Nintendo's latest console, so you know what that means: new <i>Mario Kart</i>.  Can the same formula work yet again for the big N?</p>
+</div>
+<div id="feature-0" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=565"><img width="160" width="84" src="/screenshots/game-897/49571-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=565">GTAIV PS3 Review</a></h2>
+<p>Matt gets a word in edgewise with his second opinion of <i>Grand Theft Auto IV</i> on the PS3.  The twist: he didn't like <i>Vice City</i> or <i>San Andreas</i>!  Let's see where this leads...</p>
+</div>
+<div id="feature-1" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=564"><img width="160" width="84" src="/screenshots/game-897/51578-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=564">Grand Theft Auto IV Tips</a></h2>
+<p>We've got lots of hints and tricks to keep you blasting fools and getting away from the cops in GTAIV.</p>
+</div>
+<div id="feature-2" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=563"><img width="160" width="84" src="/screenshots/game-2419/52957-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=563">X-Blades Preview</a></h2>
+<p>Few are likely to have heard of the action game <i>X-Blades</i> by the time it's released, but it's got enough interesting stuff in it that it should warrant your attention.  Check out our preview.</p>
+</div>
+<div id="feature-3" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=562"><img width="160" width="84" src="/screenshots/game-1951/47434-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=562">Super Smash Bros. Brawl Guide Vol 2</a></h2>
+<p>Now that the <a href="http://www.atomicgamer.com/article.php?id=552">basics</a> are out of the way, it's time to get to the more advanced levels of playing Super Smash Bros. Brawl.  <a href="http://www.atomicgamer.com/article.php?id=562">Dive in!</a></p>
+</div>
+<div id="feature-4" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=561"><img width="160" width="84" src="/screenshots/game-2639/52679-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=561">The World Ends With You Review</a></h2>
+<p>Square Enix's latest title comes out of nowhere, but will this ultra-modern action RPG give you the fix you need or just have you wishing they did another <i>Final Fantasy</i>?</p>
+</div>
+<div id="feature-5" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=560"><img width="160" width="84" src="/screenshots/game-2742/45960-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=560">Mario Kart Wii Review</a></h2>
+<p>It's a year or two into Nintendo's latest console, so you know what that means: new <i>Mario Kart</i>.  Can the same formula work yet again for the big N?</p>
+</div>
+<div id="feature-6" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=565"><img width="160" width="84" src="/screenshots/game-897/49571-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=565">GTAIV PS3 Review</a></h2>
+<p>Matt gets a word in edgewise with his second opinion of <i>Grand Theft Auto IV</i> on the PS3.  The twist: he didn't like <i>Vice City</i> or <i>San Andreas</i>!  Let's see where this leads...</p>
+</div>
+<div id="feature-7" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=564"><img width="160" width="84" src="/screenshots/game-897/51578-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=564">Grand Theft Auto IV Tips</a></h2>
+<p>We've got lots of hints and tricks to keep you blasting fools and getting away from the cops in GTAIV.</p>
+</div>
+<div id="feature-8" class="feature" style="width: 485px; ">
+<a href="http://www.atomicgamer.com/article.php?id=563"><img width="160" width="84" src="/screenshots/game-2419/52957-160-84.jpg" border="0" /></a>
+<h2><a href="http://www.atomicgamer.com/article.php?id=563">X-Blades Preview</a></h2>
+<p>Few are likely to have heard of the action game <i>X-Blades</i> by the time it's released, but it's got enough interesting stuff in it that it should warrant your attention.  Check out our preview.</p>
+</div>
+</div>
+<div id="featureButtons" style="left: 453px; width: 40px;">
+<a href="javascript:void(0)" onclick="startScrollFeatureUp();"><img src="/layouts/AtomicGamer_Grunge/images/up.png" style=" width: 16px; height: 13px;" alt="Previous Feature" title="Previous Feature" border="0"   /></a>
+<a href="javascript:void(0)" onclick="startScrollFeatureDown();"><img src="/layouts/AtomicGamer_Grunge/images/down.png" style=" width: 16px; height: 13px;" alt="Next Feature" title="Next Feature" border="0"   /></a>
+</div>
+</div>
+<div id="rightColumn">
+	
+	<div id="login">
+	<img src="/layouts/AtomicGamer_Grunge/images/loginRightColumn.gif" style=" width: 212px; height: 25px;" alt="Login" title="Login" border="0" class="rightColumnHeader"  />			<form method="post" action="http://www.atomicgamer.com/">
+			<input type="hidden" name="login" value="1" />
+			<table width="202" border="0" cellpadding="0" cellspacing="0" style="width: 202px; margin: 0px 5px 5px;">
+				<tr>
+					<td width="80"><strong>Username:</strong></td>
+					<td width="122"><input type="text" name="username" size="16" style="width: 120px;" /></td>
+				</tr>
+				<tr>
+					<td><strong>Password:</strong></td>
+					<td><input type="password" name="password" size="16" style="width: 120px;" /></td>
+				</tr>
+			</table>
+			<table width="202" border="0" cellpadding="0" cellspacing="0" style="width: 202px; margin: 0px 5px;">
+				<tr>
+				  <td width="20"><input type="checkbox" name="remember" value="1" /></td>
+					<td>Remember Login?</td>
+					<td width="22"><input type="image" src="/layouts/AtomicGamer_Grunge/images/go.png" value="Go Login" />
+</td>
+				</tr>
+			</table>
+			</form>
+
+			<ul>
+			<li><a href="/register.php">Register</a></li>
+			<li>Lost <a href="/lostUsername.php">Username</a> / <a href="/lostPassword.php">Password</a></li>
+			</ul>
+		
+			
+	</div>
+		
+	<div>
+	<img src="/layouts/AtomicGamer_Grunge/images/hottestFilesRightColumn.gif" style=" width: 212px; height: 25px;" alt="Hottest Files" title="Hottest Files" border="0" class="rightColumnHeader"  />		<ul class="fileList">
+		<li><a href="/file.php?id=64626">Flyff - Fly For Fun / 9th...</a></li>
+<li><a href="/file.php?id=50">Archlord Client</a></li>
+<li><a href="/file.php?id=65145">Bid for Power Final v2 Fu...</a></li>
+<li><a href="/file.php?id=65428">World of Warcraft 2.3.0 F...</a></li>
+<li><a href="/file.php?id=28343">Wolfenstein: Enemy Territ...</a></li>
+<li><a href="/file.php?id=64978">Painkiller: Overdose Demo</a></li>
+<li><a href="/file.php?id=67198">Flyff: Fly for Fun / 11th...</a></li>
+<li><a href="/file.php?id=64980">unofficialFO2patch.exe</a></li>
+<li><a href="/file.php?id=28752">f2patch.exe</a></li>
+<li><a href="/file.php?id=62477">OpenArena v0.7.0</a></li>
+<li><a href="/file.php?id=64755">Age of Empires III: The A...</a></li>
+<li><a href="/file.php?id=63046">OpenArena 0.7.1 Patch</a></li>
+<li><a href="/file.php?id=61672">Demo.rar</a></li>
+<li><a href="/file.php?id=67719">Rappelz Epic 4 Client (US...</a></li>
+<li><a href="/file.php?id=63257">World in Conflict Demo</a></li>
+		</ul>
+	</div>
+	
+	<div>
+	<img src="/layouts/AtomicGamer_Grunge/images/newestFilesRightColumn.gif" style=" width: 212px; height: 25px;" alt="Newest Files" title="Newest Files" border="0" class="rightColumnHeader"  />		<ul class="fileList">
+		<li><a href="/file.php?id=69232">Gears of War 2 Gameplay T...</a></li>
+<li><a href="/file.php?id=69229">SpongeBob SquarePants: Dr...</a></li>
+<li><a href="/file.php?id=69230">SpongeBob SquarePants: Dr...</a></li>
+<li><a href="/file.php?id=69231">SpongeBob SquarePants: Dr...</a></li>
+<li><a href="/file.php?id=69228">Spectraball Gameplay Trai...</a></li>
+<li><a href="/file.php?id=69227">Luminary: Rise of the Goo...</a></li>
+<li><a href="/file.php?id=69226">Battlefield: Bad Company...</a></li>
+<li><a href="/file.php?id=69225">Burnout Paradise PC Trail...</a></li>
+<li><a href="/file.php?id=69223">Top Spin 3 Trailer (MP4,H...</a></li>
+<li><a href="/file.php?id=69224">Top Spin 3 Trailer (WMV,H...</a></li>
+<li><a href="/file.php?id=69222">Race Driver: GRID Demo</a></li>
+<li><a href="/file.php?id=69220">Age of Conan: Hyborian Ad...</a></li>
+<li><a href="/file.php?id=69221">Age of Conan: Hyborian Ad...</a></li>
+<li><a href="/file.php?id=69216">World of Warcraft: Wrath...</a></li>
+<li><a href="/file.php?id=69217">World of Warcraft: Wrath...</a></li>
+		</ul>
+	</div>	
+	
+	<div>
+	<img src="/layouts/AtomicGamer_Grunge/images/hostedFilesRightColumn.gif" style=" width: 212px; height: 25px;" alt="Hosted Files" title="Hosted Files" border="0" class="rightColumnHeader"  />		<ul class="fileList">
+			<li><a href="/directory.php?id=1259">BeyondUnreal</a></li>
+			<li><a href="/directory.php?id=2599">Civilization Fanatics' Center</a></li>
+			<li><a href="/directory.php?id=1533">Doomworld</a></li>
+			<li><a href="/directory.php?id=1770">Gamedesign.net</a></li>
+			<li><a href="/directory.php?id=1940">Liberated Games</a></li>
+			<li><a href="/directory.php?id=1941">LinuxGames</a></li>
+			<li><a href="/directory.php?id=2075">No Mutants Allowed</a></li>
+			<li><a href="/directory.php?id=2704">Totalwar.org</a></li>
+			<li><a href="/directory.php?id=3705">Zelda Dungeon</a></li>
+		</ul>
+	</div>	
+	
+	<div>
+		<img src="/layouts/AtomicGamer_Grunge/images/3ddRightColumn.gif" style=" width: 212px; height: 25px;" alt="3D Downloads?" title="3D Downloads?" border="0" class="rightColumnHeader"  />		<div style="border-style: none; padding: 5px;">
+			Expecting to see a file page somewhere on the gaming file site 3D Downloads?<br/><br/>
+			In our efforts to improve the quality of our sites, we have merged everything from 3D Downloads onto our gaming site, AtomicGamer. Not to worry - all of the content is here, organized better, and also now held together by an improved search engine.<br/><br/>
+			We have redirected you to a location that should be pretty close to what you need. If you bear with us, we think you'll find AtomicGamer's file section to be even better than what we had on 3D Downloads. Thanks, and enjoy!
+		</div>
+	</div>
+</div>
+
+<div id="content">
+	<img src="/layouts/AtomicGamer_Grunge/images/headers/CH_Latest_Feeds.png" style=" width: 595px; height: 25px;" alt="Latest Feeds" title="Latest Feeds" border="0" class="headerImage"  />	
+<div class="information">
+	Last updated at 05/10/08 at 12:07 pm CDT<br/>
+	<a href="/customizeFeeds.php">Manage Feeds</a>
+</div>
+<div class="clearing"></div>
+
+<div class="column columnLeft">
+<div dragType="NH" dragID="2" dragLength="10" dragColumn="0" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" >5</option>
+<option value="10" selected="selected">10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.bluesnews.com/">Blue's News</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240440" title="EA's $1 Billion in Take-Two Cash">EA's $1 Billion in Take-Two Cash</a></li>
+<li >New! - <a href="/newsFeed.php?id=240439" title="Everyday Shooter &amp;amp; Portal Demo">Everyday Shooter &amp; Portal...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240438" title="Burnout Paradise Movie">Burnout Paradise Movie</a></li>
+<li >New! - <a href="/newsFeed.php?id=240437" title="Fury League">Fury League</a></li>
+<li >New! - <a href="/newsFeed.php?id=240436" title="Alone in the Dark Website">Alone in the Dark Website</a></li>
+<li >New! - <a href="/newsFeed.php?id=240435" title="Evening Q&amp;amp;As">Evening Q&amp;As</a></li>
+<li >New! - <a href="/newsFeed.php?id=240434" title="Op Ed">Op Ed</a></li>
+<li >New! - <a href="/newsFeed.php?id=240433" title="Evening Previews">Evening Previews</a></li>
+<li >New! - <a href="/newsFeed.php?id=240432" title="Evening Screenshots">Evening Screenshots</a></li>
+<li >New! - <a href="/newsFeed.php?id=240431" title="Work at Pi Studios">Work at Pi Studios</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240430" title="Evening Consolidation">Evening Consolidation</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240429" title="Evening Tech Bits">Evening Tech Bits</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240428" title="Mobilization">Mobilization</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240427" title="Metaverse">Metaverse</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240426" title="Safety Dance">Safety Dance</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240154" title="Mass Effect/Spore DRM Changes">Mass Effect/Spore DRM Changes</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240153" title="Race Driver GRID Demo">Race Driver GRID Demo</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239938" title="Call of Duty 5 Revealed">Call of Duty 5 Revealed</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239937" title="Bond is Back - Quantum of Solace Revealed">Bond is Back - Quantum of Sola...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239936" title="PC Burnout Paradise">PC Burnout Paradise</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="79" dragLength="5" dragColumn="0" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.kotaku.com">Kotaku</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240589" title="MK vs DC: Heeeeere's Scorpion [Mortal Kombat Vs DC Universe]">MK vs DC: Heeeeere's Scorpion...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240588" title="Two More Gears 2 Videos Out [Gears Of War 2]">Two More Gears 2 Videos Out [G...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240584" title="Kotaku Originals: The Cool Sub [Orginal]">Kotaku Originals: The Cool Sub...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240523" title="First Gears of War 2 Gameplay Footage [Clips]">First Gears of War 2 Gameplay...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240522" title="Capcom Remind Us How Awesome SFII GI Joe Figures Were [Clips]">Capcom Remind Us How Awesome S...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240521" title="What Game Makes You Pull Your Hair Out? [Tell Us Dammit]">What Game Makes You Pull Your...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240510" title="Got Vista Premium? You Can Stream Netflix To Your 360 [NetFlix]">Got Vista Premium? You Can Str...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240509" title="A Week In Comments [Multi-tap]">A Week In Comments [Multi-tap]</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240508" title="Sagat's Big Hands Are All The Better To [Something] You With [Street Fighter]">Sagat's Big Hands Are All The...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240507" title="Sony So Aren't Competing With Microsoft Or Nintendo [Kaz Hirai]">Sony So Aren't Competing With...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240498" title="Sponsor Thanks [Sponsors]">Sponsor Thanks [Sponsors]</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240497" title="Can't We All Just Get Along? [Ask The Community]">Can't We All Just Get Along? [...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240484" title="Niko Bellic's San An Flight Priced By Airways [Gta Iv]">Niko Bellic's San An Flight Pr...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240483" title="Burnout Paradise PC In Ultra Widescreen [Double Wide]">Burnout Paradise PC In Ultra W...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240482" title="Yup, Skate It Is Coming To Wii, Nintendo DS [Ea]">Yup, Skate It Is Coming To Wii...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240481" title="My PlayStation 2.5 [Hardware Failure]">My PlayStation 2.5 [Hardware F...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240480" title="The Horror II: Revenge of Tetris Shoes! [Shoes]">The Horror II: Revenge of Tetr...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240421" title="Next Week On Rock Band: Classic Cred [Harmonix]">Next Week On Rock Band: Classi...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240420" title="Head's up kids! Today is your last day to ... [Eye Of Judgment]">Head's up kids! Today is your...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240419" title="This Coffee Table Thinks It's An NES Controller [Retro]">This Coffee Table Thinks It's...</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="14" dragLength="5" dragColumn="0" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://games.slashdot.org/">Games.Slashdot</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240551" title="BioShock Movie To Be Made By Universal">BioShock Movie To Be Made By U...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240493" title="EA Loosens Spore, Mass Effect DRM">EA Loosens Spore, Mass Effect DRM</a></li>
+<li >New! - <a href="/newsFeed.php?id=239944" title="London Lawyers Demand &amp;pound;600 For One Game">London Lawyers Demand &pound;6...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239619" title="Introducing Classical Guitar Hero">Introducing Classical Guitar Hero</a></li>
+<li >New! - <a href="/newsFeed.php?id=239560" title="Folding@Home 2.0 - An Online Protein Folding Game">Folding@Home 2.0 - An Online P...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239428" title="Theorizing a Big Apple Push Into Gaming">Theorizing a Big Apple Push In...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239150" title="id Software Announces Doom 4">id Software Announces Doom 4</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238902" title="NES Nudity Galore - The JUSTIN BAILEY Conspiracy">NES Nudity Galore - The JUSTIN...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238847" title="Gaming Gear Showdown, Simplicity vs. Hype">Gaming Gear Showdown, Simplici...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238630" title="Spore, Mass Effect DRM Phone Home For Single-Player Gaming">Spore, Mass Effect DRM Phone H...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238043" title="Prototyping 50 Games in One Semester">Prototyping 50 Games in One Se...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237276" title="Jack Thompson's Letter To Take-Two Exec's Mother">Jack Thompson's Letter To Take...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237197" title="Xbox 360 Finally Getting Blu-ray">Xbox 360 Finally Getting Blu-ray</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235953" title="MADD Targets GTA IV Over Drunk Driving Scene">MADD Targets GTA IV Over Drunk...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235302" title="Spore Editor Available June 17th">Spore Editor Available June 17th</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235301" title="Phantom Lapboard May Actually Ship">Phantom Lapboard May Actually...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235300" title="Five Days Locked in a Room With GTA IV">Five Days Locked in a Room Wit...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235299" title="The Last Pinball Machine Factory">The Last Pinball Machine Factory</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235298" title="PC Gaming Suggestions for Console-like Fun?">PC Gaming Suggestions for Cons...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235297" title="US Spies Use Custom Video Games for Training">US Spies Use Custom Video Game...</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="7" dragLength="5" dragColumn="0" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.insidemacgames.com/">Inside Mac Games</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240085" title="Custer's Fabled Return">Custer's Fabled Return</a></li>
+<li >New! - <a href="/newsFeed.php?id=239902" title="Aspyr's Game Agent To Gain Online Store Feature">Aspyr's Game Agent To Gain Onl...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239901" title="DOOM 4 Announced">DOOM 4 Announced</a></li>
+<li >New! - <a href="/newsFeed.php?id=239900" title="The Scruffs Released">The Scruffs Released</a></li>
+<li >New! - <a href="/newsFeed.php?id=239899" title="Geneforge 5 May Development Update">Geneforge 5 May Development Up...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239898" title="Celebrating Wolfenstein 3D's Sweet 16">Celebrating Wolfenstein 3D's S...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239897" title="Droid Assault Comes To Macs">Droid Assault Comes To Macs</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239179" title="IMG Reviews Biofilm">IMG Reviews Biofilm</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239148" title="HGSE: Sequel To Hollow Ground Now Available">HGSE: Sequel To Hollow Ground...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239147" title="iPod Yahtzee Reviewed">iPod Yahtzee Reviewed</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239146" title="StarCraft II: Q&amp;A Round 37">StarCraft II: Q&A Round 37</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239145" title="The Decline Of Game Difficulty">The Decline Of Game Difficulty</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238565" title="Supercow Available For Mac">Supercow Available For Mac</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238564" title="Uplink Goes Universal">Uplink Goes Universal</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238563" title="Return To Dark Castle Reviewed">Return To Dark Castle Reviewed</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238562" title="A History Of Game Physics">A History Of Game Physics</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237944" title="IMG Reviews Build-a-Lot">IMG Reviews Build-a-Lot</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237909" title="Wild West Online: Gunfighter Open Beta Available">Wild West Online: Gunfighter O...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237908" title="iPod Game Reviews Page Unveiled">iPod Game Reviews Page Unveiled</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237907" title="StarCraft II Battle Preview">StarCraft II Battle Preview</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="76" dragLength="5" dragColumn="0" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://wowvault.ign.com">World of Warcraft Vault</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=239947" title="Wrath of the Lich King Back in the Presses">Wrath of the Lich King Back in...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239946" title="Wrath of the Lich King Hands On">Wrath of the Lich King Hands On</a></li>
+<li >New! - <a href="/newsFeed.php?id=239199" title="New Top Ten!">New Top Ten!</a></li>
+<li >New! - <a href="/newsFeed.php?id=239183" title="New Wallpaper!">New Wallpaper!</a></li>
+<li >New! - <a href="/newsFeed.php?id=238860" title="2008 WoW Arena Tournament Phase 3 Begins!">2008 WoW Arena Tournament Phas...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238859" title="Frostmourne Fan Art Contest">Frostmourne Fan Art Contest</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238220" title="Blizzard Announces New Blizzard Store!">Blizzard Announces New Blizzar...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=237440" title="New Gold Guide">New Gold Guide</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=236485" title="May 2008 Calendar">May 2008 Calendar</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=236484" title="Epic J!NX Sale">Epic J!NX Sale</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=236483" title="Children's Week">Children's Week</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=236100" title="May 1 European Holiday – Limited Support">May 1 European Holiday – Limit...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235223" title="New Top Ten!">New Top Ten!</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235180" title="Topic of the Week - WoW Studies">Topic of the Week - WoW Studies</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=235123" title="Warning - High Vaultage">Warning - High Vaultage</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=234982" title="It's a Kind of Magic!">It's a Kind of Magic!</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=234653" title="New TCG Wallpaper: Graccus!">New TCG Wallpaper: Graccus!</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=234241" title="WoW Vault Exclusive Interview">WoW Vault Exclusive Interview</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=233943" title="Why Season 4 Battleground Rewards Require Arena Rating">Why Season 4 Battleground Rewa...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=233942" title="Hunter Pet Growl Change">Hunter Pet Growl Change</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="11" dragLength="5" dragColumn="0" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.evilavatar.com/">Evil Avatar</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240553" title="Gears of War 2 Gameplay Trailer">Gears of War 2 Gameplay Trailer</a></li>
+<li >New! - <a href="/newsFeed.php?id=240528" title="EA Secures $1 Billion Loan to Finance Take-Two Buy Out">EA Secures $1 Billion Loan to...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240262" title="Mass Effect / Spore 10-day Check Removed">Mass Effect / Spore 10-day Che...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240242" title="First Gears of War 2 Footage Tonight (10:30 PST)">First Gears of War 2 Footage T...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239963" title="Burnout Paradise Goes All PC">Burnout Paradise Goes All PC</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239962" title="Money Influenced Latest Assassin's Creed PC Patch?">Money Influenced Latest Assass...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239961" title="Games do not make killers!">Games do not make killers!</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239943" title="Shocker: No Tony Hawk This Year">Shocker: No Tony Hawk This Year</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239942" title="Weekend Gamer:  What are you playing?">Weekend Gamer:  What are you p...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239903" title="Bioshock Movie Coming from Pirates Director">Bioshock Movie Coming from Pir...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239884" title="360 GPU Going 65nm">360 GPU Going 65nm</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239883" title="Wrath of the Lich King Preview">Wrath of the Lich King Preview</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239882" title="Sony’s Raw Deal: Freebies being Delayed">Sony’s Raw Deal: Freebies bein...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239858" title="Midway 'modifying fatalities' for MK vs. DC">Midway 'modifying fatalities'...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239834" title="Aliens: Colonial Marines Interview">Aliens: Colonial Marines Inter...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239825" title="Popular Opinion - Crisis Core and Patapon">Popular Opinion - Crisis Core...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239813" title="Vampire Rain: Altered Species Announced for PlayStation 3">Vampire Rain: Altered Species...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239649" title="FTC Report:  Children Have a Hard Time Purchasing 'Mature' Titles">FTC Report:  Children Have a H...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239648" title="Sony's Skype Headset for PSP Is Here">Sony's Skype Headset for PSP I...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239617" title="Everday Shooter Hits Steam">Everday Shooter Hits Steam</a></li>
+</ul>
+</div>
+<div class="dragBottom draggable">&nbsp;</div>
+</div>
+
+<div class="column columnRight">
+<div dragType="NH" dragID="3" dragLength="10" dragColumn="1" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" >5</option>
+<option value="10" selected="selected">10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.shacknews.com/">Shacknews</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240527" title="First Gears of War 2 Footage Debuts">First Gears of War 2 Footage D...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240442" title="Taking Stock: The Gibson-Goldstein Index">Taking Stock: The Gibson-Golds...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240441" title="Evening Reading">Evening Reading</a></li>
+<li >New! - <a href="/newsFeed.php?id=240292" title="Age of Conan Movie Forecasts Fun">Age of Conan Movie Forecasts Fun</a></li>
+<li >New! - <a href="/newsFeed.php?id=240260" title="Rubik's World Screens, Utterly Bizarre Details Arrive">Rubik's World Screens, Utterly...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240259" title="Atari Delisted from Nasdaq">Atari Delisted from Nasdaq</a></li>
+<li >New! - <a href="/newsFeed.php?id=240241" title="New Set of SOCOM PS3 Screens Arrive">New Set of SOCOM PS3 Screens A...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240240" title="EA Gets $1B Loan for Possible Take-Two Buyout">EA Gets $1B Loan for Possible...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240187" title="Sony: We're Competing Beyond Microsoft, Nintendo">Sony: We're Competing Beyond M...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240157" title="Electronic Arts Responds to Copy Protection Outcry, Removes 10-day SecuROM Check for the Troops">Electronic Arts Responds to Co...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240156" title="Race Driver: GRID PC Demo Released">Race Driver: GRID PC Demo Rele...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240155" title="Rock Band DLC: Clash, Blondie, Sonic Youth">Rock Band DLC: Clash, Blondie,...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240080" title="At the Drive-In Shreds into Guitar Hero">At the Drive-In Shreds into Gu...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240079" title="Blizzard Unravels More WoW Death Knight Details; Arthas Final Encounter in Last Lich King Patch">Blizzard Unravels More WoW Dea...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240018" title="2K Sports Serves Up Top Spin 3 Media">2K Sports Serves Up Top Spin 3...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240017" title="New MotorStorm 2 Footage Is 40% Complete">New MotorStorm 2 Footage Is 40...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240016" title="Lightning Strikes with Latest Killzone 2 Teaser">Lightning Strikes with Latest...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240015" title="Smiles and Goodwill in New LittleBigPlanet Trailer">Smiles and Goodwill in New Lit...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240014" title="Rumor: Wii-like X360 Remote Goes Public Tuesday">Rumor: Wii-like X360 Remote Go...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239999" title="First Gears of War 2 Footage Debuts Tonight">First Gears of War 2 Footage D...</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="84" dragLength="5" dragColumn="1" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.rockpapershotgun.com">Rock, Paper, Shotgun</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240552" title="Storm in a Teacup: Anti-Anti-Aliasing">Storm in a Teacup: Anti-Anti-A...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240536" title="Gears Of War 2 Footage">Gears Of War 2 Footage</a></li>
+<li >New! - <a href="/newsFeed.php?id=240535" title="GRID Demo: Quite Good">GRID Demo: Quite Good</a></li>
+<li >New! - <a href="/newsFeed.php?id=240230" title="EA Backs Down From 10-Day Authentication">EA Backs Down From 10-Day Auth...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239951" title="Burnout Coming Out on PC">Burnout Coming Out on PC</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239918" title="Warhammer is 25 (and a few days)">Warhammer is 25 (and a few days)</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239888" title="Look On My Works, Ye Mightyâ€¦">Look On My Works, Ye Mightyâ€¦</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239873" title="Friday Linkswap: Boing Boing Gadgets">Friday Linkswap: Boing Boing G...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239872" title="Wrath Of The Lich King Trailers">Wrath Of The Lich King Trailers</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239862" title="Bioshock: the Movie">Bioshock: the Movie</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239511" title="Everyday Shooter On Steam">Everyday Shooter On Steam</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239510" title="Sango 2 Demo Impressions">Sango 2 Demo Impressions</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239417" title="Chronotron">Chronotron</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239344" title="Lord Of The Rings: Conquest">Lord Of The Rings: Conquest</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239343" title="Riddle Me This">Riddle Me This</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239158" title="Wolf 3Dâ€™s Reached That Age">Wolf 3Dâ€™s Reached That Age</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239105" title="Future of the PC: â€œthe de facto single formatâ€">Future of the PC: â€œthe de fa...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238970" title="3D Cards: Calculus For Dummies">3D Cards: Calculus For Dummies</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238869" title="RPS Vs. Russians: The Stalin Vs. Martians Interview">RPS Vs. Russians: The Stalin V...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=238738" title="Id to Revive Little Known Franchise">Id to Revive Little Known Fran...</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="6" dragLength="5" dragColumn="1" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.eurogamer.net/">Eurogamer</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240000" title="News: Gears 2 gameplay video on Live tomorrow (Xbox 360)">News: Gears 2 gameplay video o...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239960" title="News: Burnout Paradise coming to PC (PC)">News: Burnout Paradise coming...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239959" title="News: Four games for Virtual Console (Wii)">News: Four games for Virtual C...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239958" title="News: GRID demo leads PSN update (PlayStation 3)">News: GRID demo leads PSN upda...</a></li>
+<li >New! - <a href="/newsFeed.php?id=239941" title="News: Microsoft bigwig has a right go at Sony">News: Microsoft bigwig has a r...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239910" title="News: Reeves: PSP needs more games (PlayStation Portable)">News: Reeves: PSP needs more g...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239909" title="News: GI.biz MMO Week roundup">News: GI.biz MMO Week roundup</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239908" title="News: New Mortal Kombat will have finishers">News: New Mortal Kombat will h...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239891" title="News: Mythic planning five years of WAR">News: Mythic planning five yea...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239881" title="News: Ninja Gaiden II pre-orders get treats (Xbox 360)">News: Ninja Gaiden II pre-orde...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239880" title="News: Bourne and GRID demos on PSN (PlayStation 3)">News: Bourne and GRID demos on...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239879" title="News: Rockstar offers GTA IV multiplayer tips">News: Rockstar offers GTA IV m...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239867" title="News: We are number one, says Activision">News: We are number one, says...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239866" title="News: Codemasters snags Formula 1 licence">News: Codemasters snags Formul...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239857" title="News: BioShock movie on the way (Xbox 360)">News: BioShock movie on the wa...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239856" title="News: Activision: Guitar Hero 4 this &quot;holiday&quot;">News: Activision: Guitar Hero...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239855" title="News: New Marvel: Ultimate Alliance coming">News: New Marvel: Ultimate All...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239833" title="News: Activision &quot;reinventing&quot; Tony Hawk">News: Activision "reinventing"...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239832" title="News: Call of Duty 5 to feature 'new theatre'">News: Call of Duty 5 to featur...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239213" title="News: SF film writer explains Chun-Li focus">News: SF film writer explains...</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="5" dragLength="5" dragColumn="1" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.1up.com/">1UP.com</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240293" title="Activision's 2008 Revenue Nears $3 Billion">Activision's 2008 Revenue Near...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240261" title="Activision on New Call of Duty, Tony Hawk">Activision on New Call of Duty...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240158" title="Gore Verbinski to Direct BioShock Movie">Gore Verbinski to Direct BioSh...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240084" title="Codemasters Acquires Formula 1 License">Codemasters Acquires Formula 1...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240083" title="Burnout: Paradise Cruising to PC">Burnout: Paradise Cruising to PC</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240082" title="The 1UP Show: Valkyrja of the Battlefield, Boom Blox, Metal Gear Online">The 1UP Show: Valkyrja of the...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240081" title="Gran Turismo Series Sells Fifty Million Copies">Gran Turismo Series Sells Fift...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240020" title="EA Sports Reveals New Fitness Game">EA Sports Reveals New Fitness...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240019" title="Project White Rock Now Called 'Reset Generation'">Project White Rock Now Called...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239824" title="Gears of War 2 Gameplay Video Debut">Gears of War 2 Gameplay Video...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239799" title="Mortal Kombat vs. DC to Feature Milder Fatalities">Mortal Kombat vs. DC to Featur...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239777" title="Wii Makes Yamauchi Japan's Richest Man">Wii Makes Yamauchi Japan's Ric...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239776" title="FTC 'Secret Shopper' Study A Huge Win For Game Industry">FTC 'Secret Shopper' Study A H...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239734" title="Play GRID Demo, Win a Ford Mustang GT-R">Play GRID Demo, Win a Ford Mus...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239733" title="Sports Anomaly's Interviewstravaganza">Sports Anomaly's Interviewstra...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239732" title="GFW Radio: Down on the Achievement Farm">GFW Radio: Down on the Achieve...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239676" title="MLB Power Pros 2008 Slides Home in July">MLB Power Pros 2008 Slides Hom...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239675" title="PlayStation Store: PixelJunk Encore, Haze Demo">PlayStation Store: PixelJunk E...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239647" title="Five Japanese Companies Collaborate on PS3 RPG">Five Japanese Companies Collab...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=239616" title="Street Fighter Movie Writer Explains Focus on Chun-Li">Street Fighter Movie Writer Ex...</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="74" dragLength="5" dragColumn="1" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.civfanatics.com">CivFanatics</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240533" title="Firaxis Looking for Beta Testers">Firaxis Looking for Beta Testers</a></li>
+<li >New! - <a href="/newsFeed.php?id=240532" title="Civilization Revolution Section Opens">Civilization Revolution Sectio...</a></li>
+<li >New! - <a href="/newsFeed.php?id=237309" title="Introducing CivFanatics v3.0">Introducing CivFanatics v3.0</a></li>
+<li >New! - <a href="/newsFeed.php?id=237255" title="CivRev: All About Mao and Isabella">CivRev: All About Mao and Isab...</a></li>
+<li >New! - <a href="/newsFeed.php?id=237251" title="CivRev Official Site's 1st Contest: Join the Revolution">CivRev Official Site's 1st Con...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=233541" title="HOF IV Update">HOF IV Update</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=232783" title="Civ4 SGOTM 07. The teams are off and running!!">Civ4 SGOTM 07. The teams are o...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=231693" title="New Civilization Revolution Screenshots">New Civilization Revolution Sc...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=231672" title="Civilization Revolution at NY Comic Con">Civilization Revolution at NY...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=230378" title="Civilization Revolution Delayed in US &amp; Canada">Civilization Revolution Delaye...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=229464" title="Civilization Revolution Forum Category Created">Civilization Revolution Forum...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=229435" title="Sid Meier at NY Comic Con This Saturday">Sid Meier at NY Comic Con This...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=228329" title="HOF III News Update">HOF III News Update</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=226120" title="HOF IV Update">HOF IV Update</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=223778" title="Sign up NOW for the next Civ4 SGOTM">Sign up NOW for the next Civ4...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=223612" title="New Civ4 downloads - 04/05/08">New Civ4 downloads - 04/05/08</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=223240" title="Civ3 and Civ4 GOTM results">Civ3 and Civ4 GOTM results</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=220822" title="Potential Civilization and BioShock MMO?">Potential Civilization and Bio...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=220367" title="New Civilization III Downloads - 31/03/08">New Civilization III Downloads...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=220202" title="Relics in Civilization Revolution">Relics in Civilization Revolution</a></li>
+</ul>
+</div>
+<div dragType="NH" dragID="87" dragLength="5" dragColumn="1" dragMinimized="0" class="feedList draggable">
+<div style="float: right; text-align: right;"><img src="/layouts/AtomicGamer_Grunge/images/expandSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Expand Options" title="Expand Options" border="0"  onclick="expandOptions(event);" /><span class="dragExpandable" style="display: none;"><img src="/layouts/AtomicGamer_Grunge/images/moveSmall.png" style="cursor: move; width: 16px; height: 13px;" alt="Move" title="Move" border="0" class="dragger"  /><img src="/layouts/AtomicGamer_Grunge/images/closeSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Close" title="Close" border="0"  onclick="closeDraggable(event);" /> <img src="/layouts/AtomicGamer_Grunge/images/shrinkSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Shrink Options" title="Shrink Options" border="0"  onclick="shrinkOptions(event);" /></span> <img src="/layouts/AtomicGamer_Grunge/images/minSmall.png" style="cursor: pointer; width: 16px; height: 13px;" alt="Minimize" title="Minimize" border="0"  onclick="minimizeDraggable(event);" /><img src="/layouts/AtomicGamer_Grunge/images/maxSmall.png" style="display: none; cursor: pointer; width: 16px; height: 13px;" alt="Maximize" title="Maximize" border="0"  onclick="maximizeDraggable(event);" /><br/><span class="dragExpandable" style="display: none;"><select class="standalone">
+<option value="1" >1</option>
+<option value="5" selected="selected">5</option>
+<option value="10" >10</option>
+<option value="20" >20</option>
+</select> <img src="/layouts/AtomicGamer_Grunge/images/saveSmall.png" style="vertical-align: bottom; cursor: pointer; width: 16px; height: 13px;" alt="Save Length" title="Save Length" border="0"  onclick="saveDraggableLength(event);" /></span>
+</div>
+<h3><a href="http://www.destructoid.com">Destructoid</a></h3>
+<ul style="">
+<li >New! - <a href="/newsFeed.php?id=240547" title="Shooting fish is worse than shooting people? According to Naughty Dog, yes">Shooting fish is worse than sh...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240546" title="She hasn't put clothes on yet: New X-Blades screenshots">She hasn't put clothes on yet:...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240524" title="Behold! Gears of War 2 gameplay footage is here">Behold! Gears of War 2 gamepla...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240499" title="Is this the Persona 4 opening movie?">Is this the Persona 4 opening...</a></li>
+<li >New! - <a href="/newsFeed.php?id=240488" title="Art Attack Friday: Bonus-kun">Art Attack Friday: Bonus-kun</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240487" title="PlayStation Network Update: Win a Car edition">PlayStation Network Update: Wi...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240486" title="The week in Rock Band DLC: Blondie, The Clash, Sonic Youth">The week in Rock Band DLC: Blo...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240485" title="BioWare removes 10-day validation from Mass Effect PC due to backlash">BioWare removes 10-day validat...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240463" title="Amazing irony: Daily Mail gives GTA IV 5/5">Amazing irony: Daily Mail give...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240462" title="Friday Night Fights: What would Destructoid be without FNF edition">Friday Night Fights: What woul...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240422" title="Gamecock's Mike Wilson takes a big step, runs for president of the ESA">Gamecock's Mike Wilson takes a...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240355" title="SCEE PlayStation Day: an age-gated trailer for LittleBigPlanet? Huh?">SCEE PlayStation Day: an age-g...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240290" title="Indie Nation #17: Dino Run">Indie Nation #17: Dino Run</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240289" title="SCEE PlayStation Day: first gameplay footage of MotorStorm: Pacific Rift">SCEE PlayStation Day: first ga...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240232" title="New information on Banjo-Kazooie 3 to (finally!) be revealed early next week">New information on Banjo-Kazoo...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240231" title="The rumors go on: Kid Icarus concept art hits the net (update)">The rumors go on: Kid Icarus c...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240179" title="Atari launches the official Alone in the Dark site">Atari launches the official Al...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240073" title="More Vii for you: another Wii knockoff hits the scene">More Vii for you: another Wii...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240072" title="Captain Obvious: Sony admits PSP needs more games">Captain Obvious: Sony admits P...</a></li>
+<li style="display: none;">New! - <a href="/newsFeed.php?id=240007" title="Gamer crafts abound: The Guitar Hero foot pedal">Gamer crafts abound: The Guita...</a></li>
+</ul>
+</div>
+<div class="dragBottom draggable">&nbsp;</div>
+</div>
+
+<div class="clearing"></div>
+
+<br/><br/>
+</div>
+
+
+<div id="browse"></div>
+
+<div class="clearing"></div>
+
+<div id="footer">
+<span><img src="/layouts/AtomicGamer_Grunge/images/button.gif" style=" width: 88px; height: 31px;" alt="AtomicGamer Button" title="AtomicGamer Button" border="0"   /></span>
+&copy; 1997-2008 TeleFragged LLC, AtomicGamer. All trademarks used are properties of their respective owners. All rights reserved.
+<br/>
+<a href="/privacyPolicy.php">Privacy Policy</a> | 
+<a href="/contact.php">Contact</a>
+</div>	
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript"> 
+_uacct = "UA-563912-1"; 
+urchinTracker();
+</script>
+<script type="text/javascript">loadDrag(); startFeatures();</script>
+</body>
+</html>

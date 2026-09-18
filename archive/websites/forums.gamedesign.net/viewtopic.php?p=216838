@@ -1,0 +1,560 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="./index.php" title="Gamedesign.net Forum Index" />
+<link rel="search" href="./search.php" title="Search" />
+<link rel="help" href="./faq.php" title="FAQ" />
+<link rel="author" href="./memberlist.php" title="Memberlist" />
+<link rel="prev" href="viewtopic.php?t=50707&amp;view=previous" title="View previous topic" />
+<link rel="next" href="viewtopic.php?t=50707&amp;view=next" title="View next topic" />
+<link rel="up" href="viewforum.php?f=15" title="Quake III Arena" />
+<link rel="chapter forum" href="viewforum.php?f=40" title="General Rust Discussion" />
+<link rel="chapter forum" href="viewforum.php?f=25" title="Jobs - Help Wanted" />
+<link rel="chapter forum" href="viewforum.php?f=80" title="RUST Competitions" />
+<link rel="chapter forum" href="viewforum.php?f=81" title="RUST .plan" />
+<link rel="chapter forum" href="viewforum.php?f=37" title="Game Design" />
+<link rel="chapter forum" href="viewforum.php?f=38" title="Game Programming" />
+<link rel="chapter forum" href="viewforum.php?f=9" title="Half-Life and Half-Life 2" />
+<link rel="chapter forum" href="viewforum.php?f=82" title="Counter Strike and Counter Strike Source" />
+<link rel="chapter forum" href="viewforum.php?f=13" title="Quake" />
+<link rel="chapter forum" href="viewforum.php?f=14" title="Quake II" />
+<link rel="chapter forum" href="viewforum.php?f=15" title="Quake III Arena" />
+<link rel="chapter forum" href="viewforum.php?f=83" title="Quake 4" />
+<link rel="chapter forum" href="viewforum.php?f=50" title="Doom 3" />
+<link rel="chapter forum" href="viewforum.php?f=22" title="Unreal Tournament 2K3/2K4" />
+<link rel="chapter forum" href="viewforum.php?f=36" title="Wolfenstein" />
+<link rel="chapter forum" href="viewforum.php?f=79" title="Warcraft 3" />
+<link rel="chapter forum" href="viewforum.php?f=48" title="Novalogic" />
+<link rel="chapter forum" href="viewforum.php?f=12" title="Kingpin" />
+<link rel="chapter forum" href="viewforum.php?f=39" title="Jedi Knight II" />
+<link rel="chapter forum" href="viewforum.php?f=32" title="QuArK" />
+<link rel="chapter forum" href="viewforum.php?f=28" title="Radiant" />
+<link rel="chapter forum" href="viewforum.php?f=29" title="UnrealEd" />
+<link rel="chapter forum" href="viewforum.php?f=31" title="WorldCraft / Hammer" />
+<link rel="chapter forum" href="viewforum.php?f=46" title="Milkshape" />
+<link rel="chapter forum" href="viewforum.php?f=45" title="3D Studio Max and Gmax tempest" />
+<link rel="chapter forum" href="viewforum.php?f=47" title="Softimage" />
+<link rel="chapter forum" href="viewforum.php?f=84" title="TES Construction Kit" />
+<link rel="chapter forum" href="viewforum.php?f=24" title="Off-teh-Topic" />
+<link rel="chapter forum" href="viewforum.php?f=26" title="Testing" />
+
+<title>Gamedesign.net :: View topic - Shader Issues!</title>
+<LINK href="templates/subBlack3d/subBlack3d.css" type=text/css rel=stylesheet>
+<style type="text/css"><style type="text/css">
+<!--
+@import url("formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#000000" text="#DDDDDD" link="#CCCCCC" vlink="#CCCCCC" topmargin=0>
+<a name="top"></a>
+<center>
+<img src="templates/subBlack3d/images/htop.gif" width="100%"><table border=0 cellpadding=0 cellspacing="0" width="100%" height=44>
+<tr><td width="100%" height=44 bgcolor="#000000" align="left">
+<a href="http://gamedesign.net" ><img src="templates/subBlack3d/images/title.jpg" border=0></a></td></tr>
+</td></tr></table><img src="templates/subBlack3d/images/hbtm.gif" width="100%"><table border=0 cellpadding=0 cellspacing="0" width="100%" height="25"><tr><td class=menuline>
+<table border=0 cellpadding=0 cellspacing="0" width="100%" height="25">
+<tr><td bgcolor=#222222 width="49" height="25"><img src="templates/subBlack3d/images/l-bar.gif" width="49" height="25"></td>
+<td width="100%" height="25" background="templates/subBlack3d/images/c-bar.gif" noWrap valign="middle">
+<span class="mainmenu"><b><a href="faq.php" class="mainmenu">FAQ</a> |
+<a href="search.php" class="mainmenu">Search</a> |
+<a href="memberlist.php" class="mainmenu">Memberlist</a> |
+<a href="groupcp.php" class="mainmenu">Usergroups</a>  |
+<a href="profile.php?mode=register" class="mainmenu">Register</a> |
+<a href="profile.php?mode=editprofile" class="mainmenu">Profile</a> |
+<a href="privmsg.php?folder=inbox" class="mainmenu">Private Messages</a> |
+<a href="login.php" class="mainmenu">Log in</a></b></span></td>
+<td bgcolor=#222222 width="49" height="25"><img src="templates/subBlack3d/images/r-bar.gif" width="49" height="25"></td></tr></table></td></tr></table>
+</a><table width="100%" cellspacing="0" cellpadding="6" border="0" align="center"><tr><td class="bodyline">
+
+
+<table width="100%" cellspacing="0" cellpadding="1" border="0" align="center">
+<tr>
+<td bgColor=#313131 class=tdframe colSpan=3 height=12><img
+                  align=right src="templates/subBlack3d/images/dots.gif"><img align=left
+                  src="templates/subBlack3d/images/dots.gif">
+<a href="index.php" class="nav">Gamedesign.net Forum Index</a> <span class=nav>-></span> <a class="nav" href="viewforum.php?f=15">Quake III Arena</a></span>
+</td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">
+      <span class="nav"><a href="posting.php?mode=newtopic&amp;f=15"><img src="templates/subBlack3d/images/lang_english/post.gif" border="0" alt="Post new topic" align="middle" /></a>&nbsp;<a href="posting.php?mode=reply&amp;t=50707"><img src="templates/subBlack3d/images/lang_english/reply.gif" border="0" alt="Reply to topic" align="middle" /></a></span></td>
+	<td align="right" valign="middle" width="100%"><span class="gensmall">&nbsp;&nbsp;&nbsp;<b></b>&nbsp;&nbsp;</span></td>
+  </tr>
+</table>
+<table height=30 width=100% cellspacing="0" cellpadding="0" border="0" align="center">
+	<tr>
+		<td class="td3d" height="25" align="left">
+            <table height=25 width=100% cellspacing="0" cellpadding="0" border="0" align="center"><tr><td width="50%">
+            &nbsp;<a class="ptitle" href="viewtopic.php?t=50707&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">Shader Issues!</a></td><td width="50%" align="right">
+            <span class="gensmall"><a href="viewtopic.php?t=50707&amp;view=previous" class="gensmall">View previous topic</a> <b>::</b> <a href="viewtopic.php?t=50707&amp;view=next" class="gensmall">View next topic</a>&nbsp;&nbsp;</span>
+            </td></tr></table>
+	</tr>
+</table>
+</td></tr></table>
+<center>
+<table align=center border=0 cellPadding=0 cellSpacing=0 width="85%">
+        <tr>
+          <td align=middle background=templates/subBlack3d/images/bdt_fill.gif
+          bgcolor=#2d2d2d valign=top height=20 class="tabpost">
+          <span class=gensmall>&nbsp;
+          </span></td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="216738"></a><b>Steeveeo</b></span><br /><span class="genlev">Junior</span><span class=postdetails><br /><br /><br />Joined: 07 Aug 2006<br />Posts: 1<br /></span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: Shader Issues!</span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=216738"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">I have a problem, I am not doing something right...
+<br />
+
+<br />
+I made a map in Quark, compiled it and crammed it into a PK3 file. It loads fine, but the shaders are screwed up! I have supposedly put everything I need into the PK3, yet the shaders still screw up!
+<br />
+
+<br />
+I included the PK3 in this post so one of you guys could download it and tell me what I did wrong...
+<br />
+
+<br />
+((BTW I just put all the textures from the tmpquark folder into it in a desparate attempt to make it work...I'll clean it later...))
+<br />
+
+<br />
+The PK3 is here: <a href="http://www.savefile.com/files.php?fid=3590536" target="_blank">http://www.savefile.com/files.php?fid=3590536</a>
+<br />
+
+<br />
+Any and all help is greately appreciated!
+<br />
+
+<br />
+And one more thing, if someone could tell me how to get a levelshot to work in the PK3, that would be awesome! It crashes whenever I try...</span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=101682"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=101682"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=216738#216738"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Mon Aug 07, 2006 9:01 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="216829"></a><b>suprcow</b></span><br /><span class="genlev">Novice</span><span class=postdetails><br /><br /><br />Joined: 13 Dec 2001<br />Posts: 65<br /></span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=216829"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">well u need different maps in ur pk3
+<br />
+like 
+<br />
+
+<br />
+- textures
+<br />
+- maps
+<br />
+- sounds
+<br />
+
+<br />
+u need a map named &quot;levelshots&quot; aswell
+<br />
+in this map u place a screenshot usually taken from
+<br />
+the map, u could place words or titels on the screenshot
+<br />
+in photoshop then u name the screenshot &quot;mapname here&quot;
+<br />
+so the screenshot needs to be the same as the map name
+<br />
+for example  q3dm6 (jpeg image) then it should work out fine.</span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=469"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=469"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a> <a href="mailto:dennisarends@hotmail.com"><img src="templates/subBlack3d/images/lang_english/icon_email.gif" alt="Send e-mail" title="Send e-mail" border="0" /></a>    <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=216829#216829"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Wed Aug 23, 2006 2:33 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="216830"></a><b>tmg</b></span><br /><span class="genlev">Experienced</span><span class=postdetails><br /><br /><br />Joined: 06 Nov 2001<br />Posts: 470<br />Location: Not sure really...just woke up and found myself here...</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=216830"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">WTF? that didn't make any sense supercow... <img src="images/smiles/icon_confused.gif" alt="Confused" border="0" />
+<br />
+
+<br />
+this is what I am getting from wht you are saying though.
+<br />
+
+<br />
+In your PAK file, you need to create folders for everything to go in, like this:
+<br />
+
+<br />
+[root-directory]
+<br />
+----levelshots      - place your &quot;map loading&quot; pictures here
+<br />
+----maps            - maps in here
+<br />
+----textures        - any customs textures you've made/downloaded go here
+<br />
+----sounds          - and sounds in here
+<br />
+
+<br />
+you can create PAK3.pk3 files in WinRAR even, as they are UNCOMPRESSED ZIP FILES, but the &quot;.zip&quot; extension is replaced with the .pk3 extension.
+<br />
+
+<br />
+What supercow said about the levelshots is correct though:
+<br />
+
+<br />
+
+<br />
+An Example: (make sure you have the PAK file open in &quot;PAKScape&quot; or &quot;WinRAR&quot;, so you can edit it and add the following files to their corresponding folders.)
+<br />
+
+<br />
+You have a map called &quot;treasure.bsp&quot; (which is the actual map file), Place this in the &quot;maps&quot; folder.
+<br />
+
+<br />
+Now,  let's say you take a screenshot while playing your map, and want to use it as the levelshot while the map is loading. So go into paintshop pro or any image editor that supports &quot;.TGA&quot; files and convert it to (&quot;Save_As&quot; in other words) a &quot;.JPG&quot; file, and call it &quot;treasure.jpg&quot; you must save it in &quot;.JPG format so it can be used as a levelshot image. Place the image file in the &quot;levelshots&quot; folder.
+<br />
+
+<br />
+Adding bots is a bit more complicated, but you can rip open the vanilla Quake 3 Arena .pk3 files and look in the &quot;scripts&quot; folder, and look for the &quot;arena.txt&quot; file and &quot;q3.arena? file. The .arena file has stuff like that below: (and the { } characters need to be there.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">&#123;
+<br />
+map&nbsp; &nbsp; &nbsp; &nbsp; &quot;testmap&quot;
+<br />
+bots&nbsp; &nbsp; &nbsp; &nbsp;&quot;daemia wrack grunt slash&quot;
+<br />
+longname&nbsp; &nbsp;&quot;the empty place&quot;
+<br />
+fraglimit&nbsp; 20
+<br />
+type&nbsp; &nbsp; &nbsp; &nbsp;&quot;ffa team&quot;
+<br />
+&#125;</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+two other words that can be used in this file are &quot;training&quot;, and &quot;Final&quot;, but these are reserved for the very first map (with Crash), and the very last one (with Xearo). so aren't needed at all unless you're intending on recreating a complete pak with all vanilla maps being replaced by your own.
+<br />
+
+<br />
+Oh yeah, your .shader files also go in the &quot;scripts&quot; folder in you .pk3 file.
+<br />
+
+<br />
+If you need more info, go here - <a href="http://fps.brainerd.net/creatingpk3.htm" target="_blank" class="postlink">http://fps.brainerd.net/creatingpk3.htm</a> - it has a write up on everything you need to know about making .pk3 files, so my rant wasn't really necessry, but I like to look good <img src="images/smiles/icon_rolleyes.gif" alt="Rolling Eyes" border="0" />  <img src="images/smiles/icon_razz.gif" alt="Razz" border="0" /> 
+<br />
+
+<br />
+I hope that helped.</span><span class=sign><br />_________________<br /><a href="http://www.freewebs.com/tmg32" target="_blank" class="postlink">http://www.freewebs.com/tmg32</a>
+<br />
+
+<br />
+<img src="http://i105.photobucket.com/albums/m211/tmg32/sigpic.jpg" border="0" /></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=310"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=310"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a> <a href="mailto:quakeiiiarena32@hotmail.com"><img src="templates/subBlack3d/images/lang_english/icon_email.gif" alt="Send e-mail" title="Send e-mail" border="0" /></a> <a href="http://www.freewebs.com/tmg32/" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <a href="profile.php?mode=viewprofile&amp;u=310"><img src="templates/subBlack3d/images/lang_english/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0" /></a><script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=216830#216830"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Wed Aug 23, 2006 5:24 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="216838"></a><b>suprcow</b></span><br /><span class="genlev">Novice</span><span class=postdetails><br /><br /><br />Joined: 13 Dec 2001<br />Posts: 65<br /></span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=216838"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">yes i only tried helping with the levelshot problem,
+<br />
+the other problem i can not help him with <img src="images/smiles/icon_smile.gif" alt="Smile" border="0" /></span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=469"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=469"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a> <a href="mailto:dennisarends@hotmail.com"><img src="templates/subBlack3d/images/lang_english/icon_email.gif" alt="Send e-mail" title="Send e-mail" border="0" /></a>    <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=216838#216838"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Wed Aug 23, 2006 11:41 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+      <table border=0 width=100%>
+	<tr align="left">
+		<td class="catbottom" height="28" width=100%><table cellspacing="0" cellpadding="0" border="0">
+			<tr><form method="post" action="viewtopic.php?t=50707&amp;start=0">
+				<td colspan=2  width=100% height=15 nowrrap><img align=left
+                  src="templates/subBlack3d/images/dots.gif"><span class="gensmall">Display posts from previous: <select name="postdays"><option value="0" selected="selected">All Posts</option><option value="1">1 Day</option><option value="7">7 Days</option><option value="14">2 Weeks</option><option value="30">1 Month</option><option value="90">3 Months</option><option value="180">6 Months</option><option value="364">1 Year</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Oldest First</option><option value="desc">Newest First</option></select>&nbsp;<input type="submit" value="Go" class="liteoption" name="submit" /></span></td>
+			</form></tr>
+		</table></td>
+	</tr>
+</table>
+<table width="99%" bgcolor=#2a2a2a cellspacing="0" cellpadding="0" border="0" align="center" style="border-right: #000000 2px solid; border-left: #888888 2px groove">
+<tr><td width=10% align=left>
+   <table cellspacing="0" cellpadding="0" border="0">
+     <tr><td class=tdframe bgcolor=#3f3f3f><span class=gensmalls>&nbsp;&nbsp;<a href="posting.php?mode=newtopic&amp;f=15"><img src="templates/subBlack3d/images/lang_english/post.gif" border="0" alt="Post new topic" align="middle" /></a></span><span class=gensmalls>&nbsp;&nbsp;</span></td></tr></table>
+</td><td width=1% style="border-top: #333333 1px solid">&nbsp;</td>
+<td  width=79%>
+   <table cellspacing="0" cellpadding="2" border="0">
+     <tr><td class=tdframe bgcolor=#3f3f3f><span class=gensmalls>&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=50707"><img src="templates/subBlack3d/images/lang_english/reply.gif" border="0" alt="Reply to topic" align="middle" /></a></span><span class=gensmalls>&nbsp;&nbsp;</span></td></tr></table>
+</td></tr></table>
+
+<table width="99%" bgcolor=#2a2a2a cellspacing="0" cellpadding="0" border="0" align="center" style="border-right: #000000 2px solid; border-left: #888888 2px groove">
+<tr>
+	<td>
+	<table width="99%" cellspacing="0" cellpadding="1" border="0" align="center">
+	<tr>
+		<td bgColor=#313131 class=td3d colSpan=3 height=12><img
+                  align=right src="templates/subBlack3d/images/dots.gif"><img align=left
+                  src="templates/subBlack3d/images/dots.gif">
+	<a href="index.php" class="nav">Gamedesign.net Forum Index</a> <span class=nav>-></span> <a class="nav" href="viewforum.php?f=15">Quake III Arena</a></span>
+</td></tr></table>
+
+<table width="99%" cellspacing="0" cellpadding="2" border="0" align="center">
+<tr><td class=td3d bgcolor=#3f3f3f width=100% height=10 colspan=2 align=center><img align=right
+                  src="templates/subBlack3d/images/dots.gif"><span class="nav"></span><span class=gensr>    </span>
+</td></tr>
+</table>
+<table width="99%" cellspacing="0" border="0" align="center" cellpadding="2" ><tr><td class=tab height="30" background="templates/subBlack3d/images/bdt.gif">
+<table border="0" cellpaddingg="0" cellspacing="0" width="100%">
+<tr><td bgcolor=#2d2d2d width=65% valign="top"><span class="gensr">&nbsp;All times are GMT - 8 Hours |</span>   <span class="gensmalls">Page <b>1</b> of <b>1</b></span>
+</td>
+<td width=35% align=right valign="midle" bgcolor=#2d2d2d><span class=gensmall>
+<form method="get" name="jumpbox" action="viewforum.php" onSubmit="if(document.jumpbox.f.value == -1){return false;}"><table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td nowrap="nowrap"><span class="gensmall">Jump to:&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Select a forum</option><option value="-1">&nbsp;</option><option value="-1">Gamedesign.net Forums</option><option value="-1">----------------</option><option value="40">General Rust Discussion</option><option value="25">Jobs - Help Wanted</option><option value="80">RUST Competitions</option><option value="81">RUST .plan</option><option value="-1">&nbsp;</option><option value="-1">Game Design</option><option value="-1">----------------</option><option value="37">Game Design</option><option value="38">Game Programming</option><option value="-1">&nbsp;</option><option value="-1">Game Editing</option><option value="-1">----------------</option><option value="9">Half-Life and Half-Life 2</option><option value="82">Counter Strike and Counter Strike Source</option><option value="13">Quake</option><option value="14">Quake II</option><option value="15"selected="selected">Quake III Arena</option><option value="83">Quake 4</option><option value="50">Doom 3</option><option value="22">Unreal Tournament 2K3/2K4</option><option value="36">Wolfenstein</option><option value="79">Warcraft 3</option><option value="48">Novalogic</option><option value="12">Kingpin</option><option value="39">Jedi Knight II</option><option value="-1">&nbsp;</option><option value="-1">Editors and Tools</option><option value="-1">----------------</option><option value="32">QuArK</option><option value="28">Radiant</option><option value="29">UnrealEd</option><option value="31">WorldCraft / Hammer</option><option value="46">Milkshape</option><option value="45">3D Studio Max and Gmax tempest</option><option value="47">Softimage</option><option value="84">TES Construction Kit</option><option value="-1">&nbsp;</option><option value="-1">Miscellaneous</option><option value="-1">----------------</option><option value="24">Off-teh-Topic</option><option value="26">Testing</option></select><input type="hidden" name="sid" value="62202262822405ee077ff8fb6a5870df" />&nbsp;<input type="submit" value="Go" class="liteoption" /></span></td>
+	</tr></form>
+</table>
+
+&nbsp;</span>
+</td></form></tr></table>
+</td></tr></table>
+<br  />
+<table border=0  cellpadding=0 cellspacing=0 width=96%>
+<tr><td class=auth2 bgcolor=#4f4f4f><table cellspacing="0" cellpadding="2" border="0" width=100%><tr>
+<td bgcolor=#4f4f4f class=auth width=100%><table width="100%" cellspacing="0" border="0" align="center" cellpadding="3">
+<tr><td width=50% valign=top><span class=gensr>You <b>cannot</b> post new topics in this forum<br />You <b>cannot</b> reply to topics in this forum<br />You <b>cannot</b> edit your posts in this forum<br />You <b>cannot</b> delete your posts in this forum<br />You <b>cannot</b> vote in polls in this forum<br />
+</span></td>
+<td width=50% align=right valign=top>&nbsp;
+
+<!--##if you install QUICK REPLAY mod, you can add the code here! i included quick replay button image in this theme pack##-->
+
+    </td></tr></table></td></tr></table>
+  </td></tr>
+</table>
+
+</center>
+<table border=0 cellapdding=3 width=100%>
+<tr><td>
+<div align="left">
+<span class="gensmall">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="copyright">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright 2003 Gamedesign.net<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Original subBlack3D Template by Wira_CG @<a class="copyright" href="http://www.wira-wwd.tk" target="_hmm">WWD</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seriously modified by Olpainless and Tycho.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB  line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright"><b>phpBB</a> </b> &copy; 2001, 2002 phpBB Group<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--<br />-->&nbsp;</span>
+</div>
+<div align="left"><span class="copyright">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected by <a href="http://www.lithiumstudios.org/" target="_blank" class="copyright">Anti-Spam ACP</a></span></div>
+		</td>
+	</tr>
+</table>
+</td>
+	</tr>
+</table>
+
+<br />
+<p>
+</body>
+</html>
+

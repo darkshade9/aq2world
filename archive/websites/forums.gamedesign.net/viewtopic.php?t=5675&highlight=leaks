@@ -1,0 +1,1418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="./index.php" title="Gamedesign.net Forum Index" />
+<link rel="search" href="./search.php" title="Search" />
+<link rel="help" href="./faq.php" title="FAQ" />
+<link rel="author" href="./memberlist.php" title="Memberlist" />
+<link rel="prev" href="viewtopic.php?t=5675&amp;view=previous" title="View previous topic" />
+<link rel="next" href="viewtopic.php?t=5675&amp;view=next" title="View next topic" />
+<link rel="up" href="viewforum.php?f=9" title="Half-Life and Half-Life 2" />
+<link rel="chapter forum" href="viewforum.php?f=40" title="General Rust Discussion" />
+<link rel="chapter forum" href="viewforum.php?f=25" title="Jobs - Help Wanted" />
+<link rel="chapter forum" href="viewforum.php?f=80" title="RUST Competitions" />
+<link rel="chapter forum" href="viewforum.php?f=81" title="RUST .plan" />
+<link rel="chapter forum" href="viewforum.php?f=37" title="Game Design" />
+<link rel="chapter forum" href="viewforum.php?f=38" title="Game Programming" />
+<link rel="chapter forum" href="viewforum.php?f=9" title="Half-Life and Half-Life 2" />
+<link rel="chapter forum" href="viewforum.php?f=82" title="Counter Strike and Counter Strike Source" />
+<link rel="chapter forum" href="viewforum.php?f=13" title="Quake" />
+<link rel="chapter forum" href="viewforum.php?f=14" title="Quake II" />
+<link rel="chapter forum" href="viewforum.php?f=15" title="Quake III Arena" />
+<link rel="chapter forum" href="viewforum.php?f=83" title="Quake 4" />
+<link rel="chapter forum" href="viewforum.php?f=50" title="Doom 3" />
+<link rel="chapter forum" href="viewforum.php?f=22" title="Unreal Tournament 2K3/2K4" />
+<link rel="chapter forum" href="viewforum.php?f=36" title="Wolfenstein" />
+<link rel="chapter forum" href="viewforum.php?f=79" title="Warcraft 3" />
+<link rel="chapter forum" href="viewforum.php?f=48" title="Novalogic" />
+<link rel="chapter forum" href="viewforum.php?f=12" title="Kingpin" />
+<link rel="chapter forum" href="viewforum.php?f=39" title="Jedi Knight II" />
+<link rel="chapter forum" href="viewforum.php?f=32" title="QuArK" />
+<link rel="chapter forum" href="viewforum.php?f=28" title="Radiant" />
+<link rel="chapter forum" href="viewforum.php?f=29" title="UnrealEd" />
+<link rel="chapter forum" href="viewforum.php?f=31" title="WorldCraft / Hammer" />
+<link rel="chapter forum" href="viewforum.php?f=46" title="Milkshape" />
+<link rel="chapter forum" href="viewforum.php?f=45" title="3D Studio Max and Gmax tempest" />
+<link rel="chapter forum" href="viewforum.php?f=47" title="Softimage" />
+<link rel="chapter forum" href="viewforum.php?f=84" title="TES Construction Kit" />
+<link rel="chapter forum" href="viewforum.php?f=24" title="Off-teh-Topic" />
+<link rel="chapter forum" href="viewforum.php?f=26" title="Testing" />
+
+<title>Gamedesign.net :: View topic - Need help with this LEAK!</title>
+<LINK href="templates/subBlack3d/subBlack3d.css" type=text/css rel=stylesheet>
+<style type="text/css"><style type="text/css">
+<!--
+@import url("formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#000000" text="#DDDDDD" link="#CCCCCC" vlink="#CCCCCC" topmargin=0>
+<a name="top"></a>
+<center>
+<img src="templates/subBlack3d/images/htop.gif" width="100%"><table border=0 cellpadding=0 cellspacing="0" width="100%" height=44>
+<tr><td width="100%" height=44 bgcolor="#000000" align="left">
+<a href="http://gamedesign.net" ><img src="templates/subBlack3d/images/title.jpg" border=0></a></td></tr>
+</td></tr></table><img src="templates/subBlack3d/images/hbtm.gif" width="100%"><table border=0 cellpadding=0 cellspacing="0" width="100%" height="25"><tr><td class=menuline>
+<table border=0 cellpadding=0 cellspacing="0" width="100%" height="25">
+<tr><td bgcolor=#222222 width="49" height="25"><img src="templates/subBlack3d/images/l-bar.gif" width="49" height="25"></td>
+<td width="100%" height="25" background="templates/subBlack3d/images/c-bar.gif" noWrap valign="middle">
+<span class="mainmenu"><b><a href="faq.php" class="mainmenu">FAQ</a> |
+<a href="search.php" class="mainmenu">Search</a> |
+<a href="memberlist.php" class="mainmenu">Memberlist</a> |
+<a href="groupcp.php" class="mainmenu">Usergroups</a>  |
+<a href="profile.php?mode=register" class="mainmenu">Register</a> |
+<a href="profile.php?mode=editprofile" class="mainmenu">Profile</a> |
+<a href="privmsg.php?folder=inbox" class="mainmenu">Private Messages</a> |
+<a href="login.php" class="mainmenu">Log in</a></b></span></td>
+<td bgcolor=#222222 width="49" height="25"><img src="templates/subBlack3d/images/r-bar.gif" width="49" height="25"></td></tr></table></td></tr></table>
+</a><table width="100%" cellspacing="0" cellpadding="6" border="0" align="center"><tr><td class="bodyline">
+
+
+<table width="100%" cellspacing="0" cellpadding="1" border="0" align="center">
+<tr>
+<td bgColor=#313131 class=tdframe colSpan=3 height=12><img
+                  align=right src="templates/subBlack3d/images/dots.gif"><img align=left
+                  src="templates/subBlack3d/images/dots.gif">
+<a href="index.php" class="nav">Gamedesign.net Forum Index</a> <span class=nav>-></span> <a class="nav" href="viewforum.php?f=9">Half-Life and Half-Life 2</a></span>
+</td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap">
+      <span class="nav"><a href="posting.php?mode=newtopic&amp;f=9"><img src="templates/subBlack3d/images/lang_english/post.gif" border="0" alt="Post new topic" align="middle" /></a>&nbsp;<a href="posting.php?mode=reply&amp;t=5675"><img src="templates/subBlack3d/images/lang_english/reply.gif" border="0" alt="Reply to topic" align="middle" /></a></span></td>
+	<td align="right" valign="middle" width="100%"><span class="gensmall">&nbsp;&nbsp;&nbsp;<b></b>&nbsp;&nbsp;</span></td>
+  </tr>
+</table>
+<table height=30 width=100% cellspacing="0" cellpadding="0" border="0" align="center">
+	<tr>
+		<td class="td3d" height="25" align="left">
+            <table height=25 width=100% cellspacing="0" cellpadding="0" border="0" align="center"><tr><td width="50%">
+            &nbsp;<a class="ptitle" href="viewtopic.php?t=5675&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=leaks">Need help with this LEAK!</a></td><td width="50%" align="right">
+            <span class="gensmall"><a href="viewtopic.php?t=5675&amp;view=previous" class="gensmall">View previous topic</a> <b>::</b> <a href="viewtopic.php?t=5675&amp;view=next" class="gensmall">View next topic</a>&nbsp;&nbsp;</span>
+            </td></tr></table>
+	</tr>
+</table>
+</td></tr></table>
+<center>
+<table align=center border=0 cellPadding=0 cellSpacing=0 width="85%">
+        <tr>
+          <td align=middle background=templates/subBlack3d/images/bdt_fill.gif
+          bgcolor=#2d2d2d valign=top height=20 class="tabpost">
+          <span class=gensmall>&nbsp;
+          </span></td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40314"></a><b>pebe</b></span><br /><span class="genlev">Junior</span><span class=postdetails><br /><br /><br />Joined: 11 Nov 2003<br />Posts: 13<br />Location: Norway</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: Need help with this LEAK!</span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40314"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hey
+<br />
+
+<br />
+Could someone help me with this VERY annoying leak i've got?!
+<br />
+
+<br />
+It's a very small map for now, basically just 3 rooms.
+<br />
+Just check out the log and the screenshots attached.
+<br />
+
+<br />
+<a href="http://essential04.com/tmp/aaaaahhh1.gif" target="_blank" class="postlink">http://essential04.com/tmp/aaaaahhh1.gif</a>
+<br />
+
+<br />
+<a href="http://essential04.com/tmp/aaaaahhh2.gif" target="_blank" class="postlink">http://essential04.com/tmp/aaaaahhh2.gif</a>
+<br />
+
+<br />
+<a href="http://essential04.com/tmp/aaaaahhh3.jpg" target="_blank" class="postlink">http://essential04.com/tmp/aaaaahhh3.jpg</a>
+<br />
+
+<br />
+......
+<br />
+
+<br />
+here is the log:
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">hlcsg v2.5.3 rel Custom Build 1.7 &#40;Dec&nbsp; 9 2002&#41;
+<br />
+Zoner's Half-Life Compilation Tools -- Custom Build
+<br />
+Based on code modifications by Sean 'Zoner' Cavanaugh
+<br />
+Based on Valve's version, modified with permission.
+<br />
+Submit detailed bug reports to &#40;merlinis@bigpond.net.au&#41;
+<br />
+-----&nbsp; BEGIN&nbsp; hlcsg -----
+<br />
+Command line&#58; &quot;E&#58;\Temp\CS mapping\zhlt253-17\hlcsg.exe&quot;-wadinclude Fav1.wad -wadinclude de_volare.wad -wadinclude halflife.wad -wadinclude gfx.wad -chart E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.map 
+<br />
+Entering E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.map
+<br />
+
+<br />
+Current hlcsg Settings
+<br />
+Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp; Setting&nbsp; |&nbsp; Default
+<br />
+---------------------|-----------|-------------------------
+<br />
+threads&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; &nbsp;1 &#93; &#91;&nbsp; Varies &#93;
+<br />
+verbose&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+log&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+developer&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; &nbsp;0 &#93; &#91;&nbsp; &nbsp; &nbsp; &nbsp;0 &#93;
+<br />
+chart&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+estimate&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+max texture memory&nbsp; &nbsp; &#91; 4194304 &#93; &#91; 4194304 &#93;
+<br />
+priority&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; Normal &#93; &#91;&nbsp; Normal &#93;
+<br />
+
+<br />
+noclip&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+null texture stripping&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+clipnode economy mode &#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+onlyents&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+wadtextures&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+skyclip&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+hullfile&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; None &#93; &#91;&nbsp; &nbsp; None &#93;
+<br />
+min surface area&nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp;0.500 &#93; &#91;&nbsp; &nbsp;0.500 &#93;
+<br />
+brush union threshold &#91;&nbsp; &nbsp;0.000 &#93; &#91;&nbsp; &nbsp;0.000 &#93;
+<br />
+
+<br />
+Using mapfile wad configuration
+<br />
+Wadinclude list &#58;
+<br />
+&#91;zhlt.wad&#93;
+<br />
+&#91;Fav1.wad&#93;
+<br />
+&#91;de_volare.wad&#93;
+<br />
+&#91;halflife.wad&#93;
+<br />
+&#91;gfx.wad&#93;
+<br />
+
+<br />
+0 brushes &#40;totalling 0 sides&#41; discarded from clipping hulls
+<br />
+CreateBrush&#58;
+<br />
+&nbsp;&#40;0.16 seconds&#41;
+<br />
+SetModelCenters&#58;
+<br />
+&nbsp;&#40;0.00 seconds&#41;
+<br />
+CSGBrush&#58;
+<br />
+&nbsp;&#40;0.30 seconds&#41;
+<br />
+
+<br />
+Object names&nbsp; Objects/Maxobjs&nbsp; Memory / Maxmem&nbsp; Fullness
+<br />
+------------&nbsp; ---------------&nbsp; ---------------&nbsp; --------
+<br />
+models&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/400&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/25600&nbsp; &nbsp; &#40; 0.0%&#41;
+<br />
+planes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1512/32767&nbsp; &nbsp; &nbsp; 30240/655340&nbsp; &nbsp;&#40; 4.6%&#41;
+<br />
+vertexes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/65535&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/786420&nbsp; &nbsp;&#40; 0.0%&#41;
+<br />
+nodes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/32767&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/786408&nbsp; &nbsp;&#40; 0.0%&#41;
+<br />
+texinfos&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 336/32767&nbsp; &nbsp; &nbsp; 13440/1310680&nbsp; &#40; 1.0%&#41;
+<br />
+faces&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/65535&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/1310700&nbsp; &#40; 0.0%&#41;
+<br />
+clipnodes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/32767&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/262136&nbsp; &nbsp;&#40; 0.0%&#41;
+<br />
+leaves&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/8192&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/229376&nbsp; &nbsp;&#40; 0.0%&#41;
+<br />
+marksurfaces&nbsp; &nbsp; &nbsp; &nbsp; 0/65535&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/131070&nbsp; &nbsp;&#40; 0.0%&#41;
+<br />
+surfedges&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/512000&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/2048000&nbsp; &#40; 0.0%&#41;
+<br />
+edges&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/256000&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0/1024000&nbsp; &#40; 0.0%&#41;
+<br />
+texdata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/4194304&nbsp; &#40; 0.0%&#41;
+<br />
+lightdata&nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/4194304&nbsp; &#40; 0.0%&#41;
+<br />
+visdata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/2097152&nbsp; &#40; 0.0%&#41;
+<br />
+entdata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/524288&nbsp; &nbsp;&#40; 0.0%&#41;
+<br />
+0 textures referenced
+<br />
+=== Total BSP file data space used&#58; 43680 bytes ===
+<br />
+
+<br />
+Including Wadfile&#58; \spill\sierra\half-life\valve\halflife.wad
+<br />
+&nbsp;- Contains 34 used textures, 97.14 percent of map &#40;3116 textures in wad&#41;
+<br />
+Using Wadfile&#58; \spill\sierra\half-life\valve\liquids.wad
+<br />
+&nbsp;- Contains 0 used textures, 0.00 percent of map &#40;32 textures in wad&#41;
+<br />
+Using Wadfile&#58; \spill\sierra\half-life\valve\decals.wad
+<br />
+&nbsp;- Contains 0 used textures, 0.00 percent of map &#40;222 textures in wad&#41;
+<br />
+Including Wadfile&#58; \spill\sierra\steam\steamapps\minekstramail@yahoo.com\counter-strike\cstrike\de_volare.wad
+<br />
+&nbsp;- Contains 0 used textures, 0.00 percent of map &#40;74 textures in wad&#41;
+<br />
+Including Wadfile&#58; \temp\cs mapping\textures\fav1.wad
+<br />
+&nbsp;- Contains 1 used texture, 2.86 percent of map &#40;366 textures in wad&#41;
+<br />
+
+<br />
+added 6 additional animating textures.
+<br />
+Texture usage is at 0.28 mb &#40;of 4.00 mb MAX&#41;
+<br />
+0.88 seconds elapsed
+<br />
+
+<br />
+-----&nbsp; &nbsp;END&nbsp; &nbsp;hlcsg -----
+<br />
+
+<br />
+
+<br />
+
+<br />
+hlbsp v2.5.3 rel Custom Build 1.7 &#40;Dec&nbsp; 9 2002&#41;
+<br />
+Zoner's Half-Life Compilation Tools -- Custom Build
+<br />
+Based on code modifications by Sean 'Zoner' Cavanaugh
+<br />
+Based on Valve's version, modified with permission.
+<br />
+Submit detailed bug reports to &#40;merlinis@bigpond.net.au&#41;
+<br />
+-----&nbsp; BEGIN&nbsp; hlbsp -----
+<br />
+Command line&#58; &quot;E&#58;\Temp\CS mapping\zhlt253-17\hlbsp.exe&quot;-chart E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.map 
+<br />
+
+<br />
+Current hlbsp Settings
+<br />
+Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp; Setting&nbsp; |&nbsp; Default
+<br />
+-------------------|-----------|-------------------------
+<br />
+threads&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; &nbsp;1 &#93; &#91;&nbsp; Varies &#93;
+<br />
+verbose&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+log&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+developer&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; &nbsp;0 &#93; &#91;&nbsp; &nbsp; &nbsp; &nbsp;0 &#93;
+<br />
+chart&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+estimate&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+max texture memory&nbsp; &#91; 4194304 &#93; &#91; 4194304 &#93;
+<br />
+priority&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; Normal &#93; &#91;&nbsp; Normal &#93;
+<br />
+
+<br />
+noclip&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+nofill&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+null tex. stripping &#91;&nbsp; &nbsp; &nbsp; on &#93; &#91;&nbsp; &nbsp; &nbsp; on &#93;
+<br />
+notjunc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; &nbsp;off &#93; &#91;&nbsp; &nbsp; &nbsp;off &#93;
+<br />
+subdivide size&nbsp; &nbsp; &nbsp; &#91;&nbsp; &nbsp; &nbsp;240 &#93; &#91;&nbsp; &nbsp; &nbsp;240 &#93; &#40;Min 64&#41; &#40;Max 512&#41;
+<br />
+max node size&nbsp; &nbsp; &nbsp; &nbsp;&#91;&nbsp; &nbsp; 1024 &#93; &#91;&nbsp; &nbsp; 1024 &#93; &#40;Min 64&#41; &#40;Max 4096&#41;
+<br />
+
+<br />
+
+<br />
+Warning&#58; === LEAK in hull 0 ===
+<br />
+Entity func_door_rotating @ &#40;-460,-457,&nbsp; 63&#41;
+<br />
+Error&#58; 
+<br />
+&nbsp; A LEAK is a hole in the map, where the inside of it is exposed to the
+<br />
+&#40;unwanted&#41; outside region.&nbsp; The entity listed in the error is just a helpful
+<br />
+indication of where the beginning of the leak pointfile starts, so the
+<br />
+beginning of the line can be quickly found and traced to until reaching the
+<br />
+outside. Unless this entity is accidentally on the outside of the map, it
+<br />
+probably should not be deleted.&nbsp; Some complex rotating objects entities need
+<br />
+their origins outside the map.&nbsp; To deal with these, just enclose the origin
+<br />
+brush with a solid world brush
+<br />
+
+<br />
+Leak pointfile generated
+<br />
+
+<br />
+Warning&#58; === LEAK in hull 1 ===
+<br />
+Entity func_door_rotating @ &#40;-460,-457,&nbsp; 63&#41;
+<br />
+Warning&#58; === LEAK in hull 2 ===
+<br />
+Entity func_door_rotating @ &#40;-460,-457,&nbsp; 63&#41;
+<br />
+Warning&#58; === LEAK in hull 3 ===
+<br />
+Entity func_door_rotating @ &#40;-460,-457,&nbsp; 63&#41;
+<br />
+
+<br />
+Object names&nbsp; Objects/Maxobjs&nbsp; Memory / Maxmem&nbsp; Fullness
+<br />
+------------&nbsp; ---------------&nbsp; ---------------&nbsp; --------
+<br />
+models&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;31/400&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1984/25600&nbsp; &nbsp; &#40; 7.8%&#41;
+<br />
+planes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1512/32767&nbsp; &nbsp; &nbsp; 30240/655340&nbsp; &nbsp;&#40; 4.6%&#41;
+<br />
+vertexes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1644/65535&nbsp; &nbsp; &nbsp; 19728/786420&nbsp; &nbsp;&#40; 2.5%&#41;
+<br />
+nodes&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;722/32767&nbsp; &nbsp; &nbsp; 17328/786408&nbsp; &nbsp;&#40; 2.2%&#41;
+<br />
+texinfos&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 336/32767&nbsp; &nbsp; &nbsp; 13440/1310680&nbsp; &#40; 1.0%&#41;
+<br />
+faces&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1184/65535&nbsp; &nbsp; &nbsp; 23680/1310700&nbsp; &#40; 1.8%&#41;
+<br />
+clipnodes&nbsp; &nbsp; &nbsp; &nbsp; 1640/32767&nbsp; &nbsp; &nbsp; 13120/262136&nbsp; &nbsp;&#40; 5.0%&#41;
+<br />
+leaves&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 591/8192&nbsp; &nbsp; &nbsp; &nbsp;16548/229376&nbsp; &nbsp;&#40; 7.2%&#41;
+<br />
+marksurfaces&nbsp; &nbsp; &nbsp;1252/65535&nbsp; &nbsp; &nbsp; &nbsp;2504/131070&nbsp; &nbsp;&#40; 1.9%&#41;
+<br />
+surfedges&nbsp; &nbsp; &nbsp; &nbsp; 5618/512000&nbsp; &nbsp; &nbsp;22472/2048000&nbsp; &#40; 1.1%&#41;
+<br />
+edges&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2810/256000&nbsp; &nbsp; &nbsp;11240/1024000&nbsp; &#40; 1.1%&#41;
+<br />
+texdata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp;298660/4194304&nbsp; &#40; 7.1%&#41;
+<br />
+lightdata&nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/4194304&nbsp; &#40; 0.0%&#41;
+<br />
+visdata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0/2097152&nbsp; &#40; 0.0%&#41;
+<br />
+entdata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;variable&#93;&nbsp; &nbsp; &nbsp; &nbsp;4067/524288&nbsp; &nbsp;&#40; 0.8%&#41;
+<br />
+41 textures referenced
+<br />
+=== Total BSP file data space used&#58; 475011 bytes ===
+<br />
+0.88 seconds elapsed
+<br />
+
+<br />
+-----&nbsp; &nbsp;END&nbsp; &nbsp;hlbsp -----
+<br />
+
+<br />
+
+<br />
+
+<br />
+hlvis v2.5.3 rel Custom Build 1.7 &#40;Dec&nbsp; 9 2002&#41;
+<br />
+Zoner's Half-Life Compilation Tools -- Custom Build
+<br />
+Based on code modifications by Sean 'Zoner' Cavanaugh
+<br />
+Based on Valve's version, modified with permission.
+<br />
+Submit detailed bug reports to &#40;merlinis@bigpond.net.au&#41;
+<br />
+-----&nbsp; BEGIN&nbsp; hlvis -----
+<br />
+Command line&#58; &quot;E&#58;\Temp\CS mapping\zhlt253-17\hlvis.exe&quot;-chart E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.map 
+<br />
+&gt;&gt; There was a problem compiling the map.
+<br />
+&gt;&gt; Check the file E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.log for the cause.
+<br />
+
+<br />
+-----&nbsp; &nbsp;END&nbsp; &nbsp;hlvis -----
+<br />
+
+<br />
+
+<br />
+
+<br />
+hlrad v2.5.3 rel Custom Build 1.7 &#40;Dec&nbsp; 9 2002&#41;
+<br />
+Zoner's Half-Life Compilation Tools -- Custom Build
+<br />
+Based on code modifications by Sean 'Zoner' Cavanaugh
+<br />
+Based on Valve's version, modified with permission.
+<br />
+Submit detailed bug reports to &#40;merlinis@bigpond.net.au&#41;
+<br />
+-----&nbsp; BEGIN&nbsp; hlrad -----
+<br />
+Command line&#58; &quot;E&#58;\Temp\CS mapping\zhlt253-17\hlrad.exe&quot;-extra -sparse -bounce 6 -chart E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.map 
+<br />
+&gt;&gt; There was a problem compiling the map.
+<br />
+&gt;&gt; Check the file E&#58;\Spill\Sierra\Mapping\Mine\skole1\skole.log for the cause.
+<br />
+
+<br />
+-----&nbsp; &nbsp;END&nbsp; &nbsp;hlrad -----
+<br />
+</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Note: the walls around the door are func_wall, i get the same error with ordinary brushes.
+<br />
+There was a light above the door before, but i removed for testing, no effect.
+<br />
+
+<br />
+now..any advice:?:</span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.art4eye.com" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0" /></a><script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40314#40314"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Wed Nov 19, 2003 1:14 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40316"></a><b>Wolv</b></span><br /><span class="genlev"><!--RUST staff--></span><span class=postdetails><br /><img src="http://home.wanadoo.nl/awcvandenberg/wolv_rust_staff.jpg" alt="<!--RUST staff-->" title="<!--RUST staff-->" border="0" /><br /><br /><br />Joined: 23 Sep 2001<br />Posts: 723<br /></span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40316"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">I'm having some trouble reading those lines WC draws in the 2D view. Perhaps a WC user can help you better, but I can give you some relevant tips:
+<br />
+- Entities don't stop <span style="color:#FFFFFF"><b>leaks</b></span>. 
+<br />
+- Origin brushes must be inside the map.</span><span class=sign><br />_________________<br /><span style="color: b"><span style="font-weight: bold"><a href="http://dynamic.gamespy.com/~quark/" target="_blank" class="postlink">QuArK</a></span></span>, The Ultimate Editor</span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=68"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=68"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.student.citg.tudelft.nl/c9375215/" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40316#40316"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Wed Nov 19, 2003 1:48 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40321"></a><b>RaVenous</b></span><br /><span class="genlev"><span style='color:orange'>BuzzKill</spa</span><span class=postdetails><br /><img src="http://images.olpainless.net/misc/rust_staff.jpg" alt="<span style='color:orange'>BuzzKill</spa" title="<span style='color:orange'>BuzzKill</spa" border="0" /><br /><br /><br />Joined: 23 Sep 2001<br />Posts: 767<br />Location: The Future.</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40321"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hmmm...what is on the other side of the door?  Another room or void?</span><span class=sign><br />_________________<br />[Looking through a spyglass as three soldiers approach the fort]
+<br />
+"Breakfast...Lunch...And reinforcements."
+<br />
+
+<br />
+<a href="http://www.gamedesign.net/book/view/813" target="_blank" class="postlink">Warcraft III Editing</a>
+<br />
+
+<br />
+I am Forza Motorsport's bitch...</span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>   <a href="aim:goim?screenname=Chris164935&amp;message=Hello+Are+you+there?"><img src="templates/subBlack3d/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40321#40321"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Wed Nov 19, 2003 9:03 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40333"></a><b>GARD</b></span><br /><span class="genlev"><span style='color:RED'>OMNIPRESENT</spa</span><span class=postdetails><br /><img src="http://images.olpainless.net/misc/rust_staff.jpg" alt="<span style='color:RED'>OMNIPRESENT</spa" title="<span style='color:RED'>OMNIPRESENT</spa" border="0" /><br /><br /><br />Joined: 25 Sep 2001<br />Posts: 3479<br />Location: The edge of infinity</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40333"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Looks like a void to me. The squiggle would suggest that map is open at that point, and the compiler considers the level to outside from there on.</span><span class=sign><br />_________________<br />The <a href="http://www.gamedesign.net/book/view/550" target="_blank" class="postlink">G.A.R.D.</a> Project
+<br />
+One of the <a href="http://www.gamedesign.net/" target="_blank" class="postlink">RUST</a> Admin Guys
+<br />
+
+<br />
+Get your own  <a href="http://www.gamedesign.net/node/view/549" target="_blank" class="postlink">Rust Resume</a></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=81"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=81"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a> <a href="mailto:stephen@geol.uwa.edu.au"><img src="templates/subBlack3d/images/lang_english/icon_email.gif" alt="Send e-mail" title="Send e-mail" border="0" /></a> <a href="http://www.gamedesign.net" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40333#40333"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Thu Nov 20, 2003 4:33 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40335"></a><b>RD</b></span><br /><span class="genlev"><!--Staff without Staff Tag-->.</span><span class=postdetails><br /><br /><br />Joined: 24 Sep 2001<br />Posts: 1893<br /></span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40335"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">and ALWAYS have snap to grid on.
+<br />
+looks like ur not building on the grid now</span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=70"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=70"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40335#40335"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Thu Nov 20, 2003 5:21 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40343"></a><b>RaVenous</b></span><br /><span class="genlev"><span style='color:orange'>BuzzKill</spa</span><span class=postdetails><br /><img src="http://images.olpainless.net/misc/rust_staff.jpg" alt="<span style='color:orange'>BuzzKill</spa" title="<span style='color:orange'>BuzzKill</spa" border="0" /><br /><br /><br />Joined: 23 Sep 2001<br />Posts: 767<br />Location: The Future.</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40343"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">And, I'm not sure, but aren't brushes that are turned into entities purple?  And then regular brushes are white?</span><span class=sign><br />_________________<br />[Looking through a spyglass as three soldiers approach the fort]
+<br />
+"Breakfast...Lunch...And reinforcements."
+<br />
+
+<br />
+<a href="http://www.gamedesign.net/book/view/813" target="_blank" class="postlink">Warcraft III Editing</a>
+<br />
+
+<br />
+I am Forza Motorsport's bitch...</span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>   <a href="aim:goim?screenname=Chris164935&amp;message=Hello+Are+you+there?"><img src="templates/subBlack3d/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40343#40343"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Thu Nov 20, 2003 7:10 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40345"></a><b>pebe</b></span><br /><span class="genlev">Junior</span><span class=postdetails><br /><br /><br />Joined: 11 Nov 2003<br />Posts: 13<br />Location: Norway</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40345"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">Hmmm...what is on the other side of the door? Another room or void?</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Behind the door there is another room, just made temporarely to block of the void. That grey wall on the first image is a part of that next room.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">Looks like a void to me. The squiggle would suggest that map is open at that point, and the compiler considers the level to outside from there on.</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Hmm, i can't see any void there! well, that might be the problem. Don't know.
+<br />
+HELP!
+<br />
+
+<br />
+Is there any application or something to help find the leak?</span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.art4eye.com" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0" /></a><script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40345#40345"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Thu Nov 20, 2003 7:18 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40349"></a><b>pebe</b></span><br /><span class="genlev">Junior</span><span class=postdetails><br /><br /><br />Joined: 11 Nov 2003<br />Posts: 13<br />Location: Norway</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40349"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Ravenous said this in a different topic:
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">Let's say you have a world brush that has a side that touches the void, then you turn it into a func_wall; this will give you a LEAK error when you compile.</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+This must be my problem! I'll try to turn everything back to normal brushes when i get home.
+<br />
+
+<br />
+/me excited!  <img src="images/smiles/icon_mrgreen.gif" alt="Mr. Green" border="0" /></span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.art4eye.com" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0" /></a><script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40349#40349"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Thu Nov 20, 2003 9:52 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40355"></a><b>Sulsa</b></span><br /><span class="genlev">D3adlode wrangler</span><span class=postdetails><br /><img src="http://images.olpainless.net/misc/rust_staff.jpg" alt="D3adlode wrangler" title="D3adlode wrangler" border="0" /><br /><br /><br />Joined: 24 Sep 2001<br />Posts: 730<br /></span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40355"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Wow you guys still have alot of patience!
+<br />
+ <img src="images/smiles/icon_twisted.gif" alt="Twisted Evil" border="0" /></span><span class=sign><br />_________________<br />o--[------
+<br />
+Sulsa</span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=76"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=76"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a> <a href="mailto:sulsa@firearmsmod.com"><img src="templates/subBlack3d/images/lang_english/icon_email.gif" alt="Send e-mail" title="Send e-mail" border="0" /></a> <a href="http://home.comcast.net/~stevejack/blog/index.html" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a> <a href="aim:goim?screenname=stepjack7&amp;message=Hello+Are+you+there?"><img src="templates/subBlack3d/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40355#40355"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Thu Nov 20, 2003 5:54 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40377"></a><b>RaVenous</b></span><br /><span class="genlev"><span style='color:orange'>BuzzKill</spa</span><span class=postdetails><br /><img src="http://images.olpainless.net/misc/rust_staff.jpg" alt="<span style='color:orange'>BuzzKill</spa" title="<span style='color:orange'>BuzzKill</spa" border="0" /><br /><br /><br />Joined: 23 Sep 2001<br />Posts: 767<br />Location: The Future.</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40377"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>pebe wrote:</b></span></td>	</tr>	<tr>	  <td class="quote">Ravenous said this in a different topic:
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">Let's say you have a world brush that has a side that touches the void, then you turn it into a func_wall; this will give you a LEAK error when you compile.</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+This must be my problem! I'll try to turn everything back to normal brushes when i get home.
+<br />
+
+<br />
+/me excited!  <img src="images/smiles/icon_mrgreen.gif" alt="Mr. Green" border="0" /></td>	</tr></table><span class="postbody">
+<br />
+Whoa...whoa...whoa.  Instead of turning everything back into a world brush, turn one thing at a time back into a world brush and do a quick compile after each brush you change until you no longer get the leak error.  This will help narrow down where the leak is at, or how it's being caused.
+<br />
+
+<br />
+Also, did the ungroup thing work for your multiple brushes turned into one entity problem?</span><span class=sign><br />_________________<br />[Looking through a spyglass as three soldiers approach the fort]
+<br />
+"Breakfast...Lunch...And reinforcements."
+<br />
+
+<br />
+<a href="http://www.gamedesign.net/book/view/813" target="_blank" class="postlink">Warcraft III Editing</a>
+<br />
+
+<br />
+I am Forza Motorsport's bitch...</span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>   <a href="aim:goim?screenname=Chris164935&amp;message=Hello+Are+you+there?"><img src="templates/subBlack3d/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40377#40377"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Fri Nov 21, 2003 9:53 am</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40379"></a><b>pebe</b></span><br /><span class="genlev">Junior</span><span class=postdetails><br /><br /><br />Joined: 11 Nov 2003<br />Posts: 13<br />Location: Norway</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40379"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Everything worked out great!
+<br />
+I turned all the "outer" walls back into normal brushes, i left some func_walls on the "inside". Compiles just fine now!
+<br />
+
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">Also, did the ungroup thing work for your multiple brushes turned into one entity problem?</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Yes, you can easily use ignore group on bundled entities!
+<br />
+
+<br />
+Thanks for all your help.  <img src="images/smiles/icon_biggrin.gif" alt="Very Happy" border="0" /></span><span class=sign></span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.art4eye.com" target="_userwww"><img src="templates/subBlack3d/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <a href="profile.php?mode=viewprofile&amp;u=1999"><img src="templates/subBlack3d/images/lang_english/icon_msnm.gif" alt="MSN Messenger" title="MSN Messenger" border="0" /></a><script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40379#40379"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Fri Nov 21, 2003 1:31 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+<table width="97%" cellspacing="0" cellpadding="2" border="0" align="center" >
+	 <tr>
+		<td class="postline" width="160" align="left" valign="top" height=100%>
+            <table border=0  cellpadding=0 cellspacing=0 width=160 height=100%>
+            <tr><td valign=top width=25 ><img src="templates/subBlack3d/images/usr.gif"></td>
+            <td valign=top height=100% width=90% align=left>
+            <span class="blank">&nbsp;<br />&nbsp;<br />&nbsp;<br /></span><span class="name2"><a name="40380"></a><b>RaVenous</b></span><br /><span class="genlev"><span style='color:orange'>BuzzKill</spa</span><span class=postdetails><br /><img src="http://images.olpainless.net/misc/rust_staff.jpg" alt="<span style='color:orange'>BuzzKill</spa" title="<span style='color:orange'>BuzzKill</spa" border="0" /><br /><br /><br />Joined: 23 Sep 2001<br />Posts: 767<br />Location: The Future.</span><br />
+            </td></tr>
+            </tr>
+            <tr><td width="150" height=18 align="left" valign="bottom"><!##here for RPG hp,mp,exp mod##></td>
+            </tr></table>
+            </td>
+        	<td class="postline" valign=top>
+        <table width="100%" cellspacing="3" cellpadding="0" border="0" height=100%>
+	    <tr>
+		<td width="100%" height="28" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><span class="gensr">&nbsp;Post subject: </span></td>
+				<td valign="top" align="right" nowrap="nowrap">
+                        <a href="posting.php?mode=quote&amp;p=40380"><img src="templates/subBlack3d/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>    </td>
+			</tr>
+			<tr>
+				<td colspan="2" background="templates/subBlack3d/images/ln2.gif" height=6 width=100%><span class=blank>&nbsp;</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Glad I could help...</span><span class=sign><br />_________________<br />[Looking through a spyglass as three soldiers approach the fort]
+<br />
+"Breakfast...Lunch...And reinforcements."
+<br />
+
+<br />
+<a href="http://www.gamedesign.net/book/view/813" target="_blank" class="postlink">Warcraft III Editing</a>
+<br />
+
+<br />
+I am Forza Motorsport's bitch...</span><span class="gensmall"></span>
+                  <br /><br />
+                  </td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="frame2" bgcolor=#555555 width="100%" height="2%" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="10" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap">
+      <a href="profile.php?mode=viewprofile&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=58"><img src="templates/subBlack3d/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>   <a href="aim:goim?screenname=Chris164935&amp;message=Hello+Are+you+there?"><img src="templates/subBlack3d/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript> </noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+
+
+      </table>
+      </td></tr></table>
+      <table align=center border=0 cellPadding=0 cellSpacing=0 width="97%"><tr><td class=tabpost>
+        <table border=0 cellPadding=0 cellSpacing=0 width="100%"><tr><td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td>
+          <td align=left bgcolor=#2d2d2d valign=top width="100%" height=13>&nbsp;<a href="viewtopic.php?p=40380#40380"><img src="templates/subBlack3d/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a>
+          <span class="gensr">Posted: Fri Nov 21, 2003 1:35 pm</span></td>
+         <td width="83" bgcolor=#2d2d2d><img src="templates/subBlack3d/images/spacer.gif" width="83" height="1"></td></tr></table>
+        </td></tr><table>
+      <table border=0 width=100%>
+	<tr align="left">
+		<td class="catbottom" height="28" width=100%><table cellspacing="0" cellpadding="0" border="0">
+			<tr><form method="post" action="viewtopic.php?t=5675&amp;start=0">
+				<td colspan=2  width=100% height=15 nowrrap><img align=left
+                  src="templates/subBlack3d/images/dots.gif"><span class="gensmall">Display posts from previous: <select name="postdays"><option value="0" selected="selected">All Posts</option><option value="1">1 Day</option><option value="7">7 Days</option><option value="14">2 Weeks</option><option value="30">1 Month</option><option value="90">3 Months</option><option value="180">6 Months</option><option value="364">1 Year</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Oldest First</option><option value="desc">Newest First</option></select>&nbsp;<input type="submit" value="Go" class="liteoption" name="submit" /></span></td>
+			</form></tr>
+		</table></td>
+	</tr>
+</table>
+<table width="99%" bgcolor=#2a2a2a cellspacing="0" cellpadding="0" border="0" align="center" style="border-right: #000000 2px solid; border-left: #888888 2px groove">
+<tr><td width=10% align=left>
+   <table cellspacing="0" cellpadding="0" border="0">
+     <tr><td class=tdframe bgcolor=#3f3f3f><span class=gensmalls>&nbsp;&nbsp;<a href="posting.php?mode=newtopic&amp;f=9"><img src="templates/subBlack3d/images/lang_english/post.gif" border="0" alt="Post new topic" align="middle" /></a></span><span class=gensmalls>&nbsp;&nbsp;</span></td></tr></table>
+</td><td width=1% style="border-top: #333333 1px solid">&nbsp;</td>
+<td  width=79%>
+   <table cellspacing="0" cellpadding="2" border="0">
+     <tr><td class=tdframe bgcolor=#3f3f3f><span class=gensmalls>&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=5675"><img src="templates/subBlack3d/images/lang_english/reply.gif" border="0" alt="Reply to topic" align="middle" /></a></span><span class=gensmalls>&nbsp;&nbsp;</span></td></tr></table>
+</td></tr></table>
+
+<table width="99%" bgcolor=#2a2a2a cellspacing="0" cellpadding="0" border="0" align="center" style="border-right: #000000 2px solid; border-left: #888888 2px groove">
+<tr>
+	<td>
+	<table width="99%" cellspacing="0" cellpadding="1" border="0" align="center">
+	<tr>
+		<td bgColor=#313131 class=td3d colSpan=3 height=12><img
+                  align=right src="templates/subBlack3d/images/dots.gif"><img align=left
+                  src="templates/subBlack3d/images/dots.gif">
+	<a href="index.php" class="nav">Gamedesign.net Forum Index</a> <span class=nav>-></span> <a class="nav" href="viewforum.php?f=9">Half-Life and Half-Life 2</a></span>
+</td></tr></table>
+
+<table width="99%" cellspacing="0" cellpadding="2" border="0" align="center">
+<tr><td class=td3d bgcolor=#3f3f3f width=100% height=10 colspan=2 align=center><img align=right
+                  src="templates/subBlack3d/images/dots.gif"><span class="nav"></span><span class=gensr>    </span>
+</td></tr>
+</table>
+<table width="99%" cellspacing="0" border="0" align="center" cellpadding="2" ><tr><td class=tab height="30" background="templates/subBlack3d/images/bdt.gif">
+<table border="0" cellpaddingg="0" cellspacing="0" width="100%">
+<tr><td bgcolor=#2d2d2d width=65% valign="top"><span class="gensr">&nbsp;All times are GMT - 8 Hours |</span>   <span class="gensmalls">Page <b>1</b> of <b>1</b></span>
+</td>
+<td width=35% align=right valign="midle" bgcolor=#2d2d2d><span class=gensmall>
+<form method="get" name="jumpbox" action="viewforum.php" onSubmit="if(document.jumpbox.f.value == -1){return false;}"><table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td nowrap="nowrap"><span class="gensmall">Jump to:&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Select a forum</option><option value="-1">&nbsp;</option><option value="-1">Gamedesign.net Forums</option><option value="-1">----------------</option><option value="40">General Rust Discussion</option><option value="25">Jobs - Help Wanted</option><option value="80">RUST Competitions</option><option value="81">RUST .plan</option><option value="-1">&nbsp;</option><option value="-1">Game Design</option><option value="-1">----------------</option><option value="37">Game Design</option><option value="38">Game Programming</option><option value="-1">&nbsp;</option><option value="-1">Game Editing</option><option value="-1">----------------</option><option value="9"selected="selected">Half-Life and Half-Life 2</option><option value="82">Counter Strike and Counter Strike Source</option><option value="13">Quake</option><option value="14">Quake II</option><option value="15">Quake III Arena</option><option value="83">Quake 4</option><option value="50">Doom 3</option><option value="22">Unreal Tournament 2K3/2K4</option><option value="36">Wolfenstein</option><option value="79">Warcraft 3</option><option value="48">Novalogic</option><option value="12">Kingpin</option><option value="39">Jedi Knight II</option><option value="-1">&nbsp;</option><option value="-1">Editors and Tools</option><option value="-1">----------------</option><option value="32">QuArK</option><option value="28">Radiant</option><option value="29">UnrealEd</option><option value="31">WorldCraft / Hammer</option><option value="46">Milkshape</option><option value="45">3D Studio Max and Gmax tempest</option><option value="47">Softimage</option><option value="84">TES Construction Kit</option><option value="-1">&nbsp;</option><option value="-1">Miscellaneous</option><option value="-1">----------------</option><option value="24">Off-teh-Topic</option><option value="26">Testing</option></select><input type="hidden" name="sid" value="0df8e52d5dc8a0a484dcf3504cd7013d" />&nbsp;<input type="submit" value="Go" class="liteoption" /></span></td>
+	</tr></form>
+</table>
+
+&nbsp;</span>
+</td></form></tr></table>
+</td></tr></table>
+<br  />
+<table border=0  cellpadding=0 cellspacing=0 width=96%>
+<tr><td class=auth2 bgcolor=#4f4f4f><table cellspacing="0" cellpadding="2" border="0" width=100%><tr>
+<td bgcolor=#4f4f4f class=auth width=100%><table width="100%" cellspacing="0" border="0" align="center" cellpadding="3">
+<tr><td width=50% valign=top><span class=gensr>You <b>cannot</b> post new topics in this forum<br />You <b>cannot</b> reply to topics in this forum<br />You <b>cannot</b> edit your posts in this forum<br />You <b>cannot</b> delete your posts in this forum<br />You <b>cannot</b> vote in polls in this forum<br />
+</span></td>
+<td width=50% align=right valign=top>&nbsp;
+
+<!--##if you install QUICK REPLAY mod, you can add the code here! i included quick replay button image in this theme pack##-->
+
+    </td></tr></table></td></tr></table>
+  </td></tr>
+</table>
+
+</center>
+<table border=0 cellapdding=3 width=100%>
+<tr><td>
+<div align="left">
+<span class="gensmall">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="copyright">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright 2003 Gamedesign.net<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Original subBlack3D Template by Wira_CG @<a class="copyright" href="http://www.wira-wwd.tk" target="_hmm">WWD</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seriously modified by Olpainless and Tycho.<br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB  line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright"><b>phpBB</a> </b> &copy; 2001, 2002 phpBB Group<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--<br />-->&nbsp;</span>
+</div>
+<div align="left"><span class="copyright">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protected by <a href="http://www.lithiumstudios.org/" target="_blank" class="copyright">Anti-Spam ACP</a></span></div>
+		</td>
+	</tr>
+</table>
+</td>
+	</tr>
+</table>
+
+<br />
+<p>
+</body>
+</html>
+
